@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/month-SHV
+
+standard tag: SHV
+
+descriptions:
+  - Shevat (שְׁבָט)
+...

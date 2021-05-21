@@ -1,0 +1,34 @@
+%YAML 1.2
+---
+type: structure
+
+uri: https://gedcom.io/terms/v7/REFN
+
+standard tag: REFN
+
+descriptions:
+  - Reference
+  - |
+    A user-defined number or text that the submitter uses to identify the
+    superstructure. For instance, it may be a record number within the
+    submitter’s automated or manual system, or it may be a page and position
+    number on a pedigree chart.
+    
+    This is metadata about the structure itself, not data about its subject.
+    Multiple structures describing different aspects of the same subject must
+    not have the same REFN value.
+
+payload: http://www.w3.org/2001/XMLSchema#string
+
+substructures:
+  "https://gedcom.io/terms/v7/TYPE": "{0:1}"
+
+superstructures:
+  "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
+  "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
+  "https://gedcom.io/terms/v7/record-OBJE": "{0:M}"
+  "https://gedcom.io/terms/v7/record-REPO": "{0:M}"
+  "https://gedcom.io/terms/v7/record-SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/record-SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7/record-SUBM": "{0:M}"
+...

@@ -1,0 +1,36 @@
+%YAML 1.2
+---
+type: structure
+
+uri: https://gedcom.io/terms/v7/CHAN
+
+standard tag: CHAN
+
+descriptions:
+  - Change
+  - The most recent change to the superstructure. This is metadata about the
+    structure itself, not data about its subject. See CHANGE_DATE for more.
+  - |
+    The date of the most recent modification of the superstructure, optionally
+    with notes about that modification.
+    
+    The NOTE substructure may describe previous changes as well as the most
+    recent, although only the most recent change is described by the DATE
+    substructure.
+
+payload: null
+
+substructures:
+  "https://gedcom.io/terms/v7/DATE-exact": "{1:1}"
+  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
+
+superstructures:
+  "https://gedcom.io/terms/v7/record-FAM": "{0:1}"
+  "https://gedcom.io/terms/v7/record-INDI": "{0:1}"
+  "https://gedcom.io/terms/v7/record-OBJE": "{0:1}"
+  "https://gedcom.io/terms/v7/record-REPO": "{0:1}"
+  "https://gedcom.io/terms/v7/record-SNOTE": "{0:1}"
+  "https://gedcom.io/terms/v7/record-SOUR": "{0:1}"
+  "https://gedcom.io/terms/v7/record-SUBM": "{0:1}"
+...

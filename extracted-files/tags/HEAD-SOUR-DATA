@@ -1,0 +1,23 @@
+%YAML 1.2
+---
+type: structure
+
+uri: https://gedcom.io/terms/v7/HEAD-SOUR-DATA
+
+standard tag: DATA
+
+descriptions:
+  - Data
+  - The electronic data source or digital repository from which this dataset
+    was exported. The payload is the name of that source, with substructures
+    providing additional details about the source (not the export).
+
+payload: http://www.w3.org/2001/XMLSchema#string
+
+substructures:
+  "https://gedcom.io/terms/v7/COPR": "{0:1}"
+  "https://gedcom.io/terms/v7/DATE-exact": "{0:1}"
+
+superstructures:
+  "https://gedcom.io/terms/v7/HEAD-SOUR": "{0:1}"
+...

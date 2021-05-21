@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-2
+
+standard tag: 2
+
+descriptions:
+  - Secondary evidence, data officially recorded sometime after the event
+...

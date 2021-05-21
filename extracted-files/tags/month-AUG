@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/month-AUG
+
+standard tag: AUG
+
+descriptions:
+  - August
+...

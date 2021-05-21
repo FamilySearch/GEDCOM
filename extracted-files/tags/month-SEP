@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/month-SEP
+
+standard tag: SEP
+
+descriptions:
+  - September
+...

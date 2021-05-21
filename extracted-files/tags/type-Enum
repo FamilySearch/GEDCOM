@@ -1,0 +1,20 @@
+%YAML 1.2
+---
+type: datatype
+
+uri: https://gedcom.io/terms/v7/type-Enum
+
+descriptions:
+  - |
+    An enumeration is a selection from a set of options. They are represented
+    as a string matching the same production as a tag, including the rules
+    about extensions beginning with _ (U+005F) and being mapped to URIs by a
+    schema.
+    
+        Enum    = Tag
+    
+    Each enumeration value has a distinct meaning as identified by its
+    corresponding URI.
+    
+    The URI for the Enum datatype is https://gedcom.io/terms/v7/type-Enum.
+...

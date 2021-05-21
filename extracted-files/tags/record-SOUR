@@ -1,0 +1,47 @@
+%YAML 1.2
+---
+type: structure
+
+uri: https://gedcom.io/terms/v7/record-SOUR
+
+standard tag: SOUR
+
+descriptions:
+  - Source
+  - A description of an entire source. See SOURCE_RECORD for more.
+  - |
+    A source record describes an entire source. A source may also point to
+    REPOs to describe repositories or archives where the source document may be
+    found. The part of a source relevant to a specific fact, such as a specific
+    page or entry, is indicated in a SOURCE_CITATION that points to the source
+    record.
+    
+    This sourcing model is known to be insufficient for some use cases and may
+    be refined in a future version of this specification.
+    
+    A SOURCE_RECORD may contain a pointer to a SHARED_NOTE_RECORD and vice
+    versa. Applications must not create datasets where these mutual pointers
+    form a cycle. Applications should also ensure they can handle invalid files
+    with such cycles in a safe manner.
+
+payload: null
+
+substructures:
+  "https://gedcom.io/terms/v7/ABBR": "{0:1}"
+  "https://gedcom.io/terms/v7/AUTH": "{0:1}"
+  "https://gedcom.io/terms/v7/CHAN": "{0:1}"
+  "https://gedcom.io/terms/v7/CREA": "{0:1}"
+  "https://gedcom.io/terms/v7/DATA": "{0:1}"
+  "https://gedcom.io/terms/v7/EXID": "{0:M}"
+  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/OBJE": "{0:M}"
+  "https://gedcom.io/terms/v7/PUBL": "{0:1}"
+  "https://gedcom.io/terms/v7/REFN": "{0:M}"
+  "https://gedcom.io/terms/v7/REPO": "{0:M}"
+  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/TEXT": "{0:1}"
+  "https://gedcom.io/terms/v7/TITL": "{0:1}"
+  "https://gedcom.io/terms/v7/UID": "{0:M}"
+
+superstructures: []
+...

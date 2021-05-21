@@ -1,0 +1,59 @@
+%YAML 1.2
+---
+type: structure
+
+uri: https://gedcom.io/terms/v7/AGE
+
+standard tag: AGE
+
+descriptions:
+  - Age at event
+  - The age of the individual at the time an event occurred, or the age listed
+    in the document.
+
+payload: https://gedcom.io/terms/v7/type-Age
+
+substructures:
+  "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
+
+superstructures:
+  "https://gedcom.io/terms/v7/ADOP": "{0:1}"
+  "https://gedcom.io/terms/v7/BAPM": "{0:1}"
+  "https://gedcom.io/terms/v7/BARM": "{0:1}"
+  "https://gedcom.io/terms/v7/BASM": "{0:1}"
+  "https://gedcom.io/terms/v7/BIRT": "{0:1}"
+  "https://gedcom.io/terms/v7/BLES": "{0:1}"
+  "https://gedcom.io/terms/v7/BURI": "{0:1}"
+  "https://gedcom.io/terms/v7/CAST": "{0:1}"
+  "https://gedcom.io/terms/v7/CHR": "{0:1}"
+  "https://gedcom.io/terms/v7/CHRA": "{0:1}"
+  "https://gedcom.io/terms/v7/CONF": "{0:1}"
+  "https://gedcom.io/terms/v7/CREM": "{0:1}"
+  "https://gedcom.io/terms/v7/DEAT": "{0:1}"
+  "https://gedcom.io/terms/v7/DSCR": "{0:1}"
+  "https://gedcom.io/terms/v7/EDUC": "{0:1}"
+  "https://gedcom.io/terms/v7/EMIG": "{0:1}"
+  "https://gedcom.io/terms/v7/FCOM": "{0:1}"
+  "https://gedcom.io/terms/v7/GRAD": "{0:1}"
+  "https://gedcom.io/terms/v7/HUSB": "{1:1}"
+  "https://gedcom.io/terms/v7/IDNO": "{0:1}"
+  "https://gedcom.io/terms/v7/IMMI": "{0:1}"
+  "https://gedcom.io/terms/v7/INDI-CENS": "{0:1}"
+  "https://gedcom.io/terms/v7/INDI-EVEN": "{0:1}"
+  "https://gedcom.io/terms/v7/INDI-FACT": "{0:1}"
+  "https://gedcom.io/terms/v7/INDI-NCHI": "{0:1}"
+  "https://gedcom.io/terms/v7/INDI-RELI": "{0:1}"
+  "https://gedcom.io/terms/v7/INDI-RESI": "{0:1}"
+  "https://gedcom.io/terms/v7/INDI-TITL": "{0:1}"
+  "https://gedcom.io/terms/v7/NATI": "{0:1}"
+  "https://gedcom.io/terms/v7/NATU": "{0:1}"
+  "https://gedcom.io/terms/v7/NMR": "{0:1}"
+  "https://gedcom.io/terms/v7/OCCU": "{0:1}"
+  "https://gedcom.io/terms/v7/ORDN": "{0:1}"
+  "https://gedcom.io/terms/v7/PROB": "{0:1}"
+  "https://gedcom.io/terms/v7/PROP": "{0:1}"
+  "https://gedcom.io/terms/v7/RETI": "{0:1}"
+  "https://gedcom.io/terms/v7/SSN": "{0:1}"
+  "https://gedcom.io/terms/v7/WIFE": "{1:1}"
+  "https://gedcom.io/terms/v7/WILL": "{0:1}"
+...

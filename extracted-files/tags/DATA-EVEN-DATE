@@ -1,0 +1,21 @@
+%YAML 1.2
+---
+type: structure
+
+uri: https://gedcom.io/terms/v7/DATA-EVEN-DATE
+
+standard tag: DATE
+
+descriptions:
+  - Date
+  - The DatePeriod covered by the entire source; the period during which this
+    source recorded events.
+
+payload: https://gedcom.io/terms/v7/type-Date#period
+
+substructures:
+  "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
+
+superstructures:
+  "https://gedcom.io/terms/v7/DATA-EVEN": "{0:1}"
+...

@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-AUDIO
+
+standard tag: AUDIO
+
+descriptions:
+  - An audio recording
+...

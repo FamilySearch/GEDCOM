@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/month-MAY
+
+standard tag: MAY
+
+descriptions:
+  - May
+...

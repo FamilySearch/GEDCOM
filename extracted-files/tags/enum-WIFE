@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-WIFE
+
+standard tag: WIFE
+
+descriptions:
+  - Wife; implies SPOU
+...

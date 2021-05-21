@@ -1,0 +1,79 @@
+%YAML 1.2
+---
+type: structure
+
+uri: https://gedcom.io/terms/v7/record-FAM
+
+standard tag: FAM
+
+descriptions:
+  - Family record
+  - See FAMILY_RECORD
+  - |
+    The FAM record was originally structured to represent families where a male
+    HUSB (husband or father) and female WIFE (wife or mother) produce CHIL
+    (children). The FAM record may also be used for cultural parallels to this,
+    including nuclear families, marriage, cohabitation, fostering, adoption,
+    and so on, regardless of the gender of the partners. Sex, gender, titles,
+    and roles of partners should not be inferred based on the partner that the
+    HUSB or WIFE structure points to.
+    
+    The individuals pointed to by the HUSB and WIFE are collectively referred
+    to as “partners”, “parents” or “spouses”.
+    
+    Some displays may be unable to display more than 2 partners. Displays may
+    use HUSB and WIFE as layout hints, for example, by consistently displaying
+    the HUSB on the same side of the WIFE in a tree view. Family structures
+    with more than 2 partners may either use several FAM records or use
+    ASSOCIATION_STRUCTUREs to indicate additional partners.
+    
+    The FAM record will be revised in a future version to more fully express
+    the diversity of human family relationships.
+    
+    The order of the CHIL (children) pointers within a FAM (family) structure
+    should be chronological by birth; this is an exception to the usual “most
+    preferred value first” rule. A CHIL with a voidPtr indicates a placeholder
+    for an unknown child in this birth order.
+    
+    If a FAM record uses HUSB or WIFE to point to an INDI record, the INDI
+    record must use FAMS to point to the FAM record. If a FAM record uses CHIL
+    to point to an INDI record, the INDI record must use a FAMC to point to the
+    FAM record.
+
+payload: null
+
+substructures:
+  "https://gedcom.io/terms/v7/ANUL": "{0:M}"
+  "https://gedcom.io/terms/v7/ASSO": "{0:M}"
+  "https://gedcom.io/terms/v7/CHAN": "{0:1}"
+  "https://gedcom.io/terms/v7/CHIL": "{0:M}"
+  "https://gedcom.io/terms/v7/CREA": "{0:1}"
+  "https://gedcom.io/terms/v7/DIV": "{0:M}"
+  "https://gedcom.io/terms/v7/DIVF": "{0:M}"
+  "https://gedcom.io/terms/v7/ENGA": "{0:M}"
+  "https://gedcom.io/terms/v7/EXID": "{0:M}"
+  "https://gedcom.io/terms/v7/FAM-CENS": "{0:M}"
+  "https://gedcom.io/terms/v7/FAM-EVEN": "{0:M}"
+  "https://gedcom.io/terms/v7/FAM-FACT": "{0:M}"
+  "https://gedcom.io/terms/v7/FAM-HUSB": "{0:1}"
+  "https://gedcom.io/terms/v7/FAM-NCHI": "{0:M}"
+  "https://gedcom.io/terms/v7/FAM-RESI": "{0:M}"
+  "https://gedcom.io/terms/v7/FAM-WIFE": "{0:1}"
+  "https://gedcom.io/terms/v7/MARB": "{0:M}"
+  "https://gedcom.io/terms/v7/MARC": "{0:M}"
+  "https://gedcom.io/terms/v7/MARL": "{0:M}"
+  "https://gedcom.io/terms/v7/MARR": "{0:M}"
+  "https://gedcom.io/terms/v7/MARS": "{0:M}"
+  "https://gedcom.io/terms/v7/NO": "{0:M}"
+  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/OBJE": "{0:M}"
+  "https://gedcom.io/terms/v7/REFN": "{0:M}"
+  "https://gedcom.io/terms/v7/RESN": "{0:1}"
+  "https://gedcom.io/terms/v7/SLGS": "{0:M}"
+  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7/SUBM": "{0:M}"
+  "https://gedcom.io/terms/v7/UID": "{0:M}"
+
+superstructures: []
+...

@@ -1,0 +1,154 @@
+; This document is in ABNF, see <https://tools.ietf.org/html/std68>
+; This document uses RFC 7405 to add case-sensitive literals to ABNF.
+
+; ------------- Characters -------------
+
+banned = %x00-08 / %x0B-0C / %x0E-1F ; C0 other than LF CR and Tab
+       / %x7F                        ; DEL
+       / %x80-9F                     ; C1
+       / %xD800-DFFF                 ; Surrogates
+       / %xFFFE-FFFF                 ; invalid
+; All other rules assume the absence of any banned characters
+
+
+digit       = %x30-39   ; 0 through 9
+nonzero     = %x31-39   ; 1 through 9
+ucletter    = %x41-5A   ; A through Z
+underscore  = %x5F      ; _
+atsign      = %x40      ; @
+
+
+; ------------- Lines -------------
+
+Line    = Level D [Xref D] Tag [D LineVal] EOL
+
+Level   = "0" / nonzero *digit
+D       = %x20                            ; space
+Xref    = atsign 1*tagchar atsign         ; but not "@VOID@"
+Tag     = stdTag / extTag
+LineVal = pointer / lineStr
+EOL     = %x0D [%x0A] / %x0A              ; CR-LF, CR, or LF
+
+stdTag  = ucletter *tagchar
+extTag  = underscore 1*tagchar
+tagchar = ucletter / digit / underscore
+
+pointer = voidPtr / Xref
+voidPtr = %s"@VOID@"
+
+nonAt   = %x09 / %x20-3F / %x41-10FFFF    ; non-EOL, non-@
+nonEOL  = %x09 / %x20-10FFFF              ; non-EOL
+lineStr = (nonAt / atsign atsign) *nonEOL ; leading @ doubled
+
+
+; ------------- Text -------------
+
+anychar = %x09-10FFFF ; but not banned, as with all ABNF rules
+Text    = *anychar
+
+
+; ------------- Integer -------------
+
+Integer = 1*digit
+
+
+; ------------- Enumeration -------------
+
+Enum    = Tag
+
+
+; ------------- Date -------------
+
+DateValue   = date / DatePeriod / dateRange / dateApprox
+DateExact   = day D month D year  ; in Gregorian calendar
+DatePeriod  = %s"FROM" D date [D %s"TO" D date]
+            / %s"TO" D date
+
+date        = [calendar D] [[day D] month D] year [D epoch]
+dateRange   = %s"BET" D date D %s"AND" D date
+            / %s"AFT" D date
+            / %s"BEF" D date
+dateApprox  = (%s"ABT" / %s"CAL" / %s"EST") D date
+
+dateRestrict = %s"FROM" / %s"TO" / %s"BET" / %s"AND" / %s"BEF"
+            / %s"AFT" / %s"ABT" / %s"CAL" / %s"EST" / %s"BCE"
+
+calendar = %s"GREGORIAN" / %s"JULIAN" / %s"FRENCH_R" / %s"HEBREW"
+         / extTag
+
+day     = Integer
+year    = Integer
+month   = stdTag / extTag  ; constrained by calendar
+epoch   = %s"BCE" / extTag ; constrained by calendar
+
+
+; ------------- Time -------------
+
+Time     =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
+
+hour     = digit / ("0" / "1") digit / "2" ("0" / "1" / "2" / "3")
+minute   = ("0" / "1" / "2" / "3" / "4" / "5") digit
+second   = ("0" / "1" / "2" / "3" / "4" / "5") digit
+fraction = 1*digit
+
+
+; ------------- Age -------------
+
+Age         = [ageBound D] ageDuration
+
+ageBound    = "<" / ">"
+ageDuration = years [D months] [D weeks] [D days]
+            / months [D weeks] [D days]
+            / weeks [D days]
+            / days
+
+years   = Integer %x79    ; 35y
+months  = Integer %x6D    ; 11m
+weeks   = Integer %x77    ; 8w
+days    = Integer %x64    ; 21d
+
+
+; ------------- List -------------
+
+List      = listItem *(listDelim listItem)
+listItem  = "" / nocommasp / nocommasp *nocomma nocommasp
+listDelim = *D "," *D
+nocomma   = %x09-2B / %x2D-10FFFF
+nocommasp = %x09-1D / %x21-2B / %x2D-10FFFF
+
+List-Text = List
+List-Enum = Enum *(listDelim Enum)
+
+
+; ------------- Personal Name -------------
+
+NamePersonal = nameStr
+             / [nameStr] "/" [nameStr] "/" [nameStr]
+
+nameChar     = %x20-2E / %x30-10FFFF  ; any but '/' and '\t'
+nameStr      = 1*nameChar
+
+
+; ------------- Media Type -------------
+
+MediaType    = mt-type "/" mt-subtype *(";" mt-parameter)
+
+mt-type      = mt-token
+mt-subtype   = mt-token
+mt-parameter = mt-attribute "=" mt-value
+mt-token     = 1*mt-char
+mt-attribute = mt-token
+mt-value     = mt-token / quoted-string
+mt-char      = %x20-21 / %x23-27 / %x2A-2B / %x2D-2E ; not "(),/
+             / %x30-39 / %x41-5A / %x5E-7E           ; not :;<=>?@[\]
+
+mt-qstring   = %x22 *(mt-qtext / mt-qpair) %x22
+mt-qtext     = %x09-0A / %x20-21 / %x23-5B / %x5D-7E ; not CR "\
+mt-qpair     = "\" %x09-7E
+
+
+; ------------- Special -------------
+
+Special = Text
+
+

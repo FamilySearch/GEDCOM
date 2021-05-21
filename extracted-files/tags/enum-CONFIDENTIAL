@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-CONFIDENTIAL
+
+standard tag: CONFIDENTIAL
+
+descriptions:
+  - This data was marked as confidential by the user.
+...

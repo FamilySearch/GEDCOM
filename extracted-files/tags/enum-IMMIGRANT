@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-IMMIGRANT
+
+standard tag: IMMIGRANT
+
+descriptions:
+  - Name assumed at the time of immigration.
+...

@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-MAIDEN
+
+standard tag: MAIDEN
+
+descriptions:
+  - Maiden name, name before first marriage.
+...
