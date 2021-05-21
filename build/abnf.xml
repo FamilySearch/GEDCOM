@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language name="ABNF" section="Other" extensions="*.abnf;*.ABNF" mimetype="" version="1" kateversion="5.0" author="Luther Tychonievich" license="Public Domain" >
+<!-- see https://docs.kde.org/trunk5/en/applications/katepart/highlight.html for this XML file format -->
+
+<highlighting>
+<contexts>
+    <context name="abnf" attribute="Error" lineEndContext="#stay">
+        <DetectChar attribute="Comment" char=";" context="comment" />
+        <RegExpr attribute="Rule" String="^[a-zA-Z][-a-zA-Z0-9]*" context="define" />
+    </context>
+
+    <context name="define" attribute="Error" lineEndContext="#pop">
+        <DetectChar attribute="Comment" char=";" context="comment" />
+        <DetectSpaces attribute="Normal Text"/>
+        <Detect2Chars attribute="Delim" char="/" char1="=" context="#pop!elements" />
+        <DetectChar attribute="Delim" char="=" context="#pop!elements" />
+    </context>
+
+    <context name="comment" attribute="Comment" lineEndContext="#pop" />
+    <context name="elements" attribute="Error" lineEndContext="#stay">
+        <DetectChar attribute="Comment" char=";" context="comment" />
+        <DetectSpaces attribute="Normal Text"/>
+        <DetectChar attribute="Delim" char="/" />
+        <DetectChar attribute="Delim" char="(" context="paren" />
+        <DetectChar attribute="Delim" char="[" context="bracket" />
+        <RegExpr attribute="Rule" String="^[a-zA-Z][-a-zA-Z0-9]*" context="#pop!define" />
+        <RegExpr attribute="String2" String="%s&quot;" context="cstr" />
+        <RegExpr attribute="String" String="(?:%i)?&quot;" context="istr" />
+        <RegExpr attribute="Normal Text" String="[a-zA-Z][-a-zA-Z0-9]*" />
+        <RegExpr attribute="Char" String="%x[0-9a-fA-F]+(?:(?:[.][0-9a-fA-F]+)+|-[0-9a-fA-F]+)?" />
+        <RegExpr attribute="Char" String="%d[0-9]+(?:(?:[.][0-9]+)+|-[0-9]+)?" />
+        <RegExpr attribute="Char" String="%b[01]+(?:(?:[.][01]+)+|-[01]+)?" />
+        <RegExpr attribute="Repeat" String="[0-9]+|[0-9]*\*[0-9]*" context="element" />
+        <!-- omitting prose descriptions -->
+    </context>
+
+    <context name="element" attribute="Error" lineEndContext="#pop!error">
+        <DetectChar attribute="Delim" char="(" context="#pop!paren" />
+        <DetectChar attribute="Delim" char="[" context="#pop!bracket" />
+        <RegExpr attribute="String2" String="%s&quot;" context="#pop!cstr" />
+        <RegExpr attribute="String" String="(?:%i)?&quot;" context="#pop!istr" />
+        <RegExpr attribute="Normal Text" String="[a-zA-Z][-a-zA-Z0-9]*" context="#pop" />
+        <RegExpr attribute="Char" String="%x[0-9a-fA-F]+(?:(?:[.][0-9a-fA-F]+)+|-[0-9a-fA-F]+)?" context="#pop" />
+        <RegExpr attribute="Char" String="%d[0-9]+(?:(?:[.][0-9]+)+|-[0-9]+)?" context="#pop" />
+        <RegExpr attribute="Char" String="%b[01]+(?:(?:[.][01]+)+|-[01]+)?" context="#pop" />
+        <!-- omitting prose descriptions -->
+    </context>
+
+    <context name="paren" attribute="Error" lineEndContext="#stay">
+        <DetectChar attribute="Delim" char=")" context="#pop" />
+        <IncludeRules context="elements" />
+    </context>
+
+    <context name="bracket" attribute="Error" lineEndContext="#stay">
+        <DetectChar attribute="Delim" char="]" context="#pop" />
+        <IncludeRules context="elements" />
+    </context>
+
+    <context name="istr" attribute="String" lineEndContext="error">
+        <DetectChar char="&quot;" context="#pop" />
+    </context>
+    <context name="cstr" attribute="String2" lineEndContext="error">
+        <DetectChar char="&quot;" context="#pop" />
+    </context>
+    <context name="error" attribute="Error" lineEndContext="#pop" />
+
+</contexts>
+
+<itemDatas>
+    <itemData name="Normal Text" defStyleNum="dsNormal" />
+    <itemData name="Comment" defStyleNum="dsComment" />
+    <itemData name="Rule" defStyleNum="dsVariable" />
+    <itemData name="Delim" defStyleNum="dsControlFlow" />
+    <itemData name="String" defStyleNum="dsString" />
+    <itemData name="String2" defStyleNum="dsSpecialString" />
+    <itemData name="Char" defStyleNum="dsChar" />
+    <itemData name="Repeat" defStyleNum="dsControlFlow" />
+    <itemData name="Error" defStyleNum="dsError" />
+</itemDatas>
+</highlighting>
+
+<general>
+    <comments>
+        <comment name="singleLine" start="#" />
+    </comments>
+</general>
+
+
+</language>

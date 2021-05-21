@@ -1,0 +1,439 @@
+/*
+ * From https://gist.github.com/killercup/5917178
+ * Per comments on that page, "its public domain || CC0 || MIT || Apache 2.0"
+ * Included edits suggested in comments by nmn364,  SecT0uch,
+ */
+
+html {
+  font-size: 100%;
+  /* overflow-y: scroll; */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  color: #444;
+  font-family: Noto Serif, ITC Stone Serif Std, Mentor Std, P052, Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-size: 10px;
+  line-height: 1.5;
+  padding: 1em;
+  margin: auto;
+  max-width: 42em;
+  background: #fefefe;
+}
+
+a {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #0b0080;
+}
+
+a:hover {
+  color: #06e;
+}
+
+a:active {
+  color: #faa700;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+*::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+*::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+}
+
+a::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+a::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+}
+
+p {
+  margin: 0.5em 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #111;
+  line-height: 125%;
+  margin-top: 2em;
+  font-weight: normal;
+}
+
+h4, h5, h6 {
+  font-weight: bold;
+  margin: 1em 0 0.5em 0;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+  margin-top: 1.5em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.9em;
+}
+
+.header-section-number { opacity: 0.5; }
+.header-section-number:after { content: ". "; }
+
+/*
+h4 .header-section-number, h5 .header-section-number  { display: none; }
+*/
+
+
+
+blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 1.5em;
+  border-left: 0.5em #EEE solid;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #eee;
+  margin: 1em 0;
+  padding: 0;
+}
+
+pre, code, kbd, samp {
+  font-family: Noto Sans Mono, monospace;
+  font-size: 0.98em;
+  background-color: #ececec; /* from SecT0uch */
+}
+
+pre.sourceCode, code.sourceCode { /* from SecT0uch */
+    background-color: #ececec;
+}
+
+pre {
+  /* white-space: pre; */ /* unnedd given next rule overrides it */
+  white-space: pre-wrap;
+  /* word-wrap: break-word; */ /* remove per nmn364 */
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 2em;
+}
+
+li p:last-child {
+  margin-bottom: 0;
+}
+
+ul ul, ol ol {
+  margin: .3em 0;
+}
+
+dl {
+  margin-bottom: 1em;
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: .8em;
+}
+
+dd {
+  margin: 0 0 .8em 2em;
+}
+
+dd:last-child {
+  margin-bottom: 0;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+figure {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+figure img {
+  border: none;
+  margin: 0 auto;
+}
+
+figcaption {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0 0 .8em;
+}
+
+table {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table th {
+  padding: .2em 1em;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+table td {
+  padding: .2em 1em;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.author {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+header .date, header .subtitle, header .title { text-align: center; }
+header { break-after: page; } /* added by Luther */
+header div { display: table; margin: auto; }
+header .copyright, header .address { text-align: justify; }
+header .date, header .copyright { margin: 0.5in auto; }
+header h1 { margin-top: 1.75in }
+header h3 { margin-bottom: 0.5in }
+
+
+
+pre a { color: inherit !important; text-decoration: inherit !important; }
+  
+
+@media only screen and (min-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media print {
+  * {
+    /* background: transparent !important; */
+    /* color: black !important; */
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  body {
+    font-size: 11pt;
+    max-width: 100%;
+  }
+
+  a, a:visited {
+    text-decoration: none;
+  }
+
+  hr {
+    height: 1px;
+    border: 0;
+    border-bottom: 1px solid black;
+  }
+
+/*
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+*/
+
+  .ir a:after, a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  a[href^="#"]:not(.close):after {
+    content: " (p." target-counter(attr(href), page) ")";
+    font-size: 70%;
+  }
+  code a[href^="#"]:not(.close):after { content: inherit; }
+  nav a[href^="#"]:not(.close):after { 
+    position:absolute; right: 2em; 
+    content: target-counter(attr(href), page);
+    font-size: 100%;
+  }
+
+  pre {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid; /* remove to allow code to split across pages */
+  }
+  pre.long {
+    page-break-inside: auto;
+  }
+  div.example, div.note { page-break-inside: avoid; }
+  
+  pre,code {
+    background-color: #eee !important; /* from Luther */
+    padding: 0.25ex;
+    border-radius: 0.5ex;
+  }
+
+
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    @bottom-center { content: "Page " counter(page) " of " counter(pages);  font-size: 70%; } 
+  }
+  @page :first {
+    @bottom-center { content: ""; }
+    @top-center { content: ""; }
+    @bottom-left { content: ""; }
+    @top-left { content: ""; }
+    @bottom-right { content: ""; }
+    @top-right { content: ""; }
+  }
+
+  main { page: main; }
+  @page main { @bottom { content: "Page " counter(page) " of " counter(pages) } }
+
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  main p {
+    hyphens: auto;
+    text-align: justify;
+  }
+  code {
+    hyphens: none;
+    white-space: pre;
+  }
+
+  h1 { break-before: page; } /* added by Luther */
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+h1,h2,h3,h4,h5,h6 { margin: 1em 0 0.5em 0; }
+
+}
+
+div.sourceCode {
+    background-color: rgba(0,0,0,0);
+}
+
+
+.example {
+    margin: 1em;
+    background: #e9fbe9;
+    border-left: #99f solid 4px;
+    padding: 0em 0.5em;
+}
+.example > :first-child:before {
+    content: "Example \2014\00A0 ";
+    font-style: italic;
+    color: #005A9C;
+}
+
+.note {
+    margin: 1em;
+    background: #FCFCFC;
+    border-left: #C0C0C0 solid 4px;
+    padding: 0em 0.5em;
+}
+.note > :first-child:before {
+    content: "Note \2014\00A0 ";
+    font-style: italic;
+}
+
+code.uri {
+    font-weight: normal;
+    background: none !important;
+}
+code.uri:before { content: " <"; }
+code.uri:after { content: ">"; }
+
+code .sc { color: #2879a4 !important; } /* kate style makes this too pale */

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language name="gedcom" section="Other" extensions="*.ged;*.GED;*.gedcom;*.GEDCOM" mimetype="" version="1" kateversion="5.0" author="Luther Tychonievich" license="Public Domain" >
+<!-- see https://docs.kde.org/trunk5/en/applications/katepart/highlight.html for this XML file format -->
+
+<highlighting>
+<contexts>
+    <context name="gedcom" attribute="Error" lineEndContext="#stay">
+        <RegExpr String="^0 (?! )" attribute="Level" context="anchor" />
+        <RegExpr String="^[1-9][0-9]* (?! )" attribute="Level" context="tag" />
+    </context>
+    <context name="anchor" attribute="Error" lineEndContext="#pop">
+        <RegExpr String="@[A-Z0-9_]+@ (?! )" attribute="Anchor" context="#pop!tag" />
+        <RegExpr String="[A-Z0-9_]+(?: |$)" attribute="Tag" context="#pop!payload" />
+    </context>
+    <context name="tag" attribute="Error" lineEndContext="#pop">
+        <RegExpr String="[A-Z0-9_]+(?: |$)" attribute="Tag" context="#pop!payload" />
+    </context>
+    <context name="payload" attribute="Error" lineEndContext="#pop">
+        <RegExpr String="@@" attribute="Escape" context="#pop!text" />
+        <RegExpr String="@[A-Z0-9_]+@$" attribute="Pointer" context="#pop!error" />
+        <RegExpr String="[^@].*" attribute="Text" context="#pop!error" />
+    </context>
+    <context name="error" attribute="Error" lineEndContext="#pop" />
+    <context name="text" attribute="Text" lineEndContext="#pop" />
+</contexts>
+
+<itemDatas>
+    <itemData name="Text" defStyleNum="dsNormal" />
+    <itemData name="Pointer" defStyleNum="dsVariable" />
+    <itemData name="Anchor" defStyleNum="dsControlFlow" />
+    <itemData name="Tag" defStyleNum="dsFunction" />
+    <itemData name="Level" defStyleNum="dsDataType" />
+    <itemData name="Escape" defStyleNum="dsSpecialChar" />
+    <itemData name="Error" defStyleNum="dsError" />
+</itemDatas>
+</highlighting>
+
+</language>

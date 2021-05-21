@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language name="gedstruct" section="Other" extensions="*.gedstruct" mimetype="" version="1" kateversion="5.0" author="Luther Tychonievich" license="Public Domain" >
+<!-- see https://docs.kde.org/trunk5/en/applications/katepart/highlight.html for this XML file format -->
+
+<highlighting>
+<contexts>
+    <context name="gedstruct" attribute="Error" lineEndContext="#stay">
+        <DetectChar attribute="Alternate" char="[" context="alt" />
+        <StringDetect String="0 " column="0" attribute="Level" context="tag1" />
+        <StringDetect String="n " column="0" attribute="Level" context="tag1" />
+        <StringDetect String="+1 " column="2" attribute="Level" context="tag1" />
+        <StringDetect String="+2 " column="5" attribute="Level" context="tag1" />
+        <StringDetect String="+3 " column="8" attribute="Level" context="tag1" />
+        <StringDetect String="+4 " column="11" attribute="Level" context="tag1" />
+        <DetectSpaces attribute="Text"/>
+    </context>
+    <context name="alt" attribute="Error" lineEndContext="#stay">
+        <DetectChar attribute="Alternate" char="]" context="#pop" />
+        <DetectChar attribute="Alternate" char="|" />
+        <IncludeRules context="gedstruct" />
+        <DetectSpaces attribute="Text"/>
+    </context>
+    <context name="tag1" attribute="Error" lineEndContext="#stay">
+        <RegExpr String="@XREF:[A-Z_][A-Z0-9_]+@ " attribute="Anchor" context="#pop!tag" />
+        <IncludeRules context="tag" />
+    </context>
+    <context name="tag" attribute="Error" lineEndContext="#stay">
+        <RegExpr String="[A-Z_][A-Z0-9_]+ " attribute="Tag" context="#pop!payload" />
+        <RegExpr String="&lt;&lt;[^&gt;]*&gt;&gt;" attribute="Recur" context="#pop!just-count" />
+        <DetectChar attribute="Alternate" char="[" context="alt-tag" />
+    </context>
+    <context name="alt-tag" attribute="Error" lineEndContext="#stay">
+        <DetectChar attribute="Alternate" char="]" context="#pop#pop!payload" />
+        <DetectChar attribute="Alternate" char="|" />
+        <RegExpr String="[A-Z_][A-Z0-9_]+ " attribute="Tag" />
+        <DetectSpaces attribute="Text"/>
+    </context>
+    <!--
+    <context name="payload" attribute="Error" lineEndContext="#pop">
+        <DetectSpaces attribute="Text" />
+        <RegExpr String="\{[01]:[1M]\}$" attribute="Count" />
+        <RegExpr String="&lt;[^&gt;]*&gt;" attribute="Text" />
+        <RegExpr String="@&lt;XREF:[A-Z_][A-Z0-9_]*&gt;@" attribute="Pointer" />
+        <RegExpr String="\[[^\]|]+\|&lt;NULL&gt;\]" attribute="Text" />
+    </context>
+    -->
+    <context name="just-count" attribute="Error" lineEndContext="#pop">
+        <DetectSpaces attribute="Text" />
+        <RegExpr String="\{[01]:[1M]\}$" attribute="Count" />
+    </context>
+    <context name="payload" attribute="Error" lineEndContext="#pop">
+        <DetectSpaces attribute="Text" />
+        <RegExpr String="\{[01]:[1M]\} " attribute="Count" context="#pop!iri"/>
+        <RegExpr String="&lt;[^&gt;]*&gt;" attribute="Text" context="#pop!count"/>
+        <RegExpr String="@&lt;XREF:[A-Z_][A-Z0-9_]*&gt;@" attribute="Pointer" context="#pop!count"/>
+        <RegExpr String="\[[^\]|]+\|&lt;NULL&gt;\]" attribute="Text" context="#pop!count"/>
+    </context>
+    <context name="count" attribute="Error" lineEndContext="#pop">
+        <DetectSpaces attribute="Text" />
+        <RegExpr String="\{[01]:[1M]\} " attribute="Count" context="#pop!iri"/>
+    </context>
+    <context name="iri" attribute="Error" lineEndContext="#pop">
+        <DetectSpaces attribute="Text" />
+        <RegExpr String="[a-z0-9]+:\S+$" attribute="IRI" />
+    </context>
+</contexts>
+
+<itemDatas>
+    <itemData name="Text" defStyleNum="dsNormal" />
+    <itemData name="Alternate" defStyleNum="dsControlFlow" />
+    <itemData name="Pointer" defStyleNum="dsVariable" />
+    <itemData name="Anchor" defStyleNum="dsControlFlow" />
+    <itemData name="Tag" defStyleNum="dsFunction" />
+    <itemData name="Level" defStyleNum="dsDataType" />
+    <itemData name="Recur" defStyleNum="dsKeyword" />
+    <itemData name="Count" defStyleNum="dsChar" />
+    <itemData name="Value" defStyleNum="dsSpecialChar" />
+    <itemData name="Error" defStyleNum="dsError" />
+    <itemData name="IRI" defStyleNum="dsAttribute" />
+</itemDatas>
+</highlighting>
+
+</language>
