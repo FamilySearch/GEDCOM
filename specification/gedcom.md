@@ -3792,7 +3792,7 @@ New contributions in this edition  benefited from the input of a large number of
 - Jason Fletcher, **Midlera Software**
 - Uri Gonen, **MyHeritage**
 - Dallan Quass, **OurRoots.org**
-- Tony Proctor, **Proctor.net**
+- Tony Proctor, **SVG Family-Tree Generator**
 - Bill Harten, **Puzzilla**
 - Bruce Buzbee and Mike Booth, **RootsMagic**
 
