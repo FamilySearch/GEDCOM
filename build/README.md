@@ -12,6 +12,22 @@ This directory is used to convert the `specifications/gedcom.md` source file int
 
 2. From the directory containing this README, run `make`
 
+# Pushing to [gedcom.io](https://gedcom.io)
+
+A script is provided to assist in uploading tag definitions and rendered specifiations to gedcom.io. To use it
+
+1. Clone <https://github.com/FamilySearch/GEDCOM.io/> into a local diretory
+2. From the directory containing this README, run
+
+    ````sh
+    make
+    python3 path/to/GEDCOM.io
+    ````
+3. From the GEDCOM.io directory
+    
+    1. `git add _pages/tag-def/*.md`
+    2. `git commit` and `git push`
+
 # Building -- how it works
 
 Getting from `gedcom.md` to `gedcom.pdf` is a multi-step process, all of which is handled by the `Makefile`:
