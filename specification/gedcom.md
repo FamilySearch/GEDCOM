@@ -20,7 +20,7 @@ copyright: |
     
     > NOTICE:
     > 
-    > This work comprises, is based on, or is derived from the FAMILYSEARCH GEDCOM™ Standard, © 1984-2021 Intellectual Reserve, Inc. All rights reserved.
+    > This work comprises, is based on, or is derived from the FAMILYSEARCH GEDCOM™ Specification, © 1984-2021 Intellectual Reserve, Inc. All rights reserved.
     >
     > "FAMILYSEARCH GEDCOM™" and "FAMILYSEARCH®" are trademarks of Intellectual Reserve, Inc. and may not be used except as allowed by the Apache 2.0 license that governs this work or as expressly authorized in writing and in advance by Intellectual Reserve, Inc.
     :::
