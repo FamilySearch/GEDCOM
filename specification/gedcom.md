@@ -846,7 +846,7 @@ The language datatype represents a human language or family of related languages
 It consists of a sequence of language subtags separated by hyphens,
 where language subtags are [registered by the IANA](https://www.iana.org/assignments/language-subtag-registry).
 
-The ABNF grammar for language tags is given in BPC 47, section 2.1, production `Language-Tag`.
+The ABNF grammar for language tags is given in BCP 47, section 2.1, production `Language-Tag`.
 
 The URI for the `Language` datatype is `xsd:Language`.
 
@@ -927,7 +927,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
     - `:M}` means "any number" -- 1 or more structures may appear.
         Unless otherwise specified, the first is the most-preferred value.
         If an application needs to display just 1 of several `NAME`s, `BIRT`s, etc, they should show the first such structure unless more specific selection criteria are available.
-    - `1:}` means "singular" -- at most 1 may appear; a second must not be present.
+    - `:1}` means "singular" -- at most 1 may appear; a second must not be present.
     
     Systems interested in violating the cardinality rules should instead create [extension structures](#extensions) with different cardinality.
 - Rule instantiation is indicated by the rule name in double angle-brackets (such as `<<`rule name`>>`) and a cardinality marker.
