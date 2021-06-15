@@ -1,8 +1,14 @@
 # Version 7.0.2
 
-- Clarified that inside a document stating "`1 VERS 7.0`" is sufficient but "`1 VERS 7.0.1`" is permitted
-- Update links to IETF documents
-- Corrected a few typos
+- Clarify that inside a document stating "`2 VERS 7.0`" is sufficient but "`2 VERS 7.0.1`" is permitted
+
+    Previously the document only said "the version number of the official specification that this document's data conforms to" which was ambiguous and could be interpreted in several ways.
+    The major number is needed to define the interpretation of present tags and the minor to define the set of tags included.
+    The patch number has no impact on the data itself, but may be included if desired.
+    
+- Update links to IETF documents to conform to recommendations from [RFC 7322](https://www.rfc-editor.org/rfc/rfc7322#section-4.8.6.2)
+
+- Correct a few typos
 
 # Version 7.0.1
 
