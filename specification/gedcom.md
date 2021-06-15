@@ -3515,6 +3515,8 @@ It is defined and changed by the creators of the product.
 #### `VERS` (Version) `g7:GEDC-VERS`
 
 The version number of the official specification that this document's data conforms to.
+This must include the major and minor version (for example, "`7.0`");
+it may include the patch as well (for example, "`7.0.1`"), but doing so is not required.
 See [A Guide to Version Numbers] for more.
 
 #### `WIDTH` (Width in pixels) `g7:WIDTH`
