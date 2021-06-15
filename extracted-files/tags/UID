@@ -13,7 +13,7 @@ descriptions:
     edits. If a globally-unique identifier for the record already exists, it
     should be used without modification, not even whitespace or letter case
     normalization. New globally unique identifiers should be created and
-    formatted as described in IETF RFC 4122.
+    formatted as described in RFC 4122.
     
     This is metadata about the structure itself, not data about its subject.
     Multiple structures describing different aspects of the same subject would

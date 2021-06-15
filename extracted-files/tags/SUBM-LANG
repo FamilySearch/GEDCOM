@@ -11,8 +11,7 @@ descriptions:
   - |
     A language the subject of that record understands.
     
-    The payload of the LANG structure is a language tag, as defined by IETF BCP
-    47.
+    The payload of the LANG structure is a language tag, as defined by BCP 47.
 
 payload: http://www.w3.org/2001/XMLSchema#Language
 

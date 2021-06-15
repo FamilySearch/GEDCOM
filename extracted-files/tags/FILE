@@ -10,8 +10,8 @@ descriptions:
   - File reference
   - |
     A reference to an external file. Syntactically, the payload is a URL, as
-    defined by IETF RFC 3986 and https://url.spec.whatwg.org/. However, only
-    some URLs may be used:
+    defined by RFC 3986 and https://url.spec.whatwg.org/. However, only some
+    URLs may be used:
     
     -   A URL with scheme ftp, http, or https refers to a web-accessible file.
     

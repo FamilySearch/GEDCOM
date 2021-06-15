@@ -1,3 +1,13 @@
+# Version 7.0.2
+
+- Clarified that inside a document stating "`1 VERS 7.0`" is sufficient but "`1 VERS 7.0.1`" is permitted
+- Update links to IETF documents
+- Corrected a few typos
+
+# Version 7.0.1
+
+- Corrected a mistake in the contributors section
+
 # Version 7.0.0
 
 As a major release and the first update to the specification in 20 years, there a many changes in this version.

@@ -10,7 +10,7 @@ descriptions:
   - Media type
   - |
     Indicates the media type of the payload of the superstructure, as defined
-    by IETF BCP 13.
+    by BCP 13.
     
     As of version 7.0, only 2 media types are supported by this structure:
     

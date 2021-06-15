@@ -12,8 +12,8 @@ descriptions:
     The human language of the superstructure. The language in which the
     Text-typed payloads of superstructure and its substructures appears.
     
-    The payload of the LANG structure is a language tag, as defined by IETF BCP
-    47. A registry of component subtags is maintained publicly by the IANA.
+    The payload of the LANG structure is a language tag, as defined by BCP 47.
+    A registry of component subtags is maintained publicly by the IANA.
 
 payload: http://www.w3.org/2001/XMLSchema#Language
 
