@@ -128,7 +128,7 @@ It is also recommended that they import data from subsequent minor versions by t
 
 ## URIs and Prefix Notation {.unnumbered}
 
-This document defines [Uniform Resource Identifiers (URIs)](https://tools.ietf.org/html/rfc3986) to unambiguously identify various concepts, including structure types, data types, calendars, enumerated values, and so on.
+This document defines [Uniform Resource Identifiers (URIs)](https://www.rfc-editor.org/info/rfc3986) to unambiguously identify various concepts, including structure types, data types, calendars, enumerated values, and so on.
 In a few places, existing URIs defined by other bodies are used, following the best practice that a new URI should not be introduced for a concept for which a URI is known.
 
 Rather than write out URIs in full, we use prefix notation:
@@ -176,8 +176,8 @@ Use of Unicode-aware processing and display libraries is recommended.
 
 Character-level grammars are specified in this document using
 Augmented Bakaus-Naur Form (ABNF)
-as defined in IETF STD 68 (<https://tools.ietf.org/html/std68>)
-and modified in IETF RFC 7405 (<https://tools.ietf.org/html/rfc7405>).
+as defined in STD 68 (<https://www.rfc-editor.org/info/std68>)
+and modified in RFC 7405 (<https://www.rfc-editor.org/info/rfc7405>).
 We use the term "production" to refer to an ABNF rule, supported by any other rules it references.
 
 :::note
@@ -842,17 +842,17 @@ The URI for the `PersonalName` datatype is `g7:type-Name`.
 
 ## Language
 
-The language datatype represents a human language or family of related languages, as defined by the IETF in [BCP 46](https://tools.ietf.org/html/bcp47).
+The language datatype represents a human language or family of related languages, as defined in [BCP 46](https://www.rfc-editor.org/info/bcp47).
 It consists of a sequence of language subtags separated by hyphens,
 where language subtags are [registered by the IANA](https://www.iana.org/assignments/language-subtag-registry).
 
-The ABNF grammar for language tags is given in BPC 47, section 2.1, production `Language-Tag`.
+The ABNF grammar for language tags is given in BCP 47, section 2.1, production `Language-Tag`.
 
 The URI for the `Language` datatype is `xsd:Language`.
 
 ## Media Type
 
-The media type datatype represents the encoding of information in bytes or characters, as defined by the IETF in [RFC 2045](https://tools.ietf.org/html/rfc2045) and [registered by the IANA](http://www.iana.org/assignments/media-types/).
+The media type datatype represents the encoding of information in bytes or characters, as defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045) and [registered by the IANA](http://www.iana.org/assignments/media-types/).
 
 The official grammar for media type is given in RFC 2045, section 5.1.
 However, that document does not give stand-alone ABNF, instead refering to registration rules and describing some components in English.
@@ -2516,7 +2516,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 #### `EMAIL` (Email) `g7:EMAIL`
 
 An electronic mail address, as defined by any relevant standard
-such as [RFC 3696](https://tools.ietf.org/html/rfc3696), [RFC 5321](https://tools.ietf.org/html/rfc5321), or [RFC 5322](https://tools.ietf.org/html/rfc5322).
+such as [RFC 3696](https://www.rfc-editor.org/info/rfc3696), [RFC 5321](https://www.rfc-editor.org/info/rfc5321), or [RFC 5322](https://www.rfc-editor.org/info/rfc5322).
 
 If an invalid email address is present upon import, it should be preserved as-is on export.
 
@@ -2643,13 +2643,13 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 A reference to an external file.
 Syntactically, the payload is a URL,
-as defined by [IETF RFC 3986](https://tools.ietf.org/html/rfc3986)
+as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986)
 and <https://url.spec.whatwg.org/>.
 However, only some URLs may be used:
 
 - A URL with scheme `ftp`, `http`, or `https` refers to a **web-accessible file**.
 
-- A URL with scheme `file` refers to a **machine-local file** as defined by [RFC 8089](https://tools.ietf.org/html/rfc8089). Machine-local files must not be used in [FamilySearch GEDZIP](#gedzip) nor when sharing datasets on the web or with unknown parties, but may be used for close collaboration between parties with known similar file structures.
+- A URL with scheme `file` refers to a **machine-local file** as defined by [RFC 8089](https://www.rfc-editor.org/info/rfc8089). Machine-local files must not be used in [FamilySearch GEDZIP](#gedzip) nor when sharing datasets on the web or with unknown parties, but may be used for close collaboration between parties with known similar file structures.
 
 - A URL with all of the following:
     - no scheme
@@ -2667,7 +2667,7 @@ The meaning of a `FILE` payload with any URL format not listed above is not defi
 #### `FORM` (Format) `g7:FORM`
 
 The media type of the file referenced by the superstructure.
-This should be a valid media type as defined by [IETF BCP 13](https://tools.ietf.org/html/bcp13).
+This should be a valid media type as defined by [BCP 13](https://www.rfc-editor.org/info/bcp13).
 A [registry of media types](https://www.iana.org/assignments/media-types/media-types.xhtml) is maintained publicly by the IANA.
 
 #### `FORM` (Format) `g7:PLAC-FORM`
@@ -2760,20 +2760,20 @@ See also `LDS_INDIVIDUAL_ORDINANCE`.
 The human language of the superstructure.
 The language in which the `Text`-typed payloads of superstructure and its substructures appears.
 
-The payload of the `LANG` structure is a language tag, as defined by [IETF BCP 47](https://tools.ietf.org/html/bcp47).
+The payload of the `LANG` structure is a language tag, as defined by [BCP 47](https://www.rfc-editor.org/info/bcp47).
 A [registry of component subtags](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) is maintained publicly by the IANA.
 
 #### `LANG` (Language) `g7:HEAD-LANG`
 
 The language in which the `Text`-typed payloads of all structures in the document appear, except as superseded by a `g7:LANG`.
 
-The payload of the `LANG` structure is a language tag, as defined by [IETF BCP 47](https://tools.ietf.org/html/bcp47).
+The payload of the `LANG` structure is a language tag, as defined by [BCP 47](https://www.rfc-editor.org/info/bcp47).
 
 #### `LANG` (Language) `g7:SUBM-LANG`
 
 A language the subject of that record understands.
 
-The payload of the `LANG` structure is a language tag, as defined by [IETF BCP 47](https://tools.ietf.org/html/bcp47).
+The payload of the `LANG` structure is a language tag, as defined by [BCP 47](https://www.rfc-editor.org/info/bcp47).
 
 #### `LATI` (Latitude) `g7:LATI`
 
@@ -2843,7 +2843,7 @@ An [enumerated value](#enum-MEDI) providing information about the media or the m
 #### `MIME` (Media type) `g7:MIME`
 
 Indicates the media type of the payload of the superstructure,
-as defined by [IETF BCP 13](https://tools.ietf.org/html/bcp13).
+as defined by [BCP 13](https://www.rfc-editor.org/info/bcp13).
 
 As of version 7.0, only 2 media types are supported by this structure:
 
@@ -3491,7 +3491,7 @@ However, this is not required and a different URI for the set of issued identifi
 A globally-unique identifier of the superstructure,
 to be preserved across edits.
 If a globally-unique identifier for the record already exists, it should be used without modification, not even whitespace or letter case normalization.
-New globally unique identifiers should be created and formatted as described in [IETF RFC 4122](https://tools.ietf.org/html/rfc4122).
+New globally unique identifiers should be created and formatted as described in [RFC 4122](https://www.rfc-editor.org/info/rfc4122).
 
 This is metadata about the structure itself, not data about its subject.
 Multiple structures describing different aspects of the same subject would have different `UID` values.
@@ -3542,8 +3542,8 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 A URL or other locator for a World Wide Web page,
 as defined by any relevant standard
 such as [whatwg/url](https://url.spec.whatwg.org/),
-[RFC 3986](https://tools.ietf.org/html/rfc3986),
-[RFC 3987](https://tools.ietf.org/html/rfc3987),
+[RFC 3986](https://www.rfc-editor.org/info/rfc3986),
+[RFC 3987](https://www.rfc-editor.org/info/rfc3987),
 and so forth.
 
 If an invalid or no longer existing web address is present upon import, it should be preserved as-is on export.
