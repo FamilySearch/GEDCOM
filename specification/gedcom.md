@@ -176,8 +176,8 @@ Use of Unicode-aware processing and display libraries is recommended.
 
 Character-level grammars are specified in this document using
 Augmented Bakaus-Naur Form (ABNF)
-as defined in STD 68 (<https://www.rfc-editor.org/info/std68>)
-and modified in RFC 7405 (<https://www.rfc-editor.org/info/rfc7405>).
+as defined in [STD 68](https://www.rfc-editor.org/info/std68)
+and modified in [RFC 7405](https://www.rfc-editor.org/info/rfc7405).
 We use the term "production" to refer to an ABNF rule, supported by any other rules it references.
 
 :::note
@@ -898,7 +898,7 @@ Lineage-linked data pertains to individuals linked in family relationships acros
 The genealogical structures defined in this chapter are based on the general framework of the container format and data types defined in Chapters 1 and 2.
 
 Historically, these genealogical structures were used as the only form approved for exchanging data with Ancestral File, TempleReady and other Family History resource files.
-Those systems were all replaced between 1999 and 2019, and GEDCOM-X (<https://gedcomx.org>) was introduced as the new syntax for communication with their replacements.
+Those systems were all replaced between 1999 and 2019, and [GEDCOM-X](https://gedcomx.org) was introduced as the new syntax for communication with their replacements.
 FamilySearch GEDCOM 7.0 and GEDCOM-X have similar expressive power,
 but as of 2021 GEDCOM is more common for exchanging single-researcher files between applications
 and GEDCOM-X is more common for transferring bulk data and communication directly between applications.
@@ -2644,7 +2644,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 A reference to an external file.
 Syntactically, the payload is a URL,
 as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986)
-and <https://url.spec.whatwg.org/>.
+and and the [WHATWG URL specification](https://url.spec.whatwg.org/).
 However, only some URLs may be used:
 
 - A URL with scheme `ftp`, `http`, or `https` refers to a **web-accessible file**.
@@ -3737,7 +3737,7 @@ It is often useful to transmit a dataset together with a set of external files.
 The FamilySearch GEDZIP 7.0 file format is provided for this purpose.
 Version 7.0 was the first version of GEDZIP released; the version number of a GEDZIP file is the same as the version number of the dataset it contains.
 
-A GEDZIP file is a zip archive, as defined by <http://www.pkware.com/appnote>
+A GEDZIP file is a zip archive, as defined by the [.ZIP File Format Specification](http://www.pkware.com/appnote)
 and standardized by [ISO/IEC 21320-1:2015](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=60101).
 
 Each GEDZIP file contains the following entries:
