@@ -592,7 +592,7 @@ If the structure is a record with no superstructure, or if its superstructure ty
 
 If the structure's superstructure type is not defined by this specification and this specification does define a structure type whose URI is the concatenation of `https://gedcom.io/terms/v7/` and the tag, then the structure is an extended-use standard structure and its structure type is given by that URI.
 
-Otherwise, no structure with that tag is permitted in that context and the dataset is invalid.
+Otherwise, no structure with that tag is permitted in that context and the dataset is invalid (but may be valid under a future minor version; see [A Guide to Version Numbers] for more).
 
 :::example
 Consider the following dataset
