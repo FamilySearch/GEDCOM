@@ -176,8 +176,8 @@ Use of Unicode-aware processing and display libraries is recommended.
 
 Character-level grammars are specified in this document using
 Augmented Bakaus-Naur Form (ABNF)
-as defined in [STD 68](https://www.rfc-editor.org/info/std68)
-and modified in [RFC 7405](https://www.rfc-editor.org/info/rfc7405).
+as defined in STD 68 (<https://www.rfc-editor.org/info/std68>)
+and modified in RFC 7405 (<https://www.rfc-editor.org/info/rfc7405>).
 We use the term "production" to refer to an ABNF rule, supported by any other rules it references.
 
 :::note
@@ -898,7 +898,7 @@ Lineage-linked data pertains to individuals linked in family relationships acros
 The genealogical structures defined in this chapter are based on the general framework of the container format and data types defined in Chapters 1 and 2.
 
 Historically, these genealogical structures were used as the only form approved for exchanging data with Ancestral File, TempleReady and other Family History resource files.
-Those systems were all replaced between 1999 and 2019, and [GEDCOM-X](https://gedcomx.org) was introduced as the new syntax for communication with their replacements.
+Those systems were all replaced between 1999 and 2019, and GEDCOM-X (<https://gedcomx.org>) was introduced as the new syntax for communication with their replacements.
 FamilySearch GEDCOM 7.0 and GEDCOM-X have similar expressive power,
 but as of 2021 GEDCOM is more common for exchanging single-researcher files between applications
 and GEDCOM-X is more common for transferring bulk data and communication directly between applications.
@@ -2642,16 +2642,14 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 #### `FILE` (File reference) `g7:FILE`
 
 A reference to an external file.
-Syntactically, the payload is a URL,
-as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986)
-and and the [WHATWG URL specification](https://url.spec.whatwg.org/).
-However, only some URLs may be used:
+Syntactically, the payload is a URI reference as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986), or a valid URL string as defined by <https://url.spec.whatwg.org/>. That is, it can be an absolute or relative URL, optionally with a fragment string.
+However, only the following URL types are used:
 
 - A URL with scheme `ftp`, `http`, or `https` refers to a **web-accessible file**.
 
 - A URL with scheme `file` refers to a **machine-local file** as defined by [RFC 8089](https://www.rfc-editor.org/info/rfc8089). Machine-local files must not be used in [FamilySearch GEDZIP](#gedzip) nor when sharing datasets on the web or with unknown parties, but may be used for close collaboration between parties with known similar file structures.
 
-- A URL with all of the following:
+- A URI reference with all of the following:
     - no scheme
     - not beginning with `/` (U+002F)
     - not containing any path segments equal to `..` (U+002E U+002E)
@@ -2659,10 +2657,16 @@ However, only some URLs may be used:
     - no query or fragment
     
     refers to a **local file**. If the dataset is part of a [GEDZIP file](#gedzip), the URL of the local file is a zip archive filename; otherwise, the URL of a local file is resolved with *base* equal to the directory containing the dataset.
+    
+    It is recommended that local files use the directory prefix `media/`, but doing so is not required.
 
-It is recommended that local files use the directory prefix `media/`, but doing so is not required.
+    For compatibility with [GEDZIP](#gedzip) and related formats, it is recommended that the following `FILE` payloads not be used:
+    
+    - `gedcom.ged`
+    - `MANIFEST.MF`
+    - any URL beginning `META-INF/`
 
-The meaning of a `FILE` payload with any URL format not listed above is not defined by this version of the specification, but may be defined in a subsequent version.
+The meaning of a `FILE` payload with any format not listed above is not defined by this version of the specification, but may be defined in a subsequent version.
 
 #### `FORM` (Format) `g7:FORM`
 
@@ -3737,7 +3741,7 @@ It is often useful to transmit a dataset together with a set of external files.
 The FamilySearch GEDZIP 7.0 file format is provided for this purpose.
 Version 7.0 was the first version of GEDZIP released; the version number of a GEDZIP file is the same as the version number of the dataset it contains.
 
-A GEDZIP file is a zip archive, as defined by the [.ZIP File Format Specification](http://www.pkware.com/appnote)
+A GEDZIP file is a zip archive, as defined by <http://www.pkware.com/appnote>
 and standardized by [ISO/IEC 21320-1:2015](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=60101).
 
 Each GEDZIP file contains the following entries:
@@ -3745,6 +3749,7 @@ Each GEDZIP file contains the following entries:
 - An entry with name `gedcom.ged` containing a data stream.
 
 - An entry for each *local file* `FILE` structure in `gedcom.ged`, with the same zip *file name* as the corresponding `FILE` payload.
+    If there is a local file named `gedcom.ged`, it must be renamed to a new unused filename with the same extension prior to constructing the GEDZIP.
 
 All file names inside a GEDZIP are case-sensitive.
 
