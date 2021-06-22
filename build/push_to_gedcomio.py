@@ -58,7 +58,7 @@ redirect-from:
 pdf = join(doc,'gedcom.pdf'), join(dst,'../../specifications','FamilySearchGEDCOMv7.pdf')
 html = join(doc,'gedcom.html'), join(dst,'../../specifications','FamilySearchGEDCOMv7.html')
 for f,t in pdf, html:
-    if exists(f) and getmtime(t) < getmtime(f):
+    if exists(f) and (not exists(t) or getmtime(t) < getmtime(f)):
         print('Updating', basename(t))
         copyfile(f, t)
         utime(t, (getmtime(f), getmtime(f)))

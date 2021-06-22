@@ -2642,16 +2642,14 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 #### `FILE` (File reference) `g7:FILE`
 
 A reference to an external file.
-Syntactically, the payload is a URL,
-as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986)
-and <https://url.spec.whatwg.org/>.
-However, only some URLs may be used:
+Syntactically, the payload is a URI reference as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986), or a valid URL string as defined by <https://url.spec.whatwg.org/>. That is, it can be an absolute or relative URL, optionally with a fragment string.
+However, only the following URL types are used:
 
 - A URL with scheme `ftp`, `http`, or `https` refers to a **web-accessible file**.
 
 - A URL with scheme `file` refers to a **machine-local file** as defined by [RFC 8089](https://www.rfc-editor.org/info/rfc8089). Machine-local files must not be used in [FamilySearch GEDZIP](#gedzip) nor when sharing datasets on the web or with unknown parties, but may be used for close collaboration between parties with known similar file structures.
 
-- A URL with all of the following:
+- A URI reference with all of the following:
     - no scheme
     - not beginning with `/` (U+002F)
     - not containing any path segments equal to `..` (U+002E U+002E)
@@ -2659,10 +2657,16 @@ However, only some URLs may be used:
     - no query or fragment
     
     refers to a **local file**. If the dataset is part of a [GEDZIP file](#gedzip), the URL of the local file is a zip archive filename; otherwise, the URL of a local file is resolved with *base* equal to the directory containing the dataset.
+    
+    It is recommended that local files use the directory prefix `media/`, but doing so is not required.
 
-It is recommended that local files use the directory prefix `media/`, but doing so is not required.
+    For compatibility with [GEDZIP](#gedzip) and related formats, the following `FILE` payloads must not be used:
+    
+    - `gedcom.ged`
+    - `MANIFEST.MF`
+    - any URL beginning `META-INF/`
 
-The meaning of a `FILE` payload with any URL format not listed above is not defined by this version of the specification, but may be defined in a subsequent version.
+The meaning of a `FILE` payload with any format not listed above is not defined by this version of the specification, but may be defined in a subsequent version.
 
 #### `FORM` (Format) `g7:FORM`
 
