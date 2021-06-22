@@ -580,6 +580,65 @@ In particular, those supporting extensions should keep in mind the following:
 
     </div>
 
+### Identifying structure types
+
+If a structure's tag is a documented extension tag, its structure type is defined by the URI given for that tag in the schema structure.
+
+If a structure's tag is an undocumented extension tag, its structure type is defined by that tag.
+
+If a structure's tag is a standard tag, its structure type depends on its superstructure type as follows:
+
+If the structure is a record with no superstructure, or if its superstructure type is defined in this specification; and if this specification lists a structure with that superstructure and that tag; then the structure type is given by this specification.
+
+If the structure's superstructure type is not defined by this specification and this specification does define a structure type whose URI is the concatenation of `https://gedcom.io/terms/v7/` and the tag, then the structure is an extended-use standard structure and its structure type is given by that URI.
+
+Otherwise, no structure with that tag is permitted in that context and the dataset is invalid.
+
+:::example
+Consider the following dataset
+
+```gedcom
+0 HEAD
+1 GEDC
+2 VERS 7.0
+1 SCHMA
+2 TAG _EX1 https://example.com/gedcom/myStructure
+2 TAG _EX2 https://gedcom.io/terms/v7/CHAN
+0 _EX1
+1 DATE 18 JUN 2021
+1 CHAN
+2 DATE 20 JUN 2021
+2 DATE 22 JUN 2021
+1 NAME Just an example
+2 TYPE with an error for clarity
+2 _EX3 and something undocumented
+2 _EX2
+3 DATE 24 JUN 2021
+0 TRLR
+```
+
+The structure types are as follows
+
+- header pseudostructure
+    - `g7:GEDC`
+        - `g7:GEDC-VERS`
+    - `g7:SCHMA`
+        - `g7:TAG`
+        - `g7:TAG`
+- `https://example.com/gedcom/myStructure` -- documented extension
+    - `g7:DATE` -- extended-use standard structure
+    - `g7:CHAN` -- extended-use standard structure
+        - `g7:DATE-exact` -- `DATE` tag substructure to a `g7:CHAN`
+        - identified as `g7:DATE-exact`, but an error because `CHAN`.`DATE` has cardinality `{1:1}`
+    - `g7:NAME` -- extended-use standard structure
+        - invalid: `g7:NAME` has no substructure with tag "`TYPE`"
+        - `_EX3` -- undocumented extension
+        - `g7:CHAN` -- documented extension
+            - `g7:DATE-exact` -- `DATE` tag substructure to a `g7:CHAN`
+- trailer pseudostructure
+:::
+
+
 ## Removing data
 
 There may be situations where data needs to be removed from a dataset, such as when a user requests its deletion or marks it as confidential and not for export.
