@@ -7,7 +7,7 @@ from subprocess import run
 
 def get_paths():
     """Parses command-line arguments, if present; else uses defaults"""
-    spec = join(dirname(argv[0]),'../specifications/gedcom.md') if len(argv) < 2 or not isfile(argv[1]) else argv[1]
+    spec = join(dirname(argv[0]),'../specification/gedcom.md') if len(argv) < 2 or not isfile(argv[1]) else argv[1]
     dest = join(dirname(argv[0]),'../extracted-files/tags')
     for arg in argv:
         if arg and isdir(arg):
@@ -281,6 +281,7 @@ if __name__ == '__main__':
     struct_lookup = []
     enum_lookup = []
     payload_lookup = []
+    cardinality_lookup = []
 
     for tag in g7:
         print('outputting', tag, '...', end=' ')
@@ -322,6 +323,7 @@ if __name__ == '__main__':
                         suri = expand_prefix(k,prefixes)
                         print('  "'+suri+'": "'+v+'"', file=fh)
                         struct_lookup.append([suri,ptag,uri])
+                        cardinality_lookup.append([suri,uri,v])
                 else:
                     print('\nsuperstructures: []', file=fh)
                     struct_lookup.append(['',ptag,uri])
@@ -335,6 +337,7 @@ if __name__ == '__main__':
         (struct_lookup, join(base,'substructures.tsv')),
         (enum_lookup, join(base,'enumerations.tsv')),
         (payload_lookup, join(base,'payloads.tsv')),
+        (cardinality_lookup, join(base,'cardinalities.tsv')),
     ]:
         print('outputting', name, '...', end=' ')
         with open(name, 'w') as f:
