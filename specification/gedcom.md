@@ -3741,7 +3741,7 @@ It is often useful to transmit a dataset together with a set of external files.
 The FamilySearch GEDZIP 7.0 file format is provided for this purpose.
 Version 7.0 was the first version of GEDZIP released; the version number of a GEDZIP file is the same as the version number of the dataset it contains.
 
-A GEDZIP file is a zip archive, as defined by [the .ZIP file format](http://www.pkware.com/appnote)
+A GEDZIP file is a zip archive, as defined by [the .ZIP File Format Specification](http://www.pkware.com/appnote)
 and standardized by [ISO/IEC 21320-1:2015](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=60101).
 
 Each GEDZIP file contains the following entries:
