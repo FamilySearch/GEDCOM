@@ -2642,7 +2642,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 #### `FILE` (File reference) `g7:FILE`
 
 A reference to an external file.
-Syntactically, the payload is a URI reference as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986), or a valid URL string as defined by [the WHATWG URL specification](https://url.spec.whatwg.org/).
+Syntactically, the payload is a URI reference as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986), or a valid URL string as defined by the [WHATWG URL specification](https://url.spec.whatwg.org/).
 That is, it can be an absolute or relative URL, optionally with a fragment string.
 However, only the following URL types are used:
 
