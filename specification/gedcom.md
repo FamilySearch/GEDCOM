@@ -1968,7 +1968,7 @@ n PLAC <List:Text>                         {1:1}  g7:PLAC
      +2 LATI <Special>                     {1:1}  g7:LATI
      +2 LONG <Special>                     {1:1}  g7:LONG
   +1 EXID <Special>                        {0:M}  g7:EXID
-     +2 TYPE <Text>                        {0:1}  g7:EXID-TYPE
+     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
