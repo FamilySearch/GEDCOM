@@ -484,20 +484,21 @@ The meaning of an undocumented extension tag is identified by its tag.
 
 ### Types of Extensions
 
-Inside a date payload, an extension tag may be used where the specification documents a calendar; extensions may also be used for the month and epoch.
-Use of a documented extension tag to indicate a calendar, month, or epoch in this specification is not recommended, but is permitted to enable forward compatibility with versions of this standard that add additional calendars.
+Inside a date payload, an extension tag may be used where the specification documents a calendar;
+if an extension calendar is used, extensions may also be used for the month and epoch.
+If a standard tag exists for a given calendar, month, or epoch, it should be used instead of an extension tag, but using an extension tag instead is permitted to enable forward compatibility with versions of this standard that add additional calendars.
 
 Inside an enumeration or list-of-enumeration payload, extension tags may be used to extend the set of permitted enumerated values in that context.
-Use of a documented extension tag to indicate an enumerated value in this specification is permitted, and can be used to include values not normally permitted as payloads of that structure.
+Documented extension tags with URIs of enumerated values in this document may be used and permit using values not normally permitted as payloads of their containing structure.
 Use of a documented extension tag to indicate a structure type, calendar or month as an enumerated value is also permitted, as for example is done by [SOUR.EVEN](#enum-SOUR.EVEN) and [NO](#enum-NO) in this specification.
 
 :::example
-The following is not allowed because `OTHER` is not defined as a value for `RESN`
+The following is not allowed because `OTHER` is not defined as a value for `ADOP`
 
 ```gedcom
 0 @BAD@ INDI
-1 RESN OTHER
-1 NOTE The above enumeration value is not allowed
+1 FAMC @F1@
+2 ADOP OTHER
 ```
 
 However, if the following had appeared in the header
@@ -507,22 +508,29 @@ However, if the following had appeared in the header
 2 TAG _OTHER https://gedcom.io/terms/v7/enum-OTHER
 ```
 
-then `_OTHER` would be permitted as a payload of `RESN`.
+then `_OTHER` would be permitted as a payload of `ADOP` (with the maning `OTHER` has in this specification: "A value not listed here; should have a `PHRASE` substructure")
+
+```gedcom
+0 @GOOD@ INDI
+1 FAMC @F1@
+2 ADOP _OTHER
+3 PHRASE As an heir of the estate
+```
 :::
 
 
-A **relocated standard structure** is a structure whose tag is a documented extension tag with a URI that is defined as a structure type in this specification.
+A **relocated standard structure** is a structure whose tag is a documented extension tag with a URI that identifies as a structure type in this specification.
 Regardless of its structure type, a relocated standard structure may appear as record, in the header, or with any structure type as its superstructure.
 It must abide by all of the other restrictions of its structure type.
 
 For forward compatibility with versions of this standard that add additional structure types, a relocated standard structure may be used where a standard structure is expected, but doing so is not recommended.
-When this specification refers to the order of or number of substructures of a given type, it means to the full set of standard structures and relocated standard structures;
-in particular, cardinality constraints apply to a structure type, regardless of tag.
+When this specification refers to the order or number of substructures of a given type, it means to the full set of standard structures and relocated standard structures;
+in particular, cardinality constraints are not changed by using relocated standard structures instead of standard structures.
 
 :::note
 There may be cases where an extension author wishes to allow multiple structures where this document allows only one.
 Because cardinality rules cannot be changed by extension,
-this requires introducing a new structure type with adjusted semantics semantics that give meaning to multiple instances.
+this requires introducing a new structure type with adjusted semantics that give meaning to multiple instances.
 
 :::example
 Suppose I have multiple sources that give different ages of the wife at a wedding; however, this specification allows only 1 `MARR`.`WIFE`.`AGE`. An extension could not include multiple `MARR`.`WIFE` nor `MARR`.`WIFE`.`AGE`, but could define a new extension `_AGE`, give it a URL, and provide the following definition of this extension structure type at that URL:
@@ -542,7 +550,8 @@ This alternate age extension structure could be used as follows:
 
 
 A **tagged extension structure** is a structure whose tag is either an undocumented extension tag or a documented extension tag with a URI not defined in this specification.
-This specification allows tagged extension structures as records, as substructures of the header, and as substructures of every structure type with unbounded cardinality.
+This specification allows tagged extension structures as records, in the header, and as substructures of every structure type, all with unbounded cardinality.
+Additional limitations on tagged extension structures are defined by the extension authors.
 
 A tagged extension structure may have any payload type, but all tagged extension structures with the same tag must have the same payload type.
 As an exception, if a tagged extension structure type appears both as a record and as a substructure, it may have one payload type as a record and a different payload type as a substructure provided that the substructure payload type is a pointer to the record.
@@ -558,7 +567,7 @@ If an application has determined (through knowledge outside of this specificatio
 1 _XYZ HUSB
 ```
 
-means individual `@1@` has an `_XYZ` value of [`g7:enum-HUSB`](#enum-ADOP). `g7:HUSB` is also defined by this specification, but `g7:HUSB` is earlier in the list of prefixes to try.
+means individual `@1@` has an `_XYZ` value of [`g7:enum-HUSB`](#enum-ADOP). `g7:HUSB` is also defined by this specification, but `g7:enum-` comes before `g7:` in the list of prefixes to try.
 :::
 
 An **extended-use standard structure** is a structure with a standard tag that is the substructure of either a a tagged extension structure or an extended-use standard structure.
