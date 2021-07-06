@@ -405,7 +405,13 @@ Each standard structure has
 - A payload type; if an enumeration, the set of allowed enumerated values
 - A meaning
 
-This specification also allows for several kinds of *extensions*, which can be used to loosen some of these requirements; extensions may
+Structures must obey all of these rules to conform to this specification.
+
+The recommended way to go beyond the set of standard structure types in this specification or to expand their usage is to submit a feature request at on the [FamilySearch GEDCOM development page](https://github.com/FamilySearch/GEDCOM/issues) so that the ramifications of the proposed addition and its interplay with other proposals may be discussed and the addition may be included in a subsequent version of this specification.
+
+This specification also allows for several kinds of *extensions*
+which go beyond this specification in various ways without being added to a subsequent version of the specification.
+Extensions may
 
 - introduce new structure types using *tagged extension structures*;
 - introduce new enumeration values and calendars;
