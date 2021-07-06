@@ -523,6 +523,8 @@ A **relocated standard structure** is a structure whose tag is a documented exte
 Regardless of its structure type, a relocated standard structure may appear as record, in the header, or with any structure type as its superstructure.
 It must abide by all of the other restrictions of its structure type.
 
+> Note: make it clearer about records and so on
+
 For forward compatibility with versions of this standard that add additional structure types, a relocated standard structure may be used where a standard structure is expected, but doing so is not recommended.
 When this specification refers to the order or number of substructures of a given type, it means to the full set of standard structures and relocated standard structures;
 in particular, cardinality constraints are not changed by using relocated standard structures instead of standard structures.
@@ -553,24 +555,9 @@ A **tagged extension structure** is a structure whose tag is either an undocumen
 This specification allows tagged extension structures as records, in the header, and as substructures of every structure type, all with unbounded cardinality.
 Additional limitations on tagged extension structures are defined by the extension authors.
 
-A tagged extension structure may have any payload type, but all tagged extension structures with the same tag must have the same payload type.
-As an exception, if a tagged extension structure type appears both as a record and as a substructure, it may have one payload type as a record and a different payload type as a substructure provided that the substructure payload type is a pointer to the record.
+A tagged extension structure may have any payload type. It is recommended that all tagged extension structures with the same tag should have the same payload type, but for backwards compatibility with extensions authored before 7.0, that limitation is not required.
 
-If a tagged extension structure has an enumerated value payload type, it may use some standard tags in its payload.
-The URI of a standard tag used as the payload of enumerated value in a tagged extension structure is created by concatenating one of the following prefixes to the tag: `g7:enum-`, `g7:`, `g7:cal-`, or `g7:month-`. If multiple of these yield a URI defined in this specification, the first one that does is used. If none of these yields a URI defined in this specification, the payload is not permitted as an numerated value.
-
-:::example
-If an application has determined (through knowledge outside of this specification) that tagged extension structures with tag `_XYZ` have enumerated value payloads, then the following data
-
-```gedcom
-0 @1@ INDI
-1 _XYZ HUSB
-```
-
-means individual `@1@` has an `_XYZ` value of [`g7:enum-HUSB`](#enum-ADOP). `g7:HUSB` is also defined by this specification, but `g7:enum-` comes before `g7:` in the list of prefixes to try.
-:::
-
-An **extended-use standard structure** is a structure with a standard tag that is the substructure of either a a tagged extension structure or an extended-use standard structure.
+An **extended-use standard structure** is a structure with a standard tag that is the substructure of either a tagged extension structure or an extended-use standard structure.
 If the superstructure type of the extended-use standard structure defines a substructure type with the extended-use standard structure's tag, the extended-use standard structure's type is that type;
 otherwise, the extended-use standard structure's type is identified by the URI created by concatenating the prefix `g7:` to its tag.
 If neither of those results in a structure type defined in this specification, an extended-use standard structure with this tag is not permitted in this context.
@@ -594,7 +581,7 @@ Consider the following example, based on the [GEDCOM-L Addendum to the GEDCOM 5.
 
 This example uses the following features of the extension system:
 
-- `_LOC` is used as a record with no payload and as a substructure with a payload pointing to that record.
+- `_LOC` is used both with and without a pointer payload, which is not recommended but is permitted.
 
 - `NAME`'s superstructure is a tagged extension structure, making it an extended-use standard structure with URI `https://gedcom.io/terms/v7/NAME`. As such, its payload type is text and its meaning is "The name of the superstructure’s subject, represented as a simple string."
 
@@ -613,7 +600,6 @@ for example, none of the following are permitted:
 - Omitting a substructure listed with cardinality `{1:1}` or `{1:M}`.
 - Including multiple substructures of a type listed with cardinality `{0:1}` or `{1:1}`, whether as standard structures, relocated standard structures, or extended-use standard structures.
 - A standard structure having a substructure with a standard tag that is not documented as a substructure of that structure type in this specification.
-- A single extension structure type appearing as a substructure with a pointer payload in some contexts and a text payload in others.
 
 ### Requirements and Recommendations
 
