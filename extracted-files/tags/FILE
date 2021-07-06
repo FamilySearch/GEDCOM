@@ -10,10 +10,10 @@ descriptions:
   - File reference
   - |
     A reference to an external file. Syntactically, the payload is a URI
-    reference as defined by RFC 3986, or a valid URL string as defined by
-    https://url.spec.whatwg.org/. That is, it can be an absolute or relative
-    URL, optionally with a fragment string. However, only the following URL
-    types are used:
+    reference as defined by RFC 3986, or a valid URL string as defined by the
+    WHATWG URL specification. That is, it can be an absolute or relative URL,
+    optionally with a fragment string. However, only the following URL types
+    are used:
     
     -   A URL with scheme ftp, http, or https refers to a web-accessible file.
     

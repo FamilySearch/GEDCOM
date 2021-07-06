@@ -1,3 +1,12 @@
+# Working draft
+
+-  Significant expansion to section 1.5 "Extensions" to more fully specify the meaning of "extended-use standard tag" and clarify various other rules that were implicit or not mentioned in previous versions.
+-  Clarify that `OBJE`.`FILE` payload `gedcom.ged` is incompatible with GEDZIP and must be renamed if present when creating a GEDZIP
+-  Correct URI/URL terminology
+-  Fix a typo in `PLAC`.`EXID`.`TYPE` -- URI is `g7:EXID-TYPE` and payload is `<Special>`, like other `EXID`.`TYPE`s
+-  Update link format used in the specification
+
+
 # Version 7.0.2
 
 - Clarify that inside a document stating "`2 VERS 7.0`" is sufficient but "`2 VERS 7.0.1`" is permitted

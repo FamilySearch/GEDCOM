@@ -24,7 +24,6 @@ payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:
   "https://gedcom.io/terms/v7/EXID-TYPE": "{0:1}"
-  "https://gedcom.io/terms/v7/TYPE": "{0:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7/PLAC": "{0:M}"
