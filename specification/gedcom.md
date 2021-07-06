@@ -548,7 +548,7 @@ A tagged extension structure may have any payload type, but all tagged extension
 As an exception, if a tagged extension structure type appears both as a record and as a substructure, it may have one payload type as a record and a different payload type as a substructure provided that the substructure payload type is a pointer to the record.
 
 If a tagged extension structure has an enumerated value payload type, it may use some standard tags in its payload.
-The URI of a standard tag used as the payload of enuemrated value in a tagged extension structure is created by concatenating one of the following prefixes to the tag: `g7:enum-`, `g7:`, `g7:cal-`, or `g7:month-`. If multiple of these yield a URI defined in this specification, the first one that does is used. If none of these yields a URI defined in this specification, the payload is not permitted as an numerated value.
+The URI of a standard tag used as the payload of enumerated value in a tagged extension structure is created by concatenating one of the following prefixes to the tag: `g7:enum-`, `g7:`, `g7:cal-`, or `g7:month-`. If multiple of these yield a URI defined in this specification, the first one that does is used. If none of these yields a URI defined in this specification, the payload is not permitted as an numerated value.
 
 :::example
 If an application has determined (through knowledge outside of this specification) that tagged extension structures with tag `_XYZ` have enumerated value payloads, then the following data
