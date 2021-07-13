@@ -64,7 +64,6 @@ superstructures:
   "https://gedcom.io/terms/v7/EDUC": "{0:1}"
   "https://gedcom.io/terms/v7/EMIG": "{0:1}"
   "https://gedcom.io/terms/v7/ENGA": "{0:1}"
-  "https://gedcom.io/terms/v7/EXID": "{0:1}"
   "https://gedcom.io/terms/v7/FAM-CENS": "{0:1}"
   "https://gedcom.io/terms/v7/FAM-EVEN": "{1:1}"
   "https://gedcom.io/terms/v7/FAM-FACT": "{1:1}"

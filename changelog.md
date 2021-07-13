@@ -1,3 +1,15 @@
+# Version 7.0.3
+
+- Clarify the use of CONT as an escaped new-line that looks like a substructure of the first line of text
+
+- Clarify that "`FILE gedcom.ged`" is incompatible with GEDZIP
+
+- Fix typos in PLAC.EXID to match other EXIDs
+
+- Fix incorrect example using NAME.LANG
+
+- Standardize use of links and references to IETF documents
+
 # Version 7.0.2
 
 - Clarify that inside a document stating "`2 VERS 7.0`" is sufficient but "`2 VERS 7.0.1`" is permitted
