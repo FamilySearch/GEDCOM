@@ -593,7 +593,7 @@ This example uses the following features of the extension system:
 
 - Although `g7:NAME` has limited cardinality each place it appears in this specification, none of those locations are inside a `_LOC` so having two `g7:NAME` in one `_LOC` is permitted.
 
-- `DATE`'s superstructure is an extended-use standard structure, making it is an extended-use standard structure with URI `https://gedcom.io/terms/v7/DATE`. As such, its payload type and meaning are defined as "The principle date of the subject of the superstructure. The payload is a `DateValue`."
+- `DATE`'s superstructure is an extended-use standard structure, making it an extended-use standard structure with URI `https://gedcom.io/terms/v7/DATE`. As such, its payload type and meaning are defined as "The principal date of the subject of the superstructure. The payload is a `DateValue`."
 
 - Although `g7:NAME` has no substructure of type `g7:DATE` in this specification, extended-use standard structures can appear in any superstructure so having a `_LOC`.`NAME`.`DATE` is OK even though having a `SUBM`.`NAME`.`DATE` is not.
 :::
