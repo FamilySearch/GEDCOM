@@ -525,7 +525,7 @@ then `_OTHER` would be permitted as a payload of `ADOP` (with the maning `OTHER`
 :::
 
 
-A **relocated standard structure** is a structure whose tag is a documented extension tag with a URI that identifies as a structure type in this specification.
+A **relocated standard structure** is a structure whose tag is a documented extension tag with a URI that identifies it as a structure type in this specification.
 Regardless of its structure type, a relocated standard structure may appear as record, in the header, or with any structure type as its superstructure.
 It must abide by all of the other restrictions of its structure type.
 
