@@ -1,6 +1,6 @@
 ---
 title: The FamilySearch GEDCOM Specification
-subtitle: 7.0.2
+subtitle: 7.0.3
 email: GEDCOM@ChurchOfJesusChrist.org
 copyright: |
     :::{style="page-break-after: always;page-break-before: always;"}
@@ -336,11 +336,16 @@ All characters in a payload must be preserved in the corresponding line value, i
 
 Each line is ended by a **line terminator** matching production `EOL`. A line terminator may be a carriage return U+000D, line feed U+000A, or a carriage return followed by a line feed. The same line terminator should be used on every line of a given document.
 
-Line values cannot contain internal line terminators, but some payloads can. If a payload contains a line terminator, the payload is split on the line terminators into several payloads. The first of these split payloads is encoded as the line value of the structure's line, and each subsequent split payload is encoded as the line value of a **line continuation** pseudo-structure of the structure.
+Line values cannot contain internal line terminators, but some payloads can.
+If a payload contains a line terminator, the payload is split on the line terminators into several payloads.
+The first of these split payloads is encoded as the line value of the structure's line,
+and each subsequent split payload is encoded as the line value of a **line continuation** pseudo-structure placed immediately following, and with one greater level than, the structure's line.
 The tag of a line continuation pseudo-structure is `CONT`.
 The order of the line continuation pseudo-structures matches the order of the lines of text in the payload.
 
-Line continuation pseudo-structures are not considered to be structures nor to be part of a structure's collection of substructures. They must appear immediately following the line whose payload they are encoding and before any other line.
+Line continuation pseudo-structures are not considered to be structures.
+While they match production `Line` and their level and position makes them appear to be substructures of the structure, they are actually a continuation of the encoding of the structure's payload and are not part of a structure's collection of substructures.
+They must appear immediately following the line whose payload they are encoding and before any other line.
 
 Because line terminators in payloads are encoded using line continuations, it is not possible to distinguish between U+000D and U+000A in payloads.
 
@@ -2554,7 +2559,7 @@ with substructures providing additional details about the source (not the export
 
 #### `DATE` (Date) `g7:DATE`
 
-The principle date of the subject of the superstructure.
+The principal date of the subject of the superstructure.
 The payload is a `DateValue`.
 
 #### `DATE` (Date) `g7:DATE-exact`
@@ -3443,7 +3448,6 @@ The following presents a name in Mandarin, transliterated using Pinyin
 
 ```gedcom
 1 NAME /孔/德庸
-2 LANG zh
 2 GIVN 德庸
 2 SURN 孔
 2 TRAN /Kǒng/ Déyōng

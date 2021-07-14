@@ -1,11 +1,18 @@
 # Working draft
 
 -  Significant expansion to section 1.5 "Extensions" to more fully specify the meaning of "extended-use standard tag" and clarify various other rules that were implicit or not mentioned in previous versions.
--  Clarify that `OBJE`.`FILE` payload `gedcom.ged` is incompatible with GEDZIP and must be renamed if present when creating a GEDZIP
--  Correct URI/URL terminology
--  Fix a typo in `PLAC`.`EXID`.`TYPE` -- URI is `g7:EXID-TYPE` and payload is `<Special>`, like other `EXID`.`TYPE`s
--  Update link format used in the specification
 
+# Version 7.0.3
+
+- Clarify the use of CONT as an escaped new-line that looks like a substructure of the first line of text
+
+- Clarify that "`FILE gedcom.ged`" is incompatible with GEDZIP
+
+- Fix typos in PLAC.EXID to match other EXIDs
+
+- Fix incorrect example using NAME.LANG
+
+- Standardize use of links vs URLs
 
 # Version 7.0.2
 
