@@ -507,7 +507,7 @@ The following is not allowed because `OTHER` is not defined as a value for `ADOP
 2 ADOP OTHER
 ```
 
-However, if the following had appeared in the header
+However, if the following had appeared in the header:
 
 ```gedcom
 1 SCHMA
