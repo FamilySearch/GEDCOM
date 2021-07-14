@@ -407,7 +407,7 @@ Each standard structure has
 
 Structures must obey all of these rules to conform to this specification.
 
-The recommended way to go beyond the set of standard structure types in this specification or to expand their usage is to submit a feature request at on the [FamilySearch GEDCOM development page](https://github.com/FamilySearch/GEDCOM/issues) so that the ramifications of the proposed addition and its interplay with other proposals may be discussed and the addition may be included in a subsequent version of this specification.
+The recommended way to go beyond the set of standard structure types in this specification or to expand their usage is to submit a feature request on the [FamilySearch GEDCOM development page](https://github.com/FamilySearch/GEDCOM/issues) so that the ramifications of the proposed addition and its interplay with other proposals may be discussed and the addition may be included in a subsequent version of this specification.
 
 This specification also allows for several kinds of *extensions*
 which go beyond this specification in various ways without being added to a subsequent version of the specification.
