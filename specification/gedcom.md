@@ -415,8 +415,8 @@ Extensions may
 
 - introduce new structure types using *tagged extension structures*;
 - introduce new enumeration values and calendars;
-- place a structure defined in this specification in a new location as *relocated standard structures* and *extended-use standard structures*;.
-- place an enumerated value defined in this specification in a new location using extension tags
+- place a structure defined in this specification in a new location as *relocated standard structures* and *extended-use standard structures*;
+- place an enumerated value defined in this specification in a new location using extension tags.
 
 Extensions *cannot* change the cardinality, payload type, or meaning of any structure type, enumerated value, or date defined in this specification.
 
