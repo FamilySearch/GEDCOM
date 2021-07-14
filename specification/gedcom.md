@@ -2463,7 +2463,7 @@ with substructures providing additional details about the source (not the export
 
 #### `DATE` (Date) `g7:DATE`
 
-The principle date of the subject of the superstructure.
+The principal date of the subject of the superstructure.
 The payload is a `DateValue`.
 
 #### `DATE` (Date) `g7:DATE-exact`
