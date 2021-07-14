@@ -399,11 +399,11 @@ as described in [Extensions].
 The structures documented in this specification are called **standard structures**.
 Each standard structure has
 
-- A structure type, identified by a URI
-- A set of locations where it may appear (as a record or as a substructure of a set of superstructure types), with a permitted cardinality in each location
-- A set of substructures it may contain, with a permitted cardinality for each
-- A payload type; if an enumeration, the set of allowed enumerated values
-- A meaning
+- A structure type, identified by a URI;
+- A set of locations where it may appear (as a record or as a substructure of a set of superstructure types), with a permitted cardinality in each location;
+- A set of substructures it may contain, with a permitted cardinality for each;
+- A payload type; if an enumeration, the set of allowed enumerated values;
+- A meaning.
 
 Structures must obey all of these rules to conform to this specification.
 
