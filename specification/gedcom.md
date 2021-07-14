@@ -496,7 +496,7 @@ If a standard tag exists for a given calendar, month, or epoch, it should be use
 
 Inside an enumeration or list-of-enumeration payload, extension tags may be used to extend the set of permitted enumerated values in that context.
 Documented extension tags with URIs of enumerated values in this document may be used and permit using values not normally permitted as payloads of their containing structure.
-Use of a documented extension tag to indicate a structure type, calendar or month as an enumerated value is also permitted, as for example is done by [SOUR.EVEN](#enum-SOUR.EVEN) and [NO](#enum-NO) in this specification.
+Use of a documented extension tag to indicate a structure type, calendar, or month as an enumerated value is also permitted, as for example is done by [SOUR.EVEN](#enum-SOUR.EVEN) and [NO](#enum-NO) in this specification.
 
 :::example
 The following is not allowed because `OTHER` is not defined as a value for `ADOP`
