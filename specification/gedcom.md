@@ -519,7 +519,7 @@ However, if the following had appeared in the header:
 2 TAG _OTHER https://gedcom.io/terms/v7/enum-OTHER
 ```
 
-then `_OTHER` would be permitted as a payload of `ADOP` (with the maning `OTHER` has in this specification: "A value not listed here; should have a `PHRASE` substructure")
+then `_OTHER` would be permitted as a payload of `ADOP` (with the meaning `OTHER` has in this specification: "A value not listed here; should have a `PHRASE` substructure")
 
 ```gedcom
 0 @GOOD@ INDI
