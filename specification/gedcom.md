@@ -532,7 +532,7 @@ It must abide by all of the other restrictions of its structure type.
 > Note: make it clearer about records and so on
 
 For forward compatibility with versions of this standard that add additional structure types, a relocated standard structure may be used where a standard structure is expected, but doing so is not recommended.
-When this specification refers to the order or number of substructures of a given type, it means to the full set of standard structures and relocated standard structures;
+When this specification refers to the order or number of substructures of a given type, it means the full set of standard structures and relocated standard structures;
 in particular, cardinality constraints are not changed by using relocated standard structures instead of standard structures.
 
 :::note
