@@ -519,7 +519,7 @@ However, if the following had appeared in the header:
 2 TAG _OTHER https://gedcom.io/terms/v7/enum-OTHER
 ```
 
-then `_OTHER` would be permitted as a payload of `ADOP` (with the meaning `OTHER` has in this specification: "A value not listed here; should have a `PHRASE` substructure")
+then `_OTHER` would be permitted as a payload of `ADOP` (and elsewhere) with the meaning `OTHER` has in this specification: "A value not listed here; should have a `PHRASE` substructure", like so:
 
 ```gedcom
 0 @GOOD@ INDI
@@ -534,7 +534,9 @@ A **relocated standard structure** is a structure whose tag is a documented exte
 Regardless of its structure type, a relocated standard structure may appear as a record, in the header, or with any structure type as its superstructure.
 It must abide by all of the other restrictions of its structure type.
 
-> Note: make it clearer about records and so on
+:::note
+One of those restrictions is the meaning of the structure. Although relocated standard structures may appear as records or substructures, if their meaning descriptions refer to their superstructure they can't both satisfy that meaning and appear as a record.
+:::
 
 For forward compatibility with versions of this standard that add additional structure types, a relocated standard structure may be used where a standard structure is expected, but doing so is not recommended.
 When this specification refers to the order or number of substructures of a given type, it means the full set of standard structures and relocated standard structures;
@@ -542,7 +544,7 @@ in particular, cardinality constraints are not changed by using relocated standa
 
 :::note
 There may be cases where an extension author wishes to allow multiple structures where this document allows only one.
-Because cardinality rules cannot be changed by extension,
+Because cardinality rules cannot be changed by an extension,
 this requires introducing a new structure type with adjusted semantics that give meaning to multiple instances.
 
 :::example
@@ -592,7 +594,7 @@ Consider the following example, based on the [GEDCOM-L Addendum to the GEDCOM 5.
 
 This example uses the following features of the extension system:
 
-- `_LOC` is used both with and without a pointer payload, which is not recommended but is permitted.
+- `_LOC` is used both as a record without a pointer payload and as a substructure with a pointer payload, which is permitted.
 
 - `NAME`'s superstructure is a tagged extension structure, making it an extended-use standard structure with URI `https://gedcom.io/terms/v7/NAME`. As such, its payload type is text and its meaning is "The name of the superstructure’s subject, represented as a simple string."
 
