@@ -402,16 +402,57 @@ as described in [Extensions].
 
 A **standard structure** is a structure whose type, tag, meaning, superstructure, and cardinality within the superstructure are described in this document. This includes records such as `INDI` and substructures such as `INDI`.`NAME`.
 
-Two forms of **extension structures** are permitted:
+A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure. Their meaning is defined by their tag, as is discussed more fully in the section [Extension Tags].
 
-- A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure.
-- An **extended-use standard structure** is a structure whose type, tag, and meaning are defined in this document and whose superstructure is a tagged extension structure.
+Any substructure of a tagged extension structure that uses a tag matching `stdTag` is an **extension-defined substructure**.
+Substructures of an extension-defined substructure that uses a tag matching `stdTag` are also extension-defined substructures.
+The meaning and use of each extension-defined substructure is defined by the tagged extension structure it occurs within, not by its tag alone nor by this specification.
 
-Extension structures may have substructures, which may be either tagged extension structures of extended-use standard structures.
+:::example
+In the following
+
+```gedcom
+0 @P1@ _LOC
+1 NAME Βυζάντιον
+2 DATE FROM 667 BCE TO 324
+1 _POP 15149358
+2 DATE 31 DEC 2020
+0 @I1@ INDI
+1 BIRT
+2 _LOC @P1@
+```
+
+- Both `_LOC` are tagged extension structures, as is `_POP`.
+- `_LOC`.`NAME` and `_LOC`.`NAME`.`DATE` are both extension-defined substructures. Their meaning is defined by the specification defining `_LOC`.
+- `_POP`.`DATE` is an extension-defined substructure. Its meaning is defined by the specification defining `_POP`.
+- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended datatype without consulting the defining specifications of `_LOC` and `_POP`, respectively.
+:::
+
+As a special case, a tagged extension structure can be defined to have a standard structure type.
+These are called **relocated standard structures** and can only appear with superstructures that are not documented as a superstructure of that structure type in this specification.
+The extension-defined substructures of a relocated standard structure are the substructure types documented in this specification for that structure type, including usual limitations on cardinality, payloads, substructures, etc.
+
+:::example
+Suppose `_DR` is defined to mean a `g7:DATE` (using a [documented extension tag](#extension-tags)). Then in the following
+
+```gedcom
+0 @I1@ INDI
+1 NAME John /Doe/
+2 _DR FROM 6 APR 1917 TO 11 NOV 1918
+3 PHRASE During America's involvement in the Great War
+1 BIRT
+2 PLAN Queens, New York, New York, USA
+```
+
+- `_DR` is a relocated standard structure with type `g7:DATE`, with the usual payload type and meaning of a `g7:DATE`.
+- `PHRASE` is the structure type expected with that tag as a substructure of `g7:DATE`: namely, `g7:PHRASE`.
+- `_DR` can not be used as a substructure of `BIRT` because `BIRT` has a documented `g7:DATE` substructure with tag `DATE`.
+- `BIRT` can not be used as a substructure of `_DR` or `_DR`.`PHRASE` because neither structure type has a documented substructure with tag `BIRT`.
+:::
 
 All other non-standard structures are prohibited. Examples of prohibited structures include, but are not limited to,
 
-- any structure with a tag matching production `stdTag` that is not defined in this document;
+- a record or substructure of a standard structure using a tag matching production `stdTag` that is not defined in this document;
 - any substructure with cardinality `{0:1}` appearing more than once;
 - a standard substructure appearing as a record or vice-versa;
 - a standard structure whose payload does not match the requirements of this document.
@@ -523,7 +564,7 @@ The meaning of an undocumented extension tag is identified by its tag.
 - It is recommended that each documented extension tag's URI be unique within the document.
 - It is recommended that extension creators use URLs as their URIs
 and serve a page describing the meaning of an extension at its URL.
-- It is recommended that extensions use extended-use standard structures instead of tagged extension structures if extended-use standard structures will suffice.
+- It is recommended that extensions use relocated standard structures instead of tagged extension structures if relocated standard structures will suffice.
 
 Future versions may include additional recommendations relating to documentation, machine-readable documentation, or embedded metadata about extensions within the schema.
 
