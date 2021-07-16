@@ -433,21 +433,21 @@ These are called **relocated standard structures** and can only appear with supe
 The extension-defined substructures of a relocated standard structure are the substructure types documented in this specification for that structure type, including usual limitations on cardinality, payloads, substructures, etc.
 
 :::example
-Suppose `_DR` is defined to mean a `g7:DATE` (using a [documented extension tag](#extension-tags)). Then in the following
+Suppose `_DATE` is defined to mean a `g7:DATE` (using a [documented extension tag](#extension-tags)). Then in the following
 
 ```gedcom
 0 @I1@ INDI
 1 NAME John /Doe/
-2 _DR FROM 6 APR 1917 TO 11 NOV 1918
+2 _DATE FROM 6 APR 1917 TO 11 NOV 1918
 3 PHRASE During America's involvement in the Great War
 1 BIRT
 2 PLAN Queens, New York, New York, USA
 ```
 
-- `_DR` is a relocated standard structure with type `g7:DATE`, with the usual payload type and meaning of a `g7:DATE`.
+- `_DATE` is a relocated standard structure with type `g7:DATE`, with the usual payload type and meaning of a `g7:DATE`.
 - `PHRASE` is the structure type expected with that tag as a substructure of `g7:DATE`: namely, `g7:PHRASE`.
-- `_DR` can not be used as a substructure of `BIRT` because `BIRT` has a documented `g7:DATE` substructure with tag `DATE`.
-- `BIRT` can not be used as a substructure of `_DR` or `_DR`.`PHRASE` because neither structure type has a documented substructure with tag `BIRT`.
+- `_DATE` can not be used as a substructure of `BIRT` because `BIRT` has a documented `g7:DATE` substructure with tag `DATE`.
+- `BIRT` can not be used as a substructure of `_DATE` or `_DATE`.`PHRASE` because neither structure type has a documented substructure with tag `BIRT`.
 :::
 
 All other non-standard structures are prohibited. Examples of prohibited structures include, but are not limited to,
