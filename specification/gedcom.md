@@ -569,12 +569,12 @@ Additional limitations on tagged extension structures are defined by the extensi
 A tagged extension structure may have any payload type. It is recommended that all tagged extension structures with the same tag should have the same payload type, but for backwards compatibility with extensions authored before 7.0, that limitation is not required.
 
 An **extended-use standard structure** is a structure with a standard tag that is the substructure of either a tagged extension structure or an extended-use standard structure.
-If the superstructure type of the extended-use standard structure defines a substructure type with the extended-use standard structure's tag, the extended-use standard structure's type is that type;
-otherwise, the extended-use standard structure's type is identified by the URI created by concatenating the prefix `g7:` to its tag.
+The structure type of an extended-use standard structure is defined by its tag and its superstructure's type.
+If this specification defines a structure type with the same tag and superstructure type, the extended-use standard structure has that type.
+Otherwise, the extended-use standard structure's type is identified by the URI created by concatenating the prefix `g7:` to its tag.
 If neither of those results in a structure type defined in this specification, an extended-use standard structure with this tag is not permitted in this context.
 
-Extended-use standard structures follow the same rules as relocated standard structures: they may appear as the substructure of any structure type but abide by all other restrictions of their structure type.
-Because their substructures are also extended-use standard structures (or other forms of extension), limitations on their set of permitted substructures also do not apply, but any cardinality constraints on specific substructure types do apply.
+Like relocated standard structures, extended-use standard structures may violate this specifications usual restrictions on superstructure and substructure types, but must abide by all other restrictions on their structure type, including any cardinality constraints.
 
 :::example
 Consider the following example, based on the [GEDCOM-L Addendum to the GEDCOM 5.5.1 specification](https://genealogy.net/GEDCOM/)
@@ -600,7 +600,7 @@ This example uses the following features of the extension system:
 
 - `DATE`'s superstructure is an extended-use standard structure, making it an extended-use standard structure with URI `https://gedcom.io/terms/v7/DATE`. As such, its payload type and meaning are defined as "The principal date of the subject of the superstructure. The payload is a `DateValue`."
 
-- Although `g7:NAME` has no substructure of type `g7:DATE` in this specification, extended-use standard structures can appear in any superstructure so having a `_LOC`.`NAME`.`DATE` is OK even though having a `SUBM`.`NAME`.`DATE` is not.
+- Note that `g7:NAME` has no substructure of type `g7:DATE` in this specification; thus while `_LOC`.`NAME`.`DATE` is permitted as extended-use, `SUBM`.`NAME`.`DATE` is not extended-use and thus is not permitted.
 :::
 
 No other extensions are permitted by this specification;
