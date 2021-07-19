@@ -428,6 +428,12 @@ In the following
 - Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended datatype without consulting the defining specifications of `_LOC` and `_POP`, respectively.
 :::
 
+If an extension-defined substructure has a tag that is also used by one or more standard structures, its meaning should be similar to the meaning of those standard structures.
+
+:::example
+An extension-defined substructure with tag "`DATE`" should provide a date or date period relevant to its superstructure, as do all `DATE`-tagged structures in this specification. Extensions should not use "`DATE`" to tag a structure describing anything else (even something that might reasonably be abbreviated "date", such as someone an individual dated).
+:::
+
 As a special case, a tagged extension structure can be defined to have a standard structure type.
 These are called **relocated standard structures** and can only appear with superstructures that are not documented as a superstructure of that structure type in this specification.
 The extension-defined substructures of a relocated standard structure are the substructure types documented in this specification for that structure type, including usual limitations on cardinality, payloads, substructures, etc.
@@ -441,7 +447,7 @@ Suppose `_DATE` is defined to mean a `g7:DATE` (using a [documented extension ta
 2 _DATE FROM 6 APR 1917 TO 11 NOV 1918
 3 PHRASE During America's involvement in the Great War
 1 BIRT
-2 PLAN Queens, New York, New York, USA
+2 PLAC Queens, New York, New York, USA
 ```
 
 - `_DATE` is a relocated standard structure with type `g7:DATE`, with the usual payload type and meaning of a `g7:DATE`.
