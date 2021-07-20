@@ -103,7 +103,7 @@ Version 7.0 has a number of goals, including
 - Simplify implementations by removing special-case handling.
 - Modernize character encoding, length restrictions, and specification wording.
 - Introduce semantic versioning (see <https://semver.org/>).
-- Add better multimedia handling, negative assertions, and rich-text notes.
+- Add better multimedia handling, negative assertions, and notes with markup.
 - Add support for common extensions to 5.5.1.
 - Provide tools for better interoperability of extensions.
 
