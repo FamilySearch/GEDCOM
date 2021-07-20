@@ -402,6 +402,9 @@ as described in [Extensions].
 
 A **standard structure** is a structure whose type, tag, meaning, superstructure, and cardinality within the superstructure are described in this document. This includes records such as `INDI` and substructures such as `INDI`.`NAME`.
 
+The recommended way to go beyond the set of standard structure types in this specification or to expand their usage is to submit a feature request on the [FamilySearch GEDCOM development page](https://github.com/FamilySearch/GEDCOM/issues) so that the ramifications of the proposed addition and its interplay with other proposals may be discussed and the addition may be included in a subsequent version of this specification.
+However, this specification also provides multiple ways to for extension authors to go beyond the specification without submitting a feature request, which are described in the remainder of this section.
+
 A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure. Their meaning is defined by their tag, as is discussed more fully in the section [Extension Tags].
 
 Any substructure of a tagged extension structure that uses a tag matching `stdTag` is an **extension-defined substructure**.
@@ -565,12 +568,18 @@ The meaning of an undocumented extension tag is identified by its tag.
 
 ### Requirements and Recommendations
 
-- It is recommended that applications not use undocumented extension tags.
 - It is required that each tag definition's extension tag be unique within the document.
+- It is required that each extension structure type use the same payload type in each place it appears.
+- In order from most-preferred to least-preferred, the options for extensions are:
+    1. A feature request for inclusion in a future version of this specification (and then waiting for that version's release).
+    2. A relocated standard structure with a documented extension tag.
+    3. A tagged extension structure, calendar, or enumerated value with a documented extension tag.
+    4. An extension-defined substructure beneath a documented extension tag.
+    5. A tagged extension structure, calendar, or enumerated value with a undocumented extension tag.
+    6. An extension-defined substructure beneath an undocumented extension tag.
 - It is recommended that each documented extension tag's URI be unique within the document.
 - It is recommended that extension creators use URLs as their URIs
 and serve a page describing the meaning of an extension at its URL.
-- It is recommended that extensions use relocated standard structures instead of tagged extension structures if relocated standard structures will suffice.
 
 Future versions may include additional recommendations relating to documentation, machine-readable documentation, or embedded metadata about extensions within the schema.
 
@@ -681,11 +690,16 @@ The URI for the `Integer` datatype is `xsd:nonNegativeInteger`.
 ## Enumeration
 
 An enumeration is a selection from a set of options.
-They are represented as a string matching the same production as a tag, including the rules about extensions beginning with `_` (U+005F) and being mapped to URIs by a schema.
+They are represented as a string matching the same production as a tag.
 
 ```abnf
 Enum    = Tag
 ```
+
+Each structure type with an enumeration payload also defines specific payload values it permits.
+These permitted payloads match production `stdTag` and should each have a defined URI.
+Payload values that match production `extTag` are always permitted in structures with an enumeration payload
+and have their URI defined by the schema.
 
 Each enumeration value has a distinct meaning
 as identified by its corresponding URI.
