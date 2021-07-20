@@ -428,7 +428,7 @@ In the following
 - Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended datatype without consulting the defining specifications of `_LOC` and `_POP`, respectively.
 :::
 
-If an extension-defined substructure has a tag that is also used by one or more standard structures, its meaning should be similar to the meaning of those standard structures.
+If an extension-defined substructure has a tag that is also used by one or more standard structures, its meaning and payload type should match at least one of those standard structure types.
 
 :::example
 An extension-defined substructure with tag "`DATE`" should provide a date or date period relevant to its superstructure, as do all `DATE`-tagged structures in this specification. Extensions should not use "`DATE`" to tag a structure describing anything else (even something that might reasonably be abbreviated "date", such as someone an individual dated).
