@@ -428,7 +428,7 @@ In the following
 - Both `_LOC` are tagged extension structures, as is `_POP`.
 - `_LOC`.`NAME` and `_LOC`.`NAME`.`DATE` are both extension-defined substructures. Their meaning is defined by the specification defining `_LOC`.
 - `_POP`.`DATE` is an extension-defined substructure. Its meaning is defined by the specification defining `_POP`.
-- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended datatype without consulting the defining specifications of `_LOC` and `_POP`, respectively.
+- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended datatype without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
 :::
 
 If an extension-defined substructure has a tag that is also used by one or more standard structures, its meaning and payload type should match at least one of those standard structure types.
