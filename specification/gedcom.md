@@ -114,7 +114,7 @@ For a complete list of changes, see the accompanying changelog.
 
 ## A Guide to Version Numbers {.unnumbered}
 
-Starting with version 7.0.0, version numbers use semantic versioning.
+Starting with version 7.0.0, version numbers use [semantic versioning](https://semver.org/).
 The 3 numbers are titled *major*.*minor*.*patch*.
 
 A new *major* version may make arbitrary changes to the specification. Distinct major versions are not in general either forward or backward compatible with one another.
