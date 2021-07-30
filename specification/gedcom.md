@@ -1,6 +1,6 @@
 ---
 title: The FamilySearch GEDCOM Specification
-subtitle: 7.0.3
+subtitle: 7.0.4
 email: GEDCOM@ChurchOfJesusChrist.org
 copyright: |
     :::{style="page-break-after: always;page-break-before: always;"}
@@ -402,16 +402,67 @@ as described in [Extensions].
 
 A **standard structure** is a structure whose type, tag, meaning, superstructure, and cardinality within the superstructure are described in this document. This includes records such as `INDI` and substructures such as `INDI`.`NAME`.
 
-Two forms of **extension structures** are permitted:
+The recommended way to go beyond the set of standard structure types in this specification or to expand their usage is to submit a feature request on the [FamilySearch GEDCOM development page](https://github.com/FamilySearch/GEDCOM/issues) so that the ramifications of the proposed addition and its interplay with other proposals may be discussed and the addition may be included in a subsequent version of this specification.
 
-- A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure.
-- An **extended-use standard structure** is a structure whose type, tag, and meaning are defined in this document and whose superstructure is a tagged extension structure.
+This specification also provides multiple ways to for extension authors to go beyond the specification without submitting a feature request, which are described in the remainder of this section.
 
-Extension structures may have substructures, which may be either tagged extension structures of extended-use standard structures.
+A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure. Their meaning is defined by their tag, as is discussed more fully in the section [Extension Tags].
+
+Any substructure of a tagged extension structure that uses a tag matching `stdTag` is an **extension-defined substructure**.
+Substructures of an extension-defined substructure that uses a tag matching `stdTag` are also extension-defined substructures.
+The meaning and use of each extension-defined substructure is defined by the tagged extension structure it occurs within, not by its tag alone nor by this specification.
+
+:::example
+In the following
+
+```gedcom
+0 @P1@ _LOC
+1 NAME Βυζάντιον
+2 DATE FROM 667 BCE TO 324
+1 _POP 15149358
+2 DATE 31 DEC 2020
+0 @I1@ INDI
+1 BIRT
+2 _LOC @P1@
+```
+
+- Both uses of `_LOC` are tagged extension structures, as is `_POP`.
+- `_LOC`.`NAME` and `_LOC`.`NAME`.`DATE` are both extension-defined substructures. Their meaning is defined by the specification defining `_LOC`.
+- `_POP`.`DATE` is an extension-defined substructure. Its meaning is defined by the specification defining `_POP`.
+- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended datatype without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
+:::
+
+If an extension-defined substructure has a tag that is also used by one or more standard structures, its meaning and payload type should match at least one of those standard structure types.
+
+:::example
+An extension-defined substructure with tag "`DATE`" should provide a date or date period relevant to its superstructure, as do all `DATE`-tagged structures in this specification. Extensions should not use "`DATE`" to tag a structure describing anything else (even something that might reasonably be abbreviated "date", such as someone an individual dated).
+:::
+
+As a special case, a tagged extension structure can be defined to have a standard structure type.
+These are called **relocated standard structures** and can only appear with superstructures that are not documented as a superstructure of that structure type in this specification.
+The extension-defined substructures of a relocated standard structure are the substructure types documented in this specification for that structure type, including usual limitations on cardinality, payloads, substructures, etc.
+
+:::example
+Suppose `_DATE` is defined to mean a `g7:DATE` (using a [documented extension tag](#extension-tags)). Then in the following
+
+```gedcom
+0 @I1@ INDI
+1 NAME John /Doe/
+2 _DATE FROM 6 APR 1917 TO 11 NOV 1918
+3 PHRASE During America's involvement in the Great War
+1 BIRT
+2 PLAC Queens, New York, New York, USA
+```
+
+- `_DATE` is a relocated standard structure with type `g7:DATE`, with the usual payload type and meaning of a `g7:DATE`.
+- `PHRASE` is the structure type expected with that tag as a substructure of `g7:DATE`: namely, `g7:PHRASE`.
+- `_DATE` can not be used as a substructure of `BIRT` because `BIRT` has a documented `g7:DATE` substructure with tag `DATE`.
+- `BIRT` can not be used as a substructure of `_DATE` or `_DATE`.`PHRASE` because neither structure type has a documented substructure with tag `BIRT`.
+:::
 
 All other non-standard structures are prohibited. Examples of prohibited structures include, but are not limited to,
 
-- any structure with a tag matching production `stdTag` that is not defined in this document;
+- a record or substructure of a standard structure using a tag matching production `stdTag` that is not defined in this document;
 - any substructure with cardinality `{0:1}` appearing more than once;
 - a standard substructure appearing as a record or vice-versa;
 - a standard structure whose payload does not match the requirements of this document.
@@ -523,7 +574,6 @@ The meaning of an undocumented extension tag is identified by its tag.
 - It is recommended that each documented extension tag's URI be unique within the document.
 - It is recommended that extension creators use URLs as their URIs
 and serve a page describing the meaning of an extension at its URL.
-- It is recommended that extensions use extended-use standard structures instead of tagged extension structures if extended-use standard structures will suffice.
 
 Future versions may include additional recommendations relating to documentation, machine-readable documentation, or embedded metadata about extensions within the schema.
 
@@ -634,11 +684,16 @@ The URI for the `Integer` datatype is `xsd:nonNegativeInteger`.
 ## Enumeration
 
 An enumeration is a selection from a set of options.
-They are represented as a string matching the same production as a tag, including the rules about extensions beginning with `_` (U+005F) and being mapped to URIs by a schema.
+They are represented as a string matching the same production as a tag.
 
 ```abnf
 Enum    = Tag
 ```
+
+Each structure type with an enumeration payload also defines specific payload values it permits.
+These permitted payloads match production `stdTag` and should each have a defined URI.
+Payload values that match production `extTag` are always permitted in structures with an enumeration payload
+and have their URI defined by the schema.
 
 Each enumeration value has a distinct meaning
 as identified by its corresponding URI.

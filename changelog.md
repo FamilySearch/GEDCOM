@@ -1,3 +1,22 @@
+# Version 7.0.4
+
+- Clarify the use of standard structure types and standard tags in extensions
+    
+    The previous text was ambiguous, providing for "extended-use standard structures" with meaning "defined in this document" but without providing a definition of their meaning. It additionally failed to note uses of extensions that had part of the guides on gedcom.io since 7.0.0's release.
+    
+    The new text is clearer and provides the following:
+    
+    - We recommend extensions be posted as issues on github so they can be queued for a future minor release.
+    - When structures with `stdTag` appear under a structure with `extTag`, their meaning is defined by that containing extension.
+    - If a documented extension tag has the URI of a standard structure type, it has the same meaning as that structure type but can be used where that structure type cannot.
+    
+    See the comments on [PR 24](https://github.com/FamilySearch/GEDCOM/pull/24) and issues [13](https://github.com/FamilySearch/GEDCOM/issues/13) and [17](https://github.com/FamilySearch/GEDCOM/pull/17) for the discussion leading to this clarified text.
+
+- Clarify that extensions with enumeration values should define the meaning of those values.
+
+- Fix a few small typos.
+    
+
 # Version 7.0.3
 
 - Clarify the use of CONT as an escaped new-line that looks like a substructure of the first line of text
