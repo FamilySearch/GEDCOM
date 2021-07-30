@@ -12,6 +12,8 @@
     
     See the comments on [PR 24](https://github.com/FamilySearch/GEDCOM/pull/24) and issues [13](https://github.com/FamilySearch/GEDCOM/issues/13) and [17](https://github.com/FamilySearch/GEDCOM/pull/17) for the discussion leading to this clarified text.
 
+- Clarify that extensions with enumeration values should define the meaning of those values.
+
 - Fix a few small typos.
     
 
