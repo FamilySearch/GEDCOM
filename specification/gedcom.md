@@ -1,6 +1,6 @@
 ---
 title: The FamilySearch GEDCOM Specification
-subtitle: 7.0.3
+subtitle: 7.0.4
 email: GEDCOM@ChurchOfJesusChrist.org
 copyright: |
     :::{style="page-break-after: always;page-break-before: always;"}
