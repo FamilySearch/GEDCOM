@@ -2,7 +2,7 @@
 title: The FamilySearch GEDCOM Specification
 subtitle: 7.0.3
 email: GEDCOM@ChurchOfJesusChrist.org
-copyright: |
+copyrighted: |
     :::{style="page-break-after: always;page-break-before: always;"}
     Copyright 1984–2021 Intellectual Reserve, Inc. All rights reserved. A service provided by The Church of Jesus Christ of Latter-day Saints.
     
