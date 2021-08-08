@@ -3,7 +3,7 @@
 The official FamilySearch GEDCOM specification for exchanging genealogical data.
 
 This repository is for the collaborative development of the FamilySearch GEDCOM specification.
-If you are looking for the specifciation itself, see <https://gedcom.io>.
+If you are looking for the specification itself, see <https://gedcom.io>.
 
 If you are looking for FamilySearch's GEDCOM 5.5.1 Java parser, which previously had this same repository name, see <https://github.com/familysearch/gedcom5-java>
 
