@@ -92,7 +92,7 @@ Prior to 7.0:
 
 ## Purpose for Version 7.x {.unnumbered}
 
-There have been multiple prior releases of this specifciation, with somewhat idiosyncratic version numbering.
+There have been multiple prior releases of this specification, with somewhat idiosyncratic version numbering.
 The first public comment draft was released in 1984.
 The previous major version was 5.5.1 which was released in draft status in November 1999
 and re-released as a standard in October 2019.
@@ -915,7 +915,7 @@ The URI for the `Language` datatype is `xsd:Language`.
 The media type datatype represents the encoding of information in bytes or characters, as defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045) and [registered by the IANA](http://www.iana.org/assignments/media-types/).
 
 The official grammar for media type is given in RFC 2045, section 5.1.
-However, that document does not give stand-alone ABNF, instead refering to registration rules and describing some components in English.
+However, that document does not give stand-alone ABNF, instead referring to registration rules and describing some components in English.
 The programmatic parts of the media type grammar can be summarized as follows:
 
 ```abnf
@@ -3117,7 +3117,7 @@ A name given to a foundling orphan might be
 #### `PLAC` (Place) `g7:PLAC`
 
 The principal place in which the superstructure's subject occurred,
-represented as a [List] of jurisdictional entities in a sequence from from the lowest to the highest jurisdiction.
+represented as a [List] of jurisdictional entities in a sequence from the lowest to the highest jurisdiction.
 As with other lists, the jurisdictions are separated by commas.
 Any jurisdiction's name that is missing is still accounted for by an empty string in the list.
 
@@ -3251,7 +3251,7 @@ If both a `DATE` and `SDATE` are present in the same structure,
 the `SDATE` should be used for sorting and positioning
 while the `DATE` should be displayed as the date of the structure.
 
-`SDATE` and it substructures (including `PHRASE`, `TIME`, and any extension structures) should be used only as sorting hints, not to convey historical meaning.
+`SDATE` and its substructures (including `PHRASE`, `TIME`, and any extension structures) should be used only as sorting hints, not to convey historical meaning.
 
 #### `SEX` (Sex) `g7:SEX`
 
