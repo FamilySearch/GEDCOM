@@ -3197,10 +3197,31 @@ See `REPOSITORY_RECORD`.
 A [Family Attribute](#family-attributes).
 See also `FAMILY_ATTRIBUTE_STRUCTURE`.
 
+See `g7:INDI-RESI` for comments on the use of paylaod strings in `RESI` structures.
+
+
 #### `RESI` (Residence) `g7:INDI-RESI`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
+
+Where possible, the residence should be identified in `PLAC` and/or `ADDR` substructures of the `RESI` structure. The payload text should not duplicate `PLAC` or `ADDR` information, but may be used for residence information that cannot be expressed by those structures.
+
+:::example
+The following two examples show situations where a `RESI` payload may be appropriate:
+
+```gedcom
+1 RESI living with an aunt
+2 DATE ABT MAR 1894
+```
+
+```gedcom
+1 RESI in a mobile caravan
+2 PLAC , , Austro-Hungarian Empire
+3 FORM City, County, Country
+```
+:::
+
 
 #### `RETI` (Retirement) `g7:RETI`
 
