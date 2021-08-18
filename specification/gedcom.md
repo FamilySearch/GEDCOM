@@ -3539,21 +3539,22 @@ It may also be used for any other event or attribute.
 Using the subordinate `TYPE` classification method provides a further classification of the superstructure but does not change its basic meaning.
 
 :::example
-A `MARR` with a `TYPE` could clarify what kind of marriage was performed:
+A `ORDN` with a `TYPE` could clarify what kind of ordination was performed:
 
 ```gedcom
 0 @I1@ INDI
-1 MARR
-2 TYPE Common Law
+1 ORDN
+2 TYPE Bishop
 ```
 
-This classifies the entry as a common law marriage but the event is still a marriage event.
+This classifies the entry as an ordination as a bishop, which is still a ordination event. The event could be further clarified with `RELI`, `DATE`, and other substructures.
 
 Other descriptor values might include, for example,
 
 - "Stillborn" as a qualifier to `BIRT` (birth)
-- "Tribal Custom" as a qualifier to `MARR` (marriage)
+- "Civil" as a qualifier to `MARR` (marriage)
 - "College" as a qualifier to `GRAD` (graduation)
+- "Oral" as a qualifier to `WILL`
 
 See also `FACT` and `EVEN` for additional examples.
 :::
