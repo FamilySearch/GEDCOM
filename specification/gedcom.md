@@ -3197,7 +3197,7 @@ See `REPOSITORY_RECORD`.
 A [Family Attribute](#family-attributes).
 See also `FAMILY_ATTRIBUTE_STRUCTURE`.
 
-See `g7:INDI-RESI` for comments on the use of paylaod strings in `RESI` structures.
+See `g7:INDI-RESI` for comments on the use of payload strings in `RESI` structures.
 
 
 #### `RESI` (Residence) `g7:INDI-RESI`
