@@ -70,13 +70,12 @@ Width | Order | Transform
 2     | BE    | Keep bytes 2, 4, 6, 8, 10
 1     | (N/A) | Keep bytes 1, 2, 3, 4, 5
 
-6. Do a longest match using the table below:
+6. Do a longest match using the table of GEDCOM versions below:
 
 Byte sequence  | Explanation | Reference
 -------------- | ----------- | ---------
 37 2E 30       | "7.0"       | [The FamilySearch GEDCOM Specification, 7.0.3](https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf)
 35 2E 36       | "5.6"       | [THE GEDCOM SPECIFICATION, DRAFT Release 5.6](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.6.pdf)
-35 2E 35 2E 35 | "5.5.5"     | [THE GEDCOM 5.5.5 Specification with Annotations](https://www.gedcom.org/specs/GEDCOM555.zip)
 35 2E 35 2E 31 | "5.5.1"     | [THE GEDCOM STANDARD, Release 5.5.1](https://gedcom.io/specifications/ged551.pdf)
 35 2E 35       | "5.5"       | [THE GEDCOM STANDARD, Release 5.5](https://gedcom.io/specifications/ged55.pdf) 
 35 2E 34       | "5.4"       | [THE GEDCOM STANDARD, DRAFT Release 5.4](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.4.pdf)
@@ -84,6 +83,13 @@ Byte sequence  | Explanation | Reference
 35 2E 30       | "5.0"       | [THE GEDCOM STANDARD, DRAFT Release 5.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.0.pdf)
 34             | "4.0", "4+" | [THE GEDCOM STANDARD, Release 4.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-4.0.pdf)
 Otherwise      |             | [GENEALOGICAL DATA COMMUNICATION (GEDCOM), Release 3.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-3.0.pdf)
+
+In addition, there are known to be files in the wild that use an unofficial format.  Some implementations may
+wish to detect the following byte sequence as well which might conform to the specification below:
+
+Byte sequence  | Explanation | Reference
+-------------- | ----------- | ---------
+35 2E 35 2E 35 | "5.5.5"     | [THE GEDCOM 5.5.5 Specification with Annotations](https://www.gedcom.org/specs/GEDCOM555.zip)
 
 7. Parse the entire payload according to the indicated specification.
 
