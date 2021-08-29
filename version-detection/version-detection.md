@@ -38,15 +38,21 @@ To detect the GEDCOM file version, perform the steps below, using the character 
 above.  If the end of the file is reached before
 all steps can be successfully completed, the file is not a valid GEDCOM file.
 
-1. Read until the following byte sequence is detected ("1 GEDC"):
+1. Read until one of the following byte sequences is detected ("1 GEDC"):
 
-Width | Order | Byte sequence to look for
------ | ----- | --------------------
-2     | LE    | 49 00 20 00 47 00 45 00 44 00 43 00
-2     | BE    | 00 49 00 20 00 47 00 45 00 44 00 43
-1     | (N/A) | 49 20 47 45 44 43
+Width | Order | Byte sequence to look for           | Explanation
+----- | ----- | ----------------------------------- | ------------
+2     | LE    | 49 00 20 00 47 00 45 00 44 00 43 00 | "1 GEDC"
+2     | BE    | 00 49 00 20 00 47 00 45 00 44 00 43 | "1 GEDC"
+1     | (N/A) | 49 20 47 45 44 43                   | "1 GEDC"
+1     | (N/A) | 49 20 53 59 53 54                   | "1 SYST"
 
-2. Continue reading bytes until the following byte sequence is detected ("2 VERS "):
+2. If one of the first three rows above is matched, continue to step 3.  If instead the last line above ("1 SYST") is
+   matched, skip to step 7 using the following specification:
+
+* [PAF GEDCOM Specifications](https://armidalesoftware.com/GEDCOM/PAF-GEDCOM-Specifications.pdf) section 4
+
+3. Continue reading bytes until the following byte sequence is detected ("2 VERS "):
 
 Width | Order | Byte sequence to look for
 ----- | ----- | --------------------
@@ -54,9 +60,9 @@ Width | Order | Byte sequence to look for
 2     | BE    | 00 32 00 20 00 56 00 45 00 52 00 53 00 20
 1     | (N/A) | 32 20 56 45 52 53 20
 
-3. Read the next 5 * Width bytes.
+4. Read the next 5 * Width bytes.
 
-4. Convert the bytes read to a 5-byte sequence by dropping all 00 bytes. That is, using 1-based indices:
+5. Convert the bytes read to a 5-byte sequence by dropping all 00 bytes. That is, using 1-based indices:
 
 Width | Order | Transform
 ----- | ----- | ---------
@@ -64,7 +70,7 @@ Width | Order | Transform
 2     | BE    | Keep bytes 2, 4, 6, 8, 10
 1     | (N/A) | Keep bytes 1, 2, 3, 4, 5
 
-5. Do a longest match using the table below:
+6. Do a longest match using the table below:
 
 Byte sequence  | Explanation | Reference
 -------------- | ----------- | ---------
@@ -79,7 +85,7 @@ Byte sequence  | Explanation | Reference
 34             | "4.0", "4+" | [THE GEDCOM STANDARD, Release 4.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-4.0.pdf)
 Otherwise      |             | [GENEALOGICAL DATA COMMUNICATION (GEDCOM), Release 3.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-3.0.pdf)
 
-6. Parse the entire payload according to the indicated specification.
+7. Parse the entire payload according to the indicated specification.
 
 ## IANA Media Type Registration
 
