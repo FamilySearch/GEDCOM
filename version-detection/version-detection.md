@@ -11,51 +11,75 @@ to parse the data.  The GEDCOM format itself does include a version identifier i
 a parser can detect the correct version and parse the file accordingly.  This document specifies a version
 detection algorithm and provides references to the more specific format specifications.
 
-## Charset Detection
+## Character Width and Byte Order Detection
 
-To locate the version in the content, the character set must first be determined.  
+To efficiently locate the version in the content, one can first determine the character width and byte order
+used in the file.  (The version detection algorithm can be done without this by trying all three possibilities
+separately.)
+
 A GEDCOM file starts with the character "0" in some character set, possibly prefixed by a
-Byte Order Mark (BOM) indicating the character set.
+Byte Order Mark (BOM) indicating the character set.  The actual character set, however, does not matter
+as version detection only requires knowing the character width and byte order.
 
-Thus, charset detection can be done by reading the first two characters of the file, and using the table below:
+Thus, the character width and byte order can be determined by reading the first two characters of the file,
+and using the table below:
 
-Initial bytes | Charset
-------------- | -------
-0xFF 0xFE     | [UTF-16LE](https://www.rfc-editor.org/info/rfc2781) (with BOM)
-0x30 0x00     | [UTF-16LE](https://www.rfc-editor.org/info/rfc2781) (without BOM)
-0xFE 0xFF     | [UTF-16BE](https://www.rfc-editor.org/info/rfc2781) (with BOM)
-0x00 0x30     | [UTF-16BE](https://www.rfc-editor.org/info/rfc2781) (without BOM)
-0xEF 0xBB     | [UTF-8](https://www.rfc-editor.org/info/rfc3629) (with BOM 0xEF 0xBB 0xBF)
-Otherwise     | [UTF-8](https://www.rfc-editor.org/info/rfc3629) (without BOM)
+Initial bytes (hex) | Width | Order
+------------------- | ----- | -------------
+FF FE               | 2     | LE (Little-endian)
+30 00               | 2     | LE (Little-endian)
+FE FF               | 2     | BE (Big-endian)
+00 30               | 2     | BE (Big-endian)
+Otherwise           | 1     | (N/A)
 
 ## Version Detection
 
-To detect the GEDCOM file version, perform the steps below, using the charset determined
+To detect the GEDCOM file version, perform the steps below, using the character width and byte order determined
 above.  If the end of the file is reached before
 all steps can be successfully completed, the file is not a valid GEDCOM file.
 
-1. Read until "1 GEDC" is detected.
+1. Read until the following byte sequence is detected ("1 GEDC"):
 
-2. Read until "2 VERS " (including the trailing space) is detected.
+Width | Order | Byte sequence to look for
+----- | ----- | --------------------
+2     | LE    | 49 00 20 00 47 00 45 00 44 00 43 00
+2     | BE    | 00 49 00 20 00 47 00 45 00 44 00 43
+1     | (N/A) | 49 20 47 45 44 43
 
-3. Read a string of characters up to, but not including, a carriage return (U+000D) or line feed (U+000A).  The resulting string is the version identifier.
+2. Continue reading bytes until the following byte sequence is detected ("2 VERS "):
 
-4. Look up the string in the table below:
+Width | Order | Byte sequence to look for
+----- | ----- | --------------------
+2     | LE    | 32 00 20 00 56 00 45 00 52 00 53 00 20 00
+2     | BE    | 00 32 00 20 00 56 00 45 00 52 00 53 00 20
+1     | (N/A) | 32 20 56 45 52 53 20
 
-String  | Reference
-------- | ---------
-"3.0"   | [GENEALOGICAL DATA COMMUNICATION (GEDCOM), Release 3.0](https://web.archive.org/web/20200705155231/https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-3.0.pdf)
-"4.0"   | [THE GEDCOM STANDARD, Release 4.0](https://web.archive.org/web/20200705182809/https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-4.0.pdf)
-"5.0"   | [THE GEDCOM STANDARD, DRAFT Release 5.0](https://web.archive.org/web/20200705085334/https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.0.pdf)
-"5.3"   | [THE GEDCOM STANDARD, DRAFT Release 5.3](https://web.archive.org/web/20100722012217/http://ftp.aset.psu.edu/genealogy/gedcom55/gedstand.t82)
-"5.4"   | [THE GEDCOM STANDARD, DRAFT Release 5.4](http://www.lege.com/gedcom54.html)
-"5.5"   | [THE GEDCOM STANDARD, Release 5.5](https://gedcom.io/specifications/ged55.pdf) 
-"5.5.1" | [THE GEDCOM STANDARD, Release 5.5.1](https://gedcom.io/specifications/ged551.pdf)
-"5.5.5" | [THE GEDCOM 5.5.5 Specification with Annotations](https://www.gedcom.org/specs/GEDCOM555.zip)
-"5.6"   | [THE GEDCOM SPECIFICATION, DRAFT Release 5.6](http://www.daubnet.com/ftp/gedcom-56-english.pdf)
-"7.0"   | [The FamilySearch GEDCOM Specification, 7.0.3](https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf)
+3. Read the next 5 * Width bytes.
 
-5. Parse the entire payload according to the indicated specification.
+4. Convert the bytes read to a 5-byte sequence by dropping all 00 bytes. That is, using 1-based indices:
+
+Width | Order | Transform
+----- | ----- | ---------
+2     | LE    | Keep bytes 1, 3, 5, 7, 9
+2     | BE    | Keep bytes 2, 4, 6, 8, 10
+1     | (N/A) | Keep bytes 1, 2, 3, 4, 5
+
+5. Do a longest match using the table below:
+
+Byte sequence  | Explanation | Reference
+-------------- | ----------- | ---------
+37 2E 30       | "7.0"       | [The FamilySearch GEDCOM Specification, 7.0.3](https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf)
+35 2E 36       | "5.6"       | [THE GEDCOM SPECIFICATION, DRAFT Release 5.6](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.6.pdf)
+35 2E 35 2E 35 | "5.5.5"     | [THE GEDCOM 5.5.5 Specification with Annotations](https://www.gedcom.org/specs/GEDCOM555.zip)
+35 2E 35 2E 31 | "5.5.1"     | [THE GEDCOM STANDARD, Release 5.5.1](https://gedcom.io/specifications/ged551.pdf)
+35 2E 35       | "5.5"       | [THE GEDCOM STANDARD, Release 5.5](https://gedcom.io/specifications/ged55.pdf) 
+35 2E 34       | "5.4"       | [THE GEDCOM STANDARD, DRAFT Release 5.4](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.4.pdf)
+35 2E 33       | "5.3"       | [THE GEDCOM STANDARD, DRAFT Release 5.3](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.3.pdf)
+35 2E 30       | "5.0"       | [THE GEDCOM STANDARD, DRAFT Release 5.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.0.pdf)
+34             | "4.0", "4+" | [THE GEDCOM STANDARD, Release 4.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-4.0.pdf)
+Otherwise      |             | [GENEALOGICAL DATA COMMUNICATION (GEDCOM), Release 3.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-3.0.pdf)
+
+6. Parse the entire payload according to the indicated specification.
 
 ## IANA Media Type Registration
 
