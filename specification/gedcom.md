@@ -152,7 +152,7 @@ This is a specification shorthand only; the string "`xsd:string`" is not the URI
 ## Characters
 
 Each data stream is a sequence of octets or bytes.
-The octets encode a sequence of characters according to the UTF-8 character encoding as described in §10.2 of [ISO/IEC 10646:2020](https://www.iso.org/standard/76835.html).
+The octets encode a sequence of characters according to the UTF-8 character encoding as described in §10.2 of [ISO/IEC 10646:2020](https://www.iso.org/standard/76835.html) and in [RFC 3629](https://www.rfc-editor.org/info/rfc3629).
 
 :::note
 Previous versions allowed multiple character encodings, defaulting to ANSEL.
