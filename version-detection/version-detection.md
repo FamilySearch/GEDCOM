@@ -75,14 +75,14 @@ Width | Order | Transform
 Byte sequence  | Explanation | Reference
 -------------- | ----------- | ---------
 37 2E 30       | "7.0"       | [The FamilySearch GEDCOM Specification, 7.0.3](https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf)
-35 2E 36       | "5.6"       | [THE GEDCOM SPECIFICATION, DRAFT Release 5.6](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.6.pdf)
+35 2E 36       | "5.6"       | [THE GEDCOM SPECIFICATION, DRAFT Release 5.6](https://gedcom.io/specifications/Gedcom5.6.pdf)
 35 2E 35 2E 31 | "5.5.1"     | [THE GEDCOM STANDARD, Release 5.5.1](https://gedcom.io/specifications/ged551.pdf)
 35 2E 35       | "5.5"       | [THE GEDCOM STANDARD, Release 5.5](https://gedcom.io/specifications/ged55.pdf) 
-35 2E 34       | "5.4"       | [THE GEDCOM STANDARD, DRAFT Release 5.4](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.4.pdf)
+35 2E 34       | "5.4"       | [THE GEDCOM STANDARD, DRAFT Release 5.4](https://gedcom.io/specifications/Gedcom5.4.pdf)
 35 2E 33       | "5.3"       | [THE GEDCOM STANDARD, DRAFT Release 5.3](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.3.pdf)
-35 2E 30       | "5.0"       | [THE GEDCOM STANDARD, DRAFT Release 5.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.0.pdf)
-34             | "4.0", "4+" | [THE GEDCOM STANDARD, Release 4.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-4.0.pdf)
-Otherwise      |             | [GENEALOGICAL DATA COMMUNICATION (GEDCOM), Release 3.0](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-3.0.pdf)
+35 2E 30       | "5.0"       | [THE GEDCOM STANDARD, DRAFT Release 5.0](https://gedcom.io/specifications/Gedcom5.0.pdf)
+34             | "4.0", "4+" | [THE GEDCOM STANDARD, Release 4.0](https://gedcom.io/specifications/Gedcom4.0.pdf)
+Otherwise      |             | [GENEALOGICAL DATA COMMUNICATION (GEDCOM), Release 3.0](https://gedcom.io/specifications/Gedcom3.0.pdf)
 
 In addition, there are known to be files in the wild that use an unofficial format.  Some implementations may
 wish to detect the following byte sequence as well which might conform to the specification below:
