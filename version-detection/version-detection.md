@@ -118,7 +118,7 @@ The following registration for "text/gedcom" is specified using the template def
   it is not expected that ANSEL would need to be requested.
 
 * **version**: The GEDCOM specification version.  The parameter is not used when payload is present because
-  the charset information is transported inside the payload.  However, should version negotiation be needed,
+  the version information is transported inside the payload.  However, should version negotiation be needed,
   it may be used in a media range used in a request, such as in an Accept header.
 
 **Encoding considerations**: Text in a specified character set.
