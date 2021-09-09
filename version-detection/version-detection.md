@@ -13,7 +13,7 @@ detection algorithm and provides references to the more specific format specific
 
 ## Commonalities
 
-All GEDCOM versions are text files that conform to the following general structure:
+All version of GEDCOM files are text files that conform to the following general structure:
 
 - The document is organized as a sequence of **lines** separated by ASCII line terminators (U+000A, U+000D, or both)
 - Each line contains several components, separated by spaces (U+0020):
@@ -23,8 +23,7 @@ All GEDCOM versions are text files that conform to the following general structu
   2. An optional **identifier**, which begins and ends with a COMMERCIAL AT (U+0040 `@`) and contains no internal line terminators or COMMERCIAL ATs. No two lines share the same identifier.
   3. A required **tag**, which is a string of one or more ASCII digits (U+0030 through U+0039 `9`-`0`), letters (U+0041 through U+005A `A`–`Z` and U+0061 through U+007A `a`–`z`), and underscores (U+005F `_`).
   4. An optional **value**, which may contain any non-line terminator character.
-- Each line represents a structure.
-- Any line with level *x* > 0 represents a substructure of the nearest preceding line with level *x* − 1.
+- Each line represents a structure. Any line with level *x* > 0 represents a substructure of the nearest preceding line with level *x* − 1.
 
 Beyond these commonalities, each GEDCOM version differs in details and is described by its own specification.
 Version specifications typically describe both the meaning of various structures
