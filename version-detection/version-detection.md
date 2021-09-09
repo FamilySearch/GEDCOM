@@ -21,7 +21,7 @@ All version of GEDCOM files are text files that conform to the following general
     - The first line's level is 0.
     - Each other line's level is at most on greater than the the level of the line before it.
   2. An optional **identifier**, which begins and ends with a COMMERCIAL AT (U+0040 `@`) and contains no internal line terminators or COMMERCIAL ATs. No two lines share the same identifier.
-  3. A required **tag**, which is a string of one or more ASCII digits (U+0030 through U+0039 `9`-`0`), letters (U+0041 through U+005A `A`–`Z` and U+0061 through U+007A `a`–`z`), and underscores (U+005F `_`).
+  3. A required **tag**, which is a string of one or more ASCII digits (U+0030 through U+0039 `9`–`0`), letters (U+0041 through U+005A `A`–`Z` and U+0061 through U+007A `a`–`z`), and underscores (U+005F `_`).
   4. An optional **value**, which may contain any non-line terminator character.
 - Each line represents a structure. Any line with level *x* > 0 represents a substructure of the structure represented by the nearest preceding line with level *x* − 1.
 
