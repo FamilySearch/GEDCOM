@@ -13,103 +13,59 @@ detection algorithm and provides references to the more specific format specific
 
 ## Commonalities
 
-All version of GEDCOM files are text files that conform to the following general structure:
+Every GEDCOM file, regardless of version, is a text file that conforms to the following general structure:
 
 - The document is organized as a sequence of **lines** separated by ASCII line terminators (U+000A, U+000D, or both). Blank lines are ignored.
 - Each line contains several components, separated by spaces (U+0020):
   1. A required **level**, which is a non-negative integer encoded using ASCII digits.
     - The first line's level is 0.
-    - Each other line's level is at most 1 greater than the level of the line before it.
-  2. An optional **identifier**, which begins and ends with a COMMERCIAL AT (U+0040 `@`) and contains no internal line terminators or COMMERCIAL ATs. No two lines share the same identifier.
-  3. A required **tag**, which is a string of one or more ASCII digits (U+0030 through U+0039 `9`–`0`), letters (U+0041 through U+005A `A`–`Z` and U+0061 through U+007A `a`–`z`), and underscores (U+005F `_`).
-  4. An optional **value**, which may contain any non-line terminator character.
+    - Each other line's level is between 0 and 1 + *x* inclusive, where *x* is the level of the immediately preceding line.
+  2. An optional **identifier**, which begins and ends with a COMMERCIAL AT (U+0040 `@`) and contains no internal line terminators or COMMERCIAL ATs.
+  3. A required **tag**, which is a string of one or more printable ASCII characters (U+0021 through U+007E), excluding the COMMERCIAL AT (U+0040 `@`).
+  4. An optional **value**, which is a string of zero or more characters; all characters are permitted except ASCII line terminators (U+000A and U+000D).
 - Each line represents a structure. Any line with level *x* > 0 represents a substructure of the structure represented by the nearest preceding line with level *x* − 1.
 
 Beyond these commonalities, each GEDCOM version differs in details and is described by its own specification.
 Version specifications typically describe both the meaning of various structures
-and provide additional serialization details, including whether blank lines are allowed, whether multiple spaces can be used to separate line components, limits on tag and identifier length and characters, etc.
+and provide additional serialization details, including whether blank lines are allowed, whether multiple spaces can be used to separate line components, limits on tag, identifier, and value lengths and characters, etc.
 
-## Character Width and Byte Order Detection
 
-To efficiently locate the version in the content, one can first determine the character width and byte order
-used in the file.  (The version detection algorithm can be done without this by trying all three possibilities
-separately.)
+## Version detection
 
-A GEDCOM file starts with the character "0" in some character set, possibly prefixed by a
-Byte Order Mark (BOM) indicating the character set.  The actual character set, however, does not matter
-as version detection only requires knowing the character width and byte order.
+For succinctness, we use the following notation: `ABC`.`DEF`.`GHI` means "a structure with tag `GHI` that is a substructure of a structure with tag `DEF` that is a substructure of a structure with tag `ABC` which is the first structure in the document."
 
-Thus, the character width and byte order can be determined by reading the first two characters of the file,
-and using the table below:
+If there is a structure `HEAD`.`GEDC`.`VERS`
+then the specification describing the GEDCOM version in the file is determined by the longest matching prefix of the value of that structure from the following table:
 
-Initial bytes (hex) | Width | Order
-------------------- | ----- | -------------
-FF FE               | 2     | LE (Little-endian)
-30 00               | 2     | LE (Little-endian)
-FE FF               | 2     | BE (Big-endian)
-00 30               | 2     | BE (Big-endian)
-Otherwise           | 1     | (N/A)
+Prefix | Reference
+----------- | ---------
+"`7.0`"     | [The FamilySearch GEDCOM Specification, 7.0.3](https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf)
+"`5.6`"     | [THE GEDCOM SPECIFICATION, DRAFT Release 5.6](https://gedcom.io/specifications/Gedcom5.6.pdf)
+"`5.5.1`"   | [THE GEDCOM STANDARD, Release 5.5.1](https://gedcom.io/specifications/ged551.pdf)
+"`5.5`"     | [THE GEDCOM STANDARD, Release 5.5](https://gedcom.io/specifications/ged55.pdf) 
+"`5.4`"     | [THE GEDCOM STANDARD, DRAFT Release 5.4](https://gedcom.io/specifications/Gedcom5.4.pdf)
+"`5.3`"     | [THE GEDCOM STANDARD, DRAFT Release 5.3](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.3.pdf)
+"`5.0`"     | [THE GEDCOM STANDARD, DRAFT Release 5.0](https://gedcom.io/specifications/Gedcom5.0.pdf)
+"`4`"       | [THE GEDCOM STANDARD, Release 4.0](https://gedcom.io/specifications/Gedcom4.0.pdf)
+Otherwise   | [GENEALOGICAL DATA COMMUNICATION (GEDCOM), Release 3.0](https://gedcom.io/specifications/Gedcom3.0.pdf)
 
-## Version Detection
+If there is no structure `HEAD`.`GEDC`.`VERS` but there is a structure `HEAD`.`SYST` then the specification describing the GEDCOM version in the file is [PAF GEDCOM Specifications](https://armidalesoftware.com/GEDCOM/PAF-GEDCOM-Specifications.pdf) section 4.
 
-To detect the GEDCOM file version, perform the steps below, using the character width and byte order determined
-above.  If the end of the file is reached before
-all steps can be successfully completed, the file is not a valid GEDCOM file.
+If there is neither `HEAD`.`GEDC`.`VERS` nor `HEAD`.`SYST` then the specification describing the GEDCOM version in the file is [GENEALOGICAL DATA COMMUNICATION (GEDCOM), Release 3.0](https://gedcom.io/specifications/Gedcom3.0.pdf).
 
-1. Read until one of the following byte sequences is detected ("1 GEDC"):
+### Extensions and non-standard versions
 
-Width | Order | Byte sequence to look for           | Explanation
------ | ----- | ----------------------------------- | ------------
-2     | LE    | 49 00 20 00 47 00 45 00 44 00 43 00 | "1 GEDC"
-2     | BE    | 00 49 00 20 00 47 00 45 00 44 00 43 | "1 GEDC"
-1     | (N/A) | 49 20 47 45 44 43                   | "1 GEDC"
-1     | (N/A) | 49 20 53 59 53 54                   | "1 SYST"
+Various third-party extensions to and variants of the standard GEDCOM versions have been published. These may be detected as follows:
 
-2. If one of the first three rows above is matched, continue to step 3.  If instead the last line above ("1 SYST") is
-   matched, skip to step 7 using the following specification:
+Specification | Detection                         | Notes
+--------------|-----------------------------------|----------------------------
+[GEDCOM Event-Oriented Form](http://bartonstreet.com/deadends/EventGEDCOMDraft1.0.pdf) | `HEAD`.`GEDC`.`FROM`.`FORM` with value "`EVENT`" | Based on *THE GEDCOM STANDARD, DRAFT Release 5.3*, but not compatible with it.
+[THE GEDCOM 5.5.5 Specification with Annotations](https://www.gedcom.org/specs/GEDCOM555.zip) | `HEAD`.`GEDC`.`VERS` with value "`5.5.5`" | Based on *THE GEDCOM STANDARD, Release 5.5.1* with only a few changes, mostly banning certain data that is permitted in that standard.
+[GEDCOM 5.5EL](http://wiki-de.genealogy.net/Gedcom_5.5EL) | `HEAD`.`GEDC`.`VERS` with value "`5.5 EL`" | A strict superset of *THE GEDCOM STANDARD, Release 5.5*.
+(none known) | `HEAD`.`GEDC`.`VERS` with value "`5.5.1 EL`" | Makes the same changes to *THE GEDCOM STANDARD, Release 5.5.1* that *GEDCOM 5.5EL* makes to *THE GEDCOM STANDARD, Release 5.5*.
+(none known) | The first structure has tag "`HEADER`" | A variant of another GEDCOM version (detected using the value of `HEADER`.`GEDCOM`.`VERSION`, or *THE GEDCOM STANDARD, DRAFT Release 5.3* if that structure does not exist) where all tags have been replaced by the longer names for the tags found in the appendix of the specification of that version which lists tag names and meanings.
 
-* [PAF GEDCOM Specifications](https://armidalesoftware.com/GEDCOM/PAF-GEDCOM-Specifications.pdf) section 4
 
-3. Continue reading bytes until the following byte sequence is detected ("2 VERS "):
-
-Width | Order | Byte sequence to look for
------ | ----- | --------------------
-2     | LE    | 32 00 20 00 56 00 45 00 52 00 53 00 20 00
-2     | BE    | 00 32 00 20 00 56 00 45 00 52 00 53 00 20
-1     | (N/A) | 32 20 56 45 52 53 20
-
-4. Read the next 5 * Width bytes.
-
-5. Convert the bytes read to a 5-byte sequence by dropping all 00 bytes. That is, using 1-based indices:
-
-Width | Order | Transform
------ | ----- | ---------
-2     | LE    | Keep bytes 1, 3, 5, 7, 9
-2     | BE    | Keep bytes 2, 4, 6, 8, 10
-1     | (N/A) | Keep bytes 1, 2, 3, 4, 5
-
-6. Do a longest match using the table of GEDCOM versions below:
-
-Byte sequence  | Explanation | Reference
--------------- | ----------- | ---------
-37 2E 30       | "7.0"       | [The FamilySearch GEDCOM Specification, 7.0.3](https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf)
-35 2E 36       | "5.6"       | [THE GEDCOM SPECIFICATION, DRAFT Release 5.6](https://gedcom.io/specifications/Gedcom5.6.pdf)
-35 2E 35 2E 31 | "5.5.1"     | [THE GEDCOM STANDARD, Release 5.5.1](https://gedcom.io/specifications/ged551.pdf)
-35 2E 35       | "5.5"       | [THE GEDCOM STANDARD, Release 5.5](https://gedcom.io/specifications/ged55.pdf) 
-35 2E 34       | "5.4"       | [THE GEDCOM STANDARD, DRAFT Release 5.4](https://gedcom.io/specifications/Gedcom5.4.pdf)
-35 2E 33       | "5.3"       | [THE GEDCOM STANDARD, DRAFT Release 5.3](https://chronoplexsoftware.com/gedcomvalidator/gedcom/gedcom-5.3.pdf)
-35 2E 30       | "5.0"       | [THE GEDCOM STANDARD, DRAFT Release 5.0](https://gedcom.io/specifications/Gedcom5.0.pdf)
-34             | "4.0", "4+" | [THE GEDCOM STANDARD, Release 4.0](https://gedcom.io/specifications/Gedcom4.0.pdf)
-Otherwise      |             | [GENEALOGICAL DATA COMMUNICATION (GEDCOM), Release 3.0](https://gedcom.io/specifications/Gedcom3.0.pdf)
-
-In addition, there are known to be files in the wild that use an unofficial format.  Some implementations may
-wish to detect the following byte sequence as well which might conform to the specification below:
-
-Byte sequence  | Explanation | Reference
--------------- | ----------- | ---------
-35 2E 35 2E 35 | "5.5.5"     | [THE GEDCOM 5.5.5 Specification with Annotations](https://www.gedcom.org/specs/GEDCOM555.zip)
-
-7. Parse the entire payload according to the indicated specification.
 
 ## IANA Media Type Registration
 
