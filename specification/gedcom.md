@@ -1329,7 +1329,7 @@ The origin of a name might be a reasonable shared note, while the reason a parti
 :::
 
 :::note
-Although sharable notes have been present since version 5.0 was released in 1991, as of 2021 relatively few applications have a user interface that presents shared notes as such to users. It is recommended that `SNOTE` be avoided when `NOTE` will suffice.
+Although shared notes have been present since version 5.0 was released in 1991, as of 2021 relatively few applications have a user interface that presents shared notes as such to users. It is recommended that `SNOTE` be avoided when `NOTE` will suffice.
 :::
 
 A `SHARED_NOTE_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa. Applications must not create datasets where these mutual pointers form a cycle. Applications should also ensure they can handle invalid files with such cycles in a safe manner.
