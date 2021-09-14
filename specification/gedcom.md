@@ -763,6 +763,11 @@ Date payloads may also be omitted entirely if no suitable form is known but a su
 :::note
 Versions 5.3 through 5.5.1 allowed phrases inside `DateValue` payloads.
 Date phrases were moved to the `PHRASE` substructure in version 7.0.
+A current limitation, however, is that a phrase in the `PHRASE` substructure 
+cannot specify a language other than the default language specified in
+the `<<HEADER>>`, so it is problematic to use to store original text as
+phrased in a source record.  For that purpose, `<<EVENT_DETAIL>>.SOUR.DATA.TEXT`
+is recommended instead, along with a `LANG` substructure.
 :::
 
 :::note
