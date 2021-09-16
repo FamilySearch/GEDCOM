@@ -2830,9 +2830,20 @@ A [registry of component subtags](https://www.iana.org/assignments/language-subt
 
 #### `LANG` (Language) `g7:HEAD-LANG`
 
-The language in which the `Text`-typed payloads of all structures in the document appear, except as superseded by a `g7:LANG`.
+The language in which the `Text`-typed payloads of all structures in the dataset appear, except as superseded by a `g7:LANG`.
+This structure must not be used unless the languages of all such payloads can be described by the same language tag.
 
 The payload of the `LANG` structure is a language tag, as defined by [BCP 47](https://www.rfc-editor.org/info/bcp47).
+
+If this structure is not included in a dataset, it has the same meaning as if it is present with the payload `und`, meaning the default language is undetermined.
+Per section 4.1 of [RFC 5646](https://www.rfc-editor.org/info/rfc5646), `g7:HEAD-LANG` should be omitted if its payload would be `und`.
+
+:::note
+There is a language tag `mul` meaning "multiple languages".
+However, it is not appropriate as a `g7:HEAD-LANG` payload unless every `Text`-typed payload without its own `g7:LANG` substructure is a string with parts in several languages.
+If some payloads are in one language and other payloads in a different language,
+the language of any given payload is undetermined (`und`), not multiple.
+:::
 
 #### `LANG` (Language) `g7:SUBM-LANG`
 
