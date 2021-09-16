@@ -2844,7 +2844,7 @@ There is a language tag `mul` meaning "multiple languages".
 However, it is not appropriate as a `g7:HEAD-LANG` payload unless every `Text`-typed payload without its own `g7:LANG` substructure is a string with parts in several languages.
 If some payloads are in one language and other payloads in a different language,
 the language of any given payload is undetermined (`und`), not multiple.
-
+:::
 
 #### `LANG` (Language) `g7:SUBM-LANG`
 
