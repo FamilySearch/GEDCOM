@@ -2831,7 +2831,14 @@ A [registry of component subtags](https://www.iana.org/assignments/language-subt
 
 #### `LANG` (Language) `g7:HEAD-LANG`
 
-The language in which the `Text`-typed payloads of all structures in the document appear, except as superseded by a `g7:LANG`.
+The default language using which to interpert any `Text`-typed payloads of all structures without their own
+`g7:LANG` substructure.  Language information is often used for purposes such as language-specific sorting
+sequences and phonetic, name matching algorithms, spell-checking,
+computer-synthesized speech, Braille transcription, or language translation, and most operating
+systems allow configuring a language via application language settings or "user locales".  Languages
+settings can also be set by Input Method Editors (IMEs), and it is expected that applications will
+set the default language based on the current language in use by the IME, user locale, or application
+language setting, as appropriate, rather than being any guarantee based on the content of actual strings.
 
 The payload of the `LANG` structure is a language tag, as defined by [BCP 47](https://www.rfc-editor.org/info/bcp47).
 
