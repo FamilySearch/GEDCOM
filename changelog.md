@@ -1,3 +1,16 @@
+# (working branch)
+
+- Added a new version detection specification to define how to decide which specification a given `.ged` file conforms to
+
+- Clarify the use of RESI payload (as opposed to RESI.PLAC and RESI.ADDR)
+
+- Clarification of SNOTE and its relation to the pointer-variant of 5.x NOTE
+
+- Change event.TYPE example from "MARR.TYPE Common Law" to "ORDN.TYPE Bishop" due to cultural differences in what a common-law marraige is
+
+- Various spelling and hyperlink corrections
+
+
 # Version 7.0.4
 
 - Clarify the use of standard structure types and standard tags in extensions
