@@ -16,7 +16,7 @@ detection algorithm and provides references to the more specific format specific
 All versions of GEDCOM files are text files that conform to the following general structure:
 
 - The file is organized as a sequence of **lines** separated by line terminators (U+000A, U+000D, or both).
-- Each line contains several components, separated by spaces (U+0020):
+- Each non-blank line contains several components, separated by spaces (U+0020):
   1. A required **level**, which is a non-negative integer encoded using ASCII digits.
     - The first line's level is 0.
     - Each other line's level is at most 1 greater than the level of the line before it.
