@@ -13,7 +13,7 @@ detection algorithm and provides references to the more specific format specific
 
 ## Commonalities
 
-All version of GEDCOM files are text files that conform to the following general structure:
+All versions of GEDCOM files are text files that conform to the following general structure:
 
 - The document is organized as a sequence of **lines** separated by ASCII line terminators (U+000A, U+000D, or both). Blank lines are ignored.
 - Each line contains several components, separated by spaces (U+0020):
