@@ -11,6 +11,24 @@ to parse the data.  The GEDCOM format itself does include a version identifier i
 a parser can detect the correct version and parse the file accordingly.  This document specifies a version
 detection algorithm and provides references to the more specific format specifications.
 
+## Commonalities
+
+All versions of GEDCOM files are text files that conform to the following general structure:
+
+- The file is organized as a sequence of **lines** separated by line terminators (U+000A, U+000D, or both).
+- Each non-blank line contains several components, separated by spaces (U+0020):
+  1. A required **level**, which is a non-negative integer encoded using ASCII digits.
+    - The first line's level is 0.
+    - Each other line's level is at most 1 greater than the level of the line before it.
+  2. An optional **identifier**, which begins and ends with a COMMERCIAL AT (U+0040 `@`) and contains no internal line terminators or COMMERCIAL ATs. No two lines share the same identifier.
+  3. A required **tag**, which is a string of one or more ASCII digits (U+0030 through U+0039 `9`–`0`), letters (U+0041 through U+005A `A`–`Z` and U+0061 through U+007A `a`–`z`), and underscores (U+005F `_`).
+  4. An optional **value**, which may contain any non-line terminator character.
+- Any line with level *x* > 0 represents a hierarchical child of the nearest preceding line with level *x* − 1.
+
+Beyond these commonalities, each GEDCOM version differs in details and is described by its own specification.
+Version specifications typically describe both the meaning of various structures
+and provide additional serialization details, including whether blank lines are allowed, whether multiple spaces can be used to separate line components, limits on tag and identifier length and characters, etc.
+
 ## Character Width and Byte Order Detection
 
 To efficiently locate the version in the content, one can first determine the character width and byte order
