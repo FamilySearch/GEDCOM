@@ -89,6 +89,7 @@ wish to detect the following byte sequence as well which might conform to the sp
 
 Byte sequence  | Explanation | Reference
 -------------- | ----------- | ---------
+35 2E 25 20 45 | "5.5 EL"    | [GEDCOM 5.5EL](http://wiki-de.genealogy.net/Gedcom_5.5EL)
 35 2E 35 2E 35 | "5.5.5"     | [THE GEDCOM 5.5.5 Specification with Annotations](https://www.gedcom.org/specs/GEDCOM555.zip)
 
 7. Parse the entire payload according to the indicated specification.
