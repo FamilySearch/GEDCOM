@@ -90,6 +90,15 @@ Prior to 7.0:
 - The genealogical structures were known as "the Lineage-Linked GEDCOM Form."
 :::
 
+In addition to this specification itself, additional supplimental material can be found at <https://gedcom.io>, including:
+
+- [Links to example and supporting software](https://gedcom.io/tools/)
+- Frequently asked questions for [users](https://gedcom.io/generalfaqs) and [developers](https://gedcom.io/techfaqs)
+- A [guide to migrating from 5.5.1 to 7.0](https://gedcom.io/migrate)
+- [Ways to engage in the community](https://gedcom.io/community/)
+
+
+
 ## Purpose for Version 7.x {.unnumbered}
 
 There have been multiple prior releases of this specification, with somewhat idiosyncratic version numbering.
