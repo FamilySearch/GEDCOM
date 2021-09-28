@@ -764,8 +764,7 @@ Date payloads may also be omitted entirely if no suitable form is known but a su
 Versions 5.3 through 5.5.1 allowed phrases inside `DateValue` payloads.
 Date phrases were moved to the `PHRASE` substructure in version 7.0.
 A current limitation, however, is that a phrase in the `PHRASE` substructure 
-cannot specify a language other than the default language specified in
-the `<<HEADER>>`, so if a non-default language is needed to correctly
+cannot specify a language, so if a non-default language is needed to correctly
 interpret the phrase, then `<<EVENT_DETAIL>>.SOUR.DATA.TEXT`
 can be used instead along with a `LANG` substructure.
 :::
