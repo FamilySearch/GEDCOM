@@ -7,6 +7,8 @@ This directory is used to convert the `specifications/gedcom.md` source file int
     - [python 3](https://python.org)
     - [pandoc](https://pandoc.org)
     - [weasyprint](https://weasyprint.org) installed by running `python3 -mpip install --user --upgrade weasyprint`
+        - Note: version 52.5 was notably faster than later versions;
+            `python3 -mpip install --user weasyprint==52.5` will install that version instead of the latest version.
     - [git](https://git-scm.com/)
     - `make`-compatible executable
 
@@ -14,18 +16,18 @@ This directory is used to convert the `specifications/gedcom.md` source file int
 
 # Pushing to [gedcom.io](https://gedcom.io)
 
-A script is provided to assist in uploading tag definitions and rendered specifiations to gedcom.io. To use it
+A script is provided to assist in uploading tag definitions and rendered specifications to gedcom.io. To use it
 
-1. Clone <https://github.com/FamilySearch/GEDCOM.io/> into a local diretory
+1. Clone <https://github.com/FamilySearch/GEDCOM.io/> into a local directory
 2. From the directory containing this README, run
 
     ````sh
     make
-    python3 path/to/GEDCOM.io
+    python3 push_to_gedcomio.py path/to/GEDCOM.io
     ````
 3. From the GEDCOM.io directory
     
-    1. `git add _pages/tag-def/*.md`
+    1. `git add _pages/tag-def/*.md specifications/FamilySearchGEDCOMv7.*`
     2. `git commit` and `git push`
 
 # Building -- how it works

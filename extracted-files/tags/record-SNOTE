@@ -35,10 +35,10 @@ descriptions:
         2 NOTE Named after the astronaut Gordon Cooper
         2 SNOTE @GORDON@
     
-    Although sharable notes have been present since version 5.0 was released in
-    1991, as of 2021 relatively few applications have a user interface that
-    presents shared notes as such to users. It is recommended that SNOTE be
-    avoided when NOTE will suffice.
+    The ability to have multiple structures share a single note using pointers
+    was introduced in version 5.0 in 1991. However, as of 2021 relatively few
+    applications have a user interface that presents shared notes as such to
+    users. It is recommended that SNOTE be avoided when NOTE will suffice.
     
     A SHARED_NOTE_RECORD may contain a pointer to a SOURCE_RECORD and vice
     versa. Applications must not create datasets where these mutual pointers
