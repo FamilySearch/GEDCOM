@@ -1,12 +1,18 @@
-# (working branch)
+# Version 7.0.5
+
+- Fix an error in the description of HEAD.LANG.
+    - Previosuly described HEAD.LANG as the language of all Text payloads that did not have a diffferent LANG specified. But many Text payloads did not accept a LANG substructure, which made this factually incorrect in many instances.
+    - Revised to clarify that HEAD.LANG is a default language that may be used for Text without an explicit language.
 
 - Added a new version detection specification to define how to decide which specification a given `.ged` file conforms to
 
-- Clarify the use of RESI payload (as opposed to RESI.PLAC and RESI.ADDR)
+- Clarification of DATE.PHRASE vs SOUR.DATA.TEXT when a language tag is desired
+
+- Clarification of the use of RESI payload (as opposed to RESI.PLAC and RESI.ADDR)
 
 - Clarification of SNOTE and its relation to the pointer-variant of 5.x NOTE
 
-- Change event.TYPE example from "MARR.TYPE Common Law" to "ORDN.TYPE Bishop" due to cultural differences in what a common-law marraige is
+- Change event.TYPE example from "MARR.TYPE Common Law" to "ORDN.TYPE Bishop" due to cultural differences in what a common-law marriage is
 
 - Various spelling and hyperlink corrections
 
