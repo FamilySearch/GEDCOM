@@ -1322,7 +1322,9 @@ n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
 A catch-all location for information that does not fully fit within other structures.
 It may include research notes, additional context, alternative interpretations, reasoning, and so forth.
 
-A shared note record may be pointed to by multiple other structures. Shared notes should only be used if editing the note in one place should edit it in all other places. If each instance of the note may be edited separately, a `NOTE` should be used instead.
+A shared note record may be pointed to by multiple other structures. Shared notes should only be used if editing the note in one place should edit it in all other places
+or if the note itself requires an `IDENTIFIER_STRUCTURE`.
+If each instance of the note may be edited separately and no identifier is needed, a `NOTE` should be used instead.
 
 Each [`SNOTE`.`TRAN`](#NOTE-TRAN) must have either a `MIME` or `LANG` substructure or both.
 
