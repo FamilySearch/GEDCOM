@@ -114,14 +114,14 @@ Byte sequence  | Explanation | Reference
 
 ## IANA Media Type Registration
 
-This section defines the "text/gedcom" media type for use with protocols such as HTTP or email, to identify content
+This section defines the "text/vnd.familysearch.gedcom" media type for use with protocols such as HTTP or email, to identify content
 as being a GEDCOM file.  The Internet Assigned Numbers Authority (IANA) maintains the
 [registry of assigned media types](https://www.iana.org/assignments/media-types/media-types.xhtml).
 
-The following registration for "text/gedcom" is specified using the template defined in
+The following registration for "text/vnd.familysearch.gedcom" is specified using the template defined in
 [RFC 4288](https://www.rfc-editor.org/rfc/rfc4288).
 
-**Name**: text/gedcom
+**Name**: text/vnd.familysearch.gedcom
 
 **Parameters**:
 
