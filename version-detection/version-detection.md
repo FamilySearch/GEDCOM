@@ -132,15 +132,18 @@ The following registration for "text/vnd.familysearch.gedcom" is specified using
 
   Many earlier versions of GEDCOM specified an "ANSEL" character set, which does not have an assignment in 
   the [IANA Character Sets registry](https://www.iana.org/assignments/character-sets/character-sets.xhtml)
-  and so cannot be used by either the charset parameter or Accept-Charset.  Since UTF-16 support was added
-  in 1993, UTF-8 has been supported in GEDCOM since 1999, and the latest version of GEDCOM only supports UTF-8,
+  and so cannot be used by either the charset parameter or Accept-Charset.  Since 
+  UTF-8 has been supported in GEDCOM since 1999, and the latest version of GEDCOM only supports UTF-8,
   it is not expected that ANSEL would need to be requested.
 
 * **version**: The GEDCOM specification version.  The parameter is not used when payload is present because
   the version information is transported inside the payload.  However, should version negotiation be needed,
   it may be used in a media range used in a request, such as in an Accept header.
 
-**Encoding considerations**: Text in a specified character set.
+**Encoding considerations**: Text in a specified character set.  Some earlier versions of GEDCOM permitted
+UTF-16 to be used, but UTF-16 cannot be used with a "text/*" media type.  As such, if a GEDCOM file is
+stored in UTF-16, it must be first converted to UTF-8 before being used with the text/vnd.familysearch.gedcom
+media type (this can be done without any GEDCOM-specific logic).
 
 **Security considerations**:
 Can contain directives to read files on the local hard drive and send GET requests to HTTP and HTTPS URLs.
