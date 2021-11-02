@@ -114,6 +114,8 @@ Byte sequence  | Explanation | Reference
 
 ## IANA Media Type Registration
 
+### text/vnd.familysearch.gedcom
+
 This section defines the "text/vnd.familysearch.gedcom" media type for use with protocols such as HTTP or email, to identify content
 as being a GEDCOM file.  The Internet Assigned Numbers Authority (IANA) maintains the
 [registry of assigned media types](https://www.iana.org/assignments/media-types/media-types.xhtml).
@@ -180,3 +182,58 @@ one-place and one-name studies, and historical analysis of interrelated individu
 **Intended Use**: Common
 
 Used for exchanging and storage of computerized genealogical data. Primary use is for inter-operable software products to assist genealogists, historians, and other researchers. Secondary use is as a long-term storage format for preserving genealogical information.
+
+### application/vnd.familysearch.gedcom+zip
+
+This section defines the "application/vnd.familysearch.gedcom+zip" media type for use with protocols such as HTTP or email, to identify content
+as being a GEDZIP file.  The Internet Assigned Numbers Authority (IANA) maintains the
+[registry of assigned media types](https://www.iana.org/assignments/media-types/media-types.xhtml).
+
+The following registration for "application/vnd.familysearch.gedcom+zip" is specified using the template defined in
+[RFC 4288](https://www.rfc-editor.org/rfc/rfc4288).
+
+**Name**: application/vnd.familysearch.gedcom+zip
+
+**Parameters**:
+
+* **version**: The version of the GEDCOM specification that specifies the GEDZIP format.
+  The GEDCOM version of the gedcom.ged file within the archive must match the GEDZIP version number,
+  and since the GEDZIP format was just added in FamilySearch GEDCOM 7.0, inclusion of the version
+  parameter is optional, as absense implies version 7.0.
+
+**Encoding considerations**: See the specification for considerations about the GEDZIP archive format.
+
+**Security considerations**:
+A GEDZIP archive payload can contain one or more files, including a GEDCOM file, and any other files it references.
+Such files may include personal and sensitive information as well as information commonly used to create
+security questions. This information is not encrypted or otherwise
+protected by GEDCOM or the ZIP archive itself; hence, it falls on the software and persons managing the files to ensure they are
+kept confidential if they contain such information.  Similarly, as with other types of archive formats,
+the archive might contain executable code or scripts, and it falls on the software and persons managing
+the files to guard against malicious files.
+
+**Interoperability considerations**: The GEDCOM version is encoded in the gedcom.ged file in the archive,
+and an algorithm is provided for detecting the version.
+
+**Application usage**: GEDCOM is used by family history and related applications, including family trees,
+one-place and one-name studies, and historical analysis of interrelated individuals.
+
+**Fragment Identifier**: not used
+
+**Restrictions on Use**: none
+
+**Provisional Registration**: This media type is intended to be permanent.
+
+**Magic numbers**: none
+
+**File Extension**: .gdz
+
+**Mac OS File Type Code**: none
+
+**Intended Use**: Common
+
+Used for exchanging and storage of computerized genealogical data. The primary use is for interoperable
+software products to assist genealogists, historians, and other researchers. The secondary use is as a
+long-term storage format for preserving genealogical information.
+
+**Specification**: https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf section 4
