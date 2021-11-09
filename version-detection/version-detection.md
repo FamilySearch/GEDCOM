@@ -199,7 +199,7 @@ The following registration for "application/vnd.familysearch.gedcom+zip" is spec
 * **version**: The version of the GEDCOM specification that specifies the GEDZIP format.
   The GEDCOM version of the gedcom.ged file within the archive must match the GEDZIP version number,
   and since the GEDZIP format was just added in FamilySearch GEDCOM 7.0, inclusion of the version
-  parameter is optional, as absense implies version 7.0.
+  parameter is optional, as absence implies version 7.0.
 
 **Encoding considerations**: See the specification for considerations about the GEDZIP archive format.
 
@@ -212,7 +212,7 @@ kept confidential if they contain such information.  Similarly, as with other ty
 the archive might contain executable code or scripts, and it falls on the software and persons managing
 the files to guard against malicious files.
 
-**Interoperability considerations**: The GEDCOM version is encoded in the gedcom.ged file in the archive,
+**Interoperability considerations**: The GEDZIP version is encoded in the gedcom.ged file in the archive,
 and an algorithm is provided for detecting the version.
 
 **Application usage**: GEDCOM is used by family history and related applications, including family trees,
@@ -236,4 +236,4 @@ Used for exchanging and storage of computerized genealogical data. The primary u
 software products to assist genealogists, historians, and other researchers. The secondary use is as a
 long-term storage format for preserving genealogical information.
 
-**Specification**: https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf section 4
+**Specification**: https://gedcom.io/specifications/FamilySearchGEDCOMv7.html#gedzip
