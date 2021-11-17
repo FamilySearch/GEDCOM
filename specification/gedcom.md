@@ -2868,8 +2868,8 @@ An example of `zxx` text might be a diagram approximated using characters for th
 
 :::note
 This specification does not permit `LANG` in every place where human language text might appear.
-Conversations are ongoing about adding it in more places in a future version of the spec.
-Using the current spec, additional language tagging can be accomplished using a [documented extension tag](#extension-tags)
+Conversations are ongoing about adding it in more places in a future version of the specification.
+Using the current specification, additional language tagging can be accomplished using a [documented extension tag](#extension-tags)
 by including this in the header:
 
 ```gedcom
