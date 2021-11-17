@@ -2843,7 +2843,7 @@ See also `LDS_INDIVIDUAL_ORDINANCE`.
 #### `LANG` (Language) `g7:LANG`
 
 The primary human language of the superstructure.
-The language in which the `Text`-typed payloads of the superstructure and its substructures appears.
+The language in which the `Text`-typed payloads of the superstructure and its substructures appear.
 
 The payload of the `LANG` structure is a language tag, as defined by [BCP 47](https://www.rfc-editor.org/info/bcp47).
 A [registry of component subtags](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) is maintained publicly by the IANA.
