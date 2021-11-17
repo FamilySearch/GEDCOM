@@ -2867,7 +2867,7 @@ the language tag `zxx` (meaning "no linguistic content" or "not applicable") may
 An example of `zxx` text might be a diagram approximated using characters for their shape, not their meaning.
 
 :::note
-This specification does not document the use of `LANG` in every place where human language text might appear.
+This specification does not permit `LANG` in every place where human language text might appear.
 Conversations are ongoing about adding it in more places in a future version of the spec.
 Using the current spec, additional language tagging can be accomplished using a [documented extension tag](#extension-tags)
 by including this in the header:
