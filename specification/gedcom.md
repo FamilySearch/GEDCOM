@@ -2850,7 +2850,7 @@ A [registry of component subtags](https://www.iana.org/assignments/language-subt
 
 In the absence of a `LANG` structure, the language is assumed to be unspecified;
 that may also be recorded explicitly with language tag `und` (meaning "undetermined").
-See `g7:HEAD-LANG` for information about applying language-specific algorithms to text in an unknown language.
+See `g7:HEAD-LANG` for information about applying language-specific algorithms to text in an unspecified language.
 
 If the text is primarily in one language with a few parts in a different language,
 it is recommended that a language tag identifying the primary language be used.
