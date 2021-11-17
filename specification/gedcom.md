@@ -2854,8 +2854,8 @@ See `g7:HEAD-LANG` for information about applying language-specific algorithms t
 
 If the text is primarily in one language with a few parts in a different language,
 it is recommended that a language tag identifying the primary language be used.
-If no one language is primary, the language tag `mul` (meaning "multiple") may be used.
-Most language-specific algorithms will need to treat `mul` the same way they do `und`.
+If no one language is primary, the language tag `mul` (meaning "multiple") may be used,
+but most language-specific algorithms will treat `mul` the same way they do `und`.
 
 :::note
 Conversations are ongoing about adding part-of-payload language tagging in a future version of the spec
