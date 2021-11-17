@@ -2663,6 +2663,23 @@ Depending on the maintaining authority, an `EXID` may be a unique identifier for
 
 See `FAMILY_RECORD`
 
+:::note
+The common case is that each couple has one `FAM` record,
+but that is not always the case.
+
+A couple that separates and then gets together again
+can be represented either as a single `FAM` with multiple events (`MARR`, `DIV`, etc)
+or as a separate `FAM` for each time together.
+Some user interfaces may display these two in different ways
+and the two admit different semantics in sourcing.
+Neither structure necessarily indicates this kind of temporary separation:
+a single `FAM` with two `MARR` with distinct dates might represent uncertainty about dates
+and a pair of `FAM` with same spouses might be the result of merging multiple files.
+
+Implementers should support both representations,
+and should to chose between them based on user input or other context beyond that provided in the datasets themselves.
+:::
+
 #### `FACT` (Fact) `g7:FAM-FACT`
 
 See `g7:INDI-FACT`.
