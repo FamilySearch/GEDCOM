@@ -2848,7 +2848,7 @@ The language in which the `Text`-typed payloads of the superstructure and its su
 The payload of the `LANG` structure is a language tag, as defined by [BCP 47](https://www.rfc-editor.org/info/bcp47).
 A [registry of component subtags](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) is maintained publicly by the IANA.
 
-In the absence of a `LANG` structure, the language is assumed to be unknown;
+In the absence of a `LANG` structure, the language is assumed to be unspecified;
 that may also be recorded explicitly with language tag `und` (meaning "undetermined").
 See `g7:HEAD-LANG` for information about applying language-specific algorithms to text in an unknown language.
 
