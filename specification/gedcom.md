@@ -2858,7 +2858,7 @@ If no one language is primary, the language tag `mul` (meaning "multiple") may b
 but most language-specific algorithms will treat `mul` the same way they do `und`.
 
 :::note
-Conversations are ongoing about adding part-of-payload language tagging in a future version of the spec
+Conversations are ongoing about adding part-of-payload language tagging in a future version of the specification
 to provide more fidelity for multilingual text.
 :::
 
