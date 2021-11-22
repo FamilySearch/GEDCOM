@@ -2677,7 +2677,7 @@ a single `FAM` with two `MARR` with distinct dates might represent uncertainty a
 and a pair of `FAM` with same spouses might be the result of merging multiple files.
 
 Implementers should support both representations,
-and should to chose between them based on user input or other context beyond that provided in the datasets themselves.
+and should choose between them based on user input or other context beyond that provided in the datasets themselves.
 :::
 
 #### `FACT` (Fact) `g7:FAM-FACT`
