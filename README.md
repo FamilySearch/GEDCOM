@@ -11,8 +11,8 @@ If you are looking for FamilySearch's GEDCOM 5.5.1 Java parser, which previously
 ## Repository structure
 
 - [`change.log.md`](changelog.md) is a running log of major changes made to the specification.
-- [`specifcation/`](specification/) contains the FamilySearch GEDCOM specification:
-	- [`specifcation/gedcom.md`](specification/gedcom.md) is the source document used to define the FamilySearch GEDCOM specification. It is written in pandoc-flavor markdown and is intended to be more easily written than read.
+- [`specification/`](specification/) contains the FamilySearch GEDCOM specification:
+	- [`specification/gedcom.md`](specification/gedcom.md) is the source document used to define the FamilySearch GEDCOM specification. It is written in pandoc-flavor markdown and is intended to be more easily written than read.
 	- In a local check-out, this is also where the build scripts place rendered versions of `gedcom.md`; see [releases](releases/latest) for a pre-rendered copy of these.
 - [`build/`](build/) contains files needed to render the specification
 	- See [`build/README.md`](build/) for more
