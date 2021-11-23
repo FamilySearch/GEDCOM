@@ -2313,7 +2313,7 @@ An [enumerated value](#enum-ADOP) indicating which parent(s) in the family adopt
 #### `ADR1` (Address Line 1) `g7:ADR1`
 
 The first line of the address, used for indexing.
-This should have a payload with no line break and be equal to the the first line of the corresponding `ADDR`.
+This structure's payload should be a single line of text equal to the first line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
 #### `ADR2` (Address Line 2) `g7:ADR2`
