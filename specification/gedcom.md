@@ -322,15 +322,13 @@ and a structure with the empty string as its payload
 may be encoded either
 with an empty `LineVal` (i.e. with a space after the `Tag`)
 or with no `LineVal` (i.e. without a space after the `Tag`).
-It is recommended that an empty `LineVal` be used if the structure has an empty payload
-and that no `LineVal` be present if the structure does not have a playload.
+In both cases, it is recommended that the space be omitted.
 
 :::example
 The payload of a `MARR` structure has type `[Y|<NULL>]`, which is optional but cannot be the empty string.
-If a `MARR` has no payload, if should be represented as "`1 MARR`" without a trailing space, not as "`1 MARR `" without one, although both are permitted.
-
 The payload of a `EVEN` structure has type `Text`, and `Text` can be the empty string.
-If an `EVEN` has the empty string as its payload, if should be represented as "`1 EVEN `" with a trailing space, not as "`1 EVEN`" without one, although both forms are permitted.
+The no-payload "`1 MARR`" should be represented without a trailing space, although including a single trailing space is permitted.
+The empty-payload "`1 EVEN `" should be represented with a single trailing space, although omitting it is permitted.
 :::
 
 If a line value matches production `Xref`, the same value must occur as the cross-reference identifier of a structure within the document.
