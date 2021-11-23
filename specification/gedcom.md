@@ -324,6 +324,12 @@ with an empty `LineVal` (i.e. with a space after the `Tag`)
 or with no `LineVal` (i.e. without a space after the `Tag`).
 In both cases, it is recommended that the space be omitted.
 
+:::example
+The payload of a `MARR` structure has type `[Y|<NULL>]`, which is optional but cannot be the empty string.
+The payload of a `EVEN` structure has type `Text`, and `Text` can be the empty string.
+Both no-paylaod "`1 MARR`" and empty-payload "`1 EVEN`" should be represented without a trailing space, although including a single trailing space is permitted in both cases.
+:::
+
 If a line value matches production `Xref`, the same value must occur as the cross-reference identifier of a structure within the document.
 The special `voidPtr` production is provided to encode null pointers.
 
