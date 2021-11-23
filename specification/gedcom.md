@@ -2325,7 +2325,7 @@ See `ADDRESS_STRUCTURE` for more.
 #### `ADR3` (Address Line 3) `g7:ADR3`
 
 The third line of the address, used for indexing.
-This should have a payload with no line break and be equal to the the third line of the corresponding `ADDR`.
+This structure's payload should be a single line of text equal to the third line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
 #### `AGE` (Age at event) `g7:AGE`
