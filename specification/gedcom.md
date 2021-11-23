@@ -2313,19 +2313,19 @@ An [enumerated value](#enum-ADOP) indicating which parent(s) in the family adopt
 #### `ADR1` (Address Line 1) `g7:ADR1`
 
 The first line of the address, used for indexing.
-This is the value of the line corresponding to the `ADDR` tag line in the address structure.
+This should have a payload with no line break and be equal to the the first line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
 #### `ADR2` (Address Line 2) `g7:ADR2`
 
 The second line of the address, used for indexing.
-This is the value of the first `CONT` line subordinate to the `ADDR` tag in the address structure.
+This should have a payload with no line break and be equal to the the second line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
 #### `ADR3` (Address Line 3) `g7:ADR3`
 
 The third line of the address, used for indexing.
-This is the value of the second `CONT` line subordinate to the `ADDR` tag in the address structure.
+This should have a payload with no line break and be equal to the the third line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
 #### `AGE` (Age at event) `g7:AGE`
