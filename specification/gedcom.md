@@ -320,8 +320,8 @@ Because empty payloads and missing payloads are considered equivalent,
 both a structure with no payload
 and a structure with the empty string as its payload
 may be encoded either
-with an empty `LineVal` (i.e. with a space after the `Tag`)
-or with no `LineVal` (i.e. without a space after the `Tag`).
+with an empty `LineVal` (i.e., with a space after the `Tag`)
+or with no `LineVal` (i.e., without a space after the `Tag`).
 In both cases, it is recommended that the space be omitted.
 
 :::example
