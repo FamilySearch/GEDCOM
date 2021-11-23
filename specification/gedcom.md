@@ -2672,7 +2672,6 @@ can be represented either as a single `FAM` with multiple events (`MARR`, `DIV`,
 or as a separate `FAM` for each time together.
 Some user interfaces may display these two in different ways
 and the two admit different semantics in sourcing.
-Neither structure necessarily indicates this kind of temporary separation:
 a single `FAM` with two `MARR` with distinct dates might represent uncertainty about dates
 and a pair of `FAM` with same spouses might be the result of merging multiple files.
 
