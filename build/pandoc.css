@@ -429,6 +429,17 @@ div.sourceCode {
     font-style: italic;
 }
 
+.deprecation {
+    margin: 1em;
+    background: #fbe9e9;
+    border-left: #f99 solid 4px;
+    padding: 0em 0.5em;
+}
+.deprecation > :first-child:before {
+    content: "Deprecation Note \2014\00A0 ";
+    font-style: italic;
+}
+
 code.uri {
     font-weight: normal;
     background: none !important;

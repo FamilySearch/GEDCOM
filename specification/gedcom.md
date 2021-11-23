@@ -1641,6 +1641,12 @@ n EXID <Special>                           {1:1}  g7:EXID
 ]
 ```
 
+:::deprecation
+Having an `EXID` without an `EXID`.`TYPE` substructure is deprecated.
+The meaning of an `EXID` depends on its `EXID`.`TYPE`.
+The cardinality of `EXID`.`TYPE` will be changed to `{1:1}` in version 8.0.
+:::
+
 Each of these provides an identifier for a structure or its subject,
 and each is different in purpose:
 
@@ -1649,6 +1655,7 @@ and each is different in purpose:
 - `UID` is a globally-unique identifier for a structure.
 
 - `EXID` is an identifier maintained by an external authority that applies to the subject of the structure.
+
 
 #### `INDIVIDUAL_ATTRIBUTE_STRUCTURE` :=
 
@@ -2048,6 +2055,13 @@ n PLAC <List:Text>                         {1:1}  g7:PLAC
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
+:::deprecation
+Having an `EXID` without an `EXID`.`TYPE` substructure is deprecated.
+The meaning of an `EXID` depends on its `EXID`.`TYPE`.
+The cardinality of `EXID`.`TYPE` will be changed to `{1:1}` in version 8.0.
+:::
+
+
 A place, which can be represented in several ways:
 
 - The payload contains a comma-separated list of region names,
@@ -2076,6 +2090,8 @@ A place, which can be represented in several ways:
 :::note
 This specification does not support places where a region name contains a comma. An alternative system for representing locations is likely to be added in a later version.
 :::
+
+
 
 #### `SOURCE_CITATION` :=
 
