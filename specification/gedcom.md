@@ -2319,7 +2319,7 @@ See `ADDRESS_STRUCTURE` for more.
 #### `ADR2` (Address Line 2) `g7:ADR2`
 
 The second line of the address, used for indexing.
-This should have a payload with no line break and be equal to the the second line of the corresponding `ADDR`.
+This structure's payload should be a single line of text equal to the second line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
 #### `ADR3` (Address Line 3) `g7:ADR3`
