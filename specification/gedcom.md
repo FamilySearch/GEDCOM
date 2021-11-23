@@ -2675,12 +2675,6 @@ the authority owning the identifier is provided in the TYPE substructure; see `E
 
 Depending on the maintaining authority, an `EXID` may be a unique identifier for the subject, an identifier for 1 of several views of the subject, or an identifier for the externally-maintained copy of the same information as is contained in this structure. However, unlike `UID` and `REFN`, `EXID` does not identify a structure; structures with the same `EXID` may have originated independently rather than by edits from the same starting point.
 
-:::deprecation
-Having an `EXID` without an `EXID`.`TYPE` substructure is deprecated.
-The meaning of an `EXID` depends on its `EXID`.`TYPE`.
-The cardinality of `EXID`.`TYPE` will be changed to `{1:1}` in version 8.0.
-:::
-
 #### `FAM` (Family record) `g7:record-FAM`
 
 See `FAMILY_RECORD`
