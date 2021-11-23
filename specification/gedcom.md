@@ -322,7 +322,7 @@ and a structure with the empty string as its payload
 may be encoded either
 with an empty `LineVal` (i.e. with a space after the `Tag`)
 or with no `LineVal` (i.e. without a space after the `Tag`).
-In both cases, it is recommended that the space be omitted.
+It is recommended that a `LineVal` be included if and only if the structure has a `payload`.
 
 :::example
 The payload of a `MARR` structure has type `[Y|<NULL>]`, which is optional but cannot be the empty string.
