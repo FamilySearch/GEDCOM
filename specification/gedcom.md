@@ -2668,7 +2668,7 @@ The common case is that each couple has one `FAM` record,
 but that is not always the case.
 
 A couple that separates and then gets together again
-can be represented either as a single `FAM` with multiple events (`MARR`, `DIV`, etc)
+can be represented either as a single `FAM` with multiple events (`MARR`, `DIV`, etc.)
 or as a separate `FAM` for each time together.
 Some user interfaces may display these two in different ways
 and the two admit different semantics in sourcing.
