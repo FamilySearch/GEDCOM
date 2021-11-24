@@ -316,7 +316,7 @@ Each non-pointer payload may be encoded in 1 or more line strings (line continua
 The exact encoding of non-pointer payloads is dependent on the datatype of the payload, as determined by the structure type.
 The datatype of non-pointer payloads cannot be fully determined by line value content alone.
 
-Note that `LineVal` cannot be the empty string.
+Note that production `LineVal` does not match the empty string.
 Because empty payloads and missing payloads are considered equivalent,
 both a structure with no payload
 and a structure with the empty string as its payload
