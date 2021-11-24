@@ -324,7 +324,7 @@ are encoded with no `LineVal` and no space after the `Tag`.
 
 :::example
 The payload of a `MARR` structure has type `[Y|<NULL>]`, which is optional but cannot be the empty string.
-The payload of a `EVEN` structure has type `Text`, and `Text` can be the empty string.
+The payload of a `EVEN` structure has type `Text`, which is not optional but can be the empty string.
 The `Line` encoding a no-payload `MARR` is "`1 MARR`"
 and the `Line` encoding an empty-payload `EVEN` is "`1 EVEN`";
 both `Line`s have no `LineVal` and no trailing space.
