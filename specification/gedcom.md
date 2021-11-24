@@ -316,18 +316,16 @@ Each non-pointer payload may be encoded in 1 or more line strings (line continua
 The exact encoding of non-pointer payloads is dependent on the datatype of the payload, as determined by the structure type.
 The datatype of non-pointer payloads cannot be fully determined by line value content alone.
 
+Note that `LineVal` cannot be the empty string.
 Because empty payloads and missing payloads are considered equivalent,
 both a structure with no payload
 and a structure with the empty string as its payload
-may be encoded either
-with an empty `LineVal` (i.e., with a space after the `Tag`)
-or with no `LineVal` (i.e., without a space after the `Tag`).
-In both cases, it is recommended that the space be omitted.
+are encoded with no `LineVal` and no space after the `Tag`.
 
 :::example
 The payload of a `MARR` structure has type `[Y|<NULL>]`, which is optional but cannot be the empty string.
 The payload of a `EVEN` structure has type `Text`, and `Text` can be the empty string.
-Both no-payload "`1 MARR`" and empty-payload "`1 EVEN`" should be represented without a trailing space, although including a single trailing space is permitted in both cases.
+Both no-payload "`1 MARR`" and empty-payload "`1 EVEN`" are represented with no `LineVal` and no trailing space.
 :::
 
 If a line value matches production `Xref`, the same value must occur as the cross-reference identifier of a structure within the document.
