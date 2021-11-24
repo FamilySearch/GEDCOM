@@ -1,3 +1,30 @@
+# Current Working Version
+
+- Deprecate `EXID` without a `TYPE`. `EXID` is defined in terms of its `TYPE`, and an `EXID` without a `TYPE` is not meaningful. `EXID`.`TYPE` will have cardinality `{1:1}`, not `{0:1}`, in the next major release.
+
+- Add media type specification for GEDZIP
+
+- Clarifications about `LANG`
+    - Clarify that `LANG` is the primary language, not sole language, of a payload. For example, `LANG en` can be used when most of the text is in English, even if some parts are not.
+    - A documented extension tag can be used where `LANG` is not defined.
+    - Provide guidance on special language tags
+        - `und` can be used if a superstructure's `LANG` does not apply to a substructure and what does apply is not known.
+        - `mul` can be used if there is no single primary language, but is unlikely to provide practical functionality beyond `und`.
+        - `zxx` can be used for ASCII art and other non-language text, and can improve accessibility for screen readers.
+
+- Note cases where the same couple might be the partners in multiple `FAM` records
+
+- Fix wording of `ADR1`, `ADR2`, and `ADR2` to no longer refer to `CONT` or line values
+
+- Acknowledge that SNOTE has an identifier structure, which NOTE does not, and change recommendation to suggest using SNOTE if a NOTE needs an identifier
+    
+    *Issue #98 proposes that this change be rolled back before 7.0.6 is released*
+
+- Update contact information on the title page
+
+- Various spelling and grammar corrections
+
+
 # Version 7.0.5
 
 - Fix an error in the description of HEAD.LANG.
