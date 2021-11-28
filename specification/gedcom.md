@@ -2408,7 +2408,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `BRIT` (Birth) `g7:BIRT`
+#### `BIRT` (Birth) `g7:BIRT`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
