@@ -6,16 +6,18 @@ uri: https://gedcom.io/terms/v7/RFN
 
 descriptions:
   - Record File Number
-  - This URI is defined to support conversion from GEDCOM 5.5.1 to FamilySearch GEDCOM 7.0 and beyond.
-    It is intended for use as the https://gedcom.io/terms/v7/TYPE of an 
+  - |
+    This URI is defined to support conversion from GEDCOM 5.5.1 to FamilySearch
+    GEDCOM 7.0 and beyond. It is intended for use as the 
+    https://gedcom.io/terms/v7/TYPE of an 
     https://gedcom.io/terms/v7/EXID replacing 5.5.1's RFN structure.
 
-    GEDCOM versions 5 through 5.5.1 had a notion of a "registered resource identifier".
-    The registration process was never widely followed and ceased being used in
-    the early 2000s. URLs beginning https://gedcom.io/terms/v7/RFN are
-    placeholders for such "registered resource identifiers", which may or may
-    not have been registered and hence may or may not be a unique resource
-    identifier.
+    GEDCOM versions 5.0 through 5.5.1 had a notion of a "registered resource
+    identifier". The registration process was never widely followed and ceased
+    being used in the early 2000s. URLs beginning
+    https://gedcom.io/terms/v7/RFN are placeholders for such "registered
+    resource identifiers", which may or may not have been registered and hence
+    may or may not be a unique resource identifier.
     
     The fragment identifer of this URI (the part after the #) is the
     registered resource identifier; the payload of the EXID is the record
@@ -26,11 +28,11 @@ descriptions:
     
     It is recommend that the 5.5.1 structure
     
-    2 RFN xyz:123abc
+        2 RFN xyz:123abc
     
     be converted to 7.0 structures
     
-    2 EXID xyz
-    3 TYPE https://gedcom.io/terms/v7/RFN#123abc
+        2 EXID xyz
+        3 TYPE https://gedcom.io/terms/v7/RFN#123abc
 
 ...

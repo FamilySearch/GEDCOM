@@ -6,8 +6,10 @@ uri: https://gedcom.io/terms/v7/RIN
 
 descriptions:
   - Record ID Number
-  - This URI is defined to support conversion from GEDCOM 5.5.1 to FamilySearch GEDCOM 7.0 and beyond.
-    It is intended for use as the https://gedcom.io/terms/v7/TYPE of an 
+  - |
+    This URI is defined to support conversion from GEDCOM 5.5.1 to FamilySearch
+    GEDCOM 7.0 and beyond. It is intended for use as the
+    https://gedcom.io/terms/v7/TYPE of an 
     https://gedcom.io/terms/v7/EXID replacing 5.5.1's RIN structure.
 
     GEDCOM 5.5 and 5.5.1 defined RIN as follows:
@@ -26,12 +28,12 @@ descriptions:
     
     It is recommend that the 5.5.1 structure
     
-    2 RIN 123abc
+        2 RIN 123abc
     
     in a file with HEAD.SOUR line value "XYZ"
     be converted to 7.0 structures
     
-    2 EXID 123abc
-    3 TYPE https://gedcom.io/terms/v7/RIN#XYZ
+        2 EXID 123abc
+        3 TYPE https://gedcom.io/terms/v7/RIN#XYZ
 
 ...
