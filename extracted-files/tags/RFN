@@ -10,7 +10,7 @@ descriptions:
     It is intended for use as the https://gedcom.io/terms/v7/TYPE of an 
     https://gedcom.io/terms/v7/EXID replacing 5.5.1's RFN structure.
 
-    GEDCOM 5 through 5.5.1 had a notion of a "registered resource identifier".
+    GEDCOM versions 5 through 5.5.1 had a notion of a "registered resource identifier".
     The registration process was never widely followed and ceased being used in
     the early 2000s. URLs beginning https://gedcom.io/terms/v7/RFN are
     placeholders for such "registered resource identifiers", which may or may
