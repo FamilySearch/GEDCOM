@@ -1,8 +1,10 @@
 import re
 from sys import argv, stderr
-from os.path import isfile, isdir, exists, dirname, join
+from os.path import isfile, isdir, exists, dirname, join, basename
 from os import makedirs
 from subprocess import run
+from shutil import copyfile
+from glob import glob
 
 
 def get_paths():
@@ -285,6 +287,11 @@ if __name__ == '__main__':
 
     for tag in g7:
         print('outputting', tag, '...', end=' ')
+        maybe = join(dirname(spec),'terms',tag)
+        if exists(maybe):
+            copyfile(maybe, join(dest,tag))
+            print('by copying', maybe, '...', end=' ')
+            continue
         with open(join(dest,tag), 'w') as fh:
             fh.write('%YAML 1.2\n---\n')
             print('type:',g7[tag][0], file=fh)
@@ -330,6 +337,13 @@ if __name__ == '__main__':
             fh.write('...\n')
 
         print('done')
+    
+    for path in glob(join(dirname(spec),'terms','*')):
+        tag = basename(path)
+        if tag not in g7:
+            print('copying', tag, '...', end=' ')
+            copyfile(path, join(dest,tag))
+            print('done')
 
     if dest.endswith('/'): dest=dest[:-1]
     base = dirname(dest)
