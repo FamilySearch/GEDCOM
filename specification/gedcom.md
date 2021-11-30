@@ -330,9 +330,6 @@ and the `Line` encoding an empty-payload `EVEN` is "`1 EVEN`";
 both `Line`s have no `LineVal` and no trailing space.
 :::
 
-:::note
-Implementations may choose to be more permissive and parse lines ending with a `Tag` and a single space as if they had no `LineVal`, but are not required to do so. They must not create lines of this form.
-:::
 
 If a line value matches production `Xref`, the same value must occur as the cross-reference identifier of a structure within the document.
 The special `voidPtr` production is provided to encode null pointers.
