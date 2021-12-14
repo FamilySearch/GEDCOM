@@ -1,8 +1,10 @@
-# Current Working Version
+# 7.0.6
 
 - Deprecate `EXID` without a `TYPE`. `EXID` is defined in terms of its `TYPE`, and an `EXID` without a `TYPE` is not meaningful. `EXID`.`TYPE` will have cardinality `{1:1}`, not `{0:1}`, in the next major release.
 
 - Add media type specification for GEDZIP.
+
+- Add term definitions for 5.5.1-compatibility `EXID`.`TYPE` values `AFN`, `RFN`, and `RIN`.
 
 - Clarifications about `LANG`
     - Clarify that `LANG` is the primary language, not sole language, of a payload. For example, `LANG en` can be used when most of the text is in English, even if some parts are not.
@@ -12,13 +14,13 @@
         - `mul` can be used if there is no single primary language, but is unlikely to provide practical functionality beyond `und`.
         - `zxx` can be used for ASCII art and other non-language text, and can improve accessibility for screen readers.
 
+- Clarify that empty *payloads* are encoded as missing `LineVal`s and empty `LineVal`s are not been permitted; this has been true since 7.0.0 but was easily overlooked in the previous text.
+
 - Note cases where the same couple might be the partners in multiple `FAM` records.
 
 - Fix wording of `ADR1`, `ADR2`, and `ADR3` to no longer refer to `CONT` or line values.
 
-- Acknowledge that SNOTE has an identifier structure, which NOTE does not, and change recommendation to suggest using SNOTE if a NOTE needs an identifier.
-    
-    *Issue #98 proposes that this change be rolled back before 7.0.6 is released*
+- Acknowledge that `SNOTE` has an identifier structure, which `NOTE` does not, and change recommendation to suggest using `SNOTE` if a `NOTE` needs an identifier.
 
 - Update contact information on the title page.
 
@@ -28,7 +30,7 @@
 # Version 7.0.5
 
 - Fix an error in the description of HEAD.LANG.
-    - Previosuly described HEAD.LANG as the language of all Text payloads that did not have a diffferent LANG specified. But many Text payloads did not accept a LANG substructure, which made this factually incorrect in many instances.
+    - Previously described HEAD.LANG as the language of all Text payloads that did not have a different LANG specified. But many Text payloads did not accept a LANG substructure, which made this factually incorrect in many instances.
     - Revised to clarify that HEAD.LANG is a default language that may be used for Text without an explicit language.
 
 - Added a new version detection specification to define how to decide which specification a given `.ged` file conforms to
