@@ -1,4 +1,4 @@
-# 7.0.6
+# Version 7.0.6
 
 - Deprecate `EXID` without a `TYPE`. `EXID` is defined in terms of its `TYPE`, and an `EXID` without a `TYPE` is not meaningful. `EXID`.`TYPE` will have cardinality `{1:1}`, not `{0:1}`, in the next major release.
 
