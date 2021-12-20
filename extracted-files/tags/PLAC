@@ -20,6 +20,10 @@ descriptions:
     jurisdictional types are unspecified beyond the lowest-to-highest order
     noted above.
   - |
+    Having an EXID without an EXID.TYPE substructure is deprecated. The meaning
+    of an EXID depends on its EXID.TYPE. The cardinality of EXID.TYPE will be
+    changed to {1:1} in version 8.0.
+    
     A place, which can be represented in several ways:
     
     -   The payload contains a comma-separated list of region names, ordered

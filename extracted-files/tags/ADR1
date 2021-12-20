@@ -8,9 +8,9 @@ standard tag: ADR1
 
 descriptions:
   - Address Line 1
-  - The first line of the address, used for indexing. This is the value of the
-    line corresponding to the ADDR tag line in the address structure. See
-    ADDRESS_STRUCTURE for more.
+  - The first line of the address, used for indexing. This structure’s payload
+    should be a single line of text equal to the first line of the
+    corresponding ADDR. See ADDRESS_STRUCTURE for more.
 
 payload: http://www.w3.org/2001/XMLSchema#string
 

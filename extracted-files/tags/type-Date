@@ -70,8 +70,14 @@ descriptions:
     phrases were moved to the PHRASE substructure in version 7.0. A current
     limitation, however, is that a phrase in the PHRASE substructure cannot
     specify a language, so if a non-default language is needed to correctly
-    interpret the phrase, then <<EVENT_DETAIL>>.SOUR.DATA.TEXT can be used
-    instead along with a LANG substructure.
+    interpret the phrase two options exist:
+    
+    -   PHRASE can be used with a documented extension tag for the language, as
+        discussed in https://gedcom.io/terms/v7/LANG.
+    
+    -   <<EVENT_DETAIL>>.SOUR.DATA.TEXT can be used instead along with a LANG
+        substructure; this loses the connection with the date, but includes the
+        language with a standard tag.
     
     As defined by the grammar above, every date must have a year. If no year is
     known, the entire date may be omitted.
