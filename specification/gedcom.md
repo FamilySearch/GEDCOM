@@ -2142,14 +2142,40 @@ Substructures provide additional information about how that source applies to th
 - `QUAY`: an estimation of the reliability of the source in regard to these claims.
 - `MULTIMEDIA_LINK`: digital copies of the cited part of the source
 
-When no source record is available, a `voidPtr` and accompanying `NOTE` can be used to describe the source.
+When no source record is available, a `voidPtr` and accompanying `NOTE` or [documented extension](#extension-tags) `g7:PHRASE` can be used to describe the source.
+
+:::note
+When 7.0 was released it was decided to not document a SOUR.PHRASE structure and instead encode `SOURCE_CITATIONS` with no corresponding `SOURCE_RECORD` using a `NOTE`, with notes about the citation following, as follows:
 
 :::example
 ```gedcom
-1 DSCR Tall enough his head touched the ceiling
+1 PROP A lumber mill
 2 SOUR @VOID@
-3 NOTE His grand-daughter Lydia told me this in 1980
+3 NOTE The Pennsylvania Inquirer, 1831, unknown issue
+3 NOTE Could have been about someone else with the same name
 ```
+:::
+
+However, `voidPtr`s can also arise when [removing private data](#removing data), making it ambiguous whether the first `NOTE` is the citation or a note about the citation. For this reason, it may be preferable to use a `g7:PHRASE` by including a documented extension tag with a `SCHMA` entry like
+
+```gedcom
+2 TAG _PHRASE https://gedcom.io/terms/v7/PHRASE
+```
+
+used as follows
+
+:::example
+```gedcom
+1 PROP A lumber mill
+2 SOUR @VOID@
+3 _PHRASE The Pennsylvania Inquirer, 1831, unknown issue
+3 NOTE Could have been about someone else with the same name
+```
+:::
+
+However, some applications may chose to omit extensions they do not understand, so `NOTE` may be preferable to `_PHRASE` when interacting with applications that do not support `_PHRASE`.
+
+This ambiguity is scheduled to be resolved in version 7.1; progress on that resolution is tracked in [issue #97](https://github.com/FamilySearch/GEDCOM/issues/97).
 :::
 
 A `SOURCE_CITATION` can contain a `NOTE_STRUCTURE`, which in turn can contain a `SOURCE_CITATION`, allowing potentially unbounded nesting of structures. Because each dataset is finite, this nesting is also guaranteed to be finite.
