@@ -2304,7 +2304,7 @@ In addition, `FAM`.`FACT` is a structure for a generic family attribute. It must
 
 The structures describing ordinances performed by The Church of Jesus Christ of Latter-day Saints are unlike regular events in that they might either be performed during life or by proxy on the behalf of a deceased individual.
 
-Proxy ordinances on behalf of deceased persons were once requested and officially recorded using an earlier version of GDCOM.
+Proxy ordinances on behalf of deceased persons were once requested and officially recorded using an earlier version of GEDCOM.
 This is no longer the case, but when it was the case the following principles held:
 
 - `PLAC` was used only for ordinances that were performed by the recipient in life.
