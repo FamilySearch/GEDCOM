@@ -737,10 +737,11 @@ Technically, there are 3 distinct date datatypes:
 
 
 ```abnf
-DateValue   = date / DatePeriod / dateRange / dateApprox
+DateValue   = date / DatePeriod / dateRange / dateApprox / ""
 DateExact   = day D month D year  ; in Gregorian calendar
 DatePeriod  = %s"FROM" D date [D %s"TO" D date]
             / %s"TO" D date
+            / ""
 
 date        = [calendar D] [[day D] month D] year [D epoch]
 dateRange   = %s"BET" D date D %s"AND" D date
@@ -782,7 +783,7 @@ The grammar above allows for `date`s to be preceded by various words. The meanin
 
 Known calendars and tips for handling dual dating and extension calendars are given in [Appendix A: Calendars and Dates](#A-calendars).
 
-Date payloads may also be omitted entirely if no suitable form is known but a substructure (such as a `PHRASE` or `TIME`) is desired.
+`DateValue` and `DatePeriod` payloads may also be the empty string if no suitable form is known but a substructure (such as a `PHRASE` or `TIME`) is desired.
 
 :::note
 Versions 5.3 through 5.5.1 allowed phrases inside `DateValue` payloads.
