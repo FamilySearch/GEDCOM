@@ -4084,14 +4084,14 @@ Permitted months are
 
 |Code  |Name               |
 |:-----|:------------------|
-|`VEND`|Vendemiaire        |
+|`VEND`|Vendémiaire        |
 |`BRUM`|Brumaire           |
 |`FRIM`|Frimaire           |
-|`NIVO`|Nivose             |
-|`PLUV`|Pluviose           |
-|`VENT`|Ventose            |
+|`NIVO`|Nivôse             |
+|`PLUV`|Pluviôse           |
+|`VENT`|Ventôse            |
 |`GERM`|Germinal           |
-|`FLOR`|Floreal            |
+|`FLOR`|Floréal            |
 |`PRAI`|Prairial           |
 |`MESS`|Messidor           |
 |`THER`|Thermidor          |
