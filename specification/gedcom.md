@@ -2141,17 +2141,10 @@ Substructures provide additional information about how that source applies to th
 - `QUAY`: an estimation of the reliability of the source in regard to these claims.
 - `MULTIMEDIA_LINK`: digital copies of the cited part of the source
 
-When no source record is available, a `voidPtr` can be used with the citation text in a `PAGE` substructure.
-The `PAGE` is defined to express a "specific location within the information referenced."
-With a `voidPtr` there is no information referenced, so the `PAGE` may describe the entire source.
-
-:::example
-```gedcom
-1 DSCR Tall enough his head touched the ceiling
-2 SOUR @VOID@
-3 PAGE His grand-daughter Lydia told me this in 1980
-```
-:::
+It is recommended that every `SOURCE_CITATION` point to a `SOURCE_RECORD`.
+However, if no source record is available a `voidPtr` can be used with the citation text in a `PAGE` substructure.
+The `PAGE` is defined to express a "specific location within the information referenced;"
+with a `voidPtr` there is no information referenced, so the `PAGE` may describe the entire source.
 
 A `SOURCE_CITATION` can contain a `NOTE_STRUCTURE`, which in turn can contain a `SOURCE_CITATION`, allowing potentially unbounded nesting of structures. Because each dataset is finite, this nesting is also guaranteed to be finite.
 
