@@ -1,13 +1,19 @@
 import re
-import sys
 
-if len(sys.argv) < 3:
-    print("USAGE:",argv[0],"input.md output.md", sys.stderr)
-    sys.exit(1)
+def get_paths():
+    """Parses command-line arguments, if present; else uses defaults"""
+    from sys import argv
+    from os.path import isfile
 
-src = sys.argv[1]
-dst = sys.argv[2]
+    if len(argv) < 3:
+        raise Exception("Input files fillowed by an output file expected")
+    dest = argv.pop()
+    spec = [_ for _ in argv[1:] if isfile(_)]
+    if len(spec) < 1:
+        raise Exception("No input file provided")
+    return spec, dest
 
+srcs, dst = get_paths()
 
 def slugify(bit):
     if '`g7:' in bit:
@@ -26,35 +32,36 @@ slugs = {}
 abnf_rules = {}
 table_tags = {}
 header_row = None
-with open(src) as f:
-    num = 0
-    inabnf = False
-    for line in f:
-        num += 1
-        if line[0] == '#':
-            if '`' in line and '{' not in line:
-                slug = slugify(line.replace("'s ",'.'))
-            elif '{' in line and line.find('#', line.find('{')) > 0:
-                slug = line[line.rfind('#')+1:]
-                slug = slug[:slug.find('}')]
-            else:
-                if '{' in line: line = line[:line.find('{')]
-                slug = slugify(line.strip('# \n\r'))
-            if slug in slugs:
-                raise Exception('Duplicate slug '+slug)
-            slugs[slug] = num
-        elif '`abnf' in line:
-            inabnf = True
-        elif inabnf and '`' in line:
-            inabnf = False
-        elif inabnf and line[0] != ' ' and '=' in line:
-            abnf_rules[line.split()[0]] = slug
-        elif not inabnf:
-            if header_row:
-                if '|' not in line: header_row = None
-                elif 'Tag' in header_row and '`' in line:
-                    table_tags[line.split('`')[1]] = slug
-            elif '|' in line: header_row = line
+for src in srcs:
+    with open(src) as f:
+        num = 0
+        inabnf = False
+        for line in f:
+            num += 1
+            if line[0] == '#':
+                if '`' in line and '{' not in line:
+                    slug = slugify(line.replace("'s ",'.'))
+                elif '{' in line and line.find('#', line.find('{')) > 0:
+                    slug = line[line.rfind('#')+1:]
+                    slug = slug[:slug.find('}')]
+                else:
+                    if '{' in line: line = line[:line.find('{')]
+                    slug = slugify(line.strip('# \n\r'))
+                if slug in slugs:
+                    raise Exception('Duplicate slug '+slug)
+                slugs[slug] = num
+            elif '`abnf' in line:
+                inabnf = True
+            elif inabnf and '`' in line:
+                inabnf = False
+            elif inabnf and line[0] != ' ' and '=' in line:
+                abnf_rules[line.split()[0]] = slug
+            elif not inabnf:
+                if header_row:
+                    if '|' not in line: header_row = None
+                    elif 'Tag' in header_row and '`' in line:
+                        table_tags[line.split('`')[1]] = slug
+                elif '|' in line: header_row = line
 
 last = {}
 def linkable(line, num, istable=False):
@@ -87,21 +94,22 @@ def linkable(line, num, istable=False):
     return abnfed
 
 # Step 2: add {#anchors} for tags; add hyperlinks
-with open(src) as f:
-    with open(dst,'w') as to:
-        num = 0
-        for line in f:
-            num += 1
-            if line[0] == '#':
-                if '`' in line and '{' not in line:
-                    slug = slugify(line.replace("'s ",'.'))
-                    print(line.strip(), '{- #'+slug+'}',  file=to)
+with open(dst,'w') as to:
+    for src in srcs:
+        with open(src) as f:
+            num = 0
+            for line in f:
+                num += 1
+                if line[0] == '#':
+                    if '`' in line and '{' not in line:
+                        slug = slugify(line.replace("'s ",'.'))
+                        print(line.strip(), '{- #'+slug+'}',  file=to)
+                    else:
+                        to.write(line)
+                elif '|' in line:
+                    to.write(linkable(line, num, True))
+                    # to.write(line)
                 else:
-                    to.write(line)
-            elif '|' in line:
-                to.write(linkable(line, num, True))
-                # to.write(line)
-            else:
-                to.write(linkable(line, num))
+                    to.write(linkable(line, num))
 
 # Step 3 is adding links inside gedstruct code blocks. This cannot be done in markdown, so it is handled by a separate processor for the HTML
