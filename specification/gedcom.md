@@ -2142,7 +2142,7 @@ Substructures provide additional information about how that source applies to th
 - `MULTIMEDIA_LINK`: digital copies of the cited part of the source
 
 It is recommended that every `SOURCE_CITATION` point to a `SOURCE_RECORD`.
-However, if no source record is available a `voidPtr` can be used with the citation text in a `PAGE` substructure.
+However, a `voidPtr` can be used with the citation text in a `PAGE` substructure.
 The `PAGE` is defined to express a "specific location within the information referenced;"
 with a `voidPtr` there is no information referenced, so the `PAGE` may describe the entire source.
 
