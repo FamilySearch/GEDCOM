@@ -1,3 +1,18 @@
+# Version 7.07
+
+- Update the `DateValue` and `DatePeriod` ABNF to match the textual statement that these can be empty.
+
+- Update recommendations for sources
+    - As with 5.5.1, `SOURCE_RECORD`s are recommended.
+    - Note that unstructured citations can be placed in the `SOURCE_RECORD`'s `TITL` substructure.
+    - Remove extraneous `SOUR @VOID@` from example of `NOTE` vs `SNOTE`.
+    - Change recommendation of `SOUR @VOID@` from storing the formatted citation in a `NOTE` (which conflicts with the usual meaning of notes) to storing it in a `PAGE` (which aligns with `PAGE`'s definition).
+
+- Various spelling and grammar corrections.
+
+- Internal updates to the processing system to better handle the size of the specification. These should have been entirely invisible in the rendered HTML and PDF documents.
+
+
 # Version 7.0.6
 
 - Deprecate `EXID` without a `TYPE`. `EXID` is defined in terms of its `TYPE`, and an `EXID` without a `TYPE` is not meaningful. `EXID`.`TYPE` will have cardinality `{1:1}`, not `{0:1}`, in the next major release.
