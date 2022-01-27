@@ -16,10 +16,11 @@ descriptions:
     -   DateExact is used for timestamps and other fully-known dates.
     -   DatePeriod is used to express time intervals that span multiple days.
     
-        DateValue   = date / DatePeriod / dateRange / dateApprox
+        DateValue   = date / DatePeriod / dateRange / dateApprox / ""
         DateExact   = day D month D year  ; in Gregorian calendar
         DatePeriod  = %s"FROM" D date [D %s"TO" D date]
                     / %s"TO" D date
+                    / ""
     
         date        = [calendar D] [[day D] month D] year [D epoch]
         dateRange   = %s"BET" D date D %s"AND" D date
@@ -63,8 +64,9 @@ descriptions:
     Known calendars and tips for handling dual dating and extension calendars
     are given in Appendix A: Calendars and Dates.
     
-    Date payloads may also be omitted entirely if no suitable form is known but
-    a substructure (such as a PHRASE or TIME) is desired.
+    DateValue and DatePeriod payloads may also be the empty string if no
+    suitable form is known but a substructure (such as a PHRASE or TIME) is
+    desired.
     
     Versions 5.3 through 5.5.1 allowed phrases inside DateValue payloads. Date
     phrases were moved to the PHRASE substructure in version 7.0. A current

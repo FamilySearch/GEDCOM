@@ -29,8 +29,6 @@ descriptions:
     
         0 @GORDON@ SNOTE "Gordon" is a traditional Scottish surname.
         1 CONT It became a given name in honor of Charles George Gordon.
-        1 SOUR @VOID@
-        2 NOTE https://en.wikipedia.org/wiki/Gordon_(given_name)
         0 @I1@ INDI
         1 NAME Gordon /Jones/
         2 NOTE Named after the astronaut Gordon Cooper
