@@ -26,6 +26,11 @@ descriptions:
         have past and present owners and a physical description of the book.
     -   The TITL of a personal interview would cite the informant and
         interviewer.
+    
+    Some sources may have a citation text that cannot readily be represented
+    using the SOURCE_RECORD substructures AUTH, PUBL, REPO, and so on. In such
+    cases, the entire citation text may be presented as the payload of the
+    SOUR.TITL.
   - title
   - A formal designation used by an individual in connection with positions of
     royalty or other social status, such as Grand Duke.

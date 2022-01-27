@@ -369,8 +369,6 @@ The origin of a name might be a reasonable shared note, while the reason a parti
 ```gedcom
 0 @GORDON@ SNOTE "Gordon" is a traditional Scottish surname.
 1 CONT It became a given name in honor of Charles George Gordon.
-1 SOUR @VOID@
-2 NOTE https://en.wikipedia.org/wiki/Gordon_(given_name)
 0 @I1@ INDI
 1 NAME Gordon /Jones/
 2 NOTE Named after the astronaut Gordon Cooper
@@ -1158,15 +1156,10 @@ Substructures provide additional information about how that source applies to th
 - `QUAY`: an estimation of the reliability of the source in regard to these claims.
 - `MULTIMEDIA_LINK`: digital copies of the cited part of the source
 
-When no source record is available, a `voidPtr` and accompanying `NOTE` can be used to describe the source.
-
-:::example
-```gedcom
-1 DSCR Tall enough his head touched the ceiling
-2 SOUR @VOID@
-3 NOTE His grand-daughter Lydia told me this in 1980
-```
-:::
+It is recommended that every `SOURCE_CITATION` point to a `SOURCE_RECORD`.
+However, a `voidPtr` can be used with the citation text in a `PAGE` substructure.
+The `PAGE` is defined to express a "specific location within the information referenced;"
+with a `voidPtr` there is no information referenced, so the `PAGE` may describe the entire source.
 
 A `SOURCE_CITATION` can contain a `NOTE_STRUCTURE`, which in turn can contain a `SOURCE_CITATION`, allowing potentially unbounded nesting of structures. Because each dataset is finite, this nesting is also guaranteed to be finite.
 
@@ -2170,6 +2163,18 @@ It is recommended that the data in this field be formatted comma-separated with 
 ```
 :::
 
+If the superstructure's pointer is `@VOID@`
+then there is no information referenced
+and the `PAGE` may describe the entire source.
+
+:::example
+```gedcom
+1 DSCR Tall enough his head touched the ceiling
+2 SOUR @VOID@
+3 PAGE His grand-daughter Lydia told me this in 1980
+```
+:::
+
 #### `PEDI` (Pedigree) `g7:PEDI`
 
 An [enumerated value](#enum-PEDI) indicating the type of child-to-family relationship represented by the superstructure.
@@ -2522,6 +2527,9 @@ For an unpublished work, including most digital files, titles should be descript
 * The `TITL` of a personal interview would cite the informant and interviewer.
 
 :::
+
+Some sources may have a citation text that cannot readily be represented using the `SOURCE_RECORD` substructures `AUTH`, `PUBL`, `REPO`, and so on.
+In such cases, the entire citation text may be presented as the payload of the `SOUR`.`TITL`.
 
 #### `TITL` (Title) `g7:INDI-TITL`
 
