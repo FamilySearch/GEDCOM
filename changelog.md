@@ -10,7 +10,7 @@
 
 - Various spelling and grammar corrections.
 
-- Internal updates to the processing system to better handle the size of the specification. These should have been entirely invisible in the rendered HTML and PDF documents.
+- Internal updates to the repository organization and processing system to better handle the size of the specification. These should be entirely invisible in the rendered HTML and PDF documents.
 
 
 # Version 7.0.6
