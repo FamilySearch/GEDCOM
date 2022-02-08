@@ -8,3 +8,4 @@ Changes deferred to the 7.1 release:
 - [ ] Add language-tagged HTML (see issue #83)
 - [ ] Add "legitimization" event (see issue #84)
 - [ ] Add SOUR.PHRASE (see issue #97)
+- [ ] Add INDI.NAME.LANG (see discussion #108)
