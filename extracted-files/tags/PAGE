@@ -23,6 +23,13 @@ descriptions:
     
         2 SOUR @S1@
         3 PAGE Film: 1234567, Frame: 344, Line: 28
+    
+    If the superstructure’s pointer is @VOID@ then there is no information
+    referenced and the PAGE may describe the entire source.
+    
+        1 DSCR Tall enough his head touched the ceiling
+        2 SOUR @VOID@
+        3 PAGE His grand-daughter Lydia told me this in 1980
 
 payload: http://www.w3.org/2001/XMLSchema#string
 

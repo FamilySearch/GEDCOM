@@ -10,16 +10,20 @@ descriptions:
   - Place
   - |
     The principal place in which the superstructure’s subject occurred,
-    represented as a [List] of jurisdictional entities in a sequence from from
-    the lowest to the highest jurisdiction. As with other lists, the
-    jurisdictions are separated by commas. Any jurisdiction’s name that is
-    missing is still accounted for by an empty string in the list.
+    represented as a [List] of jurisdictional entities in a sequence from the
+    lowest to the highest jurisdiction. As with other lists, the jurisdictions
+    are separated by commas. Any jurisdiction’s name that is missing is still
+    accounted for by an empty string in the list.
     
     The type of each jurisdiction is given in the PLAC.FORM substructure, if
     present, or in the HEAD.PLAC.FORM structure. If neither is present, the
     jurisdictional types are unspecified beyond the lowest-to-highest order
     noted above.
   - |
+    Having an EXID without an EXID.TYPE substructure is deprecated. The meaning
+    of an EXID depends on its EXID.TYPE. The cardinality of EXID.TYPE will be
+    changed to {1:1} in version 8.0.
+    
     A place, which can be represented in several ways:
     
     -   The payload contains a comma-separated list of region names, ordered
