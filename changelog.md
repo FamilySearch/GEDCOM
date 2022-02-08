@@ -1,3 +1,66 @@
+# Version 7.07
+
+- Update the `DateValue` and `DatePeriod` ABNF to match the textual statement that these can be empty.
+
+- Update recommendations for sources
+    - As with 5.5.1, `SOURCE_RECORD`s are recommended.
+    - Note that unstructured citations can be placed in the `SOURCE_RECORD`'s `TITL` substructure.
+    - Remove extraneous `SOUR @VOID@` from example of `NOTE` vs `SNOTE`.
+    - Change recommendation of `SOUR @VOID@` from storing the formatted citation in a `NOTE` (which conflicts with the usual meaning of notes) to storing it in a `PAGE` (which aligns with `PAGE`'s definition).
+
+- Various spelling and grammar corrections.
+
+- Internal updates to the repository organization and processing system to better handle the size of the specification. These should be entirely invisible in the rendered HTML and PDF documents.
+
+
+# Version 7.0.6
+
+- Deprecate `EXID` without a `TYPE`. `EXID` is defined in terms of its `TYPE`, and an `EXID` without a `TYPE` is not meaningful. `EXID`.`TYPE` will have cardinality `{1:1}`, not `{0:1}`, in the next major release.
+
+- Add media type specification for GEDZIP.
+
+- Add term definitions for 5.5.1-compatibility `EXID`.`TYPE` values `AFN`, `RFN`, and `RIN`.
+
+- Clarifications about `LANG`
+    - Clarify that `LANG` is the primary language, not sole language, of a payload. For example, `LANG en` can be used when most of the text is in English, even if some parts are not.
+    - A documented extension tag can be used where `LANG` is not defined.
+    - Provide guidance on special language tags
+        - `und` can be used if a superstructure's `LANG` does not apply here and what does apply is not known.
+        - `mul` can be used if there is no single primary language, but is unlikely to provide practical functionality beyond `und`.
+        - `zxx` can be used for ASCII art and other non-language text, and can improve accessibility for screen readers.
+
+- Clarify that empty *payloads* are encoded as missing `LineVal`s and empty `LineVal`s are not been permitted; this has been true since 7.0.0 but was easily overlooked in the previous text.
+
+- Note cases where the same couple might be the partners in multiple `FAM` records.
+
+- Fix wording of `ADR1`, `ADR2`, and `ADR3` to no longer refer to `CONT` or line values.
+
+- Acknowledge that `SNOTE` has an identifier structure, which `NOTE` does not, and change recommendation to suggest using `SNOTE` if a `NOTE` needs an identifier.
+
+- Update contact information on the title page.
+
+- Various spelling and grammar corrections.
+
+
+# Version 7.0.5
+
+- Fix an error in the description of HEAD.LANG.
+    - Previously described HEAD.LANG as the language of all Text payloads that did not have a different LANG specified. But many Text payloads did not accept a LANG substructure, which made this factually incorrect in many instances.
+    - Revised to clarify that HEAD.LANG is a default language that may be used for Text without an explicit language.
+
+- Added a new version detection specification to define how to decide which specification a given `.ged` file conforms to
+
+- Clarification of DATE.PHRASE vs SOUR.DATA.TEXT when a language tag is desired
+
+- Clarification of the use of RESI payload (as opposed to RESI.PLAC and RESI.ADDR)
+
+- Clarification of SNOTE and its relation to the pointer-variant of 5.x NOTE
+
+- Change event.TYPE example from "MARR.TYPE Common Law" to "ORDN.TYPE Bishop" due to cultural differences in what a common-law marriage is
+
+- Various spelling and hyperlink corrections
+
+
 # Version 7.0.4
 
 - Clarify the use of standard structure types and standard tags in extensions

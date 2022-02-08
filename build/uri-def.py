@@ -1,30 +1,24 @@
 import re
 from sys import argv, stderr
-from os.path import isfile, isdir, exists, dirname, join
+from os.path import isfile, isdir, exists, dirname, join, basename
 from os import makedirs
 from subprocess import run
+from shutil import copyfile
+from glob import glob
 
 
 def get_paths():
     """Parses command-line arguments, if present; else uses defaults"""
-    spec = join(dirname(argv[0]),'../specification/gedcom.md') if len(argv) < 2 or not isfile(argv[1]) else argv[1]
-    dest = join(dirname(argv[0]),'../extracted-files/tags')
-    for arg in argv:
-        if arg and isdir(arg):
-            dest = arg
-            break
-        if arg and not exists(arg) and arg[0] != '-' and isdir(dirname(arg)):
-            dest = arg
-            break
-
-    if not isdir(dest):
-        makedirs(dest)
+    spec = [_ for _ in argv[1:] if isfile(_)]
+    dest = [_ for _ in argv[1:] if isdir(_)]
+    if len(dest) != 1: raise Exception("One destination expected, but got "+str(dest))
+    if len(spec) < 1: raise Exception("Expected input files, none given")
     
-    return spec, dest
+    return spec, dest[0]
 
 def get_text(spec):
     """Reads the contents of the given file"""
-    with open(spec) as fh: return fh.read()
+    return '\n\n'.join(open(s).read() for s in spec)
 
 def get_prefixes(txt):
     """Find and parse prefix definition tables"""
@@ -266,8 +260,8 @@ def expand_prefix(txt, prefixes):
 if __name__ == '__main__':
     # URI definitions
     g7 = {}
-    spec, dest = get_paths()
-    txt = get_text(spec)
+    specs, dest = get_paths()
+    txt = get_text(specs)
     
     prefixes = get_prefixes(txt)
     dtypes = find_datatypes(txt, g7)
@@ -285,6 +279,11 @@ if __name__ == '__main__':
 
     for tag in g7:
         print('outputting', tag, '...', end=' ')
+        maybe = join(dirname(specs[0]),'terms',tag)
+        if exists(maybe):
+            copyfile(maybe, join(dest,tag))
+            print('by copying', maybe, '...', end=' ')
+            continue
         with open(join(dest,tag), 'w') as fh:
             fh.write('%YAML 1.2\n---\n')
             print('type:',g7[tag][0], file=fh)
@@ -330,6 +329,13 @@ if __name__ == '__main__':
             fh.write('...\n')
 
         print('done')
+    
+    for path in glob(join(dirname(specs[0]),'terms','*')):
+        tag = basename(path)
+        if tag not in g7:
+            print('copying', tag, '...', end=' ')
+            copyfile(path, join(dest,tag))
+            print('done')
 
     if dest.endswith('/'): dest=dest[:-1]
     base = dirname(dest)
