@@ -9,3 +9,5 @@ Changes deferred to the 7.1 release:
 - [ ] Add "legitimization" event (see issue [#84](https://github.com/FamilySearch/GEDCOM/issues/84))
 - [ ] Add SOUR.PHRASE (see issue [#97](https://github.com/FamilySearch/GEDCOM/issues/97))
 - [ ] Add stillbirth attribute and enumeration (see issue [#106](https://github.com/FamilySearch/GEDCOM/issues/106))
+- [ ] Ban nonsensical dates like `2022 FEB 3` (see issue [#113](https://github.com/FamilySearch/GEDCOM/issues/113))
+- [ ] Add EXID to SOURCE_CITATION (as well as SOURCE_RECORD) (See issue [#114](https://github.com/FamilySearch/GEDCOM/issues/114))
