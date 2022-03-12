@@ -72,7 +72,7 @@ Permitted months are
 |`MESS`|Messidor           |
 |`THER`|Thermidor          |
 |`FRUC`|Fructidor          |
-|`COMP`|Jour Complementairs|
+|`COMP`|Jour Complémentairs|
 
 No epoch marker is permitted in this calendar.
 
