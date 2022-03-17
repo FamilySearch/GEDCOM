@@ -89,6 +89,9 @@ epoch   = %s"BCE" / extTag ; constrained by calendar
 In addition to the constraints above:
 
 - The allowable `month`s and `epoch`s are determined by the `calendar`.
+- The allowable `day`s are determined by the `month`, `year` and `calendar`.
+    All known calendars restrict `day` to be between 1 and a month-specific maximum.
+    The largest known maximum is 36, and most months in most calendars have a lower maximum.
 - No calendar names, months, or epochs match `dateRestrict`.
 - Extension calendars (those with `extTag` for their `calendar`) must use `extTag`, not `stdTag`, for months.
 
