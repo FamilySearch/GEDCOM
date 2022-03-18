@@ -1,0 +1,28 @@
+[
+  {
+    "label": "AFN",
+    "type": "https://gedcom.io/terms/v7/AFN",
+    "description": "Ancestral File Number",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "reference": "https://gedcom.io/migrate/#afn-rfn-rin"
+  },
+  {
+    "label": "RIN",
+    "type": "https://gedcom.io/terms/v7/RIN",
+    "description": "Automated Record ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "fragment": "Source System",
+    "reference": "https://gedcom.io/migrate/#afn-rfn-rin"
+  },
+  {
+    "label": "RFN",
+    "type": "https://gedcom.io/terms/v7/RFN",
+    "description": "Permanent Record ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "fragment": "Resource ID",
+    "reference": "https://gedcom.io/migrate/#afn-rfn-rin"
+  }
+]

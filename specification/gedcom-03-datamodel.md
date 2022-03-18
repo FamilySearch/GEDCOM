@@ -1703,6 +1703,8 @@ the authority owning the identifier is provided in the TYPE substructure; see `E
 
 Depending on the maintaining authority, an `EXID` may be a unique identifier for the subject, an identifier for 1 of several views of the subject, or an identifier for the externally-maintained copy of the same information as is contained in this structure. However, unlike `UID` and `REFN`, `EXID` does not identify a structure; structures with the same `EXID` may have originated independently rather than by edits from the same starting point.
 
+`EXID` identifiers are expected to be unique and durable.
+
 #### `FAM` (Family record) `g7:record-FAM`
 
 See `FAMILY_RECORD`
@@ -2712,6 +2714,18 @@ It is recommended that this be a URL.
 If the authority maintains stable URLs for each identifier it issues,
 it is recommended that the `TYPE` payload be selected such that appending the `EXID` payload to it yields that URL.
 However, this is not required and a different URI for the set of issued identifiers may be used instead.
+
+Registered URIs are listed in [exid-types.json](https://github.com/FamilySearch/GEDCOM/blob/main/exid-types.json), where fields include:
+* "label": a short string suitable for display in a user interface.
+* "type": The URI representing the authority issuing the `EXID`.
+* "description": A description of the meaning of the `EXID`.
+* "contact": A contact email address for the person or organization registering the URI.
+* "change-controller": The name or contact information for the person or organization authorized to update the registration.
+* "fragment": If present, indicates a short string that can be used as a label for a fragment identifier appended to the URI.  If absent, indicates that fragment identifiers are not used with the URI.
+* "reference": A URL with more information about the meaning of the `EXID`. Such information should explain the uniqueness and expected durability of the identifier.
+
+Additional type URIs can be registered by filing a
+[GitHub pull request](https://github.com/FamilySearch/GEDCOM/pulls).
 
 #### `UID` (Unique Identifier) `g7:UID`
 
