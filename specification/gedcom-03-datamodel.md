@@ -226,6 +226,8 @@ n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<PERSONAL_NAME_STRUCTURE>>           {0:M}
   +1 SEX <Enum>                            {0:1}  g7:SEX
+     +2 EXID <Special>                     {0:M}  g7:EXID
+        +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
   +1 <<INDIVIDUAL_ATTRIBUTE_STRUCTURE>>    {0:M}
   +1 <<INDIVIDUAL_EVENT_STRUCTURE>>        {0:M}
   +1 <<NON_EVENT_STRUCTURE>>               {0:M}
@@ -236,6 +238,8 @@ n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
      +2 STAT <Enum>                        {0:1}  g7:FAMC-STAT
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
      +2 <<NOTE_STRUCTURE>>                 {0:M}
+     +2 EXID <Special>                     {0:M}  g7:EXID
+        +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
   +1 FAMS @<XREF:FAM>@                     {0:M}  g7:FAMS
      +2 <<NOTE_STRUCTURE>>                 {0:M}
   +1 SUBM @<XREF:SUBM>@                    {0:M}  g7:SUBM
@@ -547,6 +551,8 @@ n <<NOTE_STRUCTURE>>                       {0:M}
 n <<SOURCE_CITATION>>                      {0:M}
 n <<MULTIMEDIA_LINK>>                      {0:M}
 n UID <Special>                            {0:M}  g7:UID
+n EXID <Special>                           {0:M}  g7:EXID
+  +1 TYPE <Special>                        {0:1}  g7:EXID-TYPE
 ```
 
 Substructures that may be shared by most individual and family events and attributes.
@@ -1057,6 +1063,8 @@ n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
      +2 <<PERSONAL_NAME_PIECES>>           {0:1}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
+  +1 EXID <Special>                        {0:M}  g7:EXID
+     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
 ```
 
 Names of individuals are represented in the manner the name is normally spoken, with the family name, surname, or nearest cultural parallel thereunto separated by slashes (U+002F `/`). Based on the dynamic nature or unknown compositions of naming conventions, it is difficult to provide a more detailed name piece structure to handle every case. The `PERSONAL_NAME_PIECES` are provided optionally for systems that cannot operate effectively with less structured information. The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information.
@@ -1145,6 +1153,8 @@ n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 QUAY <Enum>                           {0:1}  g7:QUAY
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
+  +1 EXID <Special>                        {0:M}  g7:EXID
+     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
 ```
 
 A citation indicating that the pointed-to source record supports the claims made in the superstructure.
