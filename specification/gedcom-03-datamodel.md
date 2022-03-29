@@ -1052,6 +1052,7 @@ n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
   +1 TYPE <Enum>                           {0:1}  g7:NAME-TYPE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 <<PERSONAL_NAME_PIECES>>              {0:1}
+  +1 LANG <Language>                       {1:1}  g7:LANG
   +1 TRAN <PersonalName>                   {0:M}  g7:NAME-TRAN
      +2 LANG <Language>                    {1:1}  g7:LANG
      +2 <<PERSONAL_NAME_PIECES>>           {0:1}
@@ -2569,6 +2570,7 @@ The following presents a name in Mandarin, transliterated using Pinyin
 
 ```gedcom
 1 NAME /孔/德庸
+2 LANG zh
 2 GIVN 德庸
 2 SURN 孔
 2 TRAN /Kǒng/ Déyōng
