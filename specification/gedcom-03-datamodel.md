@@ -2570,6 +2570,7 @@ The following presents a name in Mandarin, transliterated using Pinyin
 
 ```gedcom
 1 NAME /孔/德庸
+2 LANG zh
 2 GIVN 德庸
 2 SURN 孔
 2 TRAN /Kǒng/ Déyōng
