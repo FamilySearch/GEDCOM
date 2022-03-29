@@ -11,6 +11,7 @@ If you are looking for FamilySearch's GEDCOM 5.5.1 Java parser, which previously
 ## Repository structure
 
 - [`changelog.md`](changelog.md) is a running log of major changes made to the specification.
+- [`exid-types.json`](exid-types.json) is a JSON file containing registered EXID-TYPE values.
 - [`specification/`](specification/) contains the FamilySearch GEDCOM specification:
 	- `specification/gedcom-`number`-`title`.md` files are the source documents used to define the FamilySearch GEDCOM specification. It is written in pandoc-flavor markdown and is intended to be more easily written than read. It is splint into several files (ordered by the integer in their names) to facilitate comparing files.
 	- In a local check-out, this is also where the build scripts place rendered files `gedcom.html` and `gedcom.pdf`; see [releases](releases/latest) for a pre-rendered copy of these.
