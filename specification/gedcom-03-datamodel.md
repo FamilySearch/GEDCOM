@@ -1828,7 +1828,7 @@ The following represents Baltimore, a city that is not within a county.
 
 #### `FORM` (Format) `g7:HEAD-PLAC-FORM`
 
-Any `PLAC` with no `FORM` shall be treated as if it has this `FORM`.
+Any `PLAC` with no `FORM` shall be treated as if it has this [`FORM`](#PLAC-FORM).
 
 #### `GEDC` (GEDCOM) `g7:GEDC`
 
@@ -2801,7 +2801,7 @@ See [Events] and [Attributes].
 
 ### `SOUR`.`EVEN` {.unlisted .unnumbered #enum-SOUR.EVEN}
 
-An event- or attribute-type tag names.
+An event- or attribute-type tag name.
 See [Events] and [Attributes].
 
 ### `MEDI` {.unlisted .unnumbered #enum-MEDI}
