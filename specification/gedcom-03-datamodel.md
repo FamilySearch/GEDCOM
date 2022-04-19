@@ -1830,7 +1830,7 @@ The following represents Baltimore, a city that is not within a county.
 
 #### `FORM` (Format) `g7:HEAD-PLAC-FORM`
 
-Any `PLAC` with no `FORM` shall be treated as if it has this `FORM`.
+Any `PLAC` with no [`FORM`](#PLAC-FORM) shall be treated as if it has this [`FORM`](#PLAC-FORM).
 
 #### `GEDC` (GEDCOM) `g7:GEDC`
 
@@ -2650,7 +2650,7 @@ the resulting set of files might be presented as follows:
 1 FILE media/original.mp3
 2 FORM audio/mp3
 2 TRAN media/derived.oga
-3 FORM auto/ogg
+3 FORM audio/ogg
 2 TRAN media/transcript.vtt
 3 FORM text/vtt
 ```
@@ -2815,7 +2815,7 @@ See [Events] and [Attributes].
 
 ### `SOUR`.`EVEN` {.unlisted .unnumbered #enum-SOUR.EVEN}
 
-An event- or attribute-type tag names.
+An event- or attribute-type tag name.
 See [Events] and [Attributes].
 
 ### `MEDI` {.unlisted .unnumbered #enum-MEDI}
