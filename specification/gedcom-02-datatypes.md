@@ -248,7 +248,7 @@ The URI for the `List:Enum` datatype is `g7:type-List#Enum`.
 A personal name is mostly free-text. It should be the name as written in the culture of the individual and should not contain line breaks, repeated spaces, or characters not part of the written form of a name (except for U+002F as explained below).
 
 ```abnf
-NamePersonal = nameStr
+PersonalName = nameStr
              / [nameStr] "/" [nameStr] "/" [nameStr]
 
 nameChar     = %x20-2E / %x30-10FFFF  ; any but '/' and '\t'
