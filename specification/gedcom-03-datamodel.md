@@ -1024,12 +1024,12 @@ A `NOTE_STRUCTURE` can contain a `SOURCE_CITATION`, which in turn can contain a 
 #### `PERSONAL_NAME_PIECES` :=
 
 ```gedstruct
-n NPFX <Text>                              {0:M}  g7:NPFX
-n GIVN <Text>                              {0:M}  g7:GIVN
-n NICK <Text>                              {0:M}  g7:NICK
-n SPFX <Text>                              {0:M}  g7:SPFX
-n SURN <Text>                              {0:M}  g7:SURN
-n NSFX <Text>                              {0:M}  g7:NSFX
+n NPFX <Text>                              {0:1}  g7:NPFX
+n GIVN <Text>                              {0:1}  g7:GIVN
+n NICK <Text>                              {0:1}  g7:NICK
+n SPFX <Text>                              {0:1}  g7:SPFX
+n SURN <Text>                              {0:1}  g7:SURN
+n NSFX <Text>                              {0:1}  g7:NSFX
 ```
 
 Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more.
@@ -1043,6 +1043,17 @@ Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more.
 2 GIVN Joseph
 2 SURN Allen
 2 NSFX jr.
+```
+:::
+
+Names may have multiple parts that fit in the same piece; it is recommended that they appear in the same order in a piece structure as they do in the piece's superstructure.
+
+:::example
+```gedcom
+1 NAME William "Bill" Edward Hernandez y Martinez
+2 GIVN William Edward
+2 NICK Bill
+2 SURN Hernandez Martinez
 ```
 :::
 
