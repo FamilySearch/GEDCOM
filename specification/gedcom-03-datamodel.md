@@ -282,7 +282,8 @@ For example,
 a `FAMC` pointer subordinate to an adoption event indicates a relationship to family by adoption;
 biological parents can be shown by a `FAMC` pointer subordinate to the birth event;
 the eulogist at a funeral can be shown by an `ASSO` pointer subordinate to the burial event;
-and so on.
+and so on. A subordinate `FAMC` pointer is allowed to refer to a family where the individual
+does not appear as a child.
 
 
 
@@ -2853,6 +2854,13 @@ It is known that some users have interpreted `BIRTH` to mean "genetic parent" an
 
 :::note
 The structures for foster children in particular, and family relationships in general, are known to have undesirable limitations and are likely to change in a future version of this specification.
+:::
+
+:::note
+`SEALING` implies that a `SLGC` event was performed, and it is recommended that
+this enumeration value only be used when the `SLGC` event is present in the GEDCOM file.
+`ADOPTED`, on the other hand, only implies a social relationship which may or may not have
+any associated `ADOP` event.
 :::
 
 ### `NO` {.unlisted .unnumbered #enum-NO}
