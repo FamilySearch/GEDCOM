@@ -1059,7 +1059,7 @@ n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
   +1 <<SOURCE_CITATION>>                   {0:M}
 ```
 
-Names of individuals are represented in the manner the name is normally spoken, with the family name, surname, or nearest cultural parallel thereunto separated by slashes (U+002F `/`). Based on the dynamic nature or unknown compositions of naming conventions, it is difficult to provide a more detailed name piece structure to handle every case. The `PERSONAL_NAME_PIECES` are provided optionally for systems that cannot operate effectively with less structured information. The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information.
+Names of individuals are represented in the manner the name is normally spoken, with the family name, surname, or nearest cultural parallel thereunto separated by slashes (U+002F `/`). Based on the dynamic nature or unknown compositions of naming conventions, it is difficult to provide a more detailed name piece structure to handle every case. The `PERSONAL_NAME_PIECES` are provided optionally for systems that cannot operate effectively with less structured information. The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information, meaning in particular that all name parts in `PERSONAL_NAME_PIECES` should appear within the `<PersonalName>` payload.
 
 The name may be translated or transliterated into different languages or scripts using the `TRAN` substructure.
 It is recommended, but not required, that if the name pieces are used, the same pieces are used in each translation and transliteration.
