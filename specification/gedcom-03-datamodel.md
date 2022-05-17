@@ -2860,7 +2860,7 @@ The structures for foster children in particular, and family relationships in ge
 `SEALING` implies that a `SLGC` event was performed, and it is recommended that
 this enumeration value only be used when the `SLGC` event is present in the GEDCOM file.
 `ADOPTED`, on the other hand, only implies a social relationship which may or may not have
-any associated adoption event.
+any associated `ADOP` event.
 :::
 
 ### `NO` {.unlisted .unnumbered #enum-NO}
