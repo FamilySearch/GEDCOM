@@ -1050,7 +1050,7 @@ Names may have multiple parts that fit in the same piece; it is recommended that
 
 :::example
 ```gedcom
-1 NAME William "Bill" Edward Hernandez y Martinez
+1 NAME William "Bill" Edward /Hernandez y Martinez/
 2 GIVN William Edward
 2 NICK Bill
 2 SURN Hernandez Martinez
