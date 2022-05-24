@@ -28,6 +28,8 @@ If you are looking for FamilySearch's GEDCOM 5.5.1 Java parser, which previously
 		- [`extracted-files/payloads.tsv`](extracted-files/payloads.tsv) with columns "structure type ID, payload type"
 		- [`extracted-files/substructures.tsv`](extracted-files/substructures.tsv) with columns "structure type ID, substructure tag, substructure type ID"
 	- [`extracted-files/tags/`](extracted-files/tags/) contains summary information for each <https://gedcom.io/terms/>-based URI defined in the specification.
+- [`version-detection/`](version-detection/) contains the FamilySearch GEDCOM version detection specification:
+	- `version-detection/version-detection.md` describes how to detect the GEDCOM version of a file.
 
 ## Branches
 
