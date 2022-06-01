@@ -4,7 +4,7 @@
 
 - Note that days per month is defined by calendar; is bounded; and may be checked to validate date entry.
 
-- Add a registry for known EXID values
+- Add a registry for known `EXID`.`TYPE` values
 
 - Clarify relationship between `PEDI SEALING` and `SLGC`
 
