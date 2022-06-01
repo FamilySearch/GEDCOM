@@ -2211,7 +2211,7 @@ Textual information that cannot be expressed in the superstructure due to the li
 A date interpreted from the phrase "The Feast of St John" might be
 
 ````gedcom
-2 DATE 24 JUNE 1852
+2 DATE 24 JUN 1852
 3 PHRASE During the feast of St John
 ````
 :::
