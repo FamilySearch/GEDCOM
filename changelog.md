@@ -4,6 +4,8 @@
 
 - Note that days per month is defined by calendar; is bounded; and may be checked to validate date entry.
 
+- Add a registry for known EXID values
+
 - Clarify relationship between `PEDI SEALING` and `SLGC`
 
 - Clarify that only `INDI.FAMC` need a matching `FAM.CHIL`; `FAMC` under events do not.

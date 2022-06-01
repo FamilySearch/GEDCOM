@@ -123,7 +123,7 @@ List-Enum = Enum *(listDelim Enum)
 
 ; ------------- Personal Name -------------
 
-NamePersonal = nameStr
+PersonalName = nameStr
              / [nameStr] "/" [nameStr] "/" [nameStr]
 
 nameChar     = %x20-2E / %x30-10FFFF  ; any but '/' and '\t'

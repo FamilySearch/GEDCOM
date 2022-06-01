@@ -2728,6 +2728,7 @@ it is recommended that the `TYPE` payload be selected such that appending the `E
 However, this is not required and a different URI for the set of issued identifiers may be used instead.
 
 Registered URIs are listed in [exid-types.json](https://github.com/FamilySearch/GEDCOM/blob/main/exid-types.json), where fields include:
+
 * "label": a short string suitable for display in a user interface.
 * "type": The URI representing the authority issuing the `EXID`.
 * "description": A description of the meaning of the `EXID`.

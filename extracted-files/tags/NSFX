@@ -16,6 +16,6 @@ payload: http://www.w3.org/2001/XMLSchema#string
 substructures: []
 
 superstructures:
-  "https://gedcom.io/terms/v7/INDI-NAME": "{0:M}"
-  "https://gedcom.io/terms/v7/NAME-TRAN": "{0:M}"
+  "https://gedcom.io/terms/v7/INDI-NAME": "{0:1}"
+  "https://gedcom.io/terms/v7/NAME-TRAN": "{0:1}"
 ...

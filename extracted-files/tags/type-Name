@@ -11,7 +11,7 @@ descriptions:
     spaces, or characters not part of the written form of a name (except for
     U+002F as explained below).
     
-        NamePersonal = nameStr
+        PersonalName = nameStr
                      / [nameStr] "/" [nameStr] "/" [nameStr]
     
         nameChar     = %x20-2E / %x30-10FFFF  ; any but '/' and '\t'
