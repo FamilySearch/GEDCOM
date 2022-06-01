@@ -1,3 +1,20 @@
+# Version 7.08
+
+- Revert undocumented and unexplained use of `{0:M}` cardinality for name parts in 7.0.0 through 7.0.7
+
+- Note that days per month is defined by calendar; is bounded; and may be checked to validate date entry.
+
+- Clarify relationship between `PEDI SEALING` and `SLGC`
+
+- Clarify that only `INDI.FAMC` need a matching `FAM.CHIL`; `FAMC` under events do not.
+
+- Clarify that one implication of "The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information"  is that "all name parts in `PERSONAL_NAME_PIECES` should appear within the `<PersonalName>` payload."
+
+- Correct typo where ABNF used `NamePersonal` instead of `PersonalName`
+
+- Various grammar and spelling corrections
+
+
 # Version 7.07
 
 - Update the `DateValue` and `DatePeriod` ABNF to match the textual statement that these can be empty.
