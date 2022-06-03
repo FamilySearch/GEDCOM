@@ -38,17 +38,17 @@ descriptions:
 payload: https://gedcom.io/terms/v7/type-Name
 
 substructures:
-  "https://gedcom.io/terms/v7/GIVN": "{0:1}"
+  "https://gedcom.io/terms/v7/GIVN": "{0:M}"
   "https://gedcom.io/terms/v7/NAME-TRAN": "{0:M}"
   "https://gedcom.io/terms/v7/NAME-TYPE": "{0:1}"
-  "https://gedcom.io/terms/v7/NICK": "{0:1}"
+  "https://gedcom.io/terms/v7/NICK": "{0:M}"
   "https://gedcom.io/terms/v7/NOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/NPFX": "{0:1}"
-  "https://gedcom.io/terms/v7/NSFX": "{0:1}"
+  "https://gedcom.io/terms/v7/NPFX": "{0:M}"
+  "https://gedcom.io/terms/v7/NSFX": "{0:M}"
   "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/SOUR": "{0:M}"
-  "https://gedcom.io/terms/v7/SPFX": "{0:1}"
-  "https://gedcom.io/terms/v7/SURN": "{0:1}"
+  "https://gedcom.io/terms/v7/SPFX": "{0:M}"
+  "https://gedcom.io/terms/v7/SURN": "{0:M}"
 
 superstructures:
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"

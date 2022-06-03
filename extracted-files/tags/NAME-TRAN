@@ -43,13 +43,13 @@ descriptions:
 payload: https://gedcom.io/terms/v7/type-Name
 
 substructures:
-  "https://gedcom.io/terms/v7/GIVN": "{0:1}"
+  "https://gedcom.io/terms/v7/GIVN": "{0:M}"
   "https://gedcom.io/terms/v7/LANG": "{1:1}"
-  "https://gedcom.io/terms/v7/NICK": "{0:1}"
-  "https://gedcom.io/terms/v7/NPFX": "{0:1}"
-  "https://gedcom.io/terms/v7/NSFX": "{0:1}"
-  "https://gedcom.io/terms/v7/SPFX": "{0:1}"
-  "https://gedcom.io/terms/v7/SURN": "{0:1}"
+  "https://gedcom.io/terms/v7/NICK": "{0:M}"
+  "https://gedcom.io/terms/v7/NPFX": "{0:M}"
+  "https://gedcom.io/terms/v7/NSFX": "{0:M}"
+  "https://gedcom.io/terms/v7/SPFX": "{0:M}"
+  "https://gedcom.io/terms/v7/SURN": "{0:M}"
 
 superstructures:
   "https://gedcom.io/terms/v7/INDI-NAME": "{0:M}"
