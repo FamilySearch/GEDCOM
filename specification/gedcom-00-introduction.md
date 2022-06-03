@@ -1,6 +1,6 @@
 ---
 title: The FamilySearch GEDCOM Specification
-subtitle: 7.0.8
+subtitle: 7.0.9
 email: GEDCOM@FamilySearch.org
 copyright: |
     :::{style="page-break-after: always;page-break-before: always;"}

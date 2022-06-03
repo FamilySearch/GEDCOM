@@ -1024,12 +1024,12 @@ A `NOTE_STRUCTURE` can contain a `SOURCE_CITATION`, which in turn can contain a 
 #### `PERSONAL_NAME_PIECES` :=
 
 ```gedstruct
-n NPFX <Text>                              {0:1}  g7:NPFX
-n GIVN <Text>                              {0:1}  g7:GIVN
-n NICK <Text>                              {0:1}  g7:NICK
-n SPFX <Text>                              {0:1}  g7:SPFX
-n SURN <Text>                              {0:1}  g7:SURN
-n NSFX <Text>                              {0:1}  g7:NSFX
+n NPFX <Text>                              {0:M}  g7:NPFX
+n GIVN <Text>                              {0:M}  g7:GIVN
+n NICK <Text>                              {0:M}  g7:NICK
+n SPFX <Text>                              {0:M}  g7:SPFX
+n SURN <Text>                              {0:M}  g7:SURN
+n NSFX <Text>                              {0:M}  g7:NSFX
 ```
 
 Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more.
@@ -1046,16 +1046,9 @@ Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more.
 ```
 :::
 
-Names may have multiple parts that fit in the same piece; it is recommended that they appear in the same order in a piece structure as they do in the piece's superstructure.
-
-:::example
-```gedcom
-1 NAME William "Bill" Edward /Hernandez Martinez/
-2 GIVN William Edward
-2 NICK Bill
-2 SURN Hernandez Martinez
-```
-:::
+This specification does not define how the meaning of multiple parts with the same tag differs from the meaning of a single part with a concatenated larger payload.
+However, some applications allow the user to chose whether to combine or split name parts, meaning the tag quantity it should be treated as expressing at least a user preference.
+Even when multiple `SURN` tags are used, the `PersonalName` datatype identifies a single surname substring between its slashes.
 
 #### `PERSONAL_NAME_STRUCTURE` :=
 
