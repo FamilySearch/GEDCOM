@@ -2332,7 +2332,7 @@ A [List] of [enumerated value](#enum-RESN)s signifying access to information may
 
 The `RESN` structure is provided to assist software in filtering data that should not be exported or otherwise used in a particular context. It is recommended that tools provide an interface to allow users to filter data on export
 such that certain `RESN` structure payload entries result in the `RESN` structure and its superstructure being removed from the export.
-Such removal must abode by some constraints: see [Removing data](#removing-data) for more.
+Such removal must abide by some constraints: see [Removing data](#removing-data) for more.
 
 This is metadata about the structure itself, not data about its subject.
 
