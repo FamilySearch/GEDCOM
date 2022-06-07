@@ -514,7 +514,7 @@ If removal of a structure makes the superstructure invalid because the superstru
 If removing a structure leaves its superstructure with no payload and no substructures, the superstructure should also be removed.
 
 A structure can also be removed if it provides no new information.  For example,
-```
+```gedcom
 0 @I1@ INDI
 1 NAME John /Doe/
 1 NAME John /Doe/
