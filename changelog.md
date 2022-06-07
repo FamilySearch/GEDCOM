@@ -2,7 +2,11 @@
 
 - Undo 7.0.8's reversion of undocumented and unexplained use of `{0:M}` cardinality for name parts, as it has been used by some applications. Added note explaining that repeated name parts may have meaning to the user.
 
+- Improve text on name pieces being included in name payloads to use "recommended" instead of "should" for greater clarity, and note that not all substrings of the payload need to be included in a name piece
 
+- Permit removing structures that contain no data
+
+- Various typo corrections
 
 # Version 7.0.8
 
