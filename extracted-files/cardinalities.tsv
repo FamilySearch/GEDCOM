@@ -507,8 +507,8 @@ https://gedcom.io/terms/v7/FILE-TRAN	https://gedcom.io/terms/v7/FORM	{1:1}
 https://gedcom.io/terms/v7/PLAC	https://gedcom.io/terms/v7/PLAC-FORM	{0:1}
 https://gedcom.io/terms/v7/HEAD-PLAC	https://gedcom.io/terms/v7/HEAD-PLAC-FORM	{1:1}
 HEAD pseudostructure	https://gedcom.io/terms/v7/GEDC	{1:1}
-https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/GIVN	{0:1}
-https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/GIVN	{0:1}
+https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/GIVN	{0:M}
+https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/GIVN	{0:M}
 https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/GRAD	{0:M}
 https://gedcom.io/terms/v7/CROP	https://gedcom.io/terms/v7/HEIGHT	{0:1}
 https://gedcom.io/terms/v7/ANUL	https://gedcom.io/terms/v7/HUSB	{0:1}
@@ -561,8 +561,8 @@ https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/NATI	{0:M}
 https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/NATU	{0:M}
 https://gedcom.io/terms/v7/record-FAM	https://gedcom.io/terms/v7/FAM-NCHI	{0:M}
 https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/INDI-NCHI	{0:M}
-https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/NICK	{0:1}
-https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/NICK	{0:1}
+https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/NICK	{0:M}
+https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/NICK	{0:M}
 https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/NMR	{0:M}
 https://gedcom.io/terms/v7/record-FAM	https://gedcom.io/terms/v7/NO	{0:M}
 https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/NO	{0:M}
@@ -640,10 +640,10 @@ https://gedcom.io/terms/v7/record-OBJE	https://gedcom.io/terms/v7/NOTE	{0:M}
 https://gedcom.io/terms/v7/record-REPO	https://gedcom.io/terms/v7/NOTE	{0:M}
 https://gedcom.io/terms/v7/record-SOUR	https://gedcom.io/terms/v7/NOTE	{0:M}
 https://gedcom.io/terms/v7/record-SUBM	https://gedcom.io/terms/v7/NOTE	{0:M}
-https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/NPFX	{0:1}
-https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/NPFX	{0:1}
-https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/NSFX	{0:1}
-https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/NSFX	{0:1}
+https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/NPFX	{0:M}
+https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/NPFX	{0:M}
+https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/NSFX	{0:M}
+https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/NSFX	{0:M}
 https://gedcom.io/terms/v7/ADOP	https://gedcom.io/terms/v7/OBJE	{0:M}
 https://gedcom.io/terms/v7/ANUL	https://gedcom.io/terms/v7/OBJE	{0:M}
 https://gedcom.io/terms/v7/BAPM	https://gedcom.io/terms/v7/OBJE	{0:M}
@@ -1153,8 +1153,8 @@ https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/record-OBJE	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/record-SNOTE	https://gedcom.io/terms/v7/SOUR	{0:M}
 HEAD pseudostructure	https://gedcom.io/terms/v7/HEAD-SOUR	{0:1}
-https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/SPFX	{0:1}
-https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/SPFX	{0:1}
+https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/SPFX	{0:M}
+https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/SPFX	{0:M}
 https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/SSN	{0:M}
 https://gedcom.io/terms/v7/ADDR	https://gedcom.io/terms/v7/STAE	{0:1}
 https://gedcom.io/terms/v7/BAPL	https://gedcom.io/terms/v7/ord-STAT	{0:1}
@@ -1167,8 +1167,8 @@ https://gedcom.io/terms/v7/INDI-FAMC	https://gedcom.io/terms/v7/FAMC-STAT	{0:1}
 HEAD pseudostructure	https://gedcom.io/terms/v7/SUBM	{0:1}
 https://gedcom.io/terms/v7/record-FAM	https://gedcom.io/terms/v7/SUBM	{0:M}
 https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/SUBM	{0:M}
-https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/SURN	{0:1}
-https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/SURN	{0:1}
+https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/SURN	{0:M}
+https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/SURN	{0:M}
 https://gedcom.io/terms/v7/SCHMA	https://gedcom.io/terms/v7/TAG	{0:M}
 https://gedcom.io/terms/v7/BAPL	https://gedcom.io/terms/v7/TEMP	{0:1}
 https://gedcom.io/terms/v7/CONL	https://gedcom.io/terms/v7/TEMP	{0:1}

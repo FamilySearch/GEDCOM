@@ -571,12 +571,12 @@ n SNOTE @<XREF:SNOTE>@                     {1:1}  g7:SNOTE
 
 
 PERSONAL_NAME_PIECES :=
-n NPFX <Text>                              {0:1}  g7:NPFX
-n GIVN <Text>                              {0:1}  g7:GIVN
-n NICK <Text>                              {0:1}  g7:NICK
-n SPFX <Text>                              {0:1}  g7:SPFX
-n SURN <Text>                              {0:1}  g7:SURN
-n NSFX <Text>                              {0:1}  g7:NSFX
+n NPFX <Text>                              {0:M}  g7:NPFX
+n GIVN <Text>                              {0:M}  g7:GIVN
+n NICK <Text>                              {0:M}  g7:NICK
+n SPFX <Text>                              {0:M}  g7:SPFX
+n SURN <Text>                              {0:M}  g7:SURN
+n NSFX <Text>                              {0:M}  g7:NSFX
 
 
 PERSONAL_NAME_STRUCTURE :=

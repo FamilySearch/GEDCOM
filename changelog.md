@@ -1,4 +1,10 @@
-# Version 7.08
+# Version 7.0.9
+
+- Undo 7.0.8's reversion of undocumented and unexplained use of `{0:M}` cardinality for name parts, as it has been used by some applications. Added note explaining that repeated name parts may have meaning to the user.
+
+
+
+# Version 7.0.8
 
 - Revert undocumented and unexplained use of `{0:M}` cardinality for name parts in 7.0.0 through 7.0.7
 
@@ -17,7 +23,7 @@
 - Various grammar and spelling corrections
 
 
-# Version 7.07
+# Version 7.0.7
 
 - Update the `DateValue` and `DatePeriod` ABNF to match the textual statement that these can be empty.
 
