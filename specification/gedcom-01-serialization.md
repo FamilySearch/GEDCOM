@@ -526,7 +526,7 @@ A structure can also be removed if it provides no new information.  For example,
 ```
 
 provides no information beyond the simpler form:
-```
+```gedcom
 0 @I1@ INDI
 1 NAME John /Doe/
 ```
