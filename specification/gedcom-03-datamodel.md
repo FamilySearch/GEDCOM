@@ -1047,7 +1047,7 @@ Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more.
 :::
 
 This specification does not define how the meaning of multiple parts with the same tag differs from the meaning of a single part with a concatenated larger payload.
-However, some applications allow the user to chose whether to combine or split name parts, meaning the tag quantity it should be treated as expressing at least a user preference.
+However, some applications allow the user to chose whether to combine or split name parts, meaning the tag quantity should be treated as expressing at least a user preference.
 Even when multiple `SURN` tags are used, the `PersonalName` datatype identifies a single surname substring between its slashes.
 
 #### `PERSONAL_NAME_STRUCTURE` :=
