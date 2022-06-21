@@ -2420,6 +2420,11 @@ while the `DATE` should be displayed as the date of the structure.
 
 `SDATE` and its substructures (including `PHRASE`, `TIME`, and any extension structures) should be used only as sorting hints, not to convey historical meaning.
 
+It is recommended to use a payload that matches `[[day D] month D] year [D epoch]`.
+Other DateValue forms may have unreliable effects on sorting. Including a month and
+day is encouraged to help different applications sort dates the same way, as the
+relative ordering of dates with different levels of precision is not well defined.
+
 #### `SEX` (Sex) `g7:SEX`
 
 An [enumerated value](#enum-SEX) that indicates the sex of the individual at birth.
