@@ -2595,7 +2595,7 @@ See also `PLAC`.
 :::example
 The following presents a place
 in Japanese
-with a romanji transliteration
+with a romaji transliteration
 and English translation
 
 ```gedcom
