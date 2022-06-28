@@ -2969,7 +2969,7 @@ They are no longer used in that way, meaning their interpretation is subject to 
 | `BIC` | `SLGC` | Born in the covenant, so child to parent sealing ordinance is not required. | Current |
 | `CANCELED` | `SLGS` | Canceled and considered invalid. | Current |
 | `CHILD` | All but `SLGC` | Died before 8 years old, so ordinances other than child to parent sealing are not required. | Current |
-| `COMPLETED` | All | Completed, but the date is not known. | Deprecated, use `DATE BEF date` instead. This value is still legal because of existing files that use this status, but it was defined for use with [TempleReady](https://www.churchofjesuschrist.org/study/ensign/1994/02/news-of-the-church/templeready-now-available) which is no longer in use. |
+| `COMPLETED` | All | Completed, but the date is not known. | Deprecated, use `DATE BEF date` instead. This status was defined for use with [TempleReady](https://www.churchofjesuschrist.org/study/ensign/1994/02/news-of-the-church/templeready-now-available) which is no longer in use. |
 | `EXCLUDED` | All | Patron excluded this ordinance from being cleared in this submission. | Deprecated. This value is still permitted because of existing files that use this status, but it was defined for use with TempleReady which is no longer in use. |
 | `DNS` | `SLGC`, `SLGS` | This ordinance is not authorized. | Current |
 | `DNS_CAN` | `SLGS` | This ordinance is not authorized, and the previous ordinance is cancelled. | Current |
