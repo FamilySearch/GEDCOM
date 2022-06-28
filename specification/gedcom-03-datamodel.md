@@ -2964,7 +2964,7 @@ The structures for representing the strength of and confidence in various claims
 These values were formerly used by The Church of Jesus Christ of Latter-day Saints for coordinating between temples and members.
 They are no longer used in that way, meaning their interpretation is subject to individual user interpretation
 
-| Value | Usable with | Meaning                             | Status |
+| Value | Applies to | Meaning                             | Status |
 | ----- | ----------- | :---------------------------------- | :----- |
 | `BIC` | `SLGC` | Born in the covenant, so child to parent sealing ordinance is not required. | Current |
 | `CANCELED` | `SLGS` | Canceled and considered invalid. | Current |
