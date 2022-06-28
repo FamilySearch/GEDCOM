@@ -2964,20 +2964,21 @@ The structures for representing the strength of and confidence in various claims
 These values were formerly used by The Church of Jesus Christ of Latter-day Saints for coordinating between temples and members.
 They are no longer used in that way, meaning their interpretation is subject to individual user interpretation
 
-| Value | Meaning                             |
-| ----- | :---------------------------------- |
-| `BIC` | Born in the covenant, receiving blessing of child to parent sealing. |
-| `CANCELED` | Canceled and considered invalid. |
-| `CHILD` | Died before 8 years old. |
-| `COMPLETED` | Completed, but the date is not known. |
-| `EXCLUDED` | Patron excluded this ordinance from being cleared in this submission. |
-| `DNS` | This ordinance is not authorized. |
-| `DNS_CAN` | This ordinance is not authorized, and the previous ordinance is cancelled. |
-| `INFANT` | Died before less than 1 year old, baptism or endowment not required. |
-| `PRE_1970` | Ordinance was likely completed because another ordinance for this person was converted from temple records of work completed before 1970. |
-| `STILLBORN` | Stillborn, so ordinances not required. |
-| `SUBMITTED` | Ordinance was previously submitted. |
-| `UNCLEARED` | Data for clearing the ordinance request was insufficient. |
+| Value | Usable with | Meaning                             | Status |
+| ----- | ----------- | :---------------------------------- | :----- |
+| `BIC` | `SLGC` | Born in the covenant, so child to parent sealing ordinance is not required. | Current |
+| `CANCELED` | `SLGS` | Canceled and considered invalid. | Current |
+| `CHILD` | All but `SLGC` | Died before 8 years old, so ordinances other than child to parent sealing are not required. | Current |
+| `COMPLETED` | All | Completed, but the date is not known. | Deprecated, use `DATE BEF date` instead. This value is still legal because of existing files that use this status, but it was defined for use with [TempleReady](https://www.churchofjesuschrist.org/study/ensign/1994/02/news-of-the-church/templeready-now-available) which is no longer in use. |
+| `EXCLUDED` | All | Patron excluded this ordinance from being cleared in this submission. | Deprecated. This value is still legal because of existing files that use this status, but it was defined for use with TempleReady which is no longer in use. |
+| `DNS` | `SLGC`, `SLGS` | This ordinance is not authorized. |
+| `DNS_CAN` | `SLGS` | This ordinance is not authorized, and the previous ordinance is cancelled. |
+| `INFANT` | All but `SLGC` | Died before less than 1 year old, baptism or endowment not required. | Deprecated. Use `CHILD` instead. |
+| `PRE_1970` | All | Ordinance was likely completed because another ordinance for this person was converted from temple records of work completed before 1970. | Deprecated.  Use `DATE BEF 1970` instead. |
+| `STILLBORN` | All | Born dead, so no ordinances are required. | Current |
+| `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This value is still legal because
+of existing files that use this status, but it was defined for use with TempleReady which is no longer in use. |
+| `UNCLEARED` | All | Data for clearing the ordinance request was insufficient. | Deprecated. This value is still legal because of existing files that use this status, but it was defined for use with TempleReady which is no longer in use. |
 
 ### `NAME`.`TYPE` {.unlisted .unnumbered #enum-TYPE}
 
