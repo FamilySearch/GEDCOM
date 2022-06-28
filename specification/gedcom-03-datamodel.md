@@ -2976,8 +2976,7 @@ They are no longer used in that way, meaning their interpretation is subject to 
 | `INFANT` | All but `SLGC` | Died before less than 1 year old, baptism or endowment not required. | Deprecated. Use `CHILD` instead. |
 | `PRE_1970` | All | Ordinance was likely completed because an ordinance for this person was converted from temple records of work completed before 1970. | Deprecated.  Use `DATE BEF 1970` instead. |
 | `STILLBORN` | All | Born dead, so no ordinances are required. | Current |
-| `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This value is still legal because
-of existing files that use this status, but it was defined for use with TempleReady which is no longer in use. |
+| `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This value is still legal because of existing files that use this status, but it was defined for use with TempleReady which is no longer in use. |
 | `UNCLEARED` | All | Data for clearing the ordinance request was insufficient. | Deprecated. This value is still legal because of existing files that use this status, but it was defined for use with TempleReady which is no longer in use. |
 
 ### `NAME`.`TYPE` {.unlisted .unnumbered #enum-TYPE}
