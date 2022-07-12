@@ -2200,6 +2200,7 @@ See ITU standards [E.123](https://www.itu.int/rec/T-REC-E.123) and [E.164](https
 #### `PHRASE` (Phrase) `g7:PHRASE`
 
 Textual information that cannot be expressed in the superstructure due to the limitations of its datatype.
+A `PHRASE` may restate information contained in the superstructure, but doing so is not recommended unless it is needed for clarity.
 
 :::example
 A date interpreted from the phrase "The Feast of St John" might be
