@@ -401,12 +401,17 @@ defines the following tags
 | :---- | :---- |
 | `_SKYPEID` | `http://xmlns.com/foaf/0.1/skypeID` |
 | `_MEMBER` | `http://xmlns.com/foaf/0.1/member` |
+
+Note that at the time of writing, the [FOAF](https://xmlns.com/foaf/spec/20140114.html) URIs used in this example are not URLs.
 :::
 
+
 The meaning of a documented extension tag is identified by its URI, not its tag.
+As such each documented extension tag needs its own URI: it is its URI, not its tag, that defines its meaning.
 Documented extension tags can be changed freely by modifying the schema,
 though it is recommended that documented extension tags not be changed.
 However, a tag change may be necessary if a product picks the same tags for URIs that another product uses for different URIs.
+A given schema should map only one tag to each URI.
 
 :::example
 The following 2 document fragments are semantically equivalent
@@ -427,6 +432,21 @@ and a system importing one may export it as the other without change of meaning.
 0 @I0@ INDI
 1 _SI example.person
 ```
+:::
+
+It is recommended that the URIs used for documented extension tags be URLs that can be used to access documentation for the meaning of the tag.
+
+:::note
+The W3C has an [interest group note](http://www.w3.org/TR/cooluris/)
+that discusses several ways of achieving this URI/URL mapping,
+including how a single webpage can describe multiple tags
+using either HTTP redirects (which requires some server setup)
+or what they call "Hash URIs" (which require no setup).
+
+That interest group note also explains why it might be desirable
+to have a separate URIs for a concept and the document describing that concept.
+Because of the structure of the schema, that separation is less important for FamilySearch GEDOCM 7
+than it is for the semantic web, but it remains good advice where feasible.
 :::
 
 An extension tag that is not given a URI in the schema structure is called an **undocumented extension tag**.
