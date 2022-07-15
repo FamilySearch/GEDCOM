@@ -85,7 +85,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
 
     Presentation order is chosen as follows:
     
-    - If there is text suggesting an order, that order is followed in the metasyntax. For example,
+    - If there is text suggesting an order among structures, that order is followed in the metasyntax. For example,
         - `HEAD.GEDC` is presented as the first substructure of `HEAD`.
     
     - If a structure represents something with a traditional order, that order is used. For example,
