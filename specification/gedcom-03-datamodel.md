@@ -98,7 +98,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
         - `ASNI` is with `DESI`
         - `HUSB` is with `WIFE`
         - `ADDRESS_STRUCTURE` is with `EMAIL`, `FAX`, `PHON`, and `WWW`
-        - `DATE` with `SDATE`
+        - `DATE` is with `SDATE`
     
     - Meaning modifiers are placed before other substructures. For example,
         - `TIME`, `ROLE`, `TYPE`, `FORM`, and `PHRASE` are placed before other substructures.
