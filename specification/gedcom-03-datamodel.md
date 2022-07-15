@@ -92,7 +92,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
         - `ADDRESS_STRUCTURE`'s substructures are presented in the same order they would be serialized to create a postal address
         - `NPFX` is listed before other name parts; `SPFX` before `SURN`, and `NSFX` after other name parts
     
-    - Some structures are placed together because of sematic similarity. For example,
+    - Some structures are placed together because of semantic similarity. For example,
         - `LANG` is with `TRAN`
         - `CHAN` is with `CREA`
         - `ASNI` is with `DESI`
