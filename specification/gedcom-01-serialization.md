@@ -445,7 +445,7 @@ or what they call "Hash URIs" (which require no setup).
 
 That interest group note also explains why it might be desirable
 to have a separate URIs for a concept and the document describing that concept.
-Because of the structure of the schema, that separation is less important for FamilySearch GEDOCM 7
+Because of the structure of the schema, that separation is less important for FamilySearch GEDCOM 7
 than it is for the semantic web, but it remains good advice where feasible.
 :::
 
