@@ -81,6 +81,8 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
         
         Pseudo-structures do not have a URI.
 
+- Within the metasyntax, the order in which substructures are presented within a structure and the order in which choices are presented within an option set are not significant unless otherwise specified in the text next to the metasyntax block.
+
 The context of a structure's superstructure may be necessary in addition to the structure's standard tag to fully determine its structure type.
 To refer to a structure in the context of its superstructure,
 tags are written with intervening periods.
@@ -99,6 +101,10 @@ and a superstructure with tag `GEDC`.
 0 <<RECORD>>                               {0:M}
 0 TRLR                                     {1:1} 
 ```
+
+The order of these is significant:
+the `HEADER` must come first and `TRLR` must be last,
+with any `RECORD`s in between.
 
 #### `RECORD` :=
 
@@ -156,6 +162,7 @@ The header pseudo-structure provides metadata about the entire dataset.
 A few substructures of note:
 
 - `GEDC` identifies the specification that this document conforms to.
+    It is recommended that `GEDC` be the first substructure of the header.
 - `SCHMA` gives the meaning of extension tags; see [Extensions](#extensions) for more.
 - `SOUR` describes the originating software.
     - `CORP` describes the corporation creating the software.
@@ -633,11 +640,11 @@ n MARL [Y|<NULL>]                          {1:1}  g7:MARL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARS [Y|<NULL>]                          {1:1}  g7:MARS
+n MARR [Y|<NULL>]                          {1:1}  g7:MARR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARR [Y|<NULL>]                          {1:1}  g7:MARR
+n MARS [Y|<NULL>]                          {1:1}  g7:MARS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
@@ -776,6 +783,13 @@ Substructures shared by most individual events and attributes.
 
 ```` {.gedstruct .long}
 [
+n ADOP [Y|<NULL>]                          {1:1}  g7:ADOP
+  +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:ADOP-FAMC
+     +2 ADOP <Enum>                        {0:1}  g7:FAMC-ADOP
+        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+|
 n BAPM [Y|<NULL>]                          {1:1}  g7:BAPM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
@@ -788,6 +802,11 @@ n BASM [Y|<NULL>]                          {1:1}  g7:BASM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
+n BIRT [Y|<NULL>]                          {1:1}  g7:BIRT
+  +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
+|
 n BLES [Y|<NULL>]                          {1:1}  g7:BLES
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
@@ -799,6 +818,11 @@ n BURI [Y|<NULL>]                          {1:1}  g7:BURI
 n CENS [Y|<NULL>]                          {1:1}  g7:INDI-CENS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+|
+n CHR [Y|<NULL>]                           {1:1}  g7:CHR
+  +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |
 n CHRA [Y|<NULL>]                          {1:1}  g7:CHRA
   +1 TYPE <Text>                           {0:1}  g7:TYPE
@@ -851,23 +875,6 @@ n RETI [Y|<NULL>]                          {1:1}  g7:RETI
 n WILL [Y|<NULL>]                          {1:1}  g7:WILL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-|
-n ADOP [Y|<NULL>]                          {1:1}  g7:ADOP
-  +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:ADOP-FAMC
-     +2 ADOP <Enum>                        {0:1}  g7:FAMC-ADOP
-        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
-|
-n BIRT [Y|<NULL>]                          {1:1}  g7:BIRT
-  +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
-|
-n CHR [Y|<NULL>]                           {1:1}  g7:CHR
-  +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |
 n EVEN <Text>                              {1:1}  g7:INDI-EVEN
   +1 TYPE <Text>                           {1:1}  g7:TYPE
