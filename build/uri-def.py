@@ -275,7 +275,7 @@ def tidy_markdown(md, indent, width=79):
 
 def yaml_str_helper(pfx, md, width=79):
     txt = tidy_markdown(md, len(pfx), width)
-    if ('\n'+' '*len(pfx)+'\n') in txt or ':' in txt: return pfx + '|\n' + ' '*len(pfx) + txt
+    if ('\n'+' '*len(pfx)+'\n') in txt or ': ' in txt: return pfx + '|\n' + ' '*len(pfx) + txt
     return pfx + txt
 
 def expand_prefix(txt, prefixes):
