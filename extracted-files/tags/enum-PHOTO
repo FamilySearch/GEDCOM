@@ -8,4 +8,7 @@ standard tag: PHOTO
 
 descriptions:
   - Photograph
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

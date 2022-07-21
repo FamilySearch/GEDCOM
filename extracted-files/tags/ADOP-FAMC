@@ -17,7 +17,7 @@ descriptions:
     performed the adoption; or by using a FAM where the adopting individual is
     the only HUSB/WIFE.
 
-payload: @<XREF:FAM>@
+payload: "@<XREF:FAM>@"
 
 substructures:
   "https://gedcom.io/terms/v7/FAMC-ADOP": "{0:1}"

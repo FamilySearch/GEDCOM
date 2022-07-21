@@ -8,4 +8,7 @@ standard tag: HUSB
 
 descriptions:
   - Husband; implies SPOU
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

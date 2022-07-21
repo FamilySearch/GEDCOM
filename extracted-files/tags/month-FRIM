@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-type: enumeration
+type: month
 
 uri: https://gedcom.io/terms/v7/month-FRIM
 
@@ -8,4 +8,7 @@ standard tag: FRIM
 
 descriptions:
   - Frimaire
+
+calendars:
+  - "https://gedcom.io/terms/v7/cal-FRENCH_R"
 ...

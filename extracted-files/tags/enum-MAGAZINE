@@ -8,4 +8,7 @@ standard tag: MAGAZINE
 
 descriptions:
   - Printed periodical
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

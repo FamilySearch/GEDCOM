@@ -11,7 +11,7 @@ descriptions:
   - Indicates an interest in additional research for ancestors of this
     individual. (See also DESI).
 
-payload: @<XREF:SUBM>@
+payload: "@<XREF:SUBM>@"
 
 substructures: []
 

@@ -8,4 +8,7 @@ standard tag: F
 
 descriptions:
   - Female
+
+used by:
+  - "https://gedcom.io/terms/v7/SEX"
 ...

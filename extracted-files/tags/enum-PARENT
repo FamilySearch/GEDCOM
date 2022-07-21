@@ -8,4 +8,7 @@ standard tag: PARENT
 
 descriptions:
   - Parent
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

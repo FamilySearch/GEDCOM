@@ -11,7 +11,7 @@ descriptions:
   - The child in a family, whether biological, adopted, foster, sealed, or
     other relationship.
 
-payload: @<XREF:INDI>@
+payload: "@<XREF:INDI>@"
 
 substructures:
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"

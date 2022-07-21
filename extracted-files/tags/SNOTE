@@ -11,7 +11,7 @@ descriptions:
   - A pointer to a note that is shared by multiple structures. See
     NOTE_STRUCTURE for more.
 
-payload: @<XREF:SNOTE>@
+payload: "@<XREF:SNOTE>@"
 
 substructures: []
 

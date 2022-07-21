@@ -8,4 +8,7 @@ standard tag: 0
 
 descriptions:
   - Unreliable evidence or estimated data
+
+used by:
+  - "https://gedcom.io/terms/v7/QUAY"
 ...

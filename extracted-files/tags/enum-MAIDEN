@@ -8,4 +8,7 @@ standard tag: MAIDEN
 
 descriptions:
   - Maiden name, name before first marriage.
+
+used by:
+  - "https://gedcom.io/terms/v7/NAME-TYPE"
 ...

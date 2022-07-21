@@ -8,4 +8,7 @@ standard tag: FRIEND
 
 descriptions:
   - Friend
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

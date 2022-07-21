@@ -8,4 +8,7 @@ standard tag: CHIL
 
 descriptions:
   - Child
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

@@ -10,7 +10,7 @@ descriptions:
   - Husband
   - This is a partner in a FAM record. See FAMILY_RECORD for more.
 
-payload: @<XREF:INDI>@
+payload: "@<XREF:INDI>@"
 
 substructures:
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"

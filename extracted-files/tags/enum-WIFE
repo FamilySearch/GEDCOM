@@ -8,4 +8,7 @@ standard tag: WIFE
 
 descriptions:
   - Wife; implies SPOU
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

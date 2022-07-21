@@ -10,7 +10,7 @@ descriptions:
   - Family child
   - The family with which this individual event is associated.
 
-payload: @<XREF:FAM>@
+payload: "@<XREF:FAM>@"
 
 substructures: []
 
