@@ -74,7 +74,9 @@ def find_cat_tables(txt, g7, tagsets):
                 h2 = sect.find('\n',h1+1)
                 row = [_.strip() for _ in sect[h1:h2].strip('| \n').split('|')]
                 assert len(row) == len(header)
-                meaning = [header[i]+': '+row[i] for i in range(1,len(header))]
+                meaning = [(header[i]+': '+row[i] 
+                if header[i] not in ('Meaning','Name')
+                else row[i]) for i in range(1,len(header))]
             else:
                 meaning = [meaning]
             if pfx in cats and meaning != cats[pfx]:
@@ -334,8 +336,9 @@ if __name__ == '__main__':
                 d = g7[tag][2]
                 payload = expand_prefix(d['pay'],prefixes) if d['pay'] is not None else 'null'
                 if payload[0] == '@' or ': ' in payload:
-                    payload = '"'+payload+'"'
-                print('\npayload:', payload, file=fh)
+                    print('\npayload: "'+payload+'"', file=fh)
+                else:
+                    print('\npayload:', payload, file=fh)
                 payload_lookup.append([uri, payload if payload != 'null' else ''])
                 if d['pay'] and 'Enum' in d['pay']:
                     print('\nenumeration values:', file=fh)
@@ -371,7 +374,7 @@ if __name__ == '__main__':
                 print('\nused by:', file=fh)
                 for tag2 in sorted(enums):
                     if ('g7:'+tag) in enums[tag2]:
-                        print('  - "'+expand_prefix(tag2,prefixes)+'"', file=fh)
+                        print('  - "'+expand_prefix('g7:'+tag2,prefixes)+'"', file=fh)
             fh.write('...\n')
 
         print('done')
