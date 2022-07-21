@@ -350,6 +350,11 @@ if __name__ == '__main__':
                 print('\ncalendars:', file=fh)
                 for k in calendars['g7:'+tag]:
                     print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
+            elif g7[tag][0] == 'enumeration':
+                print('\nused by:', file=fh)
+                for tag2 in sorted(enums):
+                    if ('g7:'+tag) in enums[tag2]:
+                        print('  - "'+expand_prefix(tag2,prefixes)+'"', file=fh)
             fh.write('...\n')
 
         print('done')
