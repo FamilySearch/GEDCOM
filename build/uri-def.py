@@ -11,8 +11,8 @@ def get_paths():
     """Parses command-line arguments, if present; else uses defaults"""
     spec = [_ for _ in argv[1:] if isfile(_)]
     dest = [_ for _ in argv[1:] if isdir(_)]
-    if len(dest) != 1: raise Exception("One destination expected, but got "+str(dest))
-    if len(spec) < 1: raise Exception("Expected input files, none given")
+    if len(dest) != 1: raise Exception("One destination expected, but got "+str(dest)+"\nUSAGE: "+argv[0]+" input1.md input2.md destination/")
+    if len(spec) < 1: raise Exception("Expected input files, none given"+"\nUSAGE: "+argv[0]+" input1.md input2.md destination/")
     
     return spec, dest[0]
 
@@ -52,6 +52,7 @@ def find_cat_tables(txt, g7, tagsets):
     }
     cats = {}
     enums = {}
+    calendars = {}
     for bit in re.finditer(r'by\s+concatenating\s+`([^`]*)`', txt):
         i = txt.rfind('\n#', 0, bit.start())
         j = txt.find(' ',i)
@@ -70,17 +71,32 @@ def find_cat_tables(txt, g7, tagsets):
                     + '\n    '+meaning
                 )
             if 'enum-' in pfx:
+                yamltype = 'enumeration'
                 k1 = sect.find('`', sect.rfind('\n#', 0, entry.start()))
                 k2 = sect.rfind('`', 0, sect.find('\n', k1))
                 key = sect[k1:k2].replace('`','').replace('.','-')
                 enums.setdefault(key,[]).append(pfx)
+            elif 'month-' in pfx:
+                yamltype = 'month'
+                k1 = sect.find('`', sect.find('URI for this calendar is', entry.start()))+1
+                k2 = sect.find('`', k1)
+                cal = sect[k1:k2]
+                calendars.setdefault(cal,[]).append(pfx)
+                calendars.setdefault(pfx,[]).append(cal)
+                if 'GREGORIAN' in cal: # HACK to get around JULIAN's "uses the same months as" wording in spec
+                    c2 = cal.replace('GREGORIAN','JULIAN')
+                    calendars.setdefault(c2,[]).append(pfx)
+                    calendars.setdefault(pfx,[]).append(c2)
+                    
+            else:
+                raise Exception("unexpected enumeration URI prefix "+repr(pfx))
             if pfx not in cats:
                 cats[pfx] = meaning
                 if pfx.startswith('g7:'):
                     if pfx[3:] in g7:
                         raise Exception(pfx+' defined as an enumeration and a '+g7[pfx[3:]][0])
-                    g7[pfx[3:]] = ('enumeration', [meaning])
-    return enums
+                    g7[pfx[3:]] = (yamltype, [meaning])
+    return enums, calendars
 
 def find_calendars(txt, g7):
     """Looks for sections defining a `g7:cal-` URI"""
@@ -268,7 +284,7 @@ if __name__ == '__main__':
     rules = parse_rules(txt)
     ssp = parse_gedstruct(txt, rules, dtypes)
     tagsets = find_descriptions(txt, g7, ssp)
-    enums = find_cat_tables(txt, g7, tagsets)
+    enums, calendars = find_cat_tables(txt, g7, tagsets)
     find_enum_by_link(txt, enums, tagsets)
     find_calendars(txt, g7)
 
@@ -326,6 +342,14 @@ if __name__ == '__main__':
                 else:
                     print('\nsuperstructures: []', file=fh)
                     struct_lookup.append(['',ptag,uri])
+            elif g7[tag][0] == 'calendar':
+                print('\nmonths:', file=fh)
+                for k in calendars['g7:'+tag]:
+                    print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
+            elif g7[tag][0] == 'month':
+                print('\ncalendars:', file=fh)
+                for k in calendars['g7:'+tag]:
+                    print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
             fh.write('...\n')
 
         print('done')
