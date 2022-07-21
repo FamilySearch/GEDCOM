@@ -275,7 +275,10 @@ def tidy_markdown(md, indent, width=79):
 
 def yaml_str_helper(pfx, md, width=79):
     txt = tidy_markdown(md, len(pfx), width)
-    if ('\n'+' '*len(pfx)+'\n') in txt or ': ' in txt: return pfx + '|\n' + ' '*len(pfx) + txt
+    if ('\n'+' '*len(pfx)+'\n') in txt: return pfx + '|\n' + ' '*len(pfx) + txt
+    if ': ' in txt or txt.startswith('@'):
+        if '"' in txt: return pfx + '|\n' + ' '*len(pfx) + txt
+        else: return pfx+'"' + txt + '"'
     return pfx + txt
 
 def expand_prefix(txt, prefixes):
@@ -330,6 +333,8 @@ if __name__ == '__main__':
             if g7[tag][0] == 'structure':
                 d = g7[tag][2]
                 payload = expand_prefix(d['pay'],prefixes) if d['pay'] is not None else 'null'
+                if payload[0] == '@' or ': ' in payload:
+                    payload = '"'+payload+'"'
                 print('\npayload:', payload, file=fh)
                 payload_lookup.append([uri, payload if payload != 'null' else ''])
                 if d['pay'] and 'Enum' in d['pay']:
