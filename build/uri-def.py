@@ -46,8 +46,9 @@ def find_cat_tables(txt, g7, tagsets):
     Raises an exception if any URI is repeated with distinct definitions. This code contains a hard-coded fix for BIRTH which has the same unifying concept but distinct text in the spec.
     
     Returns a {structure:[list,of,allowed,enums]} mapping
+    and a {calender:[list,of,months],month:[list,of,calendars]} mapping
     """
-    hard_code = {
+    hard_code = { ## <- hack for enum-BIRTH
         "g7:enum-BIRTH": 'Associated with birth, such as a birth name or birth parents.',
     }
     cats = {}
@@ -60,11 +61,22 @@ def find_cat_tables(txt, g7, tagsets):
         sect = txt[i:j].replace('(Latter-Day Saint Ordinance)','`ord`') ## <- hack for ord-STAT
         for entry in re.finditer(r'`([A-Z0-9_]+)` *\| *(.*?) *[|\n]', sect):
             enum, meaning = entry.groups()
+            h1 = sect.find('\n|',sect.rfind('\n#',0,entry.start()))+1
+            h2 = sect.find('\n', h1)
+            header = [_.strip() for _ in sect[h1:h2].strip('| ').split('|')]
             pfx = bit.group(1)+enum
             if 'The URI of this' in meaning:
                 meaning, tail = meaning.split('The URI of this')
                 pfx = tail.split('`')[1]
             meaning = hard_code.get(pfx,meaning)
+            if len(header) > 2:
+                h1 = sect.rfind('\n',0,entry.start())
+                h2 = sect.find('\n',h1+1)
+                row = [_.strip() for _ in sect[h1:h2].strip('| \n').split('|')]
+                assert len(row) == len(header)
+                meaning = [header[i]+': '+row[i] for i in range(1,len(header))]
+            else:
+                meaning = [meaning]
             if pfx in cats and meaning != cats[pfx]:
                 raise Exception('Concatenated URI '+pfx+' has multiple definitions:'
                     + '\n    '+cats[pfx]
@@ -83,7 +95,7 @@ def find_cat_tables(txt, g7, tagsets):
                 cal = sect[k1:k2]
                 calendars.setdefault(cal,[]).append(pfx)
                 calendars.setdefault(pfx,[]).append(cal)
-                if 'GREGORIAN' in cal: # HACK to get around JULIAN's "uses the same months as" wording in spec
+                if 'GREGORIAN' in cal: ## <- hack for JULIAN
                     c2 = cal.replace('GREGORIAN','JULIAN')
                     calendars.setdefault(c2,[]).append(pfx)
                     calendars.setdefault(pfx,[]).append(c2)
@@ -95,7 +107,7 @@ def find_cat_tables(txt, g7, tagsets):
                 if pfx.startswith('g7:'):
                     if pfx[3:] in g7:
                         raise Exception(pfx+' defined as an enumeration and a '+g7[pfx[3:]][0])
-                    g7[pfx[3:]] = (yamltype, [meaning])
+                    g7[pfx[3:]] = (yamltype, meaning)
     return enums, calendars
 
 def find_calendars(txt, g7):
@@ -263,7 +275,7 @@ def tidy_markdown(md, indent, width=79):
 
 def yaml_str_helper(pfx, md, width=79):
     txt = tidy_markdown(md, len(pfx), width)
-    if ('\n'+' '*len(pfx)+'\n') in txt: return pfx + '|\n' + ' '*len(pfx) + txt
+    if ('\n'+' '*len(pfx)+'\n') in txt or ':' in txt: return pfx + '|\n' + ' '*len(pfx) + txt
     return pfx + txt
 
 def expand_prefix(txt, prefixes):
