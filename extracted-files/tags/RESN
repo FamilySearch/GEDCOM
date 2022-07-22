@@ -28,7 +28,7 @@ enumeration values:
   LOCKED: https://gedcom.io/terms/v7/enum-LOCKED
   PRIVACY: https://gedcom.io/terms/v7/enum-PRIVACY
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/ADOP": "{0:1}"

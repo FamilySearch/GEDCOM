@@ -351,7 +351,7 @@ if __name__ == '__main__':
                     print('\nsubstructures:', file=fh)
                     for k,v in sorted(d['sub'].items()):
                         print('  "'+expand_prefix(k,prefixes)+'": "'+v+'"', file=fh)
-                else: print('\nsubstructures: []', file=fh)
+                else: print('\nsubstructures: {}', file=fh)
                 if d['sup']:
                     print('\nsuperstructures:', file=fh)
                     for k,v in sorted(d['sup'].items()):
@@ -360,7 +360,7 @@ if __name__ == '__main__':
                         struct_lookup.append([suri,ptag,uri])
                         cardinality_lookup.append([suri,uri,v])
                 else:
-                    print('\nsuperstructures: []', file=fh)
+                    print('\nsuperstructures: {}', file=fh)
                     struct_lookup.append(['',ptag,uri])
             elif g7[tag][0] == 'calendar':
                 print('\nmonths:', file=fh)
