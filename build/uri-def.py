@@ -370,11 +370,16 @@ if __name__ == '__main__':
                 print('\ncalendars:', file=fh)
                 for k in calendars['g7:'+tag]:
                     print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
-            elif g7[tag][0] == 'enumeration':
-                print('\nused by:', file=fh)
-                for tag2 in sorted(enums):
-                    if ('g7:'+tag) in enums[tag2]:
-                        print('  - "'+expand_prefix('g7:'+tag2,prefixes)+'"', file=fh)
+            
+            # handle use in enumerations (which can include any tag type)
+            is_used_by = False
+            for tag2 in sorted(enums):
+                if ('g7:'+tag) in enums[tag2]:
+                    if not is_used_by:
+                        print('\nused by:', file=fh)
+                        is_used_by = True
+                    print('  - "'+expand_prefix('g7:'+tag2,prefixes)+'"', file=fh)
+
             fh.write('...\n')
 
         print('done')
