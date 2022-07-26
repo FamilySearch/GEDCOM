@@ -9,4 +9,7 @@ standard tag: PROVEN
 descriptions:
   - There has been a claim by some that this child does not belong to this
     family, but the linkage has been proven.
+
+used by:
+  - "https://gedcom.io/terms/v7/FAMC-STAT"
 ...

@@ -8,4 +8,7 @@ standard tag: VIDEO
 
 descriptions:
   - Motion picture recording
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

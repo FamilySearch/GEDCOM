@@ -8,4 +8,7 @@ standard tag: ELECTRONIC
 
 descriptions:
   - A digital artifact
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

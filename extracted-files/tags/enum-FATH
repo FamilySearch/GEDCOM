@@ -8,4 +8,7 @@ standard tag: FATH
 
 descriptions:
   - Father; implies PARENT
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

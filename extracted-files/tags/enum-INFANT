@@ -7,5 +7,10 @@ uri: https://gedcom.io/terms/v7/enum-INFANT
 standard tag: INFANT
 
 descriptions:
+  - "Applies to: All but SLGC"
   - Died before less than 1 year old, baptism or endowment not required.
+  - "Status: Deprecated. Use CHILD instead."
+
+used by:
+  - "https://gedcom.io/terms/v7/ord-STAT"
 ...

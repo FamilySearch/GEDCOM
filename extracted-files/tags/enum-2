@@ -8,4 +8,7 @@ standard tag: 2
 
 descriptions:
   - Secondary evidence, data officially recorded sometime after the event
+
+used by:
+  - "https://gedcom.io/terms/v7/QUAY"
 ...

@@ -8,4 +8,7 @@ standard tag: U
 
 descriptions:
   - Cannot be determined from available sources
+
+used by:
+  - "https://gedcom.io/terms/v7/SEX"
 ...

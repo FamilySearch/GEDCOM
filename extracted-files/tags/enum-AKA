@@ -8,4 +8,7 @@ standard tag: AKA
 
 descriptions:
   - Also known as, alias, etc.
+
+used by:
+  - "https://gedcom.io/terms/v7/NAME-TYPE"
 ...

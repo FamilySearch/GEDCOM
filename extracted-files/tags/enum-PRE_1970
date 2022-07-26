@@ -7,6 +7,11 @@ uri: https://gedcom.io/terms/v7/enum-PRE_1970
 standard tag: PRE_1970
 
 descriptions:
-  - Ordinance was likely completed because another ordinance for this person
-    was converted from temple records of work completed before 1970.
+  - "Applies to: All"
+  - Ordinance was likely completed because an ordinance for this person was
+    converted from temple records of work completed before 1970.
+  - "Status: Deprecated. Use DATE BEF 1970 instead."
+
+used by:
+  - "https://gedcom.io/terms/v7/ord-STAT"
 ...

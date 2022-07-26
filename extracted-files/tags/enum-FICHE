@@ -8,4 +8,7 @@ standard tag: FICHE
 
 descriptions:
   - Microfiche
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

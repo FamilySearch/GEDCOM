@@ -7,5 +7,10 @@ uri: https://gedcom.io/terms/v7/enum-STILLBORN
 standard tag: STILLBORN
 
 descriptions:
-  - Stillborn, so ordinances not required.
+  - "Applies to: All"
+  - Born dead, so no ordinances are required.
+  - "Status: Current"
+
+used by:
+  - "https://gedcom.io/terms/v7/ord-STAT"
 ...

@@ -10,11 +10,13 @@ descriptions:
   - Phrase
   - |
     Textual information that cannot be expressed in the superstructure due to
-    the limitations of its datatype.
+    the limitations of its datatype. A PHRASE may restate information contained
+    in the superstructure, but doing so is not recommended unless it is needed
+    for clarity.
     
     A date interpreted from the phrase “The Feast of St John” might be
     
-        2 DATE 24 JUNE 1852
+        2 DATE 24 JUN 1852
         3 PHRASE During the feast of St John
     
     A record using 1648/9 to indicate a change in new year might become
@@ -49,7 +51,7 @@ descriptions:
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/AGE": "{0:1}"

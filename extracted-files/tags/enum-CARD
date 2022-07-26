@@ -8,4 +8,7 @@ standard tag: CARD
 
 descriptions:
   - A card or file entry
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

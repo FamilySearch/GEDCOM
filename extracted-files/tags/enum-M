@@ -8,4 +8,7 @@ standard tag: M
 
 descriptions:
   - Male
+
+used by:
+  - "https://gedcom.io/terms/v7/SEX"
 ...

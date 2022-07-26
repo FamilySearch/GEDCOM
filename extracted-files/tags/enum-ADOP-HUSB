@@ -8,4 +8,7 @@ standard tag: HUSB
 
 descriptions:
   - Adopted by the HUSB of the FAM pointed to by FAMC.
+
+used by:
+  - "https://gedcom.io/terms/v7/FAMC-ADOP"
 ...

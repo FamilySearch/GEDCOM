@@ -110,5 +110,5 @@ substructures:
   "https://gedcom.io/terms/v7/UID": "{0:M}"
   "https://gedcom.io/terms/v7/WILL": "{0:M}"
 
-superstructures: []
+superstructures: {}
 ...

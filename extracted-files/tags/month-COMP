@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-type: enumeration
+type: month
 
 uri: https://gedcom.io/terms/v7/month-COMP
 
@@ -8,4 +8,7 @@ standard tag: COMP
 
 descriptions:
   - Jour Complémentaires
+
+calendars:
+  - "https://gedcom.io/terms/v7/cal-FRENCH_R"
 ...

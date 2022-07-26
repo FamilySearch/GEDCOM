@@ -8,4 +8,7 @@ standard tag: 3
 
 descriptions:
   - Direct and primary evidence used, or by dominance of the evidence
+
+used by:
+  - "https://gedcom.io/terms/v7/QUAY"
 ...

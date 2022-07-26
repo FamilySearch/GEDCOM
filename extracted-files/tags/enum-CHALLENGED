@@ -9,4 +9,7 @@ standard tag: CHALLENGED
 descriptions:
   - Linking this child to this family is suspect, but the linkage has been
     neither proven nor disproven.
+
+used by:
+  - "https://gedcom.io/terms/v7/FAMC-STAT"
 ...

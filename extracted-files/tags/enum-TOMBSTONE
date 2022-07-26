@@ -8,4 +8,7 @@ standard tag: TOMBSTONE
 
 descriptions:
   - Burial marker or related memorial
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

@@ -7,5 +7,11 @@ uri: https://gedcom.io/terms/v7/enum-CHILD
 standard tag: CHILD
 
 descriptions:
-  - Died before 8 years old.
+  - "Applies to: All but SLGC"
+  - Died before 8 years old, so ordinances other than child to parent sealing
+    are not required.
+  - "Status: Current"
+
+used by:
+  - "https://gedcom.io/terms/v7/ord-STAT"
 ...

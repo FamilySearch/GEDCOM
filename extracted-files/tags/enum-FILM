@@ -8,4 +8,7 @@ standard tag: FILM
 
 descriptions:
   - Microfilm
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

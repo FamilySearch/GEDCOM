@@ -8,4 +8,7 @@ standard tag: WIFE
 
 descriptions:
   - Adopted by the WIFE of the FAM pointed to by FAMC.
+
+used by:
+  - "https://gedcom.io/terms/v7/FAMC-ADOP"
 ...

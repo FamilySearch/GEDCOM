@@ -18,9 +18,11 @@ descriptions:
     PERSONAL_NAME_PIECES are provided optionally for systems that cannot
     operate effectively with less structured information. The Personal Name
     payload shall be seen as the primary name representation, with name pieces
-    as optional auxiliary information, meaning in particular that all name
-    parts in PERSONAL_NAME_PIECES should appear within the <PersonalName>
-    payload.
+    as optional auxiliary information; in particular it is recommended that all
+    name parts in PERSONAL_NAME_PIECES appear within the PersonalName payload
+    in some form, possibly adjusted for gender-specific suffixes or the like.
+    It is permitted for the payload to contain information not present in any
+    name piece substructure.
     
     The name may be translated or transliterated into different languages or
     scripts using the TRAN substructure. It is recommended, but not required,

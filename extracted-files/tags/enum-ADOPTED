@@ -8,4 +8,7 @@ standard tag: ADOPTED
 
 descriptions:
   - Adoptive parents
+
+used by:
+  - "https://gedcom.io/terms/v7/PEDI"
 ...

@@ -8,4 +8,7 @@ standard tag: SEALING
 
 descriptions:
   - The child was sealed to parents other than birth parents
+
+used by:
+  - "https://gedcom.io/terms/v7/PEDI"
 ...

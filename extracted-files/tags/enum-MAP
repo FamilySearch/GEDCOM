@@ -8,4 +8,7 @@ standard tag: MAP
 
 descriptions:
   - Cartographic map
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...
