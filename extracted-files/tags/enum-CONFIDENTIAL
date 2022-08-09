@@ -8,4 +8,7 @@ standard tag: CONFIDENTIAL
 
 descriptions:
   - This data was marked as confidential by the user.
+
+used by:
+  - "https://gedcom.io/terms/v7/RESN"
 ...

@@ -8,4 +8,7 @@ standard tag: NEWSPAPER
 
 descriptions:
   - Printed newspaper
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

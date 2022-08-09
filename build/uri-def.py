@@ -11,8 +11,8 @@ def get_paths():
     """Parses command-line arguments, if present; else uses defaults"""
     spec = [_ for _ in argv[1:] if isfile(_)]
     dest = [_ for _ in argv[1:] if isdir(_)]
-    if len(dest) != 1: raise Exception("One destination expected, but got "+str(dest))
-    if len(spec) < 1: raise Exception("Expected input files, none given")
+    if len(dest) != 1: raise Exception("One destination expected, but got "+str(dest)+"\nUSAGE: "+argv[0]+" input1.md input2.md destination/")
+    if len(spec) < 1: raise Exception("Expected input files, none given"+"\nUSAGE: "+argv[0]+" input1.md input2.md destination/")
     
     return spec, dest[0]
 
@@ -46,12 +46,14 @@ def find_cat_tables(txt, g7, tagsets):
     Raises an exception if any URI is repeated with distinct definitions. This code contains a hard-coded fix for BIRTH which has the same unifying concept but distinct text in the spec.
     
     Returns a {structure:[list,of,allowed,enums]} mapping
+    and a {calender:[list,of,months],month:[list,of,calendars]} mapping
     """
-    hard_code = {
+    hard_code = { ## <- hack for enum-BIRTH
         "g7:enum-BIRTH": 'Associated with birth, such as a birth name or birth parents.',
     }
     cats = {}
     enums = {}
+    calendars = {}
     for bit in re.finditer(r'by\s+concatenating\s+`([^`]*)`', txt):
         i = txt.rfind('\n#', 0, bit.start())
         j = txt.find(' ',i)
@@ -59,28 +61,56 @@ def find_cat_tables(txt, g7, tagsets):
         sect = txt[i:j].replace('(Latter-Day Saint Ordinance)','`ord`') ## <- hack for ord-STAT
         for entry in re.finditer(r'`([A-Z0-9_]+)` *\| *(.*?) *[|\n]', sect):
             enum, meaning = entry.groups()
+            h1 = sect.find('\n|',sect.rfind('\n#',0,entry.start()))+1
+            h2 = sect.find('\n', h1)
+            header = [_.strip() for _ in sect[h1:h2].strip('| ').split('|')]
             pfx = bit.group(1)+enum
             if 'The URI of this' in meaning:
                 meaning, tail = meaning.split('The URI of this')
                 pfx = tail.split('`')[1]
             meaning = hard_code.get(pfx,meaning)
+            if len(header) > 2:
+                h1 = sect.rfind('\n',0,entry.start())
+                h2 = sect.find('\n',h1+1)
+                row = [_.strip() for _ in sect[h1:h2].strip('| \n').split('|')]
+                assert len(row) == len(header)
+                meaning = [(header[i]+': '+row[i] 
+                if header[i] not in ('Meaning','Name')
+                else row[i]) for i in range(1,len(header))]
+            else:
+                meaning = [meaning]
             if pfx in cats and meaning != cats[pfx]:
                 raise Exception('Concatenated URI '+pfx+' has multiple definitions:'
                     + '\n    '+cats[pfx]
                     + '\n    '+meaning
                 )
             if 'enum-' in pfx:
+                yamltype = 'enumeration'
                 k1 = sect.find('`', sect.rfind('\n#', 0, entry.start()))
                 k2 = sect.rfind('`', 0, sect.find('\n', k1))
                 key = sect[k1:k2].replace('`','').replace('.','-')
                 enums.setdefault(key,[]).append(pfx)
+            elif 'month-' in pfx:
+                yamltype = 'month'
+                k1 = sect.find('`', sect.find('URI for this calendar is', entry.start()))+1
+                k2 = sect.find('`', k1)
+                cal = sect[k1:k2]
+                calendars.setdefault(cal,[]).append(pfx)
+                calendars.setdefault(pfx,[]).append(cal)
+                if 'GREGORIAN' in cal: ## <- hack for JULIAN
+                    c2 = cal.replace('GREGORIAN','JULIAN')
+                    calendars.setdefault(c2,[]).append(pfx)
+                    calendars.setdefault(pfx,[]).append(c2)
+                    
+            else:
+                raise Exception("unexpected enumeration URI prefix "+repr(pfx))
             if pfx not in cats:
                 cats[pfx] = meaning
                 if pfx.startswith('g7:'):
                     if pfx[3:] in g7:
                         raise Exception(pfx+' defined as an enumeration and a '+g7[pfx[3:]][0])
-                    g7[pfx[3:]] = ('enumeration', [meaning])
-    return enums
+                    g7[pfx[3:]] = (yamltype, meaning)
+    return enums, calendars
 
 def find_calendars(txt, g7):
     """Looks for sections defining a `g7:cal-` URI"""
@@ -159,7 +189,7 @@ def parse_gedstruct(txt, rules, dtypes):
                 card = parts[-2]
                 if len(parts) > 4:
                     p = ' '.join(parts[2:-2])[1:-1]
-                    if p.startswith('<XREF:'): p = '@'+p+'@'
+                    if p.startswith('<XREF:'): p = '@<https://gedcom.io/terms/v7/record-'+p[6:]+'@'
                     elif p == 'Y|<NULL>': pass
                     else: p = dtypes[p]
                 else: p = None
@@ -248,6 +278,9 @@ def tidy_markdown(md, indent, width=79):
 def yaml_str_helper(pfx, md, width=79):
     txt = tidy_markdown(md, len(pfx), width)
     if ('\n'+' '*len(pfx)+'\n') in txt: return pfx + '|\n' + ' '*len(pfx) + txt
+    if ': ' in txt or txt.startswith('@'):
+        if '"' in txt: return pfx + '|\n' + ' '*len(pfx) + txt
+        else: return pfx+'"' + txt + '"'
     return pfx + txt
 
 def expand_prefix(txt, prefixes):
@@ -268,7 +301,7 @@ if __name__ == '__main__':
     rules = parse_rules(txt)
     ssp = parse_gedstruct(txt, rules, dtypes)
     tagsets = find_descriptions(txt, g7, ssp)
-    enums = find_cat_tables(txt, g7, tagsets)
+    enums, calendars = find_cat_tables(txt, g7, tagsets)
     find_enum_by_link(txt, enums, tagsets)
     find_calendars(txt, g7)
 
@@ -302,7 +335,10 @@ if __name__ == '__main__':
             if g7[tag][0] == 'structure':
                 d = g7[tag][2]
                 payload = expand_prefix(d['pay'],prefixes) if d['pay'] is not None else 'null'
-                print('\npayload:', payload, file=fh)
+                if payload[0] == '@' or ': ' in payload:
+                    print('\npayload: "'+payload+'"', file=fh)
+                else:
+                    print('\npayload:', payload, file=fh)
                 payload_lookup.append([uri, payload if payload != 'null' else ''])
                 if d['pay'] and 'Enum' in d['pay']:
                     print('\nenumeration values:', file=fh)
@@ -315,7 +351,7 @@ if __name__ == '__main__':
                     print('\nsubstructures:', file=fh)
                     for k,v in sorted(d['sub'].items()):
                         print('  "'+expand_prefix(k,prefixes)+'": "'+v+'"', file=fh)
-                else: print('\nsubstructures: []', file=fh)
+                else: print('\nsubstructures: {}', file=fh)
                 if d['sup']:
                     print('\nsuperstructures:', file=fh)
                     for k,v in sorted(d['sup'].items()):
@@ -324,8 +360,26 @@ if __name__ == '__main__':
                         struct_lookup.append([suri,ptag,uri])
                         cardinality_lookup.append([suri,uri,v])
                 else:
-                    print('\nsuperstructures: []', file=fh)
+                    print('\nsuperstructures: {}', file=fh)
                     struct_lookup.append(['',ptag,uri])
+            elif g7[tag][0] == 'calendar':
+                print('\nmonths:', file=fh)
+                for k in calendars['g7:'+tag]:
+                    print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
+            elif g7[tag][0] == 'month':
+                print('\ncalendars:', file=fh)
+                for k in calendars['g7:'+tag]:
+                    print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
+            
+            # handle use in enumerations (which can include any tag type)
+            is_used_by = False
+            for tag2 in sorted(enums):
+                if ('g7:'+tag) in enums[tag2]:
+                    if not is_used_by:
+                        print('\nused by:', file=fh)
+                        is_used_by = True
+                    print('  - "'+expand_prefix('g7:'+tag2,prefixes)+'"', file=fh)
+
             fh.write('...\n')
 
         print('done')

@@ -8,4 +8,7 @@ standard tag: WITN
 
 descriptions:
   - Witness
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

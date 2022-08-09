@@ -8,4 +8,7 @@ standard tag: OFFICIATOR
 
 descriptions:
   - Officiator of the event
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

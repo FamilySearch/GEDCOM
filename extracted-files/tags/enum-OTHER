@@ -8,4 +8,10 @@ standard tag: OTHER
 
 descriptions:
   - A value not listed here; should have a PHRASE substructure
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
+  - "https://gedcom.io/terms/v7/NAME-TYPE"
+  - "https://gedcom.io/terms/v7/PEDI"
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

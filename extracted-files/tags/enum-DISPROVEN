@@ -9,4 +9,7 @@ standard tag: DISPROVEN
 descriptions:
   - There has been a claim by some that this child belongs to this family, but
     the linkage has been disproven.
+
+used by:
+  - "https://gedcom.io/terms/v7/FAMC-STAT"
 ...

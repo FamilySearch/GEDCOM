@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-type: enumeration
+type: month
 
 uri: https://gedcom.io/terms/v7/month-VENT
 
@@ -8,4 +8,7 @@ standard tag: VENT
 
 descriptions:
   - Ventôse
+
+calendars:
+  - "https://gedcom.io/terms/v7/cal-FRENCH_R"
 ...
