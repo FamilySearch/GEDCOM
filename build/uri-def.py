@@ -189,7 +189,7 @@ def parse_gedstruct(txt, rules, dtypes):
                 card = parts[-2]
                 if len(parts) > 4:
                     p = ' '.join(parts[2:-2])[1:-1]
-                    if p.startswith('<XREF:'): p = '@'+p+'@'
+                    if p.startswith('<XREF:'): p = '@<https://gedcom.io/terms/v7/record-'+p[6:]+'@'
                     elif p == 'Y|<NULL>': pass
                     else: p = dtypes[p]
                 else: p = None

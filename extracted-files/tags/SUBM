@@ -11,7 +11,7 @@ descriptions:
   - A contributor of information in the substructure. This is metadata about
     the structure itself, not data about its subject.
 
-payload: "@<XREF:SUBM>@"
+payload: "@<https://gedcom.io/terms/v7/record-SUBM>@"
 
 substructures: {}
 
