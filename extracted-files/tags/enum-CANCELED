@@ -7,5 +7,10 @@ uri: https://gedcom.io/terms/v7/enum-CANCELED
 standard tag: CANCELED
 
 descriptions:
+  - "Applies to: SLGS"
   - Canceled and considered invalid.
+  - "Status: Current"
+
+used by:
+  - "https://gedcom.io/terms/v7/ord-STAT"
 ...

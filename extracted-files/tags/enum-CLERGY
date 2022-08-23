@@ -8,4 +8,7 @@ standard tag: CLERGY
 
 descriptions:
   - Religious official in event; implies OFFICIATOR
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

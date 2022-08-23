@@ -22,7 +22,7 @@ enumeration values:
   2: https://gedcom.io/terms/v7/enum-2
   3: https://gedcom.io/terms/v7/enum-3
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/SOUR": "{0:1}"

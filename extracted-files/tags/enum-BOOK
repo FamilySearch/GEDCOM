@@ -8,4 +8,7 @@ standard tag: BOOK
 
 descriptions:
   - A bound book
+
+used by:
+  - "https://gedcom.io/terms/v7/MEDI"
 ...

@@ -35,4 +35,19 @@ descriptions:
     No epoch marker is permitted in this calendar.
     
     The URI for this calendar is https://gedcom.io/terms/v7/cal-FRENCH_R
+
+months:
+  - "https://gedcom.io/terms/v7/month-VEND"
+  - "https://gedcom.io/terms/v7/month-BRUM"
+  - "https://gedcom.io/terms/v7/month-FRIM"
+  - "https://gedcom.io/terms/v7/month-NIVO"
+  - "https://gedcom.io/terms/v7/month-PLUV"
+  - "https://gedcom.io/terms/v7/month-VENT"
+  - "https://gedcom.io/terms/v7/month-GERM"
+  - "https://gedcom.io/terms/v7/month-FLOR"
+  - "https://gedcom.io/terms/v7/month-PRAI"
+  - "https://gedcom.io/terms/v7/month-MESS"
+  - "https://gedcom.io/terms/v7/month-THER"
+  - "https://gedcom.io/terms/v7/month-FRUC"
+  - "https://gedcom.io/terms/v7/month-COMP"
 ...

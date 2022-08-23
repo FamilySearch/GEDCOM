@@ -81,6 +81,8 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
         
         Pseudo-structures do not have a URI.
 
+- Within the metasyntax, the order in which substructures are presented within a structure and the order in which choices are presented within an option set are not significant unless otherwise specified in the text next to the metasyntax block.
+
 The context of a structure's superstructure may be necessary in addition to the structure's standard tag to fully determine its structure type.
 To refer to a structure in the context of its superstructure,
 tags are written with intervening periods.
@@ -99,6 +101,10 @@ and a superstructure with tag `GEDC`.
 0 <<RECORD>>                               {0:M}
 0 TRLR                                     {1:1} 
 ```
+
+The order of these is significant:
+the `HEADER` must come first and `TRLR` must be last,
+with any `RECORD`s in between.
 
 #### `RECORD` :=
 
@@ -156,6 +162,7 @@ The header pseudo-structure provides metadata about the entire dataset.
 A few substructures of note:
 
 - `GEDC` identifies the specification that this document conforms to.
+    It is recommended that `GEDC` be the first substructure of the header.
 - `SCHMA` gives the meaning of extension tags; see [Extensions](#extensions) for more.
 - `SOUR` describes the originating software.
     - `CORP` describes the corporation creating the software.
@@ -633,11 +640,11 @@ n MARL [Y|<NULL>]                          {1:1}  g7:MARL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARS [Y|<NULL>]                          {1:1}  g7:MARS
+n MARR [Y|<NULL>]                          {1:1}  g7:MARR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARR [Y|<NULL>]                          {1:1}  g7:MARR
+n MARS [Y|<NULL>]                          {1:1}  g7:MARS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
@@ -776,6 +783,13 @@ Substructures shared by most individual events and attributes.
 
 ```` {.gedstruct .long}
 [
+n ADOP [Y|<NULL>]                          {1:1}  g7:ADOP
+  +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:ADOP-FAMC
+     +2 ADOP <Enum>                        {0:1}  g7:FAMC-ADOP
+        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+|
 n BAPM [Y|<NULL>]                          {1:1}  g7:BAPM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
@@ -788,6 +802,11 @@ n BASM [Y|<NULL>]                          {1:1}  g7:BASM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
+n BIRT [Y|<NULL>]                          {1:1}  g7:BIRT
+  +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
+|
 n BLES [Y|<NULL>]                          {1:1}  g7:BLES
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
@@ -799,6 +818,11 @@ n BURI [Y|<NULL>]                          {1:1}  g7:BURI
 n CENS [Y|<NULL>]                          {1:1}  g7:INDI-CENS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+|
+n CHR [Y|<NULL>]                           {1:1}  g7:CHR
+  +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |
 n CHRA [Y|<NULL>]                          {1:1}  g7:CHRA
   +1 TYPE <Text>                           {0:1}  g7:TYPE
@@ -851,23 +875,6 @@ n RETI [Y|<NULL>]                          {1:1}  g7:RETI
 n WILL [Y|<NULL>]                          {1:1}  g7:WILL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-|
-n ADOP [Y|<NULL>]                          {1:1}  g7:ADOP
-  +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:ADOP-FAMC
-     +2 ADOP <Enum>                        {0:1}  g7:FAMC-ADOP
-        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
-|
-n BIRT [Y|<NULL>]                          {1:1}  g7:BIRT
-  +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
-|
-n CHR [Y|<NULL>]                           {1:1}  g7:CHR
-  +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |
 n EVEN <Text>                              {1:1}  g7:INDI-EVEN
   +1 TYPE <Text>                           {1:1}  g7:TYPE
@@ -1294,7 +1301,7 @@ Tag | Name<br/>URI | Description
 `DSCR` | physical description<br/>`g7:DSCR` | The physical characteristics of a person.
 `EDUC` | education<br/>`g7:EDUC` | Indicator of a level of education attained.
 `IDNO` | identifying number<br/>`g7:IDNO` | A number or other string assigned to identify a person within some significant external system. It must have a `TYPE` substructure to define what kind of identification number is being provided.
-`NATI` | nationality<br/>`g7:NATI` | The national heritage of an individual.
+`NATI` | nationality<br/>`g7:NATI` | An individual's national heritage or origin, or other folk, house, kindred, lineage, or tribal interest.
 `NCHI` | number of children<br/>`g7:INDI-NCHI` | The number of children that this person is known to be the parent of (all marriages).
 `NMR` | number of marriages<br/>`g7:NMR` | The number of times this person has participated in a family as a spouse or parent.
 `OCCU` | occupation<br/>`g7:OCCU` | The type of work or profession of an individual.
@@ -2200,6 +2207,7 @@ See ITU standards [E.123](https://www.itu.int/rec/T-REC-E.123) and [E.164](https
 #### `PHRASE` (Phrase) `g7:PHRASE`
 
 Textual information that cannot be expressed in the superstructure due to the limitations of its datatype.
+A `PHRASE` may restate information contained in the superstructure, but doing so is not recommended unless it is needed for clarity.
 
 :::example
 A date interpreted from the phrase "The Feast of St John" might be

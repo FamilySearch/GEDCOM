@@ -8,4 +8,7 @@ standard tag: MARRIED
 
 descriptions:
   - Married name, assumed as part of marriage.
+
+used by:
+  - "https://gedcom.io/terms/v7/NAME-TYPE"
 ...

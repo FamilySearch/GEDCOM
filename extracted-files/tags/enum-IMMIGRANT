@@ -8,4 +8,7 @@ standard tag: IMMIGRANT
 
 descriptions:
   - Name assumed at the time of immigration.
+
+used by:
+  - "https://gedcom.io/terms/v7/NAME-TYPE"
 ...

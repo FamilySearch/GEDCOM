@@ -8,4 +8,7 @@ standard tag: LOCKED
 
 descriptions:
   - Some systems may ignore changes to this data.
+
+used by:
+  - "https://gedcom.io/terms/v7/RESN"
 ...

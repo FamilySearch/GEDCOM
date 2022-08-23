@@ -8,4 +8,7 @@ standard tag: MOTH
 
 descriptions:
   - Mother; implies PARENT
+
+used by:
+  - "https://gedcom.io/terms/v7/ROLE"
 ...

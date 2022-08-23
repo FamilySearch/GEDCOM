@@ -8,4 +8,8 @@ standard tag: BIRTH
 
 descriptions:
   - Associated with birth, such as a birth name or birth parents.
+
+used by:
+  - "https://gedcom.io/terms/v7/NAME-TYPE"
+  - "https://gedcom.io/terms/v7/PEDI"
 ...
