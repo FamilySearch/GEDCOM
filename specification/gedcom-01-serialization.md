@@ -403,7 +403,7 @@ defines the following tags
 | `_MEMBER` | `http://xmlns.com/foaf/0.1/member` |
 :::
 
-The meaning of a documented extension tag is identified by its superstructure type and URI, not its tag.
+The meaning of a documented extension tag is identified by its superstructure type and its URI, not its tag.
 Documented extension tags can be changed freely by modifying the schema,
 though it is recommended that documented extension tags not be changed.
 However, a tag change may be necessary if a product picks the same tags for URIs that another product uses for different URIs.
