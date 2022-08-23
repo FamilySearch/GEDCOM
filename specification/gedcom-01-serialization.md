@@ -430,7 +430,7 @@ and a system importing one may export it as the other without change of meaning.
 :::
 
 An extension tag that is not given a URI in the schema structure is called an **undocumented extension tag**.
-The meaning of an undocumented extension tag is identified by its superstructure type and tag.
+The meaning of an undocumented extension tag is identified by its superstructure type and its tag.
 
 
 ### Requirements and Recommendations
