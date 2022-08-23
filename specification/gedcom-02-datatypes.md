@@ -51,7 +51,7 @@ The URI of a given tag in an enumeration payload is determined by the tag itself
 
 :::example
 The tag `HUSB` is used in this document to represent two enumeration values.
-Which one is meant can be identified by the structure type is appears in as follows:
+Which one is meant can be identified by the structure type it appears in as follows:
 
 | Containing structure type | Enumeration value identified by tag `HUSB` |
 |---------------------|---------------------|
