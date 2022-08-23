@@ -1301,7 +1301,7 @@ Tag | Name<br/>URI | Description
 `DSCR` | physical description<br/>`g7:DSCR` | The physical characteristics of a person.
 `EDUC` | education<br/>`g7:EDUC` | Indicator of a level of education attained.
 `IDNO` | identifying number<br/>`g7:IDNO` | A number or other string assigned to identify a person within some significant external system. It must have a `TYPE` substructure to define what kind of identification number is being provided.
-`NATI` | nationality<br/>`g7:NATI` | The national heritage of an individual.
+`NATI` | nationality<br/>`g7:NATI` | An individual's national heritage or origin, or other folk, house, kindred, lineage, or tribal interest.
 `NCHI` | number of children<br/>`g7:INDI-NCHI` | The number of children that this person is known to be the parent of (all marriages).
 `NMR` | number of marriages<br/>`g7:NMR` | The number of times this person has participated in a family as a spouse or parent.
 `OCCU` | occupation<br/>`g7:OCCU` | The type of work or profession of an individual.
