@@ -305,7 +305,7 @@ The recommended way to go beyond the set of standard structure types in this spe
 This specification also provides multiple ways for extension authors to go beyond the specification without submitting a feature request, which are described in the remainder of this section.
 
 Extensions can introduce new structure types, new enumeration values, new calendars with their associated months, and new datatypes.
-They can also extend existing existing structures with new permitted substructure types and existing enumeration-type payloads with new permitted values.
+They can also extend existing structures with new permitted substructure types and existing enumeration-type payloads with new permitted values.
 Extensions cannot change existing meanings, cardinalities, or calendars.
 
 A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure. Their meaning is defined by their tag, as is discussed more fully in the section [Extension Tags].
