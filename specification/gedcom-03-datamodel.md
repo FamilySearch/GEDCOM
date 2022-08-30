@@ -69,7 +69,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
     - An optional payload descriptor; if present this is 1 of the following:
         
         - `@<XREF:`tag`>@` means a pointer to a structure with this cross-reference template; `@VOID@` is also permitted.
-        - `<`datatype`>` means a non-pointer payload, as described in [Data types](#datatypes). If the datatype allows the empty string, the payload may be omitted.
+        - `<`data type`>` means a non-pointer payload, as described in [Data types](#datatypes). If the data type allows the empty string, the payload may be omitted.
         - `[`text`|<NULL>]` means the payload is optional but if present must be the given text.
         
         If there is a payload descriptor, a payload that matches the payload is required of the described structure unless the descriptor says the payload is optional.
@@ -1055,7 +1055,7 @@ Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more.
 
 This specification does not define how the meaning of multiple parts with the same tag differs from the meaning of a single part with a concatenated larger payload.
 However, some applications allow the user to chose whether to combine or split name parts, meaning the tag quantity should be treated as expressing at least a user preference.
-Even when multiple `SURN` tags are used, the `PersonalName` datatype identifies a single surname substring between its slashes.
+Even when multiple `SURN` tags are used, the `PersonalName` data type identifies a single surname substring between its slashes.
 
 #### `PERSONAL_NAME_STRUCTURE` :=
 
@@ -2206,7 +2206,7 @@ See ITU standards [E.123](https://www.itu.int/rec/T-REC-E.123) and [E.164](https
 
 #### `PHRASE` (Phrase) `g7:PHRASE`
 
-Textual information that cannot be expressed in the superstructure due to the limitations of its datatype.
+Textual information that cannot be expressed in the superstructure due to the limitations of its data type.
 A `PHRASE` may restate information contained in the superstructure, but doing so is not recommended unless it is needed for clarity.
 
 :::example

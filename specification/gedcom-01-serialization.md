@@ -155,8 +155,8 @@ The **line value** matches production `LineVal` and encodes the structure's payl
 Line value content is sufficient to distinguish between pointers and line strings.
 Pointers are encoded as the cross-reference identifier of the pointed-to structure.
 Each non-pointer payload may be encoded in 1 or more line strings (line continuations encode multi-line payloads in several line strings).
-The exact encoding of non-pointer payloads is dependent on the datatype of the payload, as determined by the structure type.
-The datatype of non-pointer payloads cannot be fully determined by line value content alone.
+The exact encoding of non-pointer payloads is dependent on the data type of the payload, as determined by the structure type.
+The data type of non-pointer payloads cannot be fully determined by line value content alone.
 
 Note that production `LineVal` does not match the empty string.
 Because empty payloads and missing payloads are considered equivalent,
@@ -295,7 +295,7 @@ In the following
 - Both uses of `_LOC` are tagged extension structures, as is `_POP`.
 - `_LOC`.`NAME` and `_LOC`.`NAME`.`DATE` are both extension-defined substructures. Their meaning is defined by the specification defining `_LOC`.
 - `_POP`.`DATE` is an extension-defined substructure. Its meaning is defined by the specification defining `_POP`.
-- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended datatype without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
+- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended data type without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
 :::
 
 If an extension-defined substructure has a tag that is also used by one or more standard structures, its meaning and payload type should match at least one of those standard structure types.
@@ -528,7 +528,7 @@ In general, removed data should result in removed structures.
 
 Pointers to a removed structure should be replaced with `voidPtr`s.
 
-If removal of a structure makes the superstructure invalid because the superstructure required the substructure, the structure should instead be retained and have its payload changed to a `voidPtr` if a pointer, or to a datatype-appropriate empty value if a non-pointer.
+If removal of a structure makes the superstructure invalid because the superstructure required the substructure, the structure should instead be retained and have its payload changed to a `voidPtr` if a pointer, or to a data type-appropriate empty value if a non-pointer.
 
 If removing a structure leaves its superstructure with no payload and no substructures, the superstructure should also be removed.
 
