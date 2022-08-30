@@ -12,9 +12,9 @@ descriptions:
   - Phrase
   - |
     Textual information that cannot be expressed in the superstructure due to
-    the limitations of its datatype. A PHRASE may restate information contained
-    in the superstructure, but doing so is not recommended unless it is needed
-    for clarity.
+    the limitations of its data type. A PHRASE may restate information
+    contained in the superstructure, but doing so is not recommended unless it
+    is needed for clarity.
     
     A date interpreted from the phrase “The Feast of St John” might be
     

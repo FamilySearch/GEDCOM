@@ -82,7 +82,7 @@ Each **structure type** is identified by a URI and defines several properties of
 - The payload type of the structure's payload, which shall be one of
     - no payload, or
     - a pointer to a record with a specific structure type, or
-    - a [datatype](#datatypes);
+    - a [data type](#datatypes);
         if an [enumeration](#enumeration) or [list of enumerations](#list), also a set of permitted enumeration values.
 - Which structure types may appear as substructures of the structure and with what **cardinality** they may appear.
     Cardinality is specified by two flags:
@@ -306,7 +306,7 @@ The recommended way to go beyond the set of standard structure types in this spe
 
 This specification also provides multiple ways for extension authors to go beyond the specification without submitting a feature request, which are described in the remainder of this section.
 
-Extensions can introduce new structure types, new enumeration values, new calendars with their associated months, and new datatypes.
+Extensions can introduce new structure types, new enumeration values, new calendars with their associated months, and new data types.
 They can also extend existing structures with new permitted substructure types and extend existing enumeration-type payloads with new permitted values.
 Extensions cannot change existing meanings, cardinalities, or calendars.
 

@@ -28,16 +28,16 @@ def get_prefixes(txt):
             pfx[abbr] = lng
     return pfx
 
-def find_datatypes(txt, g7):
+def find_data_types(txt, g7):
     """Returns datatype:uri and adds URI suffixes to g7"""
     dturi = {}
-    for section in re.finditer(r'^#+ *([^\n]*)\n+((?:[^\n]|\n+[^\n#])*[^\n]*URI for[^\n]*datatypes? is(?:[^\n]|\n+[^\n#])*)', txt, re.M):
-        for dt, uri in re.findall(r'URI[^\n]*`([^\n`]*)` datatype[^\n]*`([^`\n:]*:[^\n`]*)`', section.group(0)):
+    for section in re.finditer(r'^#+ *([^\n]*)\n+((?:[^\n]|\n+[^\n#])*[^\n]*URI for[^\n]*data types? is(?:[^\n]|\n+[^\n#])*)', txt, re.M):
+        for dt, uri in re.findall(r'URI[^\n]*`([^\n`]*)` data type[^\n]*`([^`\n:]*:[^\n`]*)`', section.group(0)):
             dturi[dt] = uri
             if uri.startswith('g7:'):
                 if '#' in uri: uri = uri[:uri.find('#')]
                 if uri[3:] not in g7:
-                    g7[uri[3:]] = ('datatype', [section.group(2).strip()])
+                    g7[uri[3:]] = ('data type', [section.group(2).strip()])
     return dturi
     
 def find_cat_tables(txt, g7, tagsets):
@@ -312,7 +312,7 @@ if __name__ == '__main__':
     txt = get_text(specs)
     
     prefixes = get_prefixes(txt)
-    dtypes = find_datatypes(txt, g7)
+    dtypes = find_data_types(txt, g7)
     rules = parse_rules(txt)
     ssp = parse_gedstruct(txt, rules, dtypes)
     tagsets = find_descriptions(txt, g7, ssp)
