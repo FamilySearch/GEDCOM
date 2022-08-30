@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-CHALLENGED
@@ -10,6 +12,6 @@ descriptions:
   - Linking this child to this family is suspect, but the linkage has been
     neither proven nor disproven.
 
-used by:
-  - "https://gedcom.io/terms/v7/FAMC-STAT"
+value of:
+  - "https://gedcom.io/terms/v7/g7:enumset-FAMC-STAT"
 ...

@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/FAMC-ADOP
@@ -8,15 +10,12 @@ standard tag: ADOP
 
 descriptions:
   - Adoption
-  - An enumerated value indicating which parent(s) in the family adopted this
-    individual.
+  - An enumerated value from set https://gedcom.io/terms/v7/enumset-ADOP
+    indicating which parent(s) in the family adopted this individual.
 
 payload: https://gedcom.io/terms/v7/type-Enum
 
-enumeration values:
-  HUSB: https://gedcom.io/terms/v7/enum-ADOP-HUSB
-  WIFE: https://gedcom.io/terms/v7/enum-ADOP-WIFE
-  BOTH: https://gedcom.io/terms/v7/enum-BOTH
+enumeration set: "https://gedcom.io/terms/v7/enumset-ADOP"
 
 substructures:
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"

@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/SEX
@@ -8,15 +10,12 @@ standard tag: SEX
 
 descriptions:
   - Sex
-  - An enumerated value that indicates the sex of the individual at birth.
+  - An enumerated value from set https://gedcom.io/terms/v7/enumset-SEX that
+    indicates the sex of the individual at birth.
 
 payload: https://gedcom.io/terms/v7/type-Enum
 
-enumeration values:
-  F: https://gedcom.io/terms/v7/enum-F
-  M: https://gedcom.io/terms/v7/enum-M
-  U: https://gedcom.io/terms/v7/enum-U
-  X: https://gedcom.io/terms/v7/enum-X
+enumeration set: "https://gedcom.io/terms/v7/enumset-SEX"
 
 substructures: {}
 

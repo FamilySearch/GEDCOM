@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-BIC
@@ -11,6 +13,6 @@ descriptions:
   - Born in the covenant, so child to parent sealing ordinance is not required.
   - "Status: Current"
 
-used by:
-  - "https://gedcom.io/terms/v7/ord-STAT"
+value of:
+  - "https://gedcom.io/terms/v7/g7:enumset-ord-STAT"
 ...

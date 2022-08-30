@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: month
 
 uri: https://gedcom.io/terms/v7/month-PLUV

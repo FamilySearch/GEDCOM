@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: calendar
 
 uri: https://gedcom.io/terms/v7/cal-GREGORIAN

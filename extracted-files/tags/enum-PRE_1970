@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-PRE_1970
@@ -12,6 +14,6 @@ descriptions:
     converted from temple records of work completed before 1970.
   - "Status: Deprecated. Use DATE BEF 1970 instead."
 
-used by:
-  - "https://gedcom.io/terms/v7/ord-STAT"
+value of:
+  - "https://gedcom.io/terms/v7/g7:enumset-ord-STAT"
 ...

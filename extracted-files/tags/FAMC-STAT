@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/FAMC-STAT
@@ -8,15 +10,13 @@ standard tag: STAT
 
 descriptions:
   - Status
-  - An enumerated value assessing of the state or condition of a researcher’s
-    belief in a family connection.
+  - An enumerated value from set https://gedcom.io/terms/v7/enumset-FAMC-STAT
+    assessing of the state or condition of a researcher’s belief in a family
+    connection.
 
 payload: https://gedcom.io/terms/v7/type-Enum
 
-enumeration values:
-  CHALLENGED: https://gedcom.io/terms/v7/enum-CHALLENGED
-  DISPROVEN: https://gedcom.io/terms/v7/enum-DISPROVEN
-  PROVEN: https://gedcom.io/terms/v7/enum-PROVEN
+enumeration set: "https://gedcom.io/terms/v7/enumset-FAMC-STAT"
 
 substructures:
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"

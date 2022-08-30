@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/RESN
@@ -9,8 +11,9 @@ standard tag: RESN
 descriptions:
   - Restriction
   - |
-    A [List] of enumerated values signifying access to information may be
-    denied or otherwise restricted.
+    A [List] of enumerated values from set
+    https://gedcom.io/terms/v7/enumset-RESN signifying access to information
+    may be denied or otherwise restricted.
     
     The RESN structure is provided to assist software in filtering data that
     should not be exported or otherwise used in a particular context. It is
@@ -23,10 +26,7 @@ descriptions:
 
 payload: https://gedcom.io/terms/v7/type-List#Enum
 
-enumeration values:
-  CONFIDENTIAL: https://gedcom.io/terms/v7/enum-CONFIDENTIAL
-  LOCKED: https://gedcom.io/terms/v7/enum-LOCKED
-  PRIVACY: https://gedcom.io/terms/v7/enum-PRIVACY
+enumeration set: "https://gedcom.io/terms/v7/enumset-RESN"
 
 substructures: {}
 
