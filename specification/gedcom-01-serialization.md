@@ -84,7 +84,9 @@ Each **structure type** is identified by a URI and defines several properties of
     - a pointer to a record with a specific structure type, or
     - a [datatype](#datatypes);
         if an [enumeration](#enumeration) or [list of enumerations](#list), also a set of permitted enumeration values.
-- Which structure types may appear as substructures of the structure, each with a **cardinality** consisting of two flags:
+- Which structure types may appear as substructures of the structure and with what **cardinality** they may appear.
+    Cardinality is specified by two flags:
+    
     - whether a substructure of this type is required or not; and
     - whether multiple substructures of this type are permitted or not.
 
@@ -164,10 +166,10 @@ Tags that match the production `stdTag` are defined in this document.
 Tags that match `extTag` are defined according to [Extensions].
 
 The same tag may be used to represent multiple structure types.
-The structure type of each structure is identified by its tag and the type of its superstucture,
-though knowing which structure type a given tag and superstructure type identifies
-requires access to the appropriate defining document
-(this document for standard tags, the [schema] and extension authors' documentation for extension tags).
+The structure type of each structure is identified by its tag and the type of its superstucture.
+The mapping between (superstructure type, tag) pairs and structure types
+is given elsewhere in this document (for standard structure types and tags)
+or the [schema] and extension authors' documentation (for extension structure types and tags).
 
 :::example
 The tag `ADOP` is used in this document to represent two structure types.

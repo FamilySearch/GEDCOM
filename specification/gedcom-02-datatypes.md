@@ -58,7 +58,7 @@ Which one is meant can be identified by the structure type it appears in as foll
 | `g7:FAMC-ADOP`      | `g7:enum-ADOP-HUSB` |
 | `g7:ROLE`           | `g7:enum-HUSB`      |
 
-An [extension](#extensions) could also place either of these enumeration values in an extension structure type.
+An [extension](#extensions) could also place either of these enumeration values in an extension structure type; the extension authors should document which one they permit.
 
 The `HUSB` tag is also used to identify two different structure types, `g7:FAM-HUSB` and `g7:HUSB`.
 :::
