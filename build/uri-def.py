@@ -319,6 +319,8 @@ if __name__ == '__main__':
             continue
         with open(join(dest,tag), 'w') as fh:
             fh.write('%YAML 1.2\n---\n')
+            print('lang: en-US\n', file=fh)
+
             print('type:',g7[tag][0], file=fh)
             
             # error: type-DATE# type-List#
@@ -345,7 +347,7 @@ if __name__ == '__main__':
                     for k in sorted(enums[tag]):
                         penum = re.sub(r'.*[-:/]', '', k)
                         puri = expand_prefix(k,prefixes)
-                        print('  '+penum+':', expand_prefix(k,prefixes), file=fh)
+                        print('  -', expand_prefix(k,prefixes), file=fh)
                         enum_lookup.append([uri,penum,puri])
                 if d['sub']:
                     print('\nsubstructures:', file=fh)
@@ -376,7 +378,7 @@ if __name__ == '__main__':
             for tag2 in sorted(enums):
                 if ('g7:'+tag) in enums[tag2]:
                     if not is_used_by:
-                        print('\nused by:', file=fh)
+                        print('\nvalue of:', file=fh)
                         is_used_by = True
                     print('  - "'+expand_prefix('g7:'+tag2,prefixes)+'"', file=fh)
 
