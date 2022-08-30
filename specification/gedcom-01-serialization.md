@@ -189,8 +189,8 @@ The **line value** matches production `LineVal` and encodes the structure's payl
 Line value content is sufficient to distinguish between pointers and line strings.
 Pointers are encoded as the cross-reference identifier of the pointed-to structure.
 Each non-pointer payload may be encoded in 1 or more line strings (line continuations encode multi-line payloads in several line strings).
-The exact encoding of non-pointer payloads is dependent on the datatype of the payload, as determined by the structure type.
-The datatype of non-pointer payloads cannot be fully determined by line value content alone.
+The exact encoding of non-pointer payloads is dependent on the data type of the payload, as determined by the structure type.
+The data type of non-pointer payloads cannot be fully determined by line value content alone.
 
 Note that production `LineVal` does not match the empty string.
 Because empty payloads and missing payloads are considered equivalent,
@@ -333,7 +333,7 @@ In the following
 - Both uses of `_LOC` are tagged extension structures, as is `_POP`.
 - `_LOC`.`NAME` and `_LOC`.`NAME`.`DATE` are both extension-defined substructures. Their meaning is defined by the specification defining `_LOC`.
 - `_POP`.`DATE` is an extension-defined substructure. Its meaning is defined by the specification defining `_POP`.
-- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended datatype without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
+- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended data type without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
 :::
 
 If an extension-defined substructure has a tag that is also used by one or more standard structures, its meaning and payload type should match at least one of those standard structure types.
@@ -439,12 +439,16 @@ defines the following tags
 | :---- | :---- |
 | `_SKYPEID` | `http://xmlns.com/foaf/0.1/skypeID` |
 | `_MEMBER` | `http://xmlns.com/foaf/0.1/member` |
+
+Note that at the time of writing, the [FOAF](https://xmlns.com/foaf/spec/20140114.html) URIs used in this example are not URLs.
 :::
 
-The meaning of a documented extension tag is identified by its URI, not its tag.
+The meaning of a documented extension tag is identified by its superstructure type and its URI, not its tag.
+As such each documented extension tag needs its own URI: it is its URI, not its tag, that defines its meaning.
 Documented extension tags can be changed freely by modifying the schema,
 though it is recommended that documented extension tags not be changed.
 However, a tag change may be necessary if a product picks the same tags for URIs that another product uses for different URIs.
+A given schema should map only one tag to each URI.
 
 :::example
 The following 2 document fragments are semantically equivalent
@@ -467,8 +471,23 @@ and a system importing one may export it as the other without change of meaning.
 ```
 :::
 
+It is recommended that the URIs used for documented extension tags be URLs that can be used to access documentation for the meaning of the tag.
+
+:::note
+The W3C has an [interest group note](http://www.w3.org/TR/cooluris/)
+that discusses several ways of achieving this URI/URL mapping,
+including how a single webpage can describe multiple tags
+using either HTTP redirects (which requires some server setup)
+or what they call "Hash URIs" (which require no setup).
+
+That interest group note also explains why it might be desirable
+to have a separate URIs for a concept and the document describing that concept.
+Because of the structure of the schema, that separation is less important for FamilySearch GEDCOM 7
+than it is for the semantic web, but it remains good advice where feasible.
+:::
+
 An extension tag that is not given a URI in the schema structure is called an **undocumented extension tag**.
-The meaning of an undocumented extension tag is identified by its tag.
+The meaning of an undocumented extension tag is identified by its superstructure type and its tag.
 
 
 ### Requirements and Recommendations
@@ -547,7 +566,7 @@ In general, removed data should result in removed structures.
 
 Pointers to a removed structure should be replaced with `voidPtr`s.
 
-If removal of a structure makes the superstructure invalid because the superstructure required the substructure, the structure should instead be retained and have its payload changed to a `voidPtr` if a pointer, or to a datatype-appropriate empty value if a non-pointer.
+If removal of a structure makes the superstructure invalid because the superstructure required the substructure, the structure should instead be retained and have its payload changed to a `voidPtr` if a pointer, or to a data type-appropriate empty value if a non-pointer.
 
 If removing a structure leaves its superstructure with no payload and no substructures, the superstructure should also be removed.
 

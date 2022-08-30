@@ -69,7 +69,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
     - An optional payload descriptor; if present this is 1 of the following:
         
         - `@<XREF:`tag`>@` means a pointer to a structure with this cross-reference template; `@VOID@` is also permitted.
-        - `<`datatype`>` means a non-pointer payload, as described in [Data types](#datatypes). If the datatype allows the empty string, the payload may be omitted.
+        - `<`data type`>` means a non-pointer payload, as described in [Data types](#datatypes). If the data type allows the empty string, the payload may be omitted.
         - `[`text`|<NULL>]` means the payload is optional but if present must be the given text.
         
         If there is a payload descriptor, a payload that matches the payload is required of the described structure unless the descriptor says the payload is optional.
@@ -1055,7 +1055,7 @@ Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more.
 
 This specification does not define how the meaning of multiple parts with the same tag differs from the meaning of a single part with a concatenated larger payload.
 However, some applications allow the user to chose whether to combine or split name parts, meaning the tag quantity should be treated as expressing at least a user preference.
-Even when multiple `SURN` tags are used, the `PersonalName` datatype identifies a single surname substring between its slashes.
+Even when multiple `SURN` tags are used, the `PersonalName` data type identifies a single surname substring between its slashes.
 
 #### `PERSONAL_NAME_STRUCTURE` :=
 
@@ -1301,7 +1301,7 @@ Tag | Name<br/>URI | Description
 `DSCR` | physical description<br/>`g7:DSCR` | The physical characteristics of a person.
 `EDUC` | education<br/>`g7:EDUC` | Indicator of a level of education attained.
 `IDNO` | identifying number<br/>`g7:IDNO` | A number or other string assigned to identify a person within some significant external system. It must have a `TYPE` substructure to define what kind of identification number is being provided.
-`NATI` | nationality<br/>`g7:NATI` | The national heritage of an individual.
+`NATI` | nationality<br/>`g7:NATI` | An individual's national heritage or origin, or other folk, house, kindred, lineage, or tribal interest.
 `NCHI` | number of children<br/>`g7:INDI-NCHI` | The number of children that this person is known to be the parent of (all marriages).
 `NMR` | number of marriages<br/>`g7:NMR` | The number of times this person has participated in a family as a spouse or parent.
 `OCCU` | occupation<br/>`g7:OCCU` | The type of work or profession of an individual.
@@ -2206,7 +2206,7 @@ See ITU standards [E.123](https://www.itu.int/rec/T-REC-E.123) and [E.164](https
 
 #### `PHRASE` (Phrase) `g7:PHRASE`
 
-Textual information that cannot be expressed in the superstructure due to the limitations of its datatype.
+Textual information that cannot be expressed in the superstructure due to the limitations of its data type.
 A `PHRASE` may restate information contained in the superstructure, but doing so is not recommended unless it is needed for clarity.
 
 :::example
