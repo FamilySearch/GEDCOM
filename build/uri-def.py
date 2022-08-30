@@ -255,7 +255,13 @@ def find_descriptions(txt, g7, ssp):
 
 def find_enum_by_link(txt, enums, tagsets):
     """Extend enums with the tagsets suggested by any section with #enum- in the header that lacks a table and links to Events or Attributes"""
-    for sect in re.finditer(r'# *`([A-Z0-9_`.]*)`[^\n]*#enum-[\s\S]*?\n#', txt):
+    enums.setdefault('g7:enumset-EVENATTR',[]).extend(( ## <- hack because of table omission
+            'g7:INDI-EVEN',
+            'g7:FAM-EVEN',
+            'g7:INDI-FACT',
+            'g7:FAM-FACT',
+        ))         ## do not do for enumset-EVEN 
+    for sect in re.finditer(r'# *`(g7:enumset-[^`]*)`[\s\S]*?\n#', txt):
         if '[Events]' in sect.group(0):
             key = sect.group(1).replace('`','').replace('.','-')
             for k in tagsets:
@@ -266,6 +272,15 @@ def find_enum_by_link(txt, enums, tagsets):
             for k in tagsets:
                 if 'Attribute' in k:
                     enums.setdefault(key, []).extend('g7:'+_ for _ in tagsets[k])
+
+def find_enumsets(txt):
+    res = {}
+    for sect in re.finditer(r'# *[^\n]*?`(g7:[^`]*)`([\s\S]*?)\n#', txt):
+        if 'from set `g7:enumset-' in sect.group(2):
+            key = sect.group(1)
+            val = re.search(r'from set `(g7:enumset-[^`]*)`', sect.group(2)).group(1)
+            res[key] = val
+    return res
 
 def tidy_markdown(md, indent, width=79):
     """Run markdown through pandoc to remove markup and wrap columns"""
@@ -303,10 +318,14 @@ if __name__ == '__main__':
     tagsets = find_descriptions(txt, g7, ssp)
     enums, calendars = find_cat_tables(txt, g7, tagsets)
     find_enum_by_link(txt, enums, tagsets)
+    for k in enums:
+        g7[k[3:]] =  ('enumeration set',[]) 
+    enumsets = find_enumsets(txt)
     find_calendars(txt, g7)
 
     struct_lookup = []
     enum_lookup = []
+    enumset_lookup = []
     payload_lookup = []
     cardinality_lookup = []
 
@@ -319,9 +338,8 @@ if __name__ == '__main__':
             continue
         with open(join(dest,tag), 'w') as fh:
             fh.write('%YAML 1.2\n---\n')
-            print('lang: en-US\n', file=fh)
-
-            print('type:',g7[tag][0], file=fh)
+            print('lang: en-US', file=fh)
+            print('\ntype:',g7[tag][0], file=fh)
             
             # error: type-DATE# type-List#
             uri = expand_prefix('g7:'+tag,prefixes)
@@ -331,9 +349,10 @@ if __name__ == '__main__':
                 ptag = re.sub(r'.*-', '', tag)
                 print('\nstandard tag: '+ptag, file=fh)
             
-            print('\ndescriptions:', file=fh)
-            for desc in g7[tag][1]:
-                print(yaml_str_helper('  - ', desc), file=fh)
+            if len(g7[tag][1]) > 0:
+                print('\ndescriptions:', file=fh)
+                for desc in g7[tag][1]:
+                    print(yaml_str_helper('  - ', desc), file=fh)
             if g7[tag][0] == 'structure':
                 d = g7[tag][2]
                 payload = expand_prefix(d['pay'],prefixes) if d['pay'] is not None else 'null'
@@ -343,12 +362,15 @@ if __name__ == '__main__':
                     print('\npayload:', payload, file=fh)
                 payload_lookup.append([uri, payload if payload != 'null' else ''])
                 if d['pay'] and 'Enum' in d['pay']:
-                    print('\nenumeration values:', file=fh)
-                    for k in sorted(enums[tag]):
-                        penum = re.sub(r'.*[-:/]', '', k)
-                        puri = expand_prefix(k,prefixes)
-                        print('  -', expand_prefix(k,prefixes), file=fh)
-                        enum_lookup.append([uri,penum,puri])
+                    setname = expand_prefix(enumsets['g7:'+tag],prefixes)
+                    print('\nenumeration set: "'+setname+'"', file=fh)
+                    enum_lookup.append([uri,setname])
+                    # print('\nenumeration values:', file=fh)
+                    # for k in sorted(enums[tag]):
+                        # penum = re.sub(r'.*[-:/]', '', k)
+                        # puri = expand_prefix(k,prefixes)
+                        # print('  -', expand_prefix(k,prefixes), file=fh)
+                        # enum_lookup.append([uri,penum,puri])
                 if d['sub']:
                     print('\nsubstructures:', file=fh)
                     for k,v in sorted(d['sub'].items()):
@@ -372,6 +394,12 @@ if __name__ == '__main__':
                 print('\ncalendars:', file=fh)
                 for k in calendars['g7:'+tag]:
                     print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
+            elif g7[tag][0] == 'enumeration set':
+                print('\nenumeration values:', file=fh)
+                for k in enums['g7:'+tag]:
+                    valname = expand_prefix(k, prefixes)
+                    print('  - "'+valname+'"', file=fh)
+                    enumset_lookup.append([uri, valname])
             
             # handle use in enumerations (which can include any tag type)
             is_used_by = False
@@ -398,6 +426,7 @@ if __name__ == '__main__':
     for data,name in [
         (struct_lookup, join(base,'substructures.tsv')),
         (enum_lookup, join(base,'enumerations.tsv')),
+        (enumset_lookup, join(base,'enumerationsets.tsv')),
         (payload_lookup, join(base,'payloads.tsv')),
         (cardinality_lookup, join(base,'cardinalities.tsv')),
     ]:

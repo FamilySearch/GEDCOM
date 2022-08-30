@@ -1079,7 +1079,7 @@ It is recommended, but not required, that if the name pieces are used, the same 
 
 A `TYPE` is used to specify the particular variation that this name is.
 For example; it could indicate that this name is a name taken at immigration or that it could be an ‘also known as’ name.
-See [the NAME.TYPE enumeration](#enum-TYPE) for more.
+See `g7:enumset-NAME-TYPE` for more.
 
 :::note
 Alternative approaches to representing names are being considered for future versions of this specification.
@@ -1365,7 +1365,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 #### `ADOP` (Adoption) `g7:FAMC-ADOP`
 
-An [enumerated value](#enum-ADOP) indicating which parent(s) in the family adopted this individual.
+An enumerated value from set `g7:enumset-ADOP` indicating which parent(s) in the family adopted this individual.
 
 #### `ADR1` (Address Line 1) `g7:ADR1`
 
@@ -1699,13 +1699,13 @@ A person that signed a lease for land dated October 2, 1837 and a lease for mini
 
 #### `EVEN` (Event) `g7:DATA-EVEN`
 
-A list of [enumerated values](#enum-EVEN) indicating the types of events that were recorded in a particular source.
+A list of enumerated values from set `g7:enumset-EVENATTR` indicating the types of events that were recorded in a particular source.
 Each event type is separated by a comma and space.
 For example, a parish register of births, deaths, and marriages would be `BIRT, DEAT, MARR`.
 
 #### `EVEN` (Event) `g7:SOUR-EVEN`
 
-An [enumerated value](#enum-SOUR.EVEN) indicating the type of event or attribute which was responsible for the source entry being recorded.
+An enumerated value from set `g7:enumset-EVENATTR` indicating the type of event or attribute which was responsible for the source entry being recorded.
 For example, if the entry was created to record a birth of a child, then the type would be `BIRT` regardless of the assertions made from that record, such as the mother's name or mother's birth date.
 
 #### `EXID` (External Identifier) `g7:EXID`
@@ -2044,7 +2044,7 @@ See also `FAMILY_EVENT_STRUCTURE`.
 
 #### `MEDI` (Medium) `g7:MEDI`
 
-An [enumerated value](#enum-MEDI) providing information about the media or the medium in which information is stored.
+An enumerated value from set `g7:enumset-MEDI` providing information about the media or the medium in which information is stored.
 
 #### `MIME` (Media type) `g7:MIME`
 
@@ -2130,7 +2130,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
 #### `NO` (Did not happen) `g7:NO`
 
-An [enumerated value](#enum-NO) identifying an event type which did not occur to the superstructure's subject.
+An enumerated value from set `g7:enumset-EVEN` identifying an event type which did not occur to the superstructure's subject.
 See `NON_EVENT_STRUCTURE` for more.
 
 #### `NOTE` (Note) `g7:NOTE`
@@ -2192,7 +2192,7 @@ and the `PAGE` may describe the entire source.
 
 #### `PEDI` (Pedigree) `g7:PEDI`
 
-An [enumerated value](#enum-PEDI) indicating the type of child-to-family relationship represented by the superstructure.
+An enumerated value from set `g7:enumset-PEDI` indicating the type of child-to-family relationship represented by the superstructure.
 
 #### `PHON` (Phone) `g7:PHON`
 
@@ -2307,7 +2307,7 @@ For an unpublished work, it includes the date the record was created and the pla
 
 #### `QUAY` (Quality of data) `g7:QUAY`
 
-An [enumerated value](#enum-QUAY) indicating the credibility of a piece of information, based on its supporting evidence.
+An enumerated value from set `g7:enumset-QUAY` indicating the credibility of a piece of information, based on its supporting evidence.
 Some systems use this feature to rank multiple conflicting opinions for display of most likely information first.
 It is not intended to eliminate the receivers' need to evaluate the evidence for themselves.
 
@@ -2330,7 +2330,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
 #### `RESN` (Restriction) `g7:RESN`
 
-A [List] of [enumerated value](#enum-RESN)s signifying access to information may be denied or otherwise restricted.
+A [List] of enumerated values from set `g7:enumset-RESN` signifying access to information may be denied or otherwise restricted.
 
 The `RESN` structure is provided to assist software in filtering data that should not be exported or otherwise used in a particular context. It is recommended that tools provide an interface to allow users to filter data on export
 such that certain `RESN` structure payload entries result in the `RESN` structure and its superstructure being removed from the export.
@@ -2384,7 +2384,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 #### `ROLE` (Role) `g7:ROLE`
 
-An [enumerated value](#enum-ROLE) indicating what role this person played in an event or person's life.
+An enumerated value from set `g7:enumset-ROLE` indicating what role this person played in an event or person's life.
 
 :::example
 The following indicates a child's birth record as the source of the mother's name:
@@ -2435,7 +2435,7 @@ relative ordering of dates with different levels of precision is not well define
 
 #### `SEX` (Sex) `g7:SEX`
 
-An [enumerated value](#enum-SEX) that indicates the sex of the individual at birth.
+An enumerated value from set `g7:enumset-SEX` that indicates the sex of the individual at birth.
 
 #### `SLGC` (Sealing, child) `g7:SLGC`
 
@@ -2490,11 +2490,11 @@ See `ADDRESS_STRUCTURE` for more.
 
 #### `STAT` (Status) `g7:ord-STAT`
 
-An [enumerated value](#enum-Temple.STAT) assessing of the state or condition of an ordinance.
+An enumerated value from set `g7:enumset-ord-STAT` assessing of the state or condition of an ordinance.
 
 #### `STAT` (Status) `g7:FAMC-STAT`
 
-An [enumerated value](#enum-FAMC.STAT) assessing of the state or condition of a researcher's belief in a family connection.
+An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or condition of a researcher's belief in a family connection.
 
 #### `SUBM` (Submitter) `g7:SUBM`
 
@@ -2723,7 +2723,7 @@ See also `FACT` and `EVEN` for additional examples.
 
 #### `TYPE` (Type) `g7:NAME-TYPE`
 
-An [enumerated value](#enum-TYPE) indicating the type of the name.
+An enumerated value from set `g7:enumset-NAME-TYPE` indicating the type of the name.
 
 #### `TYPE` (Type) `g7:EXID-TYPE`
 
@@ -2820,7 +2820,9 @@ Unless otherwise specified in the enumeration description in this section, each 
 `g7:enum-` to the enumeration value;
 for example, the `HUSB` enumeration value has the URI `http://gedcom.io/terms/v7/enum-HUSB`.
 
-### `FAMC`.`ADOP` {.unlisted .unnumbered #enum-ADOP}
+Each set of enumeration values has its own URI.
+
+### `g7:enumset-ADOP` {.unlisted .unnumbered}
 
 | Value | Meaning |
 | :---- | :------ |
@@ -2828,17 +2830,17 @@ for example, the `HUSB` enumeration value has the URI `http://gedcom.io/terms/v7
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
-### `DATA`.`EVEN` {.unlisted .unnumbered #enum-EVEN}
+### `g7:enumset-EVEN` {.unlisted .unnumbered}
 
-A comma-separated list of event- and attribute-type tag names.
-See [Events] and [Attributes].
+An event-type tag name, but not the generic `EVEN` tag.
+See [Events].
 
-### `SOUR`.`EVEN` {.unlisted .unnumbered #enum-SOUR.EVEN}
+### `g7:enumset-EVENATTR` {.unlisted .unnumbered}
 
 An event- or attribute-type tag name.
 See [Events] and [Attributes].
 
-### `MEDI` {.unlisted .unnumbered #enum-MEDI}
+### `g7:enumset-MEDI` {.unlisted .unnumbered}
 
 | Value        | Meaning                           |
 | :----------- | :-------------------------------- |
@@ -2857,7 +2859,7 @@ See [Events] and [Attributes].
 | `VIDEO`      | Motion picture recording          |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
 
-### `PEDI` {.unlisted .unnumbered #enum-PEDI}
+### `g7:enumset-PEDI` {.unlisted .unnumbered}
 
 | Value     | Meaning                                                   |
 | :-------- | :-------------------------------------------------------- |
@@ -2882,14 +2884,9 @@ this enumeration value only be used when the `SLGC` event is present in the GEDC
 any associated `ADOP` event.
 :::
 
-### `NO` {.unlisted .unnumbered #enum-NO}
-
-A single event-type tag name, but not the generic `EVEN` tag.
-See [Events].
 
 
-
-### `QUAY` {.unlisted .unnumbered #enum-QUAY}
+### `g7:enumset-QUAY` {.unlisted .unnumbered}
 
 | Value | Meaning                             |
 | :---- | :---------------------------------- |
@@ -2904,7 +2901,7 @@ Although the values look like integers, they do not have numeric meaning.
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
 :::
 
-### `RESN` {.unlisted .unnumbered #enum-RESN}
+### `g7:enumset-RESN` {.unlisted .unnumbered}
 
 | Value | Meaning                      |
 | :---- | :--------------------------- |
@@ -2918,7 +2915,7 @@ When a [List] of `RESN` enumeration values are present, all apply.
 The line `1 RESN CONFIDENTIAL, LOCKED` means the superstructure's data is both considered confidential *and* read-only.
 :::
 
-### `ROLE` {.unlisted .unnumbered #enum-ROLE}
+### `g7:enumset-ROLE` {.unlisted .unnumbered}
 
 | Value | Meaning |
 | ----- | :------ |
@@ -2942,7 +2939,7 @@ These should be interpreted in the context of the recorded event and its primary
 For example, if you cite a child’s birth record as the source of the mother’s name, the value for this field is “`MOTH`.”
 If you describe the groom of a marriage, the role is “`HUSB`.”
 
-### `SEX` {.unlisted .unnumbered #enum-SEX}
+### `g7:enumset-SEX` {.unlisted .unnumbered}
 
 | Value | Meaning                                     |
 | ----- | :------------------------------------------ |
@@ -2955,7 +2952,7 @@ This can describe an individual’s reproductive or sexual anatomy at birth.
 Related concepts of gender identity or sexual preference
 are not currently given their own tag. Cultural or personal gender preference may be indicated using the `FACT` tag.
 
-### `FAMC`.`STAT` {.unlisted .unnumbered #enum-FAMC.STAT}
+### `g7:enumset-FAMC-STAT` {.unlisted .unnumbered}
 
 | Value | Meaning                        |
 | ----- | :----------------------------- |
@@ -2967,7 +2964,7 @@ are not currently given their own tag. Cultural or personal gender preference ma
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
 :::
 
-### (Latter-Day Saint Ordinance).`STAT` {.unlisted .unnumbered #enum-Temple.STAT}
+### `g7:enumset-ord-STAT` {.unlisted .unnumbered}
 
 These values were formerly used by The Church of Jesus Christ of Latter-day Saints for coordinating between temples and members.
 They are no longer used in that way, meaning their interpretation is subject to individual user interpretation
@@ -2987,7 +2984,7 @@ They are no longer used in that way, meaning their interpretation is subject to 
 | `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 | `UNCLEARED` | All | Data for clearing the ordinance request was insufficient. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 
-### `NAME`.`TYPE` {.unlisted .unnumbered #enum-TYPE}
+### `g7:enumset-NAME-TYPE` {.unlisted .unnumbered}
 
 | Value | Meaning                       |
 | ----- | :---------------------------- |
