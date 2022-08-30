@@ -76,6 +76,20 @@ Every structure is either a **record**, meaning it is not contained in any other
 or it is a **substructure** of exactly 1 other structure. The other structure is called its **superstructure**.
 Each substructure either refines the meaning of its superstructure, provides metadata about its superstructure, or introduces new data that is closely related to its superstructure.
 
+Each **structure type** is identified by a URI and defines several properties of any structure with that type, including
+
+- The meaning of structures of this type.
+- The payload type of the structure's payload, which shall be one of
+    - no payload, or
+    - a pointer to a record with a specific structure type, or
+    - a [datatype](#datatypes);
+        if an [enumeration](#enumeration) or [list of enumerations](#list), also a set of permitted enumeration values.
+- Which structure types may appear as substructures of the structure and with what **cardinality** they may appear.
+    Cardinality is specified by two flags:
+    
+    - whether a substructure of this type is required or not; and
+    - whether multiple substructures of this type are permitted or not.
+
 The collection of substructures is partially ordered.
 Substructures with the same structure type are in a fixed order,
 but substructures with different structure types may be reordered.
@@ -150,6 +164,26 @@ A substructure or pseudo-structure must not have a cross-reference identifier.
 The **tag** matches production `Tag` and encodes the structure's type.
 Tags that match the production `stdTag` are defined in this document.
 Tags that match `extTag` are defined according to [Extensions].
+
+The same tag may be used to represent multiple structure types.
+The structure type of each structure is identified by its tag and the type of its superstructure.
+The mapping between (superstructure type, tag) pairs and structure types
+is given elsewhere in this document (for standard structure types and tags)
+or the [schema] and extension authors' documentation (for extension structure types and tags).
+
+:::example
+The tag `ADOP` is used in this document to represent two structure types.
+Which one is meant can be identified by the superstructure type as follows:
+
+| Superstructure type | Structure type identified by tag `ADOP` |
+|------------------|------------------|
+| `g7:record-INDI` | `g7:ADOP`        |
+| `g7:ADOP-FAMC`   | `g7:FAMC-ADOP`   |
+
+An [extension-defined substructure](#extensions) could also be used to place either of these structure types in extension superstructures.
+
+The `ADOP` tag is also used in the set of enumerated values permitted by the `g7:DATA-EVEN`, `g7:SOUR-EVEN`, and `g7:NO` structure types.
+:::
 
 The **line value** matches production `LineVal` and encodes the structure's payload.
 Line value content is sufficient to distinguish between pointers and line strings.
@@ -271,6 +305,10 @@ A **standard structure** is a structure whose type, tag, meaning, superstructure
 The recommended way to go beyond the set of standard structure types in this specification or to expand their usage is to submit a feature request on the [FamilySearch GEDCOM development page](https://github.com/FamilySearch/GEDCOM/issues) so that the ramifications of the proposed addition and its interplay with other proposals may be discussed and the addition may be included in a subsequent version of this specification.
 
 This specification also provides multiple ways for extension authors to go beyond the specification without submitting a feature request, which are described in the remainder of this section.
+
+Extensions can introduce new structure types, new enumeration values, new calendars with their associated months, and new datatypes.
+They can also extend existing structures with new permitted substructure types and extend existing enumeration-type payloads with new permitted values.
+Extensions cannot change existing meanings, cardinalities, or calendars.
 
 A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure. Their meaning is defined by their tag, as is discussed more fully in the section [Extension Tags].
 

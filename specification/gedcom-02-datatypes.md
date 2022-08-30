@@ -47,6 +47,22 @@ and have their URI defined by the schema.
 Each enumeration value has a distinct meaning
 as identified by its corresponding URI.
 
+The URI of a given tag in an enumeration payload is determined by the tag itself and by the structure type of the structure it is in the payload of.
+
+:::example
+The tag `HUSB` is used in this document to represent two enumeration values.
+Which one is meant can be identified by the structure type it appears in as follows:
+
+| Containing structure type | Enumeration value identified by tag `HUSB` |
+|---------------------|---------------------|
+| `g7:FAMC-ADOP`      | `g7:enum-ADOP-HUSB` |
+| `g7:ROLE`           | `g7:enum-HUSB`      |
+
+An [extension](#extensions) could also place either of these enumeration values in an extension structure type; the extension authors should document which one they permit.
+
+The `HUSB` tag is also used to identify two different structure types, `g7:FAM-HUSB` and `g7:HUSB`.
+:::
+
 The URI for the `Enum` data type is `g7:type-Enum`.
 
 ## Date
