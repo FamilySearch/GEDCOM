@@ -166,7 +166,7 @@ Tags that match the production `stdTag` are defined in this document.
 Tags that match `extTag` are defined according to [Extensions].
 
 The same tag may be used to represent multiple structure types.
-The structure type of each structure is identified by its tag and the type of its superstucture.
+The structure type of each structure is identified by its tag and the type of its superstructure.
 The mapping between (superstructure type, tag) pairs and structure types
 is given elsewhere in this document (for standard structure types and tags)
 or the [schema] and extension authors' documentation (for extension structure types and tags).
