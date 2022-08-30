@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/NO
@@ -8,8 +10,9 @@ standard tag: NO
 
 descriptions:
   - Did not happen
-  - An enumerated value identifying an event type which did not occur to the
-    superstructure’s subject. See NON_EVENT_STRUCTURE for more.
+  - An enumerated value from set https://gedcom.io/terms/v7/enumset-EVEN
+    identifying an event type which did not occur to the superstructure’s
+    subject. See NON_EVENT_STRUCTURE for more.
   - |
     Indicates that a specific type of event, given in the payload, did not
     happen within a given date period (or never happened if there is no DATE
@@ -28,39 +31,7 @@ descriptions:
 
 payload: https://gedcom.io/terms/v7/type-Enum
 
-enumeration values:
-  ADOP: https://gedcom.io/terms/v7/ADOP
-  ANUL: https://gedcom.io/terms/v7/ANUL
-  BAPM: https://gedcom.io/terms/v7/BAPM
-  BARM: https://gedcom.io/terms/v7/BARM
-  BASM: https://gedcom.io/terms/v7/BASM
-  BIRT: https://gedcom.io/terms/v7/BIRT
-  BLES: https://gedcom.io/terms/v7/BLES
-  BURI: https://gedcom.io/terms/v7/BURI
-  CHR: https://gedcom.io/terms/v7/CHR
-  CHRA: https://gedcom.io/terms/v7/CHRA
-  CONF: https://gedcom.io/terms/v7/CONF
-  CREM: https://gedcom.io/terms/v7/CREM
-  DEAT: https://gedcom.io/terms/v7/DEAT
-  DIV: https://gedcom.io/terms/v7/DIV
-  DIVF: https://gedcom.io/terms/v7/DIVF
-  EMIG: https://gedcom.io/terms/v7/EMIG
-  ENGA: https://gedcom.io/terms/v7/ENGA
-  CENS: https://gedcom.io/terms/v7/FAM-CENS
-  FCOM: https://gedcom.io/terms/v7/FCOM
-  GRAD: https://gedcom.io/terms/v7/GRAD
-  IMMI: https://gedcom.io/terms/v7/IMMI
-  CENS: https://gedcom.io/terms/v7/INDI-CENS
-  MARB: https://gedcom.io/terms/v7/MARB
-  MARC: https://gedcom.io/terms/v7/MARC
-  MARL: https://gedcom.io/terms/v7/MARL
-  MARR: https://gedcom.io/terms/v7/MARR
-  MARS: https://gedcom.io/terms/v7/MARS
-  NATU: https://gedcom.io/terms/v7/NATU
-  ORDN: https://gedcom.io/terms/v7/ORDN
-  PROB: https://gedcom.io/terms/v7/PROB
-  RETI: https://gedcom.io/terms/v7/RETI
-  WILL: https://gedcom.io/terms/v7/WILL
+enumeration set: "https://gedcom.io/terms/v7/enumset-EVEN"
 
 substructures:
   "https://gedcom.io/terms/v7/NO-DATE": "{0:1}"
