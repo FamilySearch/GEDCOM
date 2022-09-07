@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/INDI-FACT
 
 standard tag: FACT
 
-descriptions:
+specification:
   - Fact
   - |
     A noteworthy attribute or fact concerning an individual or family. If a

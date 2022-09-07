@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/FAMC
 
 standard tag: FAMC
 
-descriptions:
+specification:
   - Family child
   - The family with which this individual event is associated.
 

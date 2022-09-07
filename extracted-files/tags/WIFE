@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/WIFE
 
 standard tag: WIFE
 
-descriptions:
+specification:
   - Wife
   - A container for information relevant to the subject of the superstructure
     specific to the individual described by the associated FAM’s WIFE

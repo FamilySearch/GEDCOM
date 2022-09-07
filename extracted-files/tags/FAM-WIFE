@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/FAM-WIFE
 
 standard tag: WIFE
 
-descriptions:
+specification:
   - Wife
   - A partner in a FAM record. See FAMILY_RECORD for more.
 

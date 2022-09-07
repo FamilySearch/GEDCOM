@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/LONG
 
 standard tag: LONG
 
-descriptions:
+specification:
   - Longitude
   - |
     A longitudinal coordinate. The payload is either E (for a coordinate east

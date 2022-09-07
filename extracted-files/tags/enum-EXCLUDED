@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-EXCLUDED
 
 standard tag: EXCLUDED
 
-descriptions:
+specification:
   - "Applies to: All"
   - Patron excluded this ordinance from being cleared in this submission.
   - "Status: Deprecated. This status was defined for use with TempleReady which

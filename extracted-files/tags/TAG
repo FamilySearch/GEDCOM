@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/TAG
 
 standard tag: TAG
 
-descriptions:
+specification:
   - Extension tag
   - Information relating to a single extension tag as used in this document.
     See Extensions for more.

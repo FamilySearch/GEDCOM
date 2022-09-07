@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/HEAD-PLAC
 
 standard tag: PLAC
 
-descriptions:
+specification:
   - Place
   - This is a placeholder for providing a default PLAC.FORM, and must not have
     a payload.

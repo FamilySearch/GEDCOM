@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/WIDTH
 
 standard tag: WIDTH
 
-descriptions:
+specification:
   - Width in pixels
   - How many pixels to display horizontally for the image. See CROP for more.
 

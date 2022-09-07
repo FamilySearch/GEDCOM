@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-PROVEN
 
 standard tag: PROVEN
 
-descriptions:
+specification:
   - There has been a claim by some that this child does not belong to this
     family, but the linkage has been proven.
 

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/STAE
 
 standard tag: STAE
 
-descriptions:
+specification:
   - State
   - A geographical division of a larger jurisdictional area, such as a state
     within the United States of America. See ADDRESS_STRUCTURE for more.

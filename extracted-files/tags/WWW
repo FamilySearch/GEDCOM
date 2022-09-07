@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/WWW
 
 standard tag: WWW
 
-descriptions:
+specification:
   - Web address
   - |
     A URL or other locator for a World Wide Web page, as defined by any

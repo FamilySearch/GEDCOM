@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/NAME-TRAN
 
 standard tag: TRAN
 
-descriptions:
+specification:
   - Translation
   - |
     A type of TRAN substructure specific to Personal Names. Each NAME.TRAN must

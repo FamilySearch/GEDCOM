@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/MARR
 
 standard tag: MARR
 
-descriptions:
+specification:
   - Marriage
   - A Family Event. See also FAMILY_EVENT_STRUCTURE.
   - marriage

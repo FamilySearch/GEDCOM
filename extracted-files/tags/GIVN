@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/GIVN
 
 standard tag: GIVN
 
-descriptions:
+specification:
   - Given name
   - A given or earned name used for official identification of a person.
 

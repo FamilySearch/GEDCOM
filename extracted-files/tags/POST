@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/POST
 
 standard tag: POST
 
-descriptions:
+specification:
   - Postal code
   - A code used by a postal service to identify an area to facilitate mail
     handling. See ADDRESS_STRUCTURE for more.

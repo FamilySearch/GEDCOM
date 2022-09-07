@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/SUBM
 
 standard tag: SUBM
 
-descriptions:
+specification:
   - Submitter
   - A contributor of information in the substructure. This is metadata about
     the structure itself, not data about its subject.

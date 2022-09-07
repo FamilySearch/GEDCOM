@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/UID
 
 standard tag: UID
 
-descriptions:
+specification:
   - Unique Identifier
   - |
     A globally-unique identifier of the superstructure, to be preserved across

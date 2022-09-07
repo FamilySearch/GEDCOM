@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-AKA
 
 standard tag: AKA
 
-descriptions:
+specification:
   - Also known as, alias, etc.
 
 value of:

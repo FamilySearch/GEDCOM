@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/SOUR
 
 standard tag: SOUR
 
-descriptions:
+specification:
   - Source
   - A description of the relevant part of a source to support the
     superstructure’s data. See SOURCE_CITATION for more.

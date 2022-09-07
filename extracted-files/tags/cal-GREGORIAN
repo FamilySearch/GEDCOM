@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/cal-GREGORIAN
 
 standard tag: GREGORIAN
 
-descriptions:
+specification:
   - |
     The Gregorian calendar is the now-ubiquitous calendar introduced by Pope
     Gregory XIII in 1582 to correct the Julian calendar which was slowly

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/LANG
 
 standard tag: LANG
 
-descriptions:
+specification:
   - Language
   - |
     The primary human language of the superstructure. The primary language in

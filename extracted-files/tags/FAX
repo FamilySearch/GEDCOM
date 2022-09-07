@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/FAX
 
 standard tag: FAX
 
-descriptions:
+specification:
   - Facsimile
   - A fax telephone number appropriate for sending data facsimiles. See PHON
     for more.

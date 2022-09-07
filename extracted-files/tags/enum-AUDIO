@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-AUDIO
 
 standard tag: AUDIO
 
-descriptions:
+specification:
   - An audio recording
 
 value of:

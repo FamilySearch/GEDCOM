@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/CITY
 
 standard tag: CITY
 
-descriptions:
+specification:
   - City
   - The name of the city used in the address. See ADDRESS_STRUCTURE for more.
 

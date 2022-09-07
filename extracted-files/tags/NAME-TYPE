@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/NAME-TYPE
 
 standard tag: TYPE
 
-descriptions:
+specification:
   - Type
   - An enumerated value from set https://gedcom.io/terms/v7/enumset-NAME-TYPE
     indicating the type of the name.

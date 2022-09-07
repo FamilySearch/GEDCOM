@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/NOTE-TRAN
 
 standard tag: TRAN
 
-descriptions:
+specification:
   - Translation
   - |
     A type of TRAN for unstructured human-readable text, such as is found in

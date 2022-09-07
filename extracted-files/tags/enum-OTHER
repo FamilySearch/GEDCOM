@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-OTHER
 
 standard tag: OTHER
 
-descriptions:
+specification:
   - A value not listed here; should have a PHRASE substructure
 
 value of:

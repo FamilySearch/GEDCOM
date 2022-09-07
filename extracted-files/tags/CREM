@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/CREM
 
 standard tag: CREM
 
-descriptions:
+specification:
   - Cremation
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - cremation

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/HEAD-SOUR
 
 standard tag: SOUR
 
-descriptions:
+specification:
   - Source
   - An identifier for the product producing this dataset. A registration
     process for these identifiers existed for a time, but no longer does. If an

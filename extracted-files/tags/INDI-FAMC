@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/INDI-FAMC
 
 standard tag: FAMC
 
-descriptions:
+specification:
   - Family child
   - The family in which an individual appears as a child. It is also used with
     a STAT substructure to show individuals who are not children of the family.

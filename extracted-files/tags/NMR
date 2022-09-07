@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/NMR
 
 standard tag: NMR
 
-descriptions:
+specification:
   - Number of marriages
   - An Individual Attribute. See also INDIVIDUAL_ATTRIBUTE_STRUCTURE.
   - number of marriages

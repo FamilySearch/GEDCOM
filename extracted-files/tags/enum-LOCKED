@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-LOCKED
 
 standard tag: LOCKED
 
-descriptions:
+specification:
   - Some systems may ignore changes to this data.
 
 value of:

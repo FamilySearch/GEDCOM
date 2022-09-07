@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/SEX
 
 standard tag: SEX
 
-descriptions:
+specification:
   - Sex
   - An enumerated value from set https://gedcom.io/terms/v7/enumset-SEX that
     indicates the sex of the individual at birth.

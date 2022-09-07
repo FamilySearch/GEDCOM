@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/cal-JULIAN
 
 standard tag: JULIAN
 
-descriptions:
+specification:
   - |
     The Julian calendar was introduced by Julius Caesar in 45 BC and
     subsequently amended by Augustus in about 8 BC to correct an error in the

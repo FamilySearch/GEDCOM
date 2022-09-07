@@ -6,7 +6,7 @@ type: data type
 
 uri: https://gedcom.io/terms/v7/type-List
 
-descriptions:
+specification:
   - |
     A list is a meta-syntax representing a sequence of values with another data
     type. Two list data types are used in this document: List:Text and

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/SSN
 
 standard tag: SSN
 
-descriptions:
+specification:
   - Social security number
   - An Individual Attribute. See also INDIVIDUAL_ATTRIBUTE_STRUCTURE.
   - social security number

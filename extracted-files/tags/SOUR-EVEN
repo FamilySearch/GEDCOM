@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/SOUR-EVEN
 
 standard tag: EVEN
 
-descriptions:
+specification:
   - Event
   - An enumerated value from set https://gedcom.io/terms/v7/enumset-EVENATTR
     indicating the type of event or attribute which was responsible for the

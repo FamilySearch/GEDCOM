@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/CALN
 
 standard tag: CALN
 
-descriptions:
+specification:
   - Call number
   - An identification or reference description used to file and retrieve items
     from the holdings of a repository. Despite the word “number” in the name,

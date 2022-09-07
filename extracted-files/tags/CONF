@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/CONF
 
 standard tag: CONF
 
-descriptions:
+specification:
   - Confirmation
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - confirmation

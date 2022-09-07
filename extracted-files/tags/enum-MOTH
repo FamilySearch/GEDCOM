@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-MOTH
 
 standard tag: MOTH
 
-descriptions:
+specification:
   - Mother; implies PARENT
 
 value of:

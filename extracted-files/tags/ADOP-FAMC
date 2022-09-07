@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/ADOP-FAMC
 
 standard tag: FAMC
 
-descriptions:
+specification:
   - Family child
   - |
     The individual or couple that adopted this this individual.

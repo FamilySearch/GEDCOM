@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/record-FAM
 
 standard tag: FAM
 
-descriptions:
+specification:
   - Family record
   - |
     See FAMILY_RECORD

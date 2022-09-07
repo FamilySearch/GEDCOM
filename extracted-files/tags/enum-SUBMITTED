@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-SUBMITTED
 
 standard tag: SUBMITTED
 
-descriptions:
+specification:
   - "Applies to: All"
   - Ordinance was previously submitted.
   - "Status: Deprecated. This status was defined for use with TempleReady which

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/record-SUBM
 
 standard tag: SUBM
 
-descriptions:
+specification:
   - Submitter
   - A description of a contributor of information to the document. See
     SUBMITTER_RECORD for more.

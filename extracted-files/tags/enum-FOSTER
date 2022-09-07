@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-FOSTER
 
 standard tag: FOSTER
 
-descriptions:
+specification:
   - The child was included in a foster or guardian family
 
 value of:

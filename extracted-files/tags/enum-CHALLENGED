@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-CHALLENGED
 
 standard tag: CHALLENGED
 
-descriptions:
+specification:
   - Linking this child to this family is suspect, but the linkage has been
     neither proven nor disproven.
 

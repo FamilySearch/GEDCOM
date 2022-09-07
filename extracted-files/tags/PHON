@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/PHON
 
 standard tag: PHON
 
-descriptions:
+specification:
   - Phone
   - |
     A telephone number. Telephone numbers have many regional variations and can

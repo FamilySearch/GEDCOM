@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-BIC
 
 standard tag: BIC
 
-descriptions:
+specification:
   - "Applies to: SLGC"
   - Born in the covenant, so child to parent sealing ordinance is not required.
   - "Status: Current"

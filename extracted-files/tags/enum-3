@@ -6,9 +6,9 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-3
 
-standard tag: 3
+standard tag: '3'
 
-descriptions:
+specification:
   - Direct and primary evidence used, or by dominance of the evidence
 
 value of:

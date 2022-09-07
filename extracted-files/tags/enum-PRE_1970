@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-PRE_1970
 
 standard tag: PRE_1970
 
-descriptions:
+specification:
   - "Applies to: All"
   - Ordinance was likely completed because an ordinance for this person was
     converted from temple records of work completed before 1970.

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/WILL
 
 standard tag: WILL
 
-descriptions:
+specification:
   - Will
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - will

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/INDI-CENS
 
 standard tag: CENS
 
-descriptions:
+specification:
   - Census
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - census

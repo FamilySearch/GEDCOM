@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/QUAY
 
 standard tag: QUAY
 
-descriptions:
+specification:
   - Quality of data
   - An enumerated value from set https://gedcom.io/terms/v7/enumset-QUAY
     indicating the credibility of a piece of information, based on its

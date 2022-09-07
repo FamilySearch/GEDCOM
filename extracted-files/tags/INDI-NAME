@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/INDI-NAME
 
 standard tag: NAME
 
-descriptions:
+specification:
   - Name
   - A PERSONAL_NAME_STRUCTURE with parts, translations, sources, and so forth.
   - |

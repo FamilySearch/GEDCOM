@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/DATA-EVEN
 
 standard tag: EVEN
 
-descriptions:
+specification:
   - Event
   - A list of enumerated values from set
     https://gedcom.io/terms/v7/enumset-EVENATTR indicating the types of events

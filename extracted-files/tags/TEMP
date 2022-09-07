@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/TEMP
 
 standard tag: TEMP
 
-descriptions:
+specification:
   - Temple
   - The name of a temple of The Church of Jesus Christ of Latter-day Saints.
     Previous versions recommended using a set of abbreviations for temple

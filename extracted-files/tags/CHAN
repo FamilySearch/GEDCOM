@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/CHAN
 
 standard tag: CHAN
 
-descriptions:
+specification:
   - Change
   - The most recent change to the superstructure. This is metadata about the
     structure itself, not data about its subject. See CHANGE_DATE for more.

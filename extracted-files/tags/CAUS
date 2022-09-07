@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/CAUS
 
 standard tag: CAUS
 
-descriptions:
+specification:
   - Cause
   - The reasons which precipitated an event. It is often used subordinate to a
     death event to show cause of death, such as might be listed on a death

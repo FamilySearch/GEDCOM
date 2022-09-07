@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/MARL
 
 standard tag: MARL
 
-descriptions:
+specification:
   - Marriage license
   - A Family Event. See also FAMILY_EVENT_STRUCTURE.
   - marriage license

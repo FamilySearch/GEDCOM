@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-ADOP-WIFE
 
 standard tag: WIFE
 
-descriptions:
+specification:
   - Adopted by the WIFE of the FAM pointed to by FAMC.
 
 value of:

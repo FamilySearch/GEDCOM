@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/ROLE
 
 standard tag: ROLE
 
-descriptions:
+specification:
   - Role
   - |
     An enumerated value from set https://gedcom.io/terms/v7/enumset-ROLE

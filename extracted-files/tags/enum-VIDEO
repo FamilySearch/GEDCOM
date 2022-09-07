@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-VIDEO
 
 standard tag: VIDEO
 
-descriptions:
+specification:
   - Motion picture recording
 
 value of:

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/GEDC
 
 standard tag: GEDC
 
-descriptions:
+specification:
   - GEDCOM
   - |
     A container for information about the entire document.

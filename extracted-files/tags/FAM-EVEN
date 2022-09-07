@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/FAM-EVEN
 
 standard tag: EVEN
 
-descriptions:
+specification:
   - Event
   - See https://gedcom.io/terms/v7/INDI-EVEN.
 

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/RELI
 
 standard tag: RELI
 
-descriptions:
+specification:
   - Religion
   - A religious denomination associated with the event or attribute described
     by the superstructure.

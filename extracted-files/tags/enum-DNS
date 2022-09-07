@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-DNS
 
 standard tag: DNS
 
-descriptions:
+specification:
   - "Applies to: SLGC, SLGS"
   - This ordinance is not authorized.
   - "Status: Current"

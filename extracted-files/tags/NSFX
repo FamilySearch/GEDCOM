@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/NSFX
 
 standard tag: NSFX
 
-descriptions:
+specification:
   - Name suffix
   - Text which appears on a name line after or behind the given and surname
     parts of a name.

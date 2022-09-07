@@ -6,7 +6,7 @@ type: data type
 
 uri: https://gedcom.io/terms/v7/type-Enum
 
-descriptions:
+specification:
   - |
     An enumeration is a selection from a set of options. They are represented
     as a string matching the same production as a tag.

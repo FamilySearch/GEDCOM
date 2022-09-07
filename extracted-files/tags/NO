@@ -6,9 +6,9 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/NO
 
-standard tag: NO
+standard tag: 'NO'
 
-descriptions:
+specification:
   - Did not happen
   - An enumerated value from set https://gedcom.io/terms/v7/enumset-EVEN
     identifying an event type which did not occur to the superstructure’s

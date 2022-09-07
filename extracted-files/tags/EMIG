@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/EMIG
 
 standard tag: EMIG
 
-descriptions:
+specification:
   - Description
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - emigration

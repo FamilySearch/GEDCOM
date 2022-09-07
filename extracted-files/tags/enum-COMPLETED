@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-COMPLETED
 
 standard tag: COMPLETED
 
-descriptions:
+specification:
   - "Applies to: All"
   - Completed, but the date is not known.
   - "Status: Deprecated, use DATE BEF date instead. This status was defined for

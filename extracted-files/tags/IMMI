@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/IMMI
 
 standard tag: IMMI
 
-descriptions:
+specification:
   - Immigration
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - immigration

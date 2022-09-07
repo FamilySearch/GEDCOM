@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/FCOM
 
 standard tag: FCOM
 
-descriptions:
+specification:
   - First communion
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - first communion

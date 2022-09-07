@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-MARRIED
 
 standard tag: MARRIED
 
-descriptions:
+specification:
   - Married name, assumed as part of marriage.
 
 value of:

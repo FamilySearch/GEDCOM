@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/SPFX
 
 standard tag: SPFX
 
-descriptions:
+specification:
   - Surname prefix
   - A name piece used as a non-indexing pre-part of a surname.
 

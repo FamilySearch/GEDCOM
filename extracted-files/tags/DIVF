@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/DIVF
 
 standard tag: DIVF
 
-descriptions:
+specification:
   - Divorce filing
   - A Family Event. See also FAMILY_EVENT_STRUCTURE.
   - divorce filed

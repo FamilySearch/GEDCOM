@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-CLERGY
 
 standard tag: CLERGY
 
-descriptions:
+specification:
   - Religious official in event; implies OFFICIATOR
 
 value of:

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/DATE
 
 standard tag: DATE
 
-descriptions:
+specification:
   - Date
   - The principal date of the subject of the superstructure. The payload is a
     DateValue.

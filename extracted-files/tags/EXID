@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/EXID
 
 standard tag: EXID
 
-descriptions:
+specification:
   - External Identifier
   - |
     An identifier for the subject of the superstructure. The identifier is

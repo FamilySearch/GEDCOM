@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/MARC
 
 standard tag: MARC
 
-descriptions:
+specification:
   - Marriage contract
   - A Family Event. See also FAMILY_EVENT_STRUCTURE.
   - marriage contract

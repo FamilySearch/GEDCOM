@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/NO-DATE
 
 standard tag: DATE
 
-descriptions:
+specification:
   - Date
   - The DatePeriod during which the event did not occur or the attribute did
     not apply.

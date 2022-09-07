@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/NPFX
 
 standard tag: NPFX
 
-descriptions:
+specification:
   - Name prefix
   - Text that appears on a name line before the given and surname parts of a
     name.

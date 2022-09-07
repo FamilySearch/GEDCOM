@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/PUBL
 
 standard tag: PUBL
 
-descriptions:
+specification:
   - Publication
   - |
     When and where the record was created. For published works, this includes

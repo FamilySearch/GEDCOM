@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/record-SNOTE
 
 standard tag: SNOTE
 
-descriptions:
+specification:
   - Shared note
   - A note that is shared by multiple structures. See SHARED_NOTE_RECORD for
     more.

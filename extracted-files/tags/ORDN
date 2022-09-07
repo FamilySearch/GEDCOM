@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/ORDN
 
 standard tag: ORDN
 
-descriptions:
+specification:
   - Ordination
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - ordination

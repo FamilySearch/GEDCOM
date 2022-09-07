@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/TYPE
 
 standard tag: TYPE
 
-descriptions:
+specification:
   - Type
   - |
     A descriptive word or phrase used to further classify the superstructure.

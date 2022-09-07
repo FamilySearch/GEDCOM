@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/HEAD-LANG
 
 standard tag: LANG
 
-descriptions:
+specification:
   - Language
   - |
     A default language which may be used to interpret any Text-typed payloads

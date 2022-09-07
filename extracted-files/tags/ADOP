@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/ADOP
 
 standard tag: ADOP
 
-descriptions:
+specification:
   - Adoption
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - adoption

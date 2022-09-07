@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/REPO
 
 standard tag: REPO
 
-descriptions:
+specification:
   - Repository
   - See SOURCE_REPOSITORY_CITATION.
   - This structure is used within a source record to point to a name and

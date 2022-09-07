@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/INDI-NCHI
 
 standard tag: NCHI
 
-descriptions:
+specification:
   - Number of children
   - An Individual Attribute. See also INDIVIDUAL_ATTRIBUTE_STRUCTURE.
   - number of children

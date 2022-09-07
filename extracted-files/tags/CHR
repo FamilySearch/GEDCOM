@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/CHR
 
 standard tag: CHR
 
-descriptions:
+specification:
   - Christening
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - christening

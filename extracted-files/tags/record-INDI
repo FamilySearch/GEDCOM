@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/record-INDI
 
 standard tag: INDI
 
-descriptions:
+specification:
   - Individual
   - See INDIVIDUAL_RECORD.
   - |

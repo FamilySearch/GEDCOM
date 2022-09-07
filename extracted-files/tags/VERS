@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/VERS
 
 standard tag: VERS
 
-descriptions:
+specification:
   - Version
   - An identifier that represents the version level assigned to the associated
     product. It is defined and changed by the creators of the product.

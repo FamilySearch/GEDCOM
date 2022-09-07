@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/ABBR
 
 standard tag: ABBR
 
-descriptions:
+specification:
   - Abbreviation
   - A short name of a title, description, or name used for sorting, filing, and
     retrieving records.

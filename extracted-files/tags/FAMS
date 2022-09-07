@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/FAMS
 
 standard tag: FAMS
 
-descriptions:
+specification:
   - Family spouse
   - The family in which an individual appears as a partner. See FAM for more.
 

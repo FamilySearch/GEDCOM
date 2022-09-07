@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/PLAC
 
 standard tag: PLAC
 
-descriptions:
+specification:
   - Place
   - |
     The principal place in which the superstructure’s subject occurred,

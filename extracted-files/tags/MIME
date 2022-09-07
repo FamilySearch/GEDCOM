@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/MIME
 
 standard tag: MIME
 
-descriptions:
+specification:
   - Media type
   - |
     Indicates the media type of the payload of the superstructure, as defined

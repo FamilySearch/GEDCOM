@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/EMAIL
 
 standard tag: EMAIL
 
-descriptions:
+specification:
   - Email
   - |
     An electronic mail address, as defined by any relevant standard such as RFC

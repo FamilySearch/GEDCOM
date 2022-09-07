@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/SDATE
 
 standard tag: SDATE
 
-descriptions:
+specification:
   - Sort date
   - |
     A date to be used as a sorting hint. It is intended for use when the actual

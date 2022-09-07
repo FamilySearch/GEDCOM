@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/RETI
 
 standard tag: RETI
 
-descriptions:
+specification:
   - Retirement
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - retirement

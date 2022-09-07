@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/EXID-TYPE
 
 standard tag: TYPE
 
-descriptions:
+specification:
   - Type
   - |
     The authority issuing the EXID, represented as a URI. It is recommended

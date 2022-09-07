@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/MEDI
 
 standard tag: MEDI
 
-descriptions:
+specification:
   - Medium
   - An enumerated value from set https://gedcom.io/terms/v7/enumset-MEDI
     providing information about the media or the medium in which information is

@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/GEDC-VERS
 
 standard tag: VERS
 
-descriptions:
+specification:
   - Version
   - The version number of the official specification that this document’s data
     conforms to. This must include the major and minor version (for example,

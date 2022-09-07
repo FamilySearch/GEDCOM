@@ -6,7 +6,7 @@ type: data type
 
 uri: https://gedcom.io/terms/v7/type-Name
 
-descriptions:
+specification:
   - |
     A personal name is mostly free-text. It should be the name as written in
     the culture of the individual and should not contain line breaks, repeated

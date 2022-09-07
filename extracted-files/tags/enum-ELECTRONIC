@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-ELECTRONIC
 
 standard tag: ELECTRONIC
 
-descriptions:
+specification:
   - A digital artifact
 
 value of:

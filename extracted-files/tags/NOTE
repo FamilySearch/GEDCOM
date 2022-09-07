@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/NOTE
 
 standard tag: NOTE
 
-descriptions:
+specification:
   - Note
   - |
     A NOTE_STRUCTURE, containing additional information provided by the

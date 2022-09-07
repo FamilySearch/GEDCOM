@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-WIFE
 
 standard tag: WIFE
 
-descriptions:
+specification:
   - Wife; implies SPOU
 
 value of:

@@ -346,11 +346,11 @@ if __name__ == '__main__':
             print('\nuri:', uri, file=fh)
             
             if g7[tag][0] in ('structure', 'enumeration', 'calendar', 'month'):
-                ptag = re.sub(r'.*-', '', tag)
-                print('\nstandard tag: '+ptag, file=fh)
+                ptag = re.sub(r'.*-', '', re.sub(r'-[A-Z]?[a-z].*', '', tag))
+                print('\nstandard tag: '+(repr(ptag) if ptag in ('YES','NO','TRUE','FALSE', '0', '1', '2', '3') else ptag), file=fh)
             
             if len(g7[tag][1]) > 0:
-                print('\ndescriptions:', file=fh)
+                print('\nspecification:', file=fh)
                 for desc in g7[tag][1]:
                     print(yaml_str_helper('  - ', desc), file=fh)
             if g7[tag][0] == 'structure':

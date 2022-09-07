@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/ADR3
 
 standard tag: ADR3
 
-descriptions:
+specification:
   - Address Line 3
   - The third line of the address, used for indexing. This structure’s payload
     should be a single line of text equal to the third line of the

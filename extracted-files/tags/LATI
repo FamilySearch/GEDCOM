@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/LATI
 
 standard tag: LATI
 
-descriptions:
+specification:
   - Latitude
   - |
     A latitudinal coordinate. The payload is either N (for a coordinate north

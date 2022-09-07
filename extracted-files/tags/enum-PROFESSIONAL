@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-PROFESSIONAL
 
 standard tag: PROFESSIONAL
 
-descriptions:
+specification:
   - Name used professionally (pen, screen, stage name).
 
 value of:

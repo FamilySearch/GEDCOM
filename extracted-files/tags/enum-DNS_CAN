@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enum-DNS_CAN
 
 standard tag: DNS_CAN
 
-descriptions:
+specification:
   - "Applies to: SLGS"
   - This ordinance is not authorized, and the previous ordinance is cancelled.
   - "Status: Current"

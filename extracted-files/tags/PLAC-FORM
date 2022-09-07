@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/PLAC-FORM
 
 standard tag: FORM
 
-descriptions:
+specification:
   - Format
   - |
     A comma-separated list of jurisdictional titles, which has the same number

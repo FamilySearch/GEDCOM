@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/ADR1
 
 standard tag: ADR1
 
-descriptions:
+specification:
   - Address Line 1
   - The first line of the address, used for indexing. This structure’s payload
     should be a single line of text equal to the first line of the

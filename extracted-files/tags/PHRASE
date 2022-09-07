@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/PHRASE
 
 standard tag: PHRASE
 
-descriptions:
+specification:
   - Phrase
   - |
     Textual information that cannot be expressed in the superstructure due to

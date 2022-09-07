@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/DATA
 
 standard tag: DATA
 
-descriptions:
+specification:
   - Data
   - A structure with no payload used to distinguish a description of something
     from metadata about it. For example, SOUR and its other substructures
