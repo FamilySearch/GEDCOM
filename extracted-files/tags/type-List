@@ -16,7 +16,7 @@ specification:
     delimiter.
     
         list      = listItem *(listDelim listItem)
-        listItem  = [ nocommasp ] / nocommasp *nocomma nocommasp ; may be empty
+        listItem  = [ nocommasp / nocommasp *nocomma nocommasp ]
         listDelim = *D "," *D
         nocomma   = %x09-2B / %x2D-10FFFF
         nocommasp = %x09-1D / %x21-2B / %x2D-10FFFF

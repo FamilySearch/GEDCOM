@@ -62,7 +62,7 @@ Enum    = Tag
 DateValue   = [ date / DatePeriod / dateRange / dateApprox ]
 DateExact   = day D month D year  ; in Gregorian calendar
 DatePeriod  = [ %s"TO" D date ]
-            / %s"FROM" D date [D %s"TO" D date]
+            / %s"FROM" D date [ D %s"TO" D date ]
             ; note both DateValue and DatePeriod can be the empty string
 
 date        = [calendar D] [[day D] month D] year [D epoch]

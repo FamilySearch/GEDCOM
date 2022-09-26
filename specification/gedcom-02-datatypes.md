@@ -78,10 +78,10 @@ Technically, there are 3 distinct date data types:
 
 
 ```abnf
-DateValue   = [ date ] / DatePeriod / dateRange / dateApprox
+DateValue   = [ date / DatePeriod / dateRange / dateApprox ]
 DateExact   = day D month D year  ; in Gregorian calendar
 DatePeriod  = [ %s"TO" D date ]
-            / %s"FROM" D date [D %s"TO" D date]
+            / %s"FROM" D date [ D %s"TO" D date ]
             ; note both DateValue and DatePeriod can be the empty string
 
 date        = [calendar D] [[day D] month D] year [D epoch]
@@ -237,7 +237,7 @@ It is recommended that a comma-space pair (U+002C U+0020) be used as the delimit
 
 ```abnf
 list      = listItem *(listDelim listItem)
-listItem  = [ nocommasp ] / nocommasp *nocomma nocommasp ; may be empty
+listItem  = [ nocommasp / nocommasp *nocomma nocommasp ]
 listDelim = *D "," *D
 nocomma   = %x09-2B / %x2D-10FFFF
 nocommasp = %x09-1D / %x21-2B / %x2D-10FFFF
