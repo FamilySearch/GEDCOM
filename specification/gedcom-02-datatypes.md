@@ -237,13 +237,13 @@ It is recommended that a comma-space pair (U+002C U+0020) be used as the delimit
 
 ```abnf
 list      = listItem *(listDelim listItem)
-listItem  = nocommasp / nocommasp *nocomma nocommasp
+listItem  = [ nocommasp ] / nocommasp *nocomma nocommasp ; may be empty
 listDelim = *D "," *D
 nocomma   = %x09-2B / %x2D-10FFFF
 nocommasp = %x09-1D / %x21-2B / %x2D-10FFFF
 
-List-Text = [ list ]               ; may be empty
-List-Enum = Enum *(listDelim Enum) ; must not be empty
+List-Text = list
+List-Enum = Enum *(listDelim Enum)
 ```
 
 If valid for the underlying type, empty strings may be included in a list by having no characters between delimiters.
