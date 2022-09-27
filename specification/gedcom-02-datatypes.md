@@ -119,8 +119,8 @@ The grammar above allows for `date`s to be preceded by various words. The meanin
 |`FROM` *x*|Lasted for multiple days, beginning on *x*. |
 |`TO` *x*  |Lasted for multiple days, ending on *x*.    |
 |`BET` *x* |Exact date unknown, but no earlier than *x*.|
-|`AFT` *x* |Exact date unknown, but no earlier than *x*.|
 |`AND` *x* |Exact date unknown, but no later than *x*.  |
+|`AFT` *x* |Exact date unknown, but no earlier than *x*.|
 |`BEF` *x* |Exact date unknown, but no later than *x*.  |
 |`ABT` *x* |Exact date unknown, but near *x*.           |
 |`CAL` *x* |*x* is calculated from other data.          |
