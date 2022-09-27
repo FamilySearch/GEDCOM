@@ -15,13 +15,13 @@ specification:
     recommended that a comma-space pair (U+002C U+0020) be used as the
     delimiter.
     
-        List      = listItem *(listDelim listItem)
-        listItem  = "" / nocommasp / nocommasp *nocomma nocommasp
+        list      = listItem *(listDelim listItem)
+        listItem  = [ nocommasp / nocommasp *nocomma nocommasp ]
         listDelim = *D "," *D
         nocomma   = %x09-2B / %x2D-10FFFF
         nocommasp = %x09-1D / %x21-2B / %x2D-10FFFF
     
-        List-Text = List
+        List-Text = list
         List-Enum = Enum *(listDelim Enum)
     
     If valid for the underlying type, empty strings may be included in a list

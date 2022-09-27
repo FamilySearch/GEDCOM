@@ -78,11 +78,11 @@ Technically, there are 3 distinct date data types:
 
 
 ```abnf
-DateValue   = date / DatePeriod / dateRange / dateApprox / ""
+DateValue   = [ date / DatePeriod / dateRange / dateApprox ]
 DateExact   = day D month D year  ; in Gregorian calendar
-DatePeriod  = %s"FROM" D date [D %s"TO" D date]
-            / %s"TO" D date
-            / ""
+DatePeriod  = [ %s"TO" D date ]
+            / %s"FROM" D date [ D %s"TO" D date ]
+            ; note both DateValue and DatePeriod can be the empty string
 
 date        = [calendar D] [[day D] month D] year [D epoch]
 dateRange   = %s"BET" D date D %s"AND" D date
@@ -236,13 +236,13 @@ Lists are serialized in a comma-separated form, delimited by a comma (U+002C `,`
 It is recommended that a comma-space pair (U+002C U+0020) be used as the delimiter.
 
 ```abnf
-List      = listItem *(listDelim listItem)
-listItem  = "" / nocommasp / nocommasp *nocomma nocommasp
+list      = listItem *(listDelim listItem)
+listItem  = [ nocommasp / nocommasp *nocomma nocommasp ]
 listDelim = *D "," *D
 nocomma   = %x09-2B / %x2D-10FFFF
 nocommasp = %x09-1D / %x21-2B / %x2D-10FFFF
 
-List-Text = List
+List-Text = list
 List-Enum = Enum *(listDelim Enum)
 ```
 
