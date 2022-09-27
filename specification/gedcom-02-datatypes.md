@@ -120,8 +120,8 @@ The grammar above allows for `date`s to be preceded by various words. The meanin
 |`TO` *x*  |Lasted for multiple days, ending on *x*.    |
 |`BET` *x* |Exact date unknown, but no earlier than *x*.|
 |`AND` *x* |Exact date unknown, but no later than *x*.  |
-|`AFT` *x* |Exact date unknown, but no earlier than *x*.|
 |`BEF` *x* |Exact date unknown, but no later than *x*.  |
+|`AFT` *x* |Exact date unknown, but no earlier than *x*.|
 |`ABT` *x* |Exact date unknown, but near *x*.           |
 |`CAL` *x* |*x* is calculated from other data.          |
 |`EST` *x* |Exact date unknown, but near *x*; and *x* is calculated from other data.|
