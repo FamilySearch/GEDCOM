@@ -486,6 +486,34 @@ Because of the structure of the schema, that separation is less important for Fa
 than it is for the semantic web, but it remains good advice where feasible.
 :::
 
+The schema structure may contain the same tag more than once with different URIs.
+Reusing tags in this way must not be done unless the concepts identified by those URIs cannot appear in the same place in a dataset,
+and should not be done unless the URIs identify closely related concepts.
+
+:::example
+Consider three extensions:
+
+- `https://example.com/LocationRecord`, a record that describes a location.
+- `https://example.com/LocationPointer`, a substructure of most events that points to a `https://example.com/record-LOC`.
+- `https://example.com/inLocoParentis`, a substructure of some events indicating a non-parent entity that filled the legal role of a parent for that event.
+
+Given this, we have the following:
+
+- `https://example.com/LocationPointer` and `https://example.com/inLocoParentis` must not be given the same tag because they can appear in the same place in a dataset.
+- `https://example.com/LocationRecord` and `https://example.com/inLocoParentis` may be given the same tag, but should not be given the same tag because they identify unrelated concepts.
+- `https://example.com/LocationRecord` and `https://example.com/LocationStructure` may be given the same tag.
+
+One way to satisfy these constraints and recommendations is with the following schema:
+
+```gedcom
+1 SCHMA
+2 TAG _LOC https://example.com/LocationRecord
+2 TAG _LOC https://example.com/LocationPointer
+2 TAG _ILP https://example.com/inLocoParentis
+```
+:::
+
+
 An extension tag that is not given a URI in the schema structure is called an **undocumented extension tag**.
 The meaning of an undocumented extension tag is identified by its superstructure type and its tag.
 
