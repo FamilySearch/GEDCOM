@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/AUTH
 
 standard tag: AUTH
 
-descriptions:
+specification:
   - Author
   - The person, agency, or entity who created the record. For a published work,
     this could be the author, compiler, transcriber, abstractor, or editor. For
@@ -15,7 +17,7 @@ descriptions:
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/record-SOUR": "{0:1}"

@@ -1,18 +1,20 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/CITY
 
 standard tag: CITY
 
-descriptions:
+specification:
   - City
   - The name of the city used in the address. See ADDRESS_STRUCTURE for more.
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/ADDR": "{0:1}"

@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/PLAC-FORM
 
 standard tag: FORM
 
-descriptions:
+specification:
   - Format
   - |
     A comma-separated list of jurisdictional titles, which has the same number
@@ -20,7 +22,7 @@ descriptions:
 
 payload: https://gedcom.io/terms/v7/type-List#Text
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/PLAC": "{0:1}"

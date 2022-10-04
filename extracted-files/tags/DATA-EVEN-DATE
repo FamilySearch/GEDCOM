@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/DATA-EVEN-DATE
 
 standard tag: DATE
 
-descriptions:
+specification:
   - Date
   - The DatePeriod covered by the entire source; the period during which this
     source recorded events.

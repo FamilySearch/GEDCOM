@@ -1,26 +1,28 @@
 %YAML 1.2
 ---
-type: datatype
+lang: en-US
+
+type: data type
 
 uri: https://gedcom.io/terms/v7/type-Date
 
-descriptions:
+specification:
   - |
     The date formats defined in this specification include the ability to store
     approximate dates, date periods, and dates expressed in different
     calendars.
     
-    Technically, there are 3 distinct date datatypes:
+    Technically, there are 3 distinct date data types:
     
     -   DateValue is a generic type that can express many kinds of dates.
     -   DateExact is used for timestamps and other fully-known dates.
     -   DatePeriod is used to express time intervals that span multiple days.
     
-        DateValue   = date / DatePeriod / dateRange / dateApprox / ""
+        DateValue   = [ date / DatePeriod / dateRange / dateApprox ]
         DateExact   = day D month D year  ; in Gregorian calendar
-        DatePeriod  = %s"FROM" D date [D %s"TO" D date]
-                    / %s"TO" D date
-                    / ""
+        DatePeriod  = [ %s"TO" D date ]
+                    / %s"FROM" D date [ D %s"TO" D date ]
+                    ; note both DateValue and DatePeriod can be the empty string
     
         date        = [calendar D] [[day D] month D] year [D epoch]
         dateRange   = %s"BET" D date D %s"AND" D date
@@ -41,7 +43,10 @@ descriptions:
     
     In addition to the constraints above:
     
-    -   The allowable months and epochs are determined by the calendar.
+    -   The allowable days, months, years, and epochs are determined by the
+        calendar. All known calendars restrict day to be between 1 and a
+        month-specific maximum. The largest known maximum is 36, and most
+        months in most calendars have a lower maximum.
     -   No calendar names, months, or epochs match dateRestrict.
     -   Extension calendars (those with extTag for their calendar) must use
         extTag, not stdTag, for months.
@@ -51,15 +56,24 @@ descriptions:
     The grammar above allows for dates to be preceded by various words. The
     meaning of these words is given as follows:
     
-      Production   Meaning
-      ------------ ----------------------------------------------------------------------
-      FROM x       Lasted for multiple days, beginning on x.
-      TO x         Lasted for multiple days, ending on x.
-      BET xAFT x   Exact date unknown, but no earlier than x.
-      AND xBEF x   Exact date unknown, but no later than x.
-      ABT x        Exact date unknown, but near x.
-      CAL x        x is calculated from other data.
-      EST x        Exact date unknown, but near x; and x is calculated from other data.
+      --------------------------------------------------------------------------
+      Production    Meaning
+      ------------- ------------------------------------------------------------
+      FROM x        Lasted for multiple days, beginning on x.
+    
+      TO x          Lasted for multiple days, ending on x.
+    
+      BET xAFT x    Exact date unknown, but no earlier than x.
+    
+      AND xBEF x    Exact date unknown, but no later than x.
+    
+      ABT x         Exact date unknown, but near x.
+    
+      CAL x         x is calculated from other data.
+    
+      EST x         Exact date unknown, but near x; and x is calculated from
+                    other data.
+      --------------------------------------------------------------------------
     
     Known calendars and tips for handling dual dating and extension calendars
     are given in Appendix A: Calendars and Dates.
@@ -89,11 +103,12 @@ descriptions:
         2 DATE
         3 PHRASE 5 January (year unknown)
     
-    The URI for the DateValue datatype is https://gedcom.io/terms/v7/type-Date.
+    The URI for the DateValue data type is
+    https://gedcom.io/terms/v7/type-Date.
     
-    The URI for the DateExact datatype is
+    The URI for the DateExact data type is
     https://gedcom.io/terms/v7/type-Date#exact.
     
-    The URI for the DatePeriod datatype is
+    The URI for the DatePeriod data type is
     https://gedcom.io/terms/v7/type-Date#period.
 ...

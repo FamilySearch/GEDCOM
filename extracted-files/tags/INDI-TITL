@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/INDI-TITL
 
 standard tag: TITL
 
-descriptions:
+specification:
   - Title
   - An Individual Attribute. See also INDIVIDUAL_ATTRIBUTE_STRUCTURE.
 

@@ -1,30 +1,21 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/ord-STAT
 
 standard tag: STAT
 
-descriptions:
+specification:
   - Status
-  - An enumerated value assessing of the state or condition of an ordinance.
+  - An enumerated value from set https://gedcom.io/terms/v7/enumset-ord-STAT
+    assessing of the state or condition of an ordinance.
 
 payload: https://gedcom.io/terms/v7/type-Enum
 
-enumeration values:
-  BIC: https://gedcom.io/terms/v7/enum-BIC
-  CANCELED: https://gedcom.io/terms/v7/enum-CANCELED
-  CHILD: https://gedcom.io/terms/v7/enum-CHILD
-  COMPLETED: https://gedcom.io/terms/v7/enum-COMPLETED
-  DNS: https://gedcom.io/terms/v7/enum-DNS
-  DNS_CAN: https://gedcom.io/terms/v7/enum-DNS_CAN
-  EXCLUDED: https://gedcom.io/terms/v7/enum-EXCLUDED
-  INFANT: https://gedcom.io/terms/v7/enum-INFANT
-  PRE_1970: https://gedcom.io/terms/v7/enum-PRE_1970
-  STILLBORN: https://gedcom.io/terms/v7/enum-STILLBORN
-  SUBMITTED: https://gedcom.io/terms/v7/enum-SUBMITTED
-  UNCLEARED: https://gedcom.io/terms/v7/enum-UNCLEARED
+enumeration set: "https://gedcom.io/terms/v7/enumset-ord-STAT"
 
 substructures:
   "https://gedcom.io/terms/v7/DATE-exact": "{1:1}"

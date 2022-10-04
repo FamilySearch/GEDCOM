@@ -1,10 +1,12 @@
 %YAML 1.2
 ---
-type: legacy
+lang: en
+
+type: uri
 
 uri: https://gedcom.io/terms/v7/RFN
 
-descriptions:
+specification:
   - Record File Number
   - |
     This URI is defined to support conversion from GEDCOM 5.5.1 to FamilySearch

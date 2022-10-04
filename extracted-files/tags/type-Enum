@@ -1,10 +1,12 @@
 %YAML 1.2
 ---
-type: datatype
+lang: en-US
+
+type: data type
 
 uri: https://gedcom.io/terms/v7/type-Enum
 
-descriptions:
+specification:
   - |
     An enumeration is a selection from a set of options. They are represented
     as a string matching the same production as a tag.
@@ -20,5 +22,27 @@ descriptions:
     Each enumeration value has a distinct meaning as identified by its
     corresponding URI.
     
-    The URI for the Enum datatype is https://gedcom.io/terms/v7/type-Enum.
+    The URI of a given tag in an enumeration payload is determined by the tag
+    itself and by the structure type of the structure it is in the payload of.
+    
+    The tag HUSB is used in this document to represent two enumeration values.
+    Which one is meant can be identified by the structure type it appears in as
+    follows:
+    
+      ----------------------------------------------------------------------------------
+      Containing structure type              Enumeration value identified by tag HUSB
+      -------------------------------------- -------------------------------------------
+      https://gedcom.io/terms/v7/FAMC-ADOP   https://gedcom.io/terms/v7/enum-ADOP-HUSB
+    
+      https://gedcom.io/terms/v7/ROLE        https://gedcom.io/terms/v7/enum-HUSB
+      ----------------------------------------------------------------------------------
+    
+    An extension could also place either of these enumeration values in an
+    extension structure type; the extension authors should document which one
+    they permit.
+    
+    The HUSB tag is also used to identify two different structure types,
+    https://gedcom.io/terms/v7/FAM-HUSB and https://gedcom.io/terms/v7/HUSB.
+    
+    The URI for the Enum data type is https://gedcom.io/terms/v7/type-Enum.
 ...

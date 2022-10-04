@@ -1,11 +1,16 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-0
 
-standard tag: 0
+standard tag: '0'
 
-descriptions:
+specification:
   - Unreliable evidence or estimated data
+
+value of:
+  - "https://gedcom.io/terms/v7/g7:enumset-QUAY"
 ...

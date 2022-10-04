@@ -59,11 +59,11 @@ Enum    = Tag
 
 ; ------------- Date -------------
 
-DateValue   = date / DatePeriod / dateRange / dateApprox / ""
+DateValue   = [ date / DatePeriod / dateRange / dateApprox ]
 DateExact   = day D month D year  ; in Gregorian calendar
-DatePeriod  = %s"FROM" D date [D %s"TO" D date]
-            / %s"TO" D date
-            / ""
+DatePeriod  = [ %s"TO" D date ]
+            / %s"FROM" D date [ D %s"TO" D date ]
+            ; note both DateValue and DatePeriod can be the empty string
 
 date        = [calendar D] [[day D] month D] year [D epoch]
 dateRange   = %s"BET" D date D %s"AND" D date
@@ -111,19 +111,19 @@ days    = Integer %x64    ; 21d
 
 ; ------------- List -------------
 
-List      = listItem *(listDelim listItem)
-listItem  = "" / nocommasp / nocommasp *nocomma nocommasp
+list      = listItem *(listDelim listItem)
+listItem  = [ nocommasp / nocommasp *nocomma nocommasp ]
 listDelim = *D "," *D
 nocomma   = %x09-2B / %x2D-10FFFF
 nocommasp = %x09-1D / %x21-2B / %x2D-10FFFF
 
-List-Text = List
+List-Text = list
 List-Enum = Enum *(listDelim Enum)
 
 
 ; ------------- Personal Name -------------
 
-NamePersonal = nameStr
+PersonalName = nameStr
              / [nameStr] "/" [nameStr] "/" [nameStr]
 
 nameChar     = %x20-2E / %x30-10FFFF  ; any but '/' and '\t'
@@ -139,7 +139,7 @@ mt-subtype   = mt-token
 mt-parameter = mt-attribute "=" mt-value
 mt-token     = 1*mt-char
 mt-attribute = mt-token
-mt-value     = mt-token / quoted-string
+mt-value     = mt-token / mt-qstring
 mt-char      = %x20-21 / %x23-27 / %x2A-2B / %x2D-2E ; not "(),/
              / %x30-39 / %x41-5A / %x5E-7E           ; not :;<=>?@[\]
 

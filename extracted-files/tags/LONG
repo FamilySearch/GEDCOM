@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/LONG
 
 standard tag: LONG
 
-descriptions:
+specification:
   - Longitude
   - |
     A longitudinal coordinate. The payload is either E (for a coordinate east
@@ -19,7 +21,7 @@ descriptions:
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/MAP": "{1:1}"

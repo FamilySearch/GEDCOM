@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: calendar
 
 uri: https://gedcom.io/terms/v7/cal-GREGORIAN
 
 standard tag: GREGORIAN
 
-descriptions:
+specification:
   - |
     The Gregorian calendar is the now-ubiquitous calendar introduced by Pope
     Gregory XIII in 1582 to correct the Julian calendar which was slowly
@@ -34,4 +36,18 @@ descriptions:
     followed by year 1.
     
     The URI for this calendar is https://gedcom.io/terms/v7/cal-GREGORIAN
+
+months:
+  - "https://gedcom.io/terms/v7/month-JAN"
+  - "https://gedcom.io/terms/v7/month-FEB"
+  - "https://gedcom.io/terms/v7/month-MAR"
+  - "https://gedcom.io/terms/v7/month-APR"
+  - "https://gedcom.io/terms/v7/month-MAY"
+  - "https://gedcom.io/terms/v7/month-JUN"
+  - "https://gedcom.io/terms/v7/month-JUL"
+  - "https://gedcom.io/terms/v7/month-AUG"
+  - "https://gedcom.io/terms/v7/month-SEP"
+  - "https://gedcom.io/terms/v7/month-OCT"
+  - "https://gedcom.io/terms/v7/month-NOV"
+  - "https://gedcom.io/terms/v7/month-DEC"
 ...

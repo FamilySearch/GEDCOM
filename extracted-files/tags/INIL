@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/INIL
 
 standard tag: INIL
 
-descriptions:
+specification:
   - Initiatory, Latter-Day Saint
   - A Latter-Day Saint Ordinance. See also LDS_INDIVIDUAL_ORDINANCE.
   - initiatory

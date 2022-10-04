@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/CORP
 
 standard tag: CORP
 
-descriptions:
+specification:
   - Corporate name
   - The name of the business, corporation, or person that produced or
     commissioned the product.

@@ -69,7 +69,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
     - An optional payload descriptor; if present this is 1 of the following:
         
         - `@<XREF:`tag`>@` means a pointer to a structure with this cross-reference template; `@VOID@` is also permitted.
-        - `<`datatype`>` means a non-pointer payload, as described in [Data types](#datatypes). If the datatype allows the empty string, the payload may be omitted.
+        - `<`data type`>` means a non-pointer payload, as described in [Data types](#datatypes). If the data type allows the empty string, the payload may be omitted.
         - `[`text`|<NULL>]` means the payload is optional but if present must be the given text.
         
         If there is a payload descriptor, a payload that matches the payload is required of the described structure unless the descriptor says the payload is optional.
@@ -80,6 +80,8 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
     - The URI of this structure type.
         
         Pseudo-structures do not have a URI.
+
+- Within the metasyntax, the order in which substructures are presented within a structure and the order in which choices are presented within an option set are not significant unless otherwise specified in the text next to the metasyntax block.
 
 The context of a structure's superstructure may be necessary in addition to the structure's standard tag to fully determine its structure type.
 To refer to a structure in the context of its superstructure,
@@ -99,6 +101,10 @@ and a superstructure with tag `GEDC`.
 0 <<RECORD>>                               {0:M}
 0 TRLR                                     {1:1} 
 ```
+
+The order of these is significant:
+the `HEADER` must come first and `TRLR` must be last,
+with any `RECORD`s in between.
 
 #### `RECORD` :=
 
@@ -156,6 +162,7 @@ The header pseudo-structure provides metadata about the entire dataset.
 A few substructures of note:
 
 - `GEDC` identifies the specification that this document conforms to.
+    It is recommended that `GEDC` be the first substructure of the header.
 - `SCHMA` gives the meaning of extension tags; see [Extensions](#extensions) for more.
 - `SOUR` describes the originating software.
     - `CORP` describes the corporation creating the software.
@@ -286,7 +293,8 @@ For example,
 a `FAMC` pointer subordinate to an adoption event indicates a relationship to family by adoption;
 biological parents can be shown by a `FAMC` pointer subordinate to the birth event;
 the eulogist at a funeral can be shown by an `ASSO` pointer subordinate to the burial event;
-and so on.
+and so on. A subordinate `FAMC` pointer is allowed to refer to a family where the individual
+does not appear as a child.
 
 
 
@@ -638,11 +646,11 @@ n MARL [Y|<NULL>]                          {1:1}  g7:MARL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARS [Y|<NULL>]                          {1:1}  g7:MARS
+n MARR [Y|<NULL>]                          {1:1}  g7:MARR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARR [Y|<NULL>]                          {1:1}  g7:MARR
+n MARS [Y|<NULL>]                          {1:1}  g7:MARS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
@@ -781,6 +789,13 @@ Substructures shared by most individual events and attributes.
 
 ```` {.gedstruct .long}
 [
+n ADOP [Y|<NULL>]                          {1:1}  g7:ADOP
+  +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:ADOP-FAMC
+     +2 ADOP <Enum>                        {0:1}  g7:FAMC-ADOP
+        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+|
 n BAPM [Y|<NULL>]                          {1:1}  g7:BAPM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
@@ -793,6 +808,11 @@ n BASM [Y|<NULL>]                          {1:1}  g7:BASM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
+n BIRT [Y|<NULL>]                          {1:1}  g7:BIRT
+  +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
+|
 n BLES [Y|<NULL>]                          {1:1}  g7:BLES
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
@@ -804,6 +824,11 @@ n BURI [Y|<NULL>]                          {1:1}  g7:BURI
 n CENS [Y|<NULL>]                          {1:1}  g7:INDI-CENS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+|
+n CHR [Y|<NULL>]                           {1:1}  g7:CHR
+  +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
+  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |
 n CHRA [Y|<NULL>]                          {1:1}  g7:CHRA
   +1 TYPE <Text>                           {0:1}  g7:TYPE
@@ -856,23 +881,6 @@ n RETI [Y|<NULL>]                          {1:1}  g7:RETI
 n WILL [Y|<NULL>]                          {1:1}  g7:WILL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-|
-n ADOP [Y|<NULL>]                          {1:1}  g7:ADOP
-  +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:ADOP-FAMC
-     +2 ADOP <Enum>                        {0:1}  g7:FAMC-ADOP
-        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
-|
-n BIRT [Y|<NULL>]                          {1:1}  g7:BIRT
-  +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
-|
-n CHR [Y|<NULL>]                           {1:1}  g7:CHR
-  +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
-  +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |
 n EVEN <Text>                              {1:1}  g7:INDI-EVEN
   +1 TYPE <Text>                           {1:1}  g7:TYPE
@@ -1051,6 +1059,10 @@ Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more.
 ```
 :::
 
+This specification does not define how the meaning of multiple parts with the same tag differs from the meaning of a single part with a concatenated larger payload.
+However, some applications allow the user to chose whether to combine or split name parts, meaning the tag quantity should be treated as expressing at least a user preference.
+Even when multiple `SURN` tags are used, the `PersonalName` data type identifies a single surname substring between its slashes.
+
 #### `PERSONAL_NAME_STRUCTURE` :=
 
 ```gedstruct
@@ -1068,14 +1080,15 @@ n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
      +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
 ```
 
-Names of individuals are represented in the manner the name is normally spoken, with the family name, surname, or nearest cultural parallel thereunto separated by slashes (U+002F `/`). Based on the dynamic nature or unknown compositions of naming conventions, it is difficult to provide a more detailed name piece structure to handle every case. The `PERSONAL_NAME_PIECES` are provided optionally for systems that cannot operate effectively with less structured information. The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information.
+Names of individuals are represented in the manner the name is normally spoken, with the family name, surname, or nearest cultural parallel thereunto separated by slashes (U+002F `/`). Based on the dynamic nature or unknown compositions of naming conventions, it is difficult to provide a more detailed name piece structure to handle every case. The `PERSONAL_NAME_PIECES` are provided optionally for systems that cannot operate effectively with less structured information. The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information; in particular it is recommended that all name parts in `PERSONAL_NAME_PIECES` appear within the `PersonalName` payload in some form, possibly adjusted for gender-specific suffixes or the like.
+It is permitted for the payload to contain information not present in any name piece substructure.
 
 The name may be translated or transliterated into different languages or scripts using the `TRAN` substructure.
 It is recommended, but not required, that if the name pieces are used, the same pieces are used in each translation and transliteration.
 
 A `TYPE` is used to specify the particular variation that this name is.
 For example; it could indicate that this name is a name taken at immigration or that it could be an ‘also known as’ name.
-See [the NAME.TYPE enumeration](#enum-TYPE) for more.
+See `g7:enumset-NAME-TYPE` for more.
 
 :::note
 Alternative approaches to representing names are being considered for future versions of this specification.
@@ -1299,7 +1312,7 @@ Tag | Name<br/>URI | Description
 `DSCR` | physical description<br/>`g7:DSCR` | The physical characteristics of a person.
 `EDUC` | education<br/>`g7:EDUC` | Indicator of a level of education attained.
 `IDNO` | identifying number<br/>`g7:IDNO` | A number or other string assigned to identify a person within some significant external system. It must have a `TYPE` substructure to define what kind of identification number is being provided.
-`NATI` | nationality<br/>`g7:NATI` | The national heritage of an individual.
+`NATI` | nationality<br/>`g7:NATI` | An individual's national heritage or origin, or other folk, house, kindred, lineage, or tribal interest.
 `NCHI` | number of children<br/>`g7:INDI-NCHI` | The number of children that this person is known to be the parent of (all marriages).
 `NMR` | number of marriages<br/>`g7:NMR` | The number of times this person has participated in a family as a spouse or parent.
 `OCCU` | occupation<br/>`g7:OCCU` | The type of work or profession of an individual.
@@ -1363,7 +1376,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 #### `ADOP` (Adoption) `g7:FAMC-ADOP`
 
-An [enumerated value](#enum-ADOP) indicating which parent(s) in the family adopted this individual.
+An enumerated value from set `g7:enumset-ADOP` indicating which parent(s) in the family adopted this individual.
 
 #### `ADR1` (Address Line 1) `g7:ADR1`
 
@@ -1697,13 +1710,13 @@ A person that signed a lease for land dated October 2, 1837 and a lease for mini
 
 #### `EVEN` (Event) `g7:DATA-EVEN`
 
-A list of [enumerated values](#enum-EVEN) indicating the types of events that were recorded in a particular source.
+A list of enumerated values from set `g7:enumset-EVENATTR` indicating the types of events that were recorded in a particular source.
 Each event type is separated by a comma and space.
 For example, a parish register of births, deaths, and marriages would be `BIRT, DEAT, MARR`.
 
 #### `EVEN` (Event) `g7:SOUR-EVEN`
 
-An [enumerated value](#enum-SOUR.EVEN) indicating the type of event or attribute which was responsible for the source entry being recorded.
+An enumerated value from set `g7:enumset-EVENATTR` indicating the type of event or attribute which was responsible for the source entry being recorded.
 For example, if the entry was created to record a birth of a child, then the type would be `BIRT` regardless of the assertions made from that record, such as the mother's name or mother's birth date.
 
 #### `EXID` (External Identifier) `g7:EXID`
@@ -1713,6 +1726,8 @@ The identifier is maintained by some external authority;
 the authority owning the identifier is provided in the TYPE substructure; see `EXID`.`TYPE` for more.
 
 Depending on the maintaining authority, an `EXID` may be a unique identifier for the subject, an identifier for 1 of several views of the subject, or an identifier for the externally-maintained copy of the same information as is contained in this structure. However, unlike `UID` and `REFN`, `EXID` does not identify a structure; structures with the same `EXID` may have originated independently rather than by edits from the same starting point.
+
+`EXID` identifiers are expected to be unique. Once assigned, an `EXID` identifier should never be re-used for any other purpose.
 
 #### `FAM` (Family record) `g7:record-FAM`
 
@@ -1839,7 +1854,7 @@ The following represents Baltimore, a city that is not within a county.
 
 #### `FORM` (Format) `g7:HEAD-PLAC-FORM`
 
-Any `PLAC` with no `FORM` shall be treated as if it has this `FORM`.
+Any `PLAC` with no [`FORM`](#PLAC-FORM) shall be treated as if it has this [`FORM`](#PLAC-FORM).
 
 #### `GEDC` (GEDCOM) `g7:GEDC`
 
@@ -2040,7 +2055,7 @@ See also `FAMILY_EVENT_STRUCTURE`.
 
 #### `MEDI` (Medium) `g7:MEDI`
 
-An [enumerated value](#enum-MEDI) providing information about the media or the medium in which information is stored.
+An enumerated value from set `g7:enumset-MEDI` providing information about the media or the medium in which information is stored.
 
 #### `MIME` (Media type) `g7:MIME`
 
@@ -2126,7 +2141,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
 #### `NO` (Did not happen) `g7:NO`
 
-An [enumerated value](#enum-NO) identifying an event type which did not occur to the superstructure's subject.
+An enumerated value from set `g7:enumset-EVEN` identifying an event type which did not occur to the superstructure's subject.
 See `NON_EVENT_STRUCTURE` for more.
 
 #### `NOTE` (Note) `g7:NOTE`
@@ -2188,7 +2203,7 @@ and the `PAGE` may describe the entire source.
 
 #### `PEDI` (Pedigree) `g7:PEDI`
 
-An [enumerated value](#enum-PEDI) indicating the type of child-to-family relationship represented by the superstructure.
+An enumerated value from set `g7:enumset-PEDI` indicating the type of child-to-family relationship represented by the superstructure.
 
 #### `PHON` (Phone) `g7:PHON`
 
@@ -2202,13 +2217,14 @@ See ITU standards [E.123](https://www.itu.int/rec/T-REC-E.123) and [E.164](https
 
 #### `PHRASE` (Phrase) `g7:PHRASE`
 
-Textual information that cannot be expressed in the superstructure due to the limitations of its datatype.
+Textual information that cannot be expressed in the superstructure due to the limitations of its data type.
+A `PHRASE` may restate information contained in the superstructure, but doing so is not recommended unless it is needed for clarity.
 
 :::example
 A date interpreted from the phrase "The Feast of St John" might be
 
 ````gedcom
-2 DATE 24 JUNE 1852
+2 DATE 24 JUN 1852
 3 PHRASE During the feast of St John
 ````
 :::
@@ -2302,7 +2318,7 @@ For an unpublished work, it includes the date the record was created and the pla
 
 #### `QUAY` (Quality of data) `g7:QUAY`
 
-An [enumerated value](#enum-QUAY) indicating the credibility of a piece of information, based on its supporting evidence.
+An enumerated value from set `g7:enumset-QUAY` indicating the credibility of a piece of information, based on its supporting evidence.
 Some systems use this feature to rank multiple conflicting opinions for display of most likely information first.
 It is not intended to eliminate the receivers' need to evaluate the evidence for themselves.
 
@@ -2325,11 +2341,11 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
 #### `RESN` (Restriction) `g7:RESN`
 
-A [List] of [enumerated value](#enum-RESN)s signifying access to information may be denied or otherwise restricted.
+A [List] of enumerated values from set `g7:enumset-RESN` signifying access to information may be denied or otherwise restricted.
 
 The `RESN` structure is provided to assist software in filtering data that should not be exported or otherwise used in a particular context. It is recommended that tools provide an interface to allow users to filter data on export
 such that certain `RESN` structure payload entries result in the `RESN` structure and its superstructure being removed from the export.
-Such removal must abode by some constraints: see [Removing data](#removing-data) for more.
+Such removal must abide by some constraints: see [Removing data](#removing-data) for more.
 
 This is metadata about the structure itself, not data about its subject.
 
@@ -2379,7 +2395,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 #### `ROLE` (Role) `g7:ROLE`
 
-An [enumerated value](#enum-ROLE) indicating what role this person played in an event or person's life.
+An enumerated value from set `g7:enumset-ROLE` indicating what role this person played in an event or person's life.
 
 :::example
 The following indicates a child's birth record as the source of the mother's name:
@@ -2423,9 +2439,14 @@ while the `DATE` should be displayed as the date of the structure.
 
 `SDATE` and its substructures (including `PHRASE`, `TIME`, and any extension structures) should be used only as sorting hints, not to convey historical meaning.
 
+It is recommended to use a payload that matches `[[day D] month D] year [D epoch]`.
+Other DateValue forms may have unreliable effects on sorting. Including a month and
+day is encouraged to help different applications sort dates the same way, as the
+relative ordering of dates with different levels of precision is not well defined.
+
 #### `SEX` (Sex) `g7:SEX`
 
-An [enumerated value](#enum-SEX) that indicates the sex of the individual at birth.
+An enumerated value from set `g7:enumset-SEX` that indicates the sex of the individual at birth.
 
 #### `SLGC` (Sealing, child) `g7:SLGC`
 
@@ -2480,11 +2501,11 @@ See `ADDRESS_STRUCTURE` for more.
 
 #### `STAT` (Status) `g7:ord-STAT`
 
-An [enumerated value](#enum-Temple.STAT) assessing of the state or condition of an ordinance.
+An enumerated value from set `g7:enumset-ord-STAT` assessing of the state or condition of an ordinance.
 
 #### `STAT` (Status) `g7:FAMC-STAT`
 
-An [enumerated value](#enum-FAMC.STAT) assessing of the state or condition of a researcher's belief in a family connection.
+An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or condition of a researcher's belief in a family connection.
 
 #### `SUBM` (Submitter) `g7:SUBM`
 
@@ -2599,7 +2620,7 @@ See also `PLAC`.
 :::example
 The following presents a place
 in Japanese
-with a romanji transliteration
+with a romaji transliteration
 and English translation
 
 ```gedcom
@@ -2660,7 +2681,7 @@ the resulting set of files might be presented as follows:
 1 FILE media/original.mp3
 2 FORM audio/mp3
 2 TRAN media/derived.oga
-3 FORM auto/ogg
+3 FORM audio/ogg
 2 TRAN media/transcript.vtt
 3 FORM text/vtt
 ```
@@ -2714,7 +2735,7 @@ See also `FACT` and `EVEN` for additional examples.
 
 #### `TYPE` (Type) `g7:NAME-TYPE`
 
-An [enumerated value](#enum-TYPE) indicating the type of the name.
+An enumerated value from set `g7:enumset-NAME-TYPE` indicating the type of the name.
 
 #### `TYPE` (Type) `g7:EXID-TYPE`
 
@@ -2724,6 +2745,19 @@ It is recommended that this be a URL.
 If the authority maintains stable URLs for each identifier it issues,
 it is recommended that the `TYPE` payload be selected such that appending the `EXID` payload to it yields that URL.
 However, this is not required and a different URI for the set of issued identifiers may be used instead.
+
+Registered URIs are listed in [exid-types.json](https://github.com/FamilySearch/GEDCOM/blob/main/exid-types.json), where fields include:
+
+* "label": a short string suitable for display in a user interface.
+* "type": The URI representing the authority issuing the `EXID`.
+* "description": A description of the meaning of the `EXID`.
+* "contact": A contact email address for the person or organization registering the URI.
+* "change-controller": The name or contact information for the person or organization authorized to update the registration.
+* "fragment": If present, indicates a short string that can be used as a label for a fragment identifier appended to the URI.  If absent, indicates that fragment identifiers are not used with the URI.
+* "reference": A URL with more information about the meaning of the `EXID`. Such information should explain the uniqueness and expected durability of the identifier.
+
+Additional type URIs can be registered by filing a
+[GitHub pull request](https://github.com/FamilySearch/GEDCOM/pulls).
 
 #### `UID` (Unique Identifier) `g7:UID`
 
@@ -2798,7 +2832,9 @@ Unless otherwise specified in the enumeration description in this section, each 
 `g7:enum-` to the enumeration value;
 for example, the `HUSB` enumeration value has the URI `http://gedcom.io/terms/v7/enum-HUSB`.
 
-### `FAMC`.`ADOP` {.unlisted .unnumbered #enum-ADOP}
+Each set of enumeration values has its own URI.
+
+### `g7:enumset-ADOP` {.unlisted .unnumbered}
 
 | Value | Meaning |
 | :---- | :------ |
@@ -2806,17 +2842,17 @@ for example, the `HUSB` enumeration value has the URI `http://gedcom.io/terms/v7
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
-### `DATA`.`EVEN` {.unlisted .unnumbered #enum-EVEN}
+### `g7:enumset-EVEN` {.unlisted .unnumbered}
 
-A comma-separated list of event- and attribute-type tag names.
+An event-type tag name, but not the generic `EVEN` tag.
+See [Events].
+
+### `g7:enumset-EVENATTR` {.unlisted .unnumbered}
+
+An event- or attribute-type tag name.
 See [Events] and [Attributes].
 
-### `SOUR`.`EVEN` {.unlisted .unnumbered #enum-SOUR.EVEN}
-
-An event- or attribute-type tag names.
-See [Events] and [Attributes].
-
-### `MEDI` {.unlisted .unnumbered #enum-MEDI}
+### `g7:enumset-MEDI` {.unlisted .unnumbered}
 
 | Value        | Meaning                           |
 | :----------- | :-------------------------------- |
@@ -2835,7 +2871,7 @@ See [Events] and [Attributes].
 | `VIDEO`      | Motion picture recording          |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
 
-### `PEDI` {.unlisted .unnumbered #enum-PEDI}
+### `g7:enumset-PEDI` {.unlisted .unnumbered}
 
 | Value     | Meaning                                                   |
 | :-------- | :-------------------------------------------------------- |
@@ -2853,14 +2889,16 @@ It is known that some users have interpreted `BIRTH` to mean "genetic parent" an
 The structures for foster children in particular, and family relationships in general, are known to have undesirable limitations and are likely to change in a future version of this specification.
 :::
 
-### `NO` {.unlisted .unnumbered #enum-NO}
+:::note
+`SEALING` implies that a `SLGC` event was performed, and it is recommended that
+this enumeration value only be used when the `SLGC` event is present in the GEDCOM file.
+`ADOPTED`, on the other hand, only implies a social relationship which may or may not have
+any associated `ADOP` event.
+:::
 
-A single event-type tag name, but not the generic `EVEN` tag.
-See [Events].
 
 
-
-### `QUAY` {.unlisted .unnumbered #enum-QUAY}
+### `g7:enumset-QUAY` {.unlisted .unnumbered}
 
 | Value | Meaning                             |
 | :---- | :---------------------------------- |
@@ -2875,7 +2913,7 @@ Although the values look like integers, they do not have numeric meaning.
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
 :::
 
-### `RESN` {.unlisted .unnumbered #enum-RESN}
+### `g7:enumset-RESN` {.unlisted .unnumbered}
 
 | Value | Meaning                      |
 | :---- | :--------------------------- |
@@ -2889,7 +2927,7 @@ When a [List] of `RESN` enumeration values are present, all apply.
 The line `1 RESN CONFIDENTIAL, LOCKED` means the superstructure's data is both considered confidential *and* read-only.
 :::
 
-### `ROLE` {.unlisted .unnumbered #enum-ROLE}
+### `g7:enumset-ROLE` {.unlisted .unnumbered}
 
 | Value | Meaning |
 | ----- | :------ |
@@ -2913,7 +2951,7 @@ These should be interpreted in the context of the recorded event and its primary
 For example, if you cite a child’s birth record as the source of the mother’s name, the value for this field is “`MOTH`.”
 If you describe the groom of a marriage, the role is “`HUSB`.”
 
-### `SEX` {.unlisted .unnumbered #enum-SEX}
+### `g7:enumset-SEX` {.unlisted .unnumbered}
 
 | Value | Meaning                                     |
 | ----- | :------------------------------------------ |
@@ -2926,7 +2964,7 @@ This can describe an individual’s reproductive or sexual anatomy at birth.
 Related concepts of gender identity or sexual preference
 are not currently given their own tag. Cultural or personal gender preference may be indicated using the `FACT` tag.
 
-### `FAMC`.`STAT` {.unlisted .unnumbered #enum-FAMC.STAT}
+### `g7:enumset-FAMC-STAT` {.unlisted .unnumbered}
 
 | Value | Meaning                        |
 | ----- | :----------------------------- |
@@ -2938,27 +2976,27 @@ are not currently given their own tag. Cultural or personal gender preference ma
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
 :::
 
-### (Latter-Day Saint Ordinance).`STAT` {.unlisted .unnumbered #enum-Temple.STAT}
+### `g7:enumset-ord-STAT` {.unlisted .unnumbered}
 
 These values were formerly used by The Church of Jesus Christ of Latter-day Saints for coordinating between temples and members.
 They are no longer used in that way, meaning their interpretation is subject to individual user interpretation
 
-| Value | Meaning                             |
-| ----- | :---------------------------------- |
-| `BIC` | Born in the covenant, receiving blessing of child to parent sealing. |
-| `CANCELED` | Canceled and considered invalid. |
-| `CHILD` | Died before 8 years old. |
-| `COMPLETED` | Completed, but the date is not known. |
-| `EXCLUDED` | Patron excluded this ordinance from being cleared in this submission. |
-| `DNS` | This ordinance is not authorized. |
-| `DNS_CAN` | This ordinance is not authorized, and the previous ordinance is cancelled. |
-| `INFANT` | Died before less than 1 year old, baptism or endowment not required. |
-| `PRE_1970` | Ordinance was likely completed because another ordinance for this person was converted from temple records of work completed before 1970. |
-| `STILLBORN` | Stillborn, so ordinances not required. |
-| `SUBMITTED` | Ordinance was previously submitted. |
-| `UNCLEARED` | Data for clearing the ordinance request was insufficient. |
+| Value | Applies to | Meaning                             | Status |
+| ----- | ----------- | :---------------------------------- | :----- |
+| `BIC` | `SLGC` | Born in the covenant, so child to parent sealing ordinance is not required. | Current |
+| `CANCELED` | `SLGS` | Canceled and considered invalid. | Current |
+| `CHILD` | All but `SLGC` | Died before 8 years old, so ordinances other than child to parent sealing are not required. | Current |
+| `COMPLETED` | All | Completed, but the date is not known. | Deprecated, use `DATE BEF date` instead. This status was defined for use with [TempleReady](https://www.churchofjesuschrist.org/study/ensign/1994/02/news-of-the-church/templeready-now-available) which is no longer in use. |
+| `EXCLUDED` | All | Patron excluded this ordinance from being cleared in this submission. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
+| `DNS` | `SLGC`, `SLGS` | This ordinance is not authorized. | Current |
+| `DNS_CAN` | `SLGS` | This ordinance is not authorized, and the previous ordinance is cancelled. | Current |
+| `INFANT` | All but `SLGC` | Died before less than 1 year old, baptism or endowment not required. | Deprecated. Use `CHILD` instead. |
+| `PRE_1970` | All | Ordinance was likely completed because an ordinance for this person was converted from temple records of work completed before 1970. | Deprecated.  Use `DATE BEF 1970` instead. |
+| `STILLBORN` | All | Born dead, so no ordinances are required. | Current |
+| `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
+| `UNCLEARED` | All | Data for clearing the ordinance request was insufficient. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 
-### `NAME`.`TYPE` {.unlisted .unnumbered #enum-TYPE}
+### `g7:enumset-NAME-TYPE` {.unlisted .unnumbered}
 
 | Value | Meaning                       |
 | ----- | :---------------------------- |

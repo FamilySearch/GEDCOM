@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/ADDR
 
 standard tag: ADDR
 
-descriptions:
+specification:
   - Address
   - The location of, or most relevant to, the subject of the superstructure.
     See ADDRESS_STRUCTURE for more.

@@ -1,6 +1,7 @@
 SPECDIR = ../specification/
 EXTDIR = ../extracted-files/
 MD_FILES = $(sort $(wildcard $(SPECDIR)gedcom*.md))
+TERMS_FILES = $(sort $(wildcard $(SPECDIR)/terms/*))
 HTML_FILE = $(SPECDIR)gedcom.html
 PDF_FILE = $(SPECDIR)gedcom.pdf
 GRAMMARS = $(EXTDIR)grammar.abnf $(EXTDIR)grammar.gedstruct
@@ -19,7 +20,7 @@ $(PDF_FILE): $(HTML_FILE)
 $(HTML_FILE): hyperlink-code.py GEDCOM-tmp.html
 	python3 hyperlink-code.py GEDCOM-tmp.html $(HTML_FILE)
 
-$(TAGDEFS): $(MD_FILES) uri-def.py
+$(TAGDEFS): $(MD_FILES) $(TERMS_FILES) uri-def.py
 	python3 uri-def.py $(MD_FILES) $(TAGDEFS)
 	touch $(TAGDEFS)
 

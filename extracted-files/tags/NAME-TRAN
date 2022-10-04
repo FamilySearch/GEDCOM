@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/NAME-TRAN
 
 standard tag: TRAN
 
-descriptions:
+specification:
   - Translation
   - |
     A type of TRAN substructure specific to Personal Names. Each NAME.TRAN must

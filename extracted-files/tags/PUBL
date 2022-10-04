@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/PUBL
 
 standard tag: PUBL
 
-descriptions:
+specification:
   - Publication
   - |
     When and where the record was created. For published works, this includes
@@ -20,7 +22,7 @@ descriptions:
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/record-SOUR": "{0:1}"

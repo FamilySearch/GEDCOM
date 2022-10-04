@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/FILE-TRAN
 
 standard tag: TRAN
 
-descriptions:
+specification:
   - Translation
   - |
     A type of TRAN for external media files. Each
@@ -21,7 +23,7 @@ descriptions:
         1 FILE media/original.mp3
         2 FORM audio/mp3
         2 TRAN media/derived.oga
-        3 FORM auto/ogg
+        3 FORM audio/ogg
         2 TRAN media/transcript.vtt
         3 FORM text/vtt
     

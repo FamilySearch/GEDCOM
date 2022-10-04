@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/record-SUBM
 
 standard tag: SUBM
 
-descriptions:
+specification:
   - Submitter
   - A description of a contributor of information to the document. See
     SUBMITTER_RECORD for more.
@@ -35,5 +37,5 @@ substructures:
   "https://gedcom.io/terms/v7/UID": "{0:M}"
   "https://gedcom.io/terms/v7/WWW": "{0:M}"
 
-superstructures: []
+superstructures: {}
 ...

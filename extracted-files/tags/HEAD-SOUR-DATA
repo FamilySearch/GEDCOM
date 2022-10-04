@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/HEAD-SOUR-DATA
 
 standard tag: DATA
 
-descriptions:
+specification:
   - Data
   - The electronic data source or digital repository from which this dataset
     was exported. The payload is the name of that source, with substructures

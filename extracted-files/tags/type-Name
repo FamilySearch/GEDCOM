@@ -1,17 +1,19 @@
 %YAML 1.2
 ---
-type: datatype
+lang: en-US
+
+type: data type
 
 uri: https://gedcom.io/terms/v7/type-Name
 
-descriptions:
+specification:
   - |
     A personal name is mostly free-text. It should be the name as written in
     the culture of the individual and should not contain line breaks, repeated
     spaces, or characters not part of the written form of a name (except for
     U+002F as explained below).
     
-        NamePersonal = nameStr
+        PersonalName = nameStr
                      / [nameStr] "/" [nameStr] "/" [nameStr]
     
         nameChar     = %x20-2E / %x30-10FFFF  ; any but '/' and '\t'
@@ -23,6 +25,6 @@ descriptions:
     specification does not provide any standard way of representing names that
     contain U+002F.
     
-    The URI for the PersonalName datatype is
+    The URI for the PersonalName data type is
     https://gedcom.io/terms/v7/type-Name.
 ...

@@ -1,19 +1,21 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/POST
 
 standard tag: POST
 
-descriptions:
+specification:
   - Postal code
   - A code used by a postal service to identify an area to facilitate mail
     handling. See ADDRESS_STRUCTURE for more.
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/ADDR": "{0:1}"

@@ -1,16 +1,18 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/ROLE
 
 standard tag: ROLE
 
-descriptions:
+specification:
   - Role
   - |
-    An enumerated value indicating what role this person played in an event or
-    person’s life.
+    An enumerated value from set https://gedcom.io/terms/v7/enumset-ROLE
+    indicating what role this person played in an event or person’s life.
     
     The following indicates a child’s birth record as the source of the
     mother’s name:
@@ -34,22 +36,7 @@ descriptions:
 
 payload: https://gedcom.io/terms/v7/type-Enum
 
-enumeration values:
-  CHIL: https://gedcom.io/terms/v7/enum-CHIL
-  CLERGY: https://gedcom.io/terms/v7/enum-CLERGY
-  FATH: https://gedcom.io/terms/v7/enum-FATH
-  FRIEND: https://gedcom.io/terms/v7/enum-FRIEND
-  GODP: https://gedcom.io/terms/v7/enum-GODP
-  HUSB: https://gedcom.io/terms/v7/enum-HUSB
-  MOTH: https://gedcom.io/terms/v7/enum-MOTH
-  MULTIPLE: https://gedcom.io/terms/v7/enum-MULTIPLE
-  NGHBR: https://gedcom.io/terms/v7/enum-NGHBR
-  OFFICIATOR: https://gedcom.io/terms/v7/enum-OFFICIATOR
-  OTHER: https://gedcom.io/terms/v7/enum-OTHER
-  PARENT: https://gedcom.io/terms/v7/enum-PARENT
-  SPOU: https://gedcom.io/terms/v7/enum-SPOU
-  WIFE: https://gedcom.io/terms/v7/enum-WIFE
-  WITN: https://gedcom.io/terms/v7/enum-WITN
+enumeration set: "https://gedcom.io/terms/v7/enumset-ROLE"
 
 substructures:
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"

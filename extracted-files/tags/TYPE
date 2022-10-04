@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/TYPE
 
 standard tag: TYPE
 
-descriptions:
+specification:
   - Type
   - |
     A descriptive word or phrase used to further classify the superstructure.
@@ -43,7 +45,7 @@ descriptions:
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/ADOP": "{0:1}"

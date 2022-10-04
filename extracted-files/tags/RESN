@@ -1,34 +1,34 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/RESN
 
 standard tag: RESN
 
-descriptions:
+specification:
   - Restriction
   - |
-    A [List] of enumerated values signifying access to information may be
-    denied or otherwise restricted.
+    A [List] of enumerated values from set
+    https://gedcom.io/terms/v7/enumset-RESN signifying access to information
+    may be denied or otherwise restricted.
     
     The RESN structure is provided to assist software in filtering data that
     should not be exported or otherwise used in a particular context. It is
     recommended that tools provide an interface to allow users to filter data
     on export such that certain RESN structure payload entries result in the
     RESN structure and its superstructure being removed from the export. Such
-    removal must abode by some constraints: see Removing data for more.
+    removal must abide by some constraints: see Removing data for more.
     
     This is metadata about the structure itself, not data about its subject.
 
 payload: https://gedcom.io/terms/v7/type-List#Enum
 
-enumeration values:
-  CONFIDENTIAL: https://gedcom.io/terms/v7/enum-CONFIDENTIAL
-  LOCKED: https://gedcom.io/terms/v7/enum-LOCKED
-  PRIVACY: https://gedcom.io/terms/v7/enum-PRIVACY
+enumeration set: "https://gedcom.io/terms/v7/enumset-RESN"
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/ADOP": "{0:1}"

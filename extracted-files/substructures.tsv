@@ -355,10 +355,10 @@ https://gedcom.io/terms/v7/SLGS	DATE	https://gedcom.io/terms/v7/DATE
 https://gedcom.io/terms/v7/SOUR-DATA	DATE	https://gedcom.io/terms/v7/DATE
 https://gedcom.io/terms/v7/SSN	DATE	https://gedcom.io/terms/v7/DATE
 https://gedcom.io/terms/v7/WILL	DATE	https://gedcom.io/terms/v7/DATE
-https://gedcom.io/terms/v7/CHAN	exact	https://gedcom.io/terms/v7/DATE-exact
-https://gedcom.io/terms/v7/CREA	exact	https://gedcom.io/terms/v7/DATE-exact
-https://gedcom.io/terms/v7/HEAD-SOUR-DATA	exact	https://gedcom.io/terms/v7/DATE-exact
-https://gedcom.io/terms/v7/ord-STAT	exact	https://gedcom.io/terms/v7/DATE-exact
+https://gedcom.io/terms/v7/CHAN	DATE	https://gedcom.io/terms/v7/DATE-exact
+https://gedcom.io/terms/v7/CREA	DATE	https://gedcom.io/terms/v7/DATE-exact
+https://gedcom.io/terms/v7/HEAD-SOUR-DATA	DATE	https://gedcom.io/terms/v7/DATE-exact
+https://gedcom.io/terms/v7/ord-STAT	DATE	https://gedcom.io/terms/v7/DATE-exact
 HEAD pseudostructure	DATE	https://gedcom.io/terms/v7/HEAD-DATE
 https://gedcom.io/terms/v7/NO	DATE	https://gedcom.io/terms/v7/NO-DATE
 https://gedcom.io/terms/v7/DATA-EVEN	DATE	https://gedcom.io/terms/v7/DATA-EVEN-DATE

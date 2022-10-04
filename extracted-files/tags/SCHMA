@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/SCHMA
 
 standard tag: SCHMA
 
-descriptions:
+specification:
   - Extension schema
   - A container for storing meta-information about the extension tags used in
     this document. See Extensions for more.

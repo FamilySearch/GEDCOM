@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/CROP
 
 standard tag: CROP
 
-descriptions:
+specification:
   - Crop
   - |
     A subregion of an image to display. It is only valid when the

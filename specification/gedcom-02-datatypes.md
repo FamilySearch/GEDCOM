@@ -1,7 +1,7 @@
 # Data types {#datatypes}
 
 Every line value (with any continuation pseudo-structures) is a string.
-However, those strings can encode 1 of several conceptual datatypes.
+However, those strings can encode 1 of several conceptual data types.
 
 ## Text
 
@@ -14,7 +14,7 @@ anychar = %x09-10FFFF ; but not banned, as with all ABNF rules
 Text    = *anychar
 ```
 
-The URI for the `Text` datatype is `xsd:string`.
+The URI for the `Text` data type is `xsd:string`.
 
 ## Integer
 
@@ -28,7 +28,7 @@ Integer = 1*digit
 
 Negative integers are not supported by this specification.
 
-The URI for the `Integer` datatype is `xsd:nonNegativeInteger`.
+The URI for the `Integer` data type is `xsd:nonNegativeInteger`.
 
 ## Enumeration
 
@@ -47,14 +47,30 @@ and have their URI defined by the schema.
 Each enumeration value has a distinct meaning
 as identified by its corresponding URI.
 
-The URI for the `Enum` datatype is `g7:type-Enum`.
+The URI of a given tag in an enumeration payload is determined by the tag itself and by the structure type of the structure it is in the payload of.
+
+:::example
+The tag `HUSB` is used in this document to represent two enumeration values.
+Which one is meant can be identified by the structure type it appears in as follows:
+
+| Containing structure type | Enumeration value identified by tag `HUSB` |
+|---------------------|---------------------|
+| `g7:FAMC-ADOP`      | `g7:enum-ADOP-HUSB` |
+| `g7:ROLE`           | `g7:enum-HUSB`      |
+
+An [extension](#extensions) could also place either of these enumeration values in an extension structure type; the extension authors should document which one they permit.
+
+The `HUSB` tag is also used to identify two different structure types, `g7:FAM-HUSB` and `g7:HUSB`.
+:::
+
+The URI for the `Enum` data type is `g7:type-Enum`.
 
 ## Date
 
 The date formats defined in this specification
 include the ability to store approximate dates, date periods, and dates expressed in different calendars.
 
-Technically, there are 3 distinct date datatypes:
+Technically, there are 3 distinct date data types:
 
 - `DateValue` is a generic type that can express many kinds of dates.
 - `DateExact` is used for timestamps and other fully-known dates.
@@ -62,11 +78,11 @@ Technically, there are 3 distinct date datatypes:
 
 
 ```abnf
-DateValue   = date / DatePeriod / dateRange / dateApprox / ""
+DateValue   = [ date / DatePeriod / dateRange / dateApprox ]
 DateExact   = day D month D year  ; in Gregorian calendar
-DatePeriod  = %s"FROM" D date [D %s"TO" D date]
-            / %s"TO" D date
-            / ""
+DatePeriod  = [ %s"TO" D date ]
+            / %s"FROM" D date [ D %s"TO" D date ]
+            ; note both DateValue and DatePeriod can be the empty string
 
 date        = [calendar D] [[day D] month D] year [D epoch]
 dateRange   = %s"BET" D date D %s"AND" D date
@@ -88,7 +104,9 @@ epoch   = %s"BCE" / extTag ; constrained by calendar
 
 In addition to the constraints above:
 
-- The allowable `month`s and `epoch`s are determined by the `calendar`.
+- The allowable `day`s, `month`s, `year`s, and `epoch`s are determined by the `calendar`.
+    All known calendars restrict `day` to be between 1 and a month-specific maximum.
+    The largest known maximum is 36, and most months in most calendars have a lower maximum.
 - No calendar names, months, or epochs match `dateRestrict`.
 - Extension calendars (those with `extTag` for their `calendar`) must use `extTag`, not `stdTag`, for months.
 
@@ -100,8 +118,10 @@ The grammar above allows for `date`s to be preceded by various words. The meanin
 |:---------|:-------------------------------------------|
 |`FROM` *x*|Lasted for multiple days, beginning on *x*. |
 |`TO` *x*  |Lasted for multiple days, ending on *x*.    |
-|`BET` *x*<br/>`AFT` *x*|Exact date unknown, but no earlier than *x*.|
-|`AND` *x*<br/>`BEF` *x*|Exact date unknown, but no later than *x*.  |
+|`BET` *x* |Exact date unknown, but no earlier than *x*.|
+|`AND` *x* |Exact date unknown, but no later than *x*.  |
+|`BEF` *x* |Exact date unknown, but no later than *x*.  |
+|`AFT` *x* |Exact date unknown, but no earlier than *x*.|
 |`ABT` *x* |Exact date unknown, but near *x*.           |
 |`CAL` *x* |*x* is calculated from other data.          |
 |`EST` *x* |Exact date unknown, but near *x*; and *x* is calculated from other data.|
@@ -137,11 +157,11 @@ The following is an appropriate way to handle a missing year
 :::
 :::
 
-The URI for the `DateValue` datatype is `g7:type-Date`.
+The URI for the `DateValue` data type is `g7:type-Date`.
 
-The URI for the `DateExact` datatype is `g7:type-Date#exact`.
+The URI for the `DateExact` data type is `g7:type-Date#exact`.
 
-The URI for the `DatePeriod` datatype is `g7:type-Date#period`.
+The URI for the `DatePeriod` data type is `g7:type-Date#period`.
 
 ## Time
 
@@ -162,7 +182,7 @@ fraction = 1*digit
 The above grammar prohibits end-of-day instant `24:00:00` and leap-seconds. It allows both `02:50` and `2:50` as the same time.
 :::
 
-The URI for the `Time` datatype is `g7:type-Time`.
+The URI for the `Time` data type is `g7:type-Time`.
 
 ## Age
 
@@ -207,24 +227,24 @@ Versions 5.5 and 5.5.1 allowed a few specific phrases inside `Age` payloads.
 Age phrases were moved to the `PHRASE` substructure in 7.0.
 :::
 
-The URI for the `Age` datatype is `g7:type-Age`.
+The URI for the `Age` data type is `g7:type-Age`.
 
 
 ## List
 
-A list is a meta-syntax representing a sequence of values with another datatype.
-Two list datatypes are used in this document: List:Text and List:Enum.
+A list is a meta-syntax representing a sequence of values with another data type.
+Two list data types are used in this document: List:Text and List:Enum.
 Lists are serialized in a comma-separated form, delimited by a comma (U+002C `,`) and any number of spaces (U+0020) between each item.
 It is recommended that a comma-space pair (U+002C U+0020) be used as the delimiter.
 
 ```abnf
-List      = listItem *(listDelim listItem)
-listItem  = "" / nocommasp / nocommasp *nocomma nocommasp
+list      = listItem *(listDelim listItem)
+listItem  = [ nocommasp / nocommasp *nocomma nocommasp ]
 listDelim = *D "," *D
 nocomma   = %x09-2B / %x2D-10FFFF
 nocommasp = %x09-1D / %x21-2B / %x2D-10FFFF
 
-List-Text = List
+List-Text = list
 List-Enum = Enum *(listDelim Enum)
 ```
 
@@ -236,9 +256,9 @@ A `List:Text` with value "`, , one, more,`" has 5 `Text`-type values: 2 empty st
 
 There is no escaping mechanism to allow lists of entries that begin or end with spaces or that contain comma characters.
 
-The URI for the `List:Text` datatype is `g7:type-List#Text`.
+The URI for the `List:Text` data type is `g7:type-List#Text`.
 
-The URI for the `List:Enum` datatype is `g7:type-List#Enum`.
+The URI for the `List:Enum` data type is `g7:type-List#Enum`.
 
 
 ## Personal Name
@@ -246,7 +266,7 @@ The URI for the `List:Enum` datatype is `g7:type-List#Enum`.
 A personal name is mostly free-text. It should be the name as written in the culture of the individual and should not contain line breaks, repeated spaces, or characters not part of the written form of a name (except for U+002F as explained below).
 
 ```abnf
-NamePersonal = nameStr
+PersonalName = nameStr
              / [nameStr] "/" [nameStr] "/" [nameStr]
 
 nameChar     = %x20-2E / %x30-10FFFF  ; any but '/' and '\t'
@@ -256,21 +276,21 @@ nameStr      = 1*nameChar
 The character U+002F (`/`, slash or solidus) has special meaning in a personal name, being used to delimit the portion of the name that most closely matches the concept of a surname, family name, or the like.
 This specification does not provide any standard way of representing names that contain U+002F.
 
-The URI for the `PersonalName` datatype is `g7:type-Name`.
+The URI for the `PersonalName` data type is `g7:type-Name`.
 
 ## Language
 
-The language datatype represents a human language or family of related languages, as defined in [BCP 46](https://www.rfc-editor.org/info/bcp47).
+The language data type represents a human language or family of related languages, as defined in [BCP 46](https://www.rfc-editor.org/info/bcp47).
 It consists of a sequence of language subtags separated by hyphens,
 where language subtags are [registered by the IANA](https://www.iana.org/assignments/language-subtag-registry).
 
 The ABNF grammar for language tags is given in BCP 47, section 2.1, production `Language-Tag`.
 
-The URI for the `Language` datatype is `xsd:Language`.
+The URI for the `Language` data type is `xsd:Language`.
 
 ## Media Type
 
-The media type datatype represents the encoding of information in bytes or characters, as defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045) and [registered by the IANA](http://www.iana.org/assignments/media-types/).
+The media type data type represents the encoding of information in bytes or characters, as defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045) and [registered by the IANA](http://www.iana.org/assignments/media-types/).
 
 The official grammar for media type is given in RFC 2045, section 5.1.
 However, that document does not give stand-alone ABNF, instead referring to registration rules and describing some components in English.
@@ -284,7 +304,7 @@ mt-subtype   = mt-token
 mt-parameter = mt-attribute "=" mt-value
 mt-token     = 1*mt-char
 mt-attribute = mt-token
-mt-value     = mt-token / quoted-string
+mt-value     = mt-token / mt-qstring
 mt-char      = %x20-21 / %x23-27 / %x2A-2B / %x2D-2E ; not "(),/
              / %x30-39 / %x41-5A / %x5E-7E           ; not :;<=>?@[\]
 
@@ -293,15 +313,15 @@ mt-qtext     = %x09-0A / %x20-21 / %x23-5B / %x5D-7E ; not CR "\
 mt-qpair     = "\" %x09-7E
 ```
 
-The URI for the `MediaType` datatype is `dcat:mediaType`.
+The URI for the `MediaType` data type is `dcat:mediaType`.
 
 ## Special
 
-The special datatype is a string conforming to a case-specific standard or constraints. The constraints on each special datatype instance are either unique to that structure type or are not simply expressed.
+The special data type is a string conforming to a case-specific standard or constraints. The constraints on each special data type instance are either unique to that structure type or are not simply expressed.
 For example, the payload of an `IDNO` structure may obey different rules for each possible `TYPE` substructure.
 
-Each special datatype is distinct.
-The URI for the generic datatype subsuming all `Special` datatypes is `xsd:string` (the same as the `Text` datatype).
+Each special data type is distinct.
+The URI for the generic data type subsuming all `Special` data types is `xsd:string` (the same as the `Text` data type).
 
 ```abnf
 Special = Text

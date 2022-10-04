@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/GEDC-VERS
 
 standard tag: VERS
 
-descriptions:
+specification:
   - Version
   - The version number of the official specification that this document’s data
     conforms to. This must include the major and minor version (for example,
@@ -15,7 +17,7 @@ descriptions:
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/GEDC": "{1:1}"

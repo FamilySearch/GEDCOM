@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/NOTE-TRAN
 
 standard tag: TRAN
 
-descriptions:
+specification:
   - Translation
   - |
     A type of TRAN for unstructured human-readable text, such as is found in

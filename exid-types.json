@@ -1,0 +1,68 @@
+[
+  {
+    "label": "AFN",
+    "type": "https://gedcom.io/terms/v7/AFN",
+    "description": "Ancestral File Number",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "reference": "https://gedcom.io/migrate/#afn-rfn-rin"
+  },
+  {
+    "label": "RIN",
+    "type": "https://gedcom.io/terms/v7/RIN",
+    "description": "Automated Record ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "fragment": "Source System",
+    "reference": "https://gedcom.io/migrate/#afn-rfn-rin"
+  },
+  {
+    "label": "RFN",
+    "type": "https://gedcom.io/terms/v7/RFN",
+    "description": "Permanent Record ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "fragment": "Resource ID",
+    "reference": "https://gedcom.io/migrate/#afn-rfn-rin"
+  },
+  {
+    "label": "FamilySearch Memory ID",
+    "type": "https://gedcom.io/exid-type/FamilySearch-MemoryId",
+    "description": "FamilySearch Memory ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "reference": "https://gedcom.io/exid-type/FamilySearch-MemoryId"
+  },
+  {
+    "label": "FamilySearch Person ID",
+    "type": "https://gedcom.io/exid-type/FamilySearch-PersonId",
+    "description": "FamilySearch Person ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "reference": "https://gedcom.io/exid-type/FamilySearch-PersonId"
+  },
+  {
+    "label": "FamilySearch Place ID",
+    "type": "https://gedcom.io/exid-type/FamilySearch-PlaceId",
+    "description": "FamilySearch Place ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "reference": "https://gedcom.io/exid-type/FamilySearch-PlaceId"
+  },
+  {
+    "label": "FamilySearch Source Description ID",
+    "type": "https://gedcom.io/exid-type/FamilySearch-SourceDescriptionId",
+    "description": "FamilySearch Source Description ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "reference": "https://gedcom.io/exid-type/FamilySearch-SourceDescriptionId"
+  },
+  {
+    "label": "FamilySearch User ID",
+    "type": "https://gedcom.io/exid-type/FamilySearch-UserId",
+    "description": "FamilySearch User ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FamilySearch",
+    "reference": "https://gedcom.io/exid-type/FamilySearch-UserId"
+  }
+]

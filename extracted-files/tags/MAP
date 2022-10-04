@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/MAP
 
 standard tag: MAP
 
-descriptions:
+specification:
   - Map
   - |
     A representative point for a location, as defined by LATI and LONG

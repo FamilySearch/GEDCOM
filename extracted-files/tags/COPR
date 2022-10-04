@@ -1,19 +1,21 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/COPR
 
 standard tag: COPR
 
-descriptions:
+specification:
   - Copyright
   - A copyright statement, as appropriate for the copyright laws applicable to
     this data.
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "HEAD pseudostructure": "{0:1}"

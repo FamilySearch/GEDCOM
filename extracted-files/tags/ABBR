@@ -1,19 +1,21 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/ABBR
 
 standard tag: ABBR
 
-descriptions:
+specification:
   - Abbreviation
   - A short name of a title, description, or name used for sorting, filing, and
     retrieving records.
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/record-SOUR": "{0:1}"

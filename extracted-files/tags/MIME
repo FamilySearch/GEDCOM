@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/MIME
 
 standard tag: MIME
 
-descriptions:
+specification:
   - Media type
   - |
     Indicates the media type of the payload of the superstructure, as defined
@@ -58,7 +60,7 @@ descriptions:
 
 payload: http://www.w3.org/ns/dcat#mediaType
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/NOTE": "{0:1}"

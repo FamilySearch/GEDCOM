@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/DIVF
 
 standard tag: DIVF
 
-descriptions:
+specification:
   - Divorce filing
   - A Family Event. See also FAMILY_EVENT_STRUCTURE.
   - divorce filed
@@ -39,4 +41,8 @@ substructures:
 
 superstructures:
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
+
+value of:
+  - "https://gedcom.io/terms/v7/g7:enumset-EVEN"
+  - "https://gedcom.io/terms/v7/g7:enumset-EVENATTR"
 ...

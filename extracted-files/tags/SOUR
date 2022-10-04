@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/SOUR
 
 standard tag: SOUR
 
-descriptions:
+specification:
   - Source
   - A description of the relevant part of a source to support the
     superstructure’s data. See SOURCE_CITATION for more.
@@ -34,7 +36,7 @@ descriptions:
     Because each dataset is finite, this nesting is also guaranteed to be
     finite.
 
-payload: @<XREF:SOUR>@
+payload: "@<https://gedcom.io/terms/v7/record-SOUR>@"
 
 substructures:
   "https://gedcom.io/terms/v7/NOTE": "{0:M}"

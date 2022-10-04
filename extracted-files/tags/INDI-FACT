@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/INDI-FACT
 
 standard tag: FACT
 
-descriptions:
+specification:
   - Fact
   - |
     A noteworthy attribute or fact concerning an individual or family. If a
@@ -48,4 +50,7 @@ substructures:
 
 superstructures:
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
+
+value of:
+  - "https://gedcom.io/terms/v7/g7:enumset-EVENATTR"
 ...

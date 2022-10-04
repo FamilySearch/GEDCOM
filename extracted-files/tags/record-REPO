@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/record-REPO
 
 standard tag: REPO
 
-descriptions:
+specification:
   - Repository
   - See REPOSITORY_RECORD.
   - |
@@ -40,5 +42,5 @@ substructures:
   "https://gedcom.io/terms/v7/UID": "{0:M}"
   "https://gedcom.io/terms/v7/WWW": "{0:M}"
 
-superstructures: []
+superstructures: {}
 ...

@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/CREA
 
 standard tag: CREA
 
-descriptions:
+specification:
   - Creation
   - The initial creation of the superstructure. This is metadata about the
     structure itself, not data about its subject. See CREATION_DATE for more.

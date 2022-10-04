@@ -1,19 +1,21 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/NPFX
 
 standard tag: NPFX
 
-descriptions:
+specification:
   - Name prefix
   - Text that appears on a name line before the given and surname parts of a
     name.
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/INDI-NAME": "{0:M}"

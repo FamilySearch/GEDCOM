@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/record-INDI
 
 standard tag: INDI
 
-descriptions:
+specification:
   - Individual
   - See INDIVIDUAL_RECORD.
   - |
@@ -41,7 +43,8 @@ descriptions:
     indicates a relationship to family by adoption; biological parents can be
     shown by a FAMC pointer subordinate to the birth event; the eulogist at a
     funeral can be shown by an ASSO pointer subordinate to the burial event;
-    and so on.
+    and so on. A subordinate FAMC pointer is allowed to refer to a family where
+    the individual does not appear as a child.
 
 payload: null
 
@@ -109,5 +112,5 @@ substructures:
   "https://gedcom.io/terms/v7/UID": "{0:M}"
   "https://gedcom.io/terms/v7/WILL": "{0:M}"
 
-superstructures: []
+superstructures: {}
 ...

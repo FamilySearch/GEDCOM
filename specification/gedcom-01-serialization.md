@@ -76,6 +76,20 @@ Every structure is either a **record**, meaning it is not contained in any other
 or it is a **substructure** of exactly 1 other structure. The other structure is called its **superstructure**.
 Each substructure either refines the meaning of its superstructure, provides metadata about its superstructure, or introduces new data that is closely related to its superstructure.
 
+Each **structure type** is identified by a URI and defines several properties of any structure with that type, including
+
+- The meaning of structures of this type.
+- The payload type of the structure's payload, which shall be one of
+    - no payload, or
+    - a pointer to a record with a specific structure type, or
+    - a [data type](#datatypes);
+        if an [enumeration](#enumeration) or [list of enumerations](#list), also a set of permitted enumeration values.
+- Which structure types may appear as substructures of the structure and with what **cardinality** they may appear.
+    Cardinality is specified by two flags:
+    
+    - whether a substructure of this type is required or not; and
+    - whether multiple substructures of this type are permitted or not.
+
 The collection of substructures is partially ordered.
 Substructures with the same structure type are in a fixed order,
 but substructures with different structure types may be reordered.
@@ -151,12 +165,32 @@ The **tag** matches production `Tag` and encodes the structure's type.
 Tags that match the production `stdTag` are defined in this document.
 Tags that match `extTag` are defined according to [Extensions].
 
+The same tag may be used to represent multiple structure types.
+The structure type of each structure is identified by its tag and the type of its superstructure.
+The mapping between (superstructure type, tag) pairs and structure types
+is given elsewhere in this document (for standard structure types and tags)
+or the [schema] and extension authors' documentation (for extension structure types and tags).
+
+:::example
+The tag `ADOP` is used in this document to represent two structure types.
+Which one is meant can be identified by the superstructure type as follows:
+
+| Superstructure type | Structure type identified by tag `ADOP` |
+|------------------|------------------|
+| `g7:record-INDI` | `g7:ADOP`        |
+| `g7:ADOP-FAMC`   | `g7:FAMC-ADOP`   |
+
+An [extension-defined substructure](#extensions) could also be used to place either of these structure types in extension superstructures.
+
+The `ADOP` tag is also used in the set of enumerated values permitted by the `g7:DATA-EVEN`, `g7:SOUR-EVEN`, and `g7:NO` structure types.
+:::
+
 The **line value** matches production `LineVal` and encodes the structure's payload.
 Line value content is sufficient to distinguish between pointers and line strings.
 Pointers are encoded as the cross-reference identifier of the pointed-to structure.
 Each non-pointer payload may be encoded in 1 or more line strings (line continuations encode multi-line payloads in several line strings).
-The exact encoding of non-pointer payloads is dependent on the datatype of the payload, as determined by the structure type.
-The datatype of non-pointer payloads cannot be fully determined by line value content alone.
+The exact encoding of non-pointer payloads is dependent on the data type of the payload, as determined by the structure type.
+The data type of non-pointer payloads cannot be fully determined by line value content alone.
 
 Note that production `LineVal` does not match the empty string.
 Because empty payloads and missing payloads are considered equivalent,
@@ -272,6 +306,10 @@ The recommended way to go beyond the set of standard structure types in this spe
 
 This specification also provides multiple ways for extension authors to go beyond the specification without submitting a feature request, which are described in the remainder of this section.
 
+Extensions can introduce new structure types, new enumeration values, new calendars with their associated months, and new data types.
+They can also extend existing structures with new permitted substructure types and extend existing enumeration-type payloads with new permitted values.
+Extensions cannot change existing meanings, cardinalities, or calendars.
+
 A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure. Their meaning is defined by their tag, as is discussed more fully in the section [Extension Tags].
 
 Any substructure of a tagged extension structure that uses a tag matching `stdTag` is an **extension-defined substructure**.
@@ -295,7 +333,7 @@ In the following
 - Both uses of `_LOC` are tagged extension structures, as is `_POP`.
 - `_LOC`.`NAME` and `_LOC`.`NAME`.`DATE` are both extension-defined substructures. Their meaning is defined by the specification defining `_LOC`.
 - `_POP`.`DATE` is an extension-defined substructure. Its meaning is defined by the specification defining `_POP`.
-- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended datatype without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
+- Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended data type without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
 :::
 
 If an extension-defined substructure has a tag that is also used by one or more standard structures, its meaning and payload type should match at least one of those standard structure types.
@@ -401,12 +439,16 @@ defines the following tags
 | :---- | :---- |
 | `_SKYPEID` | `http://xmlns.com/foaf/0.1/skypeID` |
 | `_MEMBER` | `http://xmlns.com/foaf/0.1/member` |
+
+Note that at the time of writing, the [FOAF](https://xmlns.com/foaf/spec/20140114.html) URIs used in this example are not URLs.
 :::
 
-The meaning of a documented extension tag is identified by its URI, not its tag.
+The meaning of a documented extension tag is identified by its superstructure type and its URI, not its tag.
+As such each documented extension tag needs its own URI: it is its URI, not its tag, that defines its meaning.
 Documented extension tags can be changed freely by modifying the schema,
 though it is recommended that documented extension tags not be changed.
 However, a tag change may be necessary if a product picks the same tags for URIs that another product uses for different URIs.
+A given schema should map only one tag to each URI.
 
 :::example
 The following 2 document fragments are semantically equivalent
@@ -429,8 +471,23 @@ and a system importing one may export it as the other without change of meaning.
 ```
 :::
 
+It is recommended that the URIs used for documented extension tags be URLs that can be used to access documentation for the meaning of the tag.
+
+:::note
+The W3C has an [interest group note](http://www.w3.org/TR/cooluris/)
+that discusses several ways of achieving this URI/URL mapping,
+including how a single webpage can describe multiple tags
+using either HTTP redirects (which requires some server setup)
+or what they call "Hash URIs" (which require no setup).
+
+That interest group note also explains why it might be desirable
+to have a separate URIs for a concept and the document describing that concept.
+Because of the structure of the schema, that separation is less important for FamilySearch GEDCOM 7
+than it is for the semantic web, but it remains good advice where feasible.
+:::
+
 An extension tag that is not given a URI in the schema structure is called an **undocumented extension tag**.
-The meaning of an undocumented extension tag is identified by its tag.
+The meaning of an undocumented extension tag is identified by its superstructure type and its tag.
 
 
 ### Requirements and Recommendations
@@ -509,9 +566,24 @@ In general, removed data should result in removed structures.
 
 Pointers to a removed structure should be replaced with `voidPtr`s.
 
-If removal of a structure makes the superstructure invalid because the superstructure required the substructure, the structure should instead be retained and have its payload changed to a `voidPtr` if a pointer, or to a datatype-appropriate empty value if a non-pointer.
+If removal of a structure makes the superstructure invalid because the superstructure required the substructure, the structure should instead be retained and have its payload changed to a `voidPtr` if a pointer, or to a data type-appropriate empty value if a non-pointer.
 
 If removing a structure leaves its superstructure with no payload and no substructures, the superstructure should also be removed.
 
+A structure can also be removed if it provides no new information.  For example,
+```gedcom
+0 @I1@ INDI
+1 NAME John /Doe/
+1 NAME John /Doe/
+1 FAMC @F1@
+1 FAMC @F1@
+0 @F1@ FAM
+1 CHIL @I1@
+1 CHIL @I1@
+```
 
-
+provides no information beyond the simpler form:
+```gedcom
+0 @I1@ INDI
+1 NAME John /Doe/
+```

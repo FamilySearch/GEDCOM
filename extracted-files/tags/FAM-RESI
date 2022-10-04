@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/FAM-RESI
 
 standard tag: RESI
 
-descriptions:
+specification:
   - Residence
   - |
     A Family Attribute. See also FAMILY_ATTRIBUTE_STRUCTURE.
@@ -43,4 +45,7 @@ substructures:
 
 superstructures:
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
+
+value of:
+  - "https://gedcom.io/terms/v7/g7:enumset-EVENATTR"
 ...

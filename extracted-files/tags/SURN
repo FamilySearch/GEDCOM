@@ -1,18 +1,20 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/SURN
 
 standard tag: SURN
 
-descriptions:
+specification:
   - Surname
   - A family name passed on or used by members of a family.
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/INDI-NAME": "{0:M}"

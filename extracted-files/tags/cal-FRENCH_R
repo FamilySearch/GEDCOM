@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: calendar
 
 uri: https://gedcom.io/terms/v7/cal-FRENCH_R
 
 standard tag: FRENCH_R
 
-descriptions:
+specification:
   - |
     The French Republican calendar or French Revolutionary calendar are the
     names given to the new calendar adopted in 1794 by the French National
@@ -17,7 +19,7 @@ descriptions:
     Permitted months are
     
       Code   Name
-      ------ ---------------------
+      ------ ----------------------
       VEND   Vendémiaire
       BRUM   Brumaire
       FRIM   Frimaire
@@ -30,9 +32,24 @@ descriptions:
       MESS   Messidor
       THER   Thermidor
       FRUC   Fructidor
-      COMP   Jour Complementairs
+      COMP   Jour Complémentaires
     
     No epoch marker is permitted in this calendar.
     
     The URI for this calendar is https://gedcom.io/terms/v7/cal-FRENCH_R
+
+months:
+  - "https://gedcom.io/terms/v7/month-VEND"
+  - "https://gedcom.io/terms/v7/month-BRUM"
+  - "https://gedcom.io/terms/v7/month-FRIM"
+  - "https://gedcom.io/terms/v7/month-NIVO"
+  - "https://gedcom.io/terms/v7/month-PLUV"
+  - "https://gedcom.io/terms/v7/month-VENT"
+  - "https://gedcom.io/terms/v7/month-GERM"
+  - "https://gedcom.io/terms/v7/month-FLOR"
+  - "https://gedcom.io/terms/v7/month-PRAI"
+  - "https://gedcom.io/terms/v7/month-MESS"
+  - "https://gedcom.io/terms/v7/month-THER"
+  - "https://gedcom.io/terms/v7/month-FRUC"
+  - "https://gedcom.io/terms/v7/month-COMP"
 ...

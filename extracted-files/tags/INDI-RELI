@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/INDI-RELI
 
 standard tag: RELI
 
-descriptions:
+specification:
   - Religion
   - An Individual Attribute. See also INDIVIDUAL_ATTRIBUTE_STRUCTURE.
 

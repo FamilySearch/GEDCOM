@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/FILE
 
 standard tag: FILE
 
-descriptions:
+specification:
   - File reference
   - |
     A reference to an external file. Syntactically, the payload is a URI

@@ -1,4 +1,53 @@
-# Version 7.07
+# Version 7.0.10
+
+- Collect information about structure types and present it explicitly in the document, including how tags define structure types, the limitations structure types impose on their structures, and what extensions can change. This information was all present in the text before, but in a diffuse and not very accessible way.
+
+- Half of 5.5.1's description of `g7:NATI` was inadvertently lost in 7.0; it has now been restored.
+
+- Clarify that presentation order is not significant, and sort events and attributes alphabetically in the spec for easier reference.
+
+- Clarify that documented extension tag URIs needn't be URLs.
+
+- Clarifying text and recommendations about using `g7:SDATE`, `g7:ord-STAT`, `g7:PHRASE`, 
+
+- Changes anticipating a coming extension registry:
+
+    - Add URIs for sets of enumeration values. This has changes some fragment identifiers in the HTML version of the spec and could cause hotlinks to the specific sections discussing enumeration sets to change.
+
+    - Many updates to the YAML format served at <https://gedcom.io/terms/v7/record-INDI> and at the other URIs in the specification.
+
+- Various typo corrections
+
+# Version 7.0.9
+
+- Undo 7.0.8's reversion of undocumented and unexplained use of `{0:M}` cardinality for name parts, as it has been used by some applications. Added note explaining that repeated name parts may have meaning to the user.
+
+- Improve text on name pieces being included in name payloads to use "recommended" instead of "should" for greater clarity, and note that not all substrings of the payload need to be included in a name piece
+
+- Permit removing structures that contain no data
+
+- Various typo corrections
+
+# Version 7.0.8
+
+- Revert undocumented and unexplained use of `{0:M}` cardinality for name parts in 7.0.0 through 7.0.7
+
+- Note that days per month is defined by calendar; is bounded; and may be checked to validate date entry.
+
+- Add a registry for known `EXID`.`TYPE` values
+
+- Clarify relationship between `PEDI SEALING` and `SLGC`
+
+- Clarify that only `INDI.FAMC` need a matching `FAM.CHIL`; `FAMC` under events do not.
+
+- Clarify that one implication of "The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information"  is that "all name parts in `PERSONAL_NAME_PIECES` should appear within the `<PersonalName>` payload."
+
+- Correct typo where ABNF used `NamePersonal` instead of `PersonalName`
+
+- Various grammar and spelling corrections
+
+
+# Version 7.0.7
 
 - Update the `DateValue` and `DatePeriod` ABNF to match the textual statement that these can be empty.
 

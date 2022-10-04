@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/MARB
 
 standard tag: MARB
 
-descriptions:
+specification:
   - Marriage banns
   - A Family Event. See also FAMILY_EVENT_STRUCTURE.
   - marriage bann
@@ -39,4 +41,8 @@ substructures:
 
 superstructures:
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
+
+value of:
+  - "https://gedcom.io/terms/v7/g7:enumset-EVEN"
+  - "https://gedcom.io/terms/v7/g7:enumset-EVENATTR"
 ...

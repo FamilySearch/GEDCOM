@@ -1,12 +1,14 @@
 %YAML 1.2
 ---
+lang: en-US
+
 type: structure
 
 uri: https://gedcom.io/terms/v7/CAUS
 
 standard tag: CAUS
 
-descriptions:
+specification:
   - Cause
   - The reasons which precipitated an event. It is often used subordinate to a
     death event to show cause of death, such as might be listed on a death
@@ -14,7 +16,7 @@ descriptions:
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
-substructures: []
+substructures: {}
 
 superstructures:
   "https://gedcom.io/terms/v7/ADOP": "{0:1}"

@@ -1,11 +1,16 @@
 %YAML 1.2
 ---
-type: enumeration
+lang: en-US
+
+type: month
 
 uri: https://gedcom.io/terms/v7/month-BRUM
 
 standard tag: BRUM
 
-descriptions:
+specification:
   - Brumaire
+
+calendars:
+  - "https://gedcom.io/terms/v7/cal-FRENCH_R"
 ...
