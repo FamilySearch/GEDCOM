@@ -146,10 +146,12 @@ n HEAD                                     {1:1}
      +2 DATA <Text>                        {0:1}  g7:HEAD-SOUR-DATA
         +3 DATE <DateExact>                {0:1}  g7:DATE-exact
            +4 TIME <Time>                  {0:1}  g7:TIME
+              +5 PHRASE <Text>             {0:1}  g7:PHRASE
         +3 COPR <Text>                     {0:1}  g7:COPR
   +1 DEST <Special>                        {0:1}  g7:DEST
   +1 DATE <DateExact>                      {0:1}  g7:HEAD-DATE
      +2 TIME <Time>                        {0:1}  g7:TIME
+        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
   +1 SUBM @<XREF:SUBM>@                    {0:1}  g7:SUBM
   +1 COPR <Text>                           {0:1}  g7:COPR
   +1 LANG <Language>                       {0:1}  g7:HEAD-LANG
@@ -517,6 +519,7 @@ and that individual `@I2@` was the clergy officiating at their baptism.
 n CHAN                                     {1:1}  g7:CHAN
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
      +2 TIME <Time>                        {0:1}  g7:TIME
+        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
@@ -530,6 +533,7 @@ The `NOTE` substructure may describe previous changes as well as the most recent
 n CREA                                     {1:1}  g7:CREA
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
      +2 TIME <Time>                        {0:1}  g7:TIME
+        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
 ```
 
 The date of the initial creation of the superstructure.
@@ -540,6 +544,7 @@ Because this refers to the initial creation, it should not be modified after the
 ```gedstruct
 n DATE <DateValue>                         {0:1}  g7:DATE
   +1 TIME <Time>                           {0:1}  g7:TIME
+     +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 n <<PLACE_STRUCTURE>>                      {0:1}
 n <<ADDRESS_STRUCTURE>>                    {0:1}
@@ -553,6 +558,7 @@ n CAUS <Text>                              {0:1}  g7:CAUS
 n RESN <List:Enum>                         {0:1}  g7:RESN
 n SDATE <DateValue>                        {0:1}  g7:SDATE
   +1 TIME <Time>                           {0:1}  g7:TIME
+     +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 n <<ASSOCIATION_STRUCTURE>>                {0:M}
 n <<NOTE_STRUCTURE>>                       {0:M}
@@ -933,12 +939,14 @@ Ordinances performed by members of The Church of Jesus Christ of Latter-day Sain
 ```gedstruct
 n DATE <DateValue>                       {0:1}  g7:DATE
   +1 TIME <Time>                         {0:1}  g7:TIME
+     +2 PHRASE <Text>                    {0:1}  g7:PHRASE
   +1 PHRASE <Text>                       {0:1}  g7:PHRASE
 n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
 n STAT <Enum>                            {0:1}  g7:ord-STAT
   +1 DATE <DateExact>                    {1:1}  g7:DATE-exact
      +2 TIME <Time>                      {0:1}  g7:TIME
+        +3 PHRASE <Text>                 {0:1}  g7:PHRASE
 n <<NOTE_STRUCTURE>>                     {0:M}
 n <<SOURCE_CITATION>>                    {0:M}
 ```
@@ -1156,6 +1164,7 @@ n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 DATE <DateValue>                   {0:1}  g7:DATE
         +3 TIME <Time>                     {0:1}  g7:TIME
+           +4 PHRASE <Text>                {0:1}  g7:PHRASE
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
      +2 TEXT <Text>                        {0:M}  g7:TEXT
         +3 MIME <MediaType>                {0:1}  g7:MIME
@@ -1609,6 +1618,8 @@ The payload is a `DateValue`.
 
 The principal date of the subject of the superstructure.
 The payload is a `DateExact`.
+
+When the exact timestamp is known, it is recommended that each `g7:DATE-exact` have a `g7:TIME` substructure with the time in UTC with no `g7:PHRASE`.
 
 #### `DATE` (Date) `g7:HEAD-DATE`
 
