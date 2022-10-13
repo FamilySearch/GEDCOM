@@ -168,6 +168,7 @@ The URI for the `DatePeriod` data type is `g7:type-Date#period`.
 Time is represented on a 24-hour clock (for example, 23:00 rather than 11:00 PM).
 It may be represented either in event-local time or in Coordinated Universal Time (UTC).
 UTC is indicated by including a `Z` (U+005A) after the time value; event-local time is indicated by its absence.
+When a time is used together with a `DateExact`, it is recommended that UTC time be used rather than event-local time.
 
 ```abnf
 Time     =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
