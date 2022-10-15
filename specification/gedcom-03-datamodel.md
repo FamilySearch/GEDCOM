@@ -1771,7 +1771,7 @@ The family with which this individual event is associated.
 
 #### `FAMC` (Family child) `g7:ADOP-FAMC`
 
-The individual or couple that adopted this this individual.
+The individual or couple that adopted this individual.
 
 Adoption by an individual, rather than a couple, may be represented either by pointing to a `FAM` where that individual is a `HUSB` or `WIFE` and using a `g7:FAMC-ADOP` substructure to indicate which 1 performed the adoption; or by using a `FAM` where the adopting individual is the only `HUSB`/`WIFE`.
 
