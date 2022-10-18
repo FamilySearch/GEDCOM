@@ -33,14 +33,16 @@ The URI for the `Integer` data type is `xsd:nonNegativeInteger`.
 ## Enumeration
 
 An enumeration is a selection from a set of options.
-They are represented as a string matching the same production as a tag.
+They are represented as a string matching the same production as a tag,
+with the additional permission that standard enumerations may be integers.
 
 ```abnf
-Enum    = Tag
+stdEnum = stdTag / Integer
+Enum    = stdEnum / extTag
 ```
 
 Each structure type with an enumeration payload also defines specific payload values it permits.
-These permitted payloads match production `stdTag` and should each have a defined URI.
+These permitted payloads match production `stdEnum` and should each have a defined URI.
 Payload values that match production `extTag` are always permitted in structures with an enumeration payload
 and have their URI defined by the schema.
 
