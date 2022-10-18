@@ -369,9 +369,8 @@ n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
 A catch-all location for information that does not fully fit within other structures.
 It may include research notes, additional context, alternative interpretations, reasoning, and so forth.
 
-A shared note record may be pointed to by multiple other structures. Shared notes should only be used if editing the note in one place should edit it in all other places
-or if the note itself requires an `IDENTIFIER_STRUCTURE`.
-If each instance of the note may be edited separately and no identifier is needed, a `NOTE` should be used instead.
+A shared note record may be pointed to by multiple other structures. Shared notes should only be used if editing the note in one place should edit it in all other places.
+If any instance of the note is edited separately from the others, a `NOTE` should be used instead.
 
 Each [`SNOTE`.`TRAN`](#NOTE-TRAN) must have either a `MIME` or `LANG` substructure or both.
 
@@ -1011,6 +1010,7 @@ n NOTE <Text>                              {1:1}  g7:NOTE
   +1 TRAN <Text>                           {0:1}  g7:NOTE-TRAN
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
+  +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
 |
 n SNOTE @<XREF:SNOTE>@                     {1:1}  g7:SNOTE
@@ -1023,12 +1023,6 @@ It may include research notes, additional context, alternative interpretations, 
 Each `NOTE`.`TRAN` must have either a `MIME` or `LANG` substructure, and may have both.
 
 See `SHARED_NOTE_RECORD` for advice on choosing between `NOTE` and `SNOTE`.
-
-:::note
-Although notes may be tagged with the language that they are written in, this specification does not provide a mechanism for distinguishing between notes with distinct content in distinct languages versus notes with the same content translated into distinct languages. It is expected that a future version of this specification will provide a mechanism for a single note to have multiple language translations.
-
-The same is true for `MIME`: notes differing in `MIME` may contain the same content in a different format or contain distinct content, and this document provides no mechanism for distinguishing those cases.
-:::
 
 A `NOTE_STRUCTURE` can contain a `SOURCE_CITATION`, which in turn can contain a `NOTE_STRUCTURE`, allowing potentially unbounded nesting of structures. Because each dataset is finite, this nesting is also guaranteed to be finite.
 
