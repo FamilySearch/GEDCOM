@@ -370,7 +370,7 @@ A catch-all location for information that does not fully fit within other struct
 It may include research notes, additional context, alternative interpretations, reasoning, and so forth.
 
 A shared note record may be pointed to by multiple other structures. Shared notes should only be used if editing the note in one place should edit it in all other places.
-If each instance of the note may be edited separately, a `NOTE` should be used instead.
+If any instance of the note is edited separately from the others, a `NOTE` should be used instead.
 
 Each [`SNOTE`.`TRAN`](#NOTE-TRAN) must have either a `MIME` or `LANG` substructure or both.
 
