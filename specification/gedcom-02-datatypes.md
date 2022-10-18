@@ -34,7 +34,7 @@ The URI for the `Integer` data type is `xsd:nonNegativeInteger`.
 
 An enumeration is a selection from a set of options.
 They are represented as a string matching the same production as a tag,
-with the additional permission that standard enumerations may begin with a digit.
+with the additional permission that standard enumerations may be integers.
 
 ```abnf
 stdEnum = stdTag / digit *tagchar
