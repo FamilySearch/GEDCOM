@@ -37,7 +37,7 @@ They are represented as a string matching the same production as a tag,
 with the additional permission that standard enumerations may be integers.
 
 ```abnf
-stdEnum = stdTag / digit *tagchar
+stdEnum = stdTag / Integer
 Enum    = stdEnum / extTag
 ```
 
