@@ -494,7 +494,7 @@ and should not be done unless the URIs identify closely related concepts.
 Consider three extensions:
 
 - `https://example.com/LocationRecord`, a record that describes a location.
-- `https://example.com/LocationPointer`, a substructure of most events that points to a `https://example.com/record-LOC`.
+- `https://example.com/LocationPointer`, a substructure of most events that points to a `https://example.com/LocationRecord`.
 - `https://example.com/inLocoParentis`, a substructure of some events indicating a non-parent entity that filled the legal role of a parent for that event.
 
 Given this, we have the following:
