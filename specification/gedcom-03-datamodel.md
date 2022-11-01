@@ -2964,7 +2964,7 @@ are not currently given their own tag. Cultural or personal gender preference ma
 | ----- | :----------------------------- |
 | `CHALLENGED` | Linking this child to this family is suspect, but the linkage has been neither proven nor disproven. |
 | `DISPROVEN` | There has been a claim by some that this child belongs to this family, but the linkage has been disproven. |
-| `PROVEN` | There has been a claim by some that this child does not belong to this family, but the linkage has been proven. |
+| `PROVEN` | The linkage has been proven. |
 
 :::note
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
