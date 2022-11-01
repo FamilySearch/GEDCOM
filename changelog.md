@@ -10,7 +10,7 @@
 
 - Clarify that the same tag can be used for multiple URIs in the schema provided the meanings are non-overlapping. Recommend tags only be reused for closely related concepts, similar to how standard tags are.
 
-- Recommend that `g7:type-DateExact` should use UTC time because it is used in places where exact machine-generated timestamps are expected.
+- Recommend that `g7:type-Date#exact` should use UTC time because it is used in places where exact machine-generated timestamps are expected.
 
 - Split shared rows in date definition table and reorder rows to be more logically organized.
 

@@ -11,7 +11,7 @@ standard tag: FAMC
 specification:
   - Family child
   - |
-    The individual or couple that adopted this this individual.
+    The individual or couple that adopted this individual.
     
     Adoption by an individual, rather than a couple, may be represented either
     by pointing to a FAM where that individual is a HUSB or WIFE and using a

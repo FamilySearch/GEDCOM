@@ -561,7 +561,7 @@ NOTE_STRUCTURE :=
 n NOTE <Text>                              {1:1}  g7:NOTE
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
-  +1 TRAN <Text>                           {0:1}  g7:NOTE-TRAN
+  +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
   +1 <<SOURCE_CITATION>>                   {0:M}

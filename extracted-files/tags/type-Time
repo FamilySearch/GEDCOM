@@ -12,7 +12,8 @@ specification:
     11:00 PM). It may be represented either in event-local time or in
     Coordinated Universal Time (UTC). UTC is indicated by including a Z
     (U+005A) after the time value; event-local time is indicated by its
-    absence.
+    absence. When a time is used together with a DateExact, it is recommended
+    that UTC time be used rather than event-local time.
     
         Time     =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
     

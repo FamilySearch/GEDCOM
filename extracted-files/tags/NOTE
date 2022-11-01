@@ -24,7 +24,7 @@ payload: http://www.w3.org/2001/XMLSchema#string
 substructures:
   "https://gedcom.io/terms/v7/LANG": "{0:1}"
   "https://gedcom.io/terms/v7/MIME": "{0:1}"
-  "https://gedcom.io/terms/v7/NOTE-TRAN": "{0:1}"
+  "https://gedcom.io/terms/v7/NOTE-TRAN": "{0:M}"
   "https://gedcom.io/terms/v7/SOUR": "{0:M}"
 
 superstructures:

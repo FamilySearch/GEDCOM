@@ -63,9 +63,13 @@ specification:
     
       TO x          Lasted for multiple days, ending on x.
     
-      BET xAFT x    Exact date unknown, but no earlier than x.
+      BET x         Exact date unknown, but no earlier than x.
     
-      AND xBEF x    Exact date unknown, but no later than x.
+      AND x         Exact date unknown, but no later than x.
+    
+      BEF x         Exact date unknown, but no later than x.
+    
+      AFT x         Exact date unknown, but no earlier than x.
     
       ABT x         Exact date unknown, but near x.
     

@@ -54,7 +54,8 @@ Integer = 1*digit
 
 ; ------------- Enumeration -------------
 
-Enum    = Tag
+stdEnum = stdTag / Integer
+Enum    = stdEnum / extTag
 
 
 ; ------------- Date -------------
