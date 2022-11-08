@@ -330,6 +330,7 @@ not the underlying files.
 
 ```gedstruct
 n @XREF:REPO@ REPO                         {1:1}  g7:record-REPO
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
@@ -355,6 +356,7 @@ Until such time, it is recommended that the repository record store current cont
 
 ```gedstruct
 n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
@@ -399,6 +401,7 @@ A `SHARED_NOTE_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa
 
 ```gedstruct
 n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 DATA                                  {0:1}  g7:DATA
      +2 EVEN <List:Enum>                   {0:M}  g7:DATA-EVEN
         +3 DATE <DatePeriod>               {0:1}  g7:DATA-EVEN-DATE
@@ -435,6 +438,7 @@ A `SOURCE_RECORD` may contain a pointer to a `SHARED_NOTE_RECORD` and vice versa
 
 ```gedstruct
 n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
@@ -1010,6 +1014,7 @@ n NOTE <Text>                              {1:1}  g7:NOTE
   +1 TRAN <Text>                           {0:1}  g7:NOTE-TRAN
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
 |
@@ -1146,6 +1151,7 @@ This specification does not support places where a region name contains a comma.
 
 ```gedstruct
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 PAGE <Text>                           {0:1}  g7:PAGE
   +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 DATE <DateValue>                   {0:1}  g7:DATE
@@ -2340,6 +2346,11 @@ A [List] of enumerated values from set `g7:enumset-RESN` signifying access to in
 The `RESN` structure is provided to assist software in filtering data that should not be exported or otherwise used in a particular context. It is recommended that tools provide an interface to allow users to filter data on export
 such that certain `RESN` structure payload entries result in the `RESN` structure and its superstructure being removed from the export.
 Such removal must abide by some constraints: see [Removing data](#removing-data) for more.
+
+A structure that points to a record that is being removed due to `RESN` processing will have its pointer replaced by a `voidPtr`,
+preserving the structure's substructures.
+That might be desirable, but could cause accidental information leakage; for example, if a `g7:ADOP-FAMC` points to a restricted `FAMC` it may contain `FAMC`-identifying information in its substructures that the user also wishes to treat as restricted.
+Applications are encouraged to prompt the user when a pointer becomes void during `RESN` processing and give them the option of additional data removal.
 
 This is metadata about the structure itself, not data about its subject.
 
