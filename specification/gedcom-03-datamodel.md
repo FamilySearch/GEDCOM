@@ -371,9 +371,8 @@ n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
 A catch-all location for information that does not fully fit within other structures.
 It may include research notes, additional context, alternative interpretations, reasoning, and so forth.
 
-A shared note record may be pointed to by multiple other structures. Shared notes should only be used if editing the note in one place should edit it in all other places
-or if the note itself requires an `IDENTIFIER_STRUCTURE`.
-If each instance of the note may be edited separately and no identifier is needed, a `NOTE` should be used instead.
+A shared note record may be pointed to by multiple other structures. Shared notes should only be used if editing the note in one place should edit it in all other places.
+If any instance of the note is edited separately from the others, a `NOTE` should be used instead.
 
 Each [`SNOTE`.`TRAN`](#NOTE-TRAN) must have either a `MIME` or `LANG` substructure or both.
 
@@ -1016,6 +1015,7 @@ n NOTE <Text>                              {1:1}  g7:NOTE
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
+  +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
 |
 n SNOTE @<XREF:SNOTE>@                     {1:1}  g7:SNOTE
@@ -1028,12 +1028,6 @@ It may include research notes, additional context, alternative interpretations, 
 Each `NOTE`.`TRAN` must have either a `MIME` or `LANG` substructure, and may have both.
 
 See `SHARED_NOTE_RECORD` for advice on choosing between `NOTE` and `SNOTE`.
-
-:::note
-Although notes may be tagged with the language that they are written in, this specification does not provide a mechanism for distinguishing between notes with distinct content in distinct languages versus notes with the same content translated into distinct languages. It is expected that a future version of this specification will provide a mechanism for a single note to have multiple language translations.
-
-The same is true for `MIME`: notes differing in `MIME` may contain the same content in a different format or contain distinct content, and this document provides no mechanism for distinguishing those cases.
-:::
 
 A `NOTE_STRUCTURE` can contain a `SOURCE_CITATION`, which in turn can contain a `NOTE_STRUCTURE`, allowing potentially unbounded nesting of structures. Because each dataset is finite, this nesting is also guaranteed to be finite.
 
@@ -1075,7 +1069,7 @@ n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
   +1 TYPE <Enum>                           {0:1}  g7:NAME-TYPE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 <<PERSONAL_NAME_PIECES>>              {0:1}
-  +1 LANG <Language>                       {1:1}  g7:LANG
+  +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <PersonalName>                   {0:M}  g7:NAME-TRAN
      +2 LANG <Language>                    {1:1}  g7:LANG
      +2 <<PERSONAL_NAME_PIECES>>           {0:1}
@@ -2981,7 +2975,7 @@ are not currently given their own tag. Cultural or personal gender preference ma
 | ----- | :----------------------------- |
 | `CHALLENGED` | Linking this child to this family is suspect, but the linkage has been neither proven nor disproven. |
 | `DISPROVEN` | There has been a claim by some that this child belongs to this family, but the linkage has been disproven. |
-| `PROVEN` | There has been a claim by some that this child does not belong to this family, but the linkage has been proven. |
+| `PROVEN` | The linkage has been proven. |
 
 :::note
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
