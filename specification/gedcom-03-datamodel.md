@@ -540,7 +540,8 @@ n DATE <DateValue>                         {1:1}  g7:DATE
 ```
 
 A date, optionally with a time and/or a phrase.
-The `TIME` should only be provided if the `DATE` identifies a single day.
+If there is a `TIME`, it asserts that the event happened at a specific time on a single day.
+`TIME` should not be used with `DatePeriod` but may be used with other date types.
 
 :::note
 Previous versions of the spec failed to restrict `TIME` to single-day `DATE`s, but also did not define the meaning of such a time.
