@@ -1157,6 +1157,7 @@ This specification does not support places where a region name contains a comma.
 
 ```gedstruct
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 PAGE <Text>                           {0:1}  g7:PAGE
   +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 DATE <DateValue>                   {0:1}  g7:DATE
@@ -2351,6 +2352,11 @@ A [List] of enumerated values from set `g7:enumset-RESN` signifying access to in
 The `RESN` structure is provided to assist software in filtering data that should not be exported or otherwise used in a particular context. It is recommended that tools provide an interface to allow users to filter data on export
 such that certain `RESN` structure payload entries result in the `RESN` structure and its superstructure being removed from the export.
 Such removal must abide by some constraints: see [Removing data](#removing-data) for more.
+
+A structure that points to a record that is being removed due to `RESN` processing will have its pointer replaced by a `voidPtr`,
+presering the structure's substructures.
+That might be desireable, but could cause accidental information leakage; for example, if a `g7:ADOP-FAMC` points to a restricted `FAMC` it may contain `FAMC`-identifying information in its substructures that the user also wishes to treat as restricted.
+Applications are encouraged to prompt the user when a pointer becomes void during `RESN` processing and give them the option of additional data removal.
 
 This is metadata about the structure itself, not data about its subject.
 
