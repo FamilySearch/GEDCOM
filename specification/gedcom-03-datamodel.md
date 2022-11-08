@@ -149,8 +149,7 @@ n HEAD                                     {1:1}
         +3 COPR <Text>                     {0:1}  g7:COPR
   +1 DEST <Special>                        {0:1}  g7:DEST
   +1 DATE <DateExact>                      {0:1}  g7:HEAD-DATE
-     +2 TIME <Time>                        {0:1}  g7:TIME
-        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+     +2 TIME <Time>                        {0:1}  g7:TIME-exact
   +1 SUBM @<XREF:SUBM>@                    {0:1}  g7:SUBM
   +1 COPR <Text>                           {0:1}  g7:COPR
   +1 LANG <Language>                       {0:1}  g7:HEAD-LANG
