@@ -531,12 +531,27 @@ n CREA                                     {1:1}  g7:CREA
 The date of the initial creation of the superstructure.
 Because this refers to the initial creation, it should not be modified after the structure is created.
 
+#### `DATE_VALUE` :=
+
+```gedstruct
+n DATE <DateValue>                         {1:1}  g7:DATE
+  +1 TIME <Time>                           {0:1}  g7:TIME
+  +1 PHRASE <Text>                         {0:1}  g7:PHRASE
+```
+
+A date, optionally with a time and/or a phrase.
+If there is a `TIME`, it asserts that the event happened at a specific time on a single day.
+`TIME` should not be used with `DatePeriod` but may be used with other date types.
+
+:::note
+There is currently no provision for approximate times or time phrases.
+Time phrases are expected to be added in version 7.1.
+:::
+
 #### `EVENT_DETAIL` :=
 
 ```gedstruct
-n DATE <DateValue>                         {0:1}  g7:DATE
-  +1 TIME <Time>                           {0:1}  g7:TIME
-  +1 PHRASE <Text>                         {0:1}  g7:PHRASE
+n <<DATE_VALUE>>                           {0:1}
 n <<PLACE_STRUCTURE>>                      {0:1}
 n <<ADDRESS_STRUCTURE>>                    {0:1}
 n PHON <Special>                           {0:M}  g7:PHON
@@ -925,9 +940,7 @@ Ordinances performed by members of The Church of Jesus Christ of Latter-day Sain
 #### `LDS_ORDINANCE_DETAIL` :=
 
 ```gedstruct
-n DATE <DateValue>                       {0:1}  g7:DATE
-  +1 TIME <Time>                         {0:1}  g7:TIME
-  +1 PHRASE <Text>                       {0:1}  g7:PHRASE
+n <<DATE_VALUE>>                         {0:1}
 n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
 n STAT <Enum>                            {0:1}  g7:ord-STAT
@@ -1139,9 +1152,7 @@ This specification does not support places where a region name contains a comma.
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 PAGE <Text>                           {0:1}  g7:PAGE
   +1 DATA                                  {0:1}  g7:SOUR-DATA
-     +2 DATE <DateValue>                   {0:1}  g7:DATE
-        +3 TIME <Time>                     {0:1}  g7:TIME
-        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+     +2 <<DATE_VALUE>>                     {0:1}
      +2 TEXT <Text>                        {0:M}  g7:TEXT
         +3 MIME <MediaType>                {0:1}  g7:MIME
         +3 LANG <Language>                 {0:1}  g7:LANG
@@ -1587,6 +1598,8 @@ with substructures providing additional details about the source (not the export
 
 The principal date of the subject of the superstructure.
 The payload is a `DateValue`.
+
+See `DATE_VALUE` for more.
 
 #### `DATE` (Date) `g7:DATE-exact`
 
