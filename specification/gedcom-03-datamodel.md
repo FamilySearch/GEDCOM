@@ -544,13 +544,6 @@ If there is a `TIME`, it asserts that the event happened at a specific time on a
 `TIME` should not be used with `DatePeriod` but may be used with other date types.
 
 :::note
-Previous versions of the spec failed to restrict `TIME` to single-day `DATE`s, but also did not define the meaning of such a time.
-Because of this, if an approximate date contains a time there is no way to know if the intent was that the day was unknown but the time was known or if the intent was that the time is likewise uncertain.
-
-The meaning of a time for a `DatePeriod` is likewise not defined.
-:::
-
-:::note
 There is currently no provision for approximate times or time phrases.
 Time phrases are expected to be added in version 7.1.
 :::
