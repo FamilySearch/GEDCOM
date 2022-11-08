@@ -145,8 +145,7 @@ n HEAD                                     {1:1}
         +3 WWW <Special>                   {0:M}  g7:WWW
      +2 DATA <Text>                        {0:1}  g7:HEAD-SOUR-DATA
         +3 DATE <DateExact>                {0:1}  g7:DATE-exact
-           +4 TIME <Time>                  {0:1}  g7:TIME
-              +5 PHRASE <Text>             {0:1}  g7:PHRASE
+           +4 TIME <Time>                  {0:1}  g7:TIME-exact
         +3 COPR <Text>                     {0:1}  g7:COPR
   +1 DEST <Special>                        {0:1}  g7:DEST
   +1 DATE <DateExact>                      {0:1}  g7:HEAD-DATE
@@ -518,8 +517,7 @@ and that individual `@I2@` was the clergy officiating at their baptism.
 ```gedstruct
 n CHAN                                     {1:1}  g7:CHAN
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME
-        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+     +2 TIME <Time>                        {0:1}  g7:TIME-exact
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
@@ -532,8 +530,7 @@ The `NOTE` substructure may describe previous changes as well as the most recent
 ```gedstruct
 n CREA                                     {1:1}  g7:CREA
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME
-        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+     +2 TIME <Time>                        {0:1}  g7:TIME-exact
 ```
 
 The date of the initial creation of the superstructure.
@@ -945,8 +942,7 @@ n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
 n STAT <Enum>                            {0:1}  g7:ord-STAT
   +1 DATE <DateExact>                    {1:1}  g7:DATE-exact
-     +2 TIME <Time>                      {0:1}  g7:TIME
-        +3 PHRASE <Text>                 {0:1}  g7:PHRASE
+     +2 TIME <Time>                      {0:1}  g7:TIME-exact
 n <<NOTE_STRUCTURE>>                     {0:M}
 n <<SOURCE_CITATION>>                    {0:M}
 ```
@@ -1618,8 +1614,6 @@ The payload is a `DateValue`.
 
 The principal date of the subject of the superstructure.
 The payload is a `DateExact`.
-
-When the exact timestamp is known, it is recommended that each `g7:DATE-exact` have a `g7:TIME` substructure with the time in UTC with no `g7:PHRASE`.
 
 #### `DATE` (Date) `g7:HEAD-DATE`
 
@@ -2551,6 +2545,12 @@ This should be, from the evidence point of view, "what the original record keepe
 #### `TIME` (Time) `g7:TIME`
 
 A `Time` value in a 24-hour clock format.
+
+#### `TIME` (Time) `g7:TIME-exact`
+
+A `Time` value in a 24-hour clock format.
+The time should be presented in UTC and indicate that with a `Z` in the time payload.
+Unlike a `g7:TIME`, no `g7:PHRASE` is permitted under a `g7:TIME-exact`.
 
 #### `TITL` (Title) `g7:TITL`
 
