@@ -2354,8 +2354,8 @@ such that certain `RESN` structure payload entries result in the `RESN` structur
 Such removal must abide by some constraints: see [Removing data](#removing-data) for more.
 
 A structure that points to a record that is being removed due to `RESN` processing will have its pointer replaced by a `voidPtr`,
-presering the structure's substructures.
-That might be desireable, but could cause accidental information leakage; for example, if a `g7:ADOP-FAMC` points to a restricted `FAMC` it may contain `FAMC`-identifying information in its substructures that the user also wishes to treat as restricted.
+preserving the structure's substructures.
+That might be desirable, but could cause accidental information leakage; for example, if a `g7:ADOP-FAMC` points to a restricted `FAMC` it may contain `FAMC`-identifying information in its substructures that the user also wishes to treat as restricted.
 Applications are encouraged to prompt the user when a pointer becomes void during `RESN` processing and give them the option of additional data removal.
 
 This is metadata about the structure itself, not data about its subject.
