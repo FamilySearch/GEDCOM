@@ -308,13 +308,15 @@ mt-parameter = mt-attribute "=" mt-value
 mt-token     = 1*mt-char
 mt-attribute = mt-token
 mt-value     = mt-token / mt-qstring
-mt-char      = %x20-21 / %x23-27 / %x2A-2B / %x2D-2E ; not "(),/
+mt-char      = %x21 / %x23-27 / %x2A-2B / %x2D-2E ; not "(),/
              / %x30-39 / %x41-5A / %x5E-7E           ; not :;<=>?@[\]
 
 mt-qstring   = %x22 *(mt-qtext / mt-qpair) %x22
 mt-qtext     = %x09-0A / %x20-21 / %x23-5B / %x5D-7E ; not CR "\
 mt-qpair     = "\" %x09-7E
 ```
+
+Note that `mt-qpair` is more restrictive than [RFC-822](https://www.rfc-editor.org/rfc/rfc822) which allows ASCII characters 0x00-7E for `quoted-pair`.
 
 The URI for the `MediaType` data type is `dcat:mediaType`.
 
@@ -329,4 +331,3 @@ The URI for the generic data type subsuming all `Special` data types is `xsd:str
 ```abnf
 Special = Text
 ```
-
