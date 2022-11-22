@@ -295,26 +295,21 @@ The URI for the `Language` data type is `xsd:Language`.
 
 The media type data type represents the encoding of information in bytes or characters, as defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045) and [registered by the IANA](http://www.iana.org/assignments/media-types/).
 
-The official grammar for media type is given in RFC 2045, section 5.1.
-However, that document does not give stand-alone ABNF, instead referring to registration rules and describing some components in English.
-The programmatic parts of the media type grammar can be summarized as follows:
+The official grammar for media type is given in RFC 2045, section 5.1, and the ABNF was updated
+in [BCP 13](https://www.rfc-editor.org/info/bcp13).
 
 ```abnf
-MediaType    = mt-type "/" mt-subtype *(";" mt-parameter)
-
-mt-type      = mt-token
-mt-subtype   = mt-token
-mt-parameter = mt-attribute "=" mt-value
-mt-token     = 1*mt-char
-mt-attribute = mt-token
-mt-value     = mt-token / mt-qstring
-mt-char      = %x20-21 / %x23-27 / %x2A-2B / %x2D-2E ; not "(),/
-             / %x30-39 / %x41-5A / %x5E-7E           ; not :;<=>?@[\]
-
-mt-qstring   = %x22 *(mt-qtext / mt-qpair) %x22
-mt-qtext     = %x09-0A / %x20-21 / %x23-5B / %x5D-7E ; not CR "\
-mt-qpair     = "\" %x09-7E
+MediaType = type "/" subtype parameters
 ```
+where:
+* `type` and `subtype` are defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045)
+  section 5.1, and registered values (i.e., those not beginning with "x-") are further
+  constrained by the definitions in
+  [RFC 6838](https://www.rfc-editor.org/info/rfc6838), section 4.2, and
+* `parameters` is defined in [RFC 9110](https://www.rfc-editor.org/info/rfc9110),
+  section 5.6.6.  Note that the `parameters` definition here matches that used by HTTP
+  headers which permit whitespace around the ";" delimiter, whereas email headers in
+  RFC 2045 do not.
 
 The URI for the `MediaType` data type is `dcat:mediaType`.
 
