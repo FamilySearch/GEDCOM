@@ -295,8 +295,8 @@ The URI for the `Language` data type is `xsd:Language`.
 
 The media type data type represents the encoding of information in bytes or characters, as defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045) and [registered by the IANA](http://www.iana.org/assignments/media-types/).
 
-The official grammar for media type is given in RFC 2045, section 5.1, and the ABNF was updated
-in [BCP 13](https://www.rfc-editor.org/info/bcp13).
+The official grammar for media type is given in RFC 2045, section 5.1, which defines the syntax of
+registered values and extension values.
 
 ```abnf
 MediaType = type "/" subtype parameters
@@ -305,9 +305,11 @@ where:
 * `type` and `subtype` are defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045)
   section 5.1, and registered values (i.e., those not beginning with "x-") are further
   constrained by the definitions in
-  [RFC 6838](https://www.rfc-editor.org/info/rfc6838), section 4.2, and
+  [RFC 6838](https://www.rfc-editor.org/info/rfc6838), section 4.2.
+  A [registry of media types](https://www.iana.org/assignments/media-types/media-types.xhtml)
+  is maintained publicly by the IANA.
 * `parameters` is defined in [RFC 9110](https://www.rfc-editor.org/info/rfc9110),
-  section 5.6.6.  Note that the `parameters` definition here matches that used by HTTP
+  section 5.6.6.  Note that the `parameters` definition in GEDCOM matches that used by HTTP
   headers which permit whitespace around the ";" delimiter, whereas email headers in
   RFC 2045 do not.
 
