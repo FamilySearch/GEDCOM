@@ -1829,9 +1829,7 @@ The meaning of a `FILE` payload with any format not listed above is not defined 
 
 #### `FORM` (Format) `g7:FORM`
 
-The media type of the file referenced by the superstructure.
-This should be a valid media type as defined by [BCP 13](https://www.rfc-editor.org/info/bcp13).
-A [registry of media types](https://www.iana.org/assignments/media-types/media-types.xhtml) is maintained publicly by the IANA.
+The [media type](#Media-Type) of the file referenced by the superstructure.
 
 #### `FORM` (Format) `g7:PLAC-FORM`
 
@@ -2055,8 +2053,7 @@ An enumerated value from set `g7:enumset-MEDI` providing information about the m
 
 #### `MIME` (Media type) `g7:MIME`
 
-Indicates the media type of the payload of the superstructure,
-as defined by [BCP 13](https://www.rfc-editor.org/info/bcp13).
+Indicates the [media type](#Media-Type) of the payload of the superstructure.
 
 As of version 7.0, only 2 media types are supported by this structure:
 
