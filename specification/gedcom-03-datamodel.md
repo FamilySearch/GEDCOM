@@ -1351,7 +1351,7 @@ Tag | Name<br/>URI | Description
 
 ### Structure types
 
-Strutures types are listed in this section alphabetically by tag.
+Structure types are listed in this section alphabetically by tag.
 When the same tag is used for different structure types in different contexts, they may be distinguished by their URI.
 
 #### `ABBR` (Abbreviation) `g7:ABBR`
@@ -2823,7 +2823,7 @@ If an invalid or no longer existing web address is present upon import, it shoul
 
 ## Enumeration Values
 
-Unless otherwise specified in the enumeration description in this section, each enumeration values defined in this section has a URI constructed by concatenating
+Unless otherwise specified in the enumeration description in this section, each enumeration value defined in this section has a URI constructed by concatenating
 `g7:enum-` to the enumeration value;
 for example, the `HUSB` enumeration value has the URI `http://gedcom.io/terms/v7/enum-HUSB`.
 
@@ -2877,7 +2877,7 @@ See [Events] and [Attributes].
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
 
 :::note
-It is known that some users have interpreted `BIRTH` to mean "genetic parent" and others to mean "social parent at time of birth", definition which differ many circumstances (infidelity, surrogacy, sperm donation, and so on). Hence, applications should refrain from asserting it has either meaning in imported data.
+It is known that some users have interpreted `BIRTH` to mean "genetic parent" and others to mean "social parent at time of birth". Definitions differ in many circumstances (infidelity, surrogacy, sperm donation, and so on). Hence, applications should refrain from asserting it has either meaning in imported data.
 :::
 
 :::note

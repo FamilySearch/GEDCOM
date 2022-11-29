@@ -26,7 +26,7 @@ Implementations should be aware that bytes per character and characters per glyp
 Use of Unicode-aware processing and display libraries is recommended.
 
 Character-level grammars are specified in this document using
-Augmented Bakaus-Naur Form (ABNF)
+Augmented Backus-Naur Form (ABNF)
 as defined in [STD 68](https://www.rfc-editor.org/info/std68)
 and modified in [RFC 7405](https://www.rfc-editor.org/info/rfc7405).
 We use the term "production" to refer to an ABNF rule, supported by any other rules it references.
@@ -39,7 +39,7 @@ The following is a brief summary of the parts of ABNF, as defined by STD 68 and 
 - The first line of a rule must not be indented; the second and subsequent lines of a rule must be indented.
 - Comments are introduced with a semi-colon `;`.
 - Unicode codepoints are given in hexadecimal preceded by `%x`. Ranges of allowed codepoints are given with a hyphen `-`.
-- Double-quote delimit literal strings. Literal strings are case-insensitive unless they are preceded by `%s`.
+- Double quotes delimit literal strings. Literal strings are case-insensitive unless they are preceded by `%s`.
 - Parentheses `()` group elements. Brackets `[]` mark optional content. Preceding a group or element by `*` means any number may be included. Preceding a group or element by `1*` means 1 or more may be included.
 :::
 
@@ -565,7 +565,7 @@ In particular, those supporting extensions should keep in mind the following:
     </div>
 
 -   Six standard structure types are exceptions to these rules:
-    `NOTE`,` SNOTE`, `INDI`.`EVEN`, `FAM`.`EVEN`, `INDI`.`FACT`, and  `FAM`.`FACT`.
+    `NOTE`, `SNOTE`, `INDI`.`EVEN`, `FAM`.`EVEN`, `INDI`.`FACT`, and  `FAM`.`FACT`.
     Each of these allows human-readable text to describe information that cannot be captured in more-specific structures.
     As such, all other structures express information that could be described using 1 or more of those structure types.
     Extensions do not need to duplicate their information using any of those structures.
