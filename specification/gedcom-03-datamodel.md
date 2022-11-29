@@ -2954,7 +2954,7 @@ are not currently given their own tag. Cultural or personal gender preference ma
 | `DISPROVEN` | There has been a claim by some that this child belongs to this family, but the linkage has been disproven. |
 | `PROVEN` | Linking this child to this family has been proven. |
 
-When these enumeration values were introduced in version 5.5.1 it was assumed, but never specified, that "proven" referred to the definition provided by the [Board for Certification of Genealogists](https://www.familysearch.org/en/wiki/Genealogical_Proof_Standard).
+When these enumeration values were introduced in version 5.5.1 it was assumed, but never specified, that "proven" referred to [the definition provided by the Board for Certification of Genealogists](https://www.familysearch.org/en/wiki/Genealogical_Proof_Standard).
 Because that meaning was not specified and other definitions of "proven" exist, existing files might use these values in other ways.
 
 :::note
