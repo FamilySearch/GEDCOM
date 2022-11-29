@@ -2965,7 +2965,10 @@ are not currently given their own tag. Cultural or personal gender preference ma
 | ----- | :----------------------------- |
 | `CHALLENGED` | Linking this child to this family is suspect, but the linkage has been neither proven nor disproven. |
 | `DISPROVEN` | There has been a claim by some that this child belongs to this family, but the linkage has been disproven. |
-| `PROVEN` | There has been a claim by some that this child does not belong to this family, but the linkage has been proven. |
+| `PROVEN` | Linking this child to this family has been proven. |
+
+When these enumeration values were introduced in version 5.5.1 it was assumed, but never specified, that "proven" referred to [the definition provided by the Board for Certification of Genealogists](https://www.familysearch.org/en/wiki/Genealogical_Proof_Standard).
+Because that meaning was not specified and other definitions of "proven" exist, existing files might use these values in other ways.
 
 :::note
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
