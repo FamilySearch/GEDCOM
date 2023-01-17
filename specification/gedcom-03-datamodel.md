@@ -1914,7 +1914,8 @@ See `INDIVIDUAL_RECORD`.
 #### `INIL` (Initiatory, Latter-Day Saint) `g7:INIL`
 
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
-See also `LDS_INDIVIDUAL_ORDINANCE`.
+See also `LDS_INDIVIDUAL_ORDINANCE`.  Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`,
+but FamilySearch GEDCOM 7.0 renames it to `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
 
 #### `LANG` (Language) `g7:LANG`
 

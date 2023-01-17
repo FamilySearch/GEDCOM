@@ -226,7 +226,8 @@ These features add new semantic power to FamilySearch GEDCOM, allowing 7 to repr
 - Some common extensions are now standard:
     - `SDATE` is a sort-by date
     - `UID` is a globally-unique identifier for a record or event
-    - `INIL` is the "initiatory" ordinance of The Church of Jesus Christ of Latter-Day Saints
+    - `INIL` is the "initiatory" ordinance of The Church of Jesus Christ of Latter-Day Saints.  This
+      replaces `WAC` that existed in 5.3 and earlier.
     - `ASSO` now covers previous more-versatile `_ASSO` usage
 
 - Pointer-payload structures may now use the special pointer `@VOID@` to indicate that there is no record for it to point to in this document. This can be used to flag what has been omitted or in combination with a `PHRASE` or `NOTE` to describe what would be pointed to informally.
