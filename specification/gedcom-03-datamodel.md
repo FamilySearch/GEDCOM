@@ -1224,7 +1224,7 @@ An event structure asserts the event did occur if any of the following are true:
     
     <div class="note">
     
-    The presence of a `DATE` indicating an event occurred was introduced to in version 5.4 (1995), and is generally followed by applications.
+    That a `DATE` indicates an event occurred was introduced to in version 5.4 (1995), and is generally followed by applications.
     However, it is common for users to enter a date range with no end without intending to indicate that the event occurred.
     For example, pre 7.0 files sometimes used
     
