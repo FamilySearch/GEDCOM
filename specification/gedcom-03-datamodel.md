@@ -1221,6 +1221,30 @@ An event structure asserts the event did occur if any of the following are true:
     ````
     
     </div>
+    
+    <div class="note">
+    
+    The presence of a `DATE` indicating an event occurred was introduced to in version 5.4 (1995), and is generally followed by applications.
+    However, it is common for users to enter a date range with no end without intending to indicate that the event occurred.
+    For example, pre 7.0 files sometimes used
+    
+    ````gedcom
+    1 NATU
+    2 DATE AFT 1800
+    ````
+    
+    to mean what 7.0 encodes as
+    
+    ````gedcom
+    1 NOT NATU
+    2 DATE BEF 1800
+    ````
+    
+    without intending to imply that `NATU` ever did actually occur.
+    Because this is a "sometimes used" rather than a "formally means" situation,
+    it is likely that data using 5.x "after meaning not before" *de facto* pattern will be transferred as-is into 7.0 and persist in files for the foreseeable future.
+    
+    </div>
 
 - There is a `PLAC` substructure
     
