@@ -1237,7 +1237,7 @@ An event structure asserts the event did occur if any of the following are true:
     
     ````gedcom
     1 NOT NATU
-    2 DATE BEF 1800
+    2 DATE TO 1800
     ````
     
     without intending to imply that `NATU` ever did actually occur.
