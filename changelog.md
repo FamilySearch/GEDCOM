@@ -1,10 +1,16 @@
-# (current main branch)
+# Version 7.0.12
+
+- Remove contradictory constraints on `BCE` by removing it from `dateRestrict`
 
 - Clarify an ambiguity with the `TIME` substructure under `DateValues` that are not single dates, either because they are ranges or approximate.
 
 - Clarify the meaning of the `PROVEN` value of `g7:enumset-FAMC-STAT` to more accurately match common usage and to document common differences in meaning.
 
 - Replace incomplete ABNF for MediaType with a reference to their definition in IETF standards and IANA registries
+
+- Document a common use case for `UID`
+
+- Document a known difference between the formal and expected meaning of an event with a `DATE AFT ...` substructure
 
 - Note that 7.0's `INIL` is the same as 5.3's `WAC`
 
