@@ -1221,6 +1221,30 @@ An event structure asserts the event did occur if any of the following are true:
     ````
     
     </div>
+    
+    <div class="note">
+    
+    Version 5.4 (1995) introduced the "event did occur" meaning of event.`DATE`, so it is now well-established in applications and files.
+    However, it is common for users to enter a date range with no end without intending to indicate that the event occurred.
+    For example, pre 7.0 files sometimes used
+    
+    ````gedcom
+    1 NATU
+    2 DATE AFT 1800
+    ````
+    
+    to mean what 7.0 encodes as
+    
+    ````gedcom
+    1 NOT NATU
+    2 DATE TO 1800
+    ````
+    
+    without intending to imply that `NATU` ever did actually occur.
+    Because this is a "sometimes used" rather than a "formally means" situation,
+    it is likely that data using 5.x "after meaning not before" *de facto* pattern will be transferred as-is into 7.0 and persist in files for the foreseeable future.
+    
+    </div>
 
 - There is a `PLAC` substructure
     
@@ -1648,7 +1672,7 @@ See also `FAMILY_EVENT_STRUCTURE`.
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `EDUC` (Description) `g7:EDUC`
+#### `EDUC` (Education) `g7:EDUC`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -1664,7 +1688,7 @@ If an invalid email address is present upon import, it should be preserved as-is
 The version 5.5.1 specification contained a typo where this tag was sometimes written `EMAI` and sometimes written `EMAIL`. `EMAIL` should be used in version 7.0 and later.
 :::
 
-#### `EMIG` (Description) `g7:EMIG`
+#### `EMIG` (Emigration) `g7:EMIG`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -2761,6 +2785,12 @@ New globally unique identifiers should be created and formatted as described in 
 
 This is metadata about the structure itself, not data about its subject.
 Multiple structures describing different aspects of the same subject would have different `UID` values.
+
+Because the `UID` identifies a structure, it can facilitate inter-tool collaboration
+by distinguishing between a structure being edited and a new structure being created.
+If an application allows structures to be edited in a way that completely changes their meaning
+(e.g., changing all the contents of an `INDI` record to have it describe a completely different person)
+then any `UID`s should also be changed.
 
 :::note
 Some systems used a 16-byte UUID with a custom 2-byte checksum for a total of 18 bytes:

@@ -93,7 +93,7 @@ dateRange   = %s"BET" D date D %s"AND" D date
 dateApprox  = (%s"ABT" / %s"CAL" / %s"EST") D date
 
 dateRestrict = %s"FROM" / %s"TO" / %s"BET" / %s"AND" / %s"BEF"
-            / %s"AFT" / %s"ABT" / %s"CAL" / %s"EST" / %s"BCE"
+            / %s"AFT" / %s"ABT" / %s"CAL" / %s"EST"
 
 calendar = %s"GREGORIAN" / %s"JULIAN" / %s"FRENCH_R" / %s"HEBREW"
          / extTag
@@ -111,6 +111,8 @@ In addition to the constraints above:
     The largest known maximum is 36, and most months in most calendars have a lower maximum.
 - No calendar names, months, or epochs match `dateRestrict`.
 - Extension calendars (those with `extTag` for their `calendar`) must use `extTag`, not `stdTag`, for months.
+
+It is recommended that calendars avoid using a single tag to refer to both a month and an epoch.
 
 An absent `calendar` is equivalent to the calendar `GREGORIAN`.
 
