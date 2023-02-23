@@ -1069,6 +1069,7 @@ Even when multiple `SURN` tags are used, the `PersonalName` data type identifies
 
 ```gedstruct
 n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 TYPE <Enum>                           {0:1}  g7:NAME-TYPE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 <<PERSONAL_NAME_PIECES>>              {0:1}
