@@ -1224,7 +1224,7 @@ An event structure asserts the event did occur if any of the following are true:
     
     <div class="note">
     
-    That a `DATE` indicates an event occurred was introduced to in version 5.4 (1995), and is generally followed by applications.
+    Version 5.4 (1995) introduced the "event did occur" meaning of event.`DATE`, so it is now well-established in applications and files.
     However, it is common for users to enter a date range with no end without intending to indicate that the event occurred.
     For example, pre 7.0 files sometimes used
     
