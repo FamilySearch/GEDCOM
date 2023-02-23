@@ -1942,6 +1942,7 @@ If the text is primarily in one language with a few parts in a different languag
 it is recommended that a language tag identifying the primary language be used.
 If no one language is primary, the language tag `mul` (meaning "multiple") may be used,
 but most language-specific algorithms will treat `mul` the same way they do `und`.
+Multi-language text can be handled more robustly using [the `text/html` MediaType](#MIME).
 
 :::note
 Conversations are ongoing about adding part-of-payload language tagging in a future version of the specification
