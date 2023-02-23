@@ -2914,6 +2914,22 @@ The structures for representing the strength of and confidence in various claims
 | `LOCKED` | Some systems may ignore changes to this data. |
 | `PRIVACY` | This data is not to be shared outside of a trusted circle, generally because it contains information about living individuals. |
 
+:::note
+RESN was introduced in version 5.5.1
+and defined with descriptions of how [Ancestral File](https://www.familysearch.org/wiki/en/Ancestral_File) used them,
+but not how they ought to be used generally.
+For `CONFIDENTAL` and `PRIVACY` in particular those descriptions were read differently by different tool designers;
+known interpretations include
+
+- Two tiers: `CONFIDENTIAL` is stricter than `PRIVACY`
+- `CONFIDENTIAL` is identified by the user; `PRIVACY` is determined by an algorithm
+- `CONFIDENTIAL` indicates the data should not be shared; `PRIVACY` indicates some data has been removed
+
+These interpretations mutually incompatible, and no general resolution of them has been identified.
+It is recommended that applications prompt users during import and export to see if they would like to include `CONFIDENTIAL` data,
+and also prompt if they would like to include `PRIVACY` data.
+:::
+
 When a [List] of `RESN` enumeration values are present, all apply.
 
 :::example
