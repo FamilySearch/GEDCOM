@@ -62,3 +62,16 @@ for f,t in pdf, html:
         print('Updating', basename(t))
         copyfile(f, t)
         utime(t, (getmtime(f), getmtime(f)))
+
+
+with open(join(doc,'..','changelog.md')) as cl_new:
+    with open(join(dst,'..','changelog.md'), 'w') as cl_old:
+        print('''---
+        title: FamilySearch GEDCOM Changelog
+        permalink: /changelog/
+        sidebar:
+        nav: "changelog"
+        ---''', file=cl_old)
+        for line in cl_new:
+           cl_old.write(line)
+
