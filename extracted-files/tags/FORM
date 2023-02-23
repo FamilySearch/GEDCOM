@@ -10,9 +10,7 @@ standard tag: FORM
 
 specification:
   - Format
-  - The media type of the file referenced by the superstructure. This should be
-    a valid media type as defined by BCP 13. A registry of media types is
-    maintained publicly by the IANA.
+  - The media type of the file referenced by the superstructure.
 
 payload: http://www.w3.org/ns/dcat#mediaType
 

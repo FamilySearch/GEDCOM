@@ -223,10 +223,14 @@ n CREA                                     {1:1}  g7:CREA
      +2 TIME <Time>                        {0:1}  g7:TIME
 
 
-EVENT_DETAIL :=
-n DATE <DateValue>                         {0:1}  g7:DATE
+DATE_VALUE :=
+n DATE <DateValue>                         {1:1}  g7:DATE
   +1 TIME <Time>                           {0:1}  g7:TIME
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
+
+
+EVENT_DETAIL :=
+n <<DATE_VALUE>>                           {0:1}
 n <<PLACE_STRUCTURE>>                      {0:1}
 n <<ADDRESS_STRUCTURE>>                    {0:1}
 n PHON <Special>                           {0:M}  g7:PHON
@@ -521,9 +525,7 @@ n SLGC                                     {1:1}  g7:SLGC
 
 
 LDS_ORDINANCE_DETAIL :=
-n DATE <DateValue>                       {0:1}  g7:DATE
-  +1 TIME <Time>                         {0:1}  g7:TIME
-  +1 PHRASE <Text>                       {0:1}  g7:PHRASE
+n <<DATE_VALUE>>                         {0:1}
 n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
 n STAT <Enum>                            {0:1}  g7:ord-STAT
@@ -609,9 +611,7 @@ SOURCE_CITATION :=
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 PAGE <Text>                           {0:1}  g7:PAGE
   +1 DATA                                  {0:1}  g7:SOUR-DATA
-     +2 DATE <DateValue>                   {0:1}  g7:DATE
-        +3 TIME <Time>                     {0:1}  g7:TIME
-        +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+     +2 <<DATE_VALUE>>                     {0:1}
      +2 TEXT <Text>                        {0:M}  g7:TEXT
         +3 MIME <MediaType>                {0:1}  g7:MIME
         +3 LANG <Language>                 {0:1}  g7:LANG
