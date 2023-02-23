@@ -2762,6 +2762,12 @@ New globally unique identifiers should be created and formatted as described in 
 This is metadata about the structure itself, not data about its subject.
 Multiple structures describing different aspects of the same subject would have different `UID` values.
 
+Because the `UID` identifies a structure, it can facilitate inter-tool collaboration
+by distinguishing between a structure being edited and a new structure being created.
+If an application allows structures to be edited in a way that completely changes their meaning
+(e.g., changing all the contents of an `INDI` record to have it describe a completely different person)
+then any `UID`s should also be changed.
+
 :::note
 Some systems used a 16-byte UUID with a custom 2-byte checksum for a total of 18 bytes:
 
