@@ -1829,7 +1829,7 @@ The meaning of a `FILE` payload with any format not listed above is not defined 
 
 #### `FORM` (Format) `g7:FORM`
 
-The [media type](#Media-Type) of the file referenced by the superstructure.
+The [media type](#media-type) of the file referenced by the superstructure.
 
 #### `FORM` (Format) `g7:PLAC-FORM`
 
@@ -2054,7 +2054,7 @@ An enumerated value from set `g7:enumset-MEDI` providing information about the m
 
 #### `MIME` (Media type) `g7:MIME`
 
-Indicates the [media type](#Media-Type) of the payload of the superstructure.
+Indicates the [media type](#media-type) of the payload of the superstructure.
 
 As of version 7.0, only 2 media types are supported by this structure:
 
