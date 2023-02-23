@@ -2926,9 +2926,10 @@ known interpretations include
 - `CONFIDENTIAL` indicates the data should not be shared; `PRIVACY` indicates some data has been removed
 
 These interpretations mutually incompatible, and no general resolution of them has been identified.
+:::
+
 It is recommended that applications prompt users during import and export to see if they would like to include `CONFIDENTIAL` data,
 and also prompt if they would like to include `PRIVACY` data.
-:::
 
 When a [List] of `RESN` enumeration values are present, all apply.
 
