@@ -73,7 +73,7 @@ dateRange   = %s"BET" D date D %s"AND" D date
 dateApprox  = (%s"ABT" / %s"CAL" / %s"EST") D date
 
 dateRestrict = %s"FROM" / %s"TO" / %s"BET" / %s"AND" / %s"BEF"
-            / %s"AFT" / %s"ABT" / %s"CAL" / %s"EST" / %s"BCE"
+            / %s"AFT" / %s"ABT" / %s"CAL" / %s"EST"
 
 calendar = %s"GREGORIAN" / %s"JULIAN" / %s"FRENCH_R" / %s"HEBREW"
          / extTag
