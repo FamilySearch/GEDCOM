@@ -1648,7 +1648,7 @@ See also `FAMILY_EVENT_STRUCTURE`.
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `EDUC` (Description) `g7:EDUC`
+#### `EDUC` (Education) `g7:EDUC`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -1664,7 +1664,7 @@ If an invalid email address is present upon import, it should be preserved as-is
 The version 5.5.1 specification contained a typo where this tag was sometimes written `EMAI` and sometimes written `EMAIL`. `EMAIL` should be used in version 7.0 and later.
 :::
 
-#### `EMIG` (Description) `g7:EMIG`
+#### `EMIG` (Emigration) `g7:EMIG`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
