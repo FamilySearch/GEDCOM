@@ -473,6 +473,17 @@ The expected order of address components varies by region; the address should be
 Optionally, additional substructures such as `STAE` and `CTRY` are provided to be used by systems that have structured their addresses for indexing and sorting. If the substructures and `ADDR` payload disagree, the `ADDR` payload shall be taken as correct.
 Because the regionally-correct order and formatting of address components cannot be determined from the substructures alone, the `ADDR` payload is required, even if its content appears to be redundant with the substructures.
 
+:::deprecation
+`ADR1` and `ADR2` were introduced in version 5.5 (1996)
+and `ADR3` in version 5.5.1 (1999),
+defined as "The first/second/third line of an address."
+Some applications interpreted ADR1 as "the first line of the *street* address",
+but most took the spec as-written and treated it as a straight copy of a line of text already available in the `ADDR` payload.
+
+Duplicating information bloats files and introduces the potential for self-contradiction.
+`ADR1`, `ADR2`, and `ADR3` should not be added to new files.
+:::
+
 
 #### `ASSOCIATION_STRUCTURE` :=
 
@@ -1402,17 +1413,29 @@ The first line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the first line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
+:::deprecation
+`ADR1` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+:::
+
 #### `ADR2` (Address Line 2) `g7:ADR2`
 
 The second line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the second line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
+:::deprecation
+`ADR2` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+:::
+
 #### `ADR3` (Address Line 3) `g7:ADR3`
 
 The third line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the third line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
+
+:::deprecation
+`ADR3` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+:::
 
 #### `AGE` (Age at event) `g7:AGE`
 
