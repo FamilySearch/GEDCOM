@@ -1402,17 +1402,23 @@ The first line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the first line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
+`ADR1` is optional and should not be included if its payload is already part of other substructures of `ADDR` such as `CITY`, `STAE`, `POST`, and `CTRY`.
+
 #### `ADR2` (Address Line 2) `g7:ADR2`
 
 The second line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the second line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
+`ADR2` is optional and should not be included if its payload is already part of other substructures of `ADDR` such as `CITY`, `STAE`, `POST`, and `CTRY`.
+
 #### `ADR3` (Address Line 3) `g7:ADR3`
 
 The third line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the third line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
+
+`ADR3` is optional and should not be included if its payload is already part of other substructures of `ADDR` such as `CITY`, `STAE`, `POST`, and `CTRY`.
 
 #### `AGE` (Age at event) `g7:AGE`
 
