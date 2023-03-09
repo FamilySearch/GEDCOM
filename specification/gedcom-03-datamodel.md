@@ -2925,7 +2925,7 @@ known interpretations include
 - `CONFIDENTIAL` is identified by the user; `PRIVACY` is determined by an algorithm
 - `CONFIDENTIAL` indicates the data should not be shared; `PRIVACY` indicates some data has been removed
 
-These interpretations mutually incompatible, and no general resolution of them has been identified.
+These interpretations are mutually incompatible, and no general resolution of them has been identified.
 :::
 
 It is recommended that applications prompt users during import and export to see if they would like to include `CONFIDENTIAL` data,
