@@ -2916,7 +2916,7 @@ The structures for representing the strength of and confidence in various claims
 
 :::note
 RESN was introduced in version 5.5.1
-and defined with descriptions of how [Ancestral File](https://www.familysearch.org/wiki/en/Ancestral_File) used them,
+and was defined with descriptions of how [Ancestral File](https://www.familysearch.org/wiki/en/Ancestral_File) used them,
 but not how they ought to be used generally.
 For `CONFIDENTAL` and `PRIVACY` in particular those descriptions were read differently by different tool designers;
 known interpretations include
