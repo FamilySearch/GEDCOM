@@ -87,7 +87,7 @@ def linkable(line, num, istable=False):
             slug = table_tags[m.group(1)]
             return linkify(m.group(0), slug)
         return m.group(0)
-    uried = re.sub(r'(?<![\[.`])`g7:[-A-Z0-9`._#]+`', repl, line)
+    uried = re.sub(r'(?<![\[.`])`g7:[-A-Z0-9a-z`._#]+`', repl, line)
     if istable: return uried
     tagged = re.sub(r'(?<![\[.`])`[A-Z0-9`._#]+`', repl, uried)
     abnfed = re.sub(r'(?<![\[.`])`([A-Za-z0-9]+)`', abnf, tagged)

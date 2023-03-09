@@ -2857,7 +2857,7 @@ for example, the `HUSB` enumeration value has the URI `http://gedcom.io/terms/v7
 
 Each set of enumeration values has its own URI.
 
-### `g7:enumset-ADOP` {.unlisted .unnumbered}
+### `g7:enumset-ADOP`
 
 | Value | Meaning |
 | :---- | :------ |
@@ -2865,17 +2865,17 @@ Each set of enumeration values has its own URI.
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
-### `g7:enumset-EVEN` {.unlisted .unnumbered}
+### `g7:enumset-EVEN`
 
 An event-type tag name, but not the generic `EVEN` tag.
 See [Events].
 
-### `g7:enumset-EVENATTR` {.unlisted .unnumbered}
+### `g7:enumset-EVENATTR`
 
 An event- or attribute-type tag name.
 See [Events] and [Attributes].
 
-### `g7:enumset-MEDI` {.unlisted .unnumbered}
+### `g7:enumset-MEDI`
 
 | Value        | Meaning                           |
 | :----------- | :-------------------------------- |
@@ -2894,7 +2894,7 @@ See [Events] and [Attributes].
 | `VIDEO`      | Motion picture recording          |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
 
-### `g7:enumset-PEDI` {.unlisted .unnumbered}
+### `g7:enumset-PEDI`
 
 | Value     | Meaning                                                   |
 | :-------- | :-------------------------------------------------------- |
@@ -2921,7 +2921,7 @@ any associated `ADOP` event.
 
 
 
-### `g7:enumset-QUAY` {.unlisted .unnumbered}
+### `g7:enumset-QUAY`
 
 | Value | Meaning                             |
 | :---- | :---------------------------------- |
@@ -2936,7 +2936,7 @@ Although the values look like integers, they do not have numeric meaning.
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
 :::
 
-### `g7:enumset-RESN` {.unlisted .unnumbered}
+### `g7:enumset-RESN`
 
 | Value | Meaning                      |
 | :---- | :--------------------------- |
@@ -2950,7 +2950,7 @@ When a [List] of `RESN` enumeration values are present, all apply.
 The line `1 RESN CONFIDENTIAL, LOCKED` means the superstructure's data is both considered confidential *and* read-only.
 :::
 
-### `g7:enumset-ROLE` {.unlisted .unnumbered}
+### `g7:enumset-ROLE`
 
 | Value | Meaning |
 | ----- | :------ |
@@ -2974,7 +2974,7 @@ These should be interpreted in the context of the recorded event and its primary
 For example, if you cite a child’s birth record as the source of the mother’s name, the value for this field is “`MOTH`.”
 If you describe the groom of a marriage, the role is “`HUSB`.”
 
-### `g7:enumset-SEX` {.unlisted .unnumbered}
+### `g7:enumset-SEX`
 
 | Value | Meaning                                     |
 | ----- | :------------------------------------------ |
@@ -2987,7 +2987,7 @@ This can describe an individual’s reproductive or sexual anatomy at birth.
 Related concepts of gender identity or sexual preference
 are not currently given their own tag. Cultural or personal gender preference may be indicated using the `FACT` tag.
 
-### `g7:enumset-FAMC-STAT` {.unlisted .unnumbered}
+### `g7:enumset-FAMC-STAT`
 
 | Value | Meaning                        |
 | ----- | :----------------------------- |
@@ -3002,7 +3002,7 @@ Because that meaning was not specified and other definitions of "proven" exist, 
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
 :::
 
-### `g7:enumset-ord-STAT` {.unlisted .unnumbered}
+### `g7:enumset-ord-STAT`
 
 These values were formerly used by The Church of Jesus Christ of Latter-day Saints for coordinating between temples and members.
 They are no longer used in that way, meaning their interpretation is subject to individual user interpretation
@@ -3022,7 +3022,7 @@ They are no longer used in that way, meaning their interpretation is subject to 
 | `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 | `UNCLEARED` | All | Data for clearing the ordinance request was insufficient. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 
-### `g7:enumset-NAME-TYPE` {.unlisted .unnumbered}
+### `g7:enumset-NAME-TYPE`
 
 | Value | Meaning                       |
 | ----- | :---------------------------- |
