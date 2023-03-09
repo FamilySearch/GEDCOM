@@ -60,10 +60,10 @@ all steps can be successfully completed, the file is not a valid GEDCOM file.
 
 Width | Order | Byte sequence to look for           | Explanation
 ----- | ----- | ----------------------------------- | ------------
-2     | LE    | 49 00 20 00 47 00 45 00 44 00 43 00 | "1 GEDC"
-2     | BE    | 00 49 00 20 00 47 00 45 00 44 00 43 | "1 GEDC"
-1     | (N/A) | 49 20 47 45 44 43                   | "1 GEDC"
-1     | (N/A) | 49 20 53 59 53 54                   | "1 SYST"
+2     | LE    | 31 00 20 00 47 00 45 00 44 00 43 00 | "1 GEDC"
+2     | BE    | 00 31 00 20 00 47 00 45 00 44 00 43 | "1 GEDC"
+1     | (N/A) | 31 20 47 45 44 43                   | "1 GEDC"
+1     | (N/A) | 31 20 53 59 53 54                   | "1 SYST"
 
 2. If one of the first three rows above is matched, continue to step 3.  If instead the last line above ("1 SYST") is
    matched, skip to step 7 using the following specification:
@@ -92,7 +92,7 @@ Width | Order | Transform
 
 Byte sequence  | Explanation | Reference
 -------------- | ----------- | ---------
-37 2E 30       | "7.0"       | [The FamilySearch GEDCOM Specification, 7.0.3](https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf)
+37 2E 30       | "7.0"       | [The FamilySearch GEDCOM Specification, 7.0](https://gedcom.io/specifications/FamilySearchGEDCOMv7.pdf)
 35 2E 36       | "5.6"       | [THE GEDCOM SPECIFICATION, DRAFT Release 5.6](https://gedcom.io/specifications/Gedcom5.6.pdf)
 35 2E 35 2E 31 | "5.5.1"     | [THE GEDCOM STANDARD, Release 5.5.1](https://gedcom.io/specifications/ged551.pdf)
 35 2E 35       | "5.5"       | [THE GEDCOM STANDARD, Release 5.5](https://gedcom.io/specifications/ged55.pdf) 
