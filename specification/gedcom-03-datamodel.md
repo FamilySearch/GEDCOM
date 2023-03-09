@@ -99,7 +99,7 @@ and a superstructure with tag `GEDC`.
 ```gedstruct
 0 <<HEADER>>                               {1:1}
 0 <<RECORD>>                               {0:M}
-0 TRLR                                     {1:1} 
+0 TRLR                                     {1:1}  g7:TRLR
 ```
 
 The order of these is significant:
@@ -129,7 +129,7 @@ n <<SUBMITTER_RECORD>>                     {1:1}
 #### `HEADER` :=
 
 ```gedstruct
-n HEAD                                     {1:1} 
+n HEAD                                     {1:1}  g7:HEAD
   +1 GEDC                                  {1:1}  g7:GEDC
      +2 VERS <Special>                     {1:1}  g7:GEDC-VERS
   +1 SCHMA                                 {0:1}  g7:SCHMA
@@ -1538,6 +1538,12 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 The name of the city used in the address.
 See `ADDRESS_STRUCTURE` for more.
 
+#### `CONC` (Concatenated) `g7:CONC`
+
+A pseudo-structure using in versions prior to 7.0 to split payloads across multiple lines.
+`CONC` does not appear in version 7 datasets, either in serialized or parsed form.
+Because of its significance in pre-7 versions, the `CONC` tag is reserved and well never be re-used to identify a structure type.
+
 #### `CONF` (Confirmation)  `g7:CONF`
 
 An [Individual Event](#individual-events).
@@ -1548,9 +1554,10 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
-#### `CONT` (Continued)
+#### `CONT` (Continued) `g7:CONT`
 
 A pseudo-structure to indicate a line break.
+The `CONT` tag is generated during serialization and is never present in parsed datasets.
 See [Lines](#lines) for more.
 
 #### `COPR` (Copyright) `g7:COPR`
@@ -1889,7 +1896,7 @@ A given or earned name used for official identification of a person.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `HEAD` (Header)
+#### `HEAD` (Header) `g7:HEAD`
 
 A pseudo-structure for storing metadata about the document.
 See [The Header and Trailer](#the-header) for more.
@@ -2710,7 +2717,7 @@ Files that differ in the human language of their content
 should each be given their own `FILE` structure.
 
 
-#### `TRLR` (Trailer)
+#### `TRLR` (Trailer) `g7:TRLR`
 
 A pseudo-structure marking the end of a dataset.
 See [The Header and Trailer](#the-header) for more.
