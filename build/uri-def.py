@@ -162,7 +162,7 @@ def new_key(val, d, *keys, msg=''):
 
 def parse_gedstruct(txt, rules, dtypes):
     """Reads through all gedstruct blocks to find payloads, substructures, and superstructures"""
-    sup,sub,payload = {'g7:CONT':[],'g7:CONC':[]}, {}, {}
+    sup,sub,payload = {'g7:CONT':[]}, {}, {}
     for block in re.findall(r'```[^\n]*gedstruct[^\n]*\n([^`]*)\n```', txt):
         stack = []
         for line in block.split('\n'):

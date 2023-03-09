@@ -1538,12 +1538,6 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 The name of the city used in the address.
 See `ADDRESS_STRUCTURE` for more.
 
-#### `CONC` (Concatenated) `g7:CONC`
-
-A pseudo-structure using in versions prior to 7.0 to split payloads across multiple lines.
-`CONC` does not appear in version 7 datasets, either in serialized or parsed form.
-Because of its significance in pre-7 versions, the `CONC` tag is reserved and well never be re-used to identify a structure type.
-
 #### `CONF` (Confirmation)  `g7:CONF`
 
 An [Individual Event](#individual-events).

@@ -1,0 +1,21 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7/TRLR
+
+standard tag: TRLR
+
+specification:
+  - Trailer
+  - A pseudo-structure marking the end of a dataset. See The Header and Trailer
+    for more.
+
+payload: null
+
+substructures: {}
+
+superstructures: {}
+...

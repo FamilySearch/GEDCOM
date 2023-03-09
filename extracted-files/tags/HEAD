@@ -1,0 +1,44 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7/HEAD
+
+standard tag: HEAD
+
+specification:
+  - Header
+  - A pseudo-structure for storing metadata about the document. See The Header
+    and Trailer for more.
+  - |
+    The header pseudo-structure provides metadata about the entire dataset. A
+    few substructures of note:
+    
+    -   GEDC identifies the specification that this document conforms to. It is
+        recommended that GEDC be the first substructure of the header.
+    -   SCHMA gives the meaning of extension tags; see Extensions for more.
+    -   SOUR describes the originating software.
+        -   CORP describes the corporation creating the software.
+        -   HEAD.SOUR.DATA describes a larger database this data is extracted
+            from.
+    -   LANG and PLAC give a default value for the rest of the document.
+
+payload: null
+
+substructures:
+  "https://gedcom.io/terms/v7/COPR": "{0:1}"
+  "https://gedcom.io/terms/v7/DEST": "{0:1}"
+  "https://gedcom.io/terms/v7/GEDC": "{1:1}"
+  "https://gedcom.io/terms/v7/HEAD-DATE": "{0:1}"
+  "https://gedcom.io/terms/v7/HEAD-LANG": "{0:1}"
+  "https://gedcom.io/terms/v7/HEAD-PLAC": "{0:1}"
+  "https://gedcom.io/terms/v7/HEAD-SOUR": "{0:1}"
+  "https://gedcom.io/terms/v7/NOTE": "{0:1}"
+  "https://gedcom.io/terms/v7/SCHMA": "{0:1}"
+  "https://gedcom.io/terms/v7/SNOTE": "{0:1}"
+  "https://gedcom.io/terms/v7/SUBM": "{0:1}"
+
+superstructures: {}
+...

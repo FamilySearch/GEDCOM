@@ -243,6 +243,12 @@ and each subsequent split payload is encoded as the line value of a **line conti
 The tag of a line continuation pseudo-structure is `CONT`.
 The order of the line continuation pseudo-structures matches the order of the lines of text in the payload.
 
+:::note
+Versions prior to 7.0 had another `CONT`-like tag, `CONC`, which split line values without introducing a line break.
+`CONC` does not appear in version 7.
+To support multi-version GEDCOM parsers, the `CONC` tag is reserved and will not appear as the tag of a structure type.
+:::
+
 Line continuation pseudo-structures are not considered to be structures.
 While they match production `Line` and their level and position makes them appear to be substructures of the structure, they are actually a continuation of the encoding of the structure's payload and are not part of a structure's collection of substructures.
 They must appear immediately following the line whose payload they are encoding and before any other line.
