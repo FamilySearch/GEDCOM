@@ -2912,21 +2912,7 @@ The structures for representing the strength of and confidence in various claims
 | :---- | :--------------------------- |
 | `CONFIDENTIAL` | This data was marked as confidential by the user. |
 | `LOCKED` | Some systems may ignore changes to this data. |
-| `PRIVACY` | This data is not to be shared outside of a trusted circle, generally because it contains information about living individuals. |
-
-:::note
-RESN was introduced in version 5.5
-and was defined with descriptions of how [Ancestral File](https://www.familysearch.org/wiki/en/Ancestral_File) used them,
-but not how they ought to be used generally.
-For `CONFIDENTAL` and `PRIVACY` in particular those descriptions were read differently by different tool designers;
-known interpretations include
-
-- Two tiers: `CONFIDENTIAL` is stricter than `PRIVACY`
-- `CONFIDENTIAL` is identified by the user; `PRIVACY` is determined by an algorithm
-- `CONFIDENTIAL` indicates the data should not be shared; `PRIVACY` indicates some data has been removed
-
-These interpretations are mutually incompatible, and no general resolution of them has been identified.
-:::
+| `PRIVACY` | This data is not to be shared outside of a trusted circle, generally because it contains information about living individuals. This definition is known to admit multiple interpretations, so use of the `PRIVACY` restriction notice is not recommended. |
 
 It is recommended that applications prompt users during import and export to see if they would like to include `CONFIDENTIAL` data,
 and also prompt if they would like to include `PRIVACY` data.
@@ -2936,6 +2922,19 @@ When a [List] of `RESN` enumeration values are present, all apply.
 :::example
 The line `1 RESN CONFIDENTIAL, LOCKED` means the superstructure's data is both considered confidential *and* read-only.
 :::
+
+Since `RESN` was introduced in version 5.5
+the intent of the `PRIVACY` value has been interpreted differently by different applications.
+Known interpretations include
+
+- Some assign `PRIVACY` by algorithm or policy, unlike the user-assigned `CONFIDENTIAL`
+- Some use `PRIVACY` to mark records that have already had private data removed
+- Some use the English definitions of "privacy" and "confidential" to inform different restrictions for each
+
+Because these different interpretations became widespread before they were identified,
+determining which one is meant generally requires knowledge of which application applied the `PRIVACY` restriction notice.
+It is anticipated that a future version will deprecate the `PRIVACY` option and introduce new values for each of its current use cases.
+
 
 ### `g7:enumset-ROLE` {.unlisted .unnumbered}
 
