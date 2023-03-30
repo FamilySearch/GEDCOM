@@ -21,7 +21,7 @@ New contributions in this edition  benefited from the input of a large number of
 - Robert Raymond, **FamilySearch**
 - Gaylon Findlay, **Ancestral Quest**
 - Derek Maude, **Ancestry**
-- Simon Orde, **Family-Historian**
+- Simon Orde, **Family Historian**
 - James Tanner, **The Family History Guide**
 - John Cardinal, **Family History Hosting**
 - Albert Emmerich, **GEDCOM-L**

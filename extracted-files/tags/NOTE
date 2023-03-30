@@ -28,7 +28,6 @@ substructures:
   "https://gedcom.io/terms/v7/SOUR": "{0:M}"
 
 superstructures:
-  "HEAD pseudostructure": "{0:1}"
   "https://gedcom.io/terms/v7/ADOP": "{0:M}"
   "https://gedcom.io/terms/v7/ANUL": "{0:M}"
   "https://gedcom.io/terms/v7/ASSO": "{0:M}"
@@ -63,6 +62,7 @@ superstructures:
   "https://gedcom.io/terms/v7/FAMS": "{0:M}"
   "https://gedcom.io/terms/v7/FCOM": "{0:M}"
   "https://gedcom.io/terms/v7/GRAD": "{0:M}"
+  "https://gedcom.io/terms/v7/HEAD": "{0:1}"
   "https://gedcom.io/terms/v7/IDNO": "{0:M}"
   "https://gedcom.io/terms/v7/IMMI": "{0:M}"
   "https://gedcom.io/terms/v7/INDI-CENS": "{0:M}"

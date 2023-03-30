@@ -281,7 +281,8 @@ https://gedcom.io/terms/v7/record-INDI	CHR	https://gedcom.io/terms/v7/CHR
 https://gedcom.io/terms/v7/ADDR	CITY	https://gedcom.io/terms/v7/CITY
 https://gedcom.io/terms/v7/record-INDI	CONF	https://gedcom.io/terms/v7/CONF
 https://gedcom.io/terms/v7/record-INDI	CONL	https://gedcom.io/terms/v7/CONL
-HEAD pseudostructure	COPR	https://gedcom.io/terms/v7/COPR
+	CONT	https://gedcom.io/terms/v7/CONT
+https://gedcom.io/terms/v7/HEAD	COPR	https://gedcom.io/terms/v7/COPR
 https://gedcom.io/terms/v7/HEAD-SOUR-DATA	COPR	https://gedcom.io/terms/v7/COPR
 https://gedcom.io/terms/v7/HEAD-SOUR	CORP	https://gedcom.io/terms/v7/CORP
 https://gedcom.io/terms/v7/record-FAM	CREA	https://gedcom.io/terms/v7/CREA
@@ -359,12 +360,12 @@ https://gedcom.io/terms/v7/CHAN	DATE	https://gedcom.io/terms/v7/DATE-exact
 https://gedcom.io/terms/v7/CREA	DATE	https://gedcom.io/terms/v7/DATE-exact
 https://gedcom.io/terms/v7/HEAD-SOUR-DATA	DATE	https://gedcom.io/terms/v7/DATE-exact
 https://gedcom.io/terms/v7/ord-STAT	DATE	https://gedcom.io/terms/v7/DATE-exact
-HEAD pseudostructure	DATE	https://gedcom.io/terms/v7/HEAD-DATE
+https://gedcom.io/terms/v7/HEAD	DATE	https://gedcom.io/terms/v7/HEAD-DATE
 https://gedcom.io/terms/v7/NO	DATE	https://gedcom.io/terms/v7/NO-DATE
 https://gedcom.io/terms/v7/DATA-EVEN	DATE	https://gedcom.io/terms/v7/DATA-EVEN-DATE
 https://gedcom.io/terms/v7/record-INDI	DEAT	https://gedcom.io/terms/v7/DEAT
 https://gedcom.io/terms/v7/record-INDI	DESI	https://gedcom.io/terms/v7/DESI
-HEAD pseudostructure	DEST	https://gedcom.io/terms/v7/DEST
+https://gedcom.io/terms/v7/HEAD	DEST	https://gedcom.io/terms/v7/DEST
 https://gedcom.io/terms/v7/record-FAM	DIVF	https://gedcom.io/terms/v7/DIVF
 https://gedcom.io/terms/v7/record-FAM	DIV	https://gedcom.io/terms/v7/DIV
 https://gedcom.io/terms/v7/record-INDI	DSCR	https://gedcom.io/terms/v7/DSCR
@@ -507,10 +508,11 @@ https://gedcom.io/terms/v7/FILE	FORM	https://gedcom.io/terms/v7/FORM
 https://gedcom.io/terms/v7/FILE-TRAN	FORM	https://gedcom.io/terms/v7/FORM
 https://gedcom.io/terms/v7/PLAC	FORM	https://gedcom.io/terms/v7/PLAC-FORM
 https://gedcom.io/terms/v7/HEAD-PLAC	FORM	https://gedcom.io/terms/v7/HEAD-PLAC-FORM
-HEAD pseudostructure	GEDC	https://gedcom.io/terms/v7/GEDC
+https://gedcom.io/terms/v7/HEAD	GEDC	https://gedcom.io/terms/v7/GEDC
 https://gedcom.io/terms/v7/INDI-NAME	GIVN	https://gedcom.io/terms/v7/GIVN
 https://gedcom.io/terms/v7/NAME-TRAN	GIVN	https://gedcom.io/terms/v7/GIVN
 https://gedcom.io/terms/v7/record-INDI	GRAD	https://gedcom.io/terms/v7/GRAD
+	HEAD	https://gedcom.io/terms/v7/HEAD
 https://gedcom.io/terms/v7/CROP	HEIGHT	https://gedcom.io/terms/v7/HEIGHT
 https://gedcom.io/terms/v7/ANUL	HUSB	https://gedcom.io/terms/v7/HUSB
 https://gedcom.io/terms/v7/DIV	HUSB	https://gedcom.io/terms/v7/HUSB
@@ -538,7 +540,7 @@ https://gedcom.io/terms/v7/PLAC	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7/PLAC-TRAN	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7/TEXT	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7/record-SNOTE	LANG	https://gedcom.io/terms/v7/LANG
-HEAD pseudostructure	LANG	https://gedcom.io/terms/v7/HEAD-LANG
+https://gedcom.io/terms/v7/HEAD	LANG	https://gedcom.io/terms/v7/HEAD-LANG
 https://gedcom.io/terms/v7/record-SUBM	LANG	https://gedcom.io/terms/v7/SUBM-LANG
 https://gedcom.io/terms/v7/MAP	LATI	https://gedcom.io/terms/v7/LATI
 https://gedcom.io/terms/v7/CROP	LEFT	https://gedcom.io/terms/v7/LEFT
@@ -568,7 +570,6 @@ https://gedcom.io/terms/v7/NAME-TRAN	NICK	https://gedcom.io/terms/v7/NICK
 https://gedcom.io/terms/v7/record-INDI	NMR	https://gedcom.io/terms/v7/NMR
 https://gedcom.io/terms/v7/record-FAM	NO	https://gedcom.io/terms/v7/NO
 https://gedcom.io/terms/v7/record-INDI	NO	https://gedcom.io/terms/v7/NO
-HEAD pseudostructure	NOTE	https://gedcom.io/terms/v7/NOTE
 https://gedcom.io/terms/v7/ADOP	NOTE	https://gedcom.io/terms/v7/NOTE
 https://gedcom.io/terms/v7/ANUL	NOTE	https://gedcom.io/terms/v7/NOTE
 https://gedcom.io/terms/v7/ASSO	NOTE	https://gedcom.io/terms/v7/NOTE
@@ -603,6 +604,7 @@ https://gedcom.io/terms/v7/FAM-RESI	NOTE	https://gedcom.io/terms/v7/NOTE
 https://gedcom.io/terms/v7/FAMS	NOTE	https://gedcom.io/terms/v7/NOTE
 https://gedcom.io/terms/v7/FCOM	NOTE	https://gedcom.io/terms/v7/NOTE
 https://gedcom.io/terms/v7/GRAD	NOTE	https://gedcom.io/terms/v7/NOTE
+https://gedcom.io/terms/v7/HEAD	NOTE	https://gedcom.io/terms/v7/NOTE
 https://gedcom.io/terms/v7/IDNO	NOTE	https://gedcom.io/terms/v7/NOTE
 https://gedcom.io/terms/v7/IMMI	NOTE	https://gedcom.io/terms/v7/NOTE
 https://gedcom.io/terms/v7/INDI-CENS	NOTE	https://gedcom.io/terms/v7/NOTE
@@ -836,7 +838,7 @@ https://gedcom.io/terms/v7/SLGC	PLAC	https://gedcom.io/terms/v7/PLAC
 https://gedcom.io/terms/v7/SLGS	PLAC	https://gedcom.io/terms/v7/PLAC
 https://gedcom.io/terms/v7/SSN	PLAC	https://gedcom.io/terms/v7/PLAC
 https://gedcom.io/terms/v7/WILL	PLAC	https://gedcom.io/terms/v7/PLAC
-HEAD pseudostructure	PLAC	https://gedcom.io/terms/v7/HEAD-PLAC
+https://gedcom.io/terms/v7/HEAD	PLAC	https://gedcom.io/terms/v7/HEAD-PLAC
 https://gedcom.io/terms/v7/ADDR	POST	https://gedcom.io/terms/v7/POST
 https://gedcom.io/terms/v7/record-INDI	PROB	https://gedcom.io/terms/v7/PROB
 https://gedcom.io/terms/v7/record-INDI	PROP	https://gedcom.io/terms/v7/PROP
@@ -962,7 +964,7 @@ https://gedcom.io/terms/v7/record-INDI	RESI	https://gedcom.io/terms/v7/INDI-RESI
 https://gedcom.io/terms/v7/record-INDI	RETI	https://gedcom.io/terms/v7/RETI
 https://gedcom.io/terms/v7/ASSO	ROLE	https://gedcom.io/terms/v7/ROLE
 https://gedcom.io/terms/v7/SOUR-EVEN	ROLE	https://gedcom.io/terms/v7/ROLE
-HEAD pseudostructure	SCHMA	https://gedcom.io/terms/v7/SCHMA
+https://gedcom.io/terms/v7/HEAD	SCHMA	https://gedcom.io/terms/v7/SCHMA
 https://gedcom.io/terms/v7/ADOP	SDATE	https://gedcom.io/terms/v7/SDATE
 https://gedcom.io/terms/v7/ANUL	SDATE	https://gedcom.io/terms/v7/SDATE
 https://gedcom.io/terms/v7/BAPM	SDATE	https://gedcom.io/terms/v7/SDATE
@@ -1017,7 +1019,6 @@ https://gedcom.io/terms/v7/WILL	SDATE	https://gedcom.io/terms/v7/SDATE
 https://gedcom.io/terms/v7/record-INDI	SEX	https://gedcom.io/terms/v7/SEX
 https://gedcom.io/terms/v7/record-INDI	SLGC	https://gedcom.io/terms/v7/SLGC
 https://gedcom.io/terms/v7/record-FAM	SLGS	https://gedcom.io/terms/v7/SLGS
-HEAD pseudostructure	SNOTE	https://gedcom.io/terms/v7/SNOTE
 https://gedcom.io/terms/v7/ADOP	SNOTE	https://gedcom.io/terms/v7/SNOTE
 https://gedcom.io/terms/v7/ANUL	SNOTE	https://gedcom.io/terms/v7/SNOTE
 https://gedcom.io/terms/v7/ASSO	SNOTE	https://gedcom.io/terms/v7/SNOTE
@@ -1052,6 +1053,7 @@ https://gedcom.io/terms/v7/FAM-RESI	SNOTE	https://gedcom.io/terms/v7/SNOTE
 https://gedcom.io/terms/v7/FAMS	SNOTE	https://gedcom.io/terms/v7/SNOTE
 https://gedcom.io/terms/v7/FCOM	SNOTE	https://gedcom.io/terms/v7/SNOTE
 https://gedcom.io/terms/v7/GRAD	SNOTE	https://gedcom.io/terms/v7/SNOTE
+https://gedcom.io/terms/v7/HEAD	SNOTE	https://gedcom.io/terms/v7/SNOTE
 https://gedcom.io/terms/v7/IDNO	SNOTE	https://gedcom.io/terms/v7/SNOTE
 https://gedcom.io/terms/v7/IMMI	SNOTE	https://gedcom.io/terms/v7/SNOTE
 https://gedcom.io/terms/v7/INDI-CENS	SNOTE	https://gedcom.io/terms/v7/SNOTE
@@ -1158,7 +1160,7 @@ https://gedcom.io/terms/v7/record-INDI	SOUR	https://gedcom.io/terms/v7/SOUR
 https://gedcom.io/terms/v7/record-OBJE	SOUR	https://gedcom.io/terms/v7/SOUR
 https://gedcom.io/terms/v7/record-SNOTE	SOUR	https://gedcom.io/terms/v7/SOUR
 	SOUR	https://gedcom.io/terms/v7/record-SOUR
-HEAD pseudostructure	SOUR	https://gedcom.io/terms/v7/HEAD-SOUR
+https://gedcom.io/terms/v7/HEAD	SOUR	https://gedcom.io/terms/v7/HEAD-SOUR
 https://gedcom.io/terms/v7/INDI-NAME	SPFX	https://gedcom.io/terms/v7/SPFX
 https://gedcom.io/terms/v7/NAME-TRAN	SPFX	https://gedcom.io/terms/v7/SPFX
 https://gedcom.io/terms/v7/record-INDI	SSN	https://gedcom.io/terms/v7/SSN
@@ -1170,7 +1172,7 @@ https://gedcom.io/terms/v7/INIL	STAT	https://gedcom.io/terms/v7/ord-STAT
 https://gedcom.io/terms/v7/SLGC	STAT	https://gedcom.io/terms/v7/ord-STAT
 https://gedcom.io/terms/v7/SLGS	STAT	https://gedcom.io/terms/v7/ord-STAT
 https://gedcom.io/terms/v7/INDI-FAMC	STAT	https://gedcom.io/terms/v7/FAMC-STAT
-HEAD pseudostructure	SUBM	https://gedcom.io/terms/v7/SUBM
+https://gedcom.io/terms/v7/HEAD	SUBM	https://gedcom.io/terms/v7/SUBM
 https://gedcom.io/terms/v7/record-FAM	SUBM	https://gedcom.io/terms/v7/SUBM
 https://gedcom.io/terms/v7/record-INDI	SUBM	https://gedcom.io/terms/v7/SUBM
 	SUBM	https://gedcom.io/terms/v7/record-SUBM
@@ -1199,6 +1201,7 @@ https://gedcom.io/terms/v7/PLAC	TRAN	https://gedcom.io/terms/v7/PLAC-TRAN
 https://gedcom.io/terms/v7/NOTE	TRAN	https://gedcom.io/terms/v7/NOTE-TRAN
 https://gedcom.io/terms/v7/record-SNOTE	TRAN	https://gedcom.io/terms/v7/NOTE-TRAN
 https://gedcom.io/terms/v7/FILE	TRAN	https://gedcom.io/terms/v7/FILE-TRAN
+	TRLR	https://gedcom.io/terms/v7/TRLR
 https://gedcom.io/terms/v7/ADOP	TYPE	https://gedcom.io/terms/v7/TYPE
 https://gedcom.io/terms/v7/ANUL	TYPE	https://gedcom.io/terms/v7/TYPE
 https://gedcom.io/terms/v7/BAPM	TYPE	https://gedcom.io/terms/v7/TYPE

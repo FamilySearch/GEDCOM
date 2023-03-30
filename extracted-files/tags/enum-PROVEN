@@ -9,8 +9,7 @@ uri: https://gedcom.io/terms/v7/enum-PROVEN
 standard tag: PROVEN
 
 specification:
-  - There has been a claim by some that this child does not belong to this
-    family, but the linkage has been proven.
+  - Linking this child to this family has been proven.
 
 value of:
   - "https://gedcom.io/terms/v7/g7:enumset-FAMC-STAT"

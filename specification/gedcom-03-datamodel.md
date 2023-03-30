@@ -99,7 +99,7 @@ and a superstructure with tag `GEDC`.
 ```gedstruct
 0 <<HEADER>>                               {1:1}
 0 <<RECORD>>                               {0:M}
-0 TRLR                                     {1:1} 
+0 TRLR                                     {1:1}  g7:TRLR
 ```
 
 The order of these is significant:
@@ -129,7 +129,7 @@ n <<SUBMITTER_RECORD>>                     {1:1}
 #### `HEADER` :=
 
 ```gedstruct
-n HEAD                                     {1:1} 
+n HEAD                                     {1:1}  g7:HEAD
   +1 GEDC                                  {1:1}  g7:GEDC
      +2 VERS <Special>                     {1:1}  g7:GEDC-VERS
   +1 SCHMA                                 {0:1}  g7:SCHMA
@@ -472,6 +472,17 @@ The expected order of address components varies by region; the address should be
 
 Optionally, additional substructures such as `STAE` and `CTRY` are provided to be used by systems that have structured their addresses for indexing and sorting. If the substructures and `ADDR` payload disagree, the `ADDR` payload shall be taken as correct.
 Because the regionally-correct order and formatting of address components cannot be determined from the substructures alone, the `ADDR` payload is required, even if its content appears to be redundant with the substructures.
+
+:::deprecation
+`ADR1` and `ADR2` were introduced in version 5.5 (1996)
+and `ADR3` in version 5.5.1 (1999),
+defined as "The first/second/third line of an address."
+Some applications interpreted ADR1 as "the first line of the *street* address",
+but most took the spec as-written and treated it as a straight copy of a line of text already available in the `ADDR` payload.
+
+Duplicating information bloats files and introduces the potential for self-contradiction.
+`ADR1`, `ADR2`, and `ADR3` should not be added to new files.
+:::
 
 
 #### `ASSOCIATION_STRUCTURE` :=
@@ -1221,6 +1232,30 @@ An event structure asserts the event did occur if any of the following are true:
     ````
     
     </div>
+    
+    <div class="note">
+    
+    Version 5.4 (1995) introduced the "event did occur" meaning of event.`DATE`, so it is now well-established in applications and files.
+    However, it is common for users to enter a date range with no end without intending to indicate that the event occurred.
+    For example, pre 7.0 files sometimes used
+    
+    ````gedcom
+    1 NATU
+    2 DATE AFT 1800
+    ````
+    
+    to mean what 7.0 encodes as
+    
+    ````gedcom
+    1 NOT NATU
+    2 DATE TO 1800
+    ````
+    
+    without intending to imply that `NATU` ever did actually occur.
+    Because this is a "sometimes used" rather than a "formally means" situation,
+    it is likely that data using 5.x "after meaning not before" *de facto* pattern will be transferred as-is into 7.0 and persist in files for the foreseeable future.
+    
+    </div>
 
 - There is a `PLAC` substructure
     
@@ -1378,17 +1413,29 @@ The first line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the first line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
+:::deprecation
+`ADR1` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+:::
+
 #### `ADR2` (Address Line 2) `g7:ADR2`
 
 The second line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the second line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
 
+:::deprecation
+`ADR2` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+:::
+
 #### `ADR3` (Address Line 3) `g7:ADR3`
 
 The third line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the third line of the corresponding `ADDR`.
 See `ADDRESS_STRUCTURE` for more.
+
+:::deprecation
+`ADR3` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+:::
 
 #### `AGE` (Age at event) `g7:AGE`
 
@@ -1524,9 +1571,10 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
-#### `CONT` (Continued)
+#### `CONT` (Continued) `g7:CONT`
 
 A pseudo-structure to indicate a line break.
+The `CONT` tag is generated during serialization and is never present in parsed datasets.
 See [Lines](#lines) for more.
 
 #### `COPR` (Copyright) `g7:COPR`
@@ -1648,7 +1696,7 @@ See also `FAMILY_EVENT_STRUCTURE`.
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `EDUC` (Description) `g7:EDUC`
+#### `EDUC` (Education) `g7:EDUC`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -1664,7 +1712,7 @@ If an invalid email address is present upon import, it should be preserved as-is
 The version 5.5.1 specification contained a typo where this tag was sometimes written `EMAI` and sometimes written `EMAIL`. `EMAIL` should be used in version 7.0 and later.
 :::
 
-#### `EMIG` (Description) `g7:EMIG`
+#### `EMIG` (Emigration) `g7:EMIG`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -1829,7 +1877,7 @@ The meaning of a `FILE` payload with any format not listed above is not defined 
 
 #### `FORM` (Format) `g7:FORM`
 
-The [media type](#Media-Type) of the file referenced by the superstructure.
+The [media type](#media-type) of the file referenced by the superstructure.
 
 #### `FORM` (Format) `g7:PLAC-FORM`
 
@@ -1865,7 +1913,7 @@ A given or earned name used for official identification of a person.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `HEAD` (Header)
+#### `HEAD` (Header) `g7:HEAD`
 
 A pseudo-structure for storing metadata about the document.
 See [The Header and Trailer](#the-header) for more.
@@ -2054,7 +2102,7 @@ An enumerated value from set `g7:enumset-MEDI` providing information about the m
 
 #### `MIME` (Media type) `g7:MIME`
 
-Indicates the [media type](#Media-Type) of the payload of the superstructure.
+Indicates the [media type](#media-type) of the payload of the superstructure.
 
 As of version 7.0, only 2 media types are supported by this structure:
 
@@ -2686,7 +2734,7 @@ Files that differ in the human language of their content
 should each be given their own `FILE` structure.
 
 
-#### `TRLR` (Trailer)
+#### `TRLR` (Trailer) `g7:TRLR`
 
 A pseudo-structure marking the end of a dataset.
 See [The Header and Trailer](#the-header) for more.
@@ -2762,6 +2810,12 @@ New globally unique identifiers should be created and formatted as described in 
 This is metadata about the structure itself, not data about its subject.
 Multiple structures describing different aspects of the same subject would have different `UID` values.
 
+Because the `UID` identifies a structure, it can facilitate inter-tool collaboration
+by distinguishing between a structure being edited and a new structure being created.
+If an application allows structures to be edited in a way that completely changes their meaning
+(e.g., changing all the contents of an `INDI` record to have it describe a completely different person)
+then any `UID`s should also be changed.
+
 :::note
 Some systems used a 16-byte UUID with a custom 2-byte checksum for a total of 18 bytes:
 
@@ -2827,7 +2881,7 @@ for example, the `HUSB` enumeration value has the URI `http://gedcom.io/terms/v7
 
 Each set of enumeration values has its own URI.
 
-### `g7:enumset-ADOP` {.unlisted .unnumbered}
+### `g7:enumset-ADOP`
 
 | Value | Meaning |
 | :---- | :------ |
@@ -2835,17 +2889,17 @@ Each set of enumeration values has its own URI.
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
-### `g7:enumset-EVEN` {.unlisted .unnumbered}
+### `g7:enumset-EVEN`
 
 An event-type tag name, but not the generic `EVEN` tag.
 See [Events].
 
-### `g7:enumset-EVENATTR` {.unlisted .unnumbered}
+### `g7:enumset-EVENATTR`
 
 An event- or attribute-type tag name.
 See [Events] and [Attributes].
 
-### `g7:enumset-MEDI` {.unlisted .unnumbered}
+### `g7:enumset-MEDI`
 
 | Value        | Meaning                           |
 | :----------- | :-------------------------------- |
@@ -2864,7 +2918,7 @@ See [Events] and [Attributes].
 | `VIDEO`      | Motion picture recording          |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
 
-### `g7:enumset-PEDI` {.unlisted .unnumbered}
+### `g7:enumset-PEDI`
 
 | Value     | Meaning                                                   |
 | :-------- | :-------------------------------------------------------- |
@@ -2891,7 +2945,7 @@ any associated `ADOP` event.
 
 
 
-### `g7:enumset-QUAY` {.unlisted .unnumbered}
+### `g7:enumset-QUAY`
 
 | Value | Meaning                             |
 | :---- | :---------------------------------- |
@@ -2906,7 +2960,7 @@ Although the values look like integers, they do not have numeric meaning.
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
 :::
 
-### `g7:enumset-RESN` {.unlisted .unnumbered}
+### `g7:enumset-RESN`
 
 | Value | Meaning                      |
 | :---- | :--------------------------- |
@@ -2939,7 +2993,7 @@ determining which one is meant generally requires knowledge of which application
 It is anticipated that a future version will deprecate the `PRIVACY` option and introduce new values for each of its current use cases.
 
 
-### `g7:enumset-ROLE` {.unlisted .unnumbered}
+### `g7:enumset-ROLE`
 
 | Value | Meaning |
 | ----- | :------ |
@@ -2963,7 +3017,7 @@ These should be interpreted in the context of the recorded event and its primary
 For example, if you cite a child’s birth record as the source of the mother’s name, the value for this field is “`MOTH`.”
 If you describe the groom of a marriage, the role is “`HUSB`.”
 
-### `g7:enumset-SEX` {.unlisted .unnumbered}
+### `g7:enumset-SEX`
 
 | Value | Meaning                                     |
 | ----- | :------------------------------------------ |
@@ -2976,7 +3030,7 @@ This can describe an individual’s reproductive or sexual anatomy at birth.
 Related concepts of gender identity or sexual preference
 are not currently given their own tag. Cultural or personal gender preference may be indicated using the `FACT` tag.
 
-### `g7:enumset-FAMC-STAT` {.unlisted .unnumbered}
+### `g7:enumset-FAMC-STAT`
 
 | Value | Meaning                        |
 | ----- | :----------------------------- |
@@ -2991,7 +3045,7 @@ Because that meaning was not specified and other definitions of "proven" exist, 
 The structures for representing the strength of and confidence in various claims are known to be inadequate and are likely to change in a future version of this specification.
 :::
 
-### `g7:enumset-ord-STAT` {.unlisted .unnumbered}
+### `g7:enumset-ord-STAT`
 
 These values were formerly used by The Church of Jesus Christ of Latter-day Saints for coordinating between temples and members.
 They are no longer used in that way, meaning their interpretation is subject to individual user interpretation
@@ -3011,7 +3065,7 @@ They are no longer used in that way, meaning their interpretation is subject to 
 | `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 | `UNCLEARED` | All | Data for clearing the ordinance request was insufficient. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 
-### `g7:enumset-NAME-TYPE` {.unlisted .unnumbered}
+### `g7:enumset-NAME-TYPE`
 
 | Value | Meaning                       |
 | ----- | :---------------------------- |

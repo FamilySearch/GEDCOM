@@ -9,7 +9,7 @@ uri: https://gedcom.io/terms/v7/EDUC
 standard tag: EDUC
 
 specification:
-  - Description
+  - Education
   - An Individual Attribute. See also INDIVIDUAL_ATTRIBUTE_STRUCTURE.
   - education
   - Indicator of a level of education attained.
