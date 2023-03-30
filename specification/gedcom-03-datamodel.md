@@ -448,6 +448,7 @@ n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
   +1 WWW <Special>                         {0:M}  g7:WWW
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 LANG <Language>                       {0:M}  g7:SUBM-LANG
+  +1 ALIA @<XREF:INDI>@                    {0:1}  g7:SUBM-ALIA
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<CHANGE_DATE>>                       {0:1}
@@ -1421,6 +1422,17 @@ Some systems organize `ALIA` pointers to create a tree structure, with the root 
 Others distribute events and attributes between `INDI` records mutually linked by symmetric pairs of `ALIA` pointers.
 A future version of this specification may adjust the definition of `ALIA`.
 :::
+
+#### `ALIA` (Alias) `g7:SUBM-ALIA`
+
+Indicates that the user described by the superstructure
+is the same person as the individual described by the referenced `INDI`.
+
+A `SUBM` may only have a single `INDI` linked in this way
+to simplify implementation of algorithms that depend on the `INDI` representing a particular user.
+Applications using `g7:ALIA` to represent a person with multiple `INDI` records
+should select or generate a representative `INDI` for the `SUBM`.`ALIA`.
+
 
 #### `ANCI` (Ancestor interest) `g7:ANCI`
 
