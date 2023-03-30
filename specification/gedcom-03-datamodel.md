@@ -1956,6 +1956,7 @@ If the text is primarily in one language with a few parts in a different languag
 it is recommended that a language tag identifying the primary language be used.
 If no one language is primary, the language tag `mul` (meaning "multiple") may be used,
 but most language-specific algorithms will treat `mul` the same way they do `und`.
+Multi-language text can be handled more robustly using [the `text/html` MediaType](#MIME).
 
 :::note
 Conversations are ongoing about adding part-of-payload language tagging in a future version of the specification
@@ -2090,6 +2091,7 @@ As of version 7.0, only 2 media types are supported by this structure:
     - `p` and `br` elements for paragraphing and line breaks.
     - `b`, `i`, `u`, and `s` elements for bold, italic, underlined, and strike-through text (or corresponding display in other locales; see [HTML §4.5](https://html.spec.whatwg.org/multipage/text-level-semantics.html) for more).
     - `sup` and `sub` elements for super- and sub-script.
+    - `span` with a `lang` attribute for marking part of text in a different human language than the rest.
     - The 3 XML entities that appear in text: `&amp;`, `&lt;` `&gt;`.
         Note that `&quote;` and `&apos;` are only needed in attributes.
         Other entities should be represented as their respective Unicode characters instead.
