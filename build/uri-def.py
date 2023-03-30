@@ -162,7 +162,7 @@ def new_key(val, d, *keys, msg=''):
 
 def parse_gedstruct(txt, rules, dtypes):
     """Reads through all gedstruct blocks to find payloads, substructures, and superstructures"""
-    sup,sub,payload = {}, {}, {}
+    sup,sub,payload = {'g7:CONT':[]}, {}, {}
     for block in re.findall(r'```[^\n]*gedstruct[^\n]*\n([^`]*)\n```', txt):
         stack = []
         for line in block.split('\n'):
@@ -184,8 +184,6 @@ def parse_gedstruct(txt, rules, dtypes):
                         new_key(joint_card(card,c), sub, stack[-1], u, msg='rule sub: ')
             else:
                 uri = parts[-1]
-                if '{' in uri:
-                    uri = parts[1]+' pseudostructure'
                 card = parts[-2]
                 if len(parts) > 4:
                     p = ' '.join(parts[2:-2])[1:-1]
@@ -226,7 +224,6 @@ def find_descriptions(txt, g7, ssp):
     
     # error check that gedstruct and sections align
     for uri in ssp:
-        if 'pseudostructure' in uri: continue
         if uri.startswith('g7:') and uri[3:] not in g7:
             raise Exception('Found gedstruct for '+uri+' but no section')
 

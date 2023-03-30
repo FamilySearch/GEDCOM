@@ -1,7 +1,7 @@
 Dataset :=
 0 <<HEADER>>                               {1:1}
 0 <<RECORD>>                               {0:M}
-0 TRLR                                     {1:1} 
+0 TRLR                                     {1:1}  g7:TRLR
 
 
 RECORD :=
@@ -23,7 +23,7 @@ n <<SUBMITTER_RECORD>>                     {1:1}
 
 
 HEADER :=
-n HEAD                                     {1:1} 
+n HEAD                                     {1:1}  g7:HEAD
   +1 GEDC                                  {1:1}  g7:GEDC
      +2 VERS <Special>                     {1:1}  g7:GEDC-VERS
   +1 SCHMA                                 {0:1}  g7:SCHMA
