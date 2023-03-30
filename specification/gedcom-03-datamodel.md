@@ -2914,8 +2914,9 @@ The structures for representing the strength of and confidence in various claims
 | `LOCKED` | Some systems may ignore changes to this data. |
 | `PRIVACY` | This data is not to be shared outside of a trusted circle, generally because it contains information about living individuals. This definition is known to admit multiple interpretations, so use of the `PRIVACY` restriction notice is not recommended. |
 
-It is recommended that applications prompt users during import and export to see if they would like to include `CONFIDENTIAL` data,
-and also prompt if they would like to include `PRIVACY` data.
+It is recommended that applications allow users to chose how `CONFIDENTIAL` and/or `PRIVACY` data is handled
+when interfacing with other users or applications,
+for example by allowing them to exclude such data when exporting.
 
 When a [List] of `RESN` enumeration values are present, all apply.
 
