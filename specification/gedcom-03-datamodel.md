@@ -240,8 +240,9 @@ n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
   +1 <<NON_EVENT_STRUCTURE>>               {0:M}
   +1 <<LDS_INDIVIDUAL_ORDINANCE>>          {0:M}
   +1 FAMC @<XREF:FAM>@                     {0:M}  g7:INDI-FAMC
-     +2 PEDI <Enum>                        {0:1}  g7:PEDI
+     +2 PEDI <Enum>                        {0:M}  g7:PEDI
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+        +3 DATE <DateValue>                {0:1}  g7:DATE
      +2 STAT <Enum>                        {0:1}  g7:FAMC-STAT
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
      +2 <<NOTE_STRUCTURE>>                 {0:M}
