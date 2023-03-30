@@ -2932,6 +2932,8 @@ Known interpretations include
 - Some use `PRIVACY` to mark records that have already had private data removed
 - Some use the English definitions of "privacy" and "confidential" to inform different restrictions for each
 
+There may also be applications using `PRIVACY` with interpretations not listed above.
+
 Because these different interpretations became widespread before they were identified,
 determining which one is meant generally requires knowledge of which application applied the `PRIVACY` restriction notice.
 It is anticipated that a future version will deprecate the `PRIVACY` option and introduce new values for each of its current use cases.
