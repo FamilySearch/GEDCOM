@@ -285,7 +285,7 @@ The URI for the `PersonalName` data type is `g7:type-Name`.
 
 ## Language
 
-The language data type represents a human language or family of related languages, as defined in [BCP 46](https://www.rfc-editor.org/info/bcp47).
+The language data type represents a human language or family of related languages, as defined in [BCP 47](https://www.rfc-editor.org/info/bcp47).
 It consists of a sequence of language subtags separated by hyphens,
 where language subtags are [registered by the IANA](https://www.iana.org/assignments/language-subtag-registry).
 
