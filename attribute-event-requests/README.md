@@ -44,7 +44,7 @@ Each proposal should have one row in the table, with five cells:
 
 5. **Notes** about other ways this information is encoded in FamilySearch GEDCOM 7 (other than as an event or attribute)
 
-When an event or attribute type is present in a family history system that does not use GEDCOM, it is appropriate to include it in the table to make the relationship to GEDCOM explicit.
+When an event or attribute type that is part of GEDCOM is present in a family history system that does not use GEDCOM, it is appropriate to include it in the table to make the relationship to GEDCOM explicit.
 
 ## Guide on the per-proposal sections
 
