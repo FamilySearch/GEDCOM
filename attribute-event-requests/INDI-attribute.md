@@ -93,7 +93,7 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification
+- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
 
 - Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
 
@@ -128,7 +128,7 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification
+- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
 
 - Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
 
@@ -163,7 +163,9 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification (but not used by the FamilySearch API, the GEDCOM-X implementation with the largest user base; see <https://www.familysearch.org/developers/docs/guides/facts>)
+- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
+  
+  *Not* used by the FamilySearch API, the GEDCOM-X implementation with the largest user base; see <https://www.familysearch.org/developers/docs/guides/facts>
 
 
 
@@ -229,7 +231,7 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification
+- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
 
 - Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
 
@@ -269,6 +271,6 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification
+- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
 
 - Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
