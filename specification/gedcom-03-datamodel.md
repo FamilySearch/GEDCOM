@@ -2160,7 +2160,7 @@ A descriptive or familiar name that is used instead of, or in addition to, oneâ€
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `NO` (Did not happen) `g7:NO`
+#### `NO` (Negative assertion) `g7:NO`
 
 An enumerated value from set `g7:enumset-NO` identifying something that was not part of the superstructure:
 an event type which did not occur to the superstructure's subject,
