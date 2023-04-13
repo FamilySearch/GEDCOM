@@ -7,16 +7,16 @@ Guides for using this document can be found in the associated [README.md](README
 # Table of Proposals
 
 | G7 Tag | v7.x| Name           | URIs | Notes |
-|--------|-----|----------------|------|-------|
-|        |     | Affiliation | `http://familysearch.org/v1/Affiliation` | |
+|:------:|-----|----------------|------|-------|
+|        |     | [Affiliation](#affiliation) | `http://familysearch.org/v1/Affiliation` | |
 | `CAST` | 7.0 | Caste | `http://gedcomx.org/Caste` | |
 | \*     | 7.0 | Childless | `http://familysearch.org/v1/NoChildren` | in 7.0 as `NCH 0` |
-|        |     | Clan | `http://gedcomx.org/Clan` | |
+|        |     | [Clan](#clan) | `http://gedcomx.org/Clan` | |
 | \*     | 7.0 | Died Before Eight | `http://familysearch.org/v1/DiedBeforeEight` | in 7.0 as `DEAT`.`AGE <8y` |
-|        |     | Ethnicity | `http://gedcomx.org/Ethnicity` | |
-|        |     | Heimat | `http://gedcomx.org/Heimat`| |
-|        |     | Life Sketch | `http://familysearch.org/v1/LifeSketch` | |
-|        |     | Military Service | `http://gedcomx.org/MilitaryService` | |
+|        |     | [Ethnicity](#ethnicity) | `http://gedcomx.org/Ethnicity` | |
+|        |     | [Heimat](#heimat) | `http://gedcomx.org/Heimat`| |
+|        |     | [Life Sketch](#life-sketch) | `http://familysearch.org/v1/LifeSketch` | |
+|        |     | [Military Service](#military-service) | `http://gedcomx.org/MilitaryService` | |
 | `IDNO` | 7.0 | National Id | `http://gedcomx.org/NationalId` | also `SSN` for USA only |
 | `NATI` | 7.0 | Nationality | `http://gedcomx.org/Nationality` | |
 | `OCCU` | 7.0 | Occupation | `http://gedcomx.org/Occupation` | |
@@ -25,7 +25,7 @@ Guides for using this document can be found in the associated [README.md](README
 | `RESI` | 7.0 | Residence | `http://gedcomx.org/Residence` | |
 | \*     | 7.0 | Single | `http://familysearch.org/v1/NoCoupleRelationships` | in 7.0 as `NMR 0` |
 | `TITL` | 7.0 | Title | `http://familysearch.org/v1/TitleOfNobility` | |
-|        |     | Tribe | `http://gedcomx.org/Tribe`<br/>`http://familysearch.org/v1/TribeName` | |
+|        |     | [Tribe](#tribe) | `http://gedcomx.org/Tribe`<br/>`http://familysearch.org/v1/TribeName` | |
 
 # Details of Proposals
 

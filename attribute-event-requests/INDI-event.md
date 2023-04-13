@@ -7,7 +7,7 @@ Guides for using this document can be found in the associated [README.md](README
 # Table of Proposals
 
 | G7 Tag | v7.x| Name           | URIs | Notes |
-|--------|-----|----------------|------|-------|
+|:------:|-----|----------------|------|-------|
 | `BARM` | 7.0 | Bar Mitzvah    | `http://gedcomx.org/BarMitzvah` | |
 | `BASM` | 7.0 | Bat Mitzvah    | `http://gedcomx.org/BatMitzvah` | |
 | `BIRT` | 7.0 | Birth          | `http://gedcomx.org/Birth` | |
@@ -17,7 +17,7 @@ Guides for using this document can be found in the associated [README.md](README
 | `DEAT` | 7.0 | Death          | `http://gedcomx.org/Death` | |
 | `IMMI` | 7.0 | Immigration    | `http://gedcomx.org/Immigration` | |
 | `NATU` | 7.0 | Naturalization | `http://gedcomx.org/Naturalization` | |
-|        |     | Stillbirth     | `http://gedcomx.org/Stillbirth` | perhaps `BIRT`.`TYPE Stillborn` or `DEAT`.`AGE 0y`? |
+|        |     | [Stillbirth](#stillbirth) | `http://gedcomx.org/Stillbirth` | perhaps `BIRT`.`TYPE Stillborn` or `DEAT`.`AGE 0y`? |
 
 # Details of Proposals
 
