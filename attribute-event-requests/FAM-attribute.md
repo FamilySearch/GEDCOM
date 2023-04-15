@@ -1,17 +1,28 @@
-# Proposed Family Attributes
+# Family Attributes
 
-This document tracks various proposed additions to the set of Family Attributes in FamilySearch GEDCOM 7.
+This document tracks the set of Family Attributes, both those in FamilySearch GEDCOM 7 and those considered for future addition.
 Guides for using this document can be found in the associated [README.md](README.md).
 
+# Table
 
-# Table of Proposals
+| G7 Tag | Since | Name | Notes |
+|:------:|-------|------|-------|
+| `NCHI` | 5.0 | Number of children | |
+| `RESI` | 3.0 | Residence | |
+| \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
+| | | [Lived Together](#lived-together) | perhaps `RESI`? |
 
-| G7 Tag | v7.x| Name           | URIs | Notes |
-|:------:|-----|----------------|------|-------|
-| \*     | 7.0 | Childless | `http://familysearch.org/v1/CoupleNeverHadChildren` | in 7.0 as `NCH 0` |
-|        |     | [Lived Together](#lived-together) | `http://familysearch.org/v1/LivedTogether` | perhaps `RESI`? |
+# Details
 
-# Details of Proposals
+## Childless
+
+The assertion that a family does not have children can be made using the `NCHI` structure with payload "`0`".
+This is distinct from simply not having any `CHIL` structures,
+which might mean there are children that have not yet been added to the data.
+
+### Used
+
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as a distinct stucture with URI `http://familysearch.org/v1/CoupleNeverHadChildren`
 
 ## Lived together
 
@@ -41,4 +52,4 @@ Related proposals include
 
 ### Used
 
-- Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/LivedTogether`

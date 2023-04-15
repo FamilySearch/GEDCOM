@@ -1,20 +1,28 @@
-# Proposed Family Events
+# Family Events
 
-This document tracks various proposed additions to the set of Family Events in FamilySearch GEDCOM 7.
+This document tracks the set of Family Events, both those in FamilySearch GEDCOM 7 and those considered for future addition.
 Guides for using this document can be found in the associated [README.md](README.md).
 
+# Table
 
-# Table of Proposals
+| G7 Tag | Since | Name | Notes |
+|:------:|-------|------|-------|
+| `ANUL` | 4.0 | [Annulment](#annulment) | |
+| `CENS` | 3.0 | Census | |
+| | | [Common Law Marriage](#common-law-marriage) | perhaps `MARR`.`TYPE Common law`? |
+| `DIV`  | 3.0 | [Divorce](#divorce) | |
+| `DIVF` | 4.0 | Divorce Filed | |
+| `ENGA` | 4.0 | Engagement | |
+| `MARR` | 3.0 | [Marriage](#marriage) | |
+| `MARB` | 4.0 | Marriage Bann | |
+| `MARL` | 4.0 | Marriage License | |
+| `MARS` | 4.0 | Marriage Settlement | |
 
-| G7 Tag | v7.x| Name           | URIs | Notes |
-|:------:|-----|----------------|------|-------|
-| `ANUL` | 7.0 | Annulment | `http://gedcomx.org/Annulment` | |
-|        |     | [Common Law Marriage](#common-law-marriage) | `http://gedcomx.org/CommonLawMarriage` | perhaps `MARR`.`TYPE Common law`? |
-| `DIV`  | 7.0 | Divorce | `http://gedcomx.org/Divorce` | |
-| `MARR` | 7.0 | Marriage | `http://gedcomx.org/Marriage` | |
+# Details
 
-# Details of Proposals
+## Annulment
 
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Annulment`
 
 ## Common Law Marriage
 
@@ -22,7 +30,7 @@ Guides for using this document can be found in the associated [README.md](README
 
 *proposed description missing*
 
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* " The fact of a marriage by common law."
+*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "The fact of a marriage by common law."
 
 ### Value
 
@@ -42,6 +50,14 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/CommonLawMarriage`
 
-- Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
+
+## Divorce
+
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Divorce`
+
+## Marriage
+
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Marriage`
