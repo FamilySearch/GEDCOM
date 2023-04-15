@@ -1,33 +1,37 @@
-# Proposed Individual Attributes
+# Individual Attributes
 
-This document tracks various proposed additions to the set of Individual Attributes in FamilySearch GEDCOM 7.
+This document tracks the set of Individual Attributes, both those in FamilySearch GEDCOM 7 and those considered for future addition.
 Guides for using this document can be found in the associated [README.md](README.md).
 
+# Table
 
-# Table of Proposals
+| G7 Tag | Since | Name | Notes |
+|:------:|-------|------|-------|
+| | | [Affiliation](#affiliation) | |
+| `CAST` | 5.0 | [Caste](#caste) | |
+| \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
+| | | [Clan](#clan) | |
+| \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT`.`AGE <8y` |
+| `EDUC` | 4.0 | Education | |
+| | | [Ethnicity](#ethnicity) | `http://gedcomx.org/Ethnicity` | |
+| | | [Heimat](#heimat) | `http://gedcomx.org/Heimat`| |
+| | | [Life Sketch](#life-sketch) | `http://familysearch.org/v1/LifeSketch` | |
+| | | [Military Service](#military-service) | `http://gedcomx.org/MilitaryService` | |
+| `IDNO` | 5.3 | [National ID](#national-id) | see also `SSN` |
+| `NATI` | 5.0 | [Nationality](#nationality) | |
+| `NCHI` | 5.0 | Number of Children | |
+| `NMR`  | 5.0 | Number of Marriages | really number of `FAM`s; marriage not required |
+| `OCCU` | 3.0 | [Occupation](#occupation) | |
+| `DSCR` | 5.0 | [Physical Description](#physical-description) | |
+| `PROP` | 3.0 | Property | |
+| `RELI` | 3.0 | [Religion](#religion) | |
+| `RESI` | 3.0 | [Residence](#residence) | |
+| \*     | 5.0 | [Single](#single) | encoded as `NMR 0` |
+| `SSN`  | 5.3 | Social Security Number | the USA's `IDNO` equivalent |
+| `TITL` | 3.0 | [Title](#title) | |
+| | | [Tribe](#tribe) | |
 
-| G7 Tag | v7.x| Name           | URIs | Notes |
-|:------:|-----|----------------|------|-------|
-|        |     | [Affiliation](#affiliation) | `http://familysearch.org/v1/Affiliation` | |
-| `CAST` | 7.0 | Caste | `http://gedcomx.org/Caste` | |
-| \*     | 7.0 | Childless | `http://familysearch.org/v1/NoChildren` | in 7.0 as `NCH 0` |
-|        |     | [Clan](#clan) | `http://gedcomx.org/Clan` | |
-| \*     | 7.0 | Died Before Eight | `http://familysearch.org/v1/DiedBeforeEight` | in 7.0 as `DEAT`.`AGE <8y` |
-|        |     | [Ethnicity](#ethnicity) | `http://gedcomx.org/Ethnicity` | |
-|        |     | [Heimat](#heimat) | `http://gedcomx.org/Heimat`| |
-|        |     | [Life Sketch](#life-sketch) | `http://familysearch.org/v1/LifeSketch` | |
-|        |     | [Military Service](#military-service) | `http://gedcomx.org/MilitaryService` | |
-| `IDNO` | 7.0 | National Id | `http://gedcomx.org/NationalId` | also `SSN` for USA only |
-| `NATI` | 7.0 | Nationality | `http://gedcomx.org/Nationality` | |
-| `OCCU` | 7.0 | Occupation | `http://gedcomx.org/Occupation` | |
-| `DESC` | 7.0 | Physical Description | `http://gedcomx.org/PhysicalDescription` | |
-| `RELI` | 7.0 | Religion | `http://gedcomx.org/Religion` | |
-| `RESI` | 7.0 | Residence | `http://gedcomx.org/Residence` | |
-| \*     | 7.0 | Single | `http://familysearch.org/v1/NoCoupleRelationships` | in 7.0 as `NMR 0` |
-| `TITL` | 7.0 | Title | `http://familysearch.org/v1/TitleOfNobility` | |
-|        |     | [Tribe](#tribe) | `http://gedcomx.org/Tribe`<br/>`http://familysearch.org/v1/TribeName` | |
-
-# Details of Proposals
+# Details
 
 
 ## Affiliation
@@ -59,9 +63,24 @@ Related proposals include
 
 ### Used
 
-- Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/Affiliation`
 
 
+
+## Caste
+
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Caste`
+
+
+## Childless
+
+The assertion that a family does not have children can be made using the `NCHI` structure with payload "`0`".
+This is distinct from simply not having any `CHIL` structures,
+which might mean there are children that have not yet been added to the data.
+
+### Used
+
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as a distinct stucture with URI `http://familysearch.org/v1/CoupleNeverHadChildren`
 
 
 ## Clan
@@ -93,10 +112,18 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Clan`
 
-- Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
 
+
+## Died Before Eight
+
+The assertion that a person died before the end of their eighth year of life can be made using the `DEAT` structure with an `AGE` substructure with payload "`< 8y`".
+
+### Used
+
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/DiedBeforeEight`
 
 
 ## Ethnicity
@@ -128,9 +155,9 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Ethnicity`
 
-- Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
 
 
 ## Heimat
@@ -163,7 +190,7 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Heimat`
   
   *Not* used by the FamilySearch API, the GEDCOM-X implementation with the largest user base; see <https://www.familysearch.org/developers/docs/guides/facts>
 
@@ -193,7 +220,7 @@ There are no similar proposals here.
 
 ### Used
 
-- Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/LifeSketch`
 - Used by Ancestry, under the name "Life Story"
 - Used by FindAGrave, under the name "Bio Information"
 
@@ -231,12 +258,50 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/MilitaryService`
 
-- Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
 
 
 
+
+## National ID
+
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/NationalId`
+
+## Nationality
+
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Nationality`
+
+## Occupation
+
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Occupation`
+
+## Physical Description
+
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/PhysicalDescription`
+
+## Religion
+
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Religion`
+
+## Residence
+
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Residence`
+
+## Single
+
+The assertion that a person is not a partner in a family can be made using the `NMR` structure with payload "`0`".
+This is distinct from simply not having any `FAMS` structures,
+which might mean there are relationships that have not yet been added to the data.
+
+### Used
+
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/NoCoupleRelationships`
+
+## Title
+
+In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/TitleOfNobility`
 
 
 
@@ -271,6 +336,6 @@ Related proposals include
 
 ### Used
 
-- Part of the GEDCOM X specification <https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md>
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Tribe`
 
-- Used by the FamilySearch API <https://www.familysearch.org/developers/docs/guides/facts>
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/TribeName`
