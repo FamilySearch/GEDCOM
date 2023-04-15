@@ -64,7 +64,7 @@ All other structure types should have the following subsections:
 
     A succinct but clear description such as might go in the specification if accepted.
     
-    *In [specification X](https://example.com/specificationx.html> as* "The description used by specification X"
+    *In [specification X](https://example.com/specificationx.html) as* "The description used by specification X"
 
 2. `### Value`
 
