@@ -13,10 +13,10 @@ Guides for using this document can be found in the associated [README.md](README
 | | | [Clan](#clan) | |
 | \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT`.`AGE <8y` |
 | `EDUC` | 4.0 | Education | |
-| | | [Ethnicity](#ethnicity) | `http://gedcomx.org/Ethnicity` | |
-| | | [Heimat](#heimat) | `http://gedcomx.org/Heimat`| |
-| | | [Life Sketch](#life-sketch) | `http://familysearch.org/v1/LifeSketch` | |
-| | | [Military Service](#military-service) | `http://gedcomx.org/MilitaryService` | |
+| | | [Ethnicity](#ethnicity) | |
+| | | [Heimat](#heimat) | |
+| | | [Life Sketch](#life-sketch) | |
+| | | [Military Service](#military-service) | |
 | `IDNO` | 5.3 | [National ID](#national-id) | see also `SSN` |
 | `NATI` | 5.0 | [Nationality](#nationality) | |
 | `NCHI` | 5.0 | Number of Children | |
