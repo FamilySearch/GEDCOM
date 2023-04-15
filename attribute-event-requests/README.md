@@ -18,7 +18,7 @@ New events and attributes are added in minor versions (7.1, 7.2, etc.).
 Old events and attributes can be deprecated at any time, but can only be removed in major versions (8.0, 9.0, etc.)
 It may be that some of the event and attribute types in 7.0 were included because they were also in 5.5.1 and do not meet these criteria and may be removed in 8.0 or beyond.
 
-# Directions for using the documents in this folder
+# Using the documents in this folder
 
 Each of the other four documents in this folder are structured as follows:
 
