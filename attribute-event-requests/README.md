@@ -1,6 +1,8 @@
-# Proposed new Family and Individual Attributes and Events
+# Proposing new Family and Individual Attributes and Events
 
 The documents in this folder track various proposed additions to the set of Family Attributes, Family Events, Individual Attributes, and Individual Events in FamilySearch GEDCOM 7.
+It includes all current structures of those types for ease of reference.
+It may include links to other systems or standards that use these structures in ways other than GEDCOM when such uses have been identified and contributed here.
 
 There is an inherent tension between completeness (which would recommend including every event and attribute type we can define) and simplicity (which would recommend including only a few of the the most important options). In 2023. the GEDCOM Steering Committee identified the following criteria for a proposal to be added to the specification.
 
@@ -21,36 +23,42 @@ It may be that some of the event and attribute types in 7.0 were included becaus
 Each of the other four documents in this folder are structured as follows:
 
 1. A brief opening, pointing back to this document.
-2. A table of the major proposals in the document.
-3. A section for each proposal that is not yet in the specification, with evidence of the three criteria above
+2. A table of the current and proposed structure types discussed in the document.
+3. A section for those proposals for which additional information has been supplied.
 
-To propose, support, or oppose the addition of a new structure type to a future version of FamilySearch GEDCOM 7, please submit a **pull request** editing the appropriate document. If you are not comfortable submitting a pull request, an **issue** or **discussion** can be used instead.
+To propose, support, or oppose the addition of a new structure type to a future version of FamilySearch GEDCOM 7, please submit a [pull request](https://github.com/FamilySearch/GEDCOM/pulls) editing the appropriate document. If you are not comfortable submitting a pull request, an [issue](https://github.com/FamilySearch/GEDCOM/issues) or [discussion](https://github.com/FamilySearch/GEDCOM/discussions) can be used instead.
+
+If there is no document here for the type of structure you want to suggest, please use the [issues tracker](https://github.com/FamilySearch/GEDCOM/issues) instead.
 
 ## Guide on the table
 
-Each proposal should have one row in the table, with five cells:
+Each proposal should have one row in the table, with four cells:
 
-1. **G7 Tag** is set only once present in the specification. The special value "\*" is used to indicate attributes or events that are present in a different way, such 
+1. **G7 Tag** is set only once present in the specification.
+    
+    The special value "\*" is used to indicate attributes or events that are present in a different way, such as with a set of structures and payloads.
 
-2. **v7.x** is set only once present in the specification
+2. **Since** is set only once present in the specification, and identifies which version of GEDCOM first provided the structure.
+    
+    If the structure was provided in an earlier version of GEDCOM but removed before the current version, the *since* field is left blank.
 
-3. **Name** is a proposed short English name (suitable for use in a label). If the concept is uncommon in English-speaking cultures, the name may be that used in the language of a culture where it is common, transliterated into the Latin script as needed.
+3. **Name** is a short English name (suitable for use in a label) for the event or attribute type. If the concept is uncommon in English-speaking cultures, the name may be that used in the language of a culture where it is common, transliterated into the Latin script as needed.
+    
+    If there is a subsection for this structure in the details section, make this a hyperlink to it by
+    
+    - making a slug from the name by
+        - lower-casing the name
+        - replacing non-alphanumeric characters with hyphens
+    - putting the name in brackets, then putting in parentheses a hash and the slug, like `[Name](#name)`
 
-4. **URIs** is the concept's identifiers from other specifications, such as GEDCOM-X, FamilySearch API, etc. If several, the markdown should have them on one line separated by line break tags, like this:
-
-    ````
-    | | | Example | `http://example.com/uri1`<br/>`http://example.com/uri2` | |
-    ````
-
-5. **Notes** about other ways this information is encoded in FamilySearch GEDCOM 7 (other than as an event or attribute)
-
-When an event or attribute type that is part of GEDCOM is present in a family history system that does not use GEDCOM, it is appropriate to include it in the table to make the relationship to GEDCOM explicit.
+4. **Notes** clarifying the first three cells, such as explaining which structures are used if the tag was "\*" or noting a difference between name and meaning.
 
 ## Guide on the per-proposal sections
 
 Open with the same header as a **Name** field in the table, preceded by two hashtags, like `## Example`
 
-Have the following subsections:
+Structure types that are already part of the GEDCOM specification may contain just a list of ways the same structure is referenced in other (non-GEDCOM) formats and tools.
+All other structure types should have the following subsections:
 
 1. `### Description`
 
