@@ -2906,12 +2906,16 @@ See [Events] and [Attributes].
 
 ### `g7:enumset-NO` {.unlisted .unnumbered}
 
-This set contains various structure type's tags:
-every event-type tag name except the generic `EVEN` tag,
-as well as `NAME`, `GIVN`, and `SURN`,
-each referring to the information described by the corresponding structure type.
-See [Events], `g7:GIVN`, `g7:INDI-NAME`, and `g7:SURN`.
+This set contains various structure types, with the same tags and URIs as the respective structures:
 
+- All individual and family event types except `EVEN`
+
+- The personal name type `g7:INDI-NAME`
+
+- The name parts `g7:GIVN` and `g7:SURN`
+
+Values should be appropriate to the context of the containing structure,
+as described under `g7:NO`.
 
 ### `g7:enumset-PEDI` {.unlisted .unnumbered}
 
