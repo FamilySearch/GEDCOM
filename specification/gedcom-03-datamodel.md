@@ -179,7 +179,7 @@ n @XREF:FAM@ FAM                           {1:1}  g7:record-FAM
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<FAMILY_ATTRIBUTE_STRUCTURE>>        {0:M}
   +1 <<FAMILY_EVENT_STRUCTURE>>            {0:M}
-  +1 <<NON_EVENT_STRUCTURE>>               {0:M}
+  +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 HUSB @<XREF:INDI>@                    {0:1}  g7:FAM-HUSB
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 WIFE @<XREF:INDI>@                    {0:1}  g7:FAM-WIFE
@@ -237,7 +237,7 @@ n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
         +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
   +1 <<INDIVIDUAL_ATTRIBUTE_STRUCTURE>>    {0:M}
   +1 <<INDIVIDUAL_EVENT_STRUCTURE>>        {0:M}
-  +1 <<NON_EVENT_STRUCTURE>>               {0:M}
+  +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 <<LDS_INDIVIDUAL_ORDINANCE>>          {0:M}
   +1 FAMC @<XREF:FAM>@                     {0:M}  g7:INDI-FAMC
      +2 PEDI <Enum>                        {0:M}  g7:PEDI
@@ -671,7 +671,7 @@ Family events; see [Family Events](#family-events) for more.
 
 An event structure may be used to discuss an event even if the event is not known to have occurred.
 See [Events] for a discussion of how `DATE`, `PLAC`, and the optional `Y` payload indicate whether the structure is asserting the event occurred.
-See the `NON_EVENT_STRUCTURE` for how to state an event did not occur.
+See the `NEGATIVE_ASSERTION` for how to state an event did not occur.
 
 :::note
 Family event structures vary as follows:
@@ -899,7 +899,7 @@ Individual events; see [Individual Events](#individual-events) for more.
 
 An event structure may be used to discuss an event even if the event is not known to have occurred.
 See [Events] for a discussion of how `DATE`, `PLAC`, and the optional `Y` payload indicate whether the structure is asserting the event occurred.
-See the `NON_EVENT_STRUCTURE` for how to state an event did not occur.
+See the `NEGATIVE_ASSERTION` for how to state an event did not occur.
 
 :::note
 Individual event structures vary as follows:
@@ -980,7 +980,7 @@ The optional `CROP` substructure indicates that a subregion of an image represen
 
 The optional `TITL` substructure supersedes any `OBJE.FILE.TITL` substructures included in the `MULTIMEDIA_RECORD`.
 
-#### `NON_EVENT_STRUCTURE` :=
+#### `NEGATIVE_ASSERTION` :=
 
 ```gedstruct
 n NO <Enum>                                {1:1}  g7:NO
@@ -1079,6 +1079,7 @@ n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
   +1 TRAN <PersonalName>                   {0:M}  g7:NAME-TRAN
      +2 LANG <Language>                    {1:1}  g7:LANG
      +2 <<PERSONAL_NAME_PIECES>>           {0:1}
+  +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
   +1 EXID <Special>                        {0:M}  g7:EXID
@@ -2159,10 +2160,16 @@ A descriptive or familiar name that is used instead of, or in addition to, oneâ€
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `NO` (Did not happen) `g7:NO`
+#### `NO` (Negative assertion) `g7:NO`
 
-An enumerated value from set `g7:enumset-EVEN` identifying an event type which did not occur to the superstructure's subject.
-See `NON_EVENT_STRUCTURE` for more.
+An enumerated value from set `g7:enumset-NO` identifying something that was not part of the superstructure:
+an event type which did not occur to the superstructure's subject,
+that the superstructure's subject did not have an name
+or name part,
+etc.
+A specific payload `NO XYZ` should only appear where `XYZ` would be legal.
+
+See `NEGATIVE_ASSERTION` for more.
 
 #### `NOTE` (Note) `g7:NOTE`
 
@@ -2873,11 +2880,6 @@ Each set of enumeration values has its own URI.
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
-### `g7:enumset-EVEN` {.unlisted .unnumbered}
-
-An event-type tag name, but not the generic `EVEN` tag.
-See [Events].
-
 ### `g7:enumset-EVENATTR` {.unlisted .unnumbered}
 
 An event- or attribute-type tag name.
@@ -2901,6 +2903,19 @@ See [Events] and [Attributes].
 | `TOMBSTONE`  | Burial marker or related memorial |
 | `VIDEO`      | Motion picture recording          |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
+
+### `g7:enumset-NO` {.unlisted .unnumbered}
+
+This set contains various structure types, with the same tags and URIs used by the structure types:
+
+- All individual and family event types except `EVEN`
+
+- The personal name type `g7:INDI-NAME`
+
+- The name parts `g7:GIVN` and `g7:SURN`
+
+Values should be appropriate to the context of the containing structure,
+as described under `g7:NO`.
 
 ### `g7:enumset-PEDI` {.unlisted .unnumbered}
 
