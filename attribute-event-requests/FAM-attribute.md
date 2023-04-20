@@ -7,7 +7,7 @@ Guides for using this document can be found in the associated [README.md](README
 
 | G7 Tag | Since | Name | Notes |
 |:------:|-------|------|-------|
-| \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
+| \*     | 5.0 | [Childless](#childless) | encoded as `NCHI 0` |
 | | | [Lived Together](#lived-together) | perhaps `RESI`? |
 | `NCHI` | 5.0 | Number of children | |
 | `RESI` | 3.0 | Residence | |
