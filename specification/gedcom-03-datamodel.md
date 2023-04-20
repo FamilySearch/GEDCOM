@@ -2906,7 +2906,7 @@ See [Events] and [Attributes].
 
 ### `g7:enumset-NO` {.unlisted .unnumbered}
 
-This set contains various structure types, with the same tags and URIs as the respective structures:
+This set contains various structure types, with the same tags and URIs used by the structure types:
 
 - All individual and family event types except `EVEN`
 
