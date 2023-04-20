@@ -4,7 +4,7 @@ The documents in this folder track various proposed additions to the set of Fami
 It includes all current structures of those types for ease of reference.
 It may include links to other systems or standards that use these structures in ways other than GEDCOM when such uses have been identified and contributed here.
 
-There is an inherent tension between completeness (which would recommend including every event and attribute type we can define) and simplicity (which would recommend including only a few of the the most important options). In 2023. the GEDCOM Steering Committee identified the following criteria for a proposal to be added to the specification.
+There is an inherent tension between completeness (which would recommend including every event and attribute type we can define) and simplicity (which would recommend including only a few of the the most important options). In 2023, the GEDCOM Steering Committee identified the following criteria for a proposal to be added to the specification.
 
 In general, events and attribute are accepted for inclusion once the following criteria are met:
 
