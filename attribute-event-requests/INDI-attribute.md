@@ -18,7 +18,7 @@ Guides for using this document can be found in the associated [README.md](README
 | | | [Heimat](#heimat) | see also Bürgerort |
 | `IDNO` | 5.3 | [Identifying Number](#identifying-number) | |
 | | | [Life Sketch](#life-sketch) | |
-| | | [Military Service](#military-service) | |
+| | | [Military Service](#military-service) | Why is this an Attr?  Should be an Event! |
 | `IDNO` | 5.3 | [National ID](#national-id) | see also `SSN` |
 | `NATI` | 5.0 | [Nationality](#nationality) | |
 | `NCHI` | 5.0 | Number of Children | |
@@ -295,6 +295,7 @@ The most closely related structures are:
 Related proposals include
 
 - GEDCOM-X has events "Military Induction" and "Military Discharge" which define the start and end of the military service
+- Creating an event tag `MILT' with enumerated `MILT.TYPE` [Registration, Induction, Discharge, Commission, Engagement, Deployment, Other/Phrase] 
 
 ### Used
 
