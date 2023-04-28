@@ -8,6 +8,7 @@ Guides for using this document can be found in the associated [README.md](README
 | G7 Tag | Since | Name | Notes |
 |:------:|-------|------|-------|
 | | | [Affiliation](#affiliation) | |
+| | | [Bürgerort](#bürgerort) | |
 | `CAST` | 5.0 | [Caste](#caste) | |
 | \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
 | | | [Clan](#clan) | |
@@ -61,11 +62,39 @@ Related proposals include
 - Tribe: *difference from Affiliation not yet articulated*
 - Ethnicity: *difference from Affiliation not yet articulated*
 - Heimat: *difference from Affiliation not yet articulated*
+- Bürgerort: *difference from Affiliation not yet articulated*
 
 ### Used
 
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/Affiliation`
 
+## Bürgerort
+
+### Description
+
+In Switzerland, the place of origin denotes where a Swiss citizen has their municipal citizenship, usually inherited from previous generations. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances. Literally "home place" or "citizen place" (from Wikipedia)
+
+### Value
+
+Found in the following historical records:
+
+- (records not yet identified)
+
+### Absence
+
+The most closely related structures are:
+
+- 
+
+Related proposals include
+
+- Ethnicity: ethnicities typically have some geographic association, but generally much larger and less fine-grained than a heimat
+- Tribe: members of a tribe may share a heimat, but tribes may be defined by other characteristics too
+- Clan: members of a clan may share a heimat, but clans may be defined by other characteristics too
+- Affiliation: a person with a given Bürgerort needn't have any affiliation with others with the same Bürgerort 
+- Should be combined with other terms such as: German: Heimatort or Bürgerort; French: Lieu d'origine; Italian: Luogo di attinenza
+
+### Used
 
 
 ## Caste
@@ -110,6 +139,8 @@ Related proposals include
 - Ethnicity: *difference from Clan not yet articulated*
 - Heimat: a place, often as a disambiguation of family name or lineage. Clan suggests group identity, not geography
 - Affiliation: generally by choice or appointment, while clan generally indicates something assigned to a person at birth
+- Bürgerort: a place, often as a disambiguation of family name or lineage. Clan suggests group identity, not geography
+
 
 ### Used
 
@@ -153,6 +184,8 @@ Related proposals include
 - Clan: *difference from Ethnicity not yet articulated*
 - Heimat: a place, often as a disambiguation of family name or lineage. Ethnicity suggests group identity, not geography
 - Affiliation: generally an organized group by choice or appointment, while ethnicity generally indicates a broader culture my self-identification
+- Bürgerort: a place, often as a disambiguation of family name or lineage. Ethnicity suggests group identity, not geography
+
 
 ### Used
 
@@ -188,6 +221,8 @@ Related proposals include
 - Tribe: members of a tribe may share a heimat, but tribes may be defined by other characteristics too
 - Clan: members of a clan may share a heimat, but clans may be defined by other characteristics too
 - Affiliation: a person with a given heimat needn't have any affiliation with others with the same heimat
+- Bürgerort: a place, often as a disambiguation of family name or lineage. Similar to Heimat and other terms from France and Italy
+
 
 ### Used
 
@@ -339,6 +374,7 @@ Related proposals include
 - Ethnicity: *difference from Tribe not yet articulated*
 - Heimat: a place, often as a disambiguation of family name or lineage. Tribe suggests group identity, not geography
 - Affiliation: generally by choice or appointment, while tribe generally indicates something assigned to a person at birth
+- Bürgerort: a place, often as a disambiguation of family name or lineage. Tribe suggests group identity, not geography
 
 ### Used
 
