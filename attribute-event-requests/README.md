@@ -26,7 +26,7 @@ Each of the other four documents in this folder are structured as follows:
 2. A table of the current and proposed structure types discussed in the document.
 3. A section for those proposals for which additional information has been supplied.
 
-To propose, support, or oppose the addition of a new structure type to a future version of FamilySearch GEDCOM 7, please submit a [pull request](https://github.com/FamilySearch/GEDCOM/pulls) editing the appropriate document. If you are not comfortable submitting a pull request, an [issue](https://github.com/FamilySearch/GEDCOM/issues) or [discussion](https://github.com/FamilySearch/GEDCOM/discussions) can be used instead.
+To propose, support, or oppose the addition of a new structure type to a future version of FamilySearch GEDCOM 7, please submit a [pull request](https://github.com/FamilySearch/GEDCOM/pulls) editing the appropriate document. If you are not comfortable submitting a pull request, an [issue](https://github.com/FamilySearch/GEDCOM/issues) or [discussion](https://github.com/FamilySearch/GEDCOM/discussions) can be used instead. Addiitonal comments on these processes can be found in [this comment on issue #117](https://github.com/FamilySearch/GEDCOM/issues/117#issuecomment-1527496061).
 
 If there is no document here for the type of structure you want to suggest, please use the [issues tracker](https://github.com/FamilySearch/GEDCOM/issues) instead.
 
