@@ -15,6 +15,7 @@ Guides for using this document can be found in the associated [README.md](README
 | `EDUC` | 4.0 | Education | |
 | | | [Ethnicity](#ethnicity) | |
 | | | [Heimat](#heimat) | |
+| `IDNO` | 5.3 | [Identifying Number](#identifying-number) | |
 | | | [Life Sketch](#life-sketch) | |
 | | | [Military Service](#military-service) | |
 | `IDNO` | 5.3 | [National ID](#national-id) | see also `SSN` |
@@ -195,6 +196,10 @@ Related proposals include
   *Not* used by the FamilySearch API, the GEDCOM-X implementation with the largest user base; see <https://www.familysearch.org/developers/docs/guides/facts>
 
 
+## Identifying Number
+
+[GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) has a subset of these (only those issued by nations) under [National Id](#national-id).
+
 
 ## Life Sketch
 
@@ -267,7 +272,8 @@ Related proposals include
 
 ## National ID
 
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/NationalId`
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/NationalId`.
+A special case of [Identifying number](#identifying-number)
 
 ## Nationality
 
