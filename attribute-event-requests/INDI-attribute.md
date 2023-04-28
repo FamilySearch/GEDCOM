@@ -8,14 +8,14 @@ Guides for using this document can be found in the associated [README.md](README
 | G7 Tag | Since | Name | Notes |
 |:------:|-------|------|-------|
 | | | [Affiliation](#affiliation) | |
-| | | [Bürgerort](#bürgerort) | |
+| | | [Bürgerort](#bürgerort) | see also Heimat |
 | `CAST` | 5.0 | [Caste](#caste) | |
 | \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
 | | | [Clan](#clan) | |
 | \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT`.`AGE <8y` |
 | `EDUC` | 4.0 | Education | |
 | | | [Ethnicity](#ethnicity) | |
-| | | [Heimat](#heimat) | |
+| | | [Heimat](#heimat) | see also Bürgerort |
 | `IDNO` | 5.3 | [Identifying Number](#identifying-number) | |
 | | | [Life Sketch](#life-sketch) | |
 | | | [Military Service](#military-service) | |
