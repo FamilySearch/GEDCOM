@@ -102,7 +102,7 @@ Found in the following historical records:
 
 The most closely related structures are:
 
-- 
+- `NATI` includes "An individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." Adding `TYPE Clan` would fully capture this information.  
 
 Related proposals include
 
