@@ -317,6 +317,27 @@ where:
 
 The URI for the `MediaType` data type is `dcat:mediaType`.
 
+## Shortened URI
+
+A URI, possibly shorted and documented using a [documented extension tag](#extension-tags).
+
+```abnf
+ShortURI = extTag / URI
+```
+
+where:
+
+* `URI` is defined in [STD 66](https://www.rfc-editor.org/info/std66) section 3
+  as what is commonly called an "absolute URI"; notably, it always includes a colon.
+
+* Any `extTag` used shall be documented in the [schema] as a [documented extension tag](#extension-tags).
+  As with other documented extension tags, the tag may be changed without changing the meaning of the data
+  provided that the URI it represents does not change.
+
+Using `extTag` is preferred when the same URI would occur repeatedly in the dataset
+or when substructures of `g7:TAG` are used in the documented extension tag definition to provide additional information.
+
+
 ## Special
 
 The special data type is a string conforming to a case-specific standard or constraints. The constraints on each special data type instance are either unique to that structure type or are not simply expressed.

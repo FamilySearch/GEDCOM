@@ -134,6 +134,8 @@ n HEAD                                     {1:1}  g7:HEAD
      +2 VERS <Special>                     {1:1}  g7:GEDC-VERS
   +1 SCHMA                                 {0:1}  g7:SCHMA
      +2 TAG <Special>                      {0:M}  g7:TAG
+        +3 LABEL <Text>                    {0:M}  g7:LABEL
+           +4 LANG <Language>              {0:1}  g7:LANG
   +1 SOUR <Special>                        {0:1}  g7:HEAD-SOUR
      +2 VERS <Special>                     {0:1}  g7:VERS
      +2 NAME <Text>                        {0:1}  g7:NAME
@@ -234,7 +236,7 @@ n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
   +1 <<PERSONAL_NAME_STRUCTURE>>           {0:M}
   +1 SEX <Enum>                            {0:1}  g7:SEX
      +2 EXID <Special>                     {0:M}  g7:EXID
-        +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
+        +3 TYPE <ShortURI>                 {0:1}  g7:EXID-TYPE
   +1 <<INDIVIDUAL_ATTRIBUTE_STRUCTURE>>    {0:M}
   +1 <<INDIVIDUAL_EVENT_STRUCTURE>>        {0:M}
   +1 <<NEGATIVE_ASSERTION>>                {0:M}
@@ -247,7 +249,7 @@ n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
      +2 <<NOTE_STRUCTURE>>                 {0:M}
      +2 EXID <Special>                     {0:M}  g7:EXID
-        +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
+        +3 TYPE <ShortURI>                 {0:1}  g7:EXID-TYPE
   +1 FAMS @<XREF:FAM>@                     {0:M}  g7:FAMS
      +2 <<NOTE_STRUCTURE>>                 {0:M}
   +1 SUBM @<XREF:SUBM>@                    {0:M}  g7:SUBM
@@ -592,7 +594,7 @@ n <<SOURCE_CITATION>>                      {0:M}
 n <<MULTIMEDIA_LINK>>                      {0:M}
 n UID <Special>                            {0:M}  g7:UID
 n EXID <Special>                           {0:M}  g7:EXID
-  +1 TYPE <Special>                        {0:1}  g7:EXID-TYPE
+  +1 TYPE <ShortURI>                       {0:1}  g7:EXID-TYPE
 ```
 
 Substructures that may be shared by most individual and family events and attributes.
@@ -716,7 +718,7 @@ n REFN <Special>                           {1:1}  g7:REFN
 n UID <Special>                            {1:1}  g7:UID
 |
 n EXID <Special>                           {1:1}  g7:EXID
-  +1 TYPE <Special>                        {0:1}  g7:EXID-TYPE
+  +1 TYPE <ShortURI>                       {0:1}  g7:EXID-TYPE
 ]
 ```
 
@@ -1105,7 +1107,7 @@ n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
   +1 EXID <Special>                        {0:M}  g7:EXID
-     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
+     +2 TYPE <ShortURI>                    {0:1}  g7:EXID-TYPE
 ```
 
 Names of individuals are represented in the manner the name is normally spoken, with the family name, surname, or nearest cultural parallel thereunto separated by slashes (U+002F `/`). Based on the dynamic nature or unknown compositions of naming conventions, it is difficult to provide a more detailed name piece structure to handle every case. The `PERSONAL_NAME_PIECES` are provided optionally for systems that cannot operate effectively with less structured information. The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information; in particular it is recommended that all name parts in `PERSONAL_NAME_PIECES` appear within the `PersonalName` payload in some form, possibly adjusted for gender-specific suffixes or the like.
@@ -1134,7 +1136,7 @@ n PLAC <List:Text>                         {1:1}  g7:PLAC
      +2 LATI <Special>                     {1:1}  g7:LATI
      +2 LONG <Special>                     {1:1}  g7:LONG
   +1 EXID <Special>                        {0:M}  g7:EXID
-     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
+     +2 TYPE <ShortURI>                    {0:1}  g7:EXID-TYPE
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
@@ -1195,7 +1197,7 @@ n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 EXID <Special>                        {0:M}  g7:EXID
-     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
+     +2 TYPE <ShortURI>                    {0:1}  g7:EXID-TYPE
 ```
 
 A citation indicating that the pointed-to source record supports the claims made in the superstructure.
@@ -1997,6 +1999,12 @@ See `INDIVIDUAL_RECORD`.
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.  Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part of 5.4 through 5.5.1.
 FamilySearch GEDCOM 7.0 reintroduced it with the name `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
+
+#### `LABEL` (Label) `g7:LABEL`
+
+A recommended short label to use in displaying information described by the superstructure to the user.
+Multiple labels may be provided for the same superstructure;
+As with other structures, those with the same qualifying substructures (such as `g7:LANG`) are in user preference order.
 
 #### `LANG` (Language) `g7:LANG`
 
@@ -2842,7 +2850,7 @@ However, this is not required and a different URI for the set of issued identifi
 
 Registered URIs are listed in [exid-types.json](https://github.com/FamilySearch/GEDCOM/blob/main/exid-types.json), where fields include:
 
-* "label": a short string suitable for display in a user interface.
+* "label": a short string suitable for display in a user interface. See also `g7:LABEL`, which may provide user-preferred alternative labels in the context of a particular dataset.
 * "type": The URI representing the authority issuing the `EXID`.
 * "description": A description of the meaning of the `EXID`.
 * "contact": A contact email address for the person or organization registering the URI.
