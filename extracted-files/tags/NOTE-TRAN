@@ -60,6 +60,6 @@ substructures:
   "https://gedcom.io/terms/v7/MIME": "{0:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/NOTE": "{0:1}"
+  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7/record-SNOTE": "{0:M}"
 ...

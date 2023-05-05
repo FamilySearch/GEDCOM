@@ -1,10 +1,10 @@
 ---
 title: The FamilySearch GEDCOM Specification
-subtitle: 7.0.10
+subtitle: 7.0.12
 email: GEDCOM@FamilySearch.org
 copyright: |
     :::{style="page-break-after: always;page-break-before: always;"}
-    Copyright 1984–2022 Intellectual Reserve, Inc. All rights reserved. A service provided by The Church of Jesus Christ of Latter-day Saints.
+    Copyright 1984–2023 Intellectual Reserve, Inc. All rights reserved. A service provided by The Church of Jesus Christ of Latter-day Saints.
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ copyright: |
     
     > NOTICE:
     > 
-    > This work comprises, is based on, or is derived from the FAMILYSEARCH GEDCOM™ Specification, © 1984-2022 Intellectual Reserve, Inc. All rights reserved.
+    > This work comprises, is based on, or is derived from the FAMILYSEARCH GEDCOM™ Specification, © 1984-2023 Intellectual Reserve, Inc. All rights reserved.
     >
     > "FAMILYSEARCH GEDCOM™" and "FAMILYSEARCH®" are trademarks of Intellectual Reserve, Inc. and may not be used except as allowed by the Apache 2.0 license that governs this work or as expressly authorized in writing and in advance by Intellectual Reserve, Inc.
     :::

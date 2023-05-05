@@ -11,8 +11,7 @@ standard tag: MIME
 specification:
   - Media type
   - |
-    Indicates the media type of the payload of the superstructure, as defined
-    by BCP 13.
+    Indicates the media type of the payload of the superstructure.
     
     As of version 7.0, only 2 media types are supported by this structure:
     

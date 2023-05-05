@@ -54,7 +54,8 @@ Integer = 1*digit
 
 ; ------------- Enumeration -------------
 
-Enum    = Tag
+stdEnum = stdTag / Integer
+Enum    = stdEnum / extTag
 
 
 ; ------------- Date -------------
@@ -72,7 +73,7 @@ dateRange   = %s"BET" D date D %s"AND" D date
 dateApprox  = (%s"ABT" / %s"CAL" / %s"EST") D date
 
 dateRestrict = %s"FROM" / %s"TO" / %s"BET" / %s"AND" / %s"BEF"
-            / %s"AFT" / %s"ABT" / %s"CAL" / %s"EST" / %s"BCE"
+            / %s"AFT" / %s"ABT" / %s"CAL" / %s"EST"
 
 calendar = %s"GREGORIAN" / %s"JULIAN" / %s"FRENCH_R" / %s"HEBREW"
          / extTag
@@ -132,20 +133,7 @@ nameStr      = 1*nameChar
 
 ; ------------- Media Type -------------
 
-MediaType    = mt-type "/" mt-subtype *(";" mt-parameter)
-
-mt-type      = mt-token
-mt-subtype   = mt-token
-mt-parameter = mt-attribute "=" mt-value
-mt-token     = 1*mt-char
-mt-attribute = mt-token
-mt-value     = mt-token / mt-qstring
-mt-char      = %x20-21 / %x23-27 / %x2A-2B / %x2D-2E ; not "(),/
-             / %x30-39 / %x41-5A / %x5E-7E           ; not :;<=>?@[\]
-
-mt-qstring   = %x22 *(mt-qtext / mt-qpair) %x22
-mt-qtext     = %x09-0A / %x20-21 / %x23-5B / %x5D-7E ; not CR "\
-mt-qpair     = "\" %x09-7E
+MediaType = type "/" subtype parameters
 
 
 ; ------------- Special -------------

@@ -33,14 +33,16 @@ The URI for the `Integer` data type is `xsd:nonNegativeInteger`.
 ## Enumeration
 
 An enumeration is a selection from a set of options.
-They are represented as a string matching the same production as a tag.
+They are represented as a string matching the same production as a tag,
+with the additional permission that standard enumerations may be integers.
 
 ```abnf
-Enum    = Tag
+stdEnum = stdTag / Integer
+Enum    = stdEnum / extTag
 ```
 
 Each structure type with an enumeration payload also defines specific payload values it permits.
-These permitted payloads match production `stdTag` and should each have a defined URI.
+These permitted payloads match production `stdEnum` and should each have a defined URI.
 Payload values that match production `extTag` are always permitted in structures with an enumeration payload
 and have their URI defined by the schema.
 
@@ -91,7 +93,7 @@ dateRange   = %s"BET" D date D %s"AND" D date
 dateApprox  = (%s"ABT" / %s"CAL" / %s"EST") D date
 
 dateRestrict = %s"FROM" / %s"TO" / %s"BET" / %s"AND" / %s"BEF"
-            / %s"AFT" / %s"ABT" / %s"CAL" / %s"EST" / %s"BCE"
+            / %s"AFT" / %s"ABT" / %s"CAL" / %s"EST"
 
 calendar = %s"GREGORIAN" / %s"JULIAN" / %s"FRENCH_R" / %s"HEBREW"
          / extTag
@@ -109,6 +111,8 @@ In addition to the constraints above:
     The largest known maximum is 36, and most months in most calendars have a lower maximum.
 - No calendar names, months, or epochs match `dateRestrict`.
 - Extension calendars (those with `extTag` for their `calendar`) must use `extTag`, not `stdTag`, for months.
+
+It is recommended that calendars avoid using a single tag to refer to both a month and an epoch.
 
 An absent `calendar` is equivalent to the calendar `GREGORIAN`.
 
@@ -168,6 +172,7 @@ The URI for the `DatePeriod` data type is `g7:type-Date#period`.
 Time is represented on a 24-hour clock (for example, 23:00 rather than 11:00 PM).
 It may be represented either in event-local time or in Coordinated Universal Time (UTC).
 UTC is indicated by including a `Z` (U+005A) after the time value; event-local time is indicated by its absence.
+When a time is used together with a `DateExact`, it is recommended that UTC time be used rather than event-local time.
 
 ```abnf
 Time     =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
@@ -280,7 +285,7 @@ The URI for the `PersonalName` data type is `g7:type-Name`.
 
 ## Language
 
-The language data type represents a human language or family of related languages, as defined in [BCP 46](https://www.rfc-editor.org/info/bcp47).
+The language data type represents a human language or family of related languages, as defined in [BCP 47](https://www.rfc-editor.org/info/bcp47).
 It consists of a sequence of language subtags separated by hyphens,
 where language subtags are [registered by the IANA](https://www.iana.org/assignments/language-subtag-registry).
 
@@ -292,26 +297,23 @@ The URI for the `Language` data type is `xsd:Language`.
 
 The media type data type represents the encoding of information in bytes or characters, as defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045) and [registered by the IANA](http://www.iana.org/assignments/media-types/).
 
-The official grammar for media type is given in RFC 2045, section 5.1.
-However, that document does not give stand-alone ABNF, instead referring to registration rules and describing some components in English.
-The programmatic parts of the media type grammar can be summarized as follows:
+The official grammar for media type is given in RFC 2045, section 5.1, which defines the syntax of
+registered values and extension values.
 
 ```abnf
-MediaType    = mt-type "/" mt-subtype *(";" mt-parameter)
-
-mt-type      = mt-token
-mt-subtype   = mt-token
-mt-parameter = mt-attribute "=" mt-value
-mt-token     = 1*mt-char
-mt-attribute = mt-token
-mt-value     = mt-token / mt-qstring
-mt-char      = %x20-21 / %x23-27 / %x2A-2B / %x2D-2E ; not "(),/
-             / %x30-39 / %x41-5A / %x5E-7E           ; not :;<=>?@[\]
-
-mt-qstring   = %x22 *(mt-qtext / mt-qpair) %x22
-mt-qtext     = %x09-0A / %x20-21 / %x23-5B / %x5D-7E ; not CR "\
-mt-qpair     = "\" %x09-7E
+MediaType = type "/" subtype parameters
 ```
+where:
+* `type` and `subtype` are defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045)
+  section 5.1, and registered values (i.e., those not beginning with "x-") are further
+  constrained by the definitions in
+  [RFC 6838](https://www.rfc-editor.org/info/rfc6838), section 4.2.
+  A [registry of media types](https://www.iana.org/assignments/media-types/media-types.xhtml)
+  is maintained publicly by the IANA.
+* `parameters` is defined in [RFC 9110](https://www.rfc-editor.org/info/rfc9110),
+  section 5.6.6.  Note that the `parameters` definition in GEDCOM matches that used by HTTP
+  headers which permit whitespace around the ";" delimiter, whereas email headers in
+  RFC 2045 do not.
 
 The URI for the `MediaType` data type is `dcat:mediaType`.
 

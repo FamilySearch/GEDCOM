@@ -1,3 +1,45 @@
+# Version 7.0.12
+
+- Remove contradictory constraints on `BCE` by removing it from `dateRestrict`
+
+- Clarify an ambiguity with the `TIME` substructure under `DateValues` that are not single dates, either because they are ranges or approximate.
+
+- Clarify the meaning of the `PROVEN` value of `g7:enumset-FAMC-STAT` to more accurately match common usage and to document common differences in meaning.
+
+- Replace incomplete ABNF for MediaType with a reference to their definition in IETF standards and IANA registries
+
+- Document a common use case for `UID`
+
+- Document a known difference between the formal and expected meaning of an event with a `DATE AFT ...` substructure
+
+- Note that 7.0's `INIL` is the same as 5.3's `WAC`
+
+- Add Simon Orde to the contributors list; he participated in the development of 7.0.0 but was accidentally omitted from the contributors list when 7.0.0 was released.
+
+- Various typo corrections.
+
+
+# Version 7.0.11
+
+- Correct error in `g7:NOTE-TRAN` cardinality.
+
+    Since 7.0.0, `g7:NOTE-TRAN` was listed with `{0:1}` in `g7:NOTE` but `{0:M}` in `g7:record-SNOTE` and defined in a way that assumed `{0:M}`. It has now been updated to `{0:M}` in `g7:NOTE-TRAN` too.
+
+- Correct error in `g7:type-Enum` definition.
+    
+    Since 7.0.0, `g7:type-Enum` was listed as having the same payload as `Tag`, but `g7:QUAY` used enumeration values that did not match that. The definition of  `g7:type-Enum` has now been updated to permit integers, like `g7:QUAY` uses.
+
+- Clarify that the same tag can be used for multiple URIs in the schema provided the meanings are non-overlapping. Recommend tags only be reused for closely related concepts, similar to how standard tags are.
+
+- Recommend that `g7:type-Date#exact` should use UTC time because it is used in places where exact machine-generated timestamps are expected.
+
+- Split shared rows in date definition table and reorder rows to be more logically organized.
+
+- Update ABNF to use `[ X ]` instead of `X / ""` to indicate `X` is optional. Both are legal ABNF, but some ABNF toolchains appear not to support the `X / ""` notation.
+
+- Various typo corrections.
+    
+
 # Version 7.0.10
 
 - Collect information about structure types and present it explicitly in the document, including how tags define structure types, the limitations structure types impose on their structures, and what extensions can change. This information was all present in the text before, but in a diffuse and not very accessible way.
@@ -205,7 +247,8 @@ These features add new semantic power to FamilySearch GEDCOM, allowing 7 to repr
 - Some common extensions are now standard:
     - `SDATE` is a sort-by date
     - `UID` is a globally-unique identifier for a record or event
-    - `INIL` is the "initiatory" ordinance of The Church of Jesus Christ of Latter-Day Saints
+    - `INIL` is the "initiatory" ordinance of The Church of Jesus Christ of Latter-Day Saints.  This
+      replaces `WAC` that existed in 5.3 and earlier.
     - `ASSO` now covers previous more-versatile `_ASSO` usage
 
 - Pointer-payload structures may now use the special pointer `@VOID@` to indicate that there is no record for it to point to in this document. This can be used to flag what has been omitted or in combination with a `PHRASE` or `NOTE` to describe what would be pointed to informally.

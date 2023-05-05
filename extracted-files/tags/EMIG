@@ -9,7 +9,7 @@ uri: https://gedcom.io/terms/v7/EMIG
 standard tag: EMIG
 
 specification:
-  - Description
+  - Emigration
   - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
   - emigration
   - Leaving one’s homeland with the intent of residing elsewhere.

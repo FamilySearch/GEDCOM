@@ -64,5 +64,21 @@
     "contact": "GEDCOM@familysearch.org",
     "change-controller": "FamilySearch",
     "reference": "https://gedcom.io/exid-type/FamilySearch-UserId"
+  },
+  {
+    "label": "FindAGrave Memorial ID",
+    "type": "https://www.findagrave.com/memorial",
+    "description": "FindAGrave Memorial ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FindAGrave.com",
+    "reference": "https://support.findagrave.com/s/article/Memorial-Search"
+  },
+  {
+    "label": "FindAGrave Cemetery ID",
+    "type": "https://www.findagrave.com/cemetery",
+    "description": "FindAGrave Cemetery ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "FindAGrave.com",
+    "reference": "https://support.findagrave.com/s/article/Cemetery-Search"
   }
 ]

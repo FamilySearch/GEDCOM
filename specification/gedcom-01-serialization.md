@@ -26,7 +26,7 @@ Implementations should be aware that bytes per character and characters per glyp
 Use of Unicode-aware processing and display libraries is recommended.
 
 Character-level grammars are specified in this document using
-Augmented Bakaus-Naur Form (ABNF)
+Augmented Backus-Naur Form (ABNF)
 as defined in [STD 68](https://www.rfc-editor.org/info/std68)
 and modified in [RFC 7405](https://www.rfc-editor.org/info/rfc7405).
 We use the term "production" to refer to an ABNF rule, supported by any other rules it references.
@@ -39,7 +39,7 @@ The following is a brief summary of the parts of ABNF, as defined by STD 68 and 
 - The first line of a rule must not be indented; the second and subsequent lines of a rule must be indented.
 - Comments are introduced with a semi-colon `;`.
 - Unicode codepoints are given in hexadecimal preceded by `%x`. Ranges of allowed codepoints are given with a hyphen `-`.
-- Double-quote delimit literal strings. Literal strings are case-insensitive unless they are preceded by `%s`.
+- Double quotes delimit literal strings. Literal strings are case-insensitive unless they are preceded by `%s`.
 - Parentheses `()` group elements. Brackets `[]` mark optional content. Preceding a group or element by `*` means any number may be included. Preceding a group or element by `1*` means 1 or more may be included.
 :::
 
@@ -242,6 +242,12 @@ The first of these split payloads is encoded as the line value of the structure'
 and each subsequent split payload is encoded as the line value of a **line continuation** pseudo-structure placed immediately following, and with one greater level than, the structure's line.
 The tag of a line continuation pseudo-structure is `CONT`.
 The order of the line continuation pseudo-structures matches the order of the lines of text in the payload.
+
+:::note
+Versions prior to 7.0 had another `CONT`-like tag, `CONC`, which split line values without introducing a line break.
+`CONC` does not appear in version 7.
+To support multi-version GEDCOM parsers, the `CONC` tag is reserved and will not appear as the tag of a structure type.
+:::
 
 Line continuation pseudo-structures are not considered to be structures.
 While they match production `Line` and their level and position makes them appear to be substructures of the structure, they are actually a continuation of the encoding of the structure's payload and are not part of a structure's collection of substructures.
@@ -486,6 +492,34 @@ Because of the structure of the schema, that separation is less important for Fa
 than it is for the semantic web, but it remains good advice where feasible.
 :::
 
+The schema structure may contain the same tag more than once with different URIs.
+Reusing tags in this way must not be done unless the concepts identified by those URIs cannot appear in the same place in a dataset,
+and should not be done unless the URIs identify closely related concepts.
+
+:::example
+Consider three extensions:
+
+- `https://example.com/LocationRecord`, a record that describes a location.
+- `https://example.com/LocationPointer`, a substructure of most events that points to a `https://example.com/LocationRecord`.
+- `https://example.com/inLocoParentis`, a substructure of some events indicating a non-parent entity that filled the legal role of a parent for that event.
+
+Given this, we have the following:
+
+- `https://example.com/LocationPointer` and `https://example.com/inLocoParentis` must not be given the same tag because they can appear in the same place in a dataset.
+- `https://example.com/LocationRecord` and `https://example.com/inLocoParentis` may be given the same tag, but should not be given the same tag because they identify unrelated concepts.
+- `https://example.com/LocationRecord` and `https://example.com/LocationStructure` may be given the same tag.
+
+One way to satisfy these constraints and recommendations is with the following schema:
+
+```gedcom
+1 SCHMA
+2 TAG _LOC https://example.com/LocationRecord
+2 TAG _LOC https://example.com/LocationPointer
+2 TAG _ILP https://example.com/inLocoParentis
+```
+:::
+
+
 An extension tag that is not given a URI in the schema structure is called an **undocumented extension tag**.
 The meaning of an undocumented extension tag is identified by its superstructure type and its tag.
 
@@ -537,7 +571,7 @@ In particular, those supporting extensions should keep in mind the following:
     </div>
 
 -   Six standard structure types are exceptions to these rules:
-    `NOTE`,` SNOTE`, `INDI`.`EVEN`, `FAM`.`EVEN`, `INDI`.`FACT`, and  `FAM`.`FACT`.
+    `NOTE`, `SNOTE`, `INDI`.`EVEN`, `FAM`.`EVEN`, `INDI`.`FACT`, and  `FAM`.`FACT`.
     Each of these allows human-readable text to describe information that cannot be captured in more-specific structures.
     As such, all other structures express information that could be described using 1 or more of those structure types.
     Extensions do not need to duplicate their information using any of those structures.
