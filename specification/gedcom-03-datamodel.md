@@ -1507,10 +1507,15 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `BURI` (Burial) `g7:BURI`
+#### `BURI` (Disposal of remains) `g7:BURI`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
+
+Although defined as any disposal of remains since it was introduced in the first version of GEDCOM, this tag is a shortened form of the English word "burial" and has been interpreted to mean "disposal of remains by placing under the ground" by some applications and users.
+In the absence of a clarifying `TYPE` substructure it is likely, but not guaranteed, that a `BURI` structure refers to a burial rather than another form of disposal of remains.
+
+See also `CREM`, a speicifc subtype of `BURI`.
 
 #### `CALN` (Call number) `g7:CALN`
 
