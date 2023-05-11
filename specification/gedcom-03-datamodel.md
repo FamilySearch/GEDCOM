@@ -1297,7 +1297,7 @@ Tag | Name<br/>URI | Description
 `CHR` | christening<br/>`g7:CHR` | Baptism or naming events for a child.
 `CHRA` | adult christening<br/>`g7:CHRA` | Baptism or naming events for an adult person.
 `CONF` | confirmation<br/>`g7:CONF` | Conferring full church membership.
-`CREM` | cremation<br/>`g7:CREM` | Disposal of the remains of a person's body by fire; a specific type of `BURI`.
+`CREM` | cremation<br/>`g7:CREM` | The act of reducing a dead body to ashes by fire.
 `DEAT` | death<br/>`g7:DEAT` | Mortal life terminates.
 `EMIG` | emigration<br/>`g7:EMIG` | Leaving one's homeland with the intent of residing elsewhere.
 `FCOM` | first communion<br/>`g7:FCOM` | The first act of sharing in the Lord's supper as part of church worship.
