@@ -1292,12 +1292,12 @@ Tag | Name<br/>URI | Description
 `BASM` | Bas Mitzvah<br/>`g7:BASM` | The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat Mitzvah."
 `BIRT` | birth<br/>`g7:BIRT` | Entering into life.
 `BLES` | blessing<br/>`g7:BLES` | Bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.
-`BURI` | burial<br/>`g7:BURI` | Disposing of the mortal remains of a deceased person.
+`BURI` | disposal of remains<br/>`g7:BURI` | Disposing of the mortal remains of a deceased person.
 `CENS` | census<br/>`g7:INDI-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
 `CHR` | christening<br/>`g7:CHR` | Baptism or naming events for a child.
 `CHRA` | adult christening<br/>`g7:CHRA` | Baptism or naming events for an adult person.
 `CONF` | confirmation<br/>`g7:CONF` | Conferring full church membership.
-`CREM` | cremation<br/>`g7:CREM` | Disposal of the remains of a person's body by fire.
+`CREM` | cremation<br/>`g7:CREM` | Disposal of the remains of a person's body by fire; a specific type of `BURI`.
 `DEAT` | death<br/>`g7:DEAT` | Mortal life terminates.
 `EMIG` | emigration<br/>`g7:EMIG` | Leaving one's homeland with the intent of residing elsewhere.
 `FCOM` | first communion<br/>`g7:FCOM` | The first act of sharing in the Lord's supper as part of church worship.
