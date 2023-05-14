@@ -8,22 +8,24 @@ Guides for using this document can be found in the associated [README.md](README
 | G7 Tag | Since | Name | Notes |
 |:------:|-------|------|-------|
 | | | [Affiliation](#affiliation) | |
-| | | [Bürgerort](#bürgerort) | see also Heimat |
+| | | [Bürgerort](#bürgerort) | |
 | `CAST` | 5.0 | [Caste](#caste) | |
 | \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
-| | | [Clan](#clan) | see also Tribe |
+| | | [Clan](#clan) | see [Nationality](#nationality) |
 | \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT`.`AGE <8y` |
+| | | [DNA](#DNA) | enumerated `DNA.TYPE` |
 | `EDUC` | 4.0 | Education | |
 | | | [Ethnicity](#ethnicity) | |
-| | | [Heimat](#heimat) | see also Bürgerort |
+| | | [Heimat](#heimat) | |
 | `IDNO` | 5.3 | [Identifying Number](#identifying-number) | |
 | | | [Life Sketch](#life-sketch) | |
-| | | [Military Service](#military-service) | Why is this an Attr?  Should be an Event! |
+| | | [Military Service](#military-service) | |
 | `IDNO` | 5.3 | [National ID](#national-id) | see also `SSN` |
 | `NATI` | 5.0 | [Nationality](#nationality) | |
 | `NCHI` | 5.0 | Number of Children | |
 | `NMR`  | 5.0 | Number of Marriages | really number of `FAM`s; marriage not required |
 | `OCCU` | 3.0 | [Occupation](#occupation) | |
+| | | [Place of Origin](#Origin) | |
 | `DSCR` | 5.0 | [Physical Description](#physical-description) | |
 | `PROP` | 3.0 | Property | |
 | `RELI` | 3.0 | [Religion](#religion) | |
@@ -31,10 +33,11 @@ Guides for using this document can be found in the associated [README.md](README
 | \*     | 5.0 | [Single](#single) | encoded as `NMR 0` |
 | `SSN`  | 5.3 | Social Security Number | the USA's `IDNO` equivalent |
 | `TITL` | 3.0 | [Title](#title) | |
-| | | [Tribe](#tribe) | see also Clan |
+| | | [Tribe](#tribe) | see [Nationality](#nationality) |
 
 # Details
 
+--------------------------
 
 ## Affiliation
 
@@ -62,12 +65,12 @@ Related proposals include
 - Tribe: *difference from Affiliation not yet articulated*
 - Ethnicity: *difference from Affiliation not yet articulated*
 - Heimat: *difference from Affiliation not yet articulated*
-- Bürgerort: *difference from Affiliation not yet articulated*
 
 ### Used
 
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/Affiliation`
 
+--------------------------
 ## Bürgerort
 
 ### Description
@@ -88,19 +91,21 @@ The most closely related structures are:
 
 Related proposals include
 
-- Ethnicity: ethnicities typically have some geographic association, but generally much larger and less fine-grained than a heimat
-- Tribe: members of a tribe may share a heimat, but tribes may be defined by other characteristics too
-- Clan: members of a clan may share a heimat, but clans may be defined by other characteristics too
+- Ethnicity: ethnicities typically have some geographic association, but generally much larger and less fine-grained than a Bürgerort 
+- Tribe: members of a tribe may share a Bürgerort , but tribes may be defined by other characteristics too
+- Clan: members of a clan may share a Bürgerort , but clans may be defined by other characteristics too
 - Affiliation: a person with a given Bürgerort needn't have any affiliation with others with the same Bürgerort 
-- Should be combined with other terms such as: German: Heimatort or Bürgerort; French: Lieu d'origine; Italian: Luogo di attinenza
+- Should be combined with other terms such as: German: Heimatort or Bürgerort; French: Lieu d'origine; Italian: Luogo di attinenza, Many other cultures and historical times have similar concepts and should be researched and enumerated here as well. 
 
 ### Used
 
+--------------------------
 
 ## Caste
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Caste`
 
+--------------------------
 
 ## Childless
 
@@ -112,6 +117,7 @@ which might mean there are children that have not yet been added to the data.
 
 - Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as a distinct stucture with URI `http://familysearch.org/v1/CoupleNeverHadChildren`
 
+--------------------------
 
 ## Clan
 
@@ -131,7 +137,7 @@ Found in the following historical records:
 
 The most closely related structures are:
 
-- `NATI` includes "An individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." Adding `TYPE Clan` would fully capture this information.  
+- `NATI` includes "An individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." Adding `TYPE Clan` would fully capture this information. 
 
 Related proposals include
 
@@ -139,8 +145,6 @@ Related proposals include
 - Ethnicity: *difference from Clan not yet articulated*
 - Heimat: a place, often as a disambiguation of family name or lineage. Clan suggests group identity, not geography
 - Affiliation: generally by choice or appointment, while clan generally indicates something assigned to a person at birth
-- Bürgerort: a place, often as a disambiguation of family name or lineage. Clan suggests group identity, not geography
-
 
 ### Used
 
@@ -148,6 +152,7 @@ Related proposals include
 
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
 
+--------------------------
 
 ## Died Before Eight
 
@@ -157,6 +162,31 @@ The assertion that a person died before the end of their eighth year of life can
 
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/DiedBeforeEight`
 
+--------------------------
+
+## DNA
+
+There are three sources of information in a DNA sample. Y-chromosomal DNA (Y-DNA) is present only in samples from males and gives information on patrilineal descent. Mitochondrial DNA (mtDNA), present in both male and females, gives information on matrilineal descent. Finally, autosomal DNA (atDNA) gives information on both matrilineal and patrilineal descent.
+
+### Used
+
+- Used by multiple applications, normally found as custom facts.
+
+### Proposed Use And Examples
+
+-DNA.TYPE: can provide a user-language-specific indication of the various types of DNA
+
+```
+1 DNA Haplogroup H
+2 TYPE mtDNA
+```
+
+```
+1 DNA Haplogroup R1
+2 TYPE Y-DNA
+```
+
+--------------------------
 
 ## Ethnicity
 
@@ -184,8 +214,6 @@ Related proposals include
 - Clan: *difference from Ethnicity not yet articulated*
 - Heimat: a place, often as a disambiguation of family name or lineage. Ethnicity suggests group identity, not geography
 - Affiliation: generally an organized group by choice or appointment, while ethnicity generally indicates a broader culture my self-identification
-- Bürgerort: a place, often as a disambiguation of family name or lineage. Ethnicity suggests group identity, not geography
-
 
 ### Used
 
@@ -193,6 +221,7 @@ Related proposals include
 
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
 
+--------------------------
 
 ## Heimat
 
@@ -221,8 +250,6 @@ Related proposals include
 - Tribe: members of a tribe may share a heimat, but tribes may be defined by other characteristics too
 - Clan: members of a clan may share a heimat, but clans may be defined by other characteristics too
 - Affiliation: a person with a given heimat needn't have any affiliation with others with the same heimat
-- Bürgerort: a place, often as a disambiguation of family name or lineage. Similar to Heimat and other terms from France and Italy
-
 
 ### Used
 
@@ -230,11 +257,13 @@ Related proposals include
   
   *Not* used by the FamilySearch API, the GEDCOM-X implementation with the largest user base; see <https://www.familysearch.org/developers/docs/guides/facts>
 
+--------------------------
 
 ## Identifying Number
 
 [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) has a subset of these (only those issued by nations) under [National Id](#national-id).
 
+--------------------------
 
 ## Life Sketch
 
@@ -265,7 +294,7 @@ There are no similar proposals here.
 - Used by FindAGrave, under the name "Bio Information"
 
 
-
+--------------------------
 
 ## Military Service
 
@@ -295,7 +324,6 @@ The most closely related structures are:
 Related proposals include
 
 - GEDCOM-X has events "Military Induction" and "Military Discharge" which define the start and end of the military service
-- Creating an event tag `MILT' with enumerated `MILT.TYPE` [Registration, Induction, Discharge, Commission, Engagement, Deployment, Other/Phrase] 
 
 ### Used
 
@@ -304,32 +332,70 @@ Related proposals include
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
 
 
-
+--------------------------
 
 ## National ID
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/NationalId`.
 A special case of [Identifying number](#identifying-number)
 
+--------------------------
+
 ## Nationality
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Nationality`
+
+For example:
+```
+1 NATI Irish
+2 TYPE Nationality
+```
+
+```
+1 NATI Apache Chiricawa 
+2 TYPE Tribe
+```
+
+```
+1 NATI McDonald
+2 TYPE Clan
+```
+
+--------------------------
 
 ## Occupation
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Occupation`
 
+--------------------------
+
 ## Physical Description
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/PhysicalDescription`
+
+-The most closely related structures are:
+
+DESC.TYPE: can provide a user-language-specific indication of multiple aspects of an individual's physical description.  Enumerated example: {height, weight, eye color, tattoos, skin color, hair color, scars, lost limbs, other/phrase}.
+
+For example:
+```
+1 DESC Brown
+2 TYPE Hair Color
+```
+
+--------------------------
 
 ## Religion
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Religion`
 
+--------------------------
+
 ## Residence
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Residence`
+
+--------------------------
 
 ## Single
 
@@ -341,11 +407,13 @@ which might mean there are relationships that have not yet been added to the dat
 
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/NoCoupleRelationships`
 
+--------------------------
+
 ## Title
 
 In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/TitleOfNobility`
 
-
+--------------------------
 
 ## Tribe
 
@@ -375,7 +443,6 @@ Related proposals include
 - Ethnicity: *difference from Tribe not yet articulated*
 - Heimat: a place, often as a disambiguation of family name or lineage. Tribe suggests group identity, not geography
 - Affiliation: generally by choice or appointment, while tribe generally indicates something assigned to a person at birth
-- Bürgerort: a place, often as a disambiguation of family name or lineage. Tribe suggests group identity, not geography
 
 ### Used
 
