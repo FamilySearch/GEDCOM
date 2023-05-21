@@ -7,305 +7,238 @@ Guides for using this document can be found in the associated [README.md](README
 
 | G7 Tag | Since | Name | Notes |
 |:------:|-------|------|-------|
-| | | [Affiliation](#affiliation) | |
-| | | [Bürgerort](#bürgerort) | |
-| `CAST` | 5.0 | [Caste](#caste) | |
-| \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
-| | | [Clan](#clan) | see [Nationality](#nationality) |
-| \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT`.`AGE <8y` |
-| | | [DNA](#DNA) | enumerated `DNA.TYPE` |
-| `EDUC` | 4.0 | Education | |
-| | | [Ethnicity](#ethnicity) | |
-| | | [Heimat](#heimat) | |
-| `IDNO` | 5.3 | [Identifying Number](#identifying-number) | |
-| | | [Life Sketch](#life-sketch) | |
-| | | [Military Service](#military-service) | |
-| `IDNO` | 5.3 | [National ID](#national-id) | see also `SSN` |
-| `NATI` | 5.0 | [Nationality](#nationality) | |
-| `NCHI` | 5.0 | Number of Children | |
-| `NMR`  | 5.0 | Number of Marriages | really number of `FAM`s; marriage not required |
-| `OCCU` | 3.0 | [Occupation](#occupation) | |
-| | | [Place of Origin](#Origin) | |
-| `DSCR` | 5.0 | [Physical Description](#physical-description) | |
-| `PROP` | 3.0 | Property | |
-| `RELI` | 3.0 | [Religion](#religion) | |
-| `RESI` | 3.0 | [Residence](#residence) | |
-| \*     | 5.0 | [Single](#single) | encoded as `NMR 0` |
-| `SSN`  | 5.3 | Social Security Number | the USA's `IDNO` equivalent |
-| `TITL` | 3.0 | [Title](#title) | |
-| | | [Tribe](#tribe) | see [Nationality](#nationality) |
-
+| * | Proposed | [Affiliation](#affiliation) |  |
+| CAST |  | [Caste](#caste) |  |
+| * | Proposed | [Childless](#childless) | encoded as `NCH 0` |
+| * |  | [Clan](#clan) |  |
+| * | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT.AGE` <8y |
+| EDUC | 4.0 | [Education](#education) |  |
+| * | Proposed | [Ethnicity](#ethnicity) |  |
+| * | Proposed | [Heimat](#heimat) |  |
+| IDNO | 5.3 | [Identifying Number](#identifying-number) |  |
+| * | Proposed | [Life Sketch](#life-sketch) |  |
+| MILT | Proposed | [Military Service](#military-service) |  |
+| IDNO | 5.0 | [National ID](#national-id) | see also `SSN` |
+| NATI | 5.0 | [Nationality](#nationality) |  |
+| TITL |  | [Nobility Title](#nobility-title) |  |
+| NCHI |  | [Number of Children](#number-of-children) |  |
+| NMR | 5.0 | [Number of Marriages](#number-of-marriages) | really number of `FAMS` links; marriage not required |
+| OCCU | 3.0 | [Occupation](#occupation) |  |
+| DSCR | 5.0 | [Physical Description](#physical-description) |  |
+| PROP | 3.0 | [Property](#property) |  |
+| RELI | 3.0 | [Religion](#religion) |  |
+| RESI | 3.0 | [Residence](#residence) |  |
+| * | Proposed | [Single](#single) |  |
+| SSN |  | [Social Security Number](#social-security-number) | the USA's `IDNO` equivalent |
+| * | Proposed | [Tribe](#tribe) |  |
 # Details
-
 --------------------------
-
 ## Affiliation
-
 ### Description
-
-*proposed description missing*
-
-*In [FamilySearch API documentation](https://www.familysearch.org/developers/docs/guides/facts)* without a definition
+In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) documentation without a definition
 
 ### Value
-
 Found in the following historical records:
 
 - (records not yet identified)
 
 ### Absence
-
 The most closely related structures are:
-
-- 
 
 Related proposals include
 
-- Clan: *difference from Affiliation not yet articulated*
-- Tribe: *difference from Affiliation not yet articulated*
-- Ethnicity: *difference from Affiliation not yet articulated*
-- Heimat: *difference from Affiliation not yet articulated*
+- Clan: difference from Affiliation not yet articulated
+- Tribe: difference from Affiliation not yet articulated
+- Ethnicity: difference from Affiliation not yet articulated
+- Heimat: difference from Affiliation not yet articulated
 
 ### Used
-
-- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/Affiliation`
-
---------------------------
-## Bürgerort
-
-### Description
-
-In Switzerland, the place of origin denotes where a Swiss citizen has their municipal citizenship, usually inherited from previous generations. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances. Literally "home place" or "citizen place" (from Wikipedia)
-
-### Value
-
-Found in the following historical records:
-
-- (records not yet identified)
-
-### Absence
-
-The most closely related structures are:
-
-- 
-
-Related proposals include
-
-- Ethnicity: ethnicities typically have some geographic association, but generally much larger and less fine-grained than a Bürgerort 
-- Tribe: members of a tribe may share a Bürgerort , but tribes may be defined by other characteristics too
-- Clan: members of a clan may share a Bürgerort , but clans may be defined by other characteristics too
-- Affiliation: a person with a given Bürgerort needn't have any affiliation with others with the same Bürgerort 
-- Should be combined with other terms such as: German: Heimatort or Bürgerort; French: Lieu d'origine; Italian: Luogo di attinenza, Many other cultures and historical times have similar concepts and should be researched and enumerated here as well. 
-
-### Used
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI http://familysearch.org/v1/Affiliation
 
 --------------------------
-
 ## Caste
-
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Caste`
-
---------------------------
-
-## Childless
-
-The assertion that a family does not have children can be made using the `NCHI` structure with payload "`0`".
-This is distinct from simply not having any `CHIL` structures,
-which might mean there are children that have not yet been added to the data.
-
-### Used
-
-- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as a distinct stucture with URI `http://familysearch.org/v1/CoupleNeverHadChildren`
-
---------------------------
-
-## Clan
-
 ### Description
 
-*proposed description missing*
-
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's clan."
 
 ### Value
 
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Caste
+- Used by the FamilySearch API via GEDCOM X
+
+--------------------------
+## Childless
+### Description
+The assertion that a family does not have children can be made using the `NCHI` structure with payload "0". This is distinct from simply not having any `CHIL` structures, which might mean there are children that have not yet been added to the data.
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM X specification as a distinct stucture with URI http://familysearch.org/v1/CoupleNeverHadChildren
+
+--------------------------
+## Clan
+### Description
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as "A fact of a person's clan."
+
+### Value
 Found in the following historical records:
 
 - (records not yet identified)
 
 ### Absence
-
 The most closely related structures are:
-
-- `NATI` includes "An individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." Adding `TYPE Clan` would fully capture this information. 
 
 Related proposals include
 
-- Tribe: *difference from Clan not yet articulated*
-- Ethnicity: *difference from Clan not yet articulated*
+- Tribe: difference from Clan not yet articulated
+- Ethnicity: difference from Clan not yet articulated
 - Heimat: a place, often as a disambiguation of family name or lineage. Clan suggests group identity, not geography
 - Affiliation: generally by choice or appointment, while clan generally indicates something assigned to a person at birth
 
 ### Used
 
-- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Clan`
 
-- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Clan
+- Used by the FamilySearch API via GEDCOM X.
 
 --------------------------
-
 ## Died Before Eight
-
-The assertion that a person died before the end of their eighth year of life can be made using the `DEAT` structure with an `AGE` substructure with payload "`< 8y`".
-
-### Used
-
-- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/DiedBeforeEight`
-
---------------------------
-
-## DNA
-
-There are three sources of information in a DNA sample. Y-chromosomal DNA (Y-DNA) is present only in samples from males and gives information on patrilineal descent. Mitochondrial DNA (mtDNA), present in both male and females, gives information on matrilineal descent. Finally, autosomal DNA (atDNA) gives information on both matrilineal and patrilineal descent.
-
-### Used
-
-- Used by multiple applications, normally found as custom facts.
-
-### Proposed Use And Examples
-
--DNA.TYPE: can provide a user-language-specific indication of the various types of DNA
-
-```
-1 DNA Haplogroup H
-2 TYPE mtDNA
-```
-
-```
-1 DNA Haplogroup R1
-2 TYPE Y-DNA
-```
-
---------------------------
-
-## Ethnicity
-
 ### Description
-
-*proposed description missing*
-
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's ethnicity."
+The assertion that a person died before the end of their eighth year of life can be made using the `DEAT` structure with an AGE substructure with payload "< 8y".
 
 ### Value
 
+
+### Absence
+
+
+### Used
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI http://familysearch.org/v1/DiedBeforeEight
+
+--------------------------
+## Education
+### Description
+A fact of an education or an educational achievement (e.g., diploma, graduation, scholarship, etc.) of a person.
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Education
+- Used by the FamilySearch API via GEDCOM X
+
+--------------------------
+## Ethnicity
+### Description
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as "A fact of a person's ethnicity."
+
+### Value
 Found in the following historical records:
 
 - (records not yet identified)
 
 ### Absence
-
 The most closely related structures are:
-
-- 
 
 Related proposals include
 
-- Tribe: *difference from Ethnicity not yet articulated*
-- Clan: *difference from Ethnicity not yet articulated*
+- Tribe: difference from Ethnicity not yet articulated
+- Clan: difference from Ethnicity not yet articulated
 - Heimat: a place, often as a disambiguation of family name or lineage. Ethnicity suggests group identity, not geography
 - Affiliation: generally an organized group by choice or appointment, while ethnicity generally indicates a broader culture my self-identification
 
 ### Used
 
-- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Ethnicity`
 
-- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Ethnicity
+- Used by the FamilySearch API via GEDCOM X.
 
 --------------------------
-
 ## Heimat
-
 ### Description
-
 A geographic place to which a person is affiliated by birth or ancestry, but not necessarily by residence or property.
 
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's _heimat_. "Heimat" refers to a person's affiliation by birth to a specific geographic place. Distinct heimaten are often useful as indicators that two persons of the same name are not likely to be closely related genealogically. In English, "heimat" may be described using terms like "ancestral home", "homeland", or "place of origin".
-
+In GEDCOM X as "A fact of a person's heimat. "Heimat" refers to a person's affiliation by birth to a specific geographic place. Distinct heimaten are often useful as indicators that two persons of the same name are not likely to be closely related genealogically. In English, "heimat" may be described using terms like "ancestral home", "homeland", or "place of origin".
 
 ### Value
-
 Found in the following historical records:
 
 - (records not yet identified)
 
 ### Absence
-
 The most closely related structures are:
-
-- 
 
 Related proposals include
 
 - Ethnicity: ethnicities typically have some geographic association, but generally much larger and less fine-grained than a heimat
 - Tribe: members of a tribe may share a heimat, but tribes may be defined by other characteristics too
 - Clan: members of a clan may share a heimat, but clans may be defined by other characteristics too
+- Bürgerort: a place, often as a disambiguation of family name or lineage.
 - Affiliation: a person with a given heimat needn't have any affiliation with others with the same heimat
 
 ### Used
-
-- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Heimat`
-  
-  *Not* used by the FamilySearch API, the GEDCOM-X implementation with the largest user base; see <https://www.familysearch.org/developers/docs/guides/facts>
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Heimat
+- Not used by the FamilySearch API, the GEDCOM-X implementation with the largest user base; see https://www.familysearch.org/developers/docs/guides/facts
 
 --------------------------
-
 ## Identifying Number
-
-[GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) has a subset of these (only those issued by nations) under [National Id](#national-id).
-
---------------------------
-
-## Life Sketch
-
 ### Description
 
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Adoption
+- Used by the FamilySearch API via GEDCOM X
+- GEDCOM X has a subset of these (only those issued by nations) under National Id.
+
+--------------------------
+## Life Sketch
+### Description
 *proposed description missing*
 
 *In [FamilySearch API documentation](https://www.familysearch.org/developers/docs/guides/facts)* without a definition
 
 ### Value
 
-Found in the following historical records:
-
-- 
 
 ### Absence
-
 The most closely related structures are:
 
 - `NOTE`: a life sketch is not a historical attribute in the usual sense (it lacks a date, place, associated individuals, etc). There is a proposal ([issue #219](https://github.com/FamilySearch/GEDCOM/issues/219)) to add note type to cover this instead of a new attribute.
 
-There are no similar proposals here.
+There are no similar proposals here
 
 ### Used
-
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/LifeSketch`
 - Used by Ancestry, under the name "Life Story"
 - Used by FindAGrave, under the name "Bio Information"
 
-
 --------------------------
-
 ## Military Service
-
 ### Description
-
-*proposed description missing*
-
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's military service."
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as "A fact of a person's military service."
 
 ### Value
-
 Found in the following historical records:
 
 - Military induction papers
@@ -316,128 +249,216 @@ Found in the following historical records:
 - Private journals, biographies, and obituaries
 
 ### Absence
-
 The most closely related structures are:
 
-- 
-
-Related proposals include
+Related proposals include:
 
 - GEDCOM-X has events "Military Induction" and "Military Discharge" which define the start and end of the military service
 
 ### Used
 
-- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/MilitaryService`
 
-- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
-
+- Part of the GEDCOM X specification with URI http://gedcomx.org/MilitaryService
+- Used by the FamilySearch API via GEDCOM X.
 
 --------------------------
-
 ## National ID
-
+### Description
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/NationalId`.
 A special case of [Identifying number](#identifying-number)
 
---------------------------
+### Value
 
-## Nationality
 
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Nationality`
+### Absence
 
-For example:
-```
-1 NATI Irish
-2 TYPE Nationality
-```
-
-```
-1 NATI Apache Chiricawa 
-2 TYPE Tribe
-```
-
-```
-1 NATI McDonald
-2 TYPE Clan
-```
-
---------------------------
-
-## Occupation
-
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Occupation`
-
---------------------------
-
-## Physical Description
-
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/PhysicalDescription`
-
--The most closely related structures are:
-
-DESC.TYPE: can provide a user-language-specific indication of multiple aspects of an individual's physical description.  Enumerated example: {height, weight, eye color, tattoos, skin color, hair color, scars, lost limbs, other/phrase}.
-
-For example:
-```
-1 DESC Brown
-2 TYPE Hair Color
-```
-
---------------------------
-
-## Religion
-
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Religion`
-
---------------------------
-
-## Residence
-
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Residence`
-
---------------------------
-
-## Single
-
-The assertion that a person is not a partner in a family can be made using the `NMR` structure with payload "`0`".
-This is distinct from simply not having any `FAMS` structures,
-which might mean there are relationships that have not yet been added to the data.
 
 ### Used
 
-- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/NoCoupleRelationships`
 
 --------------------------
+## Nationality
+### Description
+An individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest.
 
-## Title
+### Value
 
-In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/TitleOfNobility`
+
+### Absence
+
+
+### Used
+
 
 --------------------------
+## Nobility Title
+### Description
+The title given to or used by a person, especially of royalty or other noble class within a locality.
 
-## Tribe
+### Value
 
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Used by the FamilySearch API http://familysearch.org/v1/TitleOfNobility
+
+--------------------------
+## Number of Children
 ### Description
 
-*proposed description missing*
 
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's tribe."
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Part of the GEDCOM X specification with URI http://gedcomx.org/NumberOfChildren
+- Used by the FamilySearch API via GEDCOM X
+
+--------------------------
+## Number of Marriages
+### Description
+
+
+### Value
+
+
+### Absence
+
+
+### Used
+
+
+--------------------------
+## Occupation
+### Description
+
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Occupation
+- Used by the FamilySearch API via GEDCOM X
+
+--------------------------
+## Physical Description
+### Description
+
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Part of the GEDCOM X specification with URI http://gedcomx.org/PhysicalDescription
+- Used by the FamilySearch API via GEDCOM X
+
+--------------------------
+## Property
+### Description
+
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Property
+- Used by the FamilySearch API via GEDCOM X
+
+--------------------------
+## Religion
+### Description
+
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Religion
+- Used by the FamilySearch API via GEDCOM X
+
+--------------------------
+## Residence
+### Description
+
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+- Part of the GEDCOM X specification with URI http://gedcomx.org/Residence
+- Used by the FamilySearch API via GEDCOM X
+
+--------------------------
+## Single
+### Description
+The assertion that a person is not a partner in a family can be made using the `NMR` structure with payload "0". This is distinct from simply not having any FAMS structures, which might mean there are relationships that have not yet been added to the data.
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI http://familysearch.org/v1/NoCoupleRelationships
+
+--------------------------
+## Social Security Number
+### Description
+
+
+### Value
+
+
+### Absence
+
+
+### Used
+- Part of the GEDCOM v7.0 Specification
+
+--------------------------
+## Tribe
+### Description
+In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's tribe."
 
 *In [FamilySearch API documentation](https://www.familysearch.org/developers/docs/guides/facts)* without a definition, and with a different URI than that used by GEDCOM-X
 
 ### Value
-
 Found in the following historical records:
 
 - (records not yet identified)
 
 ### Absence
-
 The most closely related structures are:
 
-- 
-
-Related proposals include
+Related proposals include:
 
 - Clan: *difference from Tribe not yet articulated*
 - Ethnicity: *difference from Tribe not yet articulated*
@@ -445,7 +466,8 @@ Related proposals include
 - Affiliation: generally by choice or appointment, while tribe generally indicates something assigned to a person at birth
 
 ### Used
-
 - Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Tribe`
 
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/TribeName`
+
+--------------------------
