@@ -1,5 +1,3 @@
-# Family Events
-
 This document tracks the set of Family Events, both those in FamilySearch GEDCOM 7 and those considered for future addition.
 Guides for using this document can be found in the associated [README.md](README.md).
 
@@ -83,9 +81,10 @@ The most closely related structures are:
 
 - `MARR`: can express a marriage of any type, potentially including common law marriages. Common law marriages can differ from other marriages, however, in that they may lack a ceremony or event marking the entrance into the married state.
 
-'''
+```
 1 MARR
 2 TYPE Common Law
+```
 
 Related proposals include
 
