@@ -7,7 +7,7 @@ Guides for using this document can be found in the associated [README.md](README
 
 | G7 Tag | Since | Name | Notes |
 |:------:|-------|------|-------|
-| \* | Proposed | [Childless](#childless) | encoded as `NCHI 0` |
+| \* | 5.0 | [Childless](#childless) | encoded as `NCHI 0` |
 | \* | Proposed | [Lived Together](#lived-together) | perhaps `RESI` |
 | `NCHI` | 5.0 | [Number of Children](#number-of-children) |  |
 | `RESI` | 3.0 | [Residence](#residence) |  |
@@ -23,10 +23,10 @@ which might mean there are children that have not yet been added to the data.
 
 
 ### Absence
-
+encoded as `NCHI 0`
 
 ### Used
-- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as a distinct stucture with URI `http://familysearch.org/v1/CoupleNeverHadChildren
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as a distinct structure with URI `http://familysearch.org/v1/CoupleNeverHadChildren`
 
 --------------------------
 ## Lived Together
@@ -70,7 +70,7 @@ Related proposals include
 --------------------------
 ## Residence
 ### Description
-
+An address or place of residence where an individual resided.
 
 ### Value
 
