@@ -7,22 +7,22 @@ Guides for using this document can be found in the associated [README.md](README
 
 | G7 Tag | Since | Name | Notes |
 |:------:|-------|------|-------|
-| \* | Proposed | [Affiliation](#affiliation) | see [Nationality](#nationality) |
+| `` | Proposed | [Affiliation](#affiliation) | see [Nationality](#nationality) |
 | `CAST` | 5.0 | [Caste](#caste) |  |
 | \* | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
-| \* |  | [Clan](#clan) |  |
+| \* | Proposed | [Clan](#clan) | see [Nationality](#nationality) definition |
 | \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT.AGE` <8y |
 | `DNA` | Proposed | [DNA](#dna) | enumerated `DNA.TYPE` |
 | `EDUC` | 4.0 | [Education](#education) |  |
-| \* | Proposed | [Ethnicity](#ethnicity) |  |
-| \* | Proposed | [Heimat](#heimat) |  |
-| `IDNO` | 5.3 | [Identifying Number](#identifying-number) |  |
-| \* | Proposed | [Life Sketch](#life-sketch) |  |
+| \* | Proposed | [Ethnicity](#ethnicity) | see [Nationality](#nationality) definition |
+| `` | Proposed | [Heimat](#heimat) |  |
+| `IDNO` | 5.3 | [Identifying Number](#identifying-number) | see `SSN` |
+| `` | Proposed | [Life Sketch](#life-sketch) |  |
 | `MILT` | Proposed | [Military Service](#military-service) | This be an "Event" Enumerate `MILT.TYPE` to add additional military related items. |
 | `IDNO` | 5.0 | [National ID](#national-id) | see also `SSN` |
 | `NATI` | 5.0 | [Nationality](#nationality) |  |
-| `TITL` |  | [Nobility Title](#nobility-title) |  |
-| `NCHI` |  | [Number of Children](#number-of-children) |  |
+| `TITL` | 3.0 | [Nobility Title](#nobility-title) |  |
+| `NCHI` | 5.0 | [Number of Children](#number-of-children) |  |
 | `NMR` | 5.0 | [Number of Marriages](#number-of-marriages) | really number of `FAMS` links; marriage not required |
 | `OCCU` | 3.0 | [Occupation](#occupation) |  |
 | `DSCR` | 5.0 | [Physical Description](#physical-description) |  |
@@ -30,15 +30,13 @@ Guides for using this document can be found in the associated [README.md](README
 | `RELI` | 3.0 | [Religion](#religion) |  |
 | `RESI` | 3.0 | [Residence](#residence) |  |
 | \* | Proposed | [Single](#single) |  |
-| `SSN` |  | [Social Security Number](#social-security-number) | the USA's `IDNO` equivalent |
-| \* | Proposed | [Tribe](#tribe) | see [Nationality](#nationality) |
+| `SSN` | 5.3 | [Social Security Number](#social-security-number) | the USA's `IDNO` equivalent |
+| \* | Proposed | [Tribe](#tribe) | see [Nationality](#nationality) definition |
 # Details
 --------------------------
 ## Affiliation
 ### Description
 *proposed description missing*
-
-*In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts)* documentation without a definition
 
 ### Value
 Found in the following historical records:
@@ -57,11 +55,12 @@ Related proposals include
 
 ### Used
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/Affiliation`
+- *In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts)* documentation without a definition
 
 --------------------------
 ## Caste
 ### Description
-
+The name of an individual's rank or status in society which is sometimes based on racial or religious differences, or differences in wealth, inherited rank, profession, or occupation.
 
 ### Value
 
@@ -93,7 +92,6 @@ This is distinct from simply not having any `CHIL` structures, which might mean 
 ## Clan
 ### Description
 *proposed description missing*
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as*  "A fact of a person's clan."
 
 ### Value
 Found in the following historical records:
@@ -115,6 +113,7 @@ Related proposals include
 
 - [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Clan`
 - [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
+- *In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as*  "A fact of a person's clan."
 
 --------------------------
 ## Died Before Eight
@@ -175,7 +174,7 @@ A fact of an education or an educational achievement (e.g., diploma, graduation,
 --------------------------
 ## Ethnicity
 ### Description
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as "A fact of a person's ethnicity."
+
 
 ### Value
 Found in the following historical records:
@@ -195,6 +194,7 @@ Related proposals include
 ### Used
 - [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Ethnicity`
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as "A fact of a person's ethnicity."
 
 --------------------------
 ## Heimat
@@ -226,6 +226,8 @@ Related proposals include
 --------------------------
 ## Identifying Number
 ### Description
+A number or other string assigned to identify a person within some significant external system. It must have a TYPE substructure to define what kind of identification number is being provided.
+
 [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) has a subset of these (only those issued by nations) under [National Id](#national-id).
 
 ### Value
@@ -245,8 +247,6 @@ Related proposals include
 ### Description
 *proposed description missing*
 
-*In [FamilySearch API documentation](https://www.familysearch.org/developers/docs/guides/facts)* without a definition
-
 ### Value
 
 
@@ -261,11 +261,12 @@ There are no similar proposals here
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/LifeSketch`
 - Used by Ancestry, under the name "Life Story"
 - Used by FindAGrave, under the name "Bio Information"
+- *In [FamilySearch API documentation](https://www.familysearch.org/developers/docs/guides/facts)* without a definition
 
 --------------------------
 ## Military Service
 ### Description
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as*  "A fact of a person's military service."
+
 
 ### Value
 Found in the following historical records:
@@ -287,6 +288,7 @@ Related proposals include:
 ### Used
 - Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/MilitaryService`
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X.
+- *In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as*  "A fact of a person's military service."
 
 Several application have created a custom event called _MILT to support some aspect of Military Service
 
@@ -328,8 +330,6 @@ A special case of [Identifying number](#identifying-number)
 ### Description
 An individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest.
 
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Nationality`
-
 ### Value
 
 
@@ -337,15 +337,15 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 
 
 ### Used
-
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Nationality`
 
 --------------------------
 ## Nobility Title
 ### Description
-The title given to or used by a person, especially of royalty or other noble class within a locality.
+The title given to or used by a person, especially of royalty or other noble class within a locality, such as "Grand Duke".
 
 ### Value
-In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/TitleOfNobility`
+
 
 ### Absence
 
@@ -353,11 +353,12 @@ In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts)
 ### Used
 - Part of the GEDCOM v7.0 Specification
 - Used by the FamilySearch API http://familysearch.org/v1/TitleOfNobility
+- In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/TitleOfNobility`
 
 --------------------------
 ## Number of Children
 ### Description
-
+The number of children that this person is known to be the parent of (all marriages).
 
 ### Value
 
@@ -373,7 +374,7 @@ In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts)
 --------------------------
 ## Number of Marriages
 ### Description
-
+The number of times this person has participated in a family as a spouse or parent.
 
 ### Value
 
@@ -387,10 +388,10 @@ In [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts)
 --------------------------
 ## Occupation
 ### Description
-
+The type of work or profession of an individual.
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Occupation`
+
 
 ### Absence
 
@@ -399,6 +400,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with URI http://gedcomx.org/Occupation
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Occupation`
 
 --------------------------
 ## Physical Description
@@ -406,7 +408,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/PhysicalDescription`
+
 
 ### Absence
 
@@ -417,6 +419,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Used by the FamilySearch API via GEDCOM X
 
 DESC.TYPE: can provide a user-language-specific indication of multiple aspects of an individual's physical description.  Enumerated example: {height, weight, eye color, tattoos, skin color, hair color, scars, lost limbs, other/phrase}.
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/PhysicalDescription`
 
 For example:
 ```
@@ -427,7 +430,7 @@ For example:
 --------------------------
 ## Property
 ### Description
-
+Pertaining to possessions such as real estate or other property of interest.
 
 ### Value
 
@@ -443,10 +446,10 @@ For example:
 --------------------------
 ## Religion
 ### Description
-
+A religious denomination to which a person is affiliated or for which a record applies.
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Religion`
+
 
 ### Absence
 
@@ -455,14 +458,15 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with URI http://gedcomx.org/Religion
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Religion`
 
 --------------------------
 ## Residence
 ### Description
-
+An address or place of residence where an individual resided.
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Residence`
+
 
 ### Absence
 
@@ -471,6 +475,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with URI http://gedcomx.org/Residence
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Residence`
 
 --------------------------
 ## Single
@@ -490,7 +495,7 @@ This is distinct from simply not having any FAMS structures, which might mean th
 --------------------------
 ## Social Security Number
 ### Description
-
+A number assigned by the United States Social Security Administration, used for tax identification purposes. It is a type of `IDNO`.
 
 ### Value
 
@@ -504,9 +509,7 @@ This is distinct from simply not having any FAMS structures, which might mean th
 --------------------------
 ## Tribe
 ### Description
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's tribe."
 
-*In [FamilySearch API documentation](https://www.familysearch.org/developers/docs/guides/facts)* without a definition, and with a different URI than that used by GEDCOM-X
 
 ### Value
 Found in the following historical records:
@@ -525,7 +528,8 @@ Related proposals include:
 
 ### Used
 - Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Tribe`
-
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/TribeName`
+- *In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's tribe."
+- *In [FamilySearch API documentation](https://www.familysearch.org/developers/docs/guides/facts)* without a definition, and with a different URI than that used by GEDCOM-X
 
 --------------------------
