@@ -9,7 +9,7 @@ Guides for using this document can be found in the associated [README.md](README
 |:------:|-------|------|-------|
 | `ANUL` | 4.0 | [Annulment](#annulment) |  |
 | `CENS` | 3.0 | [Census](#census) |  |
-| | Proposed | [Child Recognition](#child-recognition) |  |
+|   | Proposed | [Child Recognition](#child-recognition) |  |
 | \* | Proposed | [Common Law Marriage](#common-law-marriage) | see `MARR.TYPE` definition |
 | `DIV` | 3.0 | [Divorce](#divorce) |  |
 | `DIVF` | 4.0 | [Divore Filed](#divore-filed) |  |
