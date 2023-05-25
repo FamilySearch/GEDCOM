@@ -7,7 +7,7 @@ Guides for using this document can be found in the associated [README.md](README
 
 | G7 Tag | Since | Name | Notes |
 |:------:|-------|------|-------|
-| `` | Proposed | [Affiliation](#affiliation) | see [Nationality](#nationality) |
+|   | Proposed | [Affiliation](#affiliation) | see [Nationality](#nationality) |
 | `CAST` | 5.0 | [Caste](#caste) |  |
 | \* | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
 | \* | Proposed | [Clan](#clan) | see [Nationality](#nationality) definition |
@@ -15,9 +15,9 @@ Guides for using this document can be found in the associated [README.md](README
 | `DNA` | Proposed | [DNA](#dna) | enumerated `DNA.TYPE` |
 | `EDUC` | 4.0 | [Education](#education) |  |
 | \* | Proposed | [Ethnicity](#ethnicity) | see [Nationality](#nationality) definition |
-| `` | Proposed | [Heimat](#heimat) |  |
+|   | Proposed | [Heimat](#heimat) |  |
 | `IDNO` | 5.3 | [Identifying Number](#identifying-number) | see `SSN` |
-| `` | Proposed | [Life Sketch](#life-sketch) |  |
+|   | Proposed | [Life Sketch](#life-sketch) |  |
 | `MILT` | Proposed | [Military Service](#military-service) | This be an "Event" Enumerate `MILT.TYPE` to add additional military related items. |
 | `IDNO` | 5.0 | [National ID](#national-id) | see also `SSN` |
 | `NATI` | 5.0 | [Nationality](#nationality) |  |
