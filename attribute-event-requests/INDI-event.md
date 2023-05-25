@@ -28,13 +28,13 @@ Guides for using this document can be found in the associated [README.md](README
 | `ORDN` | 3.0 | [Ordination](#ordination) |  |
 | `PROB` | 3.0 | [Probate](#probate) |  |
 | `RETI` | 4.0 | [Retirement](#retirement) |  |
-| \* | Proposed | [Stillbirth](#stillbirth) | see "Birth" |
+| \* | Proposed | [Stillbirth](#stillbirth) | see [Birth](#birth) `BIRT.TYPE` |
 | `WILL` | 3.0 | [Will](#will) |  |
 # Details
 --------------------------
 ## Adoption
 ### Description
-
+Creation of a legally approved child-parent relationship that does not exist biologically.
 
 ### Value
 
@@ -50,7 +50,7 @@ Guides for using this document can be found in the associated [README.md](README
 --------------------------
 ## Adult Christening
 ### Description
-
+Baptism or naming events for an adult person.
 
 ### Value
 
@@ -66,7 +66,7 @@ Guides for using this document can be found in the associated [README.md](README
 --------------------------
 ## Baptism
 ### Description
-
+Baptism, performed in infancy or later. (See also [`BAPL`](#latter-day-saint-ordinances) and `CHR`.)
 
 ### Value
 
@@ -76,16 +76,16 @@ Guides for using this document can be found in the associated [README.md](README
 
 ### Used
 - Part of the GEDCOM v7.0 Specification
-- Part of the GEDCOM X specification with URI http://gedcomx.org/Baptism
+- Part of the GEDCOM X specification with URI `http://gedcomx.org/Baptism`
 - Used by the FamilySearch API via GEDCOM X
 
 --------------------------
 ## Bar Mitzvah
 ### Description
-
+The ceremonial event held when a Jewish boy reaches age 13.
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/BarMitzvah`
+
 
 ### Absence
 
@@ -94,14 +94,15 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with http://gedcomx.org/BarMitzvah
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/BarMitzvah`
 
 --------------------------
 ## Bat Mitzvah
 ### Description
-
+The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat Mitzvah."
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/BatMitzvah`
+
 
 ### Absence
 
@@ -110,6 +111,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with URI http://gedcomx.org/BatMitzvah
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/BatMitzvah`
 
 --------------------------
 ## Birth
@@ -122,17 +124,18 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 
 
 ### Absence
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Birth`
+
 
 ### Used
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with http://gedcomx.org/Birth
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Birth`
 
 --------------------------
 ## Blessing
 ### Description
-
+Bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.
 
 ### Value
 
@@ -148,26 +151,30 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 --------------------------
 ## Burial
 ### Description
-- Burial can be defined as the disposition of a decedent which can include: Inhumation, Burial at Sea, Cremation, Donation to Research, Lost, Natural, Green, Burial Tree or Scaffolding, cave and probably many other ones depending on culture. -The BURI event can can therefore have BURI.TYPE enumerations of: a) Inhumation, b) Burial at Sea, c) Cremation, d) Donation to Research, e) Lost, f) Natural, g) Green, h) Burial Tree or Scaffolding, i) cave, j) other/phrase
+Disposing of the mortal remains of a deceased person.
+
+- Burial can be defined as the disposition of a decedent which can include: Inhumation, Burial at Sea, Cremation, Donation to Research, Lost, Natural, Green, Burial Tree or Scaffolding, cave and probably many other ones depending on culture. 
+-The BURI event can can therefore have BURI.TYPE enumerations of: a) Inhumation, b) Burial at Sea, c) Cremation, d) Donation to Research, e) Lost, f) Natural, g) Green, h) Burial Tree or Scaffolding, i) cave, j) other/phrase
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Burial`
+
 
 ### Absence
 
 
 ### Used
 - Part of the GEDCOM v7.0 Specification
-- Part of the GEDCOM X specification with http://gedcomx.org/Burial
+- Part of the GEDCOM X specification with `http://gedcomx.org/Burial`
 - Used by the FamilySearch API via GEDCOM X
+*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md)* with URI `http://gedcomx.org/Burial`
 
 --------------------------
 ## Christening
 ### Description
-
+Baptism or naming events for a child.
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Christening`
+
 
 ### Absence
 
@@ -176,6 +183,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with http://gedcomx.org/Christening
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Christening`
 
 --------------------------
 ## Confirmation
@@ -199,7 +207,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Cremation`
+
 
 ### Absence
 
@@ -209,6 +217,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM X specification with URI http://gedcomx.org/Cremation
 - Used by the FamilySearch API via GEDCOM X
 - Closely related to the Burial event if the `BURI.TYPE` enumeration was implemented.
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Cremation`
 
 --------------------------
 ## Death
@@ -216,7 +225,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Death`
+
 
 ### Absence
 
@@ -225,6 +234,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with URI http://gedcomx.org/Death
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Death`
 
 --------------------------
 ## Emigration
@@ -261,7 +271,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 --------------------------
 ## Graduation
 ### Description
-A fact of a person's graduation from a scholast institution, may include, public, private, trade, or other schools of study.
+A fact of a person's graduation from a scholastic institution, may include, public, private, trade, or other schools of study.
 
 ### Value
 
@@ -271,7 +281,7 @@ A fact of a person's graduation from a scholast institution, may include, public
 
 ### Used
 - Part of the GEDCOM v7.0 Specification
-- Part of the GEDCOM X specification with URI http://gedcomx.org/Graduation
+- Part of the GEDCOM X specification with URI `http://gedcomx.org/Graduation`
 - Used by the FamilySearch API via GEDCOM X
 
 --------------------------
@@ -280,7 +290,7 @@ A fact of a person's graduation from a scholast institution, may include, public
 
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Immigration`
+
 
 ### Absence
 
@@ -289,6 +299,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with URI http://gedcomx.org/Immigration
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Immigration`
 
 --------------------------
 ## Medical Health
@@ -324,7 +335,7 @@ For Example:
 
 
 ### Value
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Naturalization`
+
 
 ### Absence
 
@@ -333,6 +344,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 - Part of the GEDCOM v7.0 Specification
 - Part of the GEDCOM X specification with URI http://gedcomx.org/Naturalization
 - Used by the FamilySearch API via GEDCOM X
+- In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Naturalization`
 
 --------------------------
 ## Ordination
@@ -404,6 +416,7 @@ There are no similar proposals here.
 ### Used
 - Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/StillBirth`
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) via GEDCOM X
+- *In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's stillbirth."
 
 --------------------------
 ## Will
@@ -418,7 +431,7 @@ There are no similar proposals here.
 
 ### Used
 - Part of the GEDCOM v7.0 Specification
-- Part of the GEDCOM X specification with URI http://gedcomx.org/Will
+- [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Will'
 - Used by the FamilySearch API via GEDCOM X
 
---------------------------
+-------------
