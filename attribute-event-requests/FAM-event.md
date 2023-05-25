@@ -1,3 +1,5 @@
+# Family Events
+
 This document tracks the set of Family Events, both those in FamilySearch GEDCOM 7 and those considered for future addition.
 Guides for using this document can be found in the associated [README.md](README.md).
 
@@ -7,20 +9,20 @@ Guides for using this document can be found in the associated [README.md](README
 |:------:|-------|------|-------|
 | `ANUL` | 4.0 | [Annulment](#annulment) |  |
 | `CENS` | 3.0 | [Census](#census) |  |
-| \* | Proposed | [Child Recognition](#child-recognition) |  |
-| \* | Proposed | [Common Law Marriage](#common-law-marriage) | see `MARR` |
+| `` | Proposed | [Child Recognition](#child-recognition) |  |
+| \* | Proposed | [Common Law Marriage](#common-law-marriage) | see `MARR.TYPE` definition |
 | `DIV` | 3.0 | [Divorce](#divorce) |  |
 | `DIVF` | 4.0 | [Divore Filed](#divore-filed) |  |
 | `ENGA` | 4.0 | [Engagement](#engagement) |  |
 | `MARR` | 3.0 | [Marriage](#marriage) |  |
-| `MARB` | 4.0 | [Marriage Bann](#marriage-bann) |  |
+| `MARB` | 4.0 | [Marriage Bann](#marriage-bann) | Is this similar to engagement announcement. |
 | `MARL` | 4.0 | [Marriage License](#marriage-license) |  |
 | `MARS` | 4.0 | [Marriage Settlement](#marriage-settlement) |  |
 # Details
 --------------------------
 ## Annulment
 ### Description
-
+Declaring a marriage void from the beginning (never existed).
 
 ### Value
 
@@ -34,7 +36,7 @@ Guides for using this document can be found in the associated [README.md](README
 --------------------------
 ## Census
 ### Description
-
+Periodic count of the population for a designated locality, such as a national or state census.
 
 ### Value
 
@@ -43,7 +45,7 @@ Guides for using this document can be found in the associated [README.md](README
 
 
 ### Used
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/event-types-specification.md)* with URI http://gedcomx.org/Census
+*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/event-types-specification.md)* with `URI http://gedcomx.org/Census`
 
 --------------------------
 ## Child Recognition
@@ -97,7 +99,7 @@ Related proposals include
 --------------------------
 ## Divorce
 ### Description
-
+Dissolving a marriage through civil action.
 
 ### Value
 
@@ -111,7 +113,7 @@ Related proposals include
 --------------------------
 ## Divore Filed
 ### Description
-
+Filing for a divorce by a spouse.
 
 ### Value
 
@@ -125,7 +127,7 @@ Related proposals include
 --------------------------
 ## Engagement
 ### Description
-
+Recording or announcing an agreement between 2 people to become married.
 
 ### Value
 
@@ -139,7 +141,7 @@ Related proposals include
 --------------------------
 ## Marriage
 ### Description
-
+A legal, common-law, or customary event such as a wedding or marriage ceremony that joins 2 partners to create or extend a family unit.
 
 ### Value
 
@@ -148,12 +150,12 @@ Related proposals include
 
 
 ### Used
-*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md)* with URI `http://gedcomx.org/Marriage`
+- *In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md)* with URI `http://gedcomx.org/Marriage`
 
 --------------------------
 ## Marriage Bann
 ### Description
-
+Official public notice given that 2 people intend to marry.
 
 ### Value
 
@@ -167,7 +169,7 @@ Related proposals include
 --------------------------
 ## Marriage License
 ### Description
-
+Obtaining a legal license to marry.
 
 ### Value
 
@@ -181,7 +183,7 @@ Related proposals include
 --------------------------
 ## Marriage Settlement
 ### Description
-
+Creating an agreement between 2 people contemplating marriage, at which time they agree to release or modify property rights that would otherwise arise from the marriage.
 
 ### Value
 
