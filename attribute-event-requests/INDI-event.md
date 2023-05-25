@@ -434,4 +434,4 @@ There are no similar proposals here.
 - [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Will'
 - Used by the FamilySearch API via GEDCOM X
 
--------------
+--------------------------
