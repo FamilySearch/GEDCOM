@@ -2003,7 +2003,7 @@ FamilySearch GEDCOM 7.0 reintroduced it with the name `INIL` for consistency wit
 #### `LABEL` (Label) `g7:LABEL`
 
 A recommended short label to use in displaying information described by the superstructure to the user.
-Multiple labels may be provided for the same superstructure;
+Multiple labels may be provided for the same superstructure.
 As with other structures, those with the same qualifying substructures (such as `g7:LANG`) are in user preference order.
 
 #### `LANG` (Language) `g7:LANG`
