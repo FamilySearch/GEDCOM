@@ -10,16 +10,16 @@ Guides for using this document can be found in the associated [README.md](README
 | | | [Affiliation](#affiliation) | |
 | `CAST` | 5.0 | [Caste](#caste) | |
 | \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
-| | | [Clan](#clan) | perhaps `NATI`? |
+| `NATI` | 7.0 | [Clan](#clan) | one of several types of `NATI` |
 | \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT`.`AGE <8y` |
 | `EDUC` | 4.0 | Education | |
-| | | [Ethnicity](#ethnicity) | perhaps `NATI`? |
-| | | [Heimat](#heimat) | perhaps `NATI`? |
+| `NATI` | 5.4 | [Ethnicity](#ethnicity) | one of several types of `NATI` |
+| `NATI` | 5.4 | [Heimat](#heimat) | one of several types of `NATI` |
 | `IDNO` | 5.3 | [Identifying Number](#identifying-number) | |
 | | | [Life Sketch](#life-sketch) | |
 | | | [Military Service](#military-service) | |
 | `IDNO` | 5.3 | [National ID](#national-id) | see also `SSN` |
-| `NATI` | 5.0 | [Nationality](#nationality) | |
+| `NATI` | 5.0 | [Nationality](#nationality) | one of several types of `NATI` |
 | `NCHI` | 5.0 | Number of Children | |
 | `NMR`  | 5.0 | Number of Marriages | really number of `FAM`s; marriage not required |
 | `OCCU` | 3.0 | [Occupation](#occupation) | |
@@ -30,7 +30,7 @@ Guides for using this document can be found in the associated [README.md](README
 | \*     | 5.0 | [Single](#single) | encoded as `NMR 0` |
 | `SSN`  | 5.3 | Social Security Number | the USA's `IDNO` equivalent |
 | `TITL` | 3.0 | [Title](#title) | |
-| | | [Tribe](#tribe) | perhaps `NATI`? |
+| `NATI` | 5.4 | [Tribe](#tribe) | one of several types of `NATI` |
 
 # Details
 
@@ -107,6 +107,7 @@ The most closely related structures are:
 Related proposals include
 
 - Tribe: *difference from Clan not yet articulated*
+- Nationality: *difference from Clan not yet articulated*
 - Ethnicity: *difference from Clan not yet articulated*
 - Heimat: a place, often as a disambiguation of family name or lineage. Clan suggests group identity, not geography
 - Affiliation: generally by choice or appointment, while clan generally indicates something assigned to a person at birth
@@ -150,6 +151,7 @@ The most closely related structures are:
 Related proposals include
 
 - Tribe: *difference from Ethnicity not yet articulated*
+- Nationality: *difference from Ethnicity not yet articulated*
 - Clan: *difference from Ethnicity not yet articulated*
 - Heimat: a place, often as a disambiguation of family name or lineage. Ethnicity suggests group identity, not geography
 - Affiliation: generally an organized group by choice or appointment, while ethnicity generally indicates a broader culture my self-identification
@@ -185,6 +187,7 @@ The most closely related structures are:
 Related proposals include
 
 - Ethnicity: ethnicities typically have some geographic association, but generally much larger and less fine-grained than a heimat
+- Nationality: generally broader than heimat in what region it covers
 - Tribe: members of a tribe may share a heimat, but tribes may be defined by other characteristics too
 - Clan: members of a clan may share a heimat, but clans may be defined by other characteristics too
 - Affiliation: a person with a given heimat needn't have any affiliation with others with the same heimat
@@ -277,7 +280,37 @@ A special case of [Identifying number](#identifying-number)
 
 ## Nationality
 
-In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Nationality`
+### Description
+
+*proposed description missing*
+
+*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a person's nationality."
+
+### Value
+
+Found in the following historical records:
+
+- (records not yet identified)
+
+### Absence
+
+The most closely related structures are:
+
+- `NATI`: Defined as "an individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." "National heritage or origin" is directly listed as one of several types of `NATI`.
+
+Related proposals include
+
+- Clan: *difference from Nationality not yet articulated*
+- Tribe: *difference from Nationality not yet articulated*
+- Ethnicity: *difference from Nationality not yet articulated*
+- Heimat: a place, often as a disambiguation of family name or lineage. Nationality suggests political identity, not geography
+- Affiliation: generally by choice or appointment, while nationality generally indicates something assigned by a political body
+
+### Used
+
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Nationality`
+
+- Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/Nationality`
 
 ## Occupation
 
@@ -331,11 +364,12 @@ Found in the following historical records:
 
 The most closely related structures are:
 
-- `NATI`: Defined as "an individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." "Tribe" is directly listed, but in the phrase "tribal interest" which might suggest a broader definition that "tribe" does by itself.
+- `NATI`: Defined as "an individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." "Tribe" is directly listed as one of several types of `NATI`.
 
 Related proposals include
 
 - Clan: *difference from Tribe not yet articulated*
+- Nationality: *difference from Tribe not yet articulated*
 - Ethnicity: *difference from Tribe not yet articulated*
 - Heimat: a place, often as a disambiguation of family name or lineage. Tribe suggests group identity, not geography
 - Affiliation: generally by choice or appointment, while tribe generally indicates something assigned to a person at birth
