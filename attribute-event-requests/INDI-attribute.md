@@ -10,11 +10,11 @@ Guides for using this document can be found in the associated [README.md](README
 | | | [Affiliation](#affiliation) | |
 | `CAST` | 5.0 | [Caste](#caste) | |
 | \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
-| | | [Clan](#clan) | |
+| | | [Clan](#clan) | perhaps `NATI`? |
 | \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT`.`AGE <8y` |
 | `EDUC` | 4.0 | Education | |
-| | | [Ethnicity](#ethnicity) | |
-| | | [Heimat](#heimat) | |
+| | | [Ethnicity](#ethnicity) | perhaps `NATI`? |
+| | | [Heimat](#heimat) | perhaps `NATI`? |
 | `IDNO` | 5.3 | [Identifying Number](#identifying-number) | |
 | | | [Life Sketch](#life-sketch) | |
 | | | [Military Service](#military-service) | |
@@ -30,7 +30,7 @@ Guides for using this document can be found in the associated [README.md](README
 | \*     | 5.0 | [Single](#single) | encoded as `NMR 0` |
 | `SSN`  | 5.3 | Social Security Number | the USA's `IDNO` equivalent |
 | `TITL` | 3.0 | [Title](#title) | |
-| | | [Tribe](#tribe) | |
+| | | [Tribe](#tribe) | perhaps `NATI`? |
 
 # Details
 
@@ -102,7 +102,7 @@ Found in the following historical records:
 
 The most closely related structures are:
 
-- 
+- `NATI`: Defined as "an individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." While "clan" is not specifically included, it is related to "folk", "house", "kindred", and "tribe" which are.
 
 Related proposals include
 
@@ -145,7 +145,7 @@ Found in the following historical records:
 
 The most closely related structures are:
 
-- 
+- `NATI`: Defined as "an individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." While "ethnicity" is not specifically included, it is related to "origin", "kindred", and "lineage" which are.
 
 Related proposals include
 
@@ -180,7 +180,7 @@ Found in the following historical records:
 
 The most closely related structures are:
 
-- 
+- `NATI`: Defined as "an individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." While "heimat" is not specifically included, it is related to "origin" and "house" which are.
 
 Related proposals include
 
@@ -331,7 +331,7 @@ Found in the following historical records:
 
 The most closely related structures are:
 
-- 
+- `NATI`: Defined as "an individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." "Tribe" is directly listed, but in the phrase "tribal interest" which might suggest a broader definition that "tribe" does by itself.
 
 Related proposals include
 
