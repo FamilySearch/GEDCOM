@@ -10,7 +10,7 @@ Guides for using this document can be found in the associated [README.md](README
 | | | [Affiliation](#affiliation) | |
 | `CAST` | 5.0 | [Caste](#caste) | |
 | \*     | 5.0 | [Childless](#childless) | encoded as `NCH 0` |
-| `NATI` | 7.0 | [Clan](#clan) | one of several types of `NATI` |
+| `NATI` | 5.4 | [Clan](#clan) | one of several types of `NATI` |
 | \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT`.`AGE <8y` |
 | `EDUC` | 4.0 | Education | |
 | `NATI` | 5.4 | [Ethnicity](#ethnicity) | one of several types of `NATI` |
