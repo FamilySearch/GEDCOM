@@ -2959,17 +2959,25 @@ See [Events] and [Attributes].
 | `AUDIO`      | An audio recording                |
 | `BOOK`       | A bound book                      |
 | `CARD`       | A card or file entry              |
-| `ELECTRONIC` | A digital artifact                |
+| `DIGITAL`    | Digital storage medium            |
+| `ELECTRONIC` | A digital artifact (deprecated)   |
 | `FICHE`      | Microfiche                        |
 | `FILM`       | Microfilm                         |
 | `MAGAZINE`   | Printed periodical                |
 | `MANUSCRIPT` | Written pages                     |
 | `MAP`        | Cartographic map                  |
 | `NEWSPAPER`  | Printed newspaper                 |
+| `ONLINE`     | Online digital artifact           |
 | `PHOTO`      | Photograph                        |
 | `TOMBSTONE`  | Burial marker or related memorial |
 | `VIDEO`      | Motion picture recording          |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
+
+:::note
+The value `ELECTRONIC` is deprecated and kept for backwards compatibility, but might be removed in the future.
+Applications should instead use `ONLINE` for online content, or `DIGITAL` for offline content such as a CD-ROM
+or other digital storage medium.
+:::
 
 ### `g7:enumset-PEDI`
 
