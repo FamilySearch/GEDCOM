@@ -9,6 +9,7 @@ Guides for using this document can be found in the associated [README.md](README
 |:------:|-------|------|-------|
 | `ANUL` | 4.0 | [Annulment](#annulment) | |
 | `CENS` | 3.0 | Census | |
+| | | [Child recognition](#child-recognition) | |
 | | | [Common Law Marriage](#common-law-marriage) | perhaps `MARR`.`TYPE Common law`? |
 | `DIV`  | 3.0 | [Divorce](#divorce) | |
 | `DIVF` | 4.0 | Divorce Filed | |
@@ -23,6 +24,29 @@ Guides for using this document can be found in the associated [README.md](README
 ## Annulment
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Annulment`
+
+## Child Recognition
+
+### Description
+
+A legal action which grants a parent-child relationship between a child and a parent; often as part of legitimizing a step-parent relationship or as legal recognition of a biological relationship that was not recognized at the time of birth.
+
+### Value
+
+Found in the following historical records
+
+- As "reconnaissance d'enfant" in legal registries in France
+- As "Legitimation" in legal registries in Germany
+
+### Absence
+
+The most closely related structures are:
+
+- `ADOP`: both events establish a legal parent relationship after birth. In some countries they are the same as one another; in other countries they have different criteria and/or legal ramifications.
+
+### Used
+
+Applications using this structure have not yet been identified.
 
 ## Common Law Marriage
 
