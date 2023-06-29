@@ -1,3 +1,13 @@
+# (main branch)
+
+- Deprecated ADR1, ADR2, and ADR3 which convey no information not already in ADDR
+
+- Add URIs for CONT, HEAD, and TRLR
+
+- Note that CONC is reserved because it was part of previous versions
+
+- Various typo corrections.
+
 # Version 7.0.12
 
 - Remove contradictory constraints on `BCE` by removing it from `dateRestrict`
