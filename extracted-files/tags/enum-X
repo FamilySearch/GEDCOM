@@ -12,5 +12,5 @@ specification:
   - Does not fit the typical definition of only Male or only Female
 
 value of:
-  - "https://gedcom.io/terms/v7/g7:enumset-SEX"
+  - "https://gedcom.io/terms/v7/enumset-SEX"
 ...

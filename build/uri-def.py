@@ -405,7 +405,7 @@ if __name__ == '__main__':
                     if not is_used_by:
                         print('\nvalue of:', file=fh)
                         is_used_by = True
-                    print('  - "'+expand_prefix('g7:'+tag2,prefixes)+'"', file=fh)
+                    print('  - "'+expand_prefix(tag2,prefixes)+'"', file=fh)
 
             fh.write('...\n')
 
