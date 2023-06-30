@@ -74,4 +74,6 @@ months:
   - "https://gedcom.io/terms/v7/month-TMZ"
   - "https://gedcom.io/terms/v7/month-AAV"
   - "https://gedcom.io/terms/v7/month-ELL"
+
+epochs: []
 ...
