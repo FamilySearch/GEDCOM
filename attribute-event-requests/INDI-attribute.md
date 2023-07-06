@@ -182,7 +182,7 @@ Found in the following historical records:
 
 The most closely related structures are:
 
-- `NATI`: Defined as "an individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." While "heimat" is not specifically included, it is related to "origin" and "house" which are.
+- `NATI`: Defined as "an individual’s national heritage or origin, or other folk, house, kindred, lineage, or tribal interest." In contrast, "heimat" refers to a geographical region a person is from.
 
 Related proposals include
 
