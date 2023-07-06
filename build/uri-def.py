@@ -115,7 +115,9 @@ def find_cat_tables(txt, g7, tagsets):
 def find_calendars(txt, g7):
     """Looks for sections defining a `g7:cal-` URI"""
     for bit in re.finditer(r'#+ `[^`]*`[^\n]*\n+((?:\n+(?!#)|[^\n])*is `g7:(cal-[^`]*)`(?:\n+(?!#)|[^\n#])*)', txt):
-        g7[bit.group(2)] = ('calendar',[bit.group(1)])
+        m = re.search('The epoch markers? ([`_A-Z0-9, and]+) (is|are) permitted', bit.group(1))
+        marker = [] if not m else re.findall(r'[A-Z0-9_]+', m[1])
+        g7[bit.group(2)] = ('calendar',[bit.group(1)], marker)
         
 
 def joint_card(c1,c2):
@@ -387,6 +389,12 @@ if __name__ == '__main__':
                 print('\nmonths:', file=fh)
                 for k in calendars['g7:'+tag]:
                     print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
+                if len(g7[tag][2]) == 0:
+                    print('\nepochs: []', file=fh)
+                else:
+                    print('\nepochs:', file=fh)
+                    for epoch in g7[tag][2]:
+                        print('  -', epoch, file=fh)
             elif g7[tag][0] == 'month':
                 print('\ncalendars:', file=fh)
                 for k in calendars['g7:'+tag]:
