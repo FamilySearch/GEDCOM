@@ -680,6 +680,7 @@ n MARL [Y|<NULL>]                          {1:1}  g7:MARL
 |
 n MARR [Y|<NULL>]                          {1:1}  g7:MARR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 KIND <Enum>                           {0:1}  g7:MARR-KIND
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
 n MARS [Y|<NULL>]                          {1:1}  g7:MARS
@@ -851,6 +852,7 @@ n BLES [Y|<NULL>]                          {1:1}  g7:BLES
 |
 n BURI [Y|<NULL>]                          {1:1}  g7:BURI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 KIND <Enum>                           {0:1}  g7:BURI-KIND
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
 n CENS [Y|<NULL>]                          {1:1}  g7:INDI-CENS
@@ -1998,6 +2000,18 @@ A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.  Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part of 5.4 through 5.5.1.
 FamilySearch GEDCOM 7.0 reintroduced it with the name `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
 
+#### `KIND` (Kind) `g7:BURI-KIND`
+
+An enumerated value from set `g7:enumset-BURI-KIND` indicating what was done with the remains of the deceased.
+
+Note `KIND` does not have a `g7:PHRASE` substructure; the `g7:TYPE` substructure of the `KIND`'s superstructure should be used for that purpose instead.
+
+#### `KIND` (Kind) `g7:MARR-KIND`
+
+An enumerated value from set `g7:enumset-MARR-KIND` indicating what kind of marriage the superstructure was.
+
+Note `KIND` does not have a `g7:PHRASE` substructure; the `g7:TYPE` substructure of the `KIND`'s superstructure should be used for that purpose instead.
+
 #### `LANG` (Language) `g7:LANG`
 
 The primary human language of the superstructure.
@@ -2949,6 +2963,16 @@ Each set of enumeration values has its own URI.
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
+### `g7:enumset-BURI-KIND`
+
+| Value | Meaning |
+| :---- | :------ |
+| `GRAVE` | Buried under the ground |
+| `VAULT` | Placed in a tomb or crypt |
+| `SEA` | Deposited in an ocean, lake, or other body of water |
+| `SKY` | Placed on a burial tree, mountain, or other open place to be excarnated |
+| `OTHER` | A value not listed here; should be paired with a `TYPE` structure |
+
 ### `g7:enumset-EVEN`
 
 An event-type tag name, but not the generic `EVEN` tag.
@@ -2958,6 +2982,17 @@ See [Events].
 
 An event- or attribute-type tag name.
 See [Events] and [Attributes].
+
+
+### `g7:enumset-MARR-KIND`
+
+| Value | Meaning |
+| :---- | :------ |
+| `CIVIL`      | A civil marriage event, creating a state of marriage via a civil ceremony, license, or registration process |
+| `COMMON_LAW` | Civil or religious recognition of a preexisting informal marriage |
+| `INFORMAL`   | An informal or de facto marriage, creating a state of marriage by mutual agreement without civil or religious involvement |
+| `RELIGIOUS`  | A religious marriage event, creating a state of marriage via a religious ceremony, license, or registration process  |
+| `OTHER` | A value not listed here; should be paired with a `TYPE` structure |
 
 ### `g7:enumset-MEDI`
 
