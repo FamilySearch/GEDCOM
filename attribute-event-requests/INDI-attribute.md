@@ -187,7 +187,7 @@ The most closely related structures are:
 Related proposals include
 
 - Ethnicity: ethnicities typically have some geographic association, but generally much larger and less fine-grained than a heimat
-- Nationality: generally broader than heimat in what region it covers
+- Nationality: a nation is often a larger region than a heimat, and a person can have a nationality without being geographically from that nation's region
 - Tribe: members of a tribe may share a heimat, but tribes may be defined by other characteristics too
 - Clan: members of a clan may share a heimat, but clans may be defined by other characteristics too
 - Affiliation: a person with a given heimat needn't have any affiliation with others with the same heimat
