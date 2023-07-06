@@ -2008,7 +2008,7 @@ Note `KIND` does not have a `g7:PHRASE` substructure; the `g7:TYPE` substructure
 
 #### `KIND` (Kind) `g7:MARR-KIND`
 
-An enumerated value from set `g7:enumset-MARR-KIND` indicating what kind of marriage the superstructure was.
+An enumerated value from set `g7:enumset-MARR-KIND` indicating what kind of marriage the superstructure describes.
 
 Note `KIND` does not have a `g7:PHRASE` substructure; the `g7:TYPE` substructure of the `KIND`'s superstructure should be used for that purpose instead.
 
