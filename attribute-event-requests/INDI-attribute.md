@@ -14,7 +14,7 @@ Guides for using this document can be found in the associated [README.md](README
 | \* | 3.0 | [Died Before Eight](#died-before-eight) | encoded as `DEAT`.`AGE <8y` |
 | `EDUC` | 4.0 | Education | |
 | `NATI` | 5.4 | [Ethnicity](#ethnicity) | one of several types of `NATI` |
-| `NATI` | 5.4 | [Heimat](#heimat) | one of several types of `NATI` |
+| | | [Heimat](#heimat) | |
 | `IDNO` | 5.3 | [Identifying Number](#identifying-number) | |
 | | | [Life Sketch](#life-sketch) | |
 | | | [Military Service](#military-service) | |
