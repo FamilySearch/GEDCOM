@@ -2988,10 +2988,10 @@ See [Events] and [Attributes].
 
 | Value | Meaning |
 | :---- | :------ |
-| `CIVIL`      | A civil marriage event, creating a state of marriage via a civil ceremony, license, or registration process |
+| `CIVIL`      | A civil marriage event, creating a state of marriage via a civil ceremony or registration process |
 | `COMMON_LAW` | Civil or religious recognition of a preexisting informal marriage |
 | `INFORMAL`   | An informal or de facto marriage, creating a state of marriage by mutual agreement without civil or religious involvement |
-| `RELIGIOUS`  | A religious marriage event, creating a state of marriage via a religious ceremony, license, or registration process  |
+| `RELIGIOUS`  | A religious marriage event, creating a state of marriage via a religious ceremony or registration process  |
 | `OTHER` | A value not listed here; should be paired with a `TYPE` structure |
 
 ### `g7:enumset-MEDI`
