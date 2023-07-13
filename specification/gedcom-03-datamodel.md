@@ -2103,6 +2103,13 @@ See also `FAMILY_EVENT_STRUCTURE`.
 
 An enumerated value from set `g7:enumset-MEDI` providing information about the media or the medium in which information is stored.
 
+When `MEDI` is a substructure of a `g7:CALN`, it is recommended that its payload describes the medium directly found at that call number rather than a medium from which it was derived.
+
+:::example
+Consider an asset in a repository that is a digital scan of a book of compiled newspapers;
+for this asset, the `CALN`.`MEDI` is recommended to be `ELECTRONIC` rather than `BOOK` or `NEWSPAPER`.
+:::
+
 #### `MIME` (Media type) `g7:MIME`
 
 Indicates the [media type](#media-type) of the payload of the superstructure.

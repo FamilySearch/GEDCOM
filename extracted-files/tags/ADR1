@@ -10,9 +10,12 @@ standard tag: ADR1
 
 specification:
   - Address Line 1
-  - The first line of the address, used for indexing. This structure’s payload
+  - |
+    The first line of the address, used for indexing. This structure’s payload
     should be a single line of text equal to the first line of the
     corresponding ADDR. See ADDRESS_STRUCTURE for more.
+    
+    ADR1 should not be added to new files; see ADDRESS_STRUCTURE for more.
 
 payload: http://www.w3.org/2001/XMLSchema#string
 

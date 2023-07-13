@@ -26,6 +26,15 @@ specification:
     formatting of address components cannot be determined from the
     substructures alone, the ADDR payload is required, even if its content
     appears to be redundant with the substructures.
+    
+    ADR1 and ADR2 were introduced in version 5.5 (1996) and ADR3 in version
+    5.5.1 (1999), defined as “The first/second/third line of an address.” Some
+    applications interpreted ADR1 as “the first line of the street address”,
+    but most took the spec as-written and treated it as a straight copy of a
+    line of text already available in the ADDR payload.
+    
+    Duplicating information bloats files and introduces the potential for
+    self-contradiction. ADR1, ADR2, and ADR3 should not be added to new files.
 
 payload: http://www.w3.org/2001/XMLSchema#string
 
