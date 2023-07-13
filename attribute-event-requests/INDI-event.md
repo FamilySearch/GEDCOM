@@ -24,7 +24,7 @@ Guides for using this document can be found in the associated [README.md](README
 | `FCOM` | 4.0 | First Communion | |
 | `GRAD` | 4.0 | Graduation | |
 | `IMMI` | 3.0 | [Immigration](#immigration) | |
-| | | [Memorial Service](#mmorial-service) | |
+| | | [Memorial Service](#memorial-service) | |
 | `NATU` | 3.0 | [Naturalization](#naturalization) | |
 | `ORDN` | 3.0 | Ordination | |
 | `PROB` | 3.0 | Probate | |
