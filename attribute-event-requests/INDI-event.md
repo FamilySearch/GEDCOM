@@ -78,7 +78,8 @@ An event to mark or remember the death or presumed death of an individual, such 
 Found in the following historical records:
 
 - Obituaries
-- Memorial announcments and programmes
+- Memorial announcements and programs
+- Church records
 
 ### Absence
 
