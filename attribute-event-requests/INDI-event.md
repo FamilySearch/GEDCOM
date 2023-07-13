@@ -85,7 +85,7 @@ Found in the following historical records:
 The most closely related structures are:
 
 - `DEAT`: expresses that an individaul died, which generally has a different date than the memorial.
-- `BURI`: describes what was done with the remains of the individaul, which may or may not conincide with a memorial serive.
+- `BURI`: describes what was done with the remains of the individual, which may or may not coincide with a memorial serive.
 
 ### Used
 
