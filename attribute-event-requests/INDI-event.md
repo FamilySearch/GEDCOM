@@ -18,7 +18,7 @@ Guides for using this document can be found in the associated [README.md](README
 | `CENS` | 3.0 | Census | |
 | `CHR`  | 3.0 | [Christening](#christening) | |
 | `CONF` | 3.0 | Confirmation | |
-| `CREM` | 5.4 | [Cremation](#cremation) | also `BURI`.`TYPE Cremation` prior to 5.4 |
+| `CREM` | 5.4 | [Cremation](#cremation) | sometimes encoded as `BURI` prior to 5.4 |
 | `DEAT` | 3.0 | [Death](#death) | |
 | `BURI` | 3.0 | [Depositing remains](#depositing-remains) | |
 | `EMIG` | 3.0 | Emigration | |
