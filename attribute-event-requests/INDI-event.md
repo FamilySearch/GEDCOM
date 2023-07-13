@@ -24,6 +24,7 @@ Guides for using this document can be found in the associated [README.md](README
 | `FCOM` | 4.0 | First Communion | |
 | `GRAD` | 4.0 | Graduation | |
 | `IMMI` | 3.0 | [Immigration](#immigration) | |
+| | | [Memorial Service](#memorial-service) | |
 | `NATU` | 3.0 | [Naturalization](#naturalization) | |
 | `ORDN` | 3.0 | Ordination | |
 | `PROB` | 3.0 | Probate | |
@@ -65,6 +66,33 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 ## Immigration
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Immigration`
+
+## Memorial Service
+
+### Description
+
+An event to mark or remember the death or presumed death of an individual, such as a funeral, wake, celebration of life, or memorial service.
+
+### Value
+
+Found in the following historical records:
+
+- Obituaries
+- Memorial announcements and programs
+- Church records
+
+### Absence
+
+The most closely related structures are:
+
+- `DEAT`: expresses that an individaul died, which generally has a different date than the memorial.
+- `BURI`: describes what was done with the remains of the individual, which may or may not coincide with a memorial serive.
+
+### Used
+
+- Funerals, one type of memorial service, are part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Funeral`
+
+
 
 ## Naturalization
 
