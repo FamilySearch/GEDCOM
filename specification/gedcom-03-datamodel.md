@@ -1292,7 +1292,7 @@ Tag | Name<br/>URI | Description
 `BASM` | Bas Mitzvah<br/>`g7:BASM` | The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat Mitzvah."
 `BIRT` | birth<br/>`g7:BIRT` | Entering into life.
 `BLES` | blessing<br/>`g7:BLES` | Bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.
-`BURI` | disposal of remains<br/>`g7:BURI` | Disposing of the mortal remains of a deceased person.
+`BURI` | depositing remains<br/>`g7:BURI` | Depositing the mortal remains of a deceased person.
 `CENS` | census<br/>`g7:INDI-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
 `CHR` | christening<br/>`g7:CHR` | Baptism or naming events for a child.
 `CHRA` | adult christening<br/>`g7:CHRA` | Baptism or naming events for an adult person.
