@@ -1507,7 +1507,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `BURI` (Disposal of remains) `g7:BURI`
+#### `BURI` (Depositing remains) `g7:BURI`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
