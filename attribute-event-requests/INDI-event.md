@@ -14,13 +14,13 @@ Guides for using this document can be found in the associated [README.md](README
 | `BASM` | 4.0 | [Bat Mitzvah](#bat-mitzvah) | |
 | `BIRT` | 3.0 | [Birth](#birth) | |
 | `BLES` | 3.0 | Blessing | |
-| \*     | 3.0 | [Burial](#burial) | as `BURI`.`TYPE Burial` |
+| `BURI` | 3.0 | [Burial](#burial) | one of several types of `BURI` |
 | `CENS` | 3.0 | Census | |
 | `CHR`  | 3.0 | [Christening](#christening) | |
 | `CONF` | 3.0 | Confirmation | |
 | `CREM` | 5.4 | [Cremation](#cremation) | also `BURI`.`TYPE Cremation` prior to 5.4 |
 | `DEAT` | 3.0 | [Death](#death) | |
-| `BURI` | 3.0 | [Disposal of remains](#disposal-of-remains) | |
+| `BURI` | 3.0 | [Depositing remains](#depositing-remains) | |
 | `EMIG` | 3.0 | Emigration | |
 | `FCOM` | 4.0 | First Communion | |
 | `GRAD` | 4.0 | Graduation | |
@@ -50,7 +50,7 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 
 ## Burial
 
-A subtype of [Disposal of remains](#disposal-of-remains)
+A subtype of [Depositing remains](#depositing-remains)
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Burial`
 
@@ -60,19 +60,42 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 
 ## Cremation
 
-A subtype of [Disposal of remains](#disposal-of-remains)
-
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Cremation`
 
 ## Death
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Death`
 
-## Disposal of remains
+## Depositing remains
 
-A supertype of [Burial](#burial)
+### Description
 
-A supertype of [Cremation](#cremation)
+Depositing the mortal remains of a deceased person.
+
+### Value
+
+Found in the following historical records:
+
+- Church records
+- Grave markers
+- Tombs and Crypts
+- Urns
+
+### Absence
+
+The most closely related structures are:
+
+- `DEAT`: expresses that an individual died, which generally has a different date and place than the depositing of the remains.
+- `CREM`: describes a transformation of the remains by fire; the resulting ashes may still be deposited.
+
+Related proposals here include
+
+- [Burial](#burial), which one type of depositing remains
+
+
+### Used
+
+- In GEDCOM since version 3.0 as `BURI`
 
 
 ## Immigration
