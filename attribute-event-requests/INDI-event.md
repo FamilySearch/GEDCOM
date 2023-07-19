@@ -90,7 +90,7 @@ The most closely related structures are:
 
 Related proposals here include
 
-- [Burial](#burial), which one type of depositing remains
+- [Burial](#burial), which is one type of depositing remains
 
 
 ### Used
