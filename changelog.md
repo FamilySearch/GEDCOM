@@ -1,14 +1,14 @@
 # (main branch)
 
-- Deprecated ADR1, ADR2, and ADR3 which convey no information not already in ADDR.
+- Deprecated `ADR1`, `ADR2`, and `ADR3` which convey no information not already in `ADDR`.
 
-- Fix ABNF for g7:Age datatype to agree with standard text that said the payload is optional.
+- Fix `ABNF` for `g7:type-Age` datatype to agree with standard text that said the payload is optional.
 
-- Recommend that MEDI.CALN describe the medium directly found at that call number rather than a medium from which it was derived.
+- Recommend that `MEDI`.`CALN` describe the medium directly found at that call number rather than a medium from which it was derived.
 
-- Add URIs for CONT, HEAD, and TRLR.
+- Add URIs for `CONT`, `HEAD`, and `TRLR`.
 
-- Note that CONC is reserved because it was part of previous versions.
+- Note that `CONC` is reserved because it was part of previous versions.
 
 - Various typo corrections.
 
