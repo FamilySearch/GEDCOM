@@ -21,6 +21,8 @@ specification:
     
     See ITU standards E.123 and E.164 for more information.
 
+label: 'Phone'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

@@ -61,6 +61,7 @@ def find_cat_tables(txt, g7, tagsets):
         sect = txt[i:j].replace('(Latter-Day Saint Ordinance)','`ord`') ## <- hack for ord-STAT
         for entry in re.finditer(r'`([A-Z0-9_]+)` *\| *(.*?) *[|\n]', sect):
             enum, meaning = entry.groups()
+            label = None
             h1 = sect.find('\n|',sect.rfind('\n#',0,entry.start()))+1
             h2 = sect.find('\n', h1)
             header = [_.strip() for _ in sect[h1:h2].strip('| ').split('|')]
@@ -92,6 +93,7 @@ def find_cat_tables(txt, g7, tagsets):
                 enums.setdefault(key,[]).append(pfx)
             elif 'month-' in pfx:
                 yamltype = 'month'
+                label = re.sub(r'(,| \().*', '', meaning[0])
                 k1 = sect.find('`', sect.find('URI for this calendar is', entry.start()))+1
                 k2 = sect.find('`', k1)
                 cal = sect[k1:k2]
@@ -109,7 +111,10 @@ def find_cat_tables(txt, g7, tagsets):
                 if pfx.startswith('g7:'):
                     if pfx[3:] in g7:
                         raise Exception(pfx+' defined as an enumeration and a '+g7[pfx[3:]][0])
-                    g7[pfx[3:]] = (yamltype, meaning)
+                    if label:
+                        g7[pfx[3:]] = (yamltype, meaning, None, label)
+                    else:
+                        g7[pfx[3:]] = (yamltype, meaning)
     return enums, calendars
 
 def find_calendars(txt, g7):
@@ -117,7 +122,11 @@ def find_calendars(txt, g7):
     for bit in re.finditer(r'#+ `[^`]*`[^\n]*\n+((?:\n+(?!#)|[^\n])*is `g7:(cal-[^`]*)`(?:\n+(?!#)|[^\n#])*)', txt):
         m = re.search('The epoch markers? ([`_A-Z0-9, and]+) (is|are) permitted', bit.group(1))
         marker = [] if not m else re.findall(r'[A-Z0-9_]+', m[1])
-        g7[bit.group(2)] = ('calendar',[bit.group(1)], marker)
+        m = re.match(r'^The ([A-Z][A-Za-z]* )+calendar', bit.group(1))
+        if m:
+            g7[bit.group(2)] = ('calendar',[bit.group(1)], marker, m.group(0)[4:-9])
+        else:
+            g7[bit.group(2)] = ('calendar',[bit.group(1)], marker)
         
 
 def joint_card(c1,c2):
@@ -215,7 +224,7 @@ def find_descriptions(txt, g7, ssp):
         if uri not in ssp:
             raise Exception('Found section for '+uri+' but no gedstruct')
         if uri.startswith('g7:'):
-            g7.setdefault(uri[3:],('structure',[],ssp[uri]))[1].extend((
+            g7.setdefault(uri[3:],('structure',[],ssp[uri],name.strip()))[1].extend((
                 name.strip(),
                 desc.strip()
             ))
@@ -352,6 +361,10 @@ if __name__ == '__main__':
                 print('\nspecification:', file=fh)
                 for desc in g7[tag][1]:
                     print(yaml_str_helper('  - ', desc), file=fh)
+            
+            if len(g7[tag]) > 3:
+                print('\nlabel:',repr(g7[tag][3]), file=fh)
+            
             if g7[tag][0] == 'structure':
                 d = g7[tag][2]
                 payload = expand_prefix(d['pay'],prefixes) if d['pay'] is not None else 'null'

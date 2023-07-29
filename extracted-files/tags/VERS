@@ -13,6 +13,8 @@ specification:
   - An identifier that represents the version level assigned to the associated
     product. It is defined and changed by the creators of the product.
 
+label: 'Version'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

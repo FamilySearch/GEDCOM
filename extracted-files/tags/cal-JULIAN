@@ -26,6 +26,8 @@ specification:
     
     The URI for this calendar is https://gedcom.io/terms/v7/cal-JULIAN
 
+label: 'Julian'
+
 months:
   - "https://gedcom.io/terms/v7/month-JAN"
   - "https://gedcom.io/terms/v7/month-FEB"

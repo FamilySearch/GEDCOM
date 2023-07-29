@@ -11,6 +11,8 @@ standard tag: COMP
 specification:
   - Jour Complémentaires
 
+label: 'Jour Complémentaires'
+
 calendars:
   - "https://gedcom.io/terms/v7/cal-FRENCH_R"
 ...

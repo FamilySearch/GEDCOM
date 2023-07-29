@@ -12,6 +12,8 @@ specification:
   - Event
   - See https://gedcom.io/terms/v7/INDI-EVEN.
 
+label: 'Event'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

@@ -58,6 +58,8 @@ specification:
     to point to an INDI record, the INDI record must use a FAMC to point to the
     FAM record.
 
+label: 'Family record'
+
 payload: null
 
 substructures:

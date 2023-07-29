@@ -27,6 +27,8 @@ specification:
         2 TYPE Equipment Lease
         2 DATE 4 NOV 1837
 
+label: 'Event'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

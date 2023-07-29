@@ -14,6 +14,8 @@ specification:
     specific to the individual described by the associated FAM’s WIFE
     substructure.
 
+label: 'Wife'
+
 payload: null
 
 substructures:

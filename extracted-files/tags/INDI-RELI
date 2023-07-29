@@ -12,6 +12,8 @@ specification:
   - Religion
   - An Individual Attribute. See also INDIVIDUAL_ATTRIBUTE_STRUCTURE.
 
+label: 'Religion'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

@@ -13,6 +13,8 @@ specification:
   - A copyright statement, as appropriate for the copyright laws applicable to
     this data.
 
+label: 'Copyright'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

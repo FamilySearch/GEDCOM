@@ -53,6 +53,8 @@ specification:
     defined by this version of the specification, but may be defined in a
     subsequent version.
 
+label: 'File reference'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

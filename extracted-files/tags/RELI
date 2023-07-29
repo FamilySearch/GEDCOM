@@ -16,6 +16,8 @@ specification:
   - A religious denomination to which a person is affiliated or for which a
     record applies.
 
+label: 'Religion'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

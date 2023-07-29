@@ -16,6 +16,8 @@ specification:
     based on racial or religious differences, or differences in wealth,
     inherited rank, profession, or occupation.
 
+label: 'Caste'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

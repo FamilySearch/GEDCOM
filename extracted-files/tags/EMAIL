@@ -21,6 +21,8 @@ specification:
     sometimes written EMAI and sometimes written EMAIL. EMAIL should be used in
     version 7.0 and later.
 
+label: 'Email'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

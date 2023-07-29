@@ -14,6 +14,8 @@ specification:
   - number of children
   - The number of children that belong to this family.
 
+label: 'Number of children'
+
 payload: http://www.w3.org/2001/XMLSchema#nonNegativeInteger
 
 substructures:

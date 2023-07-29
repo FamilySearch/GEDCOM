@@ -17,6 +17,8 @@ specification:
     assertions made from that record, such as the mother’s name or mother’s
     birth date.
 
+label: 'Event'
+
 payload: https://gedcom.io/terms/v7/type-Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-EVENATTR"

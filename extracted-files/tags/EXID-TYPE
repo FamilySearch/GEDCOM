@@ -37,6 +37,8 @@ specification:
     
     Additional type URIs can be registered by filing a GitHub pull request.
 
+label: 'Type'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

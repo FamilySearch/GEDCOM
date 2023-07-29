@@ -16,6 +16,8 @@ specification:
     or events, or an organization responsible for creating or archiving
     records.
 
+label: 'Responsible agency'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

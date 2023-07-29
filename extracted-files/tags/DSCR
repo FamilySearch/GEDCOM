@@ -14,6 +14,8 @@ specification:
   - physical description
   - The physical characteristics of a person.
 
+label: 'Description'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

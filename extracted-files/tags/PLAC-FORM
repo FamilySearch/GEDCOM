@@ -20,6 +20,8 @@ specification:
         2 PLAC Baltimore, , Maryland, USA
         3 FORM City, County, State, Country
 
+label: 'Format'
+
 payload: https://gedcom.io/terms/v7/type-List#Text
 
 substructures: {}

@@ -46,6 +46,8 @@ specification:
     and so on. A subordinate FAMC pointer is allowed to refer to a family where
     the individual does not appear as a child.
 
+label: 'Individual'
+
 payload: null
 
 substructures:

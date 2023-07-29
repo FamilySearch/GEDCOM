@@ -29,6 +29,8 @@ specification:
     
     means “no marriage had occurred as of March 24^(th), 1880”
 
+label: 'Did not happen'
+
 payload: https://gedcom.io/terms/v7/type-Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-EVEN"

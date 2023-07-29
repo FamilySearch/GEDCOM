@@ -60,6 +60,8 @@ specification:
     
     The URI for this calendar is https://gedcom.io/terms/v7/cal-HEBREW
 
+label: 'Hebrew'
+
 months:
   - "https://gedcom.io/terms/v7/month-TSH"
   - "https://gedcom.io/terms/v7/month-CSH"

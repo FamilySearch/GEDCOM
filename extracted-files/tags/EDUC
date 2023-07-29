@@ -14,6 +14,8 @@ specification:
   - education
   - Indicator of a level of education attained.
 
+label: 'Education'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

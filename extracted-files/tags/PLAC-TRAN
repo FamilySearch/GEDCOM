@@ -43,6 +43,8 @@ specification:
     every other TRAN substructure of its superstructure in either its language
     tag or its media type or both.
 
+label: 'Translation'
+
 payload: https://gedcom.io/terms/v7/type-List#Text
 
 substructures:

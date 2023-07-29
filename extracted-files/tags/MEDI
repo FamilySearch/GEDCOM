@@ -23,6 +23,8 @@ specification:
     compiled newspapers; for this asset, the CALN.MEDI is recommended to be
     ELECTRONIC rather than BOOK or NEWSPAPER.
 
+label: 'Medium'
+
 payload: https://gedcom.io/terms/v7/type-Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-MEDI"
