@@ -20,7 +20,7 @@ Guides for using this document can be found in the associated [README.md](README
 | `CONF` | 3.0 | Confirmation | |
 | `CREM` | 5.4 | [Cremation](#cremation) | sometimes encoded as `BURI` prior to 5.4 |
 | `DEAT` | 3.0 | [Death](#death) | |
-| `BURI` | 3.0 | [Depositing remains](#depositing-remains) | |
+| `BURI` | 3.0 | [Depositing remains](#depositing-remains) | Has subtypes, including [Burial](#burial) |
 | `EMIG` | 3.0 | Emigration | |
 | `FCOM` | 4.0 | First Communion | |
 | `GRAD` | 4.0 | Graduation | |
