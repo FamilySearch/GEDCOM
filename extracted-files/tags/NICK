@@ -13,6 +13,8 @@ specification:
   - A descriptive or familiar name that is used instead of, or in addition to,
     one’s proper name.
 
+label: 'Nickname'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

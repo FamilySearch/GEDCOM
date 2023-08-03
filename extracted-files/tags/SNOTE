@@ -13,6 +13,8 @@ specification:
   - A pointer to a note that is shared by multiple structures. See
     NOTE_STRUCTURE for more.
 
+label: 'Shared note'
+
 payload: "@<https://gedcom.io/terms/v7/record-SNOTE>@"
 
 substructures: {}

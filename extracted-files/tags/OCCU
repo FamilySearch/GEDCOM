@@ -14,6 +14,8 @@ specification:
   - occupation
   - The type of work or profession of an individual.
 
+label: 'Occupation'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

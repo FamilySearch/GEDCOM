@@ -16,6 +16,8 @@ specification:
     significant external system. It must have a TYPE substructure to define
     what kind of identification number is being provided.
 
+label: 'Identification number'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

@@ -13,6 +13,8 @@ specification:
   - A code used by a postal service to identify an area to facilitate mail
     handling. See ADDRESS_STRUCTURE for more.
 
+label: 'Postal code'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

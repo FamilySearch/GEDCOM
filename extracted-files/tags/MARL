@@ -14,6 +14,8 @@ specification:
   - marriage license
   - Obtaining a legal license to marry.
 
+label: 'Marriage license'
+
 payload: Y|<NULL>
 
 substructures:

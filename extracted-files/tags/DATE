@@ -23,6 +23,8 @@ specification:
     There is currently no provision for approximate times or time phrases. Time
     phrases are expected to be added in version 7.1.
 
+label: 'Date'
+
 payload: https://gedcom.io/terms/v7/type-Date
 
 substructures:

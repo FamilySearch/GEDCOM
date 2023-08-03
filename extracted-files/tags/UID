@@ -39,6 +39,8 @@ specification:
     input is expected and an appropriate action to take in case of an error is
     known.
 
+label: 'Unique Identifier'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

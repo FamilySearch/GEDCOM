@@ -13,6 +13,8 @@ specification:
   - Left is a number of pixels to not display from the left side of the image.
     See CROP for more.
 
+label: 'Left crop width'
+
 payload: http://www.w3.org/2001/XMLSchema#nonNegativeInteger
 
 substructures: {}

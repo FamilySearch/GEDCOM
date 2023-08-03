@@ -46,6 +46,8 @@ specification:
     form a cycle. Applications should also ensure they can handle invalid files
     with such cycles in a safe manner.
 
+label: 'Shared note'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

@@ -11,6 +11,8 @@ standard tag: PLUV
 specification:
   - Pluviôse
 
+label: 'Pluviôse'
+
 calendars:
   - "https://gedcom.io/terms/v7/cal-FRENCH_R"
 ...

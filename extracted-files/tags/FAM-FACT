@@ -12,6 +12,8 @@ specification:
   - Fact
   - See https://gedcom.io/terms/v7/INDI-FACT.
 
+label: 'Fact'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

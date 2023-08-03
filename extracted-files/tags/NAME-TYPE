@@ -13,6 +13,8 @@ specification:
   - An enumerated value from set https://gedcom.io/terms/v7/enumset-NAME-TYPE
     indicating the type of the name.
 
+label: 'Type'
+
 payload: https://gedcom.io/terms/v7/type-Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-NAME-TYPE"

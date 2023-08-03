@@ -16,6 +16,8 @@ specification:
     It is recommended that applications write GEDC with its required subrecord
     VERS as the first substructure of HEAD.
 
+label: 'GEDCOM'
+
 payload: null
 
 substructures:

@@ -20,6 +20,8 @@ specification:
     “Belarus” may be anywhere within that nation’s 200,000 square kilometer
     area).
 
+label: 'Map'
+
 payload: null
 
 substructures:

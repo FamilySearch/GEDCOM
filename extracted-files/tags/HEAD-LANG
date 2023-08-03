@@ -31,6 +31,8 @@ specification:
     platform-specific places, such as the default language from operating
     system settings, user locales, Input Method Editors (IMEs), etc.
 
+label: 'Language'
+
 payload: http://www.w3.org/2001/XMLSchema#Language
 
 substructures: {}

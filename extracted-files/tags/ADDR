@@ -36,6 +36,8 @@ specification:
     Duplicating information bloats files and introduces the potential for
     self-contradiction. ADR1, ADR2, and ADR3 should not be added to new files.
 
+label: 'Address'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

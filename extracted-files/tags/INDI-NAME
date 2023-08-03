@@ -39,6 +39,8 @@ specification:
     Alternative approaches to representing names are being considered for
     future versions of this specification.
 
+label: 'Name'
+
 payload: https://gedcom.io/terms/v7/type-Name
 
 substructures:

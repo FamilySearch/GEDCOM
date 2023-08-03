@@ -11,6 +11,8 @@ standard tag: ADR
 specification:
   - Adar I, Adar Rishon, First Adar, or Adar Aleph (אדר א׳)
 
+label: 'Adar I'
+
 calendars:
   - "https://gedcom.io/terms/v7/cal-HEBREW"
 ...

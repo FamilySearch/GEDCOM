@@ -37,6 +37,8 @@ specification:
   - A formal designation used by an individual in connection with positions of
     royalty or other social status, such as Grand Duke.
 
+label: 'Title'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

@@ -17,6 +17,8 @@ specification:
     
     ADR3 should not be added to new files; see ADDRESS_STRUCTURE for more.
 
+label: 'Address Line 3'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

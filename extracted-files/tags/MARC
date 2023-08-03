@@ -16,6 +16,8 @@ specification:
     agreement in which marriage partners reach agreement about the property
     rights of 1 or both, securing property to their children.
 
+label: 'Marriage contract'
+
 payload: Y|<NULL>
 
 substructures:

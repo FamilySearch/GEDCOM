@@ -13,6 +13,8 @@ specification:
   - A geographical division of a larger jurisdictional area, such as a state
     within the United States of America. See ADDRESS_STRUCTURE for more.
 
+label: 'State'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

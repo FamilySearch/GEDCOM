@@ -20,6 +20,8 @@ specification:
     Multiple structures describing different aspects of the same subject must
     not have the same REFN value.
 
+label: 'Reference'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

@@ -15,6 +15,8 @@ specification:
   - A number assigned by the United States Social Security Administration, used
     for tax identification purposes. It is a type of IDNO.
 
+label: 'Social security number'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

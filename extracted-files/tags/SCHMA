@@ -13,6 +13,8 @@ specification:
   - A container for storing meta-information about the extension tags used in
     this document. See Extensions for more.
 
+label: 'Extension schema'
+
 payload: null
 
 substructures:

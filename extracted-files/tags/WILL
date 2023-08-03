@@ -16,6 +16,8 @@ specification:
     her estate. It takes effect after death. The event date is the date the
     will was signed while the person was alive. (See also PROB)
 
+label: 'Will'
+
 payload: Y|<NULL>
 
 substructures:

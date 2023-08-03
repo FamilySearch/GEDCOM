@@ -11,6 +11,8 @@ standard tag: CSH
 specification:
   - Marcheshvan (מַרְחֶשְׁוָן) or Cheshvan (חֶשְׁוָן)
 
+label: 'Marcheshvan'
+
 calendars:
   - "https://gedcom.io/terms/v7/cal-HEBREW"
 ...

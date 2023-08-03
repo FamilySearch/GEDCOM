@@ -24,6 +24,8 @@ specification:
     
     This is metadata about the structure itself, not data about its subject.
 
+label: 'Restriction'
+
 payload: https://gedcom.io/terms/v7/type-List#Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-RESN"

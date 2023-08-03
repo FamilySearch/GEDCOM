@@ -12,6 +12,8 @@ specification:
   - Wife
   - A partner in a FAM record. See FAMILY_RECORD for more.
 
+label: 'Wife'
+
 payload: "@<https://gedcom.io/terms/v7/record-INDI>@"
 
 substructures:

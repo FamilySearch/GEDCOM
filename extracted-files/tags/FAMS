@@ -12,6 +12,8 @@ specification:
   - Family spouse
   - The family in which an individual appears as a partner. See FAM for more.
 
+label: 'Family spouse'
+
 payload: "@<https://gedcom.io/terms/v7/record-FAM>@"
 
 substructures:

@@ -38,6 +38,8 @@ specification:
     
     The URI for this calendar is https://gedcom.io/terms/v7/cal-FRENCH_R
 
+label: 'French Republican'
+
 months:
   - "https://gedcom.io/terms/v7/month-VEND"
   - "https://gedcom.io/terms/v7/month-BRUM"

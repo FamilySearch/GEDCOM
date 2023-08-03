@@ -16,6 +16,8 @@ specification:
     evidence point of view, “what the original record keeper said” as opposed
     to the researcher’s interpretation.
 
+label: 'Text from Source'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

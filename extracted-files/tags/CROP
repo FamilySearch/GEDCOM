@@ -33,6 +33,8 @@ specification:
     -   TOP or TOP + HEIGHT exceed the image height.
     -   CROP applied to a non-image or image without a defined pixel unit.
 
+label: 'Crop'
+
 payload: null
 
 substructures:

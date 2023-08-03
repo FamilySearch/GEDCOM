@@ -16,6 +16,8 @@ specification:
     time they agree to release or modify property rights that would otherwise
     arise from the marriage.
 
+label: 'Marriage settlement'
+
 payload: Y|<NULL>
 
 substructures:

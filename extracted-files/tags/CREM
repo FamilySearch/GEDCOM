@@ -14,6 +14,8 @@ specification:
   - cremation
   - Disposal of the remains of a person’s body by fire.
 
+label: 'Cremation'
+
 payload: Y|<NULL>
 
 substructures:

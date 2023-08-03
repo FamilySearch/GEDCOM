@@ -19,6 +19,8 @@ specification:
         0 @I45@ INDI
         1 DSCR brown eyes, 5ft 10in, 198 pounds
 
+label: 'Height in pixels'
+
 payload: http://www.w3.org/2001/XMLSchema#nonNegativeInteger
 
 substructures: {}
