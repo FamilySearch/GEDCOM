@@ -1292,12 +1292,12 @@ Tag | Name<br/>URI | Description
 `BASM` | Bas Mitzvah<br/>`g7:BASM` | The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat Mitzvah."
 `BIRT` | birth<br/>`g7:BIRT` | Entering into life.
 `BLES` | blessing<br/>`g7:BLES` | Bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.
-`BURI` | burial<br/>`g7:BURI` | Disposing of the mortal remains of a deceased person.
+`BURI` | depositing remains<br/>`g7:BURI` | Depositing the mortal remains of a deceased person.
 `CENS` | census<br/>`g7:INDI-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
 `CHR` | christening<br/>`g7:CHR` | Baptism or naming events for a child.
 `CHRA` | adult christening<br/>`g7:CHRA` | Baptism or naming events for an adult person.
 `CONF` | confirmation<br/>`g7:CONF` | Conferring full church membership.
-`CREM` | cremation<br/>`g7:CREM` | Disposal of the remains of a person's body by fire.
+`CREM` | cremation<br/>`g7:CREM` | The act of reducing a dead body to ashes by fire.
 `DEAT` | death<br/>`g7:DEAT` | Mortal life terminates.
 `EMIG` | emigration<br/>`g7:EMIG` | Leaving one's homeland with the intent of residing elsewhere.
 `FCOM` | first communion<br/>`g7:FCOM` | The first act of sharing in the Lord's supper as part of church worship.
@@ -1507,10 +1507,13 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `BURI` (Burial) `g7:BURI`
+#### `BURI` (Depositing remains) `g7:BURI`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
+
+Although defined as any depositing of remains since it was introduced in the first version of GEDCOM, this tag is a shortened form of the English word "burial" and has been interpreted to mean "depositing of remains by burial" by some applications and users.
+In the absence of a clarifying `TYPE` substructure it is likely, but not guaranteed, that a `BURI` structure refers to a burial rather than another form of depositing remains.
 
 #### `CALN` (Call number) `g7:CALN`
 
