@@ -96,7 +96,7 @@ fraction = 1*digit
 
 ; ------------- Age -------------
 
-Age         = [ageBound D] ageDuration
+Age         = [[ageBound D] ageDuration]
 
 ageBound    = "<" / ">"
 ageDuration = years [D months] [D weeks] [D days]

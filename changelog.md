@@ -1,8 +1,12 @@
-# (main branch)
+# Version 7.0.13
 
 - Deprecated `ADR1`, `ADR2`, and `ADR3` which convey no information not already in `ADDR`.
 
 - Fix `ABNF` for `g7:type-Age` datatype to agree with standard text that said the payload is optional.
+
+- Update the label of `BURI` to "depositing remains" match its definition.
+
+- Update the definition of `CREM` to better describe cremation.
 
 - Recommend that `MEDI`.`CALN` describe the medium directly found at that call number rather than a medium from which it was derived.
 
