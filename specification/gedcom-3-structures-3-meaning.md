@@ -245,6 +245,17 @@ Others distribute events and attributes between `INDI` records mutually linked b
 A future version of this specification may adjust the definition of `ALIA`.
 :::
 
+#### `ALIA` (Alias) `g7:SUBM-ALIA`
+
+Indicates that the user described by the superstructure
+is the same person as the individual described by the referenced `INDI`.
+
+A `SUBM` may only have a single `INDI` linked in this way
+to simplify implementation of algorithms that depend on the `INDI` representing a particular user.
+Applications using `g7:ALIA` to represent a person with multiple `INDI` records
+should select or generate a representative `INDI` for the `SUBM`.`ALIA`.
+
+
 #### `ANCI` (Ancestor interest) `g7:ANCI`
 
 Indicates an interest in additional research for ancestors of this individual.
@@ -755,6 +766,18 @@ A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.  Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part of 5.4 through 5.5.1.
 FamilySearch GEDCOM 7.0 reintroduced it with the name `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
 
+#### `KIND` (Kind) `g7:BURI-KIND`
+
+An enumerated value from set `g7:enumset-BURI-KIND` indicating what was done with the remains of the deceased.
+
+Note `KIND` does not have a `g7:PHRASE` substructure; the `g7:TYPE` substructure of the `KIND`'s superstructure should be used for that purpose instead.
+
+#### `KIND` (Kind) `g7:MARR-KIND`
+
+An enumerated value from set `g7:enumset-MARR-KIND` indicating what kind of marriage the superstructure describes.
+
+Note `KIND` does not have a `g7:PHRASE` substructure; the `g7:TYPE` substructure of the `KIND`'s superstructure should be used for that purpose instead.
+
 #### `LANG` (Language) `g7:LANG`
 
 The primary human language of the superstructure.
@@ -771,6 +794,7 @@ If the text is primarily in one language with a few parts in a different languag
 it is recommended that a language tag identifying the primary language be used.
 If no one language is primary, the language tag `mul` (meaning "multiple") may be used,
 but most language-specific algorithms will treat `mul` the same way they do `und`.
+Multi-language text can be handled more robustly using [the `text/html` MediaType](#MIME).
 
 :::note
 Conversations are ongoing about adding part-of-payload language tagging in a future version of the specification
@@ -893,8 +917,8 @@ An enumerated value from set `g7:enumset-MEDI` providing information about the m
 When `MEDI` is a substructure of a `g7:CALN`, it is recommended that its payload describes the medium directly found at that call number rather than a medium from which it was derived.
 
 :::example
-Consider an asset in a repository that is a digital scan of a book of compiled newspapers;
-for this asset, the `CALN`.`MEDI` is recommended to be `ELECTRONIC` rather than `BOOK` or `NEWSPAPER`.
+Consider an asset in an online repository that is a digital scan of a book of compiled newspapers;
+for this asset, the `CALN`.`MEDI` is recommended to be `ONLINE` rather than `BOOK` or `NEWSPAPER`.
 :::
 
 #### `MIME` (Media type) `g7:MIME`
@@ -911,6 +935,7 @@ As of version 7.0, only 2 media types are supported by this structure:
     - `p` and `br` elements for paragraphing and line breaks.
     - `b`, `i`, `u`, and `s` elements for bold, italic, underlined, and strike-through text (or corresponding display in other locales; see [HTML §4.5](https://html.spec.whatwg.org/multipage/text-level-semantics.html) for more).
     - `sup` and `sub` elements for super- and sub-script.
+    - `span` with a `lang` attribute for marking part of text in a different human language than the rest.
     - The 3 XML entities that appear in text: `&amp;`, `&lt;` `&gt;`.
         Note that `&quote;` and `&apos;` are only needed in attributes.
         Other entities should be represented as their respective Unicode characters instead.
@@ -978,10 +1003,16 @@ A descriptive or familiar name that is used instead of, or in addition to, one�
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `NO` (Did not happen) `g7:NO`
+#### `NO` (Negative assertion) `g7:NO`
 
-An enumerated value from set `g7:enumset-EVEN` identifying an event type which did not occur to the superstructure's subject.
-See `NON_EVENT_STRUCTURE` for more.
+An enumerated value from set `g7:enumset-NO` identifying something that was not part of the superstructure:
+an event type which did not occur to the superstructure's subject,
+that the superstructure's subject did not have an name
+or name part,
+etc.
+A specific payload `NO XYZ` should only appear where `XYZ` would be legal.
+
+See `NEGATIVE_ASSERTION` for more.
 
 #### `NOTE` (Note) `g7:NOTE`
 
@@ -1186,6 +1217,11 @@ The `RESN` structure is provided to assist software in filtering data that shoul
 such that certain `RESN` structure payload entries result in the `RESN` structure and its superstructure being removed from the export.
 Such removal must abide by some constraints: see [Removing data](#removing-data) for more.
 
+A structure that points to a record that is being removed due to `RESN` processing will have its pointer replaced by a `voidPtr`,
+preserving the structure's substructures.
+That might be desirable, but could cause accidental information leakage; for example, if a `g7:ADOP-FAMC` points to a restricted `FAMC` it may contain `FAMC`-identifying information in its substructures that the user also wishes to treat as restricted.
+Applications are encouraged to prompt the user when a pointer becomes void during `RESN` processing and give them the option of additional data removal.
+
 This is metadata about the structure itself, not data about its subject.
 
 #### `REPO` (Repository) `g7:REPO`
@@ -1380,6 +1416,12 @@ This should be, from the evidence point of view, "what the original record keepe
 
 A `Time` value in a 24-hour clock format.
 
+#### `TIME` (Time) `g7:TIME-exact`
+
+A `Time` value in a 24-hour clock format.
+The time should be presented in UTC and indicate that with a `Z` in the time payload.
+Unlike a `g7:TIME`, no `g7:PHRASE` is permitted under a `g7:TIME-exact`.
+
 #### `TITL` (Title) `g7:TITL`
 
 The title, formal or informal, of the superstructure.
@@ -1440,6 +1482,7 @@ The following presents a name in Mandarin, transliterated using Pinyin
 
 ```gedcom
 1 NAME /孔/德庸
+2 LANG zh
 2 GIVN 德庸
 2 SURN 孔
 2 TRAN /Kǒng/ Déyōng

@@ -15,6 +15,16 @@ Each set of enumeration values has its own URI.
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
+### `g7:enumset-BURI-KIND`
+
+| Value | Meaning |
+| :---- | :------ |
+| `GRAVE` | Buried under the ground |
+| `VAULT` | Placed in a tomb or crypt |
+| `SEA` | Deposited in an ocean, lake, or other body of water |
+| `SKY` | Placed on a burial tree, mountain, or other open place to be excarnated |
+| `OTHER` | A value not listed here; should be paired with a `TYPE` structure |
+
 ### `g7:enumset-EVEN`
 
 An event-type tag name, but not the generic `EVEN` tag.
@@ -25,6 +35,17 @@ See [Events].
 An event- or attribute-type tag name.
 See [Events] and [Attributes].
 
+
+### `g7:enumset-MARR-KIND`
+
+| Value | Meaning |
+| :---- | :------ |
+| `CIVIL`      | A civil marriage event, creating a state of marriage via a civil ceremony or registration process |
+| `COMMON_LAW` | Civil or religious recognition of a preexisting informal marriage |
+| `INFORMAL`   | An informal or de facto marriage, creating a state of marriage by mutual agreement without civil or religious involvement |
+| `RELIGIOUS`  | A religious marriage event, creating a state of marriage via a religious ceremony or registration process  |
+| `OTHER` | A value not listed here; should be paired with a `TYPE` structure |
+
 ### `g7:enumset-MEDI`
 
 | Value        | Meaning                           |
@@ -32,17 +53,25 @@ See [Events] and [Attributes].
 | `AUDIO`      | An audio recording                |
 | `BOOK`       | A bound book                      |
 | `CARD`       | A card or file entry              |
-| `ELECTRONIC` | A digital artifact                |
+| `DIGITAL`    | Digital storage medium            |
+| `ELECTRONIC` | A digital artifact (deprecated)   |
 | `FICHE`      | Microfiche                        |
 | `FILM`       | Microfilm                         |
 | `MAGAZINE`   | Printed periodical                |
 | `MANUSCRIPT` | Written pages                     |
 | `MAP`        | Cartographic map                  |
 | `NEWSPAPER`  | Printed newspaper                 |
+| `ONLINE`     | Online digital artifact           |
 | `PHOTO`      | Photograph                        |
 | `TOMBSTONE`  | Burial marker or related memorial |
 | `VIDEO`      | Motion picture recording          |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
+
+:::note
+The value `ELECTRONIC` is deprecated and kept for backwards compatibility, but might be removed in the future.
+Applications should instead use `ONLINE` for online content, or `DIGITAL` for offline content such as a CD-ROM
+or other digital storage medium.
+:::
 
 ### `g7:enumset-PEDI`
 

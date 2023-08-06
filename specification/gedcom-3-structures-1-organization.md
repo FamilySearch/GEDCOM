@@ -145,11 +145,11 @@ n HEAD                                     {1:1}  g7:HEAD
         +3 WWW <Special>                   {0:M}  g7:WWW
      +2 DATA <Text>                        {0:1}  g7:HEAD-SOUR-DATA
         +3 DATE <DateExact>                {0:1}  g7:DATE-exact
-           +4 TIME <Time>                  {0:1}  g7:TIME
+           +4 TIME <Time>                  {0:1}  g7:TIME-exact
         +3 COPR <Text>                     {0:1}  g7:COPR
   +1 DEST <Special>                        {0:1}  g7:DEST
   +1 DATE <DateExact>                      {0:1}  g7:HEAD-DATE
-     +2 TIME <Time>                        {0:1}  g7:TIME
+     +2 TIME <Time>                        {0:1}  g7:TIME-exact
   +1 SUBM @<XREF:SUBM>@                    {0:1}  g7:SUBM
   +1 COPR <Text>                           {0:1}  g7:COPR
   +1 LANG <Language>                       {0:1}  g7:HEAD-LANG
@@ -179,7 +179,7 @@ n @XREF:FAM@ FAM                           {1:1}  g7:record-FAM
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<FAMILY_ATTRIBUTE_STRUCTURE>>        {0:M}
   +1 <<FAMILY_EVENT_STRUCTURE>>            {0:M}
-  +1 <<NON_EVENT_STRUCTURE>>               {0:M}
+  +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 HUSB @<XREF:INDI>@                    {0:1}  g7:FAM-HUSB
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 WIFE @<XREF:INDI>@                    {0:1}  g7:FAM-WIFE
@@ -233,16 +233,21 @@ n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<PERSONAL_NAME_STRUCTURE>>           {0:M}
   +1 SEX <Enum>                            {0:1}  g7:SEX
+     +2 EXID <Special>                     {0:M}  g7:EXID
+        +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
   +1 <<INDIVIDUAL_ATTRIBUTE_STRUCTURE>>    {0:M}
   +1 <<INDIVIDUAL_EVENT_STRUCTURE>>        {0:M}
-  +1 <<NON_EVENT_STRUCTURE>>               {0:M}
+  +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 <<LDS_INDIVIDUAL_ORDINANCE>>          {0:M}
   +1 FAMC @<XREF:FAM>@                     {0:M}  g7:INDI-FAMC
-     +2 PEDI <Enum>                        {0:1}  g7:PEDI
+     +2 PEDI <Enum>                        {0:M}  g7:PEDI
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+        +3 DATE <DateValue>                {0:1}  g7:DATE
      +2 STAT <Enum>                        {0:1}  g7:FAMC-STAT
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
      +2 <<NOTE_STRUCTURE>>                 {0:M}
+     +2 EXID <Special>                     {0:M}  g7:EXID
+        +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
   +1 FAMS @<XREF:FAM>@                     {0:M}  g7:FAMS
      +2 <<NOTE_STRUCTURE>>                 {0:M}
   +1 SUBM @<XREF:SUBM>@                    {0:M}  g7:SUBM
@@ -326,6 +331,7 @@ not the underlying files.
 
 ```gedstruct
 n @XREF:REPO@ REPO                         {1:1}  g7:record-REPO
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
@@ -351,6 +357,7 @@ Until such time, it is recommended that the repository record store current cont
 
 ```gedstruct
 n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
@@ -365,9 +372,8 @@ n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
 A catch-all location for information that does not fully fit within other structures.
 It may include research notes, additional context, alternative interpretations, reasoning, and so forth.
 
-A shared note record may be pointed to by multiple other structures. Shared notes should only be used if editing the note in one place should edit it in all other places
-or if the note itself requires an `IDENTIFIER_STRUCTURE`.
-If each instance of the note may be edited separately and no identifier is needed, a `NOTE` should be used instead.
+A shared note record may be pointed to by multiple other structures. Shared notes should only be used if editing the note in one place should edit it in all other places.
+If any instance of the note is edited separately from the others, a `NOTE` should be used instead.
 
 Each [`SNOTE`.`TRAN`](#NOTE-TRAN) must have either a `MIME` or `LANG` substructure or both.
 
@@ -396,6 +402,7 @@ A `SHARED_NOTE_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa
 
 ```gedstruct
 n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 DATA                                  {0:1}  g7:DATA
      +2 EVEN <List:Enum>                   {0:M}  g7:DATA-EVEN
         +3 DATE <DatePeriod>               {0:1}  g7:DATA-EVEN-DATE
@@ -432,6 +439,7 @@ A `SOURCE_RECORD` may contain a pointer to a `SHARED_NOTE_RECORD` and vice versa
 
 ```gedstruct
 n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
@@ -440,6 +448,7 @@ n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
   +1 WWW <Special>                         {0:M}  g7:WWW
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 LANG <Language>                       {0:M}  g7:SUBM-LANG
+  +1 ALIA @<XREF:INDI>@                    {0:1}  g7:SUBM-ALIA
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<CHANGE_DATE>>                       {0:1}
@@ -523,7 +532,7 @@ and that individual `@I2@` was the clergy officiating at their baptism.
 ```gedstruct
 n CHAN                                     {1:1}  g7:CHAN
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME
+     +2 TIME <Time>                        {0:1}  g7:TIME-exact
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
@@ -536,7 +545,7 @@ The `NOTE` substructure may describe previous changes as well as the most recent
 ```gedstruct
 n CREA                                     {1:1}  g7:CREA
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME
+     +2 TIME <Time>                        {0:1}  g7:TIME-exact
 ```
 
 The date of the initial creation of the superstructure.
@@ -575,12 +584,15 @@ n CAUS <Text>                              {0:1}  g7:CAUS
 n RESN <List:Enum>                         {0:1}  g7:RESN
 n SDATE <DateValue>                        {0:1}  g7:SDATE
   +1 TIME <Time>                           {0:1}  g7:TIME
+     +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 n <<ASSOCIATION_STRUCTURE>>                {0:M}
 n <<NOTE_STRUCTURE>>                       {0:M}
 n <<SOURCE_CITATION>>                      {0:M}
 n <<MULTIMEDIA_LINK>>                      {0:M}
 n UID <Special>                            {0:M}  g7:UID
+n EXID <Special>                           {0:M}  g7:EXID
+  +1 TYPE <Special>                        {0:1}  g7:EXID-TYPE
 ```
 
 Substructures that may be shared by most individual and family events and attributes.
@@ -668,6 +680,7 @@ n MARL [Y|<NULL>]                          {1:1}  g7:MARL
 |
 n MARR [Y|<NULL>]                          {1:1}  g7:MARR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 KIND <Enum>                           {0:1}  g7:MARR-KIND
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
 n MARS [Y|<NULL>]                          {1:1}  g7:MARS
@@ -684,7 +697,7 @@ Family events; see [Family Events](#family-events) for more.
 
 An event structure may be used to discuss an event even if the event is not known to have occurred.
 See [Events] for a discussion of how `DATE`, `PLAC`, and the optional `Y` payload indicate whether the structure is asserting the event occurred.
-See the `NON_EVENT_STRUCTURE` for how to state an event did not occur.
+See the `NEGATIVE_ASSERTION` for how to state an event did not occur.
 
 :::note
 Family event structures vary as follows:
@@ -839,6 +852,7 @@ n BLES [Y|<NULL>]                          {1:1}  g7:BLES
 |
 n BURI [Y|<NULL>]                          {1:1}  g7:BURI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 KIND <Enum>                           {0:1}  g7:BURI-KIND
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
 n CENS [Y|<NULL>]                          {1:1}  g7:INDI-CENS
@@ -912,7 +926,7 @@ Individual events; see [Individual Events](#individual-events) for more.
 
 An event structure may be used to discuss an event even if the event is not known to have occurred.
 See [Events] for a discussion of how `DATE`, `PLAC`, and the optional `Y` payload indicate whether the structure is asserting the event occurred.
-See the `NON_EVENT_STRUCTURE` for how to state an event did not occur.
+See the `NEGATIVE_ASSERTION` for how to state an event did not occur.
 
 :::note
 Individual event structures vary as follows:
@@ -956,7 +970,7 @@ n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
 n STAT <Enum>                            {0:1}  g7:ord-STAT
   +1 DATE <DateExact>                    {1:1}  g7:DATE-exact
-     +2 TIME <Time>                      {0:1}  g7:TIME
+     +2 TIME <Time>                      {0:1}  g7:TIME-exact
 n <<NOTE_STRUCTURE>>                     {0:M}
 n <<SOURCE_CITATION>>                    {0:M}
 ```
@@ -990,7 +1004,7 @@ The optional `CROP` substructure indicates that a subregion of an image represen
 
 The optional `TITL` substructure supersedes any `OBJE.FILE.TITL` substructures included in the `MULTIMEDIA_RECORD`.
 
-#### `NON_EVENT_STRUCTURE` :=
+#### `NEGATIVE_ASSERTION` :=
 
 ```gedstruct
 n NO <Enum>                                {1:1}  g7:NO
@@ -1029,6 +1043,8 @@ n NOTE <Text>                              {1:1}  g7:NOTE
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
+  +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
 |
 n SNOTE @<XREF:SNOTE>@                     {1:1}  g7:SNOTE
@@ -1079,14 +1095,19 @@ Even when multiple `SURN` tags are used, the `PersonalName` data type identifies
 
 ```gedstruct
 n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 TYPE <Enum>                           {0:1}  g7:NAME-TYPE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 <<PERSONAL_NAME_PIECES>>              {0:1}
+  +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <PersonalName>                   {0:M}  g7:NAME-TRAN
      +2 LANG <Language>                    {1:1}  g7:LANG
      +2 <<PERSONAL_NAME_PIECES>>           {0:1}
+  +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
+  +1 EXID <Special>                        {0:M}  g7:EXID
+     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
 ```
 
 Names of individuals are represented in the manner the name is normally spoken, with the family name, surname, or nearest cultural parallel thereunto separated by slashes (U+002F `/`). Based on the dynamic nature or unknown compositions of naming conventions, it is difficult to provide a more detailed name piece structure to handle every case. The `PERSONAL_NAME_PIECES` are provided optionally for systems that cannot operate effectively with less structured information. The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information; in particular it is recommended that all name parts in `PERSONAL_NAME_PIECES` appear within the `PersonalName` payload in some form, possibly adjusted for gender-specific suffixes or the like.
@@ -1161,6 +1182,7 @@ This specification does not support places where a region name contains a comma.
 
 ```gedstruct
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 PAGE <Text>                           {0:1}  g7:PAGE
   +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 <<DATE_VALUE>>                     {0:1}
@@ -1174,6 +1196,8 @@ n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 QUAY <Enum>                           {0:1}  g7:QUAY
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
+  +1 EXID <Special>                        {0:M}  g7:EXID
+     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
 ```
 
 A citation indicating that the pointed-to source record supports the claims made in the superstructure.
