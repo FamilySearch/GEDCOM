@@ -13,6 +13,8 @@ specification:
   - An identifier for the system expected to receive this document. See
     HEAD.SOUR for guidance on choosing identifiers.
 
+label: 'Destination'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

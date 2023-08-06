@@ -13,6 +13,8 @@ specification:
   - Text that appears on a name line before the given and surname parts of a
     name.
 
+label: 'Name prefix'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

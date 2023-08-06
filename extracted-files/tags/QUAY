@@ -17,6 +17,8 @@ specification:
     not intended to eliminate the receivers’ need to evaluate the evidence for
     themselves.
 
+label: 'Quality of data'
+
 payload: https://gedcom.io/terms/v7/type-Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-QUAY"

@@ -13,6 +13,8 @@ specification:
   - An enumerated value from set https://gedcom.io/terms/v7/enumset-SEX that
     indicates the sex of the individual at birth.
 
+label: 'Sex'
+
 payload: https://gedcom.io/terms/v7/type-Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-SEX"

@@ -14,16 +14,18 @@ Guides for using this document can be found in the associated [README.md](README
 | `BASM` | 4.0 | [Bat Mitzvah](#bat-mitzvah) | |
 | `BIRT` | 3.0 | [Birth](#birth) | |
 | `BLES` | 3.0 | Blessing | |
-| `BURI` | 3.0 | [Burial](#burial) | |
+| `BURI` | 3.0 | [Burial](#burial) | one of several types of `BURI` |
 | `CENS` | 3.0 | Census | |
 | `CHR`  | 3.0 | [Christening](#christening) | |
 | `CONF` | 3.0 | Confirmation | |
-| `CREM` | 5.4 | [Cremation](#cremation) | |
+| `CREM` | 5.4 | [Cremation](#cremation) | sometimes encoded as `BURI` prior to 5.4 |
 | `DEAT` | 3.0 | [Death](#death) | |
+| `BURI` | 3.0 | [Depositing remains](#depositing-remains) | Has subtypes, including [Burial](#burial) |
 | `EMIG` | 3.0 | Emigration | |
 | `FCOM` | 4.0 | First Communion | |
 | `GRAD` | 4.0 | Graduation | |
 | `IMMI` | 3.0 | [Immigration](#immigration) | |
+| | | [Memorial Service](#memorial-service) | |
 | `NATU` | 3.0 | [Naturalization](#naturalization) | |
 | `ORDN` | 3.0 | Ordination | |
 | `PROB` | 3.0 | Probate | |
@@ -48,6 +50,8 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 
 ## Burial
 
+A subtype of [Depositing remains](#depositing-remains)
+
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Burial`
 
 ## Christening
@@ -62,9 +66,68 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Death`
 
+## Depositing remains
+
+### Description
+
+Depositing the mortal remains of a deceased person.
+
+### Value
+
+Found in the following historical records:
+
+- Church records
+- Grave markers
+- Tombs and Crypts
+- Urns
+
+### Absence
+
+The most closely related structures are:
+
+- `DEAT`: expresses that an individual died, which generally has a different date and place than the depositing of the remains.
+- `CREM`: describes a transformation of the remains by fire; the resulting ashes may still be deposited.
+
+Related proposals here include
+
+- [Burial](#burial), which is one type of depositing remains
+
+
+### Used
+
+- In GEDCOM since version 3.0 as `BURI`
+
+
 ## Immigration
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Immigration`
+
+## Memorial Service
+
+### Description
+
+An event to mark or remember the death or presumed death of an individual, such as a funeral, wake, celebration of life, or memorial service.
+
+### Value
+
+Found in the following historical records:
+
+- Obituaries
+- Memorial announcements and programs
+- Church records
+
+### Absence
+
+The most closely related structures are:
+
+- `DEAT`: expresses that an individaul died, which generally has a different date than the memorial.
+- `BURI`: describes what was done with the remains of the individual, which may or may not coincide with a memorial serive.
+
+### Used
+
+- Funerals, one type of memorial service, are part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Funeral`
+
+
 
 ## Naturalization
 

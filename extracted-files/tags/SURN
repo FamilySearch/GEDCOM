@@ -12,6 +12,8 @@ specification:
   - Surname
   - A family name passed on or used by members of a family.
 
+label: 'Surname'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

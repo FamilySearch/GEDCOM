@@ -24,6 +24,8 @@ specification:
     The change and creation dates should be for the OBJE record itself, not the
     underlying files.
 
+label: 'Object'
+
 payload: null
 
 substructures:

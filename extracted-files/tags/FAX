@@ -13,6 +13,8 @@ specification:
   - A fax telephone number appropriate for sending data facsimiles. See PHON
     for more.
 
+label: 'Facsimile'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

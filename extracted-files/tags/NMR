@@ -15,6 +15,8 @@ specification:
   - The number of times this person has participated in a family as a spouse or
     parent.
 
+label: 'Number of marriages'
+
 payload: http://www.w3.org/2001/XMLSchema#nonNegativeInteger
 
 substructures:
@@ -43,5 +45,5 @@ superstructures:
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
 
 value of:
-  - "https://gedcom.io/terms/v7/g7:enumset-EVENATTR"
+  - "https://gedcom.io/terms/v7/enumset-EVENATTR"
 ...

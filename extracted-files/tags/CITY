@@ -12,6 +12,8 @@ specification:
   - City
   - The name of the city used in the address. See ADDRESS_STRUCTURE for more.
 
+label: 'City'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

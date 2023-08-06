@@ -14,6 +14,8 @@ specification:
     indicating the type of child-to-family relationship represented by the
     superstructure.
 
+label: 'Pedigree'
+
 payload: https://gedcom.io/terms/v7/type-Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-PEDI"

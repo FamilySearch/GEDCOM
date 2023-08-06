@@ -12,6 +12,8 @@ specification:
   - Data
   - See https://gedcom.io/terms/v7/DATA.
 
+label: 'Data'
+
 payload: null
 
 substructures:

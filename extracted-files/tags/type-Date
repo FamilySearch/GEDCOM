@@ -59,17 +59,28 @@ specification:
     The grammar above allows for dates to be preceded by various words. The
     meaning of these words is given as follows:
     
-      Production   Meaning
-      ------------ ----------------------------------------------------------------------
-      FROM x       Lasted for multiple days, beginning on x.
-      TO x         Lasted for multiple days, ending on x.
-      BET x        Exact date unknown, but no earlier than x.
-      AND x        Exact date unknown, but no later than x.
-      BEF x        Exact date unknown, but no later than x.
-      AFT x        Exact date unknown, but no earlier than x.
-      ABT x        Exact date unknown, but near x.
-      CAL x        x is calculated from other data.
-      EST x        Exact date unknown, but near x; and x is calculated from other data.
+      --------------------------------------------------------------------------
+      Production    Meaning
+      ------------- ------------------------------------------------------------
+      FROM x        Lasted for multiple days, beginning on x.
+    
+      TO x          Lasted for multiple days, ending on x.
+    
+      BET x         Exact date unknown, but no earlier than x.
+    
+      AND x         Exact date unknown, but no later than x.
+    
+      BEF x         Exact date unknown, but no later than x.
+    
+      AFT x         Exact date unknown, but no earlier than x.
+    
+      ABT x         Exact date unknown, but near x.
+    
+      CAL x         x is calculated from other data.
+    
+      EST x         Exact date unknown, but near x; and x is calculated from
+                    other data.
+      --------------------------------------------------------------------------
     
     Known calendars and tips for handling dual dating and extension calendars
     are given in Appendix A: Calendars and Dates.

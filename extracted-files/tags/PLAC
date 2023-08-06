@@ -53,6 +53,8 @@ specification:
     comma. An alternative system for representing locations is likely to be
     added in a later version.
 
+label: 'Place'
+
 payload: https://gedcom.io/terms/v7/type-List#Text
 
 substructures:

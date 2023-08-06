@@ -12,6 +12,8 @@ specification:
   - Date
   - The DateExact that this document was created.
 
+label: 'Date'
+
 payload: https://gedcom.io/terms/v7/type-Date#exact
 
 substructures:

@@ -12,6 +12,8 @@ specification:
   - Husband
   - This is a partner in a FAM record. See FAMILY_RECORD for more.
 
+label: 'Husband'
+
 payload: "@<https://gedcom.io/terms/v7/record-INDI>@"
 
 substructures:

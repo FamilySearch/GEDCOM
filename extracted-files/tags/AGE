@@ -13,6 +13,8 @@ specification:
   - The age of the individual at the time an event occurred, or the age listed
     in the document.
 
+label: 'Age at event'
+
 payload: https://gedcom.io/terms/v7/type-Age
 
 substructures:

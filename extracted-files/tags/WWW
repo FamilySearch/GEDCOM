@@ -17,6 +17,8 @@ specification:
     If an invalid or no longer existing web address is present upon import, it
     should be preserved as-is on export.
 
+label: 'Web address'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

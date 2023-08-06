@@ -36,6 +36,8 @@ specification:
     Because each dataset is finite, this nesting is also guaranteed to be
     finite.
 
+label: 'Source'
+
 payload: "@<https://gedcom.io/terms/v7/record-SOUR>@"
 
 substructures:

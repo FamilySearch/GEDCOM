@@ -15,6 +15,8 @@ specification:
     existing identifier is known, it should be used. Otherwise, a URI owned by
     the product should be used instead.
 
+label: 'Source'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

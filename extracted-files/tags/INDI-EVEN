@@ -27,6 +27,8 @@ specification:
         2 TYPE Equipment Lease
         2 DATE 4 NOV 1837
 
+label: 'Event'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:
@@ -55,5 +57,5 @@ superstructures:
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
 
 value of:
-  - "https://gedcom.io/terms/v7/g7:enumset-EVENATTR"
+  - "https://gedcom.io/terms/v7/enumset-EVENATTR"
 ...

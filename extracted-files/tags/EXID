@@ -25,6 +25,8 @@ specification:
     EXID identifiers are expected to be unique. Once assigned, an EXID
     identifier should never be re-used for any other purpose.
 
+label: 'External Identifier'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

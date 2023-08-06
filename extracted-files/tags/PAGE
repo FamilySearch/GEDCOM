@@ -33,6 +33,8 @@ specification:
         2 SOUR @VOID@
         3 PAGE His grand-daughter Lydia told me this in 1980
 
+label: 'Page'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

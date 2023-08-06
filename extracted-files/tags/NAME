@@ -12,6 +12,8 @@ specification:
   - Name
   - The name of the superstructure’s subject, represented as a simple string.
 
+label: 'Name'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

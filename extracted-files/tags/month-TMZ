@@ -11,6 +11,8 @@ standard tag: TMZ
 specification:
   - Tammuz (תַּמּוּז)
 
+label: 'Tammuz'
+
 calendars:
   - "https://gedcom.io/terms/v7/cal-HEBREW"
 ...

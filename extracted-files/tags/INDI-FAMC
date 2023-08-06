@@ -14,6 +14,8 @@ specification:
     a STAT substructure to show individuals who are not children of the family.
     See FAM and FAMC.STAT for more.
 
+label: 'Family child'
+
 payload: "@<https://gedcom.io/terms/v7/record-FAM>@"
 
 substructures:

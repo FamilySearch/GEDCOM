@@ -12,6 +12,8 @@ specification:
   - Time
   - A Time value in a 24-hour clock format.
 
+label: 'Time'
+
 payload: https://gedcom.io/terms/v7/type-Time
 
 substructures: {}
