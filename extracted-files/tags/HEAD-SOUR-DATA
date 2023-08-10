@@ -14,6 +14,8 @@ specification:
     was exported. The payload is the name of that source, with substructures
     providing additional details about the source (not the export).
 
+label: 'Data'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:

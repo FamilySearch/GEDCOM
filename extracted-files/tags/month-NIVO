@@ -11,6 +11,8 @@ standard tag: NIVO
 specification:
   - Nivôse
 
+label: 'Nivôse'
+
 calendars:
   - "https://gedcom.io/terms/v7/cal-FRENCH_R"
 ...

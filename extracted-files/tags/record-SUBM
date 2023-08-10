@@ -18,6 +18,8 @@ specification:
     HEAD, unless a SUBM structure inside a specific record points at a
     different submitter record.
 
+label: 'Submitter'
+
 payload: null
 
 substructures:

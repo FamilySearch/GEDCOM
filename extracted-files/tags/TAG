@@ -13,6 +13,8 @@ specification:
   - Information relating to a single extension tag as used in this document.
     See Extensions for more.
 
+label: 'Extension tag'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

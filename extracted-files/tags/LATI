@@ -19,6 +19,8 @@ specification:
     18 degrees, 9 minutes, and 3.4 seconds North would be formatted as
     N18.150944.
 
+label: 'Latitude'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

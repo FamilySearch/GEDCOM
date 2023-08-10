@@ -13,6 +13,8 @@ specification:
   - An enumerated value from set https://gedcom.io/terms/v7/enumset-ord-STAT
     assessing of the state or condition of an ordinance.
 
+label: 'Status'
+
 payload: https://gedcom.io/terms/v7/type-Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-ord-STAT"

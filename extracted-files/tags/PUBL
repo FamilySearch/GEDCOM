@@ -20,6 +20,8 @@ specification:
     of a person making a declaration for a pension or the city and state of
     residence of the writer of a letter.
 
+label: 'Publication'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

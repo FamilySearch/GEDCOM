@@ -13,6 +13,8 @@ specification:
   - The name of the country that pertains to the associated address. See
     ADDRESS_STRUCTURE for more.
 
+label: 'Country'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

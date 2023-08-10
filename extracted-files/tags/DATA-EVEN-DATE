@@ -13,6 +13,8 @@ specification:
   - The DatePeriod covered by the entire source; the period during which this
     source recorded events.
 
+label: 'Date'
+
 payload: https://gedcom.io/terms/v7/type-Date#period
 
 substructures:

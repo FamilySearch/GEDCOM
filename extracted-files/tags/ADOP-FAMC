@@ -19,6 +19,8 @@ specification:
     performed the adoption; or by using a FAM where the adopting individual is
     the only HUSB/WIFE.
 
+label: 'Family child'
+
 payload: "@<https://gedcom.io/terms/v7/record-FAM>@"
 
 substructures:

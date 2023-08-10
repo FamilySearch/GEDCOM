@@ -18,6 +18,8 @@ specification:
     number of the source at that repository. The call number of that source
     should be recorded using a CALN substructure.
 
+label: 'Repository'
+
 payload: "@<https://gedcom.io/terms/v7/record-REPO>@"
 
 substructures:

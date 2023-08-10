@@ -19,6 +19,8 @@ specification:
     168 degrees, 9 minutes, and 3.4 seconds East would be formatted as
     E168.150944.
 
+label: 'Longitude'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}

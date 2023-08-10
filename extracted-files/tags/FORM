@@ -12,6 +12,8 @@ specification:
   - Format
   - The media type of the file referenced by the superstructure.
 
+label: 'Format'
+
 payload: http://www.w3.org/ns/dcat#mediaType
 
 substructures:

@@ -28,6 +28,8 @@ specification:
     different applications sort dates the same way, as the relative ordering of
     dates with different levels of precision is not well defined.
 
+label: 'Sort date'
+
 payload: https://gedcom.io/terms/v7/type-Date
 
 substructures:

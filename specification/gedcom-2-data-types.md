@@ -194,7 +194,7 @@ The URI for the `Time` data type is `g7:type-Time`.
 Ages are represented by counts of years, months, weeks, and days.
 
 ```abnf
-Age         = [ageBound D] ageDuration
+Age         = [[ageBound D] ageDuration]
 
 ageBound    = "<" / ">"
 ageDuration = years [D months] [D weeks] [D days]

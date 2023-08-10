@@ -11,6 +11,8 @@ standard tag: BRUM
 specification:
   - Brumaire
 
+label: 'Brumaire'
+
 calendars:
   - "https://gedcom.io/terms/v7/cal-FRENCH_R"
 ...

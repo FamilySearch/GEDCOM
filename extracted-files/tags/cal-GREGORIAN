@@ -37,6 +37,8 @@ specification:
     
     The URI for this calendar is https://gedcom.io/terms/v7/cal-GREGORIAN
 
+label: 'Gregorian'
+
 months:
   - "https://gedcom.io/terms/v7/month-JAN"
   - "https://gedcom.io/terms/v7/month-FEB"
@@ -50,4 +52,7 @@ months:
   - "https://gedcom.io/terms/v7/month-OCT"
   - "https://gedcom.io/terms/v7/month-NOV"
   - "https://gedcom.io/terms/v7/month-DEC"
+
+epochs:
+  - BCE
 ...

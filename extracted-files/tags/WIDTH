@@ -12,6 +12,8 @@ specification:
   - Width in pixels
   - How many pixels to display horizontally for the image. See CROP for more.
 
+label: 'Width in pixels'
+
 payload: http://www.w3.org/2001/XMLSchema#nonNegativeInteger
 
 substructures: {}

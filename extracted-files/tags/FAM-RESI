@@ -18,6 +18,8 @@ specification:
   - residence
   - An address or place of residence where a family resided.
 
+label: 'Residence'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:
@@ -47,5 +49,5 @@ superstructures:
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
 
 value of:
-  - "https://gedcom.io/terms/v7/g7:enumset-EVENATTR"
+  - "https://gedcom.io/terms/v7/enumset-EVENATTR"
 ...

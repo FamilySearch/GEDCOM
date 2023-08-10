@@ -54,6 +54,8 @@ specification:
         3 PHRASE 2018年8月31日
         4 _LANG cmn
 
+label: 'Language'
+
 payload: http://www.w3.org/2001/XMLSchema#Language
 
 substructures: {}

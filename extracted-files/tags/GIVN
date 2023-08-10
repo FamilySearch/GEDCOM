@@ -12,6 +12,8 @@ specification:
   - Given name
   - A given or earned name used for official identification of a person.
 
+label: 'Given name'
+
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures: {}
