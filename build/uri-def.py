@@ -90,7 +90,7 @@ def find_cat_tables(txt, g7, tagsets):
                 k1 = sect.find('`', sect.rfind('\n#', 0, entry.start()))
                 k2 = sect.rfind('`', 0, sect.find('\n', k1))
                 key = sect[k1:k2].replace('`','').replace('.','-')
-                enums.setdefault(key,[]).append(pfx)
+                if pfx not in enums.get(key,[]): enums.setdefault(key,[]).append(pfx)
             elif 'month-' in pfx:
                 yamltype = 'month'
                 label = re.sub(r'(,| \().*', '', meaning[0])
@@ -263,23 +263,34 @@ def find_descriptions(txt, g7, ssp):
 
 def find_enum_by_link(txt, enums, tagsets):
     """Extend enums with the tagsets suggested by any section with #enum- in the header that lacks a table and links to Events or Attributes"""
-    enums.setdefault('g7:enumset-EVENATTR',[]).extend(( ## <- hack because of table omission
-            'g7:INDI-EVEN',
-            'g7:FAM-EVEN',
-            'g7:INDI-FACT',
-            'g7:FAM-FACT',
-        ))         ## do not do for enumset-EVEN 
+    # enums.setdefault('g7:enumset-EVENATTR',[]).extend(( ## <- hack because of table omission
+            # 'g7:INDI-EVEN',
+            # 'g7:FAM-EVEN',
+            # 'g7:INDI-FACT',
+            # 'g7:FAM-FACT',
+        # ))         ## do not do for enumset-EVEN 
     for sect in re.finditer(r'# *`(g7:enumset-[^`]*)`[\s\S]*?\n#', txt):
         if '[Events]' in sect.group(0):
             key = sect.group(1).replace('`','').replace('.','-')
             for k in tagsets:
                 if 'Event' in k:
-                    enums.setdefault(key, []).extend('g7:'+_ for _ in tagsets[k])
+                    enums.setdefault(key, [])
+                    for tag in tagsets[k]:
+                        tag = tag.replace('INDI-','enum-').replace('FAM-','enum-')
+                        tag = 'g7:'+tag
+                        if tag in enums[key]: continue
+                        enums[key].append(tag)
         if '[Attributes]' in sect.group(0):
             key = sect.group(1).replace('`','').replace('.','-')
             for k in tagsets:
                 if 'Attribute' in k:
-                    enums.setdefault(key, []).extend('g7:'+_ for _ in tagsets[k])
+                    enums.setdefault(key, [])
+                    for tag in tagsets[k]:
+                        tag = tag.replace('INDI-','enum-').replace('FAM-','enum-')
+                        tag = 'g7:'+tag
+                        if tag in enums[key]: continue
+                        enums[key].append(tag)
+                    # enums.setdefault(key, []).extend(_ for _ in ['g7:'+_2.replace('INDI-','enum-').replace('FAM-','enum-') for _2 in tagsets[k]] if _ not in enums.get(key,[]))
 
 def find_enumsets(txt):
     res = {}
