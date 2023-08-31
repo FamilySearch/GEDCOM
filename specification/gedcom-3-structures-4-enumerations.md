@@ -35,7 +35,7 @@ these are given generic definitions with URIs constructed by concatenating
 An event- or attribute-type tag name.
 See [Events] and [Attributes].
 
-Most values in this enumeration set use the same tag and URI as the corresponding event,
+Most values in this enumeration set use the same tag and URI as the corresponding event or attribute,
 except for tags used with different URIs for `FAM` vs `INDI`;
 these are given generic definitions with URIs constructed by concatenating
 `g7:enum-` to the enumeration value:
