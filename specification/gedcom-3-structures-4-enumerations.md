@@ -20,10 +20,34 @@ Each set of enumeration values has its own URI.
 An event-type tag name, but not the generic `EVEN` tag.
 See [Events].
 
+Most values in this enumeration set use the same tag and URI as the corresponding event,
+except for tags used with different URIs for `FAM` vs `INDI`;
+these are given generic definitions with URIs constructed by concatenating
+`g7:enum-` to the enumeration value:
+
+| Value  | Meaning                                                |
+| :----- | :----------------------------------------------------- |
+| `CENS` | A census event; either `g7:INDI-CENS` or `g7:FAM-CENS` |
+
+
 ### `g7:enumset-EVENATTR`
 
 An event- or attribute-type tag name.
 See [Events] and [Attributes].
+
+Most values in this enumeration set use the same tag and URI as the corresponding event or attribute,
+except for tags used with different URIs for `FAM` vs `INDI`;
+these are given generic definitions with URIs constructed by concatenating
+`g7:enum-` to the enumeration value:
+
+| Value  | Meaning                                                |
+| :----- | :----------------------------------------------------- |
+| `CENS` | A census event; either `g7:INDI-CENS` or `g7:FAM-CENS` |
+| `NCHI` | A count of children; either `g7:INDI-NCHI` or `g7:FAM-NCHI` |
+| `RESI` | A residence attribute; either `g7:INDI-RESI` or `g7:FAM-RESI` |
+| `FACT` | A generic attribute; either `g7:INDI-FACT` or `g7:FAM-FACT` |
+| `EVEN` | A generic event; either `g7:INDI-EVEN` or `g7:FAM-EVEN` |
+
 
 ### `g7:enumset-MEDI`
 
