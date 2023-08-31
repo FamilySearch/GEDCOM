@@ -224,6 +224,10 @@ the `INDI` record must use `FAMS` to point to the `FAM` record.
 If a `FAM` record uses `CHIL` to point to an `INDI` record,
 the `INDI` record must use a `FAMC` to point to the `FAM` record.
 
+An `INDI` record should not have multiple `FAMS` substructures pointing to the same `FAM`.
+
+A `FAM` record should not have multiple `CHIL` substructures pointing to the same `INDI`; doing so implies a nonsensical birth order.
+An `INDI` record may have multiple `FAMC` substructures pointing to the same `FAM`, but doing so is not recommended.
 
 
 #### `INDIVIDUAL_RECORD` :=
