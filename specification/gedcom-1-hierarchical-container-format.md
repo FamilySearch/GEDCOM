@@ -530,9 +530,12 @@ The meaning of an undocumented extension tag is identified by its superstructure
 - It is required that each tag definition's extension tag be unique within the document.
 - It is recommended that each documented extension tag's URI be unique within the document.
 - It is recommended that extension creators use URLs as their URIs
-and serve a page describing the meaning of an extension at its URL.
-
-Future versions may include additional recommendations relating to documentation, machine-readable documentation, or embedded metadata about extensions within the schema.
+and serve a YAML file describing the meaning of an extension at its URL, such as a file
+in the [GEDCOM structure registry](https://github.com/FamilySearch/GEDCOM-registries/).
+The FamilySearch GEDCOM [YAML file format](https://gedcom.io/terms/format) defines how the
+YAML file provides machine-readable documentation and metadata about extensions.  For example,
+the `superstructures` key in the YAML file can be used to disambiguate which meaning applies
+within a given context, such as in the `_LOC` example above where the meaning is context-dependent.
 
 ### Extension versus Standard
 
