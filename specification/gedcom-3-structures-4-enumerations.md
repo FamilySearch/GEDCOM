@@ -224,7 +224,7 @@ They are no longer used in that way, meaning their interpretation is subject to 
 
 | Value | Meaning                       |
 | ----- | :---------------------------- |
-|  ADOPTED | Name given at the time of adoption. |
+|  `ADOPTED` | Name given at the time of adoption. |
 | `AKA` | Also known as, alias, etc. |
 | `BIRTH` | Name given at or near birth. |
 | `IMMIGRANT` | Name assumed at the time of immigration. |
