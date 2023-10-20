@@ -703,7 +703,7 @@ Any `PLAC` with no [`FORM`](#PLAC-FORM) shall be treated as if it has this [`FOR
 
 A container for information about the entire document.
 
-It is recommended that applications write `GEDC` with its required subrecord `VERS` as the first substructure of `HEAD`.
+It is recommended that applications write `GEDC` with its required substructure `g7:GEDC-VERS` as the first substructure of `HEAD`.
 
 #### `GIVN` (Given name) `g7:GIVN`
 
