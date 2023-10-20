@@ -81,10 +81,13 @@ def find_cat_tables(txt, g7, tagsets):
             else:
                 meaning = [meaning]
             if pfx in cats and meaning != cats[pfx]:
-                raise Exception('Concatenated URI '+pfx+' has multiple definitions:'
-                    + '\n    '+cats[pfx]
-                    + '\n    '+meaning
+                print('### WARNING ###\n'
+                    + 'Concatenated URI '+pfx+' has multiple definitions:'
+                    + '\n    '+repr(cats[pfx])
+                    + '\n    '+repr(meaning)
+                    , file=stderr
                 )
+                meaning += cats[pfx]
             if 'enum-' in pfx:
                 yamltype = 'enumeration'
                 k1 = sect.find('`', sect.rfind('\n#', 0, entry.start()))

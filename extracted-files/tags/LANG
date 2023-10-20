@@ -28,7 +28,8 @@ specification:
     language, it is recommended that a language tag identifying the primary
     language be used. If no one language is primary, the language tag mul
     (meaning “multiple”) may be used, but most language-specific algorithms
-    will treat mul the same way they do und.
+    will treat mul the same way they do und. Multi-language text can be handled
+    more robustly using the text/html MediaType.
     
     Conversations are ongoing about adding part-of-payload language tagging in
     a future version of the specification to provide more fidelity for
@@ -61,6 +62,7 @@ payload: http://www.w3.org/2001/XMLSchema#Language
 substructures: {}
 
 superstructures:
+  "https://gedcom.io/terms/v7/INDI-NAME": "{0:1}"
   "https://gedcom.io/terms/v7/NAME-TRAN": "{1:1}"
   "https://gedcom.io/terms/v7/NOTE": "{0:1}"
   "https://gedcom.io/terms/v7/NOTE-TRAN": "{0:1}"

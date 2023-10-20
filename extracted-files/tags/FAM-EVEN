@@ -23,6 +23,7 @@ substructures:
   "https://gedcom.io/terms/v7/CAUS": "{0:1}"
   "https://gedcom.io/terms/v7/DATE": "{0:1}"
   "https://gedcom.io/terms/v7/EMAIL": "{0:M}"
+  "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/FAX": "{0:M}"
   "https://gedcom.io/terms/v7/HUSB": "{0:1}"
   "https://gedcom.io/terms/v7/NOTE": "{0:M}"

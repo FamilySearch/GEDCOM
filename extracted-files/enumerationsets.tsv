@@ -1,6 +1,11 @@
 https://gedcom.io/terms/v7/enumset-ADOP	https://gedcom.io/terms/v7/enum-ADOP-HUSB
 https://gedcom.io/terms/v7/enumset-ADOP	https://gedcom.io/terms/v7/enum-ADOP-WIFE
 https://gedcom.io/terms/v7/enumset-ADOP	https://gedcom.io/terms/v7/enum-BOTH
+https://gedcom.io/terms/v7/enumset-BURI-KIND	https://gedcom.io/terms/v7/enum-GRAVE
+https://gedcom.io/terms/v7/enumset-BURI-KIND	https://gedcom.io/terms/v7/enum-VAULT
+https://gedcom.io/terms/v7/enumset-BURI-KIND	https://gedcom.io/terms/v7/enum-SEA
+https://gedcom.io/terms/v7/enumset-BURI-KIND	https://gedcom.io/terms/v7/enum-SKY
+https://gedcom.io/terms/v7/enumset-BURI-KIND	https://gedcom.io/terms/v7/enum-OTHER
 https://gedcom.io/terms/v7/enumset-EVEN	https://gedcom.io/terms/v7/enum-CENS
 https://gedcom.io/terms/v7/enumset-EVEN	https://gedcom.io/terms/v7/ADOP
 https://gedcom.io/terms/v7/enumset-EVEN	https://gedcom.io/terms/v7/BAPM
@@ -78,9 +83,15 @@ https://gedcom.io/terms/v7/enumset-EVENATTR	https://gedcom.io/terms/v7/PROP
 https://gedcom.io/terms/v7/enumset-EVENATTR	https://gedcom.io/terms/v7/RELI
 https://gedcom.io/terms/v7/enumset-EVENATTR	https://gedcom.io/terms/v7/SSN
 https://gedcom.io/terms/v7/enumset-EVENATTR	https://gedcom.io/terms/v7/TITL
+https://gedcom.io/terms/v7/enumset-MARR-KIND	https://gedcom.io/terms/v7/enum-CIVIL
+https://gedcom.io/terms/v7/enumset-MARR-KIND	https://gedcom.io/terms/v7/enum-COMMON_LAW
+https://gedcom.io/terms/v7/enumset-MARR-KIND	https://gedcom.io/terms/v7/enum-INFORMAL
+https://gedcom.io/terms/v7/enumset-MARR-KIND	https://gedcom.io/terms/v7/enum-RELIGIOUS
+https://gedcom.io/terms/v7/enumset-MARR-KIND	https://gedcom.io/terms/v7/enum-OTHER
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-AUDIO
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-BOOK
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-CARD
+https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-DIGITAL
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-ELECTRONIC
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-FICHE
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-FILM
@@ -88,6 +99,7 @@ https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-MAGAZINE
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-MANUSCRIPT
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-MAP
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-NEWSPAPER
+https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-ONLINE
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-PHOTO
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-TOMBSTONE
 https://gedcom.io/terms/v7/enumset-MEDI	https://gedcom.io/terms/v7/enum-VIDEO

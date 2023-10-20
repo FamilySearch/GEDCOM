@@ -24,10 +24,14 @@ label: 'Note'
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:
+  "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/LANG": "{0:1}"
   "https://gedcom.io/terms/v7/MIME": "{0:1}"
   "https://gedcom.io/terms/v7/NOTE-TRAN": "{0:M}"
+  "https://gedcom.io/terms/v7/REFN": "{0:M}"
+  "https://gedcom.io/terms/v7/RESN": "{0:1}"
   "https://gedcom.io/terms/v7/SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7/UID": "{0:M}"
 
 superstructures:
   "https://gedcom.io/terms/v7/ADOP": "{0:M}"

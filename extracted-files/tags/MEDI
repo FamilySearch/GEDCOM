@@ -19,9 +19,9 @@ specification:
     recommended that its payload describes the medium directly found at that
     call number rather than a medium from which it was derived.
     
-    Consider an asset in a repository that is a digital scan of a book of
-    compiled newspapers; for this asset, the CALN.MEDI is recommended to be
-    ELECTRONIC rather than BOOK or NEWSPAPER.
+    Consider an asset in an online repository that is a digital scan of a book
+    of compiled newspapers; for this asset, the CALN.MEDI is recommended to be
+    ONLINE rather than BOOK or NEWSPAPER.
 
 label: 'Medium'
 

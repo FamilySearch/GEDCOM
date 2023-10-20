@@ -18,7 +18,7 @@ label: 'Date'
 payload: https://gedcom.io/terms/v7/type-Date#exact
 
 substructures:
-  "https://gedcom.io/terms/v7/TIME": "{0:1}"
+  "https://gedcom.io/terms/v7/TIME-exact": "{0:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7/CHAN": "{1:1}"

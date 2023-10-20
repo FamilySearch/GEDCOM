@@ -39,11 +39,11 @@ n HEAD                                     {1:1}  g7:HEAD
         +3 WWW <Special>                   {0:M}  g7:WWW
      +2 DATA <Text>                        {0:1}  g7:HEAD-SOUR-DATA
         +3 DATE <DateExact>                {0:1}  g7:DATE-exact
-           +4 TIME <Time>                  {0:1}  g7:TIME
+           +4 TIME <Time>                  {0:1}  g7:TIME-exact
         +3 COPR <Text>                     {0:1}  g7:COPR
   +1 DEST <Special>                        {0:1}  g7:DEST
   +1 DATE <DateExact>                      {0:1}  g7:HEAD-DATE
-     +2 TIME <Time>                        {0:1}  g7:TIME
+     +2 TIME <Time>                        {0:1}  g7:TIME-exact
   +1 SUBM @<XREF:SUBM>@                    {0:1}  g7:SUBM
   +1 COPR <Text>                           {0:1}  g7:COPR
   +1 LANG <Language>                       {0:1}  g7:HEAD-LANG
@@ -57,7 +57,7 @@ n @XREF:FAM@ FAM                           {1:1}  g7:record-FAM
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<FAMILY_ATTRIBUTE_STRUCTURE>>        {0:M}
   +1 <<FAMILY_EVENT_STRUCTURE>>            {0:M}
-  +1 <<NON_EVENT_STRUCTURE>>               {0:M}
+  +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 HUSB @<XREF:INDI>@                    {0:1}  g7:FAM-HUSB
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 WIFE @<XREF:INDI>@                    {0:1}  g7:FAM-WIFE
@@ -80,16 +80,21 @@ n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<PERSONAL_NAME_STRUCTURE>>           {0:M}
   +1 SEX <Enum>                            {0:1}  g7:SEX
+     +2 EXID <Special>                     {0:M}  g7:EXID
+        +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
   +1 <<INDIVIDUAL_ATTRIBUTE_STRUCTURE>>    {0:M}
   +1 <<INDIVIDUAL_EVENT_STRUCTURE>>        {0:M}
-  +1 <<NON_EVENT_STRUCTURE>>               {0:M}
+  +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 <<LDS_INDIVIDUAL_ORDINANCE>>          {0:M}
   +1 FAMC @<XREF:FAM>@                     {0:M}  g7:INDI-FAMC
-     +2 PEDI <Enum>                        {0:1}  g7:PEDI
+     +2 PEDI <Enum>                        {0:M}  g7:PEDI
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+        +3 DATE <DateValue>                {0:1}  g7:DATE
      +2 STAT <Enum>                        {0:1}  g7:FAMC-STAT
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
      +2 <<NOTE_STRUCTURE>>                 {0:M}
+     +2 EXID <Special>                     {0:M}  g7:EXID
+        +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
   +1 FAMS @<XREF:FAM>@                     {0:M}  g7:FAMS
      +2 <<NOTE_STRUCTURE>>                 {0:M}
   +1 SUBM @<XREF:SUBM>@                    {0:M}  g7:SUBM
@@ -125,6 +130,7 @@ n @XREF:OBJE@ OBJE                         {1:1}  g7:record-OBJE
 
 REPOSITORY_RECORD :=
 n @XREF:REPO@ REPO                         {1:1}  g7:record-REPO
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
@@ -139,6 +145,7 @@ n @XREF:REPO@ REPO                         {1:1}  g7:record-REPO
 
 SHARED_NOTE_RECORD :=
 n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
@@ -152,6 +159,7 @@ n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
 
 SOURCE_RECORD :=
 n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 DATA                                  {0:1}  g7:DATA
      +2 EVEN <List:Enum>                   {0:M}  g7:DATA-EVEN
         +3 DATE <DatePeriod>               {0:1}  g7:DATA-EVEN-DATE
@@ -176,6 +184,7 @@ n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
 
 SUBMITTER_RECORD :=
 n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
@@ -184,6 +193,7 @@ n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
   +1 WWW <Special>                         {0:M}  g7:WWW
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 LANG <Language>                       {0:M}  g7:SUBM-LANG
+  +1 ALIA @<XREF:INDI>@                    {0:1}  g7:SUBM-ALIA
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<CHANGE_DATE>>                       {0:1}
@@ -213,14 +223,14 @@ n ASSO @<XREF:INDI>@                       {1:1}  g7:ASSO
 CHANGE_DATE :=
 n CHAN                                     {1:1}  g7:CHAN
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME
+     +2 TIME <Time>                        {0:1}  g7:TIME-exact
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 
 
 CREATION_DATE :=
 n CREA                                     {1:1}  g7:CREA
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME
+     +2 TIME <Time>                        {0:1}  g7:TIME-exact
 
 
 DATE_VALUE :=
@@ -243,12 +253,15 @@ n CAUS <Text>                              {0:1}  g7:CAUS
 n RESN <List:Enum>                         {0:1}  g7:RESN
 n SDATE <DateValue>                        {0:1}  g7:SDATE
   +1 TIME <Time>                           {0:1}  g7:TIME
+     +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 n <<ASSOCIATION_STRUCTURE>>                {0:M}
 n <<NOTE_STRUCTURE>>                       {0:M}
 n <<SOURCE_CITATION>>                      {0:M}
 n <<MULTIMEDIA_LINK>>                      {0:M}
 n UID <Special>                            {0:M}  g7:UID
+n EXID <Special>                           {0:M}  g7:EXID
+  +1 TYPE <Special>                        {0:1}  g7:EXID-TYPE
 
 
 FAMILY_ATTRIBUTE_STRUCTURE :=
@@ -313,6 +326,7 @@ n MARL [Y|<NULL>]                          {1:1}  g7:MARL
 |
 n MARR [Y|<NULL>]                          {1:1}  g7:MARR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 KIND <Enum>                           {0:1}  g7:MARR-KIND
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
 n MARS [Y|<NULL>]                          {1:1}  g7:MARS
@@ -435,6 +449,7 @@ n BLES [Y|<NULL>]                          {1:1}  g7:BLES
 |
 n BURI [Y|<NULL>]                          {1:1}  g7:BURI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 KIND <Enum>                           {0:1}  g7:BURI-KIND
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
 n CENS [Y|<NULL>]                          {1:1}  g7:INDI-CENS
@@ -530,7 +545,7 @@ n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
 n STAT <Enum>                            {0:1}  g7:ord-STAT
   +1 DATE <DateExact>                    {1:1}  g7:DATE-exact
-     +2 TIME <Time>                      {0:1}  g7:TIME
+     +2 TIME <Time>                      {0:1}  g7:TIME-exact
 n <<NOTE_STRUCTURE>>                     {0:M}
 n <<SOURCE_CITATION>>                    {0:M}
 
@@ -550,7 +565,7 @@ n OBJE @<XREF:OBJE>@                       {1:1}  g7:OBJE
   +1 TITL <Text>                           {0:1}  g7:TITL
 
 
-NON_EVENT_STRUCTURE :=
+NEGATIVE_ASSERTION :=
 n NO <Enum>                                {1:1}  g7:NO
   +1 DATE <DatePeriod>                     {0:1}  g7:NO-DATE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
@@ -566,6 +581,8 @@ n NOTE <Text>                              {1:1}  g7:NOTE
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
+  +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
 |
 n SNOTE @<XREF:SNOTE>@                     {1:1}  g7:SNOTE
@@ -583,14 +600,19 @@ n NSFX <Text>                              {0:M}  g7:NSFX
 
 PERSONAL_NAME_STRUCTURE :=
 n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 TYPE <Enum>                           {0:1}  g7:NAME-TYPE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 <<PERSONAL_NAME_PIECES>>              {0:1}
+  +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <PersonalName>                   {0:M}  g7:NAME-TRAN
      +2 LANG <Language>                    {1:1}  g7:LANG
      +2 <<PERSONAL_NAME_PIECES>>           {0:1}
+  +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
+  +1 EXID <Special>                        {0:M}  g7:EXID
+     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
 
 
 PLACE_STRUCTURE :=
@@ -609,6 +631,7 @@ n PLAC <List:Text>                         {1:1}  g7:PLAC
 
 SOURCE_CITATION :=
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 PAGE <Text>                           {0:1}  g7:PAGE
   +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 <<DATE_VALUE>>                     {0:1}
@@ -622,6 +645,8 @@ n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 QUAY <Enum>                           {0:1}  g7:QUAY
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
+  +1 EXID <Special>                        {0:M}  g7:EXID
+     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
 
 
 SOURCE_REPOSITORY_CITATION :=

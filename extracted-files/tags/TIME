@@ -16,11 +16,10 @@ label: 'Time'
 
 payload: https://gedcom.io/terms/v7/type-Time
 
-substructures: {}
+substructures:
+  "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7/DATE": "{0:1}"
-  "https://gedcom.io/terms/v7/DATE-exact": "{0:1}"
-  "https://gedcom.io/terms/v7/HEAD-DATE": "{0:1}"
   "https://gedcom.io/terms/v7/SDATE": "{0:1}"
 ...

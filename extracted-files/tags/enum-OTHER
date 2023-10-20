@@ -9,9 +9,11 @@ uri: https://gedcom.io/terms/v7/enum-OTHER
 standard tag: OTHER
 
 specification:
-  - A value not listed here; should have a PHRASE substructure
+  - A value not listed here; should be paired with a TYPE structure
 
 value of:
+  - "https://gedcom.io/terms/v7/enumset-BURI-KIND"
+  - "https://gedcom.io/terms/v7/enumset-MARR-KIND"
   - "https://gedcom.io/terms/v7/enumset-MEDI"
   - "https://gedcom.io/terms/v7/enumset-NAME-TYPE"
   - "https://gedcom.io/terms/v7/enumset-PEDI"

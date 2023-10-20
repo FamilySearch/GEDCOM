@@ -41,10 +41,12 @@ label: 'Source'
 payload: "@<https://gedcom.io/terms/v7/record-SOUR>@"
 
 substructures:
+  "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7/OBJE": "{0:M}"
   "https://gedcom.io/terms/v7/PAGE": "{0:1}"
   "https://gedcom.io/terms/v7/QUAY": "{0:1}"
+  "https://gedcom.io/terms/v7/RESN": "{0:1}"
   "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/SOUR-DATA": "{0:1}"
   "https://gedcom.io/terms/v7/SOUR-EVEN": "{0:1}"

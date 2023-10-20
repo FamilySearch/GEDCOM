@@ -22,6 +22,16 @@ specification:
     RESN structure and its superstructure being removed from the export. Such
     removal must abide by some constraints: see Removing data for more.
     
+    A structure that points to a record that is being removed due to RESN
+    processing will have its pointer replaced by a voidPtr, preserving the
+    structure’s substructures. That might be desirable, but could cause
+    accidental information leakage; for example, if a
+    https://gedcom.io/terms/v7/ADOP-FAMC points to a restricted FAMC it may
+    contain FAMC-identifying information in its substructures that the user
+    also wishes to treat as restricted. Applications are encouraged to prompt
+    the user when a pointer becomes void during RESN processing and give them
+    the option of additional data removal.
+    
     This is metadata about the structure itself, not data about its subject.
 
 label: 'Restriction'
@@ -65,6 +75,7 @@ superstructures:
   "https://gedcom.io/terms/v7/INDI-CENS": "{0:1}"
   "https://gedcom.io/terms/v7/INDI-EVEN": "{0:1}"
   "https://gedcom.io/terms/v7/INDI-FACT": "{0:1}"
+  "https://gedcom.io/terms/v7/INDI-NAME": "{0:1}"
   "https://gedcom.io/terms/v7/INDI-NCHI": "{0:1}"
   "https://gedcom.io/terms/v7/INDI-RELI": "{0:1}"
   "https://gedcom.io/terms/v7/INDI-RESI": "{0:1}"
@@ -77,14 +88,20 @@ superstructures:
   "https://gedcom.io/terms/v7/NATI": "{0:1}"
   "https://gedcom.io/terms/v7/NATU": "{0:1}"
   "https://gedcom.io/terms/v7/NMR": "{0:1}"
+  "https://gedcom.io/terms/v7/NOTE": "{0:1}"
   "https://gedcom.io/terms/v7/OCCU": "{0:1}"
   "https://gedcom.io/terms/v7/ORDN": "{0:1}"
   "https://gedcom.io/terms/v7/PROB": "{0:1}"
   "https://gedcom.io/terms/v7/PROP": "{0:1}"
   "https://gedcom.io/terms/v7/RETI": "{0:1}"
+  "https://gedcom.io/terms/v7/SOUR": "{0:1}"
   "https://gedcom.io/terms/v7/SSN": "{0:1}"
   "https://gedcom.io/terms/v7/WILL": "{0:1}"
   "https://gedcom.io/terms/v7/record-FAM": "{0:1}"
   "https://gedcom.io/terms/v7/record-INDI": "{0:1}"
   "https://gedcom.io/terms/v7/record-OBJE": "{0:1}"
+  "https://gedcom.io/terms/v7/record-REPO": "{0:1}"
+  "https://gedcom.io/terms/v7/record-SNOTE": "{0:1}"
+  "https://gedcom.io/terms/v7/record-SOUR": "{0:1}"
+  "https://gedcom.io/terms/v7/record-SUBM": "{0:1}"
 ...

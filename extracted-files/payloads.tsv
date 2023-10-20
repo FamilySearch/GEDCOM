@@ -8,6 +8,7 @@ https://gedcom.io/terms/v7/ADR3	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/AGE	https://gedcom.io/terms/v7/type-Age
 https://gedcom.io/terms/v7/AGNC	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/ALIA	@<https://gedcom.io/terms/v7/record-INDI>@
+https://gedcom.io/terms/v7/SUBM-ALIA	@<https://gedcom.io/terms/v7/record-INDI>@
 https://gedcom.io/terms/v7/ANCI	@<https://gedcom.io/terms/v7/record-SUBM>@
 https://gedcom.io/terms/v7/ANUL	Y|<NULL>
 https://gedcom.io/terms/v7/ASSO	@<https://gedcom.io/terms/v7/record-INDI>@
@@ -86,6 +87,8 @@ https://gedcom.io/terms/v7/IDNO	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/IMMI	Y|<NULL>
 https://gedcom.io/terms/v7/record-INDI	
 https://gedcom.io/terms/v7/INIL	
+https://gedcom.io/terms/v7/BURI-KIND	https://gedcom.io/terms/v7/type-Enum
+https://gedcom.io/terms/v7/MARR-KIND	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7/LANG	http://www.w3.org/2001/XMLSchema#Language
 https://gedcom.io/terms/v7/HEAD-LANG	http://www.w3.org/2001/XMLSchema#Language
 https://gedcom.io/terms/v7/SUBM-LANG	http://www.w3.org/2001/XMLSchema#Language
@@ -159,6 +162,7 @@ https://gedcom.io/terms/v7/TAG	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/TEMP	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/TEXT	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/TIME	https://gedcom.io/terms/v7/type-Time
+https://gedcom.io/terms/v7/TIME-exact	https://gedcom.io/terms/v7/type-Time
 https://gedcom.io/terms/v7/TITL	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/INDI-TITL	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/TOP	http://www.w3.org/2001/XMLSchema#nonNegativeInteger
