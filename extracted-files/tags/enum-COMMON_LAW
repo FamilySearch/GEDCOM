@@ -1,0 +1,16 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-COMMON_LAW
+
+standard tag: COMMON_LAW
+
+specification:
+  - Civil or religious recognition of a preexisting informal marriage
+
+value of:
+  - "https://gedcom.io/terms/v7/enumset-MARR-KIND"
+...

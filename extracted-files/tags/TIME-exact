@@ -1,0 +1,27 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7/TIME-exact
+
+standard tag: TIME
+
+specification:
+  - Time
+  - A Time value in a 24-hour clock format. The time should be presented in UTC
+    and indicate that with a Z in the time payload. Unlike a
+    https://gedcom.io/terms/v7/TIME, no https://gedcom.io/terms/v7/PHRASE is
+    permitted under a https://gedcom.io/terms/v7/TIME-exact.
+
+label: 'Time'
+
+payload: https://gedcom.io/terms/v7/type-Time
+
+substructures: {}
+
+superstructures:
+  "https://gedcom.io/terms/v7/DATE-exact": "{0:1}"
+  "https://gedcom.io/terms/v7/HEAD-DATE": "{0:1}"
+...

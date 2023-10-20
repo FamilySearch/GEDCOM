@@ -1,0 +1,31 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7/MARR-KIND
+
+standard tag: KIND
+
+specification:
+  - Kind
+  - |
+    An enumerated value from set https://gedcom.io/terms/v7/enumset-MARR-KIND
+    indicating what kind of marriage the superstructure describes.
+    
+    Note KIND does not have a https://gedcom.io/terms/v7/PHRASE substructure;
+    the https://gedcom.io/terms/v7/TYPE substructure of the KIND’s
+    superstructure should be used for that purpose instead.
+
+label: 'Kind'
+
+payload: https://gedcom.io/terms/v7/type-Enum
+
+enumeration set: "https://gedcom.io/terms/v7/enumset-MARR-KIND"
+
+substructures: {}
+
+superstructures:
+  "https://gedcom.io/terms/v7/MARR": "{0:1}"
+...

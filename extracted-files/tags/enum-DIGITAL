@@ -1,0 +1,16 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-DIGITAL
+
+standard tag: DIGITAL
+
+specification:
+  - Digital storage medium
+
+value of:
+  - "https://gedcom.io/terms/v7/enumset-MEDI"
+...

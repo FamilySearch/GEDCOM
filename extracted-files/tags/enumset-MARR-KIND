@@ -1,0 +1,15 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration set
+
+uri: https://gedcom.io/terms/v7/enumset-MARR-KIND
+
+enumeration values:
+  - "https://gedcom.io/terms/v7/enum-CIVIL"
+  - "https://gedcom.io/terms/v7/enum-COMMON_LAW"
+  - "https://gedcom.io/terms/v7/enum-INFORMAL"
+  - "https://gedcom.io/terms/v7/enum-RELIGIOUS"
+  - "https://gedcom.io/terms/v7/enum-OTHER"
+...

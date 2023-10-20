@@ -87,7 +87,9 @@ def find_cat_tables(txt, g7, tagsets):
                     + '\n    '+repr(meaning)
                     , file=stderr
                 )
-                meaning += cats[pfx]
+                for m in meaning:
+                    if m not in cats[pfx]: cats[pfx].append(m)
+                meaning = cats[pfx]
             if 'enum-' in pfx:
                 yamltype = 'enumeration'
                 k1 = sect.find('`', sect.rfind('\n#', 0, entry.start()))
