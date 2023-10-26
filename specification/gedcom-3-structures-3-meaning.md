@@ -1505,7 +1505,8 @@ if the resulting text is different from the text created by the HTML-to-text con
 #### `TRAN` (Translation) `g7:FILE-TRAN`
 
 A type of `TRAN` for external media files.
-Each `g7:NOTE-TRAN` must have a `FORM` substructure.
+Each `g7:FILE-TRAN` must have a `FORM` substructure.
+`g7:FILE-TRAN` payloads follow the same rules as `g7:FILE` payloads.
 See also `FILE`.
 
 :::example
