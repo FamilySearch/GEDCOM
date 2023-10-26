@@ -370,6 +370,13 @@ Suppose `_DATE` is defined to mean a `g7:DATE` (using a [documented extension ta
 - `BIRT` can not be used as a substructure of `_DATE` or `_DATE`.`PHRASE` because neither structure type has a documented substructure with tag `BIRT`.
 :::
 
+Because all substructures have meanings defined relative to their superstructures and no records do, standard records cannot be relocated and relocated standard structures cannot be used as records.
+
+:::example
+The `g7:PLAC` substructure documents where the event described in its superstructure occurred.
+If an application wants a record to describe the place itself it should create a new URI for that extension; reusing `g7:PLAC` for a record with no superstructure is not appropriate.
+:::
+
 All other non-standard structures are prohibited. Examples of prohibited structures include, but are not limited to,
 
 - a record or substructure of a standard structure using a tag matching production `stdTag` that is not defined in this document;
