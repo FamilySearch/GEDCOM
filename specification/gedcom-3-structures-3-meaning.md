@@ -638,7 +638,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 #### `FILE` (File reference) `g7:FILE`
 
 A reference to an external file.
-See the [File Path datatype](#file-path) for more.
+See the [File Path datatype](#file-path) for more details.
 
 #### `FORM` (Format) `g7:FORM`
 
