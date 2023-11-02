@@ -638,32 +638,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 #### `FILE` (File reference) `g7:FILE`
 
 A reference to an external file.
-Syntactically, the payload is a URI reference as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986), or a valid URL string as defined by the [WHATWG URL specification](https://url.spec.whatwg.org/).
-That is, it can be an absolute or relative URL, optionally with a fragment string.
-However, only the following URL types are used:
-
-- A URL with scheme `ftp`, `http`, or `https` refers to a **web-accessible file**.
-
-- A URL with scheme `file` refers to a **machine-local file** as defined by [RFC 8089](https://www.rfc-editor.org/info/rfc8089). Machine-local files must not be used in [FamilySearch GEDZIP](#gedzip) nor when sharing datasets on the web or with unknown parties, but may be used for close collaboration between parties with known similar file structures.
-
-- A URI reference with all of the following:
-    - no scheme
-    - not beginning with `/` (U+002F)
-    - not containing any path segments equal to `..` (U+002E U+002E)
-    - not containing a reverse solidus character (U+005C `\`) or `banned` character, either directly or in escaped form
-    - no query or fragment
-    
-    refers to a **local file**. If the dataset is part of a [GEDZIP file](#gedzip), the URL of the local file is a zip archive filename; otherwise, the URL of a local file is resolved with *base* equal to the directory containing the dataset.
-    
-    It is recommended that local files use the directory prefix `media/`, but doing so is not required.
-
-    For compatibility with [GEDZIP](#gedzip) and related formats, it is recommended that the following `FILE` payloads not be used:
-    
-    - `gedcom.ged`
-    - `MANIFEST.MF`
-    - any URL beginning `META-INF/`
-
-The meaning of a `FILE` payload with any format not listed above is not defined by this version of the specification, but may be defined in a subsequent version.
+See the [File Path datatype](#file-path) for more details.
 
 #### `FORM` (Format) `g7:FORM`
 
@@ -1506,7 +1481,7 @@ if the resulting text is different from the text created by the HTML-to-text con
 
 A type of `TRAN` for external media files.
 Each `g7:NOTE-TRAN` must have a `FORM` substructure.
-See also `FILE`.
+See also `FILE` and the [File Path datatype](#file-path).
 
 :::example
 If an mp3 audio file
