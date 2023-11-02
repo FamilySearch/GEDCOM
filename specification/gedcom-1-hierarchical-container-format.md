@@ -108,7 +108,7 @@ A structure is a representation of data about its **subject**. Examples include 
 Datasets also contain 3 types of pseudo-structures:
 
 - The header resembles a record, comes first in each document, and contains metadata about the entire document in its substructures.
-    See [The Header](#the-header) for more.
+    See [The Header](#the-header) for more details.
 
 - The trailer resembles a record, comes last in each document, and cannot contain substructures.
 

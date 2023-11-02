@@ -163,7 +163,7 @@ A few substructures of note:
 
 - `GEDC` identifies the specification that this document conforms to.
     It is recommended that `GEDC` be the first substructure of the header.
-- `SCHMA` gives the meaning of extension tags; see [Extensions](#extensions) for more.
+- `SCHMA` gives the meaning of extension tags; see [Extensions](#extensions) for more details.
 - `SOUR` describes the originating software.
     - `CORP` describes the corporation creating the software.
     - `HEAD`.`SOUR`.`DATA` describes a larger database this data is extracted from.
@@ -268,7 +268,7 @@ These facts may come from multiple sources.
 Source citations and notes allow documentation of the source where each of the facts were discovered.
 
 A single individual may have facts distributed across multiple individual records, connected by `ALIA` (alias, in the computing sense not the pseudonym sense) pointers.
-See `ALIA` for more.
+See `ALIA` for more details.
 
 Individual records are linked to Family records by use of bi-directional pointers.
 Details about those links are stored as substructures of the pointers in the individual record.
@@ -610,7 +610,7 @@ n FACT <Text>                              {1:1}  g7:FAM-FACT
 ]
 ```
 
-Family attributes; see [Family Attributes](#family-attributes) for more.
+Family attributes; see [Family Attributes](#family-attributes) for descriptions of each family attribute type.
 
 :::note
 Family attribute structures vary as follows:
@@ -684,7 +684,7 @@ n EVEN <Text>                              {1:1}  g7:FAM-EVEN
 ]
 ````
 
-Family events; see [Family Events](#family-events) for more.
+Family events; see [Family Events](#family-events) for descriptions of each family event type.
 
 An event structure may be used to discuss an event even if the event is not known to have occurred.
 See [Events] for a discussion of how `DATE`, `PLAC`, and the optional `Y` payload indicate whether the structure is asserting the event occurred.
@@ -790,7 +790,7 @@ n FACT <Text>                              {1:1}  g7:INDI-FACT
 ]
 ````
 
-Individual attributes; see [Individual Attributes](#individual-attributes) for more.
+Individual attributes; see [Individual Attributes](#individual-attributes) for descriptions of each individual attribute type..
 
 :::note
 Individual attribute structures vary as follows:
@@ -912,7 +912,7 @@ n EVEN <Text>                              {1:1}  g7:INDI-EVEN
 ]
 ````
 
-Individual events; see [Individual Events](#individual-events) for more.
+Individual events; see [Individual Events](#individual-events) for descriptions of each individual event type.
 
 An event structure may be used to discuss an event even if the event is not known to have occurred.
 See [Events] for a discussion of how `DATE`, `PLAC`, and the optional `Y` payload indicate whether the structure is asserting the event occurred.
@@ -950,7 +950,7 @@ n SLGC                                     {1:1}  g7:SLGC
 ]
 ```
 
-Ordinances performed by members of The Church of Jesus Christ of Latter-day Saints; see [Latter-day Saint Ordinances] for more.
+Ordinances performed by members of The Church of Jesus Christ of Latter-day Saints; see [Latter-day Saint Ordinances] for descriptions of each ordinance type.
 
 #### `LDS_ORDINANCE_DETAIL` :=
 
@@ -975,7 +975,7 @@ n SLGS                                     {1:1}  g7:SLGS
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
 ```
 
-Ordinances performed by members of The Church of Jesus Christ of Latter-day Saints; see [Latter-day Saint Ordinances] for more.
+Ordinances performed by members of The Church of Jesus Christ of Latter-day Saints; see [Latter-day Saint Ordinances] for descriptions of each ordinance type.
 
 #### `MULTIMEDIA_LINK` :=
 ```gedstruct
@@ -1061,7 +1061,7 @@ n SURN <Text>                              {0:M}  g7:SURN
 n NSFX <Text>                              {0:M}  g7:NSFX
 ```
 
-Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more.
+Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more details.
 
 :::example
 "Lt. Cmndr. Joseph Allen jr.” might be presented as
@@ -1101,7 +1101,7 @@ It is recommended, but not required, that if the name pieces are used, the same 
 
 A `TYPE` is used to specify the particular variation that this name is.
 For example; it could indicate that this name is a name taken at immigration or that it could be an ‘also known as’ name.
-See `g7:enumset-NAME-TYPE` for more.
+See `g7:enumset-NAME-TYPE` for more details.
 
 :::note
 Alternative approaches to representing names are being considered for future versions of this specification.
