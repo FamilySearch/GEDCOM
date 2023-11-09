@@ -183,7 +183,7 @@ A short name of a title, description, or name used for sorting, filing, and retr
 #### `ADDR` (Address) `g7:ADDR`
 
 The location of, or most relevant to, the subject of the superstructure.
-See `ADDRESS_STRUCTURE` for more.
+See `ADDRESS_STRUCTURE` for more details.
 
 #### `ADOP` (Adoption) `g7:ADOP`
 
@@ -198,30 +198,30 @@ An enumerated value from set `g7:enumset-ADOP` indicating which parent(s) in the
 
 The first line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the first line of the corresponding `ADDR`.
-See `ADDRESS_STRUCTURE` for more.
+See `ADDRESS_STRUCTURE` for more details.
 
 :::deprecation
-`ADR1` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+`ADR1` should not be added to new files; see `ADDRESS_STRUCTURE` for more details.
 :::
 
 #### `ADR2` (Address Line 2) `g7:ADR2`
 
 The second line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the second line of the corresponding `ADDR`.
-See `ADDRESS_STRUCTURE` for more.
+See `ADDRESS_STRUCTURE` for more details.
 
 :::deprecation
-`ADR2` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+`ADR2` should not be added to new files; see `ADDRESS_STRUCTURE` for more details.
 :::
 
 #### `ADR3` (Address Line 3) `g7:ADR3`
 
 The third line of the address, used for indexing.
 This structure's payload should be a single line of text equal to the third line of the corresponding `ADDR`.
-See `ADDRESS_STRUCTURE` for more.
+See `ADDRESS_STRUCTURE` for more details.
 
 :::deprecation
-`ADR3` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+`ADR3` should not be added to new files; see `ADDRESS_STRUCTURE` for more details.
 :::
 
 #### `AGE` (Age at event) `g7:AGE`
@@ -258,7 +258,7 @@ See also `FAMILY_EVENT_STRUCTURE`.
 #### `ASSO` (Associates) `g7:ASSO`
 
 A pointer to an associated individual.
-See `ASSOCIATION_STRUCTURE` for more.
+See `ASSOCIATION_STRUCTURE` for more details.
 
 #### `AUTH` (Author) `g7:AUTH`
 
@@ -330,7 +330,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 The most recent change to the superstructure.
 This is metadata about the structure itself, not data about its subject.
-See `CHANGE_DATE` for more.
+See `CHANGE_DATE` for more details.
 
 #### `CHIL` (Child) `g7:CHIL`
 
@@ -349,7 +349,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 #### `CITY` (City) `g7:CITY`
 
 The name of the city used in the address.
-See `ADDRESS_STRUCTURE` for more.
+See `ADDRESS_STRUCTURE` for more details.
 
 #### `CONF` (Confirmation)  `g7:CONF`
 
@@ -365,7 +365,7 @@ See also `LDS_INDIVIDUAL_ORDINANCE`.
 
 A pseudo-structure to indicate a line break.
 The `CONT` tag is generated during serialization and is never present in parsed datasets.
-See [Lines](#lines) for more.
+See [Lines](#lines) for more details.
 
 #### `COPR` (Copyright) `g7:COPR`
 
@@ -379,7 +379,7 @@ The name of the business, corporation, or person that produced or commissioned t
 
 The initial creation of the superstructure.
 This is metadata about the structure itself, not data about its subject.
-See `CREATION_DATE` for more.
+See `CREATION_DATE` for more details.
 
 #### `CREM` (Cremation)  `g7:CREM`
 
@@ -414,7 +414,7 @@ The following are errors:
 #### `CTRY` (Country) `g7:CTRY`
 
 The name of the country that pertains to the associated address.
-See `ADDRESS_STRUCTURE` for more.
+See `ADDRESS_STRUCTURE` for more details.
 
 #### `DATA` (Data) `g7:DATA`
 
@@ -437,7 +437,7 @@ with substructures providing additional details about the source (not the export
 The principal date of the subject of the superstructure.
 The payload is a `DateValue`.
 
-See `DATE_VALUE` for more.
+See `DATE_VALUE` for more details.
 
 #### `DATE` (Date) `g7:DATE-exact`
 
@@ -557,7 +557,7 @@ For example, if the entry was created to record a birth of a child, then the typ
 
 An identifier for the subject of the superstructure.
 The identifier is maintained by some external authority;
-the authority owning the identifier is provided in the TYPE substructure; see `EXID`.`TYPE` for more.
+the authority owning the identifier is provided in the TYPE substructure; see `EXID`.`TYPE` for more details.
 
 Depending on the maintaining authority, an `EXID` may be a unique identifier for the subject, an identifier for 1 of several views of the subject, or an identifier for the externally-maintained copy of the same information as is contained in this structure. However, unlike `UID` and `REFN`, `EXID` does not identify a structure; structures with the same `EXID` may have originated independently rather than by edits from the same starting point.
 
@@ -607,8 +607,8 @@ If the attribute being defined was 1 of the person's skills, such as woodworking
 #### `FAMC` (Family child) `g7:INDI-FAMC`
 
 The family in which an individual appears as a child.
-It is also used with a `STAT` substructure to show individuals who are not children of the family.
-See `FAM` and `FAMC`.`STAT` for more.
+It is also used with a `g7:FAMC-STAT` substructure to show individuals who are not children of the family.
+See `FAMILY_RECORD` for more details.
 
 #### `FAMC` (Family child) `g7:FAMC`
 
@@ -623,12 +623,12 @@ Adoption by an individual, rather than a couple, may be represented either by po
 #### `FAMS` (Family spouse) `g7:FAMS`
 
 The family in which an individual appears as a partner.
-See `FAM` for more.
+See `FAMILY_RECORD` for more details.
 
 #### `FAX` (Facsimile) `g7:FAX`
 
 A fax telephone number appropriate for sending data facsimiles.
-See `PHON` for more.
+See `PHON` for additional comments on telephone numbers.
 
 #### `FCOM` (First communion) `g7:FCOM`
 
@@ -681,12 +681,12 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 #### `HEAD` (Header) `g7:HEAD`
 
 A pseudo-structure for storing metadata about the document.
-See [The Header and Trailer](#the-header) for more.
+See [The Header and Trailer](#the-header) for more details.
 
 #### `HEIGHT` (Height in pixels) `g7:HEIGHT`
 
 How many pixels to display vertically for the image.
-See `CROP` for more.
+See `CROP` for more details.
 
 :::note
 `HEIGHT` is a number of pixels.
@@ -708,7 +708,7 @@ specific to the individual described by the associated `FAM`'s `HUSB` substructu
 #### `HUSB` (Husband) `g7:FAM-HUSB`
 
 This is a partner in a `FAM` record.
-See `FAMILY_RECORD` for more.
+See `FAMILY_RECORD` for more details.
 
 #### `IDNO` (Identification number) `g7:IDNO`
 
@@ -813,7 +813,7 @@ Minutes and seconds are not used and should be converted to fractional degrees p
 #### `LEFT` (Left crop width) `g7:LEFT`
 
 Left is a number of pixels to not display from the left side of the image.
-See `CROP` for more.
+See `CROP` for more details.
 
 #### `LONG` (Longitude) `g7:LONG`
 
@@ -956,7 +956,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 #### `NO` (Did not happen) `g7:NO`
 
 An enumerated value from set `g7:enumset-EVEN` identifying an event type which did not occur to the superstructure's subject.
-See `NON_EVENT_STRUCTURE` for more.
+See `NON_EVENT_STRUCTURE` for more details.
 
 #### `NOTE` (Note) `g7:NOTE`
 
@@ -1112,7 +1112,7 @@ This is a placeholder for providing a default `PLAC`.`FORM`, and must not have a
 #### `POST` (Postal code) `g7:POST`
 
 A code used by a postal service to identify an area to facilitate mail handling.
-See `ADDRESS_STRUCTURE` for more.
+See `ADDRESS_STRUCTURE` for more details.
 
 #### `PROB` (Probate) `g7:PROB`
 
@@ -1159,7 +1159,7 @@ A [List] of enumerated values from set `g7:enumset-RESN` signifying access to in
 
 The `RESN` structure is provided to assist software in filtering data that should not be exported or otherwise used in a particular context. It is recommended that tools provide an interface to allow users to filter data on export
 such that certain `RESN` structure payload entries result in the `RESN` structure and its superstructure being removed from the export.
-Such removal must abide by some constraints: see [Removing data](#removing-data) for more.
+Such removal must abide by some constraints: see [Removing data](#removing-data) for more details.
 
 This is metadata about the structure itself, not data about its subject.
 
@@ -1240,7 +1240,7 @@ The following indicates that a person's best friend was a witness at their bapti
 #### `SCHMA` (Extension schema) `g7:SCHMA`
 
 A container for storing meta-information about the extension tags used in this document.
-See [Extensions](#extensions) for more.
+See [Extensions](#extensions) for more details.
 
 #### `SDATE` (Sort date) `g7:SDATE`
 
@@ -1275,22 +1275,22 @@ See also `LDS_SPOUSE_SEALING`.
 #### `SNOTE` (Shared note) `g7:SNOTE`
 
 A pointer to a note that is shared by multiple structures.
-See `NOTE_STRUCTURE` for more.
+See `NOTE_STRUCTURE` for more details.
 
 #### `SNOTE` (Shared note) `g7:record-SNOTE`
 
 A note that is shared by multiple structures.
-See `SHARED_NOTE_RECORD` for more.
+See `SHARED_NOTE_RECORD` for more details.
 
 #### `SOUR` (Source) `g7:SOUR`
 
 A description of the relevant part of a source to support the superstructure's data.
-See `SOURCE_CITATION` for more.
+See `SOURCE_CITATION` for more details.
 
 #### `SOUR` (Source) `g7:record-SOUR`
 
 A description of an entire source.
-See `SOURCE_RECORD` for more.
+See `SOURCE_RECORD` for more details.
 
 #### `SOUR` (Source) `g7:HEAD-SOUR`
 
@@ -1311,7 +1311,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 #### `STAE` (State) `g7:STAE`
 
 A geographical division of a larger jurisdictional area, such as a state within the United States of America.
-See `ADDRESS_STRUCTURE` for more.
+See `ADDRESS_STRUCTURE` for more details.
 
 #### `STAT` (Status) `g7:ord-STAT`
 
@@ -1329,7 +1329,7 @@ This is metadata about the structure itself, not data about its subject.
 #### `SUBM` (Submitter) `g7:record-SUBM`
 
 A description of a contributor of information to the document.
-See `SUBMITTER_RECORD` for more.
+See `SUBMITTER_RECORD` for more details.
 
 #### `SURN` (Surname) `g7:SURN`
 
@@ -1338,7 +1338,7 @@ A family name passed on or used by members of a family.
 #### `TAG` (Extension tag) `g7:TAG`
 
 Information relating to a single extension tag as used in this document.
-See [Extensions](#extensions) for more.
+See [Extensions](#extensions) for more details.
 
 #### `TEMP` (Temple) `g7:TEMP`
 
@@ -1385,7 +1385,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 #### `TOP` (Top crop width) `g7:TOP`
 
 A number of pixels to not display from the top side of the image.
-See `CROP` for more.
+See `CROP` for more details.
 
 
 #### `TRAN` (Translation)
@@ -1509,7 +1509,7 @@ should each be given their own `FILE` structure.
 #### `TRLR` (Trailer) `g7:TRLR`
 
 A pseudo-structure marking the end of a dataset.
-See [The Header and Trailer](#the-header) for more.
+See [The Header and Trailer](#the-header) for more details.
 
 #### `TYPE` (Type) `g7:TYPE`
 
@@ -1609,12 +1609,12 @@ It is defined and changed by the creators of the product.
 The version number of the official specification that this document's data conforms to.
 This must include the major and minor version (for example, "`7.0`");
 it may include the patch as well (for example, "`7.0.1`"), but doing so is not required.
-See [A Guide to Version Numbers] for more.
+See [A Guide to Version Numbers] for more details about version numbers.
 
 #### `WIDTH` (Width in pixels) `g7:WIDTH`
 
 How many pixels to display horizontally for the image.
-See `CROP` for more.
+See `CROP` for more details.
 
 #### `WIFE` (Wife) `g7:WIFE`
 
@@ -1624,7 +1624,7 @@ specific to the individual described by the associated `FAM`'s `WIFE` substructu
 #### `WIFE` (Wife) `g7:FAM-WIFE`
 
 A partner in a `FAM` record.
-See `FAMILY_RECORD` for more.
+See `FAMILY_RECORD` for more details.
 
 #### `WILL` (Will) `g7:WILL`
 
