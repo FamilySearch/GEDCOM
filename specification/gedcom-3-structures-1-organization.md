@@ -1229,6 +1229,7 @@ n REPO @<XREF:REPO>@                       {1:1}  g7:REPO
   +1 CALN <Special>                        {0:M}  g7:CALN
      +2 MEDI <Enum>                        {0:1}  g7:MEDI
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+  +1 DATE <DateValue>                      {0:1}  g7:DATE
 ```
 
 This structure is used within a source record to point to a name and address record of the holder of the source document.
@@ -1236,4 +1237,8 @@ Formal and informal repository name and addresses are stored in the
 `REPOSITORY_RECORD`.
 More formal repositories, such as the Family History Library, should show a call number of the source at that repository.
 The call number of that source should be recorded using a `CALN` substructure.
+
+A `DATE` substructure can be used to denote the date when the source was known to be held by the
+specific repository.  For example, if a Family Bible was passed from one person to another over time, a
+`SOURCE_REPOSITORY_CITATION` with a `DATE` substructure can be used to track the provenance as it was handed down.
 
