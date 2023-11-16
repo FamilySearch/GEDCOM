@@ -1188,6 +1188,7 @@ This specification does not support places where a region name contains a comma.
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 PAGE <Text>                           {0:1}  g7:PAGE
+     +2 SOUR                               {0:M}  g7:SOUR
   +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 <<DATE_VALUE>>                     {0:1}
      +2 TEXT <Text>                        {0:M}  g7:TEXT
@@ -1217,6 +1218,10 @@ It is recommended that every `SOURCE_CITATION` point to a `SOURCE_RECORD`.
 However, a `voidPtr` can be used with the citation text in a `PAGE` substructure.
 The `PAGE` is defined to express a "specific location within the information referenced;"
 with a `voidPtr` there is no information referenced, so the `PAGE` may describe the entire source.
+
+A `PAGE`.`SOUR` allows indicating a source citation for a cited source from which the
+present information was derived. For example if the source is an index that cites where
+the original record is located, then the `PAGE`.`SOUR` would contain the location cited by the index.
 
 A `SOURCE_CITATION` can contain a `NOTE_STRUCTURE`, which in turn can contain a `SOURCE_CITATION`, allowing potentially unbounded nesting of structures. Because each dataset is finite, this nesting is also guaranteed to be finite.
 
