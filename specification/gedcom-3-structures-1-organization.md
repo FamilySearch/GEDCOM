@@ -1188,7 +1188,7 @@ This specification does not support places where a region name contains a comma.
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 PAGE <Text>                           {0:1}  g7:PAGE
-     +2 SOUR                               {0:M}  g7:SOUR
+     +2 <<SOURCE_CITATION>>                {0:M}
   +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 <<DATE_VALUE>>                     {0:1}
      +2 TEXT <Text>                        {0:M}  g7:TEXT
