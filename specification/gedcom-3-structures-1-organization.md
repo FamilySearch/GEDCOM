@@ -1239,6 +1239,6 @@ More formal repositories, such as the Family History Library, should show a call
 The call number of that source should be recorded using a `CALN` substructure.
 
 A `DATE` substructure can be used to denote the date when the source was known to be held by the
-specific repository.  For example, if a Family Bible was passed from one person to another over time, a
+specific holder.  For example, if a Family Bible was passed from one person to another over time, a
 `SOURCE_REPOSITORY_CITATION` with a `DATE` substructure can be used to track the provenance as it was handed down.
 
