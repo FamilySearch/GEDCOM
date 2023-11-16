@@ -236,15 +236,15 @@ An `INDI` record may have multiple `FAMC` substructures pointing to the same `FA
 n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<PERSONAL_NAME_STRUCTURE>>           {0:M}
-  +1 SEX <Enum>                            {0:1}  g7:SEX
+  +1 SEX <Enum>                            {0:1}  g7.1:SEX
      +2 EXID <Special>                     {0:M}  g7:EXID
         +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
   +1 <<INDIVIDUAL_ATTRIBUTE_STRUCTURE>>    {0:M}
   +1 <<INDIVIDUAL_EVENT_STRUCTURE>>        {0:M}
   +1 <<NEGATIVE_ASSERTION>>                {0:M}
   +1 <<LDS_INDIVIDUAL_ORDINANCE>>          {0:M}
-  +1 FAMC @<XREF:FAM>@                     {0:M}  g7:INDI-FAMC
-     +2 PEDI <Enum>                        {0:M}  g7:PEDI
+  +1 FAMC @<XREF:FAM>@                     {0:M}  g7.1:INDI-FAMC
+     +2 PEDI <Enum>                        {0:M}  g7.1:PEDI
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
         +3 DATE <DateValue>                {0:1}  g7:DATE
      +2 STAT <Enum>                        {0:1}  g7:FAMC-STAT

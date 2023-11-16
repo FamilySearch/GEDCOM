@@ -615,7 +615,7 @@ If the attribute being defined was 1 of the person's skills, such as woodworking
 ```
 :::
 
-#### `FAMC` (Family child) `g7:INDI-FAMC`
+#### `FAMC` (Family child) `g7.1:INDI-FAMC`
 
 The family in which an individual appears as a child.
 It is also used with a `g7:FAMC-STAT` substructure to show individuals who are not children of the family.
@@ -1046,7 +1046,7 @@ and the `PAGE` may describe the entire source.
 ```
 :::
 
-#### `PEDI` (Pedigree) `g7:PEDI`
+#### `PEDI` (Pedigree) `g7.1:PEDI`
 
 An enumerated value from set `g7:enumset-PEDI` indicating the type of child-to-family relationship represented by the superstructure.
 
@@ -1294,7 +1294,7 @@ Other DateValue forms may have unreliable effects on sorting. Including a month 
 day is encouraged to help different applications sort dates the same way, as the
 relative ordering of dates with different levels of precision is not well defined.
 
-#### `SEX` (Sex) `g7:SEX`
+#### `SEX` (Sex) `g7.1:SEX`
 
 An enumerated value from set `g7:enumset-SEX` that indicates the sex of the individual at birth.
 
