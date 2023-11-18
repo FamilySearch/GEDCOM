@@ -79,7 +79,7 @@ Tag | Name<br/>URI | Description
 `BASM` | Bas Mitzvah<br/>`g7:BASM` | The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat Mitzvah."
 `BIRT` | birth<br/>`g7:BIRT` | Entering into life.
 `BLES` | blessing<br/>`g7:BLES` | Bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.
-`BURI` | depositing remains<br/>`g7:BURI` | Depositing the mortal remains of a deceased person.
+`BURI` | depositing remains<br/>`g7.1:BURI` | Depositing the mortal remains of a deceased person.
 `CENS` | census<br/>`g7:INDI-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
 `CHR` | christening<br/>`g7:CHR` | Baptism or naming events for a child.
 `CHRA` | adult christening<br/>`g7:CHRA` | Baptism or naming events for an adult person.
@@ -102,15 +102,15 @@ In addition, `INDI`.`EVEN` is a structure for a generic individual event. It mus
 
 Tag | Name<br/>URI | Description
 --- | ---- | -----------
-`ANUL` | annulment<br/>`g7:ANUL` | Declaring a marriage void from the beginning (never existed).
-`CENS` | census<br/>`g7:FAM-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
+`ANUL` | annulment<br/>`g7.1:ANUL` | Declaring a marriage void from the beginning (never existed).
+`CENS` | census<br/>`g7.1:FAM-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
 `DIV` | divorce<br/>`g7:DIV` | Dissolving a marriage through civil action.
 `DIVF` | divorce filed<br/>`g7:DIVF` | Filing for a divorce by a spouse.
 `ENGA` | engagement<br/>`g7:ENGA` | Recording or announcing an agreement between 2 people to become married.
 `MARB` | marriage bann<br/>`g7:MARB` | Official public notice given that 2 people intend to marry.
 `MARC` | marriage contract<br/>`g7:MARC` | Recording a formal agreement of marriage, including the prenuptial agreement in which marriage partners reach agreement about the property rights of 1 or both, securing property to their children.
 `MARL` | marriage license<br/>`g7:MARL` | Obtaining a legal license to marry.
-`MARR` | marriage<br/>`g7:MARR` | A legal, common-law, or customary event such as a wedding or marriage ceremony that joins 2 partners to create or extend a family unit.
+`MARR` | marriage<br/>`g7.1:MARR` | A legal, common-law, or customary event such as a wedding or marriage ceremony that joins 2 partners to create or extend a family unit.
 `MARS` | marriage settlement<br/>`g7:MARS` | Creating an agreement between 2 people contemplating marriage, at which time they agree to release or modify property rights that would otherwise arise from the marriage.
 
 In addition, `FAM`.`EVEN` is a structure for a generic family event. It must have a `TYPE` substructure to define what kind of event is being provided.
@@ -144,8 +144,8 @@ In addition, `INDI`.`FACT` is a structure for a generic individual attribute. It
 
 Tag | Name<br/>URI | Description
 ----|--------------|-----------------
-`NCHI` | number of children<br/>`g7:FAM-NCHI` | The number of children that belong to this family.
-`RESI` | residence<br/>`g7:FAM-RESI` | An address or place of residence where a family resided.
+`NCHI` | number of children<br/>`g7.1:FAM-NCHI` | The number of children that belong to this family.
+`RESI` | residence<br/>`g7.1:FAM-RESI` | An address or place of residence where a family resided.
 
 In addition, `FAM`.`FACT` is a structure for a generic family attribute. It must have a `TYPE` substructure to define what kind of attribute is being provided.
 
@@ -245,7 +245,7 @@ Others distribute events and attributes between `INDI` records mutually linked b
 A future version of this specification may adjust the definition of `ALIA`.
 :::
 
-#### `ALIA` (Alias) `g7:SUBM-ALIA`
+#### `ALIA` (Alias) `g7.1:SUBM-ALIA`
 
 Indicates that the user described by the superstructure
 is the same person as the individual described by the referenced `INDI`.
@@ -261,7 +261,7 @@ should select or generate a representative `INDI` for the `SUBM`.`ALIA`.
 Indicates an interest in additional research for ancestors of this individual.
 (See also `DESI`).
 
-#### `ANUL` (Annulment) `g7:ANUL`
+#### `ANUL` (Annulment) `g7.1:ANUL`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
@@ -305,7 +305,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `BURI` (Depositing remains) `g7:BURI`
+#### `BURI` (Depositing remains) `g7.1:BURI`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -328,7 +328,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 The reasons which precipitated an event.
 It is often used subordinate to a death event to show cause of death, such as might be listed on a death certificate.
 
-#### `CENS` (Census)  `g7:FAM-CENS`
+#### `CENS` (Census)  `g7.1:FAM-CENS`
 
 An [Family Event](#family-events).
 
@@ -574,7 +574,7 @@ Depending on the maintaining authority, an `EXID` may be a unique identifier for
 
 `EXID` identifiers are expected to be unique. Once assigned, an `EXID` identifier should never be re-used for any other purpose.
 
-#### `FAM` (Family record) `g7:record-FAM`
+#### `FAM` (Family record) `g7.1:record-FAM`
 
 See `FAMILY_RECORD`
 
@@ -594,7 +594,7 @@ Implementers should support both representations,
 and should choose between them based on user input or other context beyond that provided in the datasets themselves.
 :::
 
-#### `FACT` (Fact) `g7:FAM-FACT`
+#### `FACT` (Fact) `g7.1:FAM-FACT`
 
 See `g7:INDI-FACT`.
 
@@ -731,7 +731,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `INDI` (Individual) `g7:record-INDI`
+#### `INDI` (Individual) `g7.1:record-INDI`
 
 See `INDIVIDUAL_RECORD`.
 
@@ -741,15 +741,15 @@ A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.  Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part of 5.4 through 5.5.1.
 FamilySearch GEDCOM 7.0 reintroduced it with the name `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
 
-#### `KIND` (Kind) `g7:BURI-KIND`
+#### `KIND` (Kind) `g7.1:BURI-KIND`
 
-An enumerated value from set `g7:enumset-BURI-KIND` indicating what was done with the remains of the deceased.
+An enumerated value from set `g7.1:enumset-BURI-KIND` indicating what was done with the remains of the deceased.
 
 Note `KIND` does not have a `g7:PHRASE` substructure; the `g7:TYPE` substructure of the `KIND`'s superstructure should be used for that purpose instead.
 
-#### `KIND` (Kind) `g7:MARR-KIND`
+#### `KIND` (Kind) `g7.1:MARR-KIND`
 
-An enumerated value from set `g7:enumset-MARR-KIND` indicating what kind of marriage the superstructure describes.
+An enumerated value from set `g7.1:enumset-MARR-KIND` indicating what kind of marriage the superstructure describes.
 
 Note `KIND` does not have a `g7:PHRASE` substructure; the `g7:TYPE` substructure of the `KIND`'s superstructure should be used for that purpose instead.
 
@@ -875,7 +875,7 @@ See also `FAMILY_EVENT_STRUCTURE`.
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
 
-#### `MARR` (Marriage) `g7:MARR`
+#### `MARR` (Marriage) `g7.1:MARR`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
@@ -887,7 +887,7 @@ See also `FAMILY_EVENT_STRUCTURE`.
 
 #### `MEDI` (Medium) `g7:MEDI`
 
-An enumerated value from set `g7:enumset-MEDI` providing information about the media or the medium in which information is stored.
+An enumerated value from set `g7.1:enumset-MEDI` providing information about the media or the medium in which information is stored.
 
 When `MEDI` is a substructure of a `g7:CALN`, it is recommended that its payload describes the medium directly found at that call number rather than a medium from which it was derived.
 
@@ -945,7 +945,7 @@ If needed, `text/html` can be converted to `text/plain` using the following step
 
 The name of the superstructure's subject, represented as a simple string.
 
-#### `NAME` (Name) `g7:INDI-NAME`
+#### `NAME` (Name) `g7.1:INDI-NAME`
 
 A `PERSONAL_NAME_STRUCTURE` with parts, translations, sources, and so forth.
 
@@ -959,7 +959,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `NCHI` (Number of children) `g7:FAM-NCHI`
+#### `NCHI` (Number of children) `g7.1:FAM-NCHI`
 
 A [Family Attribute](#family-attributes).
 See also `FAMILY_ATTRIBUTE_STRUCTURE`.
@@ -989,7 +989,7 @@ A specific payload `NO XYZ` should only appear where `XYZ` would be legal.
 
 See `NEGATIVE_ASSERTION` for more.
 
-#### `NOTE` (Note) `g7:NOTE`
+#### `NOTE` (Note) `g7.1:NOTE`
 
 A `NOTE_STRUCTURE`, containing additional information provided by the submitter for understanding the enclosing data.
 
@@ -1203,11 +1203,11 @@ This is metadata about the structure itself, not data about its subject.
 
 See `SOURCE_REPOSITORY_CITATION`.
 
-#### `REPO` (Repository) `g7:record-REPO`
+#### `REPO` (Repository) `g7.1:record-REPO`
 
 See `REPOSITORY_RECORD`.
 
-#### `RESI` (Residence) `g7:FAM-RESI`
+#### `RESI` (Residence) `g7.1:FAM-RESI`
 
 A [Family Attribute](#family-attributes).
 See also `FAMILY_ATTRIBUTE_STRUCTURE`.
@@ -1313,17 +1313,17 @@ See also `LDS_SPOUSE_SEALING`.
 A pointer to a note that is shared by multiple structures.
 See `NOTE_STRUCTURE` for more details.
 
-#### `SNOTE` (Shared note) `g7:record-SNOTE`
+#### `SNOTE` (Shared note) `g7.1:record-SNOTE`
 
 A note that is shared by multiple structures.
 See `SHARED_NOTE_RECORD` for more details.
 
-#### `SOUR` (Source) `g7:SOUR`
+#### `SOUR` (Source) `g7.1:SOUR`
 
 A description of the relevant part of a source to support the superstructure's data.
 See `SOURCE_CITATION` for more details.
 
-#### `SOUR` (Source) `g7:record-SOUR`
+#### `SOUR` (Source) `g7.1:record-SOUR`
 
 A description of an entire source.
 See `SOURCE_RECORD` for more details.
@@ -1362,7 +1362,7 @@ An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or co
 A contributor of information in the substructure.
 This is metadata about the structure itself, not data about its subject.
 
-#### `SUBM` (Submitter) `g7:record-SUBM`
+#### `SUBM` (Submitter) `g7.1:record-SUBM`
 
 A description of a contributor of information to the document.
 See `SUBMITTER_RECORD` for more details.
@@ -1391,11 +1391,11 @@ This should be, from the evidence point of view, "what the original record keepe
 
 A `Time` value in a 24-hour clock format.
 
-#### `TIME` (Time) `g7:TIME-exact`
+#### `TIME` (Time) `g7.1:TIME-exact`
 
 A `Time` value in a 24-hour clock format.
 The time should be presented in UTC and indicate that with a `Z` in the time payload.
-Unlike a `g7:TIME`, no `g7:PHRASE` is permitted under a `g7:TIME-exact`.
+Unlike a `g7:TIME`, no `g7:PHRASE` is permitted under a `g7.1:TIME-exact`.
 
 #### `TITL` (Title) `g7:TITL`
 
@@ -1589,9 +1589,9 @@ Other descriptor values might include, for example,
 See also `FACT` and `EVEN` for additional examples.
 :::
 
-#### `TYPE` (Type) `g7:NAME-TYPE`
+#### `TYPE` (Type) `g7.1:NAME-TYPE`
 
-An enumerated value from set `g7:enumset-NAME-TYPE` indicating the type of the name.
+An enumerated value from set `g7.1:enumset-NAME-TYPE` indicating the type of the name.
 
 #### `TYPE` (Type) `g7:EXID-TYPE`
 

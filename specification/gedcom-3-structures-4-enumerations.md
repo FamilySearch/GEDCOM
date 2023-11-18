@@ -15,7 +15,7 @@ Each set of enumeration values has its own URI.
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
-### `g7:enumset-BURI-KIND`
+### `g7.1:enumset-BURI-KIND`
 
 | Value | Meaning |
 | :---- | :------ |
@@ -37,13 +37,13 @@ these are given generic definitions with URIs constructed by concatenating
 
 | Value  | Meaning                                                |
 | :----- | :----------------------------------------------------- |
-| `CENS` | A census event; either `g7:INDI-CENS` or `g7:FAM-CENS` |
-| `NCHI` | A count of children; either `g7:INDI-NCHI` or `g7:FAM-NCHI` |
-| `RESI` | A residence attribute; either `g7:INDI-RESI` or `g7:FAM-RESI` |
-| `FACT` | A generic attribute; either `g7:INDI-FACT` or `g7:FAM-FACT` |
+| `CENS` | A census event; either `g7:INDI-CENS` or `g7.1:FAM-CENS` |
+| `NCHI` | A count of children; either `g7:INDI-NCHI` or `g7.1:FAM-NCHI` |
+| `RESI` | A residence attribute; either `g7:INDI-RESI` or `g7.1:FAM-RESI` |
+| `FACT` | A generic attribute; either `g7:INDI-FACT` or `g7.1:FAM-FACT` |
 | `EVEN` | A generic event; either `g7:INDI-EVEN` or `g7:FAM-EVEN` |
 
-### `g7:enumset-MARR-KIND`
+### `g7.1:enumset-MARR-KIND`
 
 | Value | Meaning |
 | :---- | :------ |
@@ -53,7 +53,7 @@ these are given generic definitions with URIs constructed by concatenating
 | `RELIGIOUS`  | A religious marriage event, creating a state of marriage via a religious ceremony or registration process  |
 | `OTHER` | A value not listed here; should be paired with a `TYPE` structure |
 
-### `g7:enumset-MEDI`
+### `g7.1:enumset-MEDI`
 
 | Value        | Meaning                           |
 | :----------- | :-------------------------------- |
@@ -88,7 +88,7 @@ This set contains various structure types, with the same tags and URIs used by t
 
 - All individual and family event types except `EVEN`
 
-- The personal name type `g7:INDI-NAME`
+- The personal name type `g7.1:INDI-NAME`
 
 - The name parts `g7:GIVN` and `g7:SURN`
 
@@ -102,8 +102,7 @@ these are given generic definitions with URIs constructed by concatenating
 
 | Value  | Meaning                                                |
 | :----- | :----------------------------------------------------- |
-| `CENS` | A census event; either `g7:INDI-CENS` or `g7:FAM-CENS` |
-
+| `CENS` | A census event; either `g7.1:INDI-CENS` or `g7.1:FAM-CENS` |
 
 ### `g7:enumset-PEDI`
 
@@ -267,7 +266,7 @@ and applications should be prepared to encounter non-current values.
 | `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 | `UNCLEARED` | All | Data for clearing the ordinance request was insufficient. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 
-### `g7:enumset-NAME-TYPE`
+### `g7.1:enumset-NAME-TYPE`
 
 | Value | Meaning                       |
 | ----- | :---------------------------- |

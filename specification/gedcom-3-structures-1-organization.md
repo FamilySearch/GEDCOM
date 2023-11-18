@@ -145,11 +145,11 @@ n HEAD                                     {1:1}  g7:HEAD
         +3 WWW <Special>                   {0:M}  g7:WWW
      +2 DATA <Text>                        {0:1}  g7:HEAD-SOUR-DATA
         +3 DATE <DateExact>                {0:1}  g7:DATE-exact
-           +4 TIME <Time>                  {0:1}  g7:TIME-exact
+           +4 TIME <Time>                  {0:1}  g7.1:TIME-exact
         +3 COPR <Text>                     {0:1}  g7:COPR
   +1 DEST <Special>                        {0:1}  g7:DEST
   +1 DATE <DateExact>                      {0:1}  g7:HEAD-DATE
-     +2 TIME <Time>                        {0:1}  g7:TIME-exact
+     +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
   +1 SUBM @<XREF:SUBM>@                    {0:1}  g7:SUBM
   +1 COPR <Text>                           {0:1}  g7:COPR
   +1 LANG <Language>                       {0:1}  g7:HEAD-LANG
@@ -175,7 +175,7 @@ A few substructures of note:
 #### `FAMILY_RECORD` :=
 
 ```gedstruct
-n @XREF:FAM@ FAM                           {1:1}  g7:record-FAM
+n @XREF:FAM@ FAM                           {1:1}  g7.1:record-FAM
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<FAMILY_ATTRIBUTE_STRUCTURE>>        {0:M}
   +1 <<FAMILY_EVENT_STRUCTURE>>            {0:M}
@@ -233,7 +233,7 @@ An `INDI` record may have multiple `FAMC` substructures pointing to the same `FA
 #### `INDIVIDUAL_RECORD` :=
 
 ```gedstruct
-n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
+n @XREF:INDI@ INDI                         {1:1}  g7.1:record-INDI
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<PERSONAL_NAME_STRUCTURE>>           {0:M}
   +1 SEX <Enum>                            {0:1}  g7.1:SEX
@@ -334,7 +334,7 @@ not the underlying files.
 #### `REPOSITORY_RECORD` :=
 
 ```gedstruct
-n @XREF:REPO@ REPO                         {1:1}  g7:record-REPO
+n @XREF:REPO@ REPO                         {1:1}  g7.1:record-REPO
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
@@ -360,7 +360,7 @@ Until such time, it is recommended that the repository record store current cont
 #### `SHARED_NOTE_RECORD` :=
 
 ```gedstruct
-n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
+n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7.1:record-SNOTE
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
@@ -405,7 +405,7 @@ A `SHARED_NOTE_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa
 #### `SOURCE_RECORD` :=
 
 ```gedstruct
-n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
+n @XREF:SOUR@ SOUR                         {1:1}  g7.1:record-SOUR
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 DATA                                  {0:1}  g7:DATA
      +2 EVEN <List:Enum>                   {0:M}  g7:DATA-EVEN
@@ -447,7 +447,7 @@ A `SOURCE_RECORD` may contain a pointer to a `SHARED_NOTE_RECORD` and vice versa
 #### `SUBMITTER_RECORD` :=
 
 ```gedstruct
-n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
+n @XREF:SUBM@ SUBM                         {1:1}  g7.1:record-SUBM
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
@@ -457,7 +457,7 @@ n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
   +1 WWW <Special>                         {0:M}  g7:WWW
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 LANG <Language>                       {0:M}  g7:SUBM-LANG
-  +1 ALIA @<XREF:INDI>@                    {0:1}  g7:SUBM-ALIA
+  +1 ALIA @<XREF:INDI>@                    {0:1}  g7.1:SUBM-ALIA
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<CHANGE_DATE>>                       {0:1}
@@ -541,7 +541,7 @@ and that individual `@I2@` was the clergy officiating at their baptism.
 ```gedstruct
 n CHAN                                     {1:1}  g7:CHAN
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME-exact
+     +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
@@ -554,7 +554,7 @@ The `NOTE` substructure may describe previous changes as well as the most recent
 ```gedstruct
 n CREA                                     {1:1}  g7:CREA
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME-exact
+     +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
 ```
 
 The date of the initial creation of the superstructure.
@@ -593,7 +593,7 @@ n RELI <Text>                              {0:1}  g7:RELI
 n CAUS <Text>                              {0:1}  g7:CAUS
 n RESN <List:Enum>                         {0:1}  g7:RESN
 n SDATE <DateValue>                        {0:1}  g7:SDATE
-  +1 TIME <Time>                           {0:1}  g7:TIME
+  +1 TIME <Time>                           {0:1}  g7.1:TIME
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 n <<ASSOCIATION_STRUCTURE>>                {0:M}
@@ -614,15 +614,15 @@ Conflicting event information should be represented by placing them in separate 
 
 ```gedstruct
 [
-n NCHI <Integer>                           {1:1}  g7:FAM-NCHI
+n NCHI <Integer>                           {1:1}  g7.1:FAM-NCHI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n RESI <Text>                              {1:1}  g7:FAM-RESI
+n RESI <Text>                              {1:1}  g7.1:FAM-RESI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n FACT <Text>                              {1:1}  g7:FAM-FACT
+n FACT <Text>                              {1:1}  g7.1:FAM-FACT
   +1 TYPE <Text>                           {1:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 ]
@@ -656,11 +656,11 @@ Substructures shared by most family events and attributes.
 
 ```` {.gedstruct .long}
 [
-n ANUL [Y|<NULL>]                          {1:1}  g7:ANUL
+n ANUL [Y|<NULL>]                          {1:1}  g7.1:ANUL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n CENS [Y|<NULL>]                          {1:1}  g7:FAM-CENS
+n CENS [Y|<NULL>]                          {1:1}  g7.1:FAM-CENS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
@@ -688,9 +688,9 @@ n MARL [Y|<NULL>]                          {1:1}  g7:MARL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARR [Y|<NULL>]                          {1:1}  g7:MARR
+n MARR [Y|<NULL>]                          {1:1}  g7.1:MARR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 KIND <Enum>                           {0:1}  g7:MARR-KIND
+  +1 KIND <Enum>                           {0:1}  g7.1:MARR-KIND
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
 n MARS [Y|<NULL>]                          {1:1}  g7:MARS
@@ -860,9 +860,9 @@ n BLES [Y|<NULL>]                          {1:1}  g7:BLES
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n BURI [Y|<NULL>]                          {1:1}  g7:BURI
+n BURI [Y|<NULL>]                          {1:1}  g7.1:BURI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
-  +1 KIND <Enum>                           {0:1}  g7:BURI-KIND
+  +1 KIND <Enum>                           {0:1}  g7.1:BURI-KIND
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
 n CENS [Y|<NULL>]                          {1:1}  g7:INDI-CENS
@@ -980,7 +980,7 @@ n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
 n STAT <Enum>                            {0:1}  g7:ord-STAT
   +1 DATE <DateExact>                    {1:1}  g7:DATE-exact
-     +2 TIME <Time>                      {0:1}  g7:TIME-exact
+     +2 TIME <Time>                      {0:1}  g7.1:TIME-exact
 n <<NOTE_STRUCTURE>>                     {0:M}
 n <<SOURCE_CITATION>>                    {0:M}
 ```
@@ -1047,7 +1047,7 @@ means "no marriage had occurred as of March 24^th^, 1880"
 
 ```gedstruct
 [
-n NOTE <Text>                              {1:1}  g7:NOTE
+n NOTE <Text>                              {1:1}  g7.1:NOTE
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
@@ -1104,9 +1104,9 @@ Even when multiple `SURN` tags are used, the `PersonalName` data type identifies
 #### `PERSONAL_NAME_STRUCTURE` :=
 
 ```gedstruct
-n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
+n NAME <PersonalName>                      {1:1}  g7.1:INDI-NAME
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
-  +1 TYPE <Enum>                           {0:1}  g7:NAME-TYPE
+  +1 TYPE <Enum>                           {0:1}  g7.1:NAME-TYPE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 <<PERSONAL_NAME_PIECES>>              {0:1}
   +1 LANG <Language>                       {0:1}  g7:LANG
@@ -1128,7 +1128,7 @@ It is recommended, but not required, that if the name pieces are used, the same 
 
 A `TYPE` is used to specify the particular variation that this name is.
 For example; it could indicate that this name is a name taken at immigration or that it could be an ‘also known as’ name.
-See `g7:enumset-NAME-TYPE` for more details.
+See `g7.1:enumset-NAME-TYPE` for more details.
 
 :::note
 Alternative approaches to representing names are being considered for future versions of this specification.
@@ -1191,7 +1191,7 @@ This specification does not support places where a region name contains a comma.
 #### `SOURCE_CITATION` :=
 
 ```gedstruct
-n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
+n SOUR @<XREF:SOUR>@                       {1:1}  g7.1:SOUR
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<SOURCE_CITATION>>                   {0:M}
   +1 PAGE <Text>                           {0:1}  g7:PAGE
