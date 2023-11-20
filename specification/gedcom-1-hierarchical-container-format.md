@@ -108,7 +108,7 @@ A structure is a representation of data about its **subject**. Examples include 
 Datasets also contain 3 types of pseudo-structures:
 
 - The header resembles a record, comes first in each document, and contains metadata about the entire document in its substructures.
-    See [The Header](#the-header) for more.
+    See [The Header](#the-header) for more details.
 
 - The trailer resembles a record, comes last in each document, and cannot contain substructures.
 
@@ -368,6 +368,13 @@ Suppose `_DATE` is defined to mean a `g7:DATE` (using a [documented extension ta
 - `PHRASE` is the structure type expected with that tag as a substructure of `g7:DATE`: namely, `g7:PHRASE`.
 - `_DATE` can not be used as a substructure of `BIRT` because `BIRT` has a documented `g7:DATE` substructure with tag `DATE`.
 - `BIRT` can not be used as a substructure of `_DATE` or `_DATE`.`PHRASE` because neither structure type has a documented substructure with tag `BIRT`.
+:::
+
+Because all substructures have meanings defined relative to their superstructures and no records do, standard records cannot be relocated and relocated standard structures cannot be used as records.
+
+:::example
+The `g7:PLAC` substructure documents where the event described in its superstructure occurred.
+If an application wants a record to describe the place itself it should create a new URI for that extension; reusing `g7:PLAC` for a record with no superstructure is not appropriate.
 :::
 
 All other non-standard structures are prohibited. Examples of prohibited structures include, but are not limited to,

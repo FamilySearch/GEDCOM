@@ -329,3 +329,35 @@ The URI for the generic data type subsuming all `Special` data types is `xsd:str
 Special = Text
 ```
 
+## File Path
+
+The file path data type describes where an digital file is located in a machine-readable way.
+Syntactically, the payload is a URI reference as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986), or a valid URL string as defined by the [WHATWG URL specification](https://url.spec.whatwg.org/).
+That is, it can be an absolute or relative URL, optionally with a fragment string.
+
+Version 7.0 only supports the following URLs:
+
+- A URL with scheme `ftp`, `http`, or `https` refers to a **web-accessible file**.
+
+- A URL with scheme `file` refers to a **machine-local file** as defined by [RFC 8089](https://www.rfc-editor.org/info/rfc8089). Machine-local files must not be used in [FamilySearch GEDZIP](#gedzip) nor when sharing datasets on the web or with unknown parties, but may be used for close collaboration between parties with known similar file structures.
+
+- A URI reference with all of the following:
+    - no scheme
+    - not beginning with `/` (U+002F)
+    - not containing any path segments equal to `..` (U+002E U+002E)
+    - not containing a reverse solidus character (U+005C `\`) or `banned` character, either directly or in escaped form
+    - no query or fragment
+    
+    refers to a **local file**. If the dataset is part of a [GEDZIP file](#gedzip), the URL of the local file is a zip archive filename; otherwise, the URL of a local file is resolved with *base* equal to the directory containing the dataset.
+    
+    It is recommended that local files use the directory prefix `media/`, but doing so is not required.
+
+    For compatibility with [GEDZIP](#gedzip) and related formats, it is recommended that the following file paths not be used:
+    
+    - `gedcom.ged`
+    - `MANIFEST.MF`
+    - any URL beginning `META-INF/`
+
+Additional URLs may be supported in future versions of this specification.
+
+The URI for the `FilePath` data type is `g7:type-FilePath`.
