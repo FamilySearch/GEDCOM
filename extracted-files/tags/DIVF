@@ -10,7 +10,7 @@ standard tag: DIVF
 
 specification:
   - Divorce filing
-  - A Family Event. See also FAMILY_EVENT_STRUCTURE.
+  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - divorce filed
   - Filing for a divorce by a spouse.
 

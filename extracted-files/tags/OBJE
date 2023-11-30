@@ -10,15 +10,15 @@ standard tag: OBJE
 
 specification:
   - Object
-  - See MULTIMEDIA_LINK.
+  - See `MULTIMEDIA_LINK`.
   - |
-    Links the superstructure to the MULTIMEDIA_RECORD with the given pointer.
+    Links the superstructure to the `MULTIMEDIA_RECORD` with the given pointer.
     
-    The optional CROP substructure indicates that a subregion of an image
+    The optional `CROP` substructure indicates that a subregion of an image
     represents or applies to the superstructure.
     
-    The optional TITL substructure supersedes any OBJE.FILE.TITL substructures
-    included in the MULTIMEDIA_RECORD.
+    The optional `TITL` substructure supersedes any `OBJE.FILE.TITL` substructures
+    included in the `MULTIMEDIA_RECORD`.
 
 label: 'Object'
 

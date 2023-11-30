@@ -109,12 +109,12 @@ n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
 MULTIMEDIA_RECORD :=
 n @XREF:OBJE@ OBJE                         {1:1}  g7:record-OBJE
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
-  +1 FILE <Special>                        {1:M}  g7:FILE
+  +1 FILE <FilePath>                       {1:M}  g7:FILE
      +2 FORM <MediaType>                   {1:1}  g7:FORM
         +3 MEDI <Enum>                     {0:1}  g7:MEDI
            +4 PHRASE <Text>                {0:1}  g7:PHRASE
      +2 TITL <Text>                        {0:1}  g7:TITL
-     +2 TRAN <Special>                     {0:M}  g7:FILE-TRAN
+     +2 TRAN <FilePath>                    {0:M}  g7:FILE-TRAN
         +3 FORM <MediaType>                {1:1}  g7:FORM
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}

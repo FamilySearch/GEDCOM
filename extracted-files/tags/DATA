@@ -10,10 +10,9 @@ standard tag: DATA
 
 specification:
   - Data
-  - A structure with no payload used to distinguish a description of something
-    from metadata about it. For example, SOUR and its other substructures
-    describe a source itself, while SOUR.DATA describes the content of the
-    source.
+  - A structure with no payload used to distinguish a description of something from
+    metadata about it. For example, `SOUR` and its other substructures describe a
+    source itself, while `SOUR`.`DATA` describes the content of the source.
 
 label: 'Data'
 

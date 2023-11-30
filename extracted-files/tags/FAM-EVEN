@@ -10,7 +10,7 @@ standard tag: EVEN
 
 specification:
   - Event
-  - See https://gedcom.io/terms/v7/INDI-EVEN.
+  - See `https://gedcom.io/terms/v7/INDI-EVEN`.
 
 label: 'Event'
 

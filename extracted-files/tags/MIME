@@ -11,51 +11,62 @@ standard tag: MIME
 specification:
   - Media type
   - |
-    Indicates the media type of the payload of the superstructure.
+    Indicates the [media type] of the payload of the superstructure.
     
     As of version 7.0, only 2 media types are supported by this structure:
     
-    -   text/plain shall be presented to the user as-is, preserving all
-        spacing, line breaks, and so forth.
+    - `text/plain` shall be presented to the user as-is, preserving all spacing,
+      line breaks, and so forth.
     
-    -   text/html uses HTML tags to provide presentation information.
-        Applications should support at least the following:
+    - `text/html` uses HTML tags to provide presentation information. Applications
+      should support at least the following:
     
-        -   p and br elements for paragraphing and line breaks.
-        -   b, i, u, and s elements for bold, italic, underlined, and
-            strike-through text (or corresponding display in other locales; see
-            HTML §4.5 for more).
-        -   sup and sub elements for super- and sub-script.
-        -   The 3 XML entities that appear in text: &amp;, &lt; &gt;. Note that
-            &quote; and &apos; are only needed in attributes. Other entities
-            should be represented as their respective Unicode characters
-            instead.
+      - `p` and `br` elements for paragraphing and line breaks.
+      - `b`, `i`, `u`, and `s` elements for bold, italic, underlined, and
+        strike-through text (or corresponding display in other locales; see [HTML
+        §4.5] for more).
+      - `sup` and `sub` elements for super- and sub-script.
+      - The 3 XML entities that appear in text: `&amp;`, `&lt;` `&gt;`. Note that
+        `&quote;` and `&apos;` are only needed in attributes. Other entities should
+        be represented as their respective Unicode characters instead.
     
-        Supporting more of HTML is encouraged. Unsupported elements should be
-        ignored during display.
+      Supporting more of HTML is encouraged. Unsupported elements should be ignored
+      during display.
+    
+    <div class="note">
     
     Applications are welcome to support more XML entities or HTML character
-    references in their user interface. However, exporting must only use the
-    core XML entities, translating any other entities into their corresponding
-    Unicode characters.
+    references in their user interface. However, exporting must only use the core
+    XML entities, translating any other entities into their corresponding Unicode
+    characters.
     
-    Applications are welcome to support additional HTML elements, but they
-    should ensure that content is meaningful if those extra elements are
-    ignored and only their content text is displayed.
+    </div>
     
-    Media types are also used by external files, as described under FORM.
-    External file media types are not limited to text/plain and text/html.
+    <div class="note">
     
-    If needed, text/html can be converted to text/plain using the following
+    Applications are welcome to support additional HTML elements, but they should
+    ensure that content is meaningful if those extra elements are ignored and only
+    their content text is displayed.
+    
+    </div>
+    
+    <div class="note">
+    
+    Media types are also used by external files, as described under `FORM`.
+    External file media types are not limited to `text/plain` and `text/html`.
+    
+    </div>
+    
+    If needed, `text/html` can be converted to `text/plain` using the following
     steps:
     
-    1.  Replace any sequence of 1 or more spaces, tabs, and line breaks with a
-        single space
-    2.  Case-insensitively replace each <p…>, </p…>, and <br…> with a line
-        break
-    3.  Remove all other <…> tags
-    4.  Replace each &lt; with < and &gt; with >
-    5.  Replace each &amp; with &
+    1. Replace any sequence of 1 or more spaces, tabs, and line breaks with a
+       single space
+    2. Case-insensitively replace each `<p`...`>`, `</p`...`>`, and `<br`...`>`
+       with a line break
+    3. Remove all other `<`...`>` tags
+    4. Replace each `&lt;` with `<` and `&gt;` with `>`
+    5. Replace each `&amp;` with `&`
 
 label: 'Media type'
 

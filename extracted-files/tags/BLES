@@ -10,7 +10,7 @@ standard tag: BLES
 
 specification:
   - Blessing
-  - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
+  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - blessing
   - Bestowing divine care or intercession. Sometimes given in connection with a
     naming ceremony.

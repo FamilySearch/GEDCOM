@@ -10,7 +10,7 @@ standard tag: FORM
 
 specification:
   - Format
-  - The media type of the file referenced by the superstructure.
+  - The [media type] of the file referenced by the superstructure.
 
 label: 'Format'
 

@@ -9,8 +9,8 @@ uri: https://gedcom.io/terms/v7/enum-1
 standard tag: '1'
 
 specification:
-  - Questionable reliability of evidence (interviews, census, oral genealogies,
-    or potential for bias, such as an autobiography)
+  - Questionable reliability of evidence (interviews, census, oral genealogies, or
+    potential for bias, such as an autobiography)
 
 value of:
   - "https://gedcom.io/terms/v7/enumset-QUAY"

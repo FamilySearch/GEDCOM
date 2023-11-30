@@ -10,7 +10,7 @@ standard tag: NCHI
 
 specification:
   - Number of children
-  - A Family Attribute. See also FAMILY_ATTRIBUTE_STRUCTURE.
+  - A [Family Attribute]. See also `FAMILY_ATTRIBUTE_STRUCTURE`.
   - number of children
   - The number of children that belong to this family.
 

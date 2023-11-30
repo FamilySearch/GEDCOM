@@ -11,48 +11,54 @@ standard tag: TRAN
 specification:
   - Translation
   - |
-    A type of TRAN for external media files. Each
-    https://gedcom.io/terms/v7/NOTE-TRAN must have a FORM substructure. See
-    also FILE.
+    A type of `TRAN` for external media files. Each
+    `https://gedcom.io/terms/v7/NOTE-TRAN` must have a `FORM` substructure. See
+    also `FILE` and the [File Path datatype].
+    
+    <div class="example">
     
     If an mp3 audio file has been transcoded as an ogg file and a timestamped
     transcript has been extracted as a WebVTT file, the resulting set of files
     might be presented as follows:
     
-        0 @EX@ OBJE
-        1 FILE media/original.mp3
-        2 FORM audio/mp3
-        2 TRAN media/derived.oga
-        3 FORM audio/ogg
-        2 TRAN media/transcript.vtt
-        3 FORM text/vtt
+    ```gedcom
+    0 @EX@ OBJE
+    1 FILE media/original.mp3
+    2 FORM audio/mp3
+    2 TRAN media/derived.oga
+    3 FORM audio/ogg
+    2 TRAN media/transcript.vtt
+    3 FORM text/vtt
+    ```
     
-    Note that FILE.TRAN refers to translation to a different digital format,
+    </div>
+    
+    Note that `FILE`.`TRAN` refers to translation to a different digital format,
     not to translation to a different human language. Files that differ in the
-    human language of their content should each be given their own FILE
+    human language of their content should each be given their own `FILE`
     structure.
   - |
-    A representation of the superstructure’s data in a different format.
+    A representation of the superstructure's data in a different format.
     
     In some situations it is desirable to provide the same semantic content in
-    multiple formats. Where this is desirable, a TRAN substructure is used,
-    where the specific format is given in its language tag substructure, media
-    type substructure, or both.
+    multiple formats. Where this is desirable, a `TRAN` substructure is used, where
+    the specific format is given in its language tag substructure, media type
+    substructure, or both.
     
-    Different TRAN structures are used in different contexts to fully capture
-    the structure of the information being presented in multiple formats. In
-    all cases, a TRAN structure’s payload and substructures should provide only
-    information also contained in the TRAN structures’ superstructure, but
-    provide it in a new language, script, or media type.
+    Different `TRAN` structures are used in different contexts to fully capture the
+    structure of the information being presented in multiple formats. In all cases,
+    a `TRAN` structure's payload and substructures should provide only information
+    also contained in the `TRAN` structures' superstructure, but provide it in a
+    new language, script, or media type.
     
-    Each TRAN substructure must have either a language tag or a media type or
-    both. Each TRAN structure must differ from its superstructure and from
-    every other TRAN substructure of its superstructure in either its language
-    tag or its media type or both.
+    Each `TRAN` substructure must have either a language tag or a media type or
+    both. Each `TRAN` structure must differ from its superstructure and from every
+    other `TRAN` substructure of its superstructure in either its language tag or
+    its media type or both.
 
 label: 'Translation'
 
-payload: http://www.w3.org/2001/XMLSchema#string
+payload: https://gedcom.io/terms/v7/type-FilePath
 
 substructures:
   "https://gedcom.io/terms/v7/FORM": "{1:1}"

@@ -71,7 +71,7 @@ https://gedcom.io/terms/v7/ADOP-FAMC	@<https://gedcom.io/terms/v7/record-FAM>@
 https://gedcom.io/terms/v7/FAMS	@<https://gedcom.io/terms/v7/record-FAM>@
 https://gedcom.io/terms/v7/FAX	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/FCOM	Y|<NULL>
-https://gedcom.io/terms/v7/FILE	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7/FILE	https://gedcom.io/terms/v7/type-FilePath
 https://gedcom.io/terms/v7/FORM	http://www.w3.org/ns/dcat#mediaType
 https://gedcom.io/terms/v7/PLAC-FORM	https://gedcom.io/terms/v7/type-List#Text
 https://gedcom.io/terms/v7/HEAD-PLAC-FORM	https://gedcom.io/terms/v7/type-List#Text
@@ -165,7 +165,7 @@ https://gedcom.io/terms/v7/TOP	http://www.w3.org/2001/XMLSchema#nonNegativeInteg
 https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/type-Name
 https://gedcom.io/terms/v7/PLAC-TRAN	https://gedcom.io/terms/v7/type-List#Text
 https://gedcom.io/terms/v7/NOTE-TRAN	http://www.w3.org/2001/XMLSchema#string
-https://gedcom.io/terms/v7/FILE-TRAN	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7/FILE-TRAN	https://gedcom.io/terms/v7/type-FilePath
 https://gedcom.io/terms/v7/TRLR	
 https://gedcom.io/terms/v7/TYPE	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/NAME-TYPE	https://gedcom.io/terms/v7/type-Enum

@@ -10,12 +10,11 @@ standard tag: EVEN
 
 specification:
   - Event
-  - An enumerated value from set https://gedcom.io/terms/v7/enumset-EVENATTR
-    indicating the type of event or attribute which was responsible for the
-    source entry being recorded. For example, if the entry was created to
-    record a birth of a child, then the type would be BIRT regardless of the
-    assertions made from that record, such as the mother’s name or mother’s
-    birth date.
+  - An enumerated value from set `https://gedcom.io/terms/v7/enumset-EVENATTR`
+    indicating the type of event or attribute which was responsible for the source
+    entry being recorded. For example, if the entry was created to record a birth
+    of a child, then the type would be `BIRT` regardless of the assertions made
+    from that record, such as the mother's name or mother's birth date.
 
 label: 'Event'
 

@@ -10,7 +10,7 @@ standard tag: NAME
 
 specification:
   - Name
-  - The name of the superstructure’s subject, represented as a simple string.
+  - The name of the superstructure's subject, represented as a simple string.
 
 label: 'Name'
 

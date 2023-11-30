@@ -11,14 +11,14 @@ standard tag: BURI
 specification:
   - Depositing remains
   - |
-    An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
+    An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
     
-    Although defined as any depositing of remains since it was introduced in
-    the first version of GEDCOM, this tag is a shortened form of the English
-    word “burial” and has been interpreted to mean “depositing of remains by
-    burial” by some applications and users. In the absence of a clarifying TYPE
-    substructure it is likely, but not guaranteed, that a BURI structure refers
-    to a burial rather than another form of depositing remains.
+    Although defined as any depositing of remains since it was introduced in the
+    first version of GEDCOM, this tag is a shortened form of the English word
+    "burial" and has been interpreted to mean "depositing of remains by burial" by
+    some applications and users. In the absence of a clarifying `TYPE` substructure
+    it is likely, but not guaranteed, that a `BURI` structure refers to a burial
+    rather than another form of depositing remains.
   - depositing remains
   - Depositing the mortal remains of a deceased person.
 

@@ -12,15 +12,15 @@ specification:
   - Restriction
   - |
     A [List] of enumerated values from set
-    https://gedcom.io/terms/v7/enumset-RESN signifying access to information
-    may be denied or otherwise restricted.
+    `https://gedcom.io/terms/v7/enumset-RESN` signifying access to information may
+    be denied or otherwise restricted.
     
-    The RESN structure is provided to assist software in filtering data that
+    The `RESN` structure is provided to assist software in filtering data that
     should not be exported or otherwise used in a particular context. It is
-    recommended that tools provide an interface to allow users to filter data
-    on export such that certain RESN structure payload entries result in the
-    RESN structure and its superstructure being removed from the export. Such
-    removal must abide by some constraints: see Removing data for more.
+    recommended that tools provide an interface to allow users to filter data on
+    export such that certain `RESN` structure payload entries result in the `RESN`
+    structure and its superstructure being removed from the export. Such removal
+    must abide by some constraints: see [Removing data] for more details.
     
     This is metadata about the structure itself, not data about its subject.
 

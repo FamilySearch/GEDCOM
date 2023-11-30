@@ -10,26 +10,33 @@ standard tag: ASSO
 
 specification:
   - Associates
-  - A pointer to an associated individual. See ASSOCIATION_STRUCTURE for more.
+  - A pointer to an associated individual. See `ASSOCIATION_STRUCTURE` for more
+    details.
   - |
-    An individual associated with the subject of the superstructure. The nature
-    of the association is indicated in the ROLE substructure.
+    An individual associated with the subject of the superstructure. The nature of
+    the association is indicated in the `ROLE` substructure.
     
-    A voidPtr and PHRASE can be used to describe associations to people not
-    referenced by any INDI record.
+    A `voidPtr` and `PHRASE` can be used to describe associations to people not
+    referenced by any `INDI` record.
     
-    The following indicates that “Mr Stockdale” was the individual’s teacher
-    and that individual @I2@ was the clergy officiating at their baptism.
+    <div class="example">
     
-        0 @I1@ INDI
-        1 ASSO @VOID@
-        2 PHRASE Mr Stockdale
-        2 ROLE OTHER
-        3 PHRASE Teacher
-        1 BAPM
-        2 DATE 1930
-        2 ASSO @I2@
-        3 ROLE CLERGY
+    The following indicates that "Mr Stockdale" was the individual's teacher and
+    that individual `@I2@` was the clergy officiating at their baptism.
+    
+    ```gedcom
+    0 @I1@ INDI
+    1 ASSO @VOID@
+    2 PHRASE Mr Stockdale
+    2 ROLE OTHER
+    3 PHRASE Teacher
+    1 BAPM
+    2 DATE 1930
+    2 ASSO @I2@
+    3 ROLE CLERGY
+    ```
+    
+    </div>
 
 label: 'Associates'
 

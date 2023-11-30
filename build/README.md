@@ -9,6 +9,7 @@ This directory is used to convert the `specifications/gedcom.md` source file int
     - [weasyprint](https://weasyprint.org) installed by running `python3 -mpip install --user --upgrade weasyprint`
         - Note: version 52.5 was notably faster than later versions;
             `python3 -mpip install --user weasyprint==52.5` will install that version instead of the latest version.
+    - [mdformat_gfm](https://pypi.org/project/mdformat-gfm/) installed by running `python3 -mpip install --user --upgrade mdformat_gfm`
     - [git](https://git-scm.com/)
     - `make`-compatible executable
 

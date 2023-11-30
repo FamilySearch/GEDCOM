@@ -11,7 +11,7 @@ standard tag: HUSB
 specification:
   - Husband
   - A container for information relevant to the subject of the superstructure
-    specific to the individual described by the associated FAM’s HUSB
+    specific to the individual described by the associated `FAM`'s `HUSB`
     substructure.
 
 label: 'Husband'
