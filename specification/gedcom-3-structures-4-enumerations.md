@@ -25,21 +25,6 @@ Each set of enumeration values has its own URI.
 | `SKY` | Placed on a burial tree, mountain, or other open place to be excarnated |
 | `OTHER` | A value not listed here; should be paired with a `TYPE` structure |
 
-### `g7:enumset-EVEN`
-
-An event-type tag name, but not the generic `EVEN` tag.
-See [Events].
-
-Most values in this enumeration set use the same tag and URI as the corresponding event,
-except for tags used with different URIs for `FAM` vs `INDI`;
-these are given generic definitions with URIs constructed by concatenating
-`g7:enum-` to the enumeration value:
-
-| Value  | Meaning                                                |
-| :----- | :----------------------------------------------------- |
-| `CENS` | A census event; either `g7:INDI-CENS` or `g7:FAM-CENS` |
-
-
 ### `g7:enumset-EVENATTR`
 
 An event- or attribute-type tag name.
@@ -94,6 +79,31 @@ The value `ELECTRONIC` is deprecated and kept for backwards compatibility, but m
 Applications should instead use `ONLINE` for online content, or `DIGITAL` for offline content such as a CD-ROM
 or other digital storage medium.
 :::
+
+
+
+### `g7:enumset-NO` {.unlisted .unnumbered}
+
+This set contains various structure types, with the same tags and URIs used by the structure types:
+
+- All individual and family event types except `EVEN`
+
+- The personal name type `g7:INDI-NAME`
+
+- The name parts `g7:GIVN` and `g7:SURN`
+
+Values should be appropriate to the context of the containing structure,
+as described under `g7:NO`.
+
+Most values in this enumeration set use the same tag and URI as the corresponding event,
+except for tags used with different URIs for `FAM` vs `INDI`;
+these are given generic definitions with URIs constructed by concatenating
+`g7:enum-` to the enumeration value:
+
+| Value  | Meaning                                                |
+| :----- | :----------------------------------------------------- |
+| `CENS` | A census event; either `g7:INDI-CENS` or `g7:FAM-CENS` |
+
 
 ### `g7:enumset-PEDI`
 
