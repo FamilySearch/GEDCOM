@@ -303,6 +303,8 @@ def find_enumsets(txt):
 
 def tidy_markdown(md, indent, width=79):
     """
+    Makes markdown as readable as possible, and wraps and indents it to fit nicely in YAML.
+    
     The markdown files in the specification directory use the following Markdown dialect:
     
     Part of GFM:
@@ -321,19 +323,19 @@ def tidy_markdown(md, indent, width=79):
     - automatic links with `[name of section to link to]`
     - inline code with class `1 NO MARR`{.gedcom} (used only once)
     
-    pip install mdformat-gfm
+    The non-GFM parts are handled here by regular expressions which probably have some holes, but seem to work OK on the spec as it existing 2023-11-30.
     """
     global prefixes
     for k,v in prefixes.items():
         md = re.sub(r'\b'+k+':', v, md)
     
-    # for now ignoring YAML frontmatter
+    # for now ignoring YAML frontmatter as none of this code passes it into this fucntion
     md = re.sub(r':::(\S+)', r'<div class="\1">\n', md) # convert ::: divs to <div>s
     md = re.sub(r':::', '\n</div>', md) # convert ::: divs to <div>s
     md = re.sub(r'\]\([^\)]*\)({[^}]*})?', ']', md) # remove links
     md = re.sub(r'`{\.\S+\}', '`', md) # remove inline code classes
       
-    import mdformat
+    import mdformat # pip install mdformat-gfm
     out = mdformat.text(md, extensions={"gfm"}, options={"number":True, "wrap":width})
     
     return out.rstrip().replace('\n','\n'+' '*indent).replace('\[','[').replace('\]',']')
