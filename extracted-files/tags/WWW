@@ -11,8 +11,8 @@ standard tag: WWW
 specification:
   - Web address
   - |
-    A URL or other locator for a World Wide Web page, as defined by any
-    relevant standard such as whatwg/url, RFC 3986, RFC 3987, and so forth.
+    A URL or other locator for a World Wide Web page, as defined by any relevant
+    standard such as [whatwg/url], [RFC 3986], [RFC 3987], and so forth.
     
     If an invalid or no longer existing web address is present upon import, it
     should be preserved as-is on export.

@@ -12,17 +12,23 @@ specification:
   - Fact
   - |
     A noteworthy attribute or fact concerning an individual or family. If a
-    specific attribute type exists, it should be used instead of a generic FACT
-    structure. Each FACT must be classified by a subordinate use of the TYPE
-    tag and may be further described in the structure’s payload.
+    specific attribute type exists, it should be used instead of a generic `FACT`
+    structure. Each `FACT` must be classified by a subordinate use of the `TYPE`
+    tag and may be further described in the structure's payload.
     
-    If the attribute being defined was 1 of the person’s skills, such as
-    woodworking, the FACT tag would have the value of “Woodworking”, followed
-    by a subordinate TYPE tag with the value “Skills”.
+    <div class="example">
     
-        0 @I1@ INDI
-        1 FACT Woodworking
-        2 TYPE Skills
+    If the attribute being defined was 1 of the person's skills, such as
+    woodworking, the `FACT` tag would have the value of "Woodworking", followed by
+    a subordinate `TYPE` tag with the value "Skills".
+    
+    ```gedcom
+    0 @I1@ INDI
+    1 FACT Woodworking
+    2 TYPE Skills
+    ```
+    
+    </div>
 
 label: 'Fact'
 

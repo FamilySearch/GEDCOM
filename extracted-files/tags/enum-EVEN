@@ -9,8 +9,8 @@ uri: https://gedcom.io/terms/v7/enum-EVEN
 standard tag: EVEN
 
 specification:
-  - A generic event; either https://gedcom.io/terms/v7/INDI-EVEN or
-    https://gedcom.io/terms/v7/FAM-EVEN
+  - A generic event; either `https://gedcom.io/terms/v7/INDI-EVEN` or
+    `https://gedcom.io/terms/v7/FAM-EVEN`
 
 value of:
   - "https://gedcom.io/terms/v7/enumset-EVENATTR"

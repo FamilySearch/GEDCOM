@@ -11,13 +11,17 @@ standard tag: LONG
 specification:
   - Longitude
   - |
-    A longitudinal coordinate. The payload is either E (for a coordinate east
-    of the prime meridian) or W (for a coordinate west of the prime meridian)
-    followed by a decimal number of degrees. Minutes and seconds are not used
-    and should be converted to fractional degrees prior to encoding.
+    A longitudinal coordinate. The payload is either `E` (for a coordinate east of
+    the prime meridian) or `W` (for a coordinate west of the prime meridian)
+    followed by a decimal number of degrees. Minutes and seconds are not used and
+    should be converted to fractional degrees prior to encoding.
+    
+    <div class="example">
     
     168 degrees, 9 minutes, and 3.4 seconds East would be formatted as
-    E168.150944.
+    `E168.150944`.
+    
+    </div>
 
 label: 'Longitude'
 

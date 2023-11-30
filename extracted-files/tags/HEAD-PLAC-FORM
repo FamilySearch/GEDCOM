@@ -10,7 +10,7 @@ standard tag: FORM
 
 specification:
   - Format
-  - Any PLAC with no FORM shall be treated as if it has this FORM.
+  - Any `PLAC` with no [`FORM`] shall be treated as if it has this [`FORM`].
 
 label: 'Format'
 

@@ -10,7 +10,7 @@ standard tag: TIME
 
 specification:
   - Time
-  - A Time value in a 24-hour clock format.
+  - A `Time` value in a 24-hour clock format.
 
 label: 'Time'
 

@@ -11,28 +11,40 @@ standard tag: ROLE
 specification:
   - Role
   - |
-    An enumerated value from set https://gedcom.io/terms/v7/enumset-ROLE
-    indicating what role this person played in an event or person’s life.
+    An enumerated value from set `https://gedcom.io/terms/v7/enumset-ROLE`
+    indicating what role this person played in an event or person's life.
     
-    The following indicates a child’s birth record as the source of the
-    mother’s name:
+    <div class="example">
     
-        0 @I1@ INDI
-        1 NAME Mary //
-        2 SOUR @S1@
-        3 EVEN BIRT
-        4 ROLE MOTH
+    The following indicates a child's birth record as the source of the mother's
+    name:
     
-    The following indicates that a person’s best friend was a witness at their
+    ```gedcom
+    0 @I1@ INDI
+    1 NAME Mary //
+    2 SOUR @S1@
+    3 EVEN BIRT
+    4 ROLE MOTH
+    ```
+    
+    </div>
+    
+    <div class="example">
+    
+    The following indicates that a person's best friend was a witness at their
     baptism:
     
-        0 @I2@ INDI
-        1 ASSO @I3@
-        2 ROLE FRIEND
-        3 PHRASE best friend
-        1 BAPM
-        2 ASSO @I3@
-        3 ROLE WITN
+    ```gedcom
+    0 @I2@ INDI
+    1 ASSO @I3@
+    2 ROLE FRIEND
+    3 PHRASE best friend
+    1 BAPM
+    2 ASSO @I3@
+    3 ROLE WITN
+    ```
+    
+    </div>
 
 label: 'Role'
 

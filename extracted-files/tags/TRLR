@@ -10,7 +10,7 @@ standard tag: TRLR
 
 specification:
   - Trailer
-  - A pseudo-structure marking the end of a dataset. See The Header and Trailer
+  - A pseudo-structure marking the end of a dataset. See [The Header and Trailer]
     for more.
 
 label: 'Trailer'

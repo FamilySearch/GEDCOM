@@ -10,7 +10,7 @@ standard tag: FAMS
 
 specification:
   - Family spouse
-  - The family in which an individual appears as a partner. See FAM for more.
+  - The family in which an individual appears as a partner. See `FAM` for more.
 
 label: 'Family spouse'
 

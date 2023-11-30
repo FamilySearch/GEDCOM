@@ -11,10 +11,10 @@ standard tag: EVEN
 specification:
   - Event
   - A list of enumerated values from set
-    https://gedcom.io/terms/v7/enumset-EVENATTR indicating the types of events
-    that were recorded in a particular source. Each event type is separated by
-    a comma and space. For example, a parish register of births, deaths, and
-    marriages would be BIRT, DEAT, MARR.
+    `https://gedcom.io/terms/v7/enumset-EVENATTR` indicating the types of events
+    that were recorded in a particular source. Each event type is separated by a
+    comma and space. For example, a parish register of births, deaths, and
+    marriages would be `BIRT, DEAT, MARR`.
 
 label: 'Event'
 

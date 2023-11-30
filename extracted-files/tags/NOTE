@@ -11,13 +11,12 @@ standard tag: NOTE
 specification:
   - Note
   - |
-    A NOTE_STRUCTURE, containing additional information provided by the
-    submitter for understanding the enclosing data.
+    A `NOTE_STRUCTURE`, containing additional information provided by the submitter
+    for understanding the enclosing data.
     
-    When a substructure of HEAD, it should describe the contents of the
-    document in terms of “ancestors or descendants of” so that the person
-    receiving the data knows what genealogical information the document
-    contains.
+    When a substructure of `HEAD`, it should describe the contents of the document
+    in terms of "ancestors or descendants of" so that the person receiving the data
+    knows what genealogical information the document contains.
 
 label: 'Note'
 

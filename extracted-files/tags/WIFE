@@ -11,7 +11,7 @@ standard tag: WIFE
 specification:
   - Wife
   - A container for information relevant to the subject of the superstructure
-    specific to the individual described by the associated FAM’s WIFE
+    specific to the individual described by the associated `FAM`'s `WIFE`
     substructure.
 
 label: 'Wife'

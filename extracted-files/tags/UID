@@ -12,32 +12,36 @@ specification:
   - Unique Identifier
   - |
     A globally-unique identifier of the superstructure, to be preserved across
-    edits. If a globally-unique identifier for the record already exists, it
-    should be used without modification, not even whitespace or letter case
-    normalization. New globally unique identifiers should be created and
-    formatted as described in RFC 4122.
+    edits. If a globally-unique identifier for the record already exists, it should
+    be used without modification, not even whitespace or letter case normalization.
+    New globally unique identifiers should be created and formatted as described in
+    [RFC 4122].
     
     This is metadata about the structure itself, not data about its subject.
-    Multiple structures describing different aspects of the same subject would
-    have different UID values.
+    Multiple structures describing different aspects of the same subject would have
+    different `UID` values.
     
-    Because the UID identifies a structure, it can facilitate inter-tool
+    Because the `UID` identifies a structure, it can facilitate inter-tool
     collaboration by distinguishing between a structure being edited and a new
-    structure being created. If an application allows structures to be edited
-    in a way that completely changes their meaning (e.g., changing all the
-    contents of an INDI record to have it describe a completely different
-    person) then any UIDs should also be changed.
+    structure being created. If an application allows structures to be edited in a
+    way that completely changes their meaning (e.g., changing all the contents of
+    an `INDI` record to have it describe a completely different person) then any
+    `UID`s should also be changed.
     
-    Some systems used a 16-byte UUID with a custom 2-byte checksum for a total
-    of 18 bytes:
+    <div class="note">
     
-    -   checksum byte 1 = (sum of (byte_(i)) for i 1 through 16) mod 256
-    -   checksum byte 2 = (sum of ((16 − i) × (byte_(i))) for i 1 through 16)
-        mod 256
+    Some systems used a 16-byte UUID with a custom 2-byte checksum for a total of
+    18 bytes:
+    
+    - checksum byte 1 = (sum of (byte~*i*~) for *i* 1 through 16) mod 256
+    - checksum byte 2 = (sum of ((16 − *i*) × (byte~*i*~)) for *i* 1 through 16)
+      mod 256
     
     Use of checksums for UIDs is discouraged except in cases where error-prone
     input is expected and an appropriate action to take in case of an error is
     known.
+    
+    </div>
 
 label: 'Unique Identifier'
 

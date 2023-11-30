@@ -11,45 +11,81 @@ standard tag: PHRASE
 specification:
   - Phrase
   - |
-    Textual information that cannot be expressed in the superstructure due to
-    the limitations of its data type. A PHRASE may restate information
-    contained in the superstructure, but doing so is not recommended unless it
-    is needed for clarity.
+    Textual information that cannot be expressed in the superstructure due to the
+    limitations of its data type. A `PHRASE` may restate information contained in
+    the superstructure, but doing so is not recommended unless it is needed for
+    clarity.
     
-    A date interpreted from the phrase “The Feast of St John” might be
+    <div class="example">
     
-        2 DATE 24 JUN 1852
-        3 PHRASE During the feast of St John
+    A date interpreted from the phrase "The Feast of St John" might be
     
-    A record using 1648/9 to indicate a change in new year might become
+    ```gedcom
+    2 DATE 24 JUN 1852
+    3 PHRASE During the feast of St John
+    ```
     
-        2 DATE 30 JAN 1649
-        3 PHRASE 30th of January, 1648/9
+    </div>
     
-    A record using 1648/9 to indicate uncertainty in the year might become
+    <div class="example">
     
-        2 DATE BET 1648 AND 1649
-        3 PHRASE 1648/9
+    A record using `1648/9` to indicate a change in new year might become
     
-    A record using Q1 1867 to indicate an event occurred sometime within the
+    ```gedcom
+    2 DATE 30 JAN 1649
+    3 PHRASE 30th of January, 1648/9
+    ```
+    
+    </div>
+    
+    <div class="example">
+    
+    A record using `1648/9` to indicate uncertainty in the year might become
+    
+    ```gedcom
+    2 DATE BET 1648 AND 1649
+    3 PHRASE 1648/9
+    ```
+    
+    </div>
+    
+    <div class="example">
+    
+    A record using `Q1 1867` to indicate an event occurred sometime within the
     first quarter of 1867 might become
     
-        2 DATE BET 1 JAN 1867 AND 31 MAR 1867
-        3 PHRASE Q1 1867
+    ```gedcom
+    2 DATE BET 1 JAN 1867 AND 31 MAR 1867
+    3 PHRASE Q1 1867
+    ```
+    
+    </div>
+    
+    <div class="example">
     
     A record defining the Maid of Honor in a marriage might become
     
-        1 MARR
-        2 ASSO @I2@
-        3 ROLE OTHER
-        4 PHRASE Maid of Honor
+    ```gedcom
+    1 MARR
+    2 ASSO @I2@
+    3 ROLE OTHER
+    4 PHRASE Maid of Honor
+    ```
+    
+    </div>
+    
+    <div class="example">
     
     A name given to a foundling orphan might be
     
-        1 NAME Mary //
-        2 GIVN Mary
-        2 TYPE OTHER
-        3 PHRASE given by orphanage
+    ```gedcom
+    1 NAME Mary //
+    2 GIVN Mary
+    2 TYPE OTHER
+    3 PHRASE given by orphanage
+    ```
+    
+    </div>
 
 label: 'Phrase'
 

@@ -11,59 +11,67 @@ standard tag: FAM
 specification:
   - Family record
   - |
-    See FAMILY_RECORD
+    See `FAMILY_RECORD`
     
-    The common case is that each couple has one FAM record, but that is not
+    <div class="note">
+    
+    The common case is that each couple has one `FAM` record, but that is not
     always the case.
     
-    A couple that separates and then gets together again can be represented
-    either as a single FAM with multiple events (MARR, DIV, etc.) or as a
-    separate FAM for each time together. Some user interfaces may display these
-    two in different ways and the two admit different semantics in sourcing. A
-    single FAM with two MARR with distinct dates might also represent
-    uncertainty about dates and a pair of FAM with same spouses might also be
-    the result of merging multiple files.
+    A couple that separates and then gets together again can be represented either
+    as a single `FAM` with multiple events (`MARR`, `DIV`, etc.) or as a separate
+    `FAM` for each time together. Some user interfaces may display these two in
+    different ways and the two admit different semantics in sourcing. A single
+    `FAM` with two `MARR` with distinct dates might also represent uncertainty
+    about dates and a pair of `FAM` with same spouses might also be the result of
+    merging multiple files.
     
     Implementers should support both representations, and should choose between
-    them based on user input or other context beyond that provided in the
-    datasets themselves.
+    them based on user input or other context beyond that provided in the datasets
+    themselves.
+    
+    </div>
   - |
-    The FAM record was originally structured to represent families where a male
-    HUSB (husband or father) and female WIFE (wife or mother) produce CHIL
-    (children). The FAM record may also be used for cultural parallels to this,
-    including nuclear families, marriage, cohabitation, fostering, adoption,
-    and so on, regardless of the gender of the partners. Sex, gender, titles,
-    and roles of partners should not be inferred based on the partner that the
-    HUSB or WIFE structure points to.
+    The `FAM` record was originally structured to represent families where a male
+    `HUSB` (husband or father) and female `WIFE` (wife or mother) produce `CHIL`
+    (children). The `FAM` record may also be used for cultural parallels to this,
+    including nuclear families, marriage, cohabitation, fostering, adoption, and so
+    on, regardless of the gender of the partners. Sex, gender, titles, and roles of
+    partners should not be inferred based on the partner that the `HUSB` or `WIFE`
+    structure points to.
     
-    The individuals pointed to by the HUSB and WIFE are collectively referred
-    to as “partners”, “parents” or “spouses”.
+    The individuals pointed to by the `HUSB` and `WIFE` are collectively referred
+    to as "partners", "parents" or "spouses".
     
-    Some displays may be unable to display more than 2 partners. Displays may
-    use HUSB and WIFE as layout hints, for example, by consistently displaying
-    the HUSB on the same side of the WIFE in a tree view. Family structures
-    with more than 2 partners may either use several FAM records or use
-    ASSOCIATION_STRUCTUREs to indicate additional partners.
+    Some displays may be unable to display more than 2 partners. Displays may use
+    `HUSB` and `WIFE` as layout hints, for example, by consistently displaying the
+    `HUSB` on the same side of the `WIFE` in a tree view. Family structures with
+    more than 2 partners may either use several `FAM` records or use
+    `ASSOCIATION_STRUCTURE`s to indicate additional partners.
     
-    The FAM record will be revised in a future version to more fully express
-    the diversity of human family relationships.
+    <div class="note">
     
-    The order of the CHIL (children) pointers within a FAM (family) structure
-    should be chronological by birth; this is an exception to the usual “most
-    preferred value first” rule. A CHIL with a voidPtr indicates a placeholder
+    The `FAM` record will be revised in a future version to more fully express the
+    diversity of human family relationships.
+    
+    </div>
+    
+    The order of the `CHIL` (children) pointers within a `FAM` (family) structure
+    should be chronological by birth; this is an exception to the usual "most
+    preferred value first" rule. A `CHIL` with a `voidPtr` indicates a placeholder
     for an unknown child in this birth order.
     
-    If a FAM record uses HUSB or WIFE to point to an INDI record, the INDI
-    record must use FAMS to point to the FAM record. If a FAM record uses CHIL
-    to point to an INDI record, the INDI record must use a FAMC to point to the
-    FAM record.
+    If a `FAM` record uses `HUSB` or `WIFE` to point to an `INDI` record, the
+    `INDI` record must use `FAMS` to point to the `FAM` record. If a `FAM` record
+    uses `CHIL` to point to an `INDI` record, the `INDI` record must use a `FAMC`
+    to point to the `FAM` record.
     
-    An INDI record should not have multiple FAMS substructures pointing to the
-    same FAM.
+    An `INDI` record should not have multiple `FAMS` substructures pointing to the
+    same `FAM`.
     
-    A FAM record should not have multiple CHIL substructures pointing to the
-    same INDI; doing so implies a nonsensical birth order. An INDI record may
-    have multiple FAMC substructures pointing to the same FAM, but doing so is
+    A `FAM` record should not have multiple `CHIL` substructures pointing to the
+    same `INDI`; doing so implies a nonsensical birth order. An `INDI` record may
+    have multiple `FAMC` substructures pointing to the same `FAM`, but doing so is
     not recommended.
 
 label: 'Family record'

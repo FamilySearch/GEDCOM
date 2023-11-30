@@ -9,8 +9,8 @@ uri: https://gedcom.io/terms/v7/enum-RESI
 standard tag: RESI
 
 specification:
-  - A residence attribute; either https://gedcom.io/terms/v7/INDI-RESI or
-    https://gedcom.io/terms/v7/FAM-RESI
+  - A residence attribute; either `https://gedcom.io/terms/v7/INDI-RESI` or
+    `https://gedcom.io/terms/v7/FAM-RESI`
 
 value of:
   - "https://gedcom.io/terms/v7/enumset-EVENATTR"

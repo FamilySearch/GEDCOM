@@ -11,47 +11,52 @@ standard tag: TRAN
 specification:
   - Translation
   - |
-    A type of TRAN for unstructured human-readable text, such as is found in
-    NOTE and SNOTE payloads. Each https://gedcom.io/terms/v7/NOTE-TRAN must
-    have either a LANG substructure or a MIME substructure or both. If either
+    A type of `TRAN` for unstructured human-readable text, such as is found in
+    `NOTE` and `SNOTE` payloads. Each `https://gedcom.io/terms/v7/NOTE-TRAN` must
+    have either a `LANG` substructure or a `MIME` substructure or both. If either
     is missing, it is assumed to have the same value as the superstructure. See
-    also NOTE and SNOTE.
+    also `NOTE` and `SNOTE`.
     
-    The following presents the same note in HTML-format English; in plain-text
-    with the same language as the superstructure (English); and in Spanish with
-    the same media type as the superstructure (HTML).
+    <div class="example">
     
-        1 NAME Arete /Hernandez/
-        2 NOTE Named after Arete from <i>The Odyssey</i>
-        3 LANG en
-        3 MIME text/html
-        3 TRAN Named after Arete from "The Odyssey"
-        4 MIME text/plain
-        3 TRAN Nombrada en honor a Arete de <i>La Odisea</i>
-        4 LANG es
+    The following presents the same note in HTML-format English; in plain-text with
+    the same language as the superstructure (English); and in Spanish with the same
+    media type as the superstructure (HTML).
     
-    It is recommended that text given in text/html should only be translated
-    into text/plain if the resulting text is different from the text created by
-    the HTML-to-text conversion process defined in
-    https://gedcom.io/terms/v7/MIME.
+    ```gedcom
+    1 NAME Arete /Hernandez/
+    2 NOTE Named after Arete from <i>The Odyssey</i>
+    3 LANG en
+    3 MIME text/html
+    3 TRAN Named after Arete from "The Odyssey"
+    4 MIME text/plain
+    3 TRAN Nombrada en honor a Arete de <i>La Odisea</i>
+    4 LANG es
+    ```
+    
+    </div>
+    
+    It is recommended that text given in `text/html` should only be translated into
+    `text/plain` if the resulting text is different from the text created by the
+    HTML-to-text conversion process defined in `https://gedcom.io/terms/v7/MIME`.
   - |
-    A representation of the superstructure’s data in a different format.
+    A representation of the superstructure's data in a different format.
     
     In some situations it is desirable to provide the same semantic content in
-    multiple formats. Where this is desirable, a TRAN substructure is used,
-    where the specific format is given in its language tag substructure, media
-    type substructure, or both.
+    multiple formats. Where this is desirable, a `TRAN` substructure is used, where
+    the specific format is given in its language tag substructure, media type
+    substructure, or both.
     
-    Different TRAN structures are used in different contexts to fully capture
-    the structure of the information being presented in multiple formats. In
-    all cases, a TRAN structure’s payload and substructures should provide only
-    information also contained in the TRAN structures’ superstructure, but
-    provide it in a new language, script, or media type.
+    Different `TRAN` structures are used in different contexts to fully capture the
+    structure of the information being presented in multiple formats. In all cases,
+    a `TRAN` structure's payload and substructures should provide only information
+    also contained in the `TRAN` structures' superstructure, but provide it in a
+    new language, script, or media type.
     
-    Each TRAN substructure must have either a language tag or a media type or
-    both. Each TRAN structure must differ from its superstructure and from
-    every other TRAN substructure of its superstructure in either its language
-    tag or its media type or both.
+    Each `TRAN` substructure must have either a language tag or a media type or
+    both. Each `TRAN` structure must differ from its superstructure and from every
+    other `TRAN` substructure of its superstructure in either its language tag or
+    its media type or both.
 
 label: 'Translation'
 
