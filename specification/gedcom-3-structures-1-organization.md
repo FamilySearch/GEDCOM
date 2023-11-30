@@ -424,6 +424,7 @@ n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
   +1 <<SOURCE_REPOSITORY_CITATION>>        {0:M}
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
+  +1 <<SOURCE_CITATION>>                   {0:M}
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 <<CHANGE_DATE>>                       {0:1}
   +1 <<CREATION_DATE>>                     {0:1}
@@ -432,6 +433,10 @@ n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
 A source record describes an entire source.
 A source may also point to `REPO`s to describe repositories or archives where the source document may be found.
 The part of a source relevant to a specific fact, such as a specific page or entry, is indicated in a `SOURCE_CITATION` that points to the source record.
+
+The source record may itself contain a `SOURCE_CITATION` for a source from which the present
+source was derived.  For example, if the source is a translation of another source, then the
+`SOURCE_CITATION` might reference the original source.
 
 :::note
 This sourcing model is known to be insufficient for some use cases and may be refined in a future version of this specification.
@@ -1188,6 +1193,7 @@ This specification does not support places where a region name contains a comma.
 ```gedstruct
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
+  +1 <<SOURCE_CITATION>>                   {0:M}
   +1 PAGE <Text>                           {0:1}  g7:PAGE
   +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 <<DATE_VALUE>>                     {0:1}
@@ -1218,6 +1224,10 @@ It is recommended that every `SOURCE_CITATION` point to a `SOURCE_RECORD`.
 However, a `voidPtr` can be used with the citation text in a `PAGE` substructure.
 The `PAGE` is defined to express a "specific location within the information referenced;"
 with a `voidPtr` there is no information referenced, so the `PAGE` may describe the entire source.
+
+A `SOUR`.`SOUR` allows indicating a source citation for a cited source from which the
+present information was derived. For example, if the source is an index that cites where
+the original record is located, then the `SOUR`.`SOUR` would contain the location cited by the index.
 
 A `SOURCE_CITATION` can contain a `NOTE_STRUCTURE`, which in turn can contain a `SOURCE_CITATION`, allowing potentially unbounded nesting of structures. Because each dataset is finite, this nesting is also guaranteed to be finite.
 
