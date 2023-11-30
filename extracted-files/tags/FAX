@@ -11,7 +11,7 @@ standard tag: FAX
 specification:
   - Facsimile
   - A fax telephone number appropriate for sending data facsimiles. See `PHON` for
-    more.
+    additional comments on telephone numbers.
 
 label: 'Facsimile'
 

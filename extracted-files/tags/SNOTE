@@ -11,7 +11,7 @@ standard tag: SNOTE
 specification:
   - Shared note
   - A pointer to a note that is shared by multiple structures. See `NOTE_STRUCTURE`
-    for more.
+    for more details.
 
 label: 'Shared note'
 

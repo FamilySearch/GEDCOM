@@ -11,7 +11,7 @@ standard tag: SUBM
 specification:
   - Submitter
   - A description of a contributor of information to the document. See
-    `SUBMITTER_RECORD` for more.
+    `SUBMITTER_RECORD` for more details.
   - The submitter record identifies an individual or organization that contributed
     information contained in the dataset. All records in the document are assumed
     to be contributed by the submitter referenced in the `HEAD`, unless a `SUBM`

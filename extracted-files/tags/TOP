@@ -11,7 +11,7 @@ standard tag: TOP
 specification:
   - Top crop width
   - A number of pixels to not display from the top side of the image. See `CROP`
-    for more.
+    for more details.
 
 label: 'Top crop width'
 

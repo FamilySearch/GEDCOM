@@ -13,11 +13,12 @@ specification:
   - |
     The second line of the address, used for indexing. This structure's payload
     should be a single line of text equal to the second line of the corresponding
-    `ADDR`. See `ADDRESS_STRUCTURE` for more.
+    `ADDR`. See `ADDRESS_STRUCTURE` for more details.
     
     <div class="deprecation">
     
-    `ADR2` should not be added to new files; see `ADDRESS_STRUCTURE` for more.
+    `ADR2` should not be added to new files; see `ADDRESS_STRUCTURE` for more
+    details.
     
     </div>
 

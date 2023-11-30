@@ -11,7 +11,8 @@ standard tag: CHAN
 specification:
   - Change
   - The most recent change to the superstructure. This is metadata about the
-    structure itself, not data about its subject. See `CHANGE_DATE` for more.
+    structure itself, not data about its subject. See `CHANGE_DATE` for more
+    details.
   - |
     The date of the most recent modification of the superstructure, optionally with
     notes about that modification.

@@ -10,7 +10,8 @@ standard tag: ASSO
 
 specification:
   - Associates
-  - A pointer to an associated individual. See `ASSOCIATION_STRUCTURE` for more.
+  - A pointer to an associated individual. See `ASSOCIATION_STRUCTURE` for more
+    details.
   - |
     An individual associated with the subject of the superstructure. The nature of
     the association is indicated in the `ROLE` substructure.

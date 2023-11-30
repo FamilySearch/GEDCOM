@@ -19,7 +19,7 @@ specification:
     
     A single individual may have facts distributed across multiple individual
     records, connected by `ALIA` (alias, in the computing sense not the pseudonym
-    sense) pointers. See `ALIA` for more.
+    sense) pointers. See `ALIA` for more details.
     
     Individual records are linked to Family records by use of bi-directional
     pointers. Details about those links are stored as substructures of the pointers

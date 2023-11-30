@@ -11,7 +11,7 @@ standard tag: SCHMA
 specification:
   - Extension schema
   - A container for storing meta-information about the extension tags used in this
-    document. See [Extensions] for more.
+    document. See [Extensions] for more details.
 
 label: 'Extension schema'
 

@@ -10,7 +10,7 @@ standard tag: SOUR
 
 specification:
   - Source
-  - A description of an entire source. See `SOURCE_RECORD` for more.
+  - A description of an entire source. See `SOURCE_RECORD` for more details.
   - |
     A source record describes an entire source. A source may also point to `REPO`s
     to describe repositories or archives where the source document may be found.

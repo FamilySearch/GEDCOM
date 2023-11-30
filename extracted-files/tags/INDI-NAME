@@ -33,7 +33,7 @@ specification:
     A `TYPE` is used to specify the particular variation that this name is. For
     example; it could indicate that this name is a name taken at immigration or
     that it could be an ‘also known as’ name. See
-    `https://gedcom.io/terms/v7/enumset-NAME-TYPE` for more.
+    `https://gedcom.io/terms/v7/enumset-NAME-TYPE` for more details.
     
     <div class="note">
     

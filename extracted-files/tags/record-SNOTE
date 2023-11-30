@@ -10,8 +10,8 @@ standard tag: SNOTE
 
 specification:
   - Shared note
-  - A note that is shared by multiple structures. See `SHARED_NOTE_RECORD` for
-    more.
+  - A note that is shared by multiple structures. See `SHARED_NOTE_RECORD` for more
+    details.
   - |
     A catch-all location for information that does not fully fit within other
     structures. It may include research notes, additional context, alternative

@@ -11,7 +11,7 @@ standard tag: TAG
 specification:
   - Extension tag
   - Information relating to a single extension tag as used in this document. See
-    [Extensions] for more.
+    [Extensions] for more details.
 
 label: 'Extension tag'
 

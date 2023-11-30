@@ -13,7 +13,7 @@ specification:
   - |
     An identifier for the subject of the superstructure. The identifier is
     maintained by some external authority; the authority owning the identifier is
-    provided in the TYPE substructure; see `EXID`.`TYPE` for more.
+    provided in the TYPE substructure; see `EXID`.`TYPE` for more details.
     
     Depending on the maintaining authority, an `EXID` may be a unique identifier
     for the subject, an identifier for 1 of several views of the subject, or an

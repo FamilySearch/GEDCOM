@@ -11,7 +11,7 @@ standard tag: SOUR
 specification:
   - Source
   - A description of the relevant part of a source to support the superstructure's
-    data. See `SOURCE_CITATION` for more.
+    data. See `SOURCE_CITATION` for more details.
   - |
     A citation indicating that the pointed-to source record supports the claims
     made in the superstructure. Substructures provide additional information about
