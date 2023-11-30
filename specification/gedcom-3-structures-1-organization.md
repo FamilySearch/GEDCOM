@@ -560,6 +560,7 @@ Because this refers to the initial creation, it should not be modified after the
 ```gedstruct
 n DATE <DateValue>                         {1:1}  g7:DATE
   +1 TIME <Time>                           {0:1}  g7:TIME
+     +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 ```
 
