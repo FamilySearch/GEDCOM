@@ -1224,9 +1224,9 @@ However, a `voidPtr` can be used with the citation text in a `PAGE` substructure
 The `PAGE` is defined to express a "specific location within the information referenced;"
 with a `voidPtr` there is no information referenced, so the `PAGE` may describe the entire source.
 
-A `PAGE`.`SOUR` allows indicating a source citation for a cited source from which the
+A `SOUR`.`SOUR` allows indicating a source citation for a cited source from which the
 present information was derived. For example, if the source is an index that cites where
-the original record is located, then the `PAGE`.`SOUR` would contain the location cited by the index.
+the original record is located, then the `SOUR`.`SOUR` would contain the location cited by the index.
 
 A `SOURCE_CITATION` can contain a `NOTE_STRUCTURE`, which in turn can contain a `SOURCE_CITATION`, allowing potentially unbounded nesting of structures. Because each dataset is finite, this nesting is also guaranteed to be finite.
 
