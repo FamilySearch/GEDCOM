@@ -815,9 +815,9 @@ Individual attribute structures vary as follows:
 #### `INDIVIDUAL_EVENT_DETAIL` :=
 
 ```gedstruct
-n <<EVENT_DETAIL>>                         {1:1}
 n AGE <Age>                                {0:1}  g7:AGE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
+n <<EVENT_DETAIL>>                         {1:1}
 ```
 
 Substructures shared by most individual events and attributes.
