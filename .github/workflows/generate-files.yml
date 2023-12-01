@@ -39,6 +39,14 @@ jobs:
         export MD_FILES=$(ls ${{ env.SPECDIR }}gedcom*.md | sort)
         python3 extract-grammars.py ${MD_FILES} ${{ env.EXTDIR }}
 
+    - name: set git config
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        git config --global user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
+        git config --global user.name "$(gh api /users/${GITHUB_ACTOR} | jq .name -r)"
+        git config -l
+
     - name: Create GEDCOM Pull Request
       run: |
         git add extracted-files
