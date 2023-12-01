@@ -24,6 +24,7 @@ jobs:
       SPECDIR: ../specification/
       EXTDIR: ../extracted-files/
 
+    steps:
     - name: Checkout GEDCOM
       uses: actions/checkout@v4
 
