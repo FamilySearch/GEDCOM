@@ -68,6 +68,7 @@ def find_cat_tables(txt, g7, tagsets):
             pfx = bit.group(1)+enum
             if 'The URI of this' in meaning:
                 meaning, tail = meaning.split('The URI of this')
+                if meaning.endswith('<br/>'): meaning = meaning[:-5]
                 pfx = tail.split('`')[1]
             meaning = hard_code.get(pfx,meaning)
             if len(header) > 2:
