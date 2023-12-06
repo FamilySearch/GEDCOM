@@ -37,11 +37,11 @@ these are given generic definitions with URIs constructed by concatenating
 
 | Value  | Meaning                                                |
 | :----- | :----------------------------------------------------- |
-| `CENS` | A census event; either `g7:INDI-CENS` or `g7.1:FAM-CENS` |
-| `NCHI` | A count of children; either `g7:INDI-NCHI` or `g7.1:FAM-NCHI` |
-| `RESI` | A residence attribute; either `g7:INDI-RESI` or `g7.1:FAM-RESI` |
-| `FACT` | A generic attribute; either `g7:INDI-FACT` or `g7.1:FAM-FACT` |
-| `EVEN` | A generic event; either `g7:INDI-EVEN` or `g7:FAM-EVEN` |
+| `CENS` | A census event; either `g7.1:INDI-CENS` or `g7.1:FAM-CENS` |
+| `NCHI` | A count of children; either `g7.1:INDI-NCHI` or `g7.1:FAM-NCHI` |
+| `RESI` | A residence attribute; either `g7.1:INDI-RESI` or `g7.1:FAM-RESI` |
+| `FACT` | A generic attribute; either `g7.1:INDI-FACT` or `g7.1:FAM-FACT` |
+| `EVEN` | A generic event; either `g7.1:INDI-EVEN` or `g7.1:FAM-EVEN` |
 
 ### `g7.1:enumset-MARR-KIND`
 

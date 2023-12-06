@@ -54,7 +54,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
     and the `CREATION_DATE` rule begins
 
     ````gedstruct
-    n CREA                                     {1:1}  g7:CREA
+    n CREA                                     {1:1}  g7.1:CREA
     ````
     
     Thus, a `FAM` record has an optional singular `CREA` substructure
@@ -129,12 +129,12 @@ n <<SUBMITTER_RECORD>>                     {1:1}
 #### `HEADER` :=
 
 ```gedstruct
-n HEAD                                     {1:1}  g7:HEAD
+n HEAD                                     {1:1}  g7.1:HEAD
   +1 GEDC                                  {1:1}  g7:GEDC
      +2 VERS <Special>                     {1:1}  g7:GEDC-VERS
   +1 SCHMA                                 {0:1}  g7:SCHMA
      +2 TAG <Special>                      {0:M}  g7:TAG
-  +1 SOUR <Special>                        {0:1}  g7:HEAD-SOUR
+  +1 SOUR <Special>                        {0:1}  g7.1:HEAD-SOUR
      +2 VERS <Special>                     {0:1}  g7:VERS
      +2 NAME <Text>                        {0:1}  g7:NAME
      +2 CORP <Text>                        {0:1}  g7:CORP
@@ -143,12 +143,12 @@ n HEAD                                     {1:1}  g7:HEAD
         +3 EMAIL <Special>                 {0:M}  g7:EMAIL
         +3 FAX <Special>                   {0:M}  g7:FAX
         +3 WWW <Special>                   {0:M}  g7:WWW
-     +2 DATA <Text>                        {0:1}  g7:HEAD-SOUR-DATA
-        +3 DATE <DateExact>                {0:1}  g7:DATE-exact
+     +2 DATA <Text>                        {0:1}  g7.1:HEAD-SOUR-DATA
+        +3 DATE <DateExact>                {0:1}  g7.1:DATE-exact
            +4 TIME <Time>                  {0:1}  g7.1:TIME-exact
         +3 COPR <Text>                     {0:1}  g7:COPR
   +1 DEST <Special>                        {0:1}  g7:DEST
-  +1 DATE <DateExact>                      {0:1}  g7:HEAD-DATE
+  +1 DATE <DateExact>                      {0:1}  g7.1:HEAD-DATE
      +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
   +1 SUBM @<XREF:SUBM>@                    {0:1}  g7:SUBM
   +1 COPR <Text>                           {0:1}  g7:COPR
@@ -252,7 +252,7 @@ n @XREF:INDI@ INDI                         {1:1}  g7.1:record-INDI
      +2 <<NOTE_STRUCTURE>>                 {0:M}
      +2 EXID <Special>                     {0:M}  g7:EXID
         +3 TYPE <Special>                  {0:1}  g7:EXID-TYPE
-  +1 FAMS @<XREF:FAM>@                     {0:M}  g7:FAMS
+  +1 FAMS @<XREF:FAM>@                     {0:M}  g7.1:FAMS
      +2 <<NOTE_STRUCTURE>>                 {0:M}
   +1 SUBM @<XREF:SUBM>@                    {0:M}  g7:SUBM
   +1 <<ASSOCIATION_STRUCTURE>>             {0:M}
@@ -306,7 +306,7 @@ does not appear as a child.
 #### `MULTIMEDIA_RECORD` :=
 
 ```gedstruct
-n @XREF:OBJE@ OBJE                         {1:1}  g7:record-OBJE
+n @XREF:OBJE@ OBJE                         {1:1}  g7.1:record-OBJE
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 FILE <FilePath>                       {1:M}  g7:FILE
      +2 FORM <MediaType>                   {1:1}  g7:FORM
@@ -506,7 +506,7 @@ Duplicating information bloats files and introduces the potential for self-contr
 #### `ASSOCIATION_STRUCTURE` :=
 
 ```gedstruct
-n ASSO @<XREF:INDI>@                       {1:1}  g7:ASSO
+n ASSO @<XREF:INDI>@                       {1:1}  g7.1:ASSO
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
   +1 ROLE <Enum>                           {1:1}  g7:ROLE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
@@ -539,8 +539,8 @@ and that individual `@I2@` was the clergy officiating at their baptism.
 #### `CHANGE_DATE` :=
 
 ```gedstruct
-n CHAN                                     {1:1}  g7:CHAN
-  +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
+n CHAN                                     {1:1}  g7.1:CHAN
+  +1 DATE <DateExact>                      {1:1}  g7.1:DATE-exact
      +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
@@ -552,8 +552,8 @@ The `NOTE` substructure may describe previous changes as well as the most recent
 #### `CREATION_DATE` :=
 
 ```gedstruct
-n CREA                                     {1:1}  g7:CREA
-  +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
+n CREA                                     {1:1}  g7.1:CREA
+  +1 DATE <DateExact>                      {1:1}  g7.1:DATE-exact
      +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
 ```
 
@@ -592,7 +592,7 @@ n AGNC <Text>                              {0:1}  g7:AGNC
 n RELI <Text>                              {0:1}  g7:RELI
 n CAUS <Text>                              {0:1}  g7:CAUS
 n RESN <List:Enum>                         {0:1}  g7:RESN
-n SDATE <DateValue>                        {0:1}  g7:SDATE
+n SDATE <DateValue>                        {0:1}  g7.1:SDATE
   +1 TIME <Time>                           {0:1}  g7.1:TIME
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
@@ -664,27 +664,27 @@ n CENS [Y|<NULL>]                          {1:1}  g7.1:FAM-CENS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n DIV [Y|<NULL>]                           {1:1}  g7:DIV
+n DIV [Y|<NULL>]                           {1:1}  g7.1:DIV
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n DIVF [Y|<NULL>]                          {1:1}  g7:DIVF
+n DIVF [Y|<NULL>]                          {1:1}  g7.1:DIVF
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n ENGA [Y|<NULL>]                          {1:1}  g7:ENGA
+n ENGA [Y|<NULL>]                          {1:1}  g7.1:ENGA
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARB [Y|<NULL>]                          {1:1}  g7:MARB
+n MARB [Y|<NULL>]                          {1:1}  g7.1:MARB
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARC [Y|<NULL>]                          {1:1}  g7:MARC
+n MARC [Y|<NULL>]                          {1:1}  g7.1:MARC
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARL [Y|<NULL>]                          {1:1}  g7:MARL
+n MARL [Y|<NULL>]                          {1:1}  g7.1:MARL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
@@ -693,11 +693,11 @@ n MARR [Y|<NULL>]                          {1:1}  g7.1:MARR
   +1 KIND <Enum>                           {0:1}  g7.1:MARR-KIND
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n MARS [Y|<NULL>]                          {1:1}  g7:MARS
+n MARS [Y|<NULL>]                          {1:1}  g7.1:MARS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 |
-n EVEN <Text>                              {1:1}  g7:FAM-EVEN
+n EVEN <Text>                              {1:1}  g7.1:FAM-EVEN
   +1 TYPE <Text>                           {1:1}  g7:TYPE
   +1 <<FAMILY_EVENT_DETAIL>>               {0:1}
 ]
@@ -751,59 +751,59 @@ and each is different in purpose:
 
 ```` {.gedstruct .long}
 [
-n CAST <Text>                              {1:1}  g7:CAST
+n CAST <Text>                              {1:1}  g7.1:CAST
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n DSCR <Text>                              {1:1}  g7:DSCR
+n DSCR <Text>                              {1:1}  g7.1:DSCR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n EDUC <Text>                              {1:1}  g7:EDUC
+n EDUC <Text>                              {1:1}  g7.1:EDUC
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n IDNO <Special>                           {1:1}  g7:IDNO
+n IDNO <Special>                           {1:1}  g7.1:IDNO
   +1 TYPE <Text>                           {1:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n NATI <Text>                              {1:1}  g7:NATI
+n NATI <Text>                              {1:1}  g7.1:NATI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n NCHI <Integer>                           {1:1}  g7:INDI-NCHI
+n NCHI <Integer>                           {1:1}  g7.1:INDI-NCHI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n NMR <Integer>                            {1:1}  g7:NMR
+n NMR <Integer>                            {1:1}  g7.1:NMR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n OCCU <Text>                              {1:1}  g7:OCCU
+n OCCU <Text>                              {1:1}  g7.1:OCCU
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n PROP <Text>                              {1:1}  g7:PROP
+n PROP <Text>                              {1:1}  g7.1:PROP
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n RELI <Text>                              {1:1}  g7:INDI-RELI
+n RELI <Text>                              {1:1}  g7.1:INDI-RELI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n RESI <Text>                              {1:1}  g7:INDI-RESI
+n RESI <Text>                              {1:1}  g7.1:INDI-RESI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n SSN <Special>                            {1:1}  g7:SSN
+n SSN <Special>                            {1:1}  g7.1:SSN
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n TITL <Text>                              {1:1}  g7:INDI-TITL
+n TITL <Text>                              {1:1}  g7.1:INDI-TITL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n FACT <Text>                              {1:1}  g7:INDI-FACT
+n FACT <Text>                              {1:1}  g7.1:INDI-FACT
   +1 TYPE <Text>                           {1:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 ]
@@ -832,31 +832,31 @@ Substructures shared by most individual events and attributes.
 
 ```` {.gedstruct .long}
 [
-n ADOP [Y|<NULL>]                          {1:1}  g7:ADOP
+n ADOP [Y|<NULL>]                          {1:1}  g7.1:ADOP
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
   +1 FAMC @<XREF:FAM>@                     {0:1}  g7:ADOP-FAMC
      +2 ADOP <Enum>                        {0:1}  g7:FAMC-ADOP
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
 |
-n BAPM [Y|<NULL>]                          {1:1}  g7:BAPM
+n BAPM [Y|<NULL>]                          {1:1}  g7.1:BAPM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n BARM [Y|<NULL>]                          {1:1}  g7:BARM
+n BARM [Y|<NULL>]                          {1:1}  g7.1:BARM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n BASM [Y|<NULL>]                          {1:1}  g7:BASM
+n BASM [Y|<NULL>]                          {1:1}  g7.1:BASM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n BIRT [Y|<NULL>]                          {1:1}  g7:BIRT
+n BIRT [Y|<NULL>]                          {1:1}  g7.1:BIRT
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
   +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |
-n BLES [Y|<NULL>]                          {1:1}  g7:BLES
+n BLES [Y|<NULL>]                          {1:1}  g7.1:BLES
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
@@ -865,68 +865,68 @@ n BURI [Y|<NULL>]                          {1:1}  g7.1:BURI
   +1 KIND <Enum>                           {0:1}  g7.1:BURI-KIND
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n CENS [Y|<NULL>]                          {1:1}  g7:INDI-CENS
+n CENS [Y|<NULL>]                          {1:1}  g7.1:INDI-CENS
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n CHR [Y|<NULL>]                           {1:1}  g7:CHR
+n CHR [Y|<NULL>]                           {1:1}  g7.1:CHR
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
   +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |
-n CHRA [Y|<NULL>]                          {1:1}  g7:CHRA
+n CHRA [Y|<NULL>]                          {1:1}  g7.1:CHRA
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n CONF [Y|<NULL>]                          {1:1}  g7:CONF
+n CONF [Y|<NULL>]                          {1:1}  g7.1:CONF
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n CREM [Y|<NULL>]                          {1:1}  g7:CREM
+n CREM [Y|<NULL>]                          {1:1}  g7.1:CREM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n DEAT [Y|<NULL>]                          {1:1}  g7:DEAT
+n DEAT [Y|<NULL>]                          {1:1}  g7.1:DEAT
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n EMIG [Y|<NULL>]                          {1:1}  g7:EMIG
+n EMIG [Y|<NULL>]                          {1:1}  g7.1:EMIG
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n FCOM [Y|<NULL>]                          {1:1}  g7:FCOM
+n FCOM [Y|<NULL>]                          {1:1}  g7.1:FCOM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n GRAD [Y|<NULL>]                          {1:1}  g7:GRAD
+n GRAD [Y|<NULL>]                          {1:1}  g7.1:GRAD
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n IMMI [Y|<NULL>]                          {1:1}  g7:IMMI
+n IMMI [Y|<NULL>]                          {1:1}  g7.1:IMMI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n NATU [Y|<NULL>]                          {1:1}  g7:NATU
+n NATU [Y|<NULL>]                          {1:1}  g7.1:NATU
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n ORDN [Y|<NULL>]                          {1:1}  g7:ORDN
+n ORDN [Y|<NULL>]                          {1:1}  g7.1:ORDN
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n PROB [Y|<NULL>]                          {1:1}  g7:PROB
+n PROB [Y|<NULL>]                          {1:1}  g7.1:PROB
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n RETI [Y|<NULL>]                          {1:1}  g7:RETI
+n RETI [Y|<NULL>]                          {1:1}  g7.1:RETI
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n WILL [Y|<NULL>]                          {1:1}  g7:WILL
+n WILL [Y|<NULL>]                          {1:1}  g7.1:WILL
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n EVEN <Text>                              {1:1}  g7:INDI-EVEN
+n EVEN <Text>                              {1:1}  g7.1:INDI-EVEN
   +1 TYPE <Text>                           {1:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 ]
@@ -952,19 +952,19 @@ Individual event structures vary as follows:
 
 ```gedstruct
 [
-n BAPL                                     {1:1}  g7:BAPL
+n BAPL                                     {1:1}  g7.1:BAPL
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
 |
-n CONL                                     {1:1}  g7:CONL
+n CONL                                     {1:1}  g7.1:CONL
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
 |
-n ENDL                                     {1:1}  g7:ENDL
+n ENDL                                     {1:1}  g7.1:ENDL
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
 |
-n INIL                                     {1:1}  g7:INIL
+n INIL                                     {1:1}  g7.1:INIL
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
 |
-n SLGC                                     {1:1}  g7:SLGC
+n SLGC                                     {1:1}  g7.1:SLGC
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
   +1 FAMC @<XREF:FAM>@                     {1:1}  g7:FAMC
 ]
@@ -978,8 +978,8 @@ Ordinances performed by members of The Church of Jesus Christ of Latter-day Sain
 n <<DATE_VALUE>>                         {0:1}
 n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
-n STAT <Enum>                            {0:1}  g7:ord-STAT
-  +1 DATE <DateExact>                    {1:1}  g7:DATE-exact
+n STAT <Enum>                            {0:1}  g7.1:ord-STAT
+  +1 DATE <DateExact>                    {1:1}  g7.1:DATE-exact
      +2 TIME <Time>                      {0:1}  g7.1:TIME-exact
 n <<NOTE_STRUCTURE>>                     {0:M}
 n <<SOURCE_CITATION>>                    {0:M}
@@ -991,7 +991,7 @@ These ordinances can be performed posthumously by proxy, and the date may reflec
 #### `LDS_SPOUSE_SEALING` :=
 
 ```gedstruct
-n SLGS                                     {1:1}  g7:SLGS
+n SLGS                                     {1:1}  g7.1:SLGS
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
 ```
 
@@ -1017,7 +1017,7 @@ The optional `TITL` substructure supersedes any `OBJE.FILE.TITL` substructures i
 #### `NEGATIVE_ASSERTION` :=
 
 ```gedstruct
-n NO <Enum>                                {1:1}  g7:NO
+n NO <Enum>                                {1:1}  g7.1:NO
   +1 DATE <DatePeriod>                     {0:1}  g7:NO-DATE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 <<NOTE_STRUCTURE>>                    {0:M}
@@ -1137,7 +1137,7 @@ Alternative approaches to representing names are being considered for future ver
 #### `PLACE_STRUCTURE` :=
 
 ```gedstruct
-n PLAC <List:Text>                         {1:1}  g7:PLAC
+n PLAC <List:Text>                         {1:1}  g7.1:PLAC
   +1 FORM <List:Text>                      {0:1}  g7:PLAC-FORM
   +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <List:Text>                      {0:M}  g7:PLAC-TRAN
@@ -1235,7 +1235,7 @@ A `SOURCE_CITATION` can contain a `NOTE_STRUCTURE`, which in turn can contain a 
 #### `SOURCE_REPOSITORY_CITATION` :=
 
 ```gedstruct
-n REPO @<XREF:REPO>@                       {1:1}  g7:REPO
+n REPO @<XREF:REPO>@                       {1:1}  g7.1:REPO
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 CALN <Special>                        {0:M}  g7:CALN
      +2 MEDI <Enum>                        {0:1}  g7:MEDI

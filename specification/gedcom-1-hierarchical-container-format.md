@@ -177,12 +177,12 @@ Which one is meant can be identified by the superstructure type as follows:
 
 | Superstructure type | Structure type identified by tag `ADOP` |
 |---------------------|------------------|
-| `g7.1:record-INDI`  | `g7:ADOP`        |
+| `g7.1:record-INDI`  | `g7.1:ADOP`      |
 | `g7:ADOP-FAMC`      | `g7:FAMC-ADOP`   |
 
 An [extension-defined substructure](#extensions) could also be used to place either of these structure types in extension superstructures.
 
-The `ADOP` tag is also used in the set of enumerated values permitted by the `g7:DATA-EVEN`, `g7:SOUR-EVEN`, and `g7:NO` structure types.
+The `ADOP` tag is also used in the set of enumerated values permitted by the `g7:DATA-EVEN`, `g7:SOUR-EVEN`, and `g7.1:NO` structure types.
 :::
 
 The **line value** matches production `LineVal` and encodes the structure's payload.
@@ -373,8 +373,8 @@ Suppose `_DATE` is defined to mean a `g7:DATE` (using a [documented extension ta
 Because all substructures have meanings defined relative to their superstructures and no records do, standard records cannot be relocated and relocated standard structures cannot be used as records.
 
 :::example
-The `g7:PLAC` substructure documents where the event described in its superstructure occurred.
-If an application wants a record to describe the place itself it should create a new URI for that extension; reusing `g7:PLAC` for a record with no superstructure is not appropriate.
+The `g7.1:PLAC` substructure documents where the event described in its superstructure occurred.
+If an application wants a record to describe the place itself it should create a new URI for that extension; reusing `g7.1:PLAC` for a record with no superstructure is not appropriate.
 :::
 
 All other non-standard structures are prohibited. Examples of prohibited structures include, but are not limited to,
