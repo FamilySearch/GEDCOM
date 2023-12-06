@@ -339,7 +339,7 @@ Version 7.0 only supports the following URLs:
 
 - A URL with scheme `ftp`, `http`, or `https` refers to a **web-accessible file**.
 
-- A URL with scheme `file` refers to a **machine-local file** as defined by [RFC 8089](https://www.rfc-editor.org/info/rfc8089). Machine-local files must not be used in [FamilySearch GEDZIP](#gedzip) nor when sharing datasets on the web or with unknown parties, but may be used for close collaboration between parties with known similar file structures.
+- A URL with scheme `file` refers to either a **local file** or a **non-local file**, as defined by [RFC 8089](https://www.rfc-editor.org/info/rfc8089). Local file URLs must not be used in [FamilySearch GEDZIP](#gedzip) nor when sharing datasets on the web or with unknown parties, but may be used for close collaboration between parties with known similar file structures.
 
 - A URI reference with all of the following:
     - no scheme
