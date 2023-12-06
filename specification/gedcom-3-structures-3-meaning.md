@@ -1317,6 +1317,14 @@ See `ADDRESS_STRUCTURE` for more details.
 
 An enumerated value from set `g7:enumset-ord-STAT` assessing of the state or condition of an ordinance.
 
+#### `STAT` (Status) `g7:SLGC-STAT`
+
+An enumerated value from set `g7:enumset-SLGC-STAT` assessing of the state or condition of an `SLGC` ordinance.
+
+#### `STAT` (Status) `g7:SLGS-STAT`
+
+An enumerated value from set `g7:enumset-SLGS-STAT` assessing of the state or condition of an `SLGS` ordinance.
+
 #### `STAT` (Status) `g7:FAMC-STAT`
 
 An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or condition of a researcher's belief in a family connection.

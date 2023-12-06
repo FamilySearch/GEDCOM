@@ -934,19 +934,34 @@ Individual event structures vary as follows:
 [
 n BAPL                                     {1:1}  g7:BAPL
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
+  +1 STAT <Enum>                           {0:1}  g7:ord-STAT
+     +2 DATE <DateExact>                   {1:1}  g7:DATE-exact
+        +3 TIME <Time>                     {0:1}  g7:TIME
 |
 n CONL                                     {1:1}  g7:CONL
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
+  +1 STAT <Enum>                           {0:1}  g7:ord-STAT
+     +2 DATE <DateExact>                   {1:1}  g7:DATE-exact
+        +3 TIME <Time>                     {0:1}  g7:TIME
 |
 n ENDL                                     {1:1}  g7:ENDL
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
+  +1 STAT <Enum>                           {0:1}  g7:ord-STAT
+     +2 DATE <DateExact>                   {1:1}  g7:DATE-exact
+        +3 TIME <Time>                     {0:1}  g7:TIME
 |
 n INIL                                     {1:1}  g7:INIL
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
+  +1 STAT <Enum>                           {0:1}  g7:ord-STAT
+     +2 DATE <DateExact>                   {1:1}  g7:DATE-exact
+        +3 TIME <Time>                     {0:1}  g7:TIME
 |
 n SLGC                                     {1:1}  g7:SLGC
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
   +1 FAMC @<XREF:FAM>@                     {1:1}  g7:FAMC
+  +1 STAT <Enum>                           {0:1}  g7:SLGC-STAT
+     +2 DATE <DateExact>                   {1:1}  g7:DATE-exact
+        +3 TIME <Time>                     {0:1}  g7:TIME
 ]
 ```
 
@@ -958,9 +973,6 @@ Ordinances performed by members of The Church of Jesus Christ of Latter-day Sain
 n <<DATE_VALUE>>                         {0:1}
 n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
-n STAT <Enum>                            {0:1}  g7:ord-STAT
-  +1 DATE <DateExact>                    {1:1}  g7:DATE-exact
-     +2 TIME <Time>                      {0:1}  g7:TIME
 n <<NOTE_STRUCTURE>>                     {0:M}
 n <<SOURCE_CITATION>>                    {0:M}
 ```
@@ -973,6 +985,9 @@ These ordinances can be performed posthumously by proxy, and the date may reflec
 ```gedstruct
 n SLGS                                     {1:1}  g7:SLGS
   +1 <<LDS_ORDINANCE_DETAIL>>              {0:1}
+  +1 STAT <Enum>                           {0:1}  g7:SLGS-STAT
+     +2 DATE <DateExact>                   {1:1}  g7:DATE-exact
+        +3 TIME <Time>                     {0:1}  g7:TIME
 ```
 
 Ordinances performed by members of The Church of Jesus Christ of Latter-day Saints; see [Latter-day Saint Ordinances] for descriptions of each ordinance type.
