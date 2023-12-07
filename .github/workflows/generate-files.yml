@@ -32,12 +32,16 @@ jobs:
       id: extract_branch
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
 
-    - name: Generate grammar.abnf and grammar.gedstruct
+    - name: Install mdformat-gfm
+      run: pip install mdformat-gfm
+
+    - name: Generate files
       working-directory: ${{github.workspace}}/build
       shell: sh
       run: |
         export MD_FILES=$(ls ${{ env.SPECDIR }}gedcom*.md | sort)
         python3 extract-grammars.py ${MD_FILES} ${{ env.EXTDIR }}
+        python3 uri-def.py ${MD_FILES} ${{ env.EXTDIR }}tags
         ls -l ${{env.EXTDIR}}
 
     - name: Set git config
