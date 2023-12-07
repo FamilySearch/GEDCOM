@@ -10,8 +10,8 @@ standard tag: SUBM
 
 specification:
   - Submitter
-  - A contributor of information in the substructure. This is metadata about
-    the structure itself, not data about its subject.
+  - A contributor of information in the substructure. This is metadata about the
+    structure itself, not data about its subject.
 
 label: 'Submitter'
 

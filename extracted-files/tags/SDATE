@@ -14,19 +14,19 @@ specification:
     A date to be used as a sorting hint. It is intended for use when the actual
     date is unknown, but the display order may be dependent on date.
     
-    If both a DATE and SDATE are present in the same structure, the SDATE
-    should be used for sorting and positioning while the DATE should be
-    displayed as the date of the structure.
+    If both a `DATE` and `SDATE` are present in the same structure, the `SDATE`
+    should be used for sorting and positioning while the `DATE` should be displayed
+    as the date of the structure.
     
-    SDATE and its substructures (including PHRASE, TIME, and any extension
+    `SDATE` and its substructures (including `PHRASE`, `TIME`, and any extension
     structures) should be used only as sorting hints, not to convey historical
     meaning.
     
     It is recommended to use a payload that matches
-    [[day D] month D] year [D epoch]. Other DateValue forms may have unreliable
-    effects on sorting. Including a month and day is encouraged to help
-    different applications sort dates the same way, as the relative ordering of
-    dates with different levels of precision is not well defined.
+    `[[day D] month D] year [D epoch]`. Other DateValue forms may have unreliable
+    effects on sorting. Including a month and day is encouraged to help different
+    applications sort dates the same way, as the relative ordering of dates with
+    different levels of precision is not well defined.
 
 label: 'Sort date'
 

@@ -10,10 +10,10 @@ standard tag: CENS
 
 specification:
   - Census
-  - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
+  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - census
-  - Periodic count of the population for a designated locality, such as a
-    national or state census.
+  - Periodic count of the population for a designated locality, such as a national
+    or state census.
 
 label: 'Census'
 

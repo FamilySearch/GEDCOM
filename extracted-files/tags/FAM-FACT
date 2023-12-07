@@ -10,7 +10,7 @@ standard tag: FACT
 
 specification:
   - Fact
-  - See https://gedcom.io/terms/v7/INDI-FACT.
+  - See `https://gedcom.io/terms/v7/INDI-FACT`.
 
 label: 'Fact'
 

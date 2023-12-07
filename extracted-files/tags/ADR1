@@ -11,11 +11,16 @@ standard tag: ADR1
 specification:
   - Address Line 1
   - |
-    The first line of the address, used for indexing. This structure’s payload
-    should be a single line of text equal to the first line of the
-    corresponding ADDR. See ADDRESS_STRUCTURE for more.
+    The first line of the address, used for indexing. This structure's payload
+    should be a single line of text equal to the first line of the corresponding
+    `ADDR`. See `ADDRESS_STRUCTURE` for more details.
     
-    ADR1 should not be added to new files; see ADDRESS_STRUCTURE for more.
+    <div class="deprecation">
+    
+    `ADR1` should not be added to new files; see `ADDRESS_STRUCTURE` for more
+    details.
+    
+    </div>
 
 label: 'Address Line 1'
 

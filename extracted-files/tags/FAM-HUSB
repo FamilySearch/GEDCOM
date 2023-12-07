@@ -10,7 +10,7 @@ standard tag: HUSB
 
 specification:
   - Husband
-  - This is a partner in a FAM record. See FAMILY_RECORD for more.
+  - This is a partner in a `FAM` record. See `FAMILY_RECORD` for more details.
 
 label: 'Husband'
 

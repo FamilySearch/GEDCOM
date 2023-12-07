@@ -10,11 +10,11 @@ standard tag: MARS
 
 specification:
   - Marriage settlement
-  - A Family Event. See also FAMILY_EVENT_STRUCTURE.
+  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - marriage settlement
-  - Creating an agreement between 2 people contemplating marriage, at which
-    time they agree to release or modify property rights that would otherwise
-    arise from the marriage.
+  - Creating an agreement between 2 people contemplating marriage, at which time
+    they agree to release or modify property rights that would otherwise arise from
+    the marriage.
 
 label: 'Marriage settlement'
 

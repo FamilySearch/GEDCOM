@@ -10,7 +10,7 @@ standard tag: EDUC
 
 specification:
   - Education
-  - An Individual Attribute. See also INDIVIDUAL_ATTRIBUTE_STRUCTURE.
+  - An [Individual Attribute]. See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
   - education
   - Indicator of a level of education attained.
 

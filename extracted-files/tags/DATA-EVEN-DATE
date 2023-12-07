@@ -10,7 +10,7 @@ standard tag: DATE
 
 specification:
   - Date
-  - The DatePeriod covered by the entire source; the period during which this
+  - The `DatePeriod` covered by the entire source; the period during which this
     source recorded events.
 
 label: 'Date'

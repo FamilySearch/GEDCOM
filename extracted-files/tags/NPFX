@@ -10,8 +10,7 @@ standard tag: NPFX
 
 specification:
   - Name prefix
-  - Text that appears on a name line before the given and surname parts of a
-    name.
+  - Text that appears on a name line before the given and surname parts of a name.
 
 label: 'Name prefix'
 

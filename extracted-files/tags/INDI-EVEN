@@ -12,20 +12,26 @@ specification:
   - Event
   - |
     An event: a noteworthy happening related to an individual or family. If a
-    specific event type exists, it should be used instead of a generic EVEN
-    structure. Each EVEN must be classified by a subordinate use of the TYPE
-    tag and may be further described in the structure’s payload.
+    specific event type exists, it should be used instead of a generic `EVEN`
+    structure. Each `EVEN` must be classified by a subordinate use of the `TYPE`
+    tag and may be further described in the structure's payload.
+    
+    <div class="example">
     
     A person that signed a lease for land dated October 2, 1837 and a lease for
     mining equipment dated November 4, 1837 would be written as:
     
-        0 @I1@ INDI
-        1 EVEN
-        2 TYPE Land Lease
-        2 DATE 2 OCT 1837
-        1 EVEN Mining equipment
-        2 TYPE Equipment Lease
-        2 DATE 4 NOV 1837
+    ```gedcom
+    0 @I1@ INDI
+    1 EVEN
+    2 TYPE Land Lease
+    2 DATE 2 OCT 1837
+    1 EVEN Mining equipment
+    2 TYPE Equipment Lease
+    2 DATE 4 NOV 1837
+    ```
+    
+    </div>
 
 label: 'Event'
 

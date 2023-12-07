@@ -10,31 +10,29 @@ standard tag: SOUR
 
 specification:
   - Source
-  - A description of the relevant part of a source to support the
-    superstructure’s data. See SOURCE_CITATION for more.
+  - A description of the relevant part of a source to support the superstructure's
+    data. See `SOURCE_CITATION` for more details.
   - |
     A citation indicating that the pointed-to source record supports the claims
-    made in the superstructure. Substructures provide additional information
-    about how that source applies to the subject of the citation’s
-    superstructure:
+    made in the superstructure. Substructures provide additional information about
+    how that source applies to the subject of the citation's superstructure:
     
-    -   PAGE: where in the source the relevant material can be found.
-    -   DATA: the relevant data from the source.
-    -   EVEN: what event the relevant material was recording.
-    -   QUAY: an estimation of the reliability of the source in regard to these
-        claims.
-    -   MULTIMEDIA_LINK: digital copies of the cited part of the source
+    - `PAGE`: where in the source the relevant material can be found.
+    - `DATA`: the relevant data from the source.
+    - `EVEN`: what event the relevant material was recording.
+    - `QUAY`: an estimation of the reliability of the source in regard to these
+      claims.
+    - `MULTIMEDIA_LINK`: digital copies of the cited part of the source
     
-    It is recommended that every SOURCE_CITATION point to a SOURCE_RECORD.
-    However, a voidPtr can be used with the citation text in a PAGE
-    substructure. The PAGE is defined to express a “specific location within
-    the information referenced;” with a voidPtr there is no information
-    referenced, so the PAGE may describe the entire source.
+    It is recommended that every `SOURCE_CITATION` point to a `SOURCE_RECORD`.
+    However, a `voidPtr` can be used with the citation text in a `PAGE`
+    substructure. The `PAGE` is defined to express a "specific location within the
+    information referenced;" with a `voidPtr` there is no information referenced,
+    so the `PAGE` may describe the entire source.
     
-    A SOURCE_CITATION can contain a NOTE_STRUCTURE, which in turn can contain a
-    SOURCE_CITATION, allowing potentially unbounded nesting of structures.
-    Because each dataset is finite, this nesting is also guaranteed to be
-    finite.
+    A `SOURCE_CITATION` can contain a `NOTE_STRUCTURE`, which in turn can contain a
+    `SOURCE_CITATION`, allowing potentially unbounded nesting of structures.
+    Because each dataset is finite, this nesting is also guaranteed to be finite.
 
 label: 'Source'
 

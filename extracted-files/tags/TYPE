@@ -13,35 +13,41 @@ specification:
   - |
     A descriptive word or phrase used to further classify the superstructure.
     
-    When both a NOTE and free-text TYPE are permitted as substructures of the
-    same structure, the displaying systems should always display the TYPE value
-    when they display the data from the associated structure; NOTE will
-    typically be visible only in a detailed view.
+    When both a `NOTE` and free-text `TYPE` are permitted as substructures of the
+    same structure, the displaying systems should always display the `TYPE` value
+    when they display the data from the associated structure; `NOTE` will typically
+    be visible only in a detailed view.
     
-    TYPE must be used whenever the generic EVEN, FACT and IDNO tags are used.
-    It may also be used for any other event or attribute.
+    `TYPE` must be used whenever the generic `EVEN`, `FACT` and `IDNO` tags are
+    used. It may also be used for any other event or attribute.
     
-    Using the subordinate TYPE classification method provides a further
+    Using the subordinate `TYPE` classification method provides a further
     classification of the superstructure but does not change its basic meaning.
     
-    A ORDN with a TYPE could clarify what kind of ordination was performed:
+    <div class="example">
     
-        0 @I1@ INDI
-        1 ORDN
-        2 TYPE Bishop
+    A `ORDN` with a `TYPE` could clarify what kind of ordination was performed:
+    
+    ```gedcom
+    0 @I1@ INDI
+    1 ORDN
+    2 TYPE Bishop
+    ```
     
     This classifies the entry as an ordination as a bishop, which is still a
-    ordination event. The event could be further clarified with RELI, DATE, and
+    ordination event. The event could be further clarified with `RELI`, `DATE`, and
     other substructures.
     
     Other descriptor values might include, for example,
     
-    -   “Stillborn” as a qualifier to BIRT (birth)
-    -   “Civil” as a qualifier to MARR (marriage)
-    -   “College” as a qualifier to GRAD (graduation)
-    -   “Oral” as a qualifier to WILL
+    - "Stillborn" as a qualifier to `BIRT` (birth)
+    - "Civil" as a qualifier to `MARR` (marriage)
+    - "College" as a qualifier to `GRAD` (graduation)
+    - "Oral" as a qualifier to `WILL`
     
-    See also FACT and EVEN for additional examples.
+    See also `FACT` and `EVEN` for additional examples.
+    
+    </div>
 
 label: 'Type'
 

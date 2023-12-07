@@ -10,7 +10,7 @@ standard tag: WIFE
 
 specification:
   - Wife
-  - A partner in a FAM record. See FAMILY_RECORD for more.
+  - A partner in a `FAM` record. See `FAMILY_RECORD` for more details.
 
 label: 'Wife'
 

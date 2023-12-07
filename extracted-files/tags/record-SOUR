@@ -10,21 +10,24 @@ standard tag: SOUR
 
 specification:
   - Source
-  - A description of an entire source. See SOURCE_RECORD for more.
+  - A description of an entire source. See `SOURCE_RECORD` for more details.
   - |
-    A source record describes an entire source. A source may also point to
-    REPOs to describe repositories or archives where the source document may be
-    found. The part of a source relevant to a specific fact, such as a specific
-    page or entry, is indicated in a SOURCE_CITATION that points to the source
-    record.
+    A source record describes an entire source. A source may also point to `REPO`s
+    to describe repositories or archives where the source document may be found.
+    The part of a source relevant to a specific fact, such as a specific page or
+    entry, is indicated in a `SOURCE_CITATION` that points to the source record.
     
-    This sourcing model is known to be insufficient for some use cases and may
-    be refined in a future version of this specification.
+    <div class="note">
     
-    A SOURCE_RECORD may contain a pointer to a SHARED_NOTE_RECORD and vice
-    versa. Applications must not create datasets where these mutual pointers
-    form a cycle. Applications should also ensure they can handle invalid files
-    with such cycles in a safe manner.
+    This sourcing model is known to be insufficient for some use cases and may be
+    refined in a future version of this specification.
+    
+    </div>
+    
+    A `SOURCE_RECORD` may contain a pointer to a `SHARED_NOTE_RECORD` and vice
+    versa. Applications must not create datasets where these mutual pointers form a
+    cycle. Applications should also ensure they can handle invalid files with such
+    cycles in a safe manner.
 
 label: 'Source'
 

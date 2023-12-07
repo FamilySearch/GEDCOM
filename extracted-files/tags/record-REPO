@@ -10,20 +10,20 @@ standard tag: REPO
 
 specification:
   - Repository
-  - See REPOSITORY_RECORD.
+  - See `REPOSITORY_RECORD`.
   - |
-    The repository record provides information about an institution or person
-    that has a collection of sources. Informal repositories include the owner
-    of an unpublished work or of a rare published source, or a keeper of
-    personal collections. An example would be the owner of a family Bible
-    containing unpublished family genealogical entries.
+    The repository record provides information about an institution or person that
+    has a collection of sources. Informal repositories include the owner of an
+    unpublished work or of a rare published source, or a keeper of personal
+    collections. An example would be the owner of a family Bible containing
+    unpublished family genealogical entries.
     
     Layered repositories, such as an archive containing copies of a subset of
     records from another archive or archives that have moved or been bought by
     other archives, are not modeled in this version of the specification. It is
     expected they will be added in a later version. Until such time, it is
-    recommended that the repository record store current contact information,
-    if known.
+    recommended that the repository record store current contact information, if
+    known.
 
 label: 'Repository'
 

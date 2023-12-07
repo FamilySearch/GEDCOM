@@ -11,22 +11,30 @@ standard tag: RESI
 specification:
   - Residence
   - |
-    An Individual Attribute. See also INDIVIDUAL_ATTRIBUTE_STRUCTURE.
+    An [Individual Attribute]. See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
     
-    Where possible, the residence should be identified in PLAC and/or ADDR
-    substructures of the RESI structure. The payload text should not duplicate
-    PLAC or ADDR information, but may be used for residence information that
+    Where possible, the residence should be identified in `PLAC` and/or `ADDR`
+    substructures of the `RESI` structure. The payload text should not duplicate
+    `PLAC` or `ADDR` information, but may be used for residence information that
     cannot be expressed by those structures.
     
-    The following two examples show situations where a RESI payload may be
+    <div class="example">
+    
+    The following two examples show situations where a `RESI` payload may be
     appropriate:
     
-        1 RESI living with an aunt
-        2 DATE ABT MAR 1894
+    ```gedcom
+    1 RESI living with an aunt
+    2 DATE ABT MAR 1894
+    ```
     
-        1 RESI in a mobile caravan
-        2 PLAC , , Austro-Hungarian Empire
-        3 FORM City, County, Country
+    ```gedcom
+    1 RESI in a mobile caravan
+    2 PLAC , , Austro-Hungarian Empire
+    3 FORM City, County, Country
+    ```
+    
+    </div>
   - residence
   - An address or place of residence where an individual resided.
 

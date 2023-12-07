@@ -10,8 +10,8 @@ standard tag: DATE
 
 specification:
   - Date
-  - The DatePeriod during which the event did not occur or the attribute did
-    not apply.
+  - The `DatePeriod` during which the event did not occur or the attribute did not
+    apply.
 
 label: 'Date'
 

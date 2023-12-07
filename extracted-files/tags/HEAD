@@ -10,20 +10,21 @@ standard tag: HEAD
 
 specification:
   - Header
-  - A pseudo-structure for storing metadata about the document. See The Header
-    and Trailer for more.
+  - A pseudo-structure for storing metadata about the document. See [The Header
+    and Trailer] for more details.
   - |
-    The header pseudo-structure provides metadata about the entire dataset. A
-    few substructures of note:
+    The header pseudo-structure provides metadata about the entire dataset. A few
+    substructures of note:
     
-    -   GEDC identifies the specification that this document conforms to. It is
-        recommended that GEDC be the first substructure of the header.
-    -   SCHMA gives the meaning of extension tags; see Extensions for more.
-    -   SOUR describes the originating software.
-        -   CORP describes the corporation creating the software.
-        -   HEAD.SOUR.DATA describes a larger database this data is extracted
-            from.
-    -   LANG and PLAC give a default value for the rest of the document.
+    - `GEDC` identifies the specification that this document conforms to. It is
+      recommended that `GEDC` be the first substructure of the header.
+    - `SCHMA` gives the meaning of extension tags; see [Extensions] for more
+      details.
+    - `SOUR` describes the originating software.
+      - `CORP` describes the corporation creating the software.
+      - `HEAD`.`SOUR`.`DATA` describes a larger database this data is extracted
+        from.
+    - `LANG` and `PLAC` give a default value for the rest of the document.
 
 label: 'Header'
 

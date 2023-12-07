@@ -10,7 +10,8 @@ standard tag: WIDTH
 
 specification:
   - Width in pixels
-  - How many pixels to display horizontally for the image. See CROP for more.
+  - How many pixels to display horizontally for the image. See `CROP` for more
+    details.
 
 label: 'Width in pixels'
 

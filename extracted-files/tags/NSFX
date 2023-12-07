@@ -10,8 +10,8 @@ standard tag: NSFX
 
 specification:
   - Name suffix
-  - Text which appears on a name line after or behind the given and surname
-    parts of a name.
+  - Text which appears on a name line after or behind the given and surname parts
+    of a name.
 
 label: 'Name suffix'
 

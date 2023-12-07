@@ -10,9 +10,9 @@ standard tag: BAPM
 
 specification:
   - Baptism
-  - An Individual Event. See also INDIVIDUAL_EVENT_STRUCTURE.
+  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - baptism
-  - Baptism, performed in infancy or later. (See also BAPL and CHR.)
+  - Baptism, performed in infancy or later. (See also [`BAPL`] and `CHR`.)
 
 label: 'Baptism'
 

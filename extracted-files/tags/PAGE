@@ -11,27 +11,38 @@ standard tag: PAGE
 specification:
   - Page
   - |
-    A specific location within the information referenced. For a published
-    work, this could include the volume of a multi-volume work and the page
-    number or numbers. For a periodical, it could include volume, issue, and
-    page numbers. For a newspaper, it could include a date, page number, and
-    column number. For an unpublished source or microfilmed works, this could
-    be a film or sheet number, page number, or frame number. A census record
-    might have an enumerating district, page number, line number, dwelling
-    number, and family number.
+    A specific location within the information referenced. For a published work,
+    this could include the volume of a multi-volume work and the page number or
+    numbers. For a periodical, it could include volume, issue, and page numbers.
+    For a newspaper, it could include a date, page number, and column number. For
+    an unpublished source or microfilmed works, this could be a film or sheet
+    number, page number, or frame number. A census record might have an enumerating
+    district, page number, line number, dwelling number, and family number.
     
-    It is recommended that the data in this field be formatted comma-separated
-    with label: value pairs
+    It is recommended that the data in this field be formatted comma-separated with
+    label: value pairs
     
-        2 SOUR @S1@
-        3 PAGE Film: 1234567, Frame: 344, Line: 28
+    <div class="example">
     
-    If the superstructure’s pointer is @VOID@ then there is no information
-    referenced and the PAGE may describe the entire source.
+    ```gedcom
+    2 SOUR @S1@
+    3 PAGE Film: 1234567, Frame: 344, Line: 28
+    ```
     
-        1 DSCR Tall enough his head touched the ceiling
-        2 SOUR @VOID@
-        3 PAGE His grand-daughter Lydia told me this in 1980
+    </div>
+    
+    If the superstructure's pointer is `@VOID@` then there is no information
+    referenced and the `PAGE` may describe the entire source.
+    
+    <div class="example">
+    
+    ```gedcom
+    1 DSCR Tall enough his head touched the ceiling
+    2 SOUR @VOID@
+    3 PAGE His grand-daughter Lydia told me this in 1980
+    ```
+    
+    </div>
 
 label: 'Page'
 

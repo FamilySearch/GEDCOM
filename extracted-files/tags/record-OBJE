@@ -10,18 +10,16 @@ standard tag: OBJE
 
 specification:
   - Object
-  - See MULTIMEDIA_RECORD.
+  - See `MULTIMEDIA_RECORD`.
   - |
     The multimedia record refers to 1 or more external digital files, and may
-    provide some additional information about the files and the media they
-    encode.
+    provide some additional information about the files and the media they encode.
     
-    The file reference can occur more than once to group multiple files
-    together. Grouped files should each pertain to the same context. For
-    example, a sound clip and a photo both of the same event might be grouped
-    in a single OBJE.
+    The file reference can occur more than once to group multiple files together.
+    Grouped files should each pertain to the same context. For example, a sound
+    clip and a photo both of the same event might be grouped in a single `OBJE`.
     
-    The change and creation dates should be for the OBJE record itself, not the
+    The change and creation dates should be for the `OBJE` record itself, not the
     underlying files.
 
 label: 'Object'

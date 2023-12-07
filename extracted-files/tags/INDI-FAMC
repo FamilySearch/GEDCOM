@@ -10,9 +10,9 @@ standard tag: FAMC
 
 specification:
   - Family child
-  - The family in which an individual appears as a child. It is also used with
-    a STAT substructure to show individuals who are not children of the family.
-    See FAM and FAMC.STAT for more.
+  - The family in which an individual appears as a child. It is also used with a
+    `https://gedcom.io/terms/v7/FAMC-STAT` substructure to show individuals who are
+    not children of the family. See `FAMILY_RECORD` for more details.
 
 label: 'Family child'
 

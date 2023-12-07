@@ -68,6 +68,7 @@ def find_cat_tables(txt, g7, tagsets):
             pfx = bit.group(1)+enum
             if 'The URI of this' in meaning:
                 meaning, tail = meaning.split('The URI of this')
+                if meaning.endswith('<br/>'): meaning = meaning[:-5]
                 pfx = tail.split('`')[1]
             meaning = hard_code.get(pfx,meaning)
             if len(header) > 2:
@@ -307,12 +308,41 @@ def find_enumsets(txt):
     return res
 
 def tidy_markdown(md, indent, width=79):
-    """Run markdown through pandoc to remove markup and wrap columns"""
+    """
+    The markdown files in the specification directory use the following Markdown dialect:
+    
+    Part of GFM:
+
+    - setext headers with classes like `{.unnumbered}`, unlisting marks like `{-}`, and anchors like `{#container}`
+    - language-specific code blocks both <code>\`\`\`gedcom</code> and <code>\`\`\` {.gedstruct .long}</code> headers
+    - markdown inside HTML between lines `<div class="example">` and `</div>` (only inside lists) and between definition list tags `<dl>`, `<dt>`, and `<dd>` (only in acknowledgements)
+    - code blocks with no leading blank line
+    - tables with `|---|:--|` format
+    - tables with `--- | --- | ---` format
+    
+    Not part of GFM:
+
+    - YAML front matter
+    - divs with `:::class` headers and `:::` footers
+    - automatic links with `[name of section to link to]`
+    - inline code with class `1 NO MARR`{.gedcom} (used only once)
+    
+    pip install mdformat-gfm
+    """
     global prefixes
     for k,v in prefixes.items():
         md = re.sub(r'\b'+k+':', v, md)
-    out = run(['pandoc','-t','plain','--columns='+str(width-indent)], input=md.encode('utf-8'), capture_output=True)
-    return out.stdout.rstrip().decode('utf-8').replace('\n','\n'+' '*indent)
+    
+    # for now ignoring YAML frontmatter
+    md = re.sub(r':::(\S+)', r'<div class="\1">\n', md) # convert ::: divs to <div>s
+    md = re.sub(r':::', '\n</div>', md) # convert ::: divs to <div>s
+    md = re.sub(r'\]\([^\)]*\)({[^}]*})?', ']', md) # remove links
+    md = re.sub(r'`{\.\S+\}', '`', md) # remove inline code classes
+      
+    import mdformat
+    out = mdformat.text(md, extensions={"gfm"}, options={"number":True, "wrap":width})
+    
+    return out.rstrip().replace('\n','\n'+' '*indent).replace('\[','[').replace('\]',']')
 
 def yaml_str_helper(pfx, md, width=79):
     txt = tidy_markdown(md, len(pfx), width)
