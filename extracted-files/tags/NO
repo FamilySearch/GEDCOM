@@ -12,12 +12,12 @@ specification:
   - Negative assertion
   - |
     An enumerated value from set `https://gedcom.io/terms/v7/enumset-NO`
-    identifying something that was not part of the superstructure: an event
-    type which did not occur to the superstructure’s subject, that the
-    superstructure’s subject did not have an name or name part, etc. A specific
-    payload `NO XYZ` should only appear where `XYZ` would be legal.
+    identifying something that was not part of the superstructure: an event type
+    which did not occur to the superstructure's subject, that the superstructure's
+    subject did not have an name or name part, etc. A specific payload `NO XYZ`
+    should only appear where `XYZ` would be legal.
     
-    See [`NEGATIVE_ASSERTION`] for more.
+    See `NEGATIVE_ASSERTION` for more.
   - |
     Indicates that a specific type of event, given in the payload, did not happen
     within a given date period (or never happened if there is no `DATE`

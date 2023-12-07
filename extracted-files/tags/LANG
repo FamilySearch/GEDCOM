@@ -27,8 +27,8 @@ specification:
     language, it is recommended that a language tag identifying the primary
     language be used. If no one language is primary, the language tag `mul`
     (meaning "multiple") may be used, but most language-specific algorithms will
-    treat `mul` the same way they do `und`. Multi-language text can be handled
-    more robustly using the text/html MediaType.
+    treat `mul` the same way they do `und`. Multi-language text can be handled more
+    robustly using [the `text/html` MediaType].
     
     <div class="note">
     

@@ -22,15 +22,14 @@ specification:
     structure and its superstructure being removed from the export. Such removal
     must abide by some constraints: see [Removing data] for more details.
     
-    A structure that points to a record that is being removed due to RESN
-    processing will have its pointer replaced by a voidPtr, preserving the
-    structure’s substructures. That might be desirable, but could cause
-    accidental information leakage; for example, if a
-    https://gedcom.io/terms/v7/ADOP-FAMC points to a restricted FAMC it may
-    contain FAMC-identifying information in its substructures that the user
-    also wishes to treat as restricted. Applications are encouraged to prompt
-    the user when a pointer becomes void during RESN processing and give them
-    the option of additional data removal.
+    A structure that points to a record that is being removed due to `RESN`
+    processing will have its pointer replaced by a `voidPtr`, preserving the
+    structure's substructures. That might be desirable, but could cause accidental
+    information leakage; for example, if a `https://gedcom.io/terms/v7/ADOP-FAMC`
+    points to a restricted `FAMC` it may contain `FAMC`-identifying information in
+    its substructures that the user also wishes to treat as restricted.
+    Applications are encouraged to prompt the user when a pointer becomes void
+    during `RESN` processing and give them the option of additional data removal.
     
     This is metadata about the structure itself, not data about its subject.
 

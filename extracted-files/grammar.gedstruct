@@ -177,6 +177,7 @@ n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
   +1 <<SOURCE_REPOSITORY_CITATION>>        {0:M}
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
+  +1 <<SOURCE_CITATION>>                   {0:M}
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 <<CHANGE_DATE>>                       {0:1}
   +1 <<CREATION_DATE>>                     {0:1}
@@ -236,6 +237,7 @@ n CREA                                     {1:1}  g7:CREA
 DATE_VALUE :=
 n DATE <DateValue>                         {1:1}  g7:DATE
   +1 TIME <Time>                           {0:1}  g7:TIME
+     +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 
 
@@ -412,9 +414,9 @@ n FACT <Text>                              {1:1}  g7:INDI-FACT
 
 
 INDIVIDUAL_EVENT_DETAIL :=
-n <<EVENT_DETAIL>>                         {1:1}
 n AGE <Age>                                {0:1}  g7:AGE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
+n <<EVENT_DETAIL>>                         {1:1}
 
 
 INDIVIDUAL_EVENT_STRUCTURE :=
@@ -632,6 +634,7 @@ n PLAC <List:Text>                         {1:1}  g7:PLAC
 SOURCE_CITATION :=
 n SOUR @<XREF:SOUR>@                       {1:1}  g7:SOUR
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
+  +1 <<SOURCE_CITATION>>                   {0:M}
   +1 PAGE <Text>                           {0:1}  g7:PAGE
   +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 <<DATE_VALUE>>                     {0:1}
@@ -655,5 +658,6 @@ n REPO @<XREF:REPO>@                       {1:1}  g7:REPO
   +1 CALN <Special>                        {0:M}  g7:CALN
      +2 MEDI <Enum>                        {0:1}  g7:MEDI
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
+  +1 DATE <DateValue>                      {0:1}  g7:DATE
 
 
