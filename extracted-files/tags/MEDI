@@ -22,7 +22,7 @@ specification:
     <div class="example">
     
     Consider an asset in a repository that is a digital scan of a book of compiled
-    newspapers; for this asset, the `CALN`.`MEDI` is recommended to be `ELECTRONIC`
+    newspapers; for this asset, the `CALN`.`MEDI` is recommended to be `ONLINE`
     rather than `BOOK` or `NEWSPAPER`.
     
     </div>

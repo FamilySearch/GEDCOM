@@ -1,0 +1,17 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-INFORMAL
+
+standard tag: INFORMAL
+
+specification:
+  - An informal or de facto marriage, creating a state of marriage by mutual
+    agreement without civil or religious involvement
+
+value of:
+  - "https://gedcom.io/terms/v7/enumset-MARR-KIND"
+...

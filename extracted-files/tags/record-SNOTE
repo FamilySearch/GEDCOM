@@ -18,10 +18,9 @@ specification:
     interpretations, reasoning, and so forth.
     
     A shared note record may be pointed to by multiple other structures. Shared
-    notes should only be used if editing the note in one place should edit it in
-    all other places or if the note itself requires an `IDENTIFIER_STRUCTURE`. If
-    each instance of the note may be edited separately and no identifier is needed,
-    a `NOTE` should be used instead.
+    notes should only be used if editing the note in one place should edit it
+    in all other places. If any instance of the note is edited separately from
+    the others, a `NOTE` should be used instead.
     
     Each [`SNOTE`.`TRAN`] must have either a `MIME` or `LANG` substructure or
     both.
@@ -68,6 +67,7 @@ substructures:
   "https://gedcom.io/terms/v7/MIME": "{0:1}"
   "https://gedcom.io/terms/v7/NOTE-TRAN": "{0:M}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"
+  "https://gedcom.io/terms/v7/RESN": "{0:1}"
   "https://gedcom.io/terms/v7/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/UID": "{0:M}"
 

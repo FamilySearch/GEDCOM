@@ -1,0 +1,31 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7/BURI-KIND
+
+standard tag: KIND
+
+specification:
+  - Kind
+  - |
+    An enumerated value from set https://gedcom.io/terms/v7/enumset-BURI-KIND
+    indicating what was done with the remains of the deceased.
+    
+    Note KIND does not have a https://gedcom.io/terms/v7/PHRASE substructure;
+    the https://gedcom.io/terms/v7/TYPE substructure of the KIND’s
+    superstructure should be used for that purpose instead.
+
+label: 'Kind'
+
+payload: https://gedcom.io/terms/v7/type-Enum
+
+enumeration set: "https://gedcom.io/terms/v7/enumset-BURI-KIND"
+
+substructures: {}
+
+superstructures:
+  "https://gedcom.io/terms/v7/BURI": "{0:1}"
+...
