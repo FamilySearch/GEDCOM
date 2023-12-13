@@ -17,6 +17,11 @@ specification:
     The part of a source relevant to a specific fact, such as a specific page or
     entry, is indicated in a `SOURCE_CITATION` that points to the source record.
     
+    The source record may itself contain a `SOURCE_CITATION` for a source from
+    which the present source was derived. For example, if the source is a
+    translation of another source, then the `SOURCE_CITATION` might reference the
+    original source.
+    
     <div class="note">
     
     This sourcing model is known to be insufficient for some use cases and may be
@@ -47,6 +52,7 @@ substructures:
   "https://gedcom.io/terms/v7/REPO": "{0:M}"
   "https://gedcom.io/terms/v7/RESN": "{0:1}"
   "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/TEXT": "{0:1}"
   "https://gedcom.io/terms/v7/TITL": "{0:1}"
   "https://gedcom.io/terms/v7/UID": "{0:M}"

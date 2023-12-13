@@ -18,9 +18,9 @@ specification:
     interpretations, reasoning, and so forth.
     
     A shared note record may be pointed to by multiple other structures. Shared
-    notes should only be used if editing the note in one place should edit it
-    in all other places. If any instance of the note is edited separately from
-    the others, a `NOTE` should be used instead.
+    notes should only be used if editing the note in one place should edit it in
+    all other places. If any instance of the note is edited separately from the
+    others, a `NOTE` should be used instead.
     
     Each [`SNOTE`.`TRAN`] must have either a `MIME` or `LANG` substructure or
     both.

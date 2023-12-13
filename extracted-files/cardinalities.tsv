@@ -351,6 +351,7 @@ https://gedcom.io/terms/v7/ORDN	https://gedcom.io/terms/v7/DATE	{0:1}
 https://gedcom.io/terms/v7/PEDI	https://gedcom.io/terms/v7/DATE	{0:1}
 https://gedcom.io/terms/v7/PROB	https://gedcom.io/terms/v7/DATE	{0:1}
 https://gedcom.io/terms/v7/PROP	https://gedcom.io/terms/v7/DATE	{0:1}
+https://gedcom.io/terms/v7/REPO	https://gedcom.io/terms/v7/DATE	{0:1}
 https://gedcom.io/terms/v7/RETI	https://gedcom.io/terms/v7/DATE	{0:1}
 https://gedcom.io/terms/v7/SLGC	https://gedcom.io/terms/v7/DATE	{0:1}
 https://gedcom.io/terms/v7/SLGS	https://gedcom.io/terms/v7/DATE	{0:1}
@@ -1217,12 +1218,14 @@ https://gedcom.io/terms/v7/PROP	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/RETI	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/SLGC	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/SLGS	https://gedcom.io/terms/v7/SOUR	{0:M}
+https://gedcom.io/terms/v7/SOUR	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/SSN	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/WILL	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/record-FAM	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/record-INDI	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/record-OBJE	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/record-SNOTE	https://gedcom.io/terms/v7/SOUR	{0:M}
+https://gedcom.io/terms/v7/record-SOUR	https://gedcom.io/terms/v7/SOUR	{0:M}
 https://gedcom.io/terms/v7/HEAD	https://gedcom.io/terms/v7/HEAD-SOUR	{0:1}
 https://gedcom.io/terms/v7/INDI-NAME	https://gedcom.io/terms/v7/SPFX	{0:M}
 https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/SPFX	{0:M}

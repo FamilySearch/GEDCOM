@@ -30,6 +30,11 @@ specification:
     information referenced;" with a `voidPtr` there is no information referenced,
     so the `PAGE` may describe the entire source.
     
+    A `SOUR`.`SOUR` allows indicating a source citation for a cited source from
+    which the present information was derived. For example, if the source is an
+    index that cites where the original record is located, then the `SOUR`.`SOUR`
+    would contain the location cited by the index.
+    
     A `SOURCE_CITATION` can contain a `NOTE_STRUCTURE`, which in turn can contain a
     `SOURCE_CITATION`, allowing potentially unbounded nesting of structures.
     Because each dataset is finite, this nesting is also guaranteed to be finite.
@@ -46,6 +51,7 @@ substructures:
   "https://gedcom.io/terms/v7/QUAY": "{0:1}"
   "https://gedcom.io/terms/v7/RESN": "{0:1}"
   "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/SOUR-DATA": "{0:1}"
   "https://gedcom.io/terms/v7/SOUR-EVEN": "{0:1}"
 
@@ -109,10 +115,12 @@ superstructures:
   "https://gedcom.io/terms/v7/RETI": "{0:M}"
   "https://gedcom.io/terms/v7/SLGC": "{0:M}"
   "https://gedcom.io/terms/v7/SLGS": "{0:M}"
+  "https://gedcom.io/terms/v7/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/SSN": "{0:M}"
   "https://gedcom.io/terms/v7/WILL": "{0:M}"
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
   "https://gedcom.io/terms/v7/record-OBJE": "{0:M}"
   "https://gedcom.io/terms/v7/record-SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/record-SOUR": "{0:M}"
 ...

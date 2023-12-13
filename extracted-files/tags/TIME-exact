@@ -10,10 +10,10 @@ standard tag: TIME
 
 specification:
   - Time
-  - A Time value in a 24-hour clock format. The time should be presented in UTC
-    and indicate that with a Z in the time payload. Unlike a
-    https://gedcom.io/terms/v7/TIME, no https://gedcom.io/terms/v7/PHRASE is
-    permitted under a https://gedcom.io/terms/v7/TIME-exact.
+  - A `Time` value in a 24-hour clock format. The time should be presented in UTC
+    and indicate that with a `Z` in the time payload. Unlike a
+    `https://gedcom.io/terms/v7/TIME`, no `https://gedcom.io/terms/v7/PHRASE` is
+    permitted under a `https://gedcom.io/terms/v7/TIME-exact`.
 
 label: 'Time'
 
