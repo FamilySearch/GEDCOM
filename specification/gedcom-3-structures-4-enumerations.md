@@ -237,6 +237,21 @@ The structures for representing the strength of and confidence in various claims
 These values were formerly used by The Church of Jesus Christ of Latter-day Saints for coordinating between temples and members.
 They are no longer used in that way, meaning their interpretation is subject to individual user interpretation
 
+The definition of some of these values combined with the official policies of the church
+mean that some values only make sense under a subset of [ordinance structures](#latter-day-saint-ordinances).
+These contexts are identified in the "applies to" column below,
+and it is recommended that applications follow those guidelines.
+These recommendations were not present when these enumeration values were first introduced in version 5.3
+so uses that do not conform to the "applies to" guidelines may be encountered;
+if so, they should be treated by applications like any other user-specified but semantically-strange data.
+
+The definition of some of these values combined with the official policies of the church
+and the move of the church away from using GEDCOM for handling ordinance requests
+make them redundant and/or no longer relevant.
+If so, that is indicated in the "status" column below.
+Like the "applies to" column, the "status" column is a recommendation, not a requirement,
+and applications should be prepared to encounter non-current values.
+
 | Value | Applies to | Meaning                             | Status |
 | ----- | ----------- | :---------------------------------- | :----- |
 | `BIC` | `SLGC` | Born in the covenant, so child to parent sealing ordinance is not required. | Current |
