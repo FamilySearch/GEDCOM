@@ -175,7 +175,7 @@ A few substructures of note:
 #### `FAMILY_RECORD` :=
 
 ```gedstruct
-n [@XREF:FAM@|<NULL>] FAM                  {1:1}  g7:record-FAM
+n @XREF:FAM@ FAM                           {1:1}  g7:record-FAM
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<FAMILY_ATTRIBUTE_STRUCTURE>>        {0:M}
   +1 <<FAMILY_EVENT_STRUCTURE>>            {0:M}
@@ -233,7 +233,7 @@ An `INDI` record may have multiple `FAMC` substructures pointing to the same `FA
 #### `INDIVIDUAL_RECORD` :=
 
 ```gedstruct
-n [@XREF:INDI@|<NULL>] INDI                {1:1}  g7:record-INDI
+n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<PERSONAL_NAME_STRUCTURE>>           {0:M}
   +1 SEX <Enum>                            {0:1}  g7:SEX
@@ -301,7 +301,7 @@ does not appear as a child.
 #### `MULTIMEDIA_RECORD` :=
 
 ```gedstruct
-n [@XREF:OBJE@|<NULL>] OBJE                {1:1}  g7:record-OBJE
+n @XREF:OBJE@ OBJE                         {1:1}  g7:record-OBJE
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 FILE <FilePath>                       {1:M}  g7:FILE
      +2 FORM <MediaType>                   {1:1}  g7:FORM
@@ -329,7 +329,7 @@ not the underlying files.
 #### `REPOSITORY_RECORD` :=
 
 ```gedstruct
-n [@XREF:REPO@|<NULL>] REPO                {1:1}  g7:record-REPO
+n @XREF:REPO@ REPO                         {1:1}  g7:record-REPO
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
@@ -354,7 +354,7 @@ Until such time, it is recommended that the repository record store current cont
 #### `SHARED_NOTE_RECORD` :=
 
 ```gedstruct
-n [@XREF:SNOTE@|<NULL>] SNOTE <Text>       {1:1}  g7:record-SNOTE
+n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
@@ -399,7 +399,7 @@ A `SHARED_NOTE_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa
 #### `SOURCE_RECORD` :=
 
 ```gedstruct
-n [@XREF:SOUR@|<NULL>] SOUR                {1:1}  g7:record-SOUR
+n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
   +1 DATA                                  {0:1}  g7:DATA
      +2 EVEN <List:Enum>                   {0:M}  g7:DATA-EVEN
         +3 DATE <DatePeriod>               {0:1}  g7:DATA-EVEN-DATE
@@ -435,7 +435,7 @@ A `SOURCE_RECORD` may contain a pointer to a `SHARED_NOTE_RECORD` and vice versa
 #### `SUBMITTER_RECORD` :=
 
 ```gedstruct
-n [@XREF:SUBM@|<NULL>] SUBM                {1:1}  g7:record-SUBM
+n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
