@@ -319,7 +319,7 @@ Extensions cannot change existing meanings, cardinalities, or calendars.
 A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure. Their meaning is defined by their tag, as is discussed more fully in the section [Extension Tags].
 
 Any substructure of a tagged extension structure that uses a tag matching `stdTag` is an **extension-defined substructure**.
-Substructures of an extension-defined substructure that uses a tag matching `stdTag` are also extension-defined substructures.
+Substructures of an extension-defined substructure that uses a tag matching `stdTag` are also extension-defined substructures, but this specification deprecates using a `stdTag` with a different definition than a standard type with that tag.
 The meaning and use of each extension-defined substructure is defined by the tagged extension structure it occurs within, not by its tag alone nor by this specification.
 
 :::example
@@ -337,7 +337,8 @@ In the following
 ```
 
 - Both uses of `_LOC` are tagged extension structures, as is `_POP`.
-- `_LOC`.`NAME` and `_LOC`.`NAME`.`DATE` are both extension-defined substructures. Their meaning is defined by the specification defining `_LOC`.
+- `_LOC`.`NAME` and `_LOC`.`NAME`.`DATE` are both extension-defined substructures. Their meaning is defined by the specification defining `_LOC`, but since no standard definition of `NAME` permits `DATE` as a substructure, such use is
+deprecated.
 - `_POP`.`DATE` is an extension-defined substructure. Its meaning is defined by the specification defining `_POP`.
 - Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended data type without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
 :::
