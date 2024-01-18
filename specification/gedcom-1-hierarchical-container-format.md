@@ -319,7 +319,7 @@ Extensions cannot change existing meanings, cardinalities, or calendars.
 A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure. Their meaning is defined by their tag, as is discussed more fully in the section [Extension Tags].
 
 Any substructure of a tagged extension structure that uses a tag matching `stdTag` is an **extension-defined substructure**.
-Substructures of an extension-defined substructure that uses a tag matching `stdTag` are also extension-defined substructures, but this specification deprecates using a `stdTag` with a different definition than a standard type with that tag.
+Substructures of an extension-defined substructure that uses a tag matching `stdTag` are also extension-defined substructures, but this specification deprecates using a `stdTag` with a definition that does not match any standard type with that tag.
 The meaning and use of each extension-defined substructure is defined by the tagged extension structure it occurs within, not by its tag alone nor by this specification.
 
 :::example
