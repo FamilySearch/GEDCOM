@@ -58,21 +58,21 @@ The French Republican calendar or French Revolutionary calendar are the names gi
 
 Permitted months are
 
-|Code  |Name                |
-|:-----|:-------------------|
-|`VEND`|Vendémiaire         |
-|`BRUM`|Brumaire            |
-|`FRIM`|Frimaire            |
-|`NIVO`|Nivôse              |
-|`PLUV`|Pluviôse            |
-|`VENT`|Ventôse             |
-|`GERM`|Germinal            |
-|`FLOR`|Floréal             |
-|`PRAI`|Prairial            |
-|`MESS`|Messidor            |
-|`THER`|Thermidor           |
-|`FRUC`|Fructidor           |
-|`COMP`|Jour Complémentaires|
+|Code  |Name                 |
+|:-----|:--------------------|
+|`VEND`|Vendémiaire          |
+|`BRUM`|Brumaire             |
+|`FRIM`|Frimaire             |
+|`NIVO`|Nivôse               |
+|`PLUV`|Pluviôse             |
+|`VENT`|Ventôse              |
+|`GERM`|Germinal             |
+|`FLOR`|Floréal              |
+|`PRAI`|Prairial             |
+|`MESS`|Messidor             |
+|`THER`|Thermidor            |
+|`FRUC`|Fructidor            |
+|`COMP`|Jours complémentaires|
 
 No epoch marker is permitted in this calendar.
 

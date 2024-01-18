@@ -21,8 +21,9 @@ payload: https://gedcom.io/terms/v7/type-Enum
 enumeration set: "https://gedcom.io/terms/v7/enumset-PEDI"
 
 substructures:
+  "https://gedcom.io/terms/v7/DATE": "{0:1}"
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/INDI-FAMC": "{0:1}"
+  "https://gedcom.io/terms/v7/INDI-FAMC": "{0:M}"
 ...

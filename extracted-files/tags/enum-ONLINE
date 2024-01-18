@@ -1,0 +1,16 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-ONLINE
+
+standard tag: ONLINE
+
+specification:
+  - Online digital artifact
+
+value of:
+  - "https://gedcom.io/terms/v7/enumset-MEDI"
+...

@@ -1,0 +1,17 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration
+
+uri: https://gedcom.io/terms/v7/enum-RELIGIOUS
+
+standard tag: RELIGIOUS
+
+specification:
+  - A religious marriage event, creating a state of marriage via a religious
+    ceremony or registration process
+
+value of:
+  - "https://gedcom.io/terms/v7/enumset-MARR-KIND"
+...

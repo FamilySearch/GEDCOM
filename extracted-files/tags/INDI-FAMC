@@ -19,9 +19,10 @@ label: 'Family child'
 payload: "@<https://gedcom.io/terms/v7/record-FAM>@"
 
 substructures:
+  "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/FAMC-STAT": "{0:1}"
   "https://gedcom.io/terms/v7/NOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/PEDI": "{0:1}"
+  "https://gedcom.io/terms/v7/PEDI": "{0:M}"
   "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
 
 superstructures:

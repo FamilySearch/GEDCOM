@@ -26,8 +26,10 @@ substructures:
   "https://gedcom.io/terms/v7/CAUS": "{0:1}"
   "https://gedcom.io/terms/v7/DATE": "{0:1}"
   "https://gedcom.io/terms/v7/EMAIL": "{0:M}"
+  "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/FAX": "{0:M}"
   "https://gedcom.io/terms/v7/HUSB": "{0:1}"
+  "https://gedcom.io/terms/v7/MARR-KIND": "{0:1}"
   "https://gedcom.io/terms/v7/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7/OBJE": "{0:M}"
   "https://gedcom.io/terms/v7/PHON": "{0:M}"
@@ -46,6 +48,5 @@ superstructures:
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
 
 value of:
-  - "https://gedcom.io/terms/v7/enumset-EVEN"
   - "https://gedcom.io/terms/v7/enumset-EVENATTR"
 ...
