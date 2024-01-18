@@ -956,6 +956,8 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 #### `NO` (Did not happen) `g7:NO`
 
 An enumerated value from set `g7:enumset-EVEN` identifying an event type which did not occur to the superstructure's subject.
+A specific payload `NO XYZ` should only appear where `XYZ` would be legal.
+
 See `NON_EVENT_STRUCTURE` for more details.
 
 #### `NOTE` (Note) `g7:NOTE`
