@@ -304,13 +304,14 @@ registered values and extension values.
 MediaType = type "/" subtype parameters
 ```
 where:
-* `type` and `subtype` are defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045)
+
+- `type` and `subtype` are defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045)
   section 5.1, and registered values (i.e., those not beginning with "x-") are further
   constrained by the definitions in
   [RFC 6838](https://www.rfc-editor.org/info/rfc6838), section 4.2.
   A [registry of media types](https://www.iana.org/assignments/media-types/media-types.xhtml)
   is maintained publicly by the IANA.
-* `parameters` is defined in [RFC 9110](https://www.rfc-editor.org/info/rfc9110),
+- `parameters` is defined in [RFC 9110](https://www.rfc-editor.org/info/rfc9110),
   section 5.6.6.  Note that the `parameters` definition in GEDCOM matches that used by HTTP
   headers which permit whitespace around the ";" delimiter, whereas email headers in
   RFC 2045 do not.
