@@ -228,7 +228,7 @@ Different cultures count ages differently. Some increment years on the anniversa
 :::note
 Because age payloads are intended to allow recording the age as it was recorded in records that could contain errors,
 odd ages such as `8w 30d`, `1y 400d`, `1y 30m`, etc. are permitted.  Some applications might convert these to more
-standard forms and use a `PHRASE` substructure to hold the original form.
+standard forms; if so, it is recommended that they use a `PHRASE` substructure to hold the original form.
 :::
 
 Age payloads may also be omitted entirely if no suitable form is known but a substructure (such as a `PHRASE`) is desired.
