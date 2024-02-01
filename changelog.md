@@ -1,3 +1,24 @@
+# Version 7.0.14
+
+- Recommend that `NO XYZ` only be used where `XYZ` is permitted (its meaning is undefined elsewhere).
+
+- Recommend that a given `INDI` have at most one `FAMC` pointing to a given `FAM` (having more than one has unclear meaning); and likewise that a given `FAM` have at most one `CHIL` pointing to a given `INDI` (having more than one indicates nonsensical birth order).
+
+- Refactor presentation of local files to better match related RFCs and only make implementable constraints, and to use its own `<FilePath>` datatype instead of `<Special>`. This does not change `FILE` payloads, only how they are specified to better support automated tooling.
+
+- Refactor the enumeration tags `CENS`, `EVEN`, `FACT`, `NCHI`, and `RESI` to have different URIs, removing a previous parsing ambiguity. This changes neither the set of tags permitted in any enumeration set nor those tags' meaning, only how they are specified to better support automated tooling.
+
+- Deprecate extension-defined substructures using `stdTag` in a way incompatible with any standard definition of that tag. The now-depreciated use was common in 5.5.1 and is permitted in 7.0, but can prevent extension structures from being adopted as-is as new standard structures in future versions of the specification.
+
+- Clarify that the "applies to" and "status" columns of `g7:enumset-ord-STAT` are recommendations, not restrictions.
+
+- Clarify that AGE values may be larger than any calendar supports. This was always permitted; that fact is now called out more clearly.
+
+- Clarify that records cannot be relocated standard structures. This was always incompatible with the definition of relocated standard structures; that fact is now called out more clearly.
+
+- Various typo corrections.
+
+
 # Version 7.0.13
 
 - Deprecated `ADR1`, `ADR2`, and `ADR3` which convey no information not already in `ADDR`.
