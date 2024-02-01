@@ -225,6 +225,12 @@ Because numbers are rounded down, `>` effectively includes its endpoint; that is
 
 Different cultures count ages differently. Some increment years on the anniversary of birth and others at particular seasons. Some round to the nearest year, others round years down, others round years up. Because users may be unaware of these traditions or may fail to convert them to the round-down convention, errors in age of up to a year are common.
 
+:::note
+Because age payloads are intended to allow recording the age as it was recorded in records that could contain errors,
+odd ages such as `8w 30d`, `1y 400d`, `1y 30m`, etc. are permitted.  Some applications might convert these to more
+standard forms and use a `PHRASE` substructure to hold the original form.
+:::
+
 Age payloads may also be omitted entirely if no suitable form is known but a substructure (such as a `PHRASE`) is desired.
 
 :::note
