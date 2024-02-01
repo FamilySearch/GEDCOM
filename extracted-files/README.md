@@ -12,7 +12,7 @@ All files in this directory and its sub-directories, except for this README file
 - Various TSV files provide simple look-ups; all of this information is also available in the YAML files
     - `cardinalities.tsv` contains (superstructure type, substructure type, cardinality of substructure) triples.
     - `enumrations.tsv` contains (enumeration set, enumeration value) pairs.
-    - `enumerationsets.tsv` contaisn (structure type, enmeration set) pairs.
+    - `enumerationsets.tsv` contains (structure type, enmeration set) pairs.
     - `payloads.tsv` contains (structure type, payload type) pairs.
     - `substructures.tsv` contains (superstructure type, substructure tag, substructure type) triples.
 
