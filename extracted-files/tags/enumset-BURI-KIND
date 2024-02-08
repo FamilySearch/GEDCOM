@@ -1,0 +1,15 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration set
+
+uri: https://gedcom.io/terms/v7/enumset-BURI-KIND
+
+enumeration values:
+  - "https://gedcom.io/terms/v7/enum-GRAVE"
+  - "https://gedcom.io/terms/v7/enum-VAULT"
+  - "https://gedcom.io/terms/v7/enum-SEA"
+  - "https://gedcom.io/terms/v7/enum-SKY"
+  - "https://gedcom.io/terms/v7/enum-OTHER"
+...

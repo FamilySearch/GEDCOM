@@ -9,13 +9,15 @@ uri: https://gedcom.io/terms/v7/NO
 standard tag: 'NO'
 
 specification:
-  - Did not happen
+  - Negative assertion
   - |
-    An enumerated value from set `https://gedcom.io/terms/v7/enumset-EVEN`
-    identifying an event type which did not occur to the superstructure's subject.
-    A specific payload `NO XYZ` should only appear where `XYZ` would be legal.
+    An enumerated value from set `https://gedcom.io/terms/v7/enumset-NO`
+    identifying something that was not part of the superstructure: an event type
+    which did not occur to the superstructure's subject, that the superstructure's
+    subject did not have an name or name part, etc. A specific payload `NO XYZ`
+    should only appear where `XYZ` would be legal.
     
-    See `NON_EVENT_STRUCTURE` for more details.
+    See `NEGATIVE_ASSERTION` for more.
   - |
     Indicates that a specific type of event, given in the payload, did not happen
     within a given date period (or never happened if there is no `DATE`
@@ -42,11 +44,11 @@ specification:
     
     </div>
 
-label: 'Did not happen'
+label: 'Negative assertion'
 
 payload: https://gedcom.io/terms/v7/type-Enum
 
-enumeration set: "https://gedcom.io/terms/v7/enumset-EVEN"
+enumeration set: "https://gedcom.io/terms/v7/enumset-NO"
 
 substructures:
   "https://gedcom.io/terms/v7/NO-DATE": "{0:1}"
@@ -55,6 +57,7 @@ substructures:
   "https://gedcom.io/terms/v7/SOUR": "{0:M}"
 
 superstructures:
+  "https://gedcom.io/terms/v7/INDI-NAME": "{0:M}"
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
 ...

@@ -1,0 +1,31 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7/SUBM-ALIA
+
+standard tag: ALIA
+
+specification:
+  - Alias
+  - |
+    Indicates that the user described by the superstructure is the same person as
+    the individual described by the referenced `INDI`.
+    
+    A `SUBM` may only have a single `INDI` linked in this way to simplify
+    implementation of algorithms that depend on the `INDI` representing a
+    particular user. Applications using `https://gedcom.io/terms/v7/ALIA` to
+    represent a person with multiple `INDI` records should select or generate a
+    representative `INDI` for the `SUBM`.`ALIA`.
+
+label: 'Alias'
+
+payload: "@<https://gedcom.io/terms/v7/record-INDI>@"
+
+substructures: {}
+
+superstructures:
+  "https://gedcom.io/terms/v7/record-SUBM": "{0:1}"
+...

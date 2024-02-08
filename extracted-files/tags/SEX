@@ -19,7 +19,8 @@ payload: https://gedcom.io/terms/v7/type-Enum
 
 enumeration set: "https://gedcom.io/terms/v7/enumset-SEX"
 
-substructures: {}
+substructures:
+  "https://gedcom.io/terms/v7/EXID": "{0:M}"
 
 superstructures:
   "https://gedcom.io/terms/v7/record-INDI": "{0:1}"

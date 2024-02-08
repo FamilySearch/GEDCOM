@@ -9,9 +9,9 @@ uri: https://gedcom.io/terms/v7/month-COMP
 standard tag: COMP
 
 specification:
-  - Jour Complémentaires
+  - Jours complémentaires
 
-label: 'Jour Complémentaires'
+label: 'Jours complémentaires'
 
 calendars:
   - "https://gedcom.io/terms/v7/cal-FRENCH_R"
