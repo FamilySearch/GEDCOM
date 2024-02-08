@@ -111,5 +111,6 @@ with open(dst,'w') as to:
                     # to.write(line)
                 else:
                     to.write(linkable(line, num))
+        to.write('\n\n') # ensure full break between each .md file
 
 # Step 3 is adding links inside gedstruct code blocks. This cannot be done in markdown, so it is handled by a separate processor for the HTML
