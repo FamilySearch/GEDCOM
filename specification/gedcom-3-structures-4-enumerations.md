@@ -15,20 +15,15 @@ Each set of enumeration values has its own URI.
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
-### `g7:enumset-EVEN`
+### `g7:enumset-BURI-KIND`
 
-An event-type tag name, but not the generic `EVEN` tag.
-See [Events].
-
-Most values in this enumeration set use the same tag and URI as the corresponding event,
-except for tags used with different URIs for `FAM` vs `INDI`;
-these are given generic definitions with URIs constructed by concatenating
-`g7:enum-` to the enumeration value:
-
-| Value  | Meaning                                                |
-| :----- | :----------------------------------------------------- |
-| `CENS` | A census event; either `g7:INDI-CENS` or `g7:FAM-CENS` |
-
+| Value | Meaning |
+| :---- | :------ |
+| `GRAVE` | Buried under the ground |
+| `VAULT` | Placed in a tomb or crypt |
+| `SEA` | Deposited in an ocean, lake, or other body of water |
+| `SKY` | Placed on a burial tree, mountain, or other open place to be excarnated |
+| `OTHER` | A value not listed here; should be paired with a `TYPE` structure |
 
 ### `g7:enumset-EVENATTR`
 
@@ -48,6 +43,15 @@ these are given generic definitions with URIs constructed by concatenating
 | `FACT` | A generic attribute; either `g7:INDI-FACT` or `g7:FAM-FACT` |
 | `EVEN` | A generic event; either `g7:INDI-EVEN` or `g7:FAM-EVEN` |
 
+### `g7:enumset-MARR-KIND`
+
+| Value | Meaning |
+| :---- | :------ |
+| `CIVIL`      | A civil marriage event, creating a state of marriage via a civil ceremony or registration process |
+| `COMMON_LAW` | Civil or religious recognition of a preexisting informal marriage |
+| `INFORMAL`   | An informal or de facto marriage, creating a state of marriage by mutual agreement without civil or religious involvement |
+| `RELIGIOUS`  | A religious marriage event, creating a state of marriage via a religious ceremony or registration process  |
+| `OTHER` | A value not listed here; should be paired with a `TYPE` structure |
 
 ### `g7:enumset-MEDI`
 
@@ -56,17 +60,50 @@ these are given generic definitions with URIs constructed by concatenating
 | `AUDIO`      | An audio recording                |
 | `BOOK`       | A bound book                      |
 | `CARD`       | A card or file entry              |
-| `ELECTRONIC` | A digital artifact                |
+| `DIGITAL`    | Digital storage medium            |
+| `ELECTRONIC` | A digital artifact (deprecated)   |
 | `FICHE`      | Microfiche                        |
 | `FILM`       | Microfilm                         |
 | `MAGAZINE`   | Printed periodical                |
 | `MANUSCRIPT` | Written pages                     |
 | `MAP`        | Cartographic map                  |
 | `NEWSPAPER`  | Printed newspaper                 |
+| `ONLINE`     | Online digital artifact           |
 | `PHOTO`      | Photograph                        |
 | `TOMBSTONE`  | Burial marker or related memorial |
 | `VIDEO`      | Motion picture recording          |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
+
+:::note
+The value `ELECTRONIC` is deprecated and kept for backwards compatibility, but might be removed in the future.
+Applications should instead use `ONLINE` for online content, or `DIGITAL` for offline content such as a CD-ROM
+or other digital storage medium.
+:::
+
+
+
+### `g7:enumset-NO` {.unlisted .unnumbered}
+
+This set contains various structure types, with the same tags and URIs used by the structure types:
+
+- All individual and family event types except `EVEN`
+
+- The personal name type `g7:INDI-NAME`
+
+- The name parts `g7:GIVN` and `g7:SURN`
+
+Values should be appropriate to the context of the containing structure,
+as described under `g7:NO`.
+
+Most values in this enumeration set use the same tag and URI as the corresponding event,
+except for tags used with different URIs for `FAM` vs `INDI`;
+these are given generic definitions with URIs constructed by concatenating
+`g7:enum-` to the enumeration value:
+
+| Value  | Meaning                                                |
+| :----- | :----------------------------------------------------- |
+| `CENS` | A census event; either `g7:INDI-CENS` or `g7:FAM-CENS` |
+
 
 ### `g7:enumset-PEDI`
 
@@ -234,6 +271,7 @@ and applications should be prepared to encounter non-current values.
 
 | Value | Meaning                       |
 | ----- | :---------------------------- |
+| `ADOPTED` | Name given at the time of adoption. |
 | `AKA` | Also known as, alias, etc. |
 | `BIRTH` | Name given at or near birth. |
 | `IMMIGRANT` | Name assumed at the time of immigration. |

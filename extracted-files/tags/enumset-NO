@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration set
+
+uri: https://gedcom.io/terms/v7/enumset-NO
+
+enumeration values:
+  - "https://gedcom.io/terms/v7/enum-CENS"
+...
