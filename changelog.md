@@ -94,7 +94,7 @@
 
 - Changes anticipating a coming extension registry:
 
-    - Add URIs for sets of enumeration values. This has changes some fragment identifiers in the HTML version of the spec and could cause hotlinks to the specific sections discussing enumeration sets to change.
+    - Add URIs for sets of enumeration values. This changed some fragment identifiers in the HTML version of the spec and could cause hotlinks to the specific sections discussing enumeration sets to change.
 
     - Many updates to the YAML format served at <https://gedcom.io/terms/v7/record-INDI> and at the other URIs in the specification.
 
@@ -160,7 +160,7 @@
         - `mul` can be used if there is no single primary language, but is unlikely to provide practical functionality beyond `und`.
         - `zxx` can be used for ASCII art and other non-language text, and can improve accessibility for screen readers.
 
-- Clarify that empty *payloads* are encoded as missing `LineVal`s and empty `LineVal`s are not been permitted; this has been true since 7.0.0 but was easily overlooked in the previous text.
+- Clarify that empty *payloads* are encoded as missing `LineVal`s and empty `LineVal`s are not permitted; this has been true since 7.0.0 but was easily overlooked in the previous text.
 
 - Note cases where the same couple might be the partners in multiple `FAM` records.
 
@@ -241,7 +241,7 @@
 
 # Version 7.0.0
 
-As a major release and the first update to the specification in 20 years, there a many changes in this version.
+As a major release and the first update to the specification in 20 years, there are many changes in this version.
 
 This version is the first version to use [semantic versioning](https://semver.org/).
 7 was chosen as the new major version number because 1 through 6 were each used previously, some for released standards and others for abandoned drafts.
@@ -323,7 +323,7 @@ Earlier versions of GEDCOM predated language tags, media types, and Unicode beca
 
 ## New Extensibility
 
-- Every standard tag now has a single "default" meaning, even if it also has additional meanings in other contexts. Tags conforming to this default meaning can now be used by extensions as substructures of structures with extention tags.
+- Every standard tag now has a single "default" meaning, even if it also has additional meanings in other contexts. Tags conforming to this default meaning can now be used by extensions as substructures of structures with extension tags.
 
 - Extension tags remain in a backwards-compatible way, but should additionally be paired with a URI to avoid name collisions and provide documentation.
 
@@ -347,7 +347,7 @@ Earlier versions of GEDCOM predated language tags, media types, and Unicode beca
 
 - Age phrases are now only phrases, not long-hand terms for specific age ranges
 
-- Previously registered values (APPROVED_SYSTEM_ID, RECEIVING_SYSTEM_NAME, etc) are kept as-is if present; new ones are URIs instead of having a separate registration process
+- Previously registered values (APPROVED_SYSTEM_ID, RECEIVING_SYSTEM_NAME, etc.) are kept as-is if present; new ones are URIs instead of having a separate registration process
 
 - `RESI` may have a payload, just as all other attributes may
 
@@ -365,7 +365,7 @@ Various ambiguities were identified in version 5.5.1: some due to poor wording, 
 
 - Dual-year dates were used with widely different semantics and have been replaced by more flexibility in date phrases.
 
-- `SEX` is now unambiguously biological sex at birth; all other related concepts (gender identity, sexual preference, sex reassignment, etc) are time-varying attributes and to be stored in an individual attribute instead
+- `SEX` is now unambiguously biological sex at birth; all other related concepts (gender identity, sexual preference, sex reassignment, etc.) are time-varying attributes and to be stored in an individual attribute instead
 
     Note that new tags were not introduced for gender-related attributes. It is not yet clear what the correct set of attribute types should be given the evolving and regionally-specific understanding of these concepts. The generic `FACT` is recommended for these concepts instead. 
 
