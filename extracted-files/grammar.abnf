@@ -11,7 +11,7 @@ banned = %x00-08 / %x0B-0C / %x0E-1F ; C0 other than LF CR and Tab
 ; All other rules assume the absence of any banned characters
 
 
-; DIGIT     = %x30-39   ; 0 through 9 -- part of the ABNF core
+; DIGIT     = %x30-39   ; 0 through 9 -- defined in RFC 5234 section B.1
 nonzero     = %x31-39   ; 1 through 9
 ucletter    = %x41-5A   ; A through Z
 underscore  = %x5F      ; _
