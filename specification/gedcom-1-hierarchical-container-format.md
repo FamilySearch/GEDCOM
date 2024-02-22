@@ -60,7 +60,7 @@ This document additionally makes use of the following named character sets in AB
 
 
 ```abnf
-; DIGIT     = %x30-39   ; 0 through 9 -- part of the ABNF core
+; DIGIT     = %x30-39   ; 0 through 9 -- defined in RFC 5234 section B.1
 nonzero     = %x31-39   ; 1 through 9
 ucletter    = %x41-5A   ; A through Z
 underscore  = %x5F      ; _
