@@ -60,7 +60,7 @@ This document additionally makes use of the following named character sets in AB
 
 
 ```abnf
-digit       = %x30-39   ; 0 through 9
+; DIGIT     = %x30-39   ; 0 through 9 -- defined in RFC 5234 section B.1
 nonzero     = %x31-39   ; 1 through 9
 ucletter    = %x41-5A   ; A through Z
 underscore  = %x5F      ; _
@@ -125,7 +125,7 @@ It matches the production `Line`:
 ```abnf
 Line    = Level D [Xref D] Tag [D LineVal] EOL
 
-Level   = "0" / nonzero *digit
+Level   = "0" / nonzero *DIGIT
 D       = %x20                            ; space
 Xref    = atsign 1*tagchar atsign         ; but not "@VOID@"
 Tag     = stdTag / extTag
@@ -134,7 +134,7 @@ EOL     = %x0D [%x0A] / %x0A              ; CR-LF, CR, or LF
 
 stdTag  = ucletter *tagchar
 extTag  = underscore 1*tagchar
-tagchar = ucletter / digit / underscore
+tagchar = ucletter / DIGIT / underscore
 
 pointer = voidPtr / Xref
 voidPtr = %s"@VOID@"

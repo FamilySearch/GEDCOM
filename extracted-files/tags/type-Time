@@ -18,10 +18,10 @@ specification:
     ```abnf
     Time     =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
     
-    hour     = digit / ("0" / "1") digit / "2" ("0" / "1" / "2" / "3")
-    minute   = ("0" / "1" / "2" / "3" / "4" / "5") digit
-    second   = ("0" / "1" / "2" / "3" / "4" / "5") digit
-    fraction = 1*digit
+    hour     = DIGIT / ("0" / "1") DIGIT / "2" ("0" / "1" / "2" / "3")
+    minute   = ("0" / "1" / "2" / "3" / "4" / "5") DIGIT
+    second   = ("0" / "1" / "2" / "3" / "4" / "5") DIGIT
+    fraction = 1*DIGIT
     ```
     
     <div class="note">

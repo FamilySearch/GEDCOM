@@ -23,7 +23,7 @@ and represents a non-negative integer in base-10.
 Leading zeros have no semantic meaning and should be omitted.
 
 ```abnf
-Integer = 1*digit
+Integer = 1*DIGIT
 ```
 
 Negative integers are not supported by this specification.
@@ -177,10 +177,10 @@ When a time is used together with a `DateExact`, it is recommended that UTC time
 ```abnf
 Time     =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
 
-hour     = digit / ("0" / "1") digit / "2" ("0" / "1" / "2" / "3")
-minute   = ("0" / "1" / "2" / "3" / "4" / "5") digit
-second   = ("0" / "1" / "2" / "3" / "4" / "5") digit
-fraction = 1*digit
+hour     = DIGIT / ("0" / "1") DIGIT / "2" ("0" / "1" / "2" / "3")
+minute   = ("0" / "1" / "2" / "3" / "4" / "5") DIGIT
+second   = ("0" / "1" / "2" / "3" / "4" / "5") DIGIT
+fraction = 1*DIGIT
 ```
 
 :::note
