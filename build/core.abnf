@@ -1,6 +1,6 @@
 ; Core Rules extracted from RFC 5234 section B.1
 ALPHA          =  %x41-5A / %x61-7A   ; A-Z / a-z
-;DIGIT         =  %x30-39 ; 0-9
+DIGIT          =  %x30-39 ; 0-9
 SP             =  %x20
 HTAB           =  %x09 ; horizontal tab
 DQUOTE         =  %x22 ; " (Double Quote)

@@ -21,16 +21,16 @@ extlang       = 3ALPHA              ; selected ISO 639 codes
 script        = 4ALPHA              ; ISO 15924 code
 
 region        = 2ALPHA              ; ISO 3166-1 code
-               / 3digit              ; UN M.49 code
+               / 3DIGIT              ; UN M.49 code
 
 variant       = 5*8alphanum         ; registered variants
-               / (digit 3alphanum)
+               / (DIGIT 3alphanum)
 
 extension     = singleton 1*("-" (2*8alphanum))
 
                                      ; Single alphanumerics
                                      ; "x" reserved for private use
-singleton     = digit               ; 0 - 9
+singleton     = DIGIT               ; 0 - 9
                / %x41-57             ; A - W
                / %x59-5A             ; Y - Z
                / %x61-77             ; a - w
@@ -69,4 +69,4 @@ regular       = "art-lojban"        ; these tags match the 'langtag'
                / "zh-min-nan"        ; subtag or sequence of subtags
                / "zh-xiang"
 
-alphanum      = (ALPHA / digit)     ; letters and numbers
+alphanum      = (ALPHA / DIGIT)     ; letters and numbers

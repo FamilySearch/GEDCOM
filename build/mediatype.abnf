@@ -14,8 +14,8 @@ type-name = restricted-name
 subtype-name = restricted-name
 
 restricted-name = restricted-name-first *126restricted-name-chars
-restricted-name-first  = ALPHA / digit
-restricted-name-chars  = ALPHA / digit / "!" / "#" /
+restricted-name-first  = ALPHA / DIGIT
+restricted-name-chars  = ALPHA / DIGIT / "!" / "#" /
                          "$" / "&" / "-" / "^" / "_"
 restricted-name-chars =/ "." ; Characters before first dot always
                              ; specify a facet name
@@ -30,7 +30,7 @@ parameter-value = ( token / quoted-string )
 token           = 1*tchar
 tchar           = "!" / "#" / "$" / "%" / "&" / "'" / "*"
                 / "+" / "-" / "." / "^" / "_" / "`" / "|" / "~"
-                / digit / ALPHA
+                / DIGIT / ALPHA
                 ; any VCHAR, except delimiters
 OWS             = *( SP / HTAB )
                 ; optional whitespace
