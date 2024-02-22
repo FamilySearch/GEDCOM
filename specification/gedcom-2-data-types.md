@@ -225,6 +225,12 @@ Because numbers are rounded down, `>` effectively includes its endpoint; that is
 
 Different cultures count ages differently. Some increment years on the anniversary of birth and others at particular seasons. Some round to the nearest year, others round years down, others round years up. Because users may be unaware of these traditions or may fail to convert them to the round-down convention, errors in age of up to a year are common.
 
+:::note
+Because age payloads are intended to allow recording the age as it was recorded in records that could contain errors,
+odd ages such as `8w 30d`, `1y 400d`, `1y 30m`, etc. are permitted.  Some applications might convert these to more
+standard forms; if so, it is recommended that they use a `PHRASE` substructure to hold the original form.
+:::
+
 Age payloads may also be omitted entirely if no suitable form is known but a substructure (such as a `PHRASE`) is desired.
 
 :::note
@@ -304,13 +310,14 @@ registered values and extension values.
 MediaType = type "/" subtype parameters
 ```
 where:
-* `type` and `subtype` are defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045)
+
+- `type` and `subtype` are defined in [RFC 2045](https://www.rfc-editor.org/info/rfc2045)
   section 5.1, and registered values (i.e., those not beginning with "x-") are further
   constrained by the definitions in
   [RFC 6838](https://www.rfc-editor.org/info/rfc6838), section 4.2.
   A [registry of media types](https://www.iana.org/assignments/media-types/media-types.xhtml)
   is maintained publicly by the IANA.
-* `parameters` is defined in [RFC 9110](https://www.rfc-editor.org/info/rfc9110),
+- `parameters` is defined in [RFC 9110](https://www.rfc-editor.org/info/rfc9110),
   section 5.6.6.  Note that the `parameters` definition in GEDCOM matches that used by HTTP
   headers which permit whitespace around the ";" delimiter, whereas email headers in
   RFC 2045 do not.

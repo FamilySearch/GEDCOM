@@ -10,8 +10,11 @@ standard tag: 'NO'
 
 specification:
   - Did not happen
-  - An enumerated value from set `https://gedcom.io/terms/v7/enumset-EVEN`
+  - |
+    An enumerated value from set `https://gedcom.io/terms/v7/enumset-EVEN`
     identifying an event type which did not occur to the superstructure's subject.
+    A specific payload `NO XYZ` should only appear where `XYZ` would be legal.
+    
     See `NON_EVENT_STRUCTURE` for more details.
   - |
     Indicates that a specific type of event, given in the payload, did not happen
