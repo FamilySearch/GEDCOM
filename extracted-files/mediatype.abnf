@@ -1,0 +1,40 @@
+; ABNF derived from RFC 2045 section 5.1
+type = discrete-type / composite-type
+discrete-type = "text" / "image" / "audio" / "video" /
+                "application" / extension-token
+composite-type = "message" / "multipart" / extension-token
+extension-token = ietf-token / x-token
+ietf-token = type-name
+x-token = "x-" token
+subtype = extension-token / iana-token
+iana-token = subtype-name
+
+; ABNF derived from RFC 6838 section 4.2
+type-name = restricted-name
+subtype-name = restricted-name
+
+restricted-name = restricted-name-first *126restricted-name-chars
+restricted-name-first  = ALPHA / digit
+restricted-name-chars  = ALPHA / digit / "!" / "#" /
+                         "$" / "&" / "-" / "^" / "_"
+restricted-name-chars =/ "." ; Characters before first dot always
+                             ; specify a facet name
+restricted-name-chars =/ "+" ; Characters after last plus always
+                             ; specify a structured syntax suffix
+
+; ABNF derived from RFC 9110 section 5.6
+parameters      = *( OWS ";" OWS [ parameter ] )
+parameter       = parameter-name "=" parameter-value
+parameter-name  = token
+parameter-value = ( token / quoted-string )
+token           = 1*tchar
+tchar           = "!" / "#" / "$" / "%" / "&" / "'" / "*"
+                / "+" / "-" / "." / "^" / "_" / "`" / "|" / "~"
+                / digit / ALPHA
+                ; any VCHAR, except delimiters
+OWS             = *( SP / HTAB )
+                ; optional whitespace
+quoted-string   = DQUOTE *( qdtext / quoted-pair ) DQUOTE
+qdtext          = HTAB / SP / %x21 / %x23-5B / %x5D-7E / obs-text
+obs-text        = %x80-FF
+quoted-pair     = "\" ( HTAB / SP / VCHAR / obs-text )

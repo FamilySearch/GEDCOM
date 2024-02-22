@@ -42,6 +42,12 @@ if __name__ == '__main__':
                     header = line
                     if '{' in header: header = header[:header.find('{')]
                     header = header.strip('# \n\r\t')
+    with open('languagetag.abnf') as f:
+        abnf.append(f.read())
+    with open('mediatype.abnf') as f:
+        abnf.append(f.read())
+    with open('core.abnf') as f:
+        abnf.append(f.read())
     with open(join(dst,'grammar.abnf'), 'w') as f:
         f.write('''; This document is in ABNF, see <https://tools.ietf.org/html/std68>
 ; This document uses RFC 7405 to add case-sensitive literals to ABNF.
