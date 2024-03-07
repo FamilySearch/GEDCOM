@@ -38,7 +38,5 @@ If you are looking for FamilySearch's GEDCOM 5.5.1 Java parser, which previously
 
 - `next-minor` contains a working draft of the next minor release. Changes from `main` have been discussed and approved by the working group supervising the next minor release, but have not been fully vetted and approved for inclusion in the standard and may change at any time without notice.
 
-- `next-major` contains a working draft of the next major release. Changes from `main` have been discussed and approved by the working group supervising the next major release, but have not been fully vetted and approved for inclusion in the standard and may change at any time without notice.
-
 - All other branches are for conversation drafts that may or may not be incorporated into a future version of the specification.
 
