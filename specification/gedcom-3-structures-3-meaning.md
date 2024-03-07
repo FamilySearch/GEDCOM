@@ -872,6 +872,13 @@ Consider an asset in a repository that is a digital scan of a book of compiled n
 for this asset, the `CALN`.`MEDI` is recommended to be `ELECTRONIC` rather than `BOOK` or `NEWSPAPER`.
 :::
 
+When `MEDI` is a substructure of a `g7:FORM`, it is recommended that its payload describes the medium from which it was derived.
+
+:::example
+Consider a digital photo in a multimedia record;
+for this asset, the `FORM`.`MEDI` is recommended to be `PHOTO` rather than `ELECTRONIC`.
+:::
+
 #### `MIME` (Media type) `g7:MIME`
 
 Indicates the [media type](#media-type) of the payload of the superstructure.
