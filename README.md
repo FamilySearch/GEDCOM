@@ -36,7 +36,15 @@ If you are looking for FamilySearch's GEDCOM 5.5.1 Java parser, which previously
 - `main` contains the current release.
 	Patch versions are generally pushed directly to `main` upon approval.
 
-- `next-minor` contains a working draft of the next minor release. Changes from `main` have been discussed and approved by the working group supervising the next minor release, but have not been fully vetted and approved for inclusion in the standard and may change at any time without notice.
+- `v7.1` contains a working draft of the next minor release. Changes from `main` have been discussed and approved by the working group supervising the next minor release, meaning they are (a) minor, not major, changes, as described in [A Guide to Version Numbers](https://gedcom.io/specifications/FamilySearchGEDCOMv7.html#a-guide-to-version-numbers) and (b) have been judged as meeting all three of the following criteria for inclusion:
 
-- All other branches are for conversation drafts that may or may not be incorporated into a future version of the specification.
+ 	- **Valuable**: they are present in historical records and are either defining aspects of a person's life or otherwise important for informing research or creating life summaries
+	- **Absent**: they are meaningfully distinct from, and not merely a more detailed subtype of, existing structure types
+	- **Used**: multiple family history applications with active user bases either use it now or have expressed a desire to add it as soon as it is available in the standard
+
+ 	Until v7.1 is released, this branch may be changed at any time without notice.
+
+- `sandbox` contains candidate text for various possible changes that might or might not be included in future releases, often because they have not yet been demonstrated to meet the "used" criteria.
+
+- All other branches are for conversation drafts, potentially to be incorporated into one of the above branches or to be deleted.
 
