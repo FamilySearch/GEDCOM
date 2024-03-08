@@ -40,7 +40,7 @@ If you are looking for FamilySearch's GEDCOM 5.5.1 Java parser, which previously
 
  	- **Valuable**: they are present in historical records and are either defining aspects of a person's life or otherwise important for informing research or creating life summaries
 	- **Absent**: they are meaningfully distinct from, and not merely a more detailed subtype of, existing structure types
-	- **Used**: multiple family history applications with active user bases either use it now or have expressed a desire to add it as soon as it is available in the standar
+	- **Used**: multiple family history applications with active user bases either use it now or have expressed a desire to add it as soon as it is available in the standard
 
  	Until v7.1 is released, this branch may be changed at any time without notice.
 
