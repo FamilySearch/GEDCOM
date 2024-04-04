@@ -10,4 +10,6 @@ enumeration values:
   - "https://gedcom.io/terms/v7/enum-CONFIDENTIAL"
   - "https://gedcom.io/terms/v7/enum-LOCKED"
   - "https://gedcom.io/terms/v7/enum-PRIVACY"
+
+contact: "https://gedcom.io/community/"
 ...

@@ -469,6 +469,7 @@ if __name__ == '__main__':
                         is_used_by = True
                     print('  - "'+expand_prefix(tag2,prefixes)+'"', file=fh)
 
+            print('\ncontact: "https://gedcom.io/community/"', file=fh)
             fh.write('...\n')
 
         print('done')

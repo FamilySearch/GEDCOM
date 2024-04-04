@@ -49,4 +49,6 @@ substructures:
 superstructures:
   "https://gedcom.io/terms/v7/CALN": "{0:1}"
   "https://gedcom.io/terms/v7/FORM": "{0:1}"
+
+contact: "https://gedcom.io/community/"
 ...
