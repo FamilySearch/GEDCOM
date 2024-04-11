@@ -113,4 +113,6 @@ superstructures:
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
   "https://gedcom.io/terms/v7/record-OBJE": "{0:M}"
   "https://gedcom.io/terms/v7/record-SNOTE": "{0:M}"
+
+contact: "https://gedcom.io/community/"
 ...

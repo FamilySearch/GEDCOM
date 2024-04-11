@@ -12,4 +12,6 @@ enumeration values:
   - "https://gedcom.io/terms/v7/enum-FOSTER"
   - "https://gedcom.io/terms/v7/enum-SEALING"
   - "https://gedcom.io/terms/v7/enum-OTHER"
+
+contact: "https://gedcom.io/community/"
 ...

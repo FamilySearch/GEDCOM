@@ -22,4 +22,6 @@ superstructures:
   "https://gedcom.io/terms/v7/BIRT": "{0:1}"
   "https://gedcom.io/terms/v7/CHR": "{0:1}"
   "https://gedcom.io/terms/v7/SLGC": "{1:1}"
+
+contact: "https://gedcom.io/community/"
 ...

@@ -32,4 +32,6 @@ specification:
     </div>
     
     The URI for the `Time` data type is `https://gedcom.io/terms/v7/type-Time`.
+
+contact: "https://gedcom.io/community/"
 ...
