@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout GEDCOM.io
+      - name: Checkout GEDCOM
         uses: actions/checkout@v4
 
       - name: Validate YAML
