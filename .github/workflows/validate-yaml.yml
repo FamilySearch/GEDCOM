@@ -7,9 +7,9 @@ name: Validate-YAML
 
 on:
   push:
-    branches: [main, next-minor, next-patch]
+    branches: [main, v7.1, next-patch]
   pull_request:
-    branches: [main, next-minor, next-patch]
+    branches: [main, v7.1, next-patch]
 
 permissions:
   contents: read
