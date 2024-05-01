@@ -23,4 +23,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate YAML
-        run: yamllint .yamllint.yml .github .github/workflows
+        run: yamllint .
