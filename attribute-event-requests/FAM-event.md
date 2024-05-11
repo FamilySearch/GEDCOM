@@ -18,6 +18,7 @@ Guides for using this document can be found in the associated [README.md](README
 | `MARB` | 4.0 | Marriage Bann | |
 | `MARL` | 4.0 | Marriage License | |
 | `MARS` | 4.0 | Marriage Settlement | |
+| | | [Separation](#separation) | |
 
 # Details
 
@@ -85,3 +86,31 @@ In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications
 ## Marriage
 
 In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Marriage`
+
+## Separation
+
+### Description
+
+*proposed description missing*
+
+*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a couple's separation."
+
+### Value
+
+Found in the following historical records:
+
+- (records not yet identified)
+
+### Absence
+
+There is no other structure that covers this event, as it can apply to couples that cohabitate and are not married as well as to those who are married in some manner. And for those who are married, some couples may separate and never actually file for or go through with a formal divorce.
+
+### Used
+
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Separation`
+
+- The CompGen [CompGen](https://www.compgen.de/) table of [custom GEDCOM tags](https://wiki.genealogy.net/GEDCOM/_Nutzerdef-Tag) shows:
+
+    1. `_SEPR` used by Brother's Keeper for Windows 6, WebTrees, and Family Tree Maker for both DOS and Windows
+
+    2. `SEPA` used by Reunion for MAC and Legacy
