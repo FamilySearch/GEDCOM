@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 jobs:
-  merge-to-v7.1:
+  merge-to-v71:
     permissions:
       contents: write  # for Git to git push
       pull-requests: write  # for Git to create a pull request
