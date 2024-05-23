@@ -11,6 +11,7 @@ Guides for using this document can be found in the associated [README.md](README
 | | | [Lived Together](#lived-together) | perhaps `RESI`? |
 | `NCHI` | 5.0 | Number of children | |
 | `RESI` | 3.0 | Residence | |
+| | | [Separated](#separated) | |
 
 # Details
 
@@ -53,3 +54,33 @@ Related proposals include
 ### Used
 
 - Used by the [FamilySearch API](https://www.familysearch.org/developers/docs/guides/facts) with URI `http://familysearch.org/v1/LivedTogether`
+
+## Separated
+
+### Description
+
+*proposed description missing*
+
+*In [GEDCOM X](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) as* "A fact of a couple's separation."
+
+### Value
+
+Found in the following historical records:
+
+- (records not yet identified)
+
+### Absence
+
+There is no other structure that covers this event, as it can apply to couples that cohabitate
+and are not married as well as to those who are married in some manner. And for those who are
+married, some couples may separate and never actually file for or go through with a formal divorce.
+
+### Used
+
+- Part of the [GEDCOM X specification](https://github.com/FamilySearch/gedcomx/blob/master/specifications/fact-types-specification.md) with URI `http://gedcomx.org/Separation`
+
+- The CompGen [CompGen](https://www.compgen.de/) table of [custom GEDCOM tags](https://wiki.genealogy.net/GEDCOM/_Nutzerdef-Tag) shows:
+
+    1. `_SEPR` used by Brother's Keeper for Windows 6, WebTrees, and Family Tree Maker for both DOS and Windows
+
+    2. `SEPA` used by Reunion for MAC and Legacy
