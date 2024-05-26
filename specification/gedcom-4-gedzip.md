@@ -11,7 +11,7 @@ Each GEDZIP file contains the following entries:
 
 - An entry with name `gedcom.ged` containing a data stream.
 
-- An entry for each *local file* `g7:datatype-FilePath` payload in `gedcom.ged`, with the same zip *file name* as the payload.
+- An entry for each *local file* `g7:type-FilePath` payload in `gedcom.ged`, with the same zip *file name* as the payload.
     If there is a local file named `gedcom.ged`, it must be renamed to a new unused filename with the same extension prior to constructing the GEDZIP.
 
 All file names inside a GEDZIP are case-sensitive.
