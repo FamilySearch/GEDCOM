@@ -1642,12 +1642,19 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 #### `WWW` (Web address) `g7:WWW`
 
-A URL or other locator for a World Wide Web page,
+A URL or other locator for a World Wide Web page of the subject of the superstructure,
 as defined by any relevant standard
 such as [whatwg/url](https://url.spec.whatwg.org/),
 [RFC 3986](https://www.rfc-editor.org/info/rfc3986),
 [RFC 3987](https://www.rfc-editor.org/info/rfc3987),
 and so forth.
+
+Like other substructures, the `WWW` structure provides details about the subject of its superstructure.
+For example, a `MARR`.`WWW` is a world wide web page of the marriage event,
+not the personal website of the couple or an entry in an online database serving as a source documenting the marriage.
+However, the meaning of `WWW` was only implicit when it was introduced in version 5.5.1
+and many files were created that use `WWW` to store a more tangentially-related web address,
+so applications are recommended to interpret the `WWW` structure's meaning cautiously.
 
 If an invalid or no longer existing web address is present upon import, it should be preserved as-is on export.
 
