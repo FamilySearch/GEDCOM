@@ -1649,7 +1649,7 @@ such as [whatwg/url](https://url.spec.whatwg.org/),
 [RFC 3987](https://www.rfc-editor.org/info/rfc3987),
 and so forth.
 
-Like other substructures, the `WWW` structure provides details about the subject of its superstructure, not about some other subject.
+Like other substructures, the `WWW` structure provides details about the subject of its superstructure.
 For example, a `MARR`.`WWW` is a world wide web page of the marriage event,
 not the personal website of the couple or an entry in an online database serving as a source documenting the marriage.
 However, the meaning of `WWW` was only implicit when it was introduced in version 5.5.1
