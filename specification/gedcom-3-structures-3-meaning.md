@@ -954,7 +954,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 #### `NICK` (Nickname) `g7:NICK`
 
 A descriptive or familiar name that is used instead of, or in addition to, one’s official or legal name.
-A nickname can be a derivation of another name, such as "Jimmy" fron "James", or a distinct name.
+A nickname can be a derivation of another name, such as "Jimmy" from "James", or a distinct name.
 Nicknames can be brief-lived and informal or used consistently even in formal situations throughout one's life.
 
 #### `NMR` (Number of marriages) `g7:NMR`
