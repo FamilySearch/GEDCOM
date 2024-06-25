@@ -35,8 +35,12 @@ specification:
     - The payload contains a comma-separated list of region names, ordered from
       smallest to largest. The specific meaning of each element is given by the
       `FORM` substructure, or in the `HEAD`.`PLAC`.`FORM` if there is no `FORM`
-      substructure. Elements should be left blank if they are unknown, do not apply
-      to the location, or are too specific for the region in question.
+      substructure. If neither `FORM` exists, the meaning of the elements are not
+      defined in this specification beyond being names of jurisdictions of some
+      kind, ordered from smallest to largest.
+    
+      Elements should be left blank if they are unknown, do not apply to the
+      location, or are too specific for the region in question.
     
       <div class="example">
         A record describing births throughout Oneida county could be recorded as
