@@ -442,7 +442,7 @@ When the superstructure is an event, the principal date indicates when the event
 When the superstructure is an attribute, the principal date indicates when the attribute was observed, asserted, or applied.
 A date period might put bounds on the attributes applicability, but other date forms assume that the attribute may have also applied on other dates too.
 
-When the superstructure is a `g7:SOUR-DATA`, the principle date indicates when the data was entered into the source; or, for a source like a website that changes over time, a date on which the source contained the data.
+When the superstructure is a `g7:SOUR-DATA`, the principal date indicates when the data was entered into the source; or, for a source like a website that changes over time, a date on which the source contained the data.
 
 See `DATE_VALUE` for more details.
 
