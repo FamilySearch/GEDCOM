@@ -1136,6 +1136,8 @@ A place, which can be represented in several ways:
     ordered from smallest to largest.
     The specific meaning of each element is given by the `FORM` substructure,
     or in the `HEAD`.`PLAC`.`FORM` if there is no `FORM` substructure.
+    If neither `FORM` exists, the meaning of the elements are not defined in this specification beyond being names of jurisdictions of some kind, ordered from smallest to largest.
+
     Elements should be left blank if they are unknown, do not apply to the location, or are too specific for the region in question.
 
     <div class="example">
