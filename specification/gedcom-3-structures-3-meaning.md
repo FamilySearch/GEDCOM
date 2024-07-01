@@ -960,7 +960,12 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
 #### `NICK` (Nickname) `g7:NICK`
 
-A descriptive or familiar name that is used instead of, or in addition to, one’s proper name.
+A descriptive or familiar name that is used instead of, or in addition to, one’s official or legal name.
+
+:::note
+Although the label of this structure is "nickname", the definition is limited to descriptive or familiar names, not to other name types sometimes called "nicknames" in English, such as names used in formal settings but not on legal documents.
+However, some applications show users only the text "nickname", so user-entered `NICK` payloads that go beyond the structure's definition may be found in some GEDCOM files.
+:::
 
 #### `NMR` (Number of marriages) `g7:NMR`
 
