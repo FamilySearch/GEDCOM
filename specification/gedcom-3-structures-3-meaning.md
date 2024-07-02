@@ -963,8 +963,11 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 A descriptive or familiar name that is used instead of, or in addition to, one’s official or legal name.
 
 :::note
-Although the label of this structure is "nickname", the definition is limited to descriptive or familiar names, not to other name types sometimes called "nicknames" in English, such as names used in formal settings but not on legal documents.
-However, some applications show users only the text "nickname", so user-entered `NICK` payloads that go beyond the structure's definition may be found in some GEDCOM files.
+The title and description of this structure was introduced with version 5.5 in 1996, but are understood differently by different users.
+Some use NICK only for names that would be inappropriate in formal settings.
+Some use it for pseudonyms regardless of where they are used.
+Some use it for any variant of a name that is not the one used on legal documents 
+Because all of these uses, and likely others as well, are common in existing data, no further clarification of the meaning of the NICK structure is possible without contradicting some existing data.
 :::
 
 #### `NMR` (Number of marriages) `g7:NMR`
