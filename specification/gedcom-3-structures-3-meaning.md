@@ -1121,7 +1121,8 @@ A name given to a foundling orphan might be
 
 The principal place in which the superstructure's subject occurred,
 represented as a [List] of jurisdictional entities in a sequence from the lowest to the highest jurisdiction,
-where each jurisdiction is a unit in a political, ecclesiastical, or geographical hierarchy.
+where "jurisdiction" includes units in a political, ecclesiastical, and geographical hierarchies
+and may include units as large as a nation or as specific as a building, farm, or cemetery.
 As with other lists, the jurisdictions are separated by commas.
 Any jurisdiction's name that is missing is still accounted for by an empty string in the list.
 
