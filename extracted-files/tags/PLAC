@@ -14,10 +14,10 @@ specification:
     The principal place in which the superstructure's subject occurred, represented
     as a [List] of jurisdictional entities in a sequence from the lowest to the
     highest jurisdiction, where "jurisdiction" includes units in a political,
-    ecclesiastical, and geographical hierarchies and may include units as large as
-    a nation or as specific as a building, farm, or cemetery. As with other lists,
-    the jurisdictions are separated by commas. Any jurisdiction's name that is
-    missing is still accounted for by an empty string in the list.
+    ecclesiastical, and geographical hierarchies and may include units of any size,
+    such as a continent, "at sea", or a specific building, farm, or cemetery. As
+    with other lists, the jurisdictions are separated by commas. Any jurisdiction's
+    name that is missing is still accounted for by an empty string in the list.
     
     The type of each jurisdiction is given in the `PLAC`.`FORM` substructure, if
     present, or in the `HEAD`.`PLAC`.`FORM` structure. If neither is present, the
