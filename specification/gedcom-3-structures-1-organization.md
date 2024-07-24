@@ -425,7 +425,7 @@ Information is copied into the new chain of `SPLAC` records as follows:
 - The `FORM` payload parts (which may be copied from the `HEAD`.`PLAC`.`FORM` if that is present but `PLAC`.`FORM` is not) become `SPLAC`.`TYPE` payloads
 - The `TRAN` payload parts become `TRAN` payloads
 - `LANG` and `TRAN`.`LANG` are copied to each record in the linked list
-- All other substructures (`MAP`, `EXID`, `NOTE`) are copied only to the first record in the list.
+- All other substructures (`MAP` and `EXID`) are copied only to the first record in the list.
 
 :::example
 
@@ -1288,6 +1288,25 @@ An assertion that something took place in or is part of some place.
 
 The `NOTE`s here are about the connection between the topic of the superstructure and the pointed-to place.
 Notes about the place itself should be placed inside the pointed-to `SHARED_PLACE_RECORD`.
+
+A `voidPtr` and `PHRASE` can be used to describe places not referenced by any `SPLAC` record, but so can a `PLAC` structure. Using a `voidPtr` with `SPLAC` is not recommended.
+
+:::example
+The following both indicate that a birth happened "at home" with no additional details on where that was. The second version is preferred; the first should not be used.
+
+```gedcom
+0 @I1@ INDI
+1 BIRT
+2 SPLAC @VOID@
+3 PHRASE at home
+```
+
+```gedcom
+0 @I1@ INDI
+1 BIRT
+2 PLAC at home
+```
+:::
 
 See `SHARED_PLACE_RECORD` for how to convert between `PLAC` and `SPLAC`.
 
