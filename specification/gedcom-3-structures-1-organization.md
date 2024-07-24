@@ -396,6 +396,90 @@ However, as of 2021 relatively few applications have a user interface that prese
 A `SHARED_NOTE_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa. Applications must not create datasets where these mutual pointers form a cycle. Applications should also ensure they can handle invalid files with such cycles in a safe manner.
 
 
+#### `SHARED_PLACE_RECORD` :=
+
+```gedstruct
+n @XREF:SPLAC@ SPLAC <Text>                {1:1}  g71:record-SPLAC
+  +1 TYPE <Text>                           {0:1}  g71:SPLAC-TYPE
+  +1 LANG <Language>                       {0:1}  g7:LANG
+  +1 TRAN <Text>                           {0:M}  g71:TRAN
+     +2 LANG <Language>                    {0:1}  g7:LANG
+  <<PLACE_DETAILS>>                        {1:1}
+  <<SHARED_PLACE_STRUCTURE>>               {0:M}  g71:SPLAC
+```
+
+A descriptor of a single place, location, or jurisdiction.
+
+The `<<SHARED_PLACE_STRUCTURE>>` inside a `SHARED_PLACE_RECORD` points to larger jurisdictions that this place is a part of.
+If a city is part of a county which is part of a state, the city's place record should point to the county's place record, not the states.
+Multiple `<<SHARED_PLACE_STRUCTURE>>`s are permitted to support places within multiple hierarchies (for example, a church that's both within an ecclesiastical region and a political region).
+
+Shared place records offer more flexibility than place structures do.
+A `PLAC` can be replaced by an `SPLAC` without loss of information by making one `SPLAC` record for each non-empty string in the `PLAC`'s payload and linking them together using the `SPLAC`'s `SHARED_PLACE_STRUCTURE`s.
+Information is copied into the new chain of `SPLAC` records as follows:
+
+- The `PLAC` structure is replaced by an `SPLAC` structure that points to the first `SPLAC` record in the chain
+- Any `NOTE` substructures of `PLAC` are retained as substructures of the new `SPLAC` structure
+- Empty list entries are skipped.
+- The `PLAC` payload parts become `SPLAC` payloads
+- The `FORM` payload parts (which may be copied from the `HEAD`.`PLAC`.`FORM` if that is present but `PLAC`.`FORM` is not) become `SPLAC`.`TYPE` payloads
+- The `TRAN` payload parts become `TRAN` payloads
+- `LANG` and `TRAN`.`LANG` are copied to each record in the linked list
+- All other substructures (`MAP`, `EXID`, `NOTE`) are copied only to the first record in the list.
+
+:::example
+
+The 7.0 structure
+
+```gedcom
+2 PLAC one, two, , three
+3 FORM city, county, state, country
+3 LANG en
+3 TRAN uno, dos, , tres
+4 LANG es
+3 MAP
+4 LATI N12.3
+4 LONG W45.6
+3 NOTE this is an example
+```
+
+can be converted without loss of information into the new structure
+
+```gedcom
+2 SPLAC @SP1@
+3 NOTE this is an example
+```
+
+and new records
+
+```
+0 @SP1@ SPLAC one
+1 TYPE city
+1 LANG en
+1 TRAN uno
+2 LANG es
+3 MAP
+4 LATI N12.3
+4 LONG W45.6
+1 SPLAC @SP2@
+0 @SP2@ SPLAC two
+1 TYPE county
+1 LANG en
+1 TRAN dos
+2 LANG es
+1 SPLAC @SP3@
+0 @SP3@ SPLAC three
+1 TYPE country
+1 LANG en
+1 TRAN tres
+2 LANG es
+```
+
+:::
+
+Conversion in the other direction is also possible (from `SPLAC` to `PLAC`) but will in general discard information about individual places in the `SPLAC` chain.
+
+
 #### `SOURCE_RECORD` :=
 
 ```gedstruct
@@ -404,7 +488,7 @@ n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
      +2 EVEN <List:Enum>                   {0:M}  g7:DATA-EVEN
         +3 DATE <DatePeriod>               {0:1}  g7:DATA-EVEN-DATE
            +4 PHRASE <Text>                {0:1}  g7:PHRASE
-        +3 <<PLACE_STRUCTURE>>             {0:1}
+        +3 <<PLACE_REFERENCE>>             {0:1}
      +2 AGNC <Text>                        {0:1}  g7:AGNC
      +2 <<NOTE_STRUCTURE>>                 {0:M}
   +1 AUTH <Text>                           {0:1}  g7:AUTH
@@ -567,7 +651,7 @@ Time phrases are expected to be added in version 7.1.
 
 ```gedstruct
 n <<DATE_VALUE>>                           {0:1}
-n <<PLACE_STRUCTURE>>                      {0:1}
+n <<PLACE_REFERENCE>>                      {0:1}
 n <<ADDRESS_STRUCTURE>>                    {0:1}
 n PHON <Special>                           {0:M}  g7:PHON
 n EMAIL <Special>                          {0:M}  g7:EMAIL
@@ -957,7 +1041,7 @@ Ordinances performed by members of The Church of Jesus Christ of Latter-day Sain
 ```gedstruct
 n <<DATE_VALUE>>                         {0:1}
 n TEMP <Text>                            {0:1}  g7:TEMP
-n <<PLACE_STRUCTURE>>                    {0:1}
+n <<PLACE_REFERENCE>>                    {0:1}
 n STAT <Enum>                            {0:1}  g7:ord-STAT
   +1 DATE <DateExact>                    {1:1}  g7:DATE-exact
      +2 TIME <Time>                      {0:1}  g7:TIME
@@ -1107,20 +1191,15 @@ See `g7:enumset-NAME-TYPE` for more details.
 Alternative approaches to representing names are being considered for future versions of this specification.
 :::
 
-#### `PLACE_STRUCTURE` :=
+#### `PLACE_DETAILS` :=
 
 ```gedstruct
-n PLAC <List:Text>                         {1:1}  g7:PLAC
-  +1 FORM <List:Text>                      {0:1}  g7:PLAC-FORM
-  +1 LANG <Language>                       {0:1}  g7:LANG
-  +1 TRAN <List:Text>                      {0:M}  g7:PLAC-TRAN
-     +2 LANG <Language>                    {1:1}  g7:LANG
-  +1 MAP                                   {0:1}  g7:MAP
-     +2 LATI <Special>                     {1:1}  g7:LATI
-     +2 LONG <Special>                     {1:1}  g7:LONG
-  +1 EXID <Special>                        {0:M}  g7:EXID
-     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
-  +1 <<NOTE_STRUCTURE>>                    {0:M}
+n MAP                                      {0:1}  g7:MAP
+  +1 LATI <Special>                        {1:1}  g7:LATI
+  +1 LONG <Special>                        {1:1}  g7:LONG
+n EXID <Special>                           {0:M}  g7:EXID
+  +1 TYPE <Special>                        {0:1}  g7:EXID-TYPE
+n <<NOTE_STRUCTURE>>                       {0:M}
 ```
 
 :::deprecation
@@ -1129,8 +1208,39 @@ The meaning of an `EXID` depends on its `EXID`.`TYPE`.
 The cardinality of `EXID`.`TYPE` will be changed to `{1:1}` in version 8.0.
 :::
 
+Information about a place (either `PLAC` or `SPLAC`).
 
-A place, which can be represented in several ways:
+#### `PLACE_REFERENCE` :=
+
+```gedstruct
+[
+n <<PLACE_STRUCTURE>>               {1:1}
+|
+n <<SHARED_PLACE_STRUCTURE>>               {1:1}
+]
+```
+
+Place structures have been part of GEDCOM since its earliest version,
+but have difficulty distinguishing information about a place itself from information about a reference to that place
+and cannot store information about larger jurisdictions that a given referenced place is included within.
+Shared place structures should be used instead unless backwards compatibility with old GEDCOM versions is required.
+
+#### `PLACE_STRUCTURE` :=
+
+```gedstruct
+[
+n PLAC <List:Text>                         {1:1}  g7:PLAC
+  +1 FORM <List:Text>                      {0:1}  g7:PLAC-FORM
+  +1 LANG <Language>                       {0:1}  g7:LANG
+  +1 TRAN <List:Text>                      {0:M}  g7:PLAC-TRAN
+     +2 LANG <Language>                    {1:1}  g7:LANG
+  +1 <<PLACE_DETAILS>>
+|
+n <<SHARED_PLACE_STRUCTURE>>               {1:1}
+]
+```
+
+A way of representing a place without using the several records involved in the more-expressive `SHARED_PLACE_RECORD` alternative.
 
 - The payload contains a comma-separated list of region names,
     ordered from smallest to largest.
@@ -1155,13 +1265,31 @@ A place, which can be represented in several ways:
 - The payload may be translated or transliterated into different languages or scripts using the `TRAN` substructure.
     It should use the same `FORM` as the payload.
 
-- Global coordinates may be presented in the `MAP` substructure
-
 :::note
-This specification does not support places where a region name contains a comma. An alternative system for representing locations is likely to be added in a later version.
+`PLAC` does not support places where a single place's name contains a comma. If commas are desired, use `SPLAC` instead of `PLAC`.
 :::
 
+A `PLAC`.`NOTE` could in principle be about the place generally or about the connection between the place and its superstructure. The `PLAC`-to-`SPLAC` conversion outlined under `SHARED_PLACE_RECORD` assume the latter meaning.
 
+`PLAC` does not support recording any information except names of jurisdictions other than the most specific jurisdiction in the hierarchy.
+
+See `SHARED_PLACE_RECORD` for how to convert between `PLAC` and `SPLAC`.
+
+
+#### `SHARED_PLACE_STRUCTURE` :=
+
+```gedstruct
+n SPLAC @<XREF:SPLAC>@                     {1:1}  g71:SPLAC
+  +1 PHRASE <Text>                         {0:1}  g7:PHRASE
+  +1 <<NOTE_STRUCTURE>>                    {0:M}
+```
+
+An assertion that something took place in or is part of some place.
+
+The `NOTE`s here are about the connection between the topic of the superstructure and the pointed-to place.
+Notes about the place itself should be placed inside the pointed-to `SHARED_PLACE_RECORD`.
+
+See `SHARED_PLACE_RECORD` for how to convert between `PLAC` and `SPLAC`.
 
 #### `SOURCE_CITATION` :=
 
