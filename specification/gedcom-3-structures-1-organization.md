@@ -452,7 +452,7 @@ can be converted without loss of information into the new structure
 
 and new records
 
-```
+```gedcom
 0 @SP1@ SPLAC one
 1 TYPE city
 1 LANG en
