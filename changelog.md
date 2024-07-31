@@ -1,3 +1,22 @@
+# Main
+
+- Clarified recommended that `FORM`.`MEDI` describe the original medium, not the derived medium, when used with derived files.
+
+- Clarified the meaning of the `WWW` structure, which previously only mentioned its payload datatype.
+
+- Clarified `PLAC` to both define "jurisdiction" and document its meaning in the absence of a `PLAC`.`FORM`.
+
+- Clarified what the term "principle date" means in different contexts in the definition of `g7:DATE`.
+
+- Updated `NICK` to no longer suggest that some names are "improper" and to document the diversity of views in what a "nickname" is.
+
+- Removed confusing reference to superstructures in the meaning of a documented extension tag.
+
+- Added ABNF for more datatypes and updated DIGIT's capitalization for compatibility with more ABNF toolchains.
+
+- Various typo corrections.
+
+
 # Version 7.0.14
 
 - Recommend that `NO XYZ` only be used where `XYZ` is permitted (its meaning is undefined elsewhere).
