@@ -647,6 +647,11 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 A reference to an external file.
 See the [File Path datatype](#file-path) for more details.
 
+#### `FORM` (Form) `g7:NAME-FORM`
+
+A string representation of a personal name.
+See also `PERSONAL_NAME_STRUCTURE`.
+
 #### `FORM` (Format) `g7:FORM`
 
 The [media type](#media-type) of the file referenced by the superstructure.
@@ -934,9 +939,9 @@ If needed, `text/html` can be converted to `text/plain` using the following step
 
 The name of the superstructure's subject, represented as a simple string.
 
-#### `NAME` (Name) `g7:INDI-NAME`
+#### `NAME` (Name) `g8:INDI-NAME`
 
-A `PERSONAL_NAME_STRUCTURE` with parts, translations, sources, and so forth.
+A `PERSONAL_NAME_STRUCTURE` with parts, forms, translations, sources, and so forth.
 
 #### `NATI` (Nationality) `g7:NATI`
 
@@ -1038,6 +1043,12 @@ and the `PAGE` may describe the entire source.
 3 PAGE His grand-daughter Lydia told me this in 1980
 ```
 :::
+
+#### `PART` (Name Part) `g8:NAME-PART`
+
+A portion of a personal name, isolated to facilitate identifying its type.
+See also `PERSONAL_NAME_STRUCTURE`.
+
 
 #### `PEDI` (Pedigree) `g7:PEDI`
 
@@ -1430,25 +1441,9 @@ Each `TRAN` structure must differ from its superstructure
 and from every other `TRAN` substructure of its superstructure
 in either its language tag or its media type or both.
 
-#### `TRAN` (Translation) `g7:NAME-TRAN`
+#### `TRAN` (Translation) `g8:TRAN`
 
-A type of `TRAN` substructure specific to [Personal Names](#personal-name).
-Each `NAME`.`TRAN` must have a `LANG` substructure.
-See also `INDI`.`NAME`.
-
-:::example
-The following presents a name in Mandarin, transliterated using Pinyin
-
-```gedcom
-1 NAME /孔/德庸
-2 GIVN 德庸
-2 SURN 孔
-2 TRAN /Kǒng/ Déyōng
-3 GIVN Déyōng
-3 SURN Kǒng
-3 LANG zh-pinyin
-```
-:::
+A type of `TRAN` substructure for structures with a human-language [Text](#text) payload.
 
 #### `TRAN` (Translation) `g7:PLAC-TRAN`
 
@@ -1476,7 +1471,7 @@ and English translation
 
 #### `TRAN` (Translation) `g7:NOTE-TRAN`
 
-A type of `TRAN` for unstructured human-readable text,
+A type of `TRAN` for unstructured human-readable text with a media type,
 such as is found in `NOTE` and `SNOTE` payloads.
 Each `g7:NOTE-TRAN` must have either a `LANG` substructure or a `MIME` substructure or both.
 If either is missing, it is assumed to have the same value as the superstructure.
@@ -1572,9 +1567,21 @@ Other descriptor values might include, for example,
 See also `FACT` and `EVEN` for additional examples.
 :::
 
-#### `TYPE` (Type) `g7:NAME-TYPE`
+#### `TYPE` (Type) `g8:NAME-TYPE`
 
-An enumerated value from set `g7:enumset-NAME-TYPE` indicating the type of the name.
+An list of enumerated values from set `g8:enumset-NAME-TYPE` indicating the types of the name.
+The order of values in the list is not significant.
+
+#### `TYPE` (Type) `g7:NAME-FORM-TYPE`
+
+An list of enumerated values from set `g8:enumset-NAME-FORM-TYPE` indicating the types of the name form.
+The order of values in the list is not significant.
+
+#### `TYPE` (Type) `g7:NAME-PART-TYPE`
+
+An list of enumerated values from set `g8:enumset-NAME-PART-TYPE` indicating the types of the name part.
+The order of values in the list is not significant.
+
 
 #### `TYPE` (Type) `g7:EXID-TYPE`
 
