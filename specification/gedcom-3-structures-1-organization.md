@@ -1286,7 +1286,7 @@ n SPLAC @<XREF:SPLAC>@                     {1:1}  g71:SPLAC
 
 An assertion that something took place in or is part of some place.
 
-The `NOTE`s here are about the connection between the topic of the superstructure and the pointed-to place.
+The `NOTE_STRUCTURE`s here are about the connection between the topic of the superstructure and the pointed-to place.
 Notes about the place itself should be placed inside the pointed-to `SHARED_PLACE_RECORD`.
 
 A `voidPtr` and `PHRASE` can be used to describe places not referenced by any `SPLAC` record, but so can a `PLAC` structure. Using a `voidPtr` with `SPLAC` is not recommended.
