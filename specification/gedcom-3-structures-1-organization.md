@@ -418,8 +418,8 @@ Shared place records offer more flexibility than place structures do.
 A `PLAC` can be replaced by an `SPLAC` without loss of information by making one `SPLAC` record for each non-empty string in the `PLAC`'s payload and linking them together using the `SPLAC`'s `SHARED_PLACE_STRUCTURE`s.
 Information is copied into the new chain of `SPLAC` records as follows:
 
-- The `PLAC` structure is replaced by an `SPLAC` structure that points to the first `SPLAC` record in the chain
-- Any `NOTE` substructures of `PLAC` are retained as substructures of the new `SPLAC` structure
+- The `PLAC` structure is replaced by an `SPLAC` structure that points to the first `SPLAC` record in the chain.
+- Any `NOTE` substructures of `PLAC` are retained as substructures of the new `SPLAC` structure.
 - Empty list entries are skipped.
 - The `PLAC` payload parts become `SPLAC` payloads
 - The `FORM` payload parts (which may be copied from the `HEAD`.`PLAC`.`FORM` if that is present but `PLAC`.`FORM` is not) become `SPLAC`.`TYPE` payloads
