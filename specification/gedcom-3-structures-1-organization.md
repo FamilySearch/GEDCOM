@@ -1269,7 +1269,7 @@ A way of representing a place without using the several records involved in the 
 `PLAC` does not support places where a single place's name contains a comma. If commas are desired, use `SPLAC` instead of `PLAC`.
 :::
 
-A `PLAC`.`NOTE` could in principle be about the place generally or about the connection between the place and its superstructure. The `PLAC`-to-`SPLAC` conversion outlined under `SHARED_PLACE_RECORD` assume the latter meaning.
+A `PLAC`.`NOTE` could in principle be about the place generally or about the connection between the place and its superstructure. The `PLAC`-to-`SPLAC` conversion outlined under `SHARED_PLACE_RECORD` assumes the latter meaning.
 
 `PLAC` does not support recording any information except names of jurisdictions other than the most specific jurisdiction in the hierarchy.
 
