@@ -1446,7 +1446,7 @@ A type of `TRAN` substructure for generic text-valued structures.
 Each `TRAN` must have a `LANG` substructure.
 
 :::example
-The following presents the name of a nation in both German and English
+The following presents the name of a nation in both German and English:
 
 ```gedcom
 0 @SP1@ SPLAC Bundesrepublik Deutschland 
