@@ -1216,7 +1216,7 @@ Information about a place (either `PLAC` or `SPLAC`).
 [
 n <<PLACE_STRUCTURE>>               {1:1}
 |
-n <<SHARED_PLACE_STRUCTURE>>               {1:1}
+n <<SHARED_PLACE_STRUCTURE>>        {1:1}
 ]
 ```
 
