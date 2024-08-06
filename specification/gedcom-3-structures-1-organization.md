@@ -411,7 +411,7 @@ n @XREF:SPLAC@ SPLAC <Text>                {1:1}  g71:record-SPLAC
 A descriptor of a single place, location, or jurisdiction.
 
 The `<<SHARED_PLACE_STRUCTURE>>` inside a `SHARED_PLACE_RECORD` points to larger jurisdictions that this place is a part of.
-If a city is part of a county which is part of a state, the city's place record should point to the county's place record, not the states.
+If a city is part of a county which is part of a state, the city's place record should point to the county's place record, not the state's.
 Multiple `<<SHARED_PLACE_STRUCTURE>>`s are permitted to support places within multiple hierarchies (for example, a church that's both within an ecclesiastical region and a political region).
 
 Shared place records offer more flexibility than place structures do.
