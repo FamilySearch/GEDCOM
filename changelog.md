@@ -6,7 +6,7 @@
 
 - Clarified `PLAC` to both define "jurisdiction" and document its meaning in the absence of a `PLAC`.`FORM`.
 
-- Clarified what the term "principle date" means in different contexts in the definition of `g7:DATE`.
+- Clarified what the term "principal date" means in different contexts in the definition of `g7:DATE`.
 
 - Updated `NICK` to no longer suggest that some names are "improper" and to document the diversity of views in what a "nickname" is.
 
