@@ -1,6 +1,6 @@
 # Main
 
-- Clarified recommended that `FORM`.`MEDI` describe the original medium, not the derived medium, when used with derived files.
+- Clarified that `FORM`.`MEDI` describe the original medium, not the derived medium, when used with derived files.
 
 - Clarified the meaning of the `WWW` structure, which previously only mentioned its payload datatype.
 
