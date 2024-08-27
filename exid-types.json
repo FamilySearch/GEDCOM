@@ -81,4 +81,28 @@
     "change-controller": "FindAGrave.com",
     "reference": "https://support.findagrave.com/s/article/Cemetery-Search"
   }
+  {
+    "label": "BillionGraves Grave ID",
+    "type": "https://www.billiongraves.com/grave",
+    "description": "BillionGraves Grave ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "BillionGraves.com",
+    "reference": "https://billiongraves.com/search"
+  },
+  {
+    "label": "BillionGraves Cemetery ID",
+    "type": "https://www.billiongraves.com/cemetery",
+    "description": "BillionGraves Cemetery ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "BillionGraves.com",
+    "reference": "https://billiongraves.com/search/cemetery"
+  }
+  {
+    "label": "WikiTree Person ID",
+    "type": "https://www.wikitree.com/wiki",
+    "description": "WikiTree Person ID",
+    "contact": "GEDCOM@familysearch.org",
+    "change-controller": "wikitree.com",
+    "reference": "https://www.wikitree.com/wiki/Help:WikiTree_ID"
+  },
 ]
