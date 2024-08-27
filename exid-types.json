@@ -83,7 +83,7 @@
   }
   {
     "label": "BillionGraves Grave ID",
-    "type": "https://www.billiongraves.com/grave",
+    "type": "https://www.billiongraves.com/grave/",
     "description": "BillionGraves Grave ID",
     "contact": "GEDCOM@familysearch.org",
     "change-controller": "BillionGraves.com",
