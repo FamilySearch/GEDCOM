@@ -83,7 +83,7 @@
   }
   {
     "label": "BillionGraves Grave ID",
-    "type": "https://www.billiongraves.com/grave/",
+    "type": "https://www.billiongraves.com/grave/name/",
     "description": "BillionGraves Grave ID",
     "contact": "GEDCOM@familysearch.org",
     "change-controller": "BillionGraves.com",
@@ -95,7 +95,7 @@
     "description": "BillionGraves Cemetery ID",
     "contact": "GEDCOM@familysearch.org",
     "change-controller": "BillionGraves.com",
-    "reference": "https://billiongraves.com/search/cemetery"
+    "reference": "https://billiongraves.com/search/cemetery/name/"
   }
   {
     "label": "WikiTree Person ID",
