@@ -27,7 +27,7 @@
 
 - Refactor the enumeration tags `CENS`, `EVEN`, `FACT`, `NCHI`, and `RESI` to have different URIs, removing a previous parsing ambiguity. This changes neither the set of tags permitted in any enumeration set nor those tags' meaning, only how they are specified to better support automated tooling.
 
-- Deprecate extension-defined substructures using `stdTag` in a way incompatible with any standard definition of that tag. The now-deprecated use was common in 5.5.1 and is permitted in 7.0, but can prevent extension structures from being adopted as-is as new standard structures in future versions of the specification.
+- Deprecate the ability to use extension-defined substructures `stdTag` in a way incompatible with any standard definition of that tag. The now-deprecated use was common in 5.5.1 and is permitted in 7.0, but can prevent extension structures from being adopted as-is as new standard structures in future versions of the specification.
 
 - Clarify that the "applies to" and "status" columns of `g7:enumset-ord-STAT` are recommendations, not restrictions.
 
