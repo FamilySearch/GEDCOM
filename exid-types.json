@@ -95,7 +95,7 @@
     "description": "BillionGraves Cemetery ID",
     "contact": "GEDCOM@familysearch.org",
     "change-controller": "BillionGraves.com",
-    "reference": "https://billiongraves.com/search/cemetery/"
+    "reference": "https://billiongraves.com/search/cemetery"
   }
   {
     "label": "WikiTree Person ID",
