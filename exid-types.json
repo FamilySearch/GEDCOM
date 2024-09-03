@@ -91,11 +91,11 @@
   },
   {
     "label": "BillionGraves Cemetery ID",
-    "type": "https://www.billiongraves.com/cemetery/",
+    "type": "https://www.billiongraves.com/cemetery//name",
     "description": "BillionGraves Cemetery ID",
     "contact": "GEDCOM@familysearch.org",
     "change-controller": "BillionGraves.com",
-    "reference": "https://billiongraves.com/search/cemetery/name/"
+    "reference": "https://billiongraves.com/search/cemetery/"
   }
   {
     "label": "WikiTree Person ID",
