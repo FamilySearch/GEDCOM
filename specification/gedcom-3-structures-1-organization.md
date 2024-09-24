@@ -122,6 +122,8 @@ n <<SHARED_NOTE_RECORD>>                   {1:1}
 |
 n <<SOURCE_RECORD>>                        {1:1}
 |
+n <<SPLAC_RECORD>>                         {1:1}
+|
 n <<SUBMITTER_RECORD>>                     {1:1}
 ]
 ```
