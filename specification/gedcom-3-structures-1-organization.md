@@ -491,6 +491,162 @@ Same for other information inside `PERIOD's`.
 See also the extended examples in the examples chapter.  
 :::
 
+#### `PERIOD_STRUCTURE` :=  
+
+```gedstruct
+n PERIOD <TEXT>
+  +1 TYPE <Text>                           {1:1}  g71:DATA-INFO-TYPE
+    +2 TYPE <Text>                         {1:1}  g71:SPLAC-TYPE 
+      +3 GOVTYP  <GOVID_OF_TYPE>           {0:1}  
+        +4 TEXT                            {0:1}  
+    +2 SUBM @<XREF:SUBM>@                  {0:1}  g7:SUBM 
+    +2 <<NOTE_STRUCTURE>>                  {0:M}
+    +2 <<SOURCE_CITATION>>                 {0:M}
+  +1 DATE <DatePeriod>                     {0:1}  g71:PERIOD-DATE
+  +1 <<PLACENAME_STRUCTURE>>               {0:M}
+  +1 <<PLACE_LOCATION_STRUCTURE>>          {1:1}
+  +1 DMGD <DEMOGRAPHICAL_DATA>             {0:M}  g71:DEMOGRAPHICAL-DATA
+    +2 TYPE <TYPE_OF_DEMOGRAPHICAL_DATA>   {1:1}
+    +2 DATE <DATE_VALUE>                   {0:1} 
+    +2 <<SOURCE_CITATION>>                 {0:M}    
+  +1 AIDN <ADMINISTRATIVE_IDENTIFIER>      {0:M}
+    +2 TYPE <TYPE_OF_ADMINISTRATIVE_IDENTIFIER> {1:1} 
+    +2 DATE <DATE_VALUE>                   {0:1} 
+  +1 <<SHARED_PLACE_STRUCTURE>>            {0:M}  g71:SPLAC
+  +1 <<NOTE_STRUCTURE>>                    {0:M}
+  +1 <<SOURCE_CITATION>>                   {0:M}
+```
+
+A `PERIOD_STRUCTURE` reflects the historical changes in governance, boundaries, or place names in a certain timeframe.
+
+It will include:
+
+- **The TEXT payload** is the **(default) Date period** of this `PERIOD` (It can be empty, but only for the default `PERIOD`, which is the first, `PERIOD`. Information inside a `PERIOD` will be valid only for this `PERIOD`.  
+If the `DATE` period is not known, it will be assumed to be from far in the past till present day, presented as **`FROM 0`**.
+
+-  **`TYPE`** The `DATA-INFO-TYPE` of this `PERIOD`. There are (for now) 3 types possible:  
+: **SOURCE** = from the researcher perspective,  
+: **USER** = from the conclusion perspective, so after a user deducts and concludes to other results as were found in the records.  
+: **OWN** = as in the problem where information is coming only from a user. Like for instance a users private information about FARMS etc.
+
+- **`GOVTYP`** Defined as `<GOVID_OF_TYPE>` in GEDCOM_L as := {Size=1:3} An integer positive number as defined in the GOV system. The definition in the GOV system http://gov.genealogy.net/type/list is binding for the interpretation of this line and allows an interpretation of the superior line **`2 TYPE`** for all languages stored in the GOV system. The multilingual RDF file with the definitions of the object types of the GOV system is also available for this purpose https://gov.genealogy.net/types.owl . 
+
+- **`SUBM`** Especially in case the `TYPE` is **`OWN`**, meaning this PERIOD contains information completely coming from own work of the user / submitter, and not from any public record. In that case `SUBM`can be used to point to that user.
+
+- **`DATE`**: A specific time range that ties the location, Name(s), parent jurisdictions, and all other information in this `PERIOD` to this time frame. For a `PERIOD_STRUCTURE` it can either be a `<DatePeriod>` or a `<dateRange>`.
+
+- **`<<PLACENAME_STRUCTURE>>`**, gives the **Location name**. The name of the location, mentioned in an event, as it was known in the timeframe of this `PERIOD`.
+
+- **`<<PLACE_LOCATION_STRUCTURE>>`** : Gives the **Location position**. This can be the location (latitude and longitude), or a `GOVID` number (as with GEDCOM_L), a PostalCode, an address, a Maidenhead number, or any other means of locating, defining the `LOCATION` of the place where the event in this time frame happened.
+
+- **`DMGD`**: Defined as `<DEMOGRAPHICAL_DATA>` in GEDCOM_L as:  := {Size=1:120} A number of objects, gathered during a Census, e.g. the count of households.   
+
+- **`TYPE`**: Defined as `<TYPE_OF_DEMOGRAPHICAL_DATA>` in GEDCOM_L as: := {Size=1:35} Type of the demographic data for a place, e.g. **`POPULATION, HOUSEHOLD, RESIDENT`**. 
+
+- **`AIDN`**: Defined as `<ADMINISTRATIVE_IDENTIFIER>` in GEDCOM_L as: := {Size=1:35} Identifier for a location with the intention of an administrative authority, e.g. community identifier.  
+**The official municipality key (AGS)**, also known as the municipality code (**GKZ**), is an eight digit code that uniquely identifies politically autonomous municipalities or municipality-free areas in Germany."  
+[Official municipality key (AGS) - IOER Monitor](https://www.ioer-monitor.de/en/methodology/glossary/o/official-municipality-key-ags/#:~:text=The%20official%20municipality%20key%20(AGS,municipality%2Dfree%20areas%20in%20Germany).  
+
+:::
+Extra information:  
+In Germany, the AIDN (Administrative Identifier Number) typically refers to a code that identifies administrative entities such as cities, municipalities, or institutions. This is part of Germany's administrative organization for civil records and vital event registrations.
+
+Use of Administrative Location Identifiers in Other Countries:  
+Similar systems exist in other countries, where locations or civil registration offices have their own unique codes, though they may not have a term equivalent to AIDN. Here are some examples:
+
+1. **France**  INSEE Code: France uses the INSEE code to uniquely identify communes (municipalities) and administrative regions. For example, Paris has the INSEE code 75056.
+2. **United Kingdom**
+General Register Office (GRO) Codes: The GRO uses codes to represent the districts responsible for civil registrations. These codes are found on birth, marriage, and death certificates.
+3. **Netherlands**
+Municipal Code: Dutch municipalities are identified by unique codes in government databases.
+4. **United States**
+FIPS Codes: The Federal Information Processing Standards (FIPS) codes are used to identify counties and cities in federal and state databases.  
+
+:::
+
+- **`TYPE`**: Defined as `<TYPE_OF_ADMINISTRATIVE_IDENTIFIER>` in GEDCOM_L as: := {Size=1:35} Type of official or public identifier. 
+
+:::  
+Example of the Municipality ID of Munchen.
+```gedcom
+1 _AIDN 09162000              (Munich, Munchen)
+ 2 TYPE MUNICIPAL-ID 
+```
+**09162000**: In this case, **0916** is the code for Upper Bavaria, and **2000** specifically refers to Munich.
+These identifiers help genealogists and record-keepers reference specific geographic or administrative locations where an event took place, like a birth, marriage, or death registration.  
+:::
+
+- The **`<<SHARED_PLACE_STRUCTURE>>`** inside a **`PERIOD_STRUCTURE`** points to larger jurisdictions that this place is a part of, in the timeframe that was valid when the event happened.  
+Its a pointer to the **Parent jurisdiction**.  
+If a city is part of a county which is part of a state, the city's place record should point to the county's place record, not the state's.  
+Multiple **`<<SHARED_PLACE_STRUCTURE>>`** s are permitted to support places within multiple hierarchies (for example, a church that's both within an ecclesiastical region and a political region).
+
+Shared place records offer more flexibility than place structures do.
+A `PLAC` can be replaced by an `SPLAC` without loss of information by making one `SPLAC` record for each non-empty string in the `PLAC`'s payload and linking them together using the `SPLAC`'s `SHARED_PLACE_STRUCTURE`s.
+Information is copied into the new chain of `SPLAC` records as follows:
+
+- The `PLAC` structure is replaced by an `SPLAC` structure that points to the first `SPLAC` record in the chain.
+- Any `NOTE` substructures of `PLAC` are retained as substructures of the new `SPLAC` structure.
+- Empty list entries are skipped.
+- The `PLAC` payload parts become `SPLAC` payloads.
+- The `FORM` payload parts (which may be copied from the `HEAD`.`PLAC`.`FORM` if that is present but `PLAC`.`FORM` is not) become `SPLAC`.`TYPE` payloads.
+- The `TRAN` payload parts become `TRAN` payloads.
+- `LANG` and `TRAN`.`LANG` are copied to each record in the linked list.
+- All other substructures (`MAP` and `EXID`) are copied only to the first record in the list.
+
+:::example
+
+The 7.0 structure
+
+```gedcom
+2 PLAC one, two, , three
+3 FORM city, county, state, country
+3 LANG en
+3 TRAN uno, dos, , tres
+4 LANG es
+3 MAP
+4 LATI N12.3
+4 LONG W45.6
+3 NOTE this is an example
+```
+
+can be converted without loss of information into the new structure
+
+```gedcom
+2 SPLAC @SP1@
+3 NOTE this is an example
+```
+
+and new records
+
+```gedcom
+0 @SP1@ SPLAC one
+1 TYPE city
+1 LANG en
+1 TRAN uno
+2 LANG es
+3 MAP
+4 LATI N12.3
+4 LONG W45.6
+1 SPLAC @SP2@
+0 @SP2@ SPLAC two
+1 TYPE county
+1 LANG en
+1 TRAN dos
+2 LANG es
+1 SPLAC @SP3@
+0 @SP3@ SPLAC three
+1 TYPE country
+1 LANG en
+1 TRAN tres
+2 LANG es
+```
+
+:::
+
+Conversion in the other direction is also possible (from `SPLAC` to `PLAC`) but will in general discard information about individual places in the `SPLAC` chain.
+
+
 #### `PLACENAME_STRUCTURE` :=
 
 **As there is no more `PLACE_STRUCTURE` with `FORM` as in GEDCOM7, we might need to define `<PlaceName>` in chapter 2, same as **"PersonalName"** is defined in GEDCOM7 now.** Because `<PlaceName>` can have other elements than `PERSONALName.` 
