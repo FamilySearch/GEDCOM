@@ -433,6 +433,8 @@ This record describes a location where an event occurred, including its name, ge
 
 As the `SPLAC`Record now will contain a lot of information, coming from (possibly) many users, it might be a good idea to allow the adding of **`SUBM`** on some places (as is already done now for the `TYPE`of the `PERIOD`structure) That way information can be traced back.
 
+Shared place records offer more flexibility than place structures do. A PLAC can be replaced by an SPLAC without loss of information by making one SPLAC record for each non-empty string in the PLAC's payload and linking them together using the SPLAC's SHARED_PLACE_STRUCTUREs. How to copy information is into the new chain of SPLAC records is described at the `PERIOD_STRUCTURE`.
+
 The `PERIOD_STRUCTURE`consists of the folowing parts:
 - **The `<TEXT>` payload** of the `SPLAC`, is the **default name** of the location, that will be used for this `SPLAC`. For instance in a "Treeview", or user-output, or when a user searches for a place to enter for an event. The only time a user should see another name, is when he/she (partly) typed one of the Names, inside a `PERIOD` of this place.  
 
