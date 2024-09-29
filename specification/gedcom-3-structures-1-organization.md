@@ -155,7 +155,7 @@ n HEAD                                     {1:1}  g7:HEAD
   +1 SUBM @<XREF:SUBM>@                    {0:1}  g7:SUBM
   +1 COPR <Text>                           {0:1}  g7:COPR
   +1 LANG <Language>                       {0:1}  g7:HEAD-LANG
-  +1 PLAC                                  {0:1}  g7:HEAD-PLAC
+  +1 PLAC                                  {1:1}  g7:HEAD-PLAC
      +2 FORM <List:Text>                   {1:1}  g7:HEAD-PLAC-FORM
   +1 <<NOTE_STRUCTURE>>                    {0:1}
 ```
@@ -171,6 +171,20 @@ A few substructures of note:
     - `HEAD`.`SOUR`.`DATA` describes a larger database this data is extracted from.
 - `LANG` and `PLAC` give a default value for the rest of the document.
 
+### New for 7.1: 
+- `PLAC` now is {1:1} so obligatory.
+- `FORM` now has `g7:HEAD-PLAC-FORM71` which is defined as follows:  
+The `<List:Text> ` always consists of the following string of jurisdictions (smallest to largest:  
+  **`LOCATION, ZIPCODE, VILLAGE, CITY, CODEINSEE, DISTRICT, PROVINCE, COUNTY, STATE, COUNTRY, SEA, EARTH`**  
+  These are in fact the original jurisdictions from GEDCOM7 with a few added. With this list, older GEDCOM files can be converted, by comparing their `PLAC.FORM's` with this list.  
+  When GEDCOM files have other jurisdictions, which they often have, the jurisdiction in this list, that comes closest has to be taken. After that it can be further subdivided into the jurisdiction found in the original file that is converted, by adding the **GOV** number as explained for the TAG `GOVTYP` in the `PERIOD_STRUCTURE`.  
+  **See the examples for how this will look and has to be done** as it is possible to also add descriptive text, to make it more visible for users.
+
+:::  
+Example:
+- In the original file the jurisdiction is "Kingdom", then the one coming closest is "COUNTRY", and we add the GOV number 31 to denote it is a kingdom.
+- In the original file the jurisdiction is cemetary, then we use the general (smallest) `LOCATION` from the above list, and we add the GOV number 89 to make it a cemetary.  
+:::  
 
 ### Records
 
@@ -402,85 +416,177 @@ A `SHARED_NOTE_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa
 
 ```gedstruct
 n @XREF:SPLAC@ SPLAC <Text>                {1:1}  g71:record-SPLAC
-  +1 TYPE <Text>                           {0:1}  g71:SPLAC-TYPE
   +1 LANG <Language>                       {0:1}  g7:LANG
-  +1 TRAN <Text>                           {0:M}  g71:TRAN
-     +2 LANG <Language>                    {0:1}  g7:LANG
-  <<PLACE_DETAILS>>                        {1:1}
-  <<SHARED_PLACE_STRUCTURE>>               {0:M}  g71:SPLAC
+  +1 TYPE <Text>                           {1:1}  g71:SPLAC-TYPE 
+    +2 HREL <HIERARCHICAL_RELATIONSHIP>    {1:1}  g71:SPLAC-HREL
+      +3 GOVTYP  <GOVID_OF_TYPE>           {0:1}
+        +4 TEXT                            {0:1}  g71:SPLAC-TEXT  
+  +1 <<PERIOD_STRUCTURE>>                  {1:M}
+  +1 <<NOTE_STRUCTURE>>                    {0:M}
+  +1 <<SOURCE_CITATION>>                   {0:M}
+  +1 <<CHANGE_DATE>>                       {1:1}
+  +1 <<CREATION_DATE>>                     {1:1}
 ```
 
 A descriptor of a single place, location, or jurisdiction.
+This record describes a location where an event occurred, including its name, geographical position, and historical parent jurisdictions across various timeframes. Each timeframe (`PERIOD`) is detailed with its corresponding administrative hierarchy, reflecting the changes in jurisdiction, boundaries, names or geopolitical status over time. The record allows for the capture of information relevant to the specific date of an event.  
 
-The `<<SHARED_PLACE_STRUCTURE>>` inside a `SHARED_PLACE_RECORD` points to larger jurisdictions that this place is a part of.
-If a city is part of a county which is part of a state, the city's place record should point to the county's place record, not the state's.
-Multiple `<<SHARED_PLACE_STRUCTURE>>`s are permitted to support places within multiple hierarchies (for example, a church that's both within an ecclesiastical region and a political region).
+As the `SPLAC`Record now will contain a lot of information, coming from (possibly) many users, it might be a good idea to allow the adding of **`SUBM`** on some places (as is already done now for the `TYPE`of the `PERIOD`structure) That way information can be traced back.
 
-Shared place records offer more flexibility than place structures do.
-A `PLAC` can be replaced by an `SPLAC` without loss of information by making one `SPLAC` record for each non-empty string in the `PLAC`'s payload and linking them together using the `SPLAC`'s `SHARED_PLACE_STRUCTURE`s.
-Information is copied into the new chain of `SPLAC` records as follows:
+The `PERIOD_STRUCTURE`consists of the folowing parts:
+- **The `<TEXT>` payload** of the `SPLAC`, is the **default name** of the location, that will be used for this `SPLAC`. For instance in a "Treeview", or user-output, or when a user searches for a place to enter for an event. The only time a user should see another name, is when he/she (partly) typed one of the Names, inside a `PERIOD` of this place.  
 
-- The `PLAC` structure is replaced by an `SPLAC` structure that points to the first `SPLAC` record in the chain.
-- Any `NOTE` substructures of `PLAC` are retained as substructures of the new `SPLAC` structure.
-- Empty list entries are skipped.
-- The `PLAC` payload parts become `SPLAC` payloads.
-- The `FORM` payload parts (which may be copied from the `HEAD`.`PLAC`.`FORM` if that is present but `PLAC`.`FORM` is not) become `SPLAC`.`TYPE` payloads.
-- The `TRAN` payload parts become `TRAN` payloads.
-- `LANG` and `TRAN`.`LANG` are copied to each record in the linked list.
-- All other substructures (`MAP` and `EXID`) are copied only to the first record in the list.
-
-:::example
-
-The 7.0 structure
-
-```gedcom
-2 PLAC one, two, , three
-3 FORM city, county, state, country
-3 LANG en
-3 TRAN uno, dos, , tres
-4 LANG es
-3 MAP
-4 LATI N12.3
-4 LONG W45.6
-3 NOTE this is an example
-```
-
-can be converted without loss of information into the new structure
-
-```gedcom
-2 SPLAC @SP1@
-3 NOTE this is an example
-```
-
-and new records
-
-```gedcom
-0 @SP1@ SPLAC one
-1 TYPE city
-1 LANG en
-1 TRAN uno
-2 LANG es
-3 MAP
-4 LATI N12.3
-4 LONG W45.6
-1 SPLAC @SP2@
-0 @SP2@ SPLAC two
-1 TYPE county
-1 LANG en
-1 TRAN dos
-2 LANG es
-1 SPLAC @SP3@
-0 @SP3@ SPLAC three
-1 TYPE country
-1 LANG en
-1 TRAN tres
-2 LANG es
-```
-
+:::  
+Example: When, for a certain date of an event, a user types "Amster" the program might show him "Amsterdam", but when he types "Amstelle", the program will show him "Amstelledamme" as that was the name of Amsterdam around 1275, and valid on the date of the event the user is entering.  
+**In both cases** the user gets **the same SPLAC**. This way there is less clutter in the GEDCOM, and there are less entrypoints to maintain.  
 :::
 
-Conversion in the other direction is also possible (from `SPLAC` to `PLAC`) but will in general discard information about individual places in the `SPLAC` chain.
+- **LANG** only defines the language of the TEXT payload (which is the default NAME of this `SPLAC`).  
+If an `SPLAC` has more Names with Translations for those Names, they must all be inside the `PERIOD_STRUCTURE`(s).  
+This way, "links" from **inside other SPLAC's, or from events**, always have 1 entry point for whatever information might be inside any `PERIOD` of this `SPLAC`.
+As the `PERIOD's` inside an `SPLAC` always have a DATE-period, a program can determine, coming from an event on a certain Date (or in a certain timeframe), which `PERIOD` of the `SPLAC` it should pick its information from.  
 
+- **TYPE** The `TYPE` of the `SPLAC`. This is meant to be the types that now are in the`PLAC` or `PLAC.FORM` of GEDCOM7, so in fact **the original jurisdictions**. These jurisdictions are now defined in the enumset `SPLAC-TYPE`.  
+`TYPE`can be combined with the subtags `HREL`, `GOVTYP`and `TEXT` that follow it. (see **"TYPE, HREL, GOVTYP and TEXT"** for an explanation.)
+
+- **HREL**  A `TYPE` that is the `HIERARCHICAL_RELATIONSHIP` of the `SPLAC`.  
+This type describes the structured relationships between entities, where one holds a position of authority or influence over another. This includes political, administrative, religious, geographical, cultural, or other hierarchical associations, such as between nations, regions, organizations, or social groups.  
+So the relationship of an `SPLAC`can be: political (administrative), religious, geographical or cultural. See `g71:SPLAC-HREL`.  
+`HREL`can be combined with the subtags `TYPE`, `GOVTYP`and `TEXT` that are near it. (see **"TYPE, HREL, GOVTYP and TEXT"** for an explanation.) `HREL` is defined directly after `TYPE` because both have an {1:1}, so both are obligatory and should always be present.
+
+- **GOVTYP** (which is a `TYPE`) Defined in GEDCOM_L as: {Size=1:3} In GEDCOM_L it is called `<GOVID_OF_TYPE>` and it is defined there as follows:  
+An integer positive number as defined in the GOV system. The definition in the GOV system http://gov.genealogy.net/type/list is binding for the interpretation of this line and allows an interpretation of the superior line 1 TYPE for all languages stored in the GOV system. The multilingual RDF file with the definitions of the object types of the GOV system is also available for this purpose https://gov.genealogy.net/types.owl .  
+The enumeration: `g71:SPLAC-TYPE` only defines a subset of the GEDCOM_L `<GOVID_OF_TYPE>` list, namely those that are the most common jurisdictions in GEDCOM7. To use the other `<GOVID_OF_TYPE>` values, they have to be put behind the general `g71:SPLAC-TYPE` **"LOCATION"**, to further specify `LOCATION`. This way all numbers from the around 280 GOV numbers can be used.  
+We strongly encourage to always have a `GOVTYP` too. (See the above mentioned list)
+  
+Also see the examples in the example chapter.  
+`GOVTYP`can be combined with the subtags `HREL`, `TYPE`and `TEXT` that are above and below. (see **"TYPE, HREL, GOVTYP and TEXT"** for an explanation.)
+
+- **TEXT** (`g71:SPLAC-TEXT`) Optional. This is either the written "Name" of the **GOVTYP**, or a free user text. If it is present it must always be put at the end of the line, separated from it by a comma. (see **"TYPE, HREL, GOVTYP and TEXT"** for a definition and explanation.)
+
+- **TYPE, HREL, GOVTYP and TEXT**, which are in fact 4 separate lines, have to be combined to 1 line, for better readability. Combining is only possible when the first 3 lines both are a **`"TYPE"`** as in this case, followed by a `TEXT`of type `g71:SPLAC-TEXT`.
+
+:::Example:  
+**`  1 TYPE COUNTRY, 7, POLI, Federal State`**  
+This means it is the `SPLAC-TYPE` **COUNTRY**, combined with the `<GOVID_OF_TYPE>` **7, which is Federal state**, and this `SPLAC` is in an political hierarchy.  
+Each parameter is separated from the previous one by a comma. The explaining text of the number is put at the end of the line.  
+
+**`  1 TYPE PROVINCE, 6, RELI, Diocese`**  
+This means it is the `SPLAC-TYPE` **PROVINCE**, combined with the `<GOVID_OF_TYPE>` **6, which is a Diocese** and this `SPLAC` is in a religious hierarchy.  
+:::
+
+- **`<<PERIOD_STRUCTURE>>`** This reflects the historical changes in governance, boundaries, or place names in a certain timeframe.
+
+
+**The first `PERIOD` inside an `SPLAC`**, always serves as the default `PERIOD`. Information from this `PERIOD` has to be used if another `PERIOD` in this same `SPLAC` lacks that information.  
+Also if a user enters a place that has no `SPLAC` yet, that `SPLAC` will get a default `PERIOD` with a DATE period filled in **From 0** (as Dates cannot be empty)
+
+:::Example:  
+**the Places location(s)**. If inside a `PERIOD` where there is no other location given (meaning for this period the place has not "moved", according to the first `PERIOD`), the program should use the Location given in the first (default) `PERIOD`. But if there IS a location inside a `PERIOD` (meaning the SPLAC has "moved" to another location inside this period of time), that location is valid for that period. So a program can pick the correct location depending on **the date ( or dateframe) of the event pointing to this SPLAC**.  
+
+**The Place Name(s)**. If inside a `PERIOD` no other Name(s) are mentioned, the Name as it is specified in the first `PERIOD` is valid. But if there **IS** a name inside a `PERIOD`, that name is valid for that period. So a program can pick the correct Name depending on the date (or dateframe) of the event pointing to this `SPLAC`.  
+Same for other information inside `PERIOD's`.  
+See also the extended examples in the examples chapter.  
+:::
+
+#### `PLACENAME_STRUCTURE` :=
+
+**As there is no more `PLACE_STRUCTURE` with `FORM` as in GEDCOM7, we might need to define `<PlaceName>` in chapter 2, same as **"PersonalName"** is defined in GEDCOM7 now.** Because `<PlaceName>` can have other elements than `PERSONALName.` 
+
+```gedstruct
+n NAME <PlaceName>                         {1:1}  g7:INDI-NAME
+  +1 TRAN <PlaceName>                      {0:M}  g7:NAME-TRAN
+     +2 LANG <Language>                    {1:1}  g7:LANG
+  +1 <<NOTE_STRUCTURE>>                    {0:M}
+  +1 <<SOURCE_CITATION>>                   {0:M}
+```
+
+-  **NAME** The name(s) of the SPLAC in this `PERIOD`.  
+
+-  **TRAN** The Tran structure used to translate the name in this `PERIOD`.  
+
+:::Example  
+The following example shows the Dutch Province **"Friesland"**, as it is called in 2 different ways:  
+- It is officially called **"Friesland"** as default name, in Dutch (nl).  
+- After a certain date it is **officially** called **"Friesland"** AND **"Fryslân"**,  with 2 translations, but Frisian people will also call it **"It Heitelân"**, with 2 translations.
+
+The default name:
+```gedcom
+  1 NAME Friesland
+    2 LANG nl
+```
+
+In another time period:
+```
+  1 NAME Friesland
+    2 LANG nl
+  1 TRAN Fryslân 
+    2 LANG fy
+  1 NAME It Heitelân          (The Homeland)
+    2 LANG fy
+  1 TRAN Het Vaderland        
+    2 LANG nl
+```
+:::
+
+As the `PLACENAME_STRUCTURE` will often have names that might have been valid in older times, the structure also has a `NOTE_STRUCTURE` and a `SOURCE_STRUCTURE` to make it possible to add extra information about the names.
+
+#### PLACE_LOCATION_STRUCTURE :=
+This structure is meant to contain all means of locating a certain `SPLAC`
+```gedstruct
+n MAP                                      {0:1}  g7:MAP
+  +1 LATI <Special>                        {1:1}  g7:LATI
+  +1 LONG <Special>                        {1:1}  g7:LONG
+  +1 RADIUS <Decimal>                      {0:1}  g71:RADIUS
+n <<ADDRESS_STRUCTURE>>                    {0:1}
+n EXID <Special>                           {0:M}  g7:EXID
+  +1 TYPE <Special>                        {0:1}  g7:EXID-TYPE
+n GOVIDN <GOV_IDENTIFIER>                  {0:1}  
+n MAID <MAIDENHEAD_LOCATOR>                {0:1} 
+n ZIPCD <POSTAL_CODE>                      {0:1} 
+  +1 DATE <DATE_VALUE>                     {0:1} 
+  +1 <<SOURCE_CITATION>>                   {0:M} 
+n <<NOTE_STRUCTURE>>                       {0:M}
+n <<SOURCE_CITATION>>                      {0:M}
+```
+:::deprecation Having an `EXID` without an `EXID.TYPE` substructure is deprecated. The meaning of an `EXID` depends on its `EXID.TYPE`. The cardinality of `EXID.TYPE` will be changed to `{1:1}` in version 8.0. :::
+
+Location information about a place.
+
+- **`RADIUS`** is added to have the possibility of defining an area, not just a location, in case the exact location is not known. It can be presented in Kilometers or in Meters. `RADIUS`, as presented here inside the `MAP`, is not supposed to be very large, as that does not give an accurate location.
+
+:::  
+Examples:
+
+```gedcom
+  +1 MAP
+    +2 LATI xxx
+    +2 LONG xxx
+    +2 RADIUS 2 KM
+
+  .....
+  +1 MAP
+    +2 LATI xxx
+    +2 LONG xxx
+    +2 RADIUS 1.75 KM
+
+  .....
+  +1 MAP
+    +2 LATI xxx
+    +2 LONG xxx
+    +2 RADIUS 400 M
+```
+:::  
+
+- **`<<ADDRESS_STRUCTURE>>`** This needs more discussion. In fact the GEDCOM-L's address structure might be a good start, but in here it is just mentioned as a possibility, as it is not clear yet how the address should look.
+
+- **`GOVIDN`** Defined as **`<GOV_IDENTIFIER>`** in GEDCOM_L as: := {Size=1:14} The official GOV1 Id. ID of the object in the Historical Place Register / Historic Gazetteer (GOV), see http://wiki-de.genealogy.net/GOV. The GOV-ID, for example, has the form **CREGENJO52HG** for **"Cremlingen"**. A list of the GOV-ID is available via the MiniGOV files (download via http://wiki-de.genealogy.net/GOV/Mini-GOV ) or online via the web service of the GOV system http://wiki-de.genealogy.net/GOV/Webservice . 
+
+- **`MAID`** Defined as **`<MAIDENHEAD_LOCATOR>`** in GEDCOM_L as: := {Size=1:8} The maidenhead code. (For Maidenhead code see: (https://www.egloff.eu/qralocator/)  
+The Maidenhead Locator System (a.k.a. QTH Locator and IARU Locator) is a geocode system used by amateur radio operators to succinctly describe their geographic coordinates, which replaced the deprecated QRA locator.
+
+- **`ZIPCD`** Defined as **`<POSTAL_CODE>`** in GEDCOM_L as: := {Size=1:10} The official ZIP code, called **`ADDRESS_POSTAL_CODE`** in GEDCOM7.  
+It is changed into **{0:1}** in this specification.
 
 #### `SOURCE_RECORD` :=
 
@@ -1288,6 +1394,10 @@ n SPLAC @<XREF:SPLAC>@                     {1:1}  g71:SPLAC
 
 An assertion that something took place in or is part of some place.
 
+it is a pointer (link) to a **`SHARED_PLACE_RECORD`**, this pointer is placed in a `SOURCE_RECORD`, an `LDS_ORDINANCE_DETAIL` or in an `EVENT_DETAIL`, to assign a Place for, or to, an event. 
+
+- **`TYPE`** The Hierarchical relationship to the parent **`SPLAC`**. Defined in GEDCOM-L as: := [POLI|RELI|GEOG|CULT] Used to differentiate political (administrative), religious, geographical or cultural associations. For the superior location object the details of its type are defined by the <TYPE_OF_LOCATION> in its record. 
+
 The `NOTE_STRUCTURE`s here are about the connection between the topic of the superstructure and the pointed-to place.
 Notes about the place itself should be placed inside the pointed-to `SHARED_PLACE_RECORD`.
 
@@ -1296,18 +1406,30 @@ A `voidPtr` and `PHRASE` can be used to describe places not referenced by any `S
 :::example
 The following both indicate that a birth happened "at home" with no additional details on where that was. The second version is preferred; the first should not be used.
 
-```gedcom
+```gedcom  
 0 @I1@ INDI
-1 BIRT
-2 SPLAC @VOID@
-3 PHRASE at home
-```
+  1 BIRT
+    2 SPLAC @SP321@
+      3 PHRASE at home
+      3 NOTE This link points to a general "At Home" structure.
 
-```gedcom
-0 @I1@ INDI
-1 BIRT
-2 PLAC at home
+0 @SP321@ SPLAC at home
+  1 LANG en
+  1 TYPE LOCATION, , 17, Building
+  1 PERIOD 
+    2 TYPE SOURCE 
+  1 NOTE some more explanation here about "at home" itself.            
+  1 CREA
+    2 DATE 22 JUL 2022
+      3 TIME 20:56:25
+  1 CHAN
+    2 DATE 24 SEP 2024
+      3 TIME 15:25:18
 ```
+The **`TYPE`** of this **`SPLAC`** is **`LOCATION`**, the general **`SPLAC`** type that is further specified with the **`GOVTYP`** location type 17, from the GOV list, which denotes a building of unknown further description. For the "empty comma", see the explanation of `TYPE`at the `SHARED_PLACE` RECORD. 
+The **`PERIOD`** has no payload, denoting it is usable from old days till present. For that reason there is also no **`DATE`**.  
+There is no Location mentioned either, as there is no further description of "at home" given.  
+This **`SPLAC`** does not point to a parent **`SPLAC`**, but a user could make it point to **`EARTH`** if he wishes.  
 :::
 
 See `SHARED_PLACE_RECORD` for how to convert between `PLAC` and `SPLAC`.
