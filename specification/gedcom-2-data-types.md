@@ -30,6 +30,18 @@ Negative integers are not supported by this specification.
 
 The URI for the `Integer` data type is `xsd:nonNegativeInteger`.
 
+## Decimal
+
+A decimal is a non-empty sequence of ASCII decimal digits that may include an ASCII period (".") to indicate the decimal point. It represents a rational number in base-10 and can have any number of digits after the decimal point. Leading zeros have no semantic meaning and should be omitted unless immediately preceding the decimal point.
+
+```abnf
+Decimal = 1*DIGIT [ "." 1*DIGIT ]
+```
+
+Negative Decimal numbers are not supported by this specification.
+
+The URI for the `Decimal` data type is `xsd:decimal`.
+
 ## Enumeration
 
 An enumeration is a selection from a set of options.
