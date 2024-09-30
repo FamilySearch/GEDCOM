@@ -236,7 +236,7 @@ Because the third `PERIOD` is of type `USER`, there is a link to a `SUBM` record
       3 LANG nl
   - - -
   - - -
-    2 SPLAC @SP10@            (link SPLAC: De Lage Landen (Later: The Netherlands))
+    2 SPLAC @SP11@            (link SPLAC: De Lage Landen (Later: The Netherlands))
       3 TYPE RELI             (HIERARCHICAL_RELATIONSHIP,POLI,RELI,GEOG,CULT)
       3 DATE DATE 0 TO 1648
     2 PHRASE Some text here
@@ -267,13 +267,6 @@ CREA and CHAN
       3 TYPE GEOG             (HIERARCHICAL_RELATIONSHIP,POLI,RELI,GEOG,CULT)
     2 PHRASE Some text here
     2 NOTE  Texts about the Netherlands. (can be many notes)
-  1 PERIOD FROM 0 TO 1648
-    2 TYPE SOURCE             (SOURCE=researcher perspective)
-    2 DATE FROM 0 TO 1648
-    2 SPLAC @SP2000@          (link to the SPLAC: EARTH)
-      3 TYPE GEOG             (HIERARCHICAL_RELATIONSHIP,POLI,RELI,GEOG,CULT)
-    2 PHRASE Some text here
-    2 NOTE  Texts about the Netherlands in those days
 CREA and CHAN
 ```
 ***
