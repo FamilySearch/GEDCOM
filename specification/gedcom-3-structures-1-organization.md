@@ -169,6 +169,9 @@ A few substructures of note:
     - `HEAD`.`SOUR`.`DATA` describes a larger database, data source, or digital repository this data is extracted from.
 - `LANG` and `PLAC` give a default value for the rest of the document.
 
+:::deprecation
+`HEAD`.`SOUR`.`DATA` is now deprecated and applications should use `HEAD`.`SOUR`.`NAME` instead.
+:::
 
 ### Records
 
