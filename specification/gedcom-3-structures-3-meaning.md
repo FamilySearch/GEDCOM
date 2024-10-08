@@ -428,9 +428,9 @@ See `g7:DATA`.
 
 #### `DATA` (Data) `g7:HEAD-SOUR-DATA`
 
-The electronic data source or digital repository from which this dataset was exported.
-The payload is the name of that source,
-with substructures providing additional details about the source (not the export).
+The database, electronic data source, or digital repository from which this dataset was exported.
+The payload is the name of the database, electronic data source, or digital repository,
+with substructures providing additional details about it (not about the export).
 
 #### `DATE` (Date) `g7:DATE`
 
