@@ -1140,7 +1140,7 @@ A place, which can be represented in several ways:
 
 :::note
     Existing applications often default to assuming a `FORM` of "City, County, State, Country",
-    and may even ignore any `FORM` substructures and treat payloads with a smaller number of
+    and some even ignore any `FORM` substructures and treat payloads with a smaller number of
     elements as if they had additional blank elements at the end. Accordingly, to increase
     the chances of interoperability it is recommended that blank elements be used to ensure
     payloads can be interpreted as best as possible in such a circumstance.
