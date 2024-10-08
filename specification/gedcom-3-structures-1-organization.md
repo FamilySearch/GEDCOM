@@ -166,9 +166,12 @@ A few substructures of note:
 - `SCHMA` gives the meaning of extension tags; see [Extensions](#extensions) for more details.
 - `SOUR` describes the originating software.
     - `CORP` describes the corporation creating the software.
-    - `HEAD`.`SOUR`.`DATA` describes a larger database this data is extracted from.
+    - `HEAD`.`SOUR`.`DATA` describes a larger database, electronic data source, or digital repository this data is extracted from.
 - `LANG` and `PLAC` give a default value for the rest of the document.
 
+:::deprecation
+`HEAD`.`SOUR`.`DATA` is now deprecated and applications should use `HEAD`.`SOUR`.`NAME` instead.
+:::
 
 ### Records
 
