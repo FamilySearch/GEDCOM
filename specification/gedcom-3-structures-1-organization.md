@@ -1138,6 +1138,14 @@ A place, which can be represented in several ways:
     or in the `HEAD`.`PLAC`.`FORM` if there is no `FORM` substructure.
     If neither `FORM` exists, the meaning of the elements are not defined in this specification beyond being names of jurisdictions of some kind, ordered from smallest to largest.
 
+:::note
+    Existing applications often default to assuming a `FORM` of "City, County, State, Country",
+    and may even ignore any `FORM` substructures and treat payloads with a smaller number of
+    elements as if they had additional blank elements at the end. Accordingly, to increase
+    the chances of interoperability it is recommended that blank elements be used to ensure
+    payloads can be interpreted as best as possible in such a circumstance.
+:::
+
     Elements should be left blank if they are unknown, do not apply to the location, or are too specific for the region in question.
 
     <div class="example">
