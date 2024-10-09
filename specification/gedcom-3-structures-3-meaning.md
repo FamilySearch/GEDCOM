@@ -1387,6 +1387,11 @@ A verbatim copy of any description contained within the source.
 This indicates notes or text that are actually contained in the source document, not the submitter's opinion about the source.
 This should be, from the evidence point of view, "what the original record keeper said" as opposed to the researcher's interpretation.
 
+#### `TEXT` (Text in SPLAC TYPE's) `g71:SPLAC-TEXT`
+
+Explaining text that can be added to **`g71:SPLAC-TYPE`**, to further define the **`TYPE`** of an **`SPLAC`** or an **`SPLAC.PERIOD`**. There should not be a comma inside the text as this is used as separator for the sequence.
+See at **`g71:SPLAC-TYPE`** for an explanation of what is possible.
+
 #### `TIME` (Time) `g7:TIME`
 
 A `Time` value in a 24-hour clock format.
@@ -1630,14 +1635,42 @@ A jurisdictional title, describing what type of jurisdiction the superstructure 
 Because of the wide variety of jurisdictional titles in use,
 this is a free-text value and generally presented in the same language as the place's name.
 
-:::example
-The following represents that Baltimore is a city.
+However, as there are already programs who use a fixed set of jurisdictions, (as for instance FamilySearch online itself does), where those jurisdictions often come from the **`HEAD.PLAC.FORM`**, or **`PLAC.FORM`**, an enumeration set is added to help with the conversion. See **`g71:enumset-SPLAC-TYPE`**.  
 
-```gedcom
-0 @SP2@ SPLAC Baltimore
-1 TYPE City
+It is encouraged that implementations use the **`g71:enumset-SPLAC-TYPE`**, when adding new information and converting older files. As in a future version free-text might no longer be allowed.
+
+See also **`g7:PLAC-FORM`** which is the list version of **`g71:SPLAC-TYPE`**.
+
+:::example
+The following represents a freeform version for the City of Baltimore:
 ```
-:::
+0 @SP2@ SPLAC Baltimore
+1 TYPE City, POLI 
+```
+
+Next, the same, but this time with the enumset:  
+```
+0 @SP2@ SPLAC Baltimore
+1 TYPE CITY, POLI
+```  
+Only difference here is that the enum value itself is in uppercase, as in the enumset.  
+:::  
+
+To help with readability, this **`TYPE`** has the following extra feature:  
+- The TYPE-line is combinable with a possible other **`TYPE`** (with an enumset or with text) coming from the GEDCOM-line directly following or preceding the current one.
+- The line with text, must be of type **`g71:SPLAC-TEXT`** and can never be a preceding line, it is always the last line in a sequence. There must not be a comma in this free text, as this is the separator in the sequence.
+
+:::example  
+
+The following represents an "old" name for the Netherlands **"De Lage Landen"**, in the time it was a kingdom and part of the Holy Roman Empire:
+
+```gedcom  
+0 @SP11@ SPLAC De lage Landen
+  1 LANG nl
+  1 TYPE COUNTRY, POLI, 31, Part of the "Holy Roman Empire". 
+```
+The Value 31 is the GOV number for a kingdom. POLI is the type of hierarchical realtionship. After the last comma is the free text.  
+:::  
 
 See also `g7:PLAC-FORM` which is the list version of `g71:SPLAC-TYPE`.
 

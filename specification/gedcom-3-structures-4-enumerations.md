@@ -241,3 +241,83 @@ and applications should be prepared to encounter non-current values.
 | `MARRIED` | Married name, assumed as part of marriage. |
 | `PROFESSIONAL` | Name used professionally (pen, screen, stage name). |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
+
+### `g71:enumset-SPLAC-TYPE`  
+
+The numbers in the Meaning column, denote the `GOVID` number from GEDCOM_L as in http://gov.genealogy.net/type/list 
+| Value |  Meaning  |
+|---|---|
+|EARTH |  The global level that includes all continents, countries, and regions. It represents the entirety of human civilization and geographical space as the outermost jurisdictional layer. |
+|SEA |  A body of saline water more directly associated with a specific landmass or group of landmasses than the vast open oceans.|
+|COUNTRY | (34) A nation with its own government, occupying a particular territory.  (e.g., United States, Denmark)|
+|STATE | (7) A division within a country, typically large and governed by regional laws. For example, in the U.S., it's the **"state"** (e.g., California), while in Canada, it's the **"province"** (e.g., Ontario).|
+|COUNTY | (222) A smaller division within a state or province, often handling local administration. For example, "Los Angeles County" in California.|
+|PROVINCE | (45) A division within a country, typically large and governed by regional laws, as in the Netherlands (Also see `STATE`)|
+|DISTRICT | (5) A geographical area or administrative region within a county. It often serves to organize larger municipalities or rural areas, especially in places where counties are divided into multiple administrative sections. |
+|CODEINSEE | In France, this is the national identification code used for administrative purposes, specifically for geographical divisions such as regions, departments, or cities.|
+|CITY | (51) A municipality or large urban area within a county or district, where people live and work. Examples include "Paris" or "New York City." (A city can consist of suburbs, that in turn could have been small villages once)|
+|VILLAGE | (54) A smaller settlement than a city, often in rural areas. Examples include "Vejleby" in Denmark. (Small villages maybe later become a suburb of a City).|
+|ZIPCODE | A postal code used to identify specific areas for mail delivery, which can also help locate an event. In the U.S., this is typically a five-digit code, e.g., 90210. In the Netherlands a Zipcode, is a small area in a city or a small city itself)|
+|LOCATION | Smallest possible "area", indicating an exact place within a city or village, such as a street address, building, or landmark. Can also be a house, a cemetary, a hospital, a Farm etc. Or a place at sea we know not much about.|
+
+Almost all Values are in fact Area's, that go from largest: `EARTH`: (at the top) to smallest: `LOCATION`: (at the bottom). This list might not be complete yet, but its a start.  
+The smallest one is called `LOCATION`. As thats also a bit of a reference to `_LOC` of GEDCOM-L. (In fact `LOCATION` is not really an "area".)  
+Also `EARTH` is added at the top, so we can give for instance a place at sea, that has no superior than the earth itself, the possibility to also have a superior.
+
+Now GEDCOM-L has around 280 Location `TYPE's`, but a lot of them are in fact of the lowest level, in the above list they are of Type `LOCATION`. (Farm, Cemetary etc)  
+So there is an extra SubType-TAG just for `LOCATION`, to further specify the `TYPE` of the `LOCATION`. But as that is a long list the already existing `GOVID` list is used for that, and its not specified here. See `GOVTYP` in the `PERIOD-STRUCTURE` for that.
+
+**For instance:** 
+
+**1 TYPE LOCATION, GEOG, 4, Farm**  
+or  
+ **1 TYPE LOCATION, RELI, 89, Cemetary**  
+Both with their `GOVID` GEDCOM_L number, separated by a comma, after the `SPLAC-TYPE`: `LOCATION` and the Demographical Type. Those numbers point to the GOV list of types. 
+
+If the `GOVID` number is not know, specification could be:  
+**1 TYPE LOCATION, GEOG, , Farm**  
+So with an empty comma's just as in the original Jurisdiction list of GEDCOM 7.
+
+With this enumset and that GOVLIST we can convert existing GEDCOM's.  
+:::  
+Maybe the GOV list should have some kind of **"GENERAL"** or **"UNKNOWN"** type, maybe take the value 0 for that. So in case a GEDCOM has no real definition we could write:  
+
+**1 TYPE LOCATION, POLI, 0, Unknown**
+
+@Albertemmerich: Could this list https://gov.genealogy.net/type/list be translated into English, or an English column added? That would make it way easier to use.  
+:::
+
+***
+### `g71:enumset-DATA-INFO-TYPE`
+
+| Value |  Meaning  |
+|---|---|
+| SOURCE | The information found here, is as seen from the researcher perspective. So as it is found in information records. No user processing has taken place. |
+| USER |  The information found here, is as seen from a conclusion perspective, so after a user has processed the information from certain records, and added his/hers own conclusions.|
+| OWN | The information found here did not directly come from any records, but it is the users own work (for instance if someone has a lot of own info about Farms)
+
+`DATA-INFO-TYPE` is used to specify the Source of the data in a `PERIOD_STRUCTURE`. But it is defined in such a way that it could also be used for other things later, hence this name for the enumset.
+
+***
+### `g71:enumset-DEMOGRAPHICAL-DATA`
+
+| Value |  Meaning  |
+|---|---|
+| POPULATION | The Demographical data that was collected, was related to the Population of a certain area.  |
+| HOUSEHOLD | The Demographical data that was collected, was related to the number of Households in a certain area. |
+| RESIDENT | The Demographical data that was collected, was related to the number of residents of a certain area. |
+
+The `<TYPE_OF_DEMOGRAPHICAL_DATA>` is used to specify the type of data that is gathered for a Census and other collections. It is used in the **`PERIOD'S`** of an `SPLAC record.
+
+***
+
+### `g71:enumset-HIERARCHICAL-TYPE`
+
+| Value |  Meaning  |
+|---|---|
+| POLI | Political relationship |
+| RELI | Religious relationship |
+| GEOG | Gegraphical relationship |
+| CULT | Cultural relationship |
+
+The `<HIERARCHICAL-TYPE>` is used to specify the type of the relation between an `SPLAC` and its parent, used in the link of the  `SHARED_PLACE_STRUCTURE`. And in the `SPLAC`itself to denote the type of the total `SPLAC` record..
