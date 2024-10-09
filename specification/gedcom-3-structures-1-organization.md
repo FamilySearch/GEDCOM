@@ -418,7 +418,7 @@ A `SHARED_NOTE_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa
 n @XREF:SPLAC@ SPLAC <Text>                {1:1}  g71:record-SPLAC
   +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TYPE <Text>                           {1:1}  g71:SPLAC-TYPE 
-    +2 HREL <HIERARCHICAL_RELATIONSHIP>    {1:1}  g71:SPLAC-HREL
+    +2 HREL <HIERARCHICAL_RELATIONSHIP>    {0:M}  g71:SPLAC-HREL
       +3 GOVTYP  <GOVID_OF_TYPE>           {0:1}
         +4 TEXT                            {0:1}  g71:SPLAC-TEXT  
   +1 <<PERIOD_STRUCTURE>>                  {1:M}
