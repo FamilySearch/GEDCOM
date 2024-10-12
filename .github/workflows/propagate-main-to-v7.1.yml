@@ -6,7 +6,7 @@
 # For documentation on the syntax of this file, see
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 ---
-name: Build
+name: Propagate main to 7.1
 
 on:
   push:
