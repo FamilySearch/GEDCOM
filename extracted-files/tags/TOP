@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/TOP
 
-standard tag: TOP
+standard tag: 'TOP'
 
 specification:
   - Top crop width

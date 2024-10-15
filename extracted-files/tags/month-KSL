@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-KSL
 
-standard tag: KSL
+standard tag: 'KSL'
 
 specification:
   - Kislev (כִּסְלֵו)

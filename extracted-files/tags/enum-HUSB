@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-HUSB
 
-standard tag: HUSB
+standard tag: 'HUSB'
 
 specification:
   - Husband; implies `SPOU`

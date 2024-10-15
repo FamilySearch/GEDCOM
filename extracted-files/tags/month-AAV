@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-AAV
 
-standard tag: AAV
+standard tag: 'AAV'
 
 specification:
   - Av (אָב)

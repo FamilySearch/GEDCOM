@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/HEAD
 
-standard tag: HEAD
+standard tag: 'HEAD'
 
 specification:
   - Header
@@ -22,9 +22,16 @@ specification:
       details.
     - `SOUR` describes the originating software.
       - `CORP` describes the corporation creating the software.
-      - `HEAD`.`SOUR`.`DATA` describes a larger database this data is extracted
-        from.
+      - `HEAD`.`SOUR`.`DATA` describes a larger database, electronic data source,
+        or digital repository this data is extracted from.
     - `LANG` and `PLAC` give a default value for the rest of the document.
+    
+    <div class="deprecation">
+    
+    `HEAD`.`SOUR`.`DATA` is now deprecated and applications should use
+    `HEAD`.`SOUR`.`NAME` instead.
+    
+    </div>
 
 label: 'Header'
 

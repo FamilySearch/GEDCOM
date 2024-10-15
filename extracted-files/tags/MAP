@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/MAP
 
-standard tag: MAP
+standard tag: 'MAP'
 
 specification:
   - Map

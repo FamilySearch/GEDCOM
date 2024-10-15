@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-FACT
 
-standard tag: FACT
+standard tag: 'FACT'
 
 specification:
   - A generic attribute; either `https://gedcom.io/terms/v7/INDI-FACT` or

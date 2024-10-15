@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-MAIDEN
 
-standard tag: MAIDEN
+standard tag: 'MAIDEN'
 
 specification:
   - Maiden name, name before first marriage.

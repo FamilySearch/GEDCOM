@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-PRE_1970
 
-standard tag: PRE_1970
+standard tag: 'PRE_1970'
 
 specification:
   - "Applies to: All"

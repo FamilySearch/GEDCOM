@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/POST
 
-standard tag: POST
+standard tag: 'POST'
 
 specification:
   - Postal code

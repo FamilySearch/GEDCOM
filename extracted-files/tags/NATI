@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/NATI
 
-standard tag: NATI
+standard tag: 'NATI'
 
 specification:
   - Nationality

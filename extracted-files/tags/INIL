@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/INIL
 
-standard tag: INIL
+standard tag: 'INIL'
 
 specification:
   - Initiatory, Latter-Day Saint

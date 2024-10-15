@@ -6,7 +6,7 @@ type: calendar
 
 uri: https://gedcom.io/terms/v7/cal-GREGORIAN
 
-standard tag: GREGORIAN
+standard tag: 'GREGORIAN'
 
 specification:
   - |

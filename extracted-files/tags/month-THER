@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-THER
 
-standard tag: THER
+standard tag: 'THER'
 
 specification:
   - Thermidor

@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-SHV
 
-standard tag: SHV
+standard tag: 'SHV'
 
 specification:
   - Shevat (שְׁבָט)

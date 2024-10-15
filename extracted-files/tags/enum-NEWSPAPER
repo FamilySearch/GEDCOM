@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-NEWSPAPER
 
-standard tag: NEWSPAPER
+standard tag: 'NEWSPAPER'
 
 specification:
   - Printed newspaper

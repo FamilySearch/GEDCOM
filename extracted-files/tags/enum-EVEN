@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-EVEN
 
-standard tag: EVEN
+standard tag: 'EVEN'
 
 specification:
   - A generic event; either `https://gedcom.io/terms/v7/INDI-EVEN` or

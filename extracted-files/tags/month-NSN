@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-NSN
 
-standard tag: NSN
+standard tag: 'NSN'
 
 specification:
   - Nisan (נִיסָן)

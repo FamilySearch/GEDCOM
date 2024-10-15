@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-SVN
 
-standard tag: SVN
+standard tag: 'SVN'
 
 specification:
   - Sivan (סִיוָן)

@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-CARD
 
-standard tag: CARD
+standard tag: 'CARD'
 
 specification:
   - A card or file entry

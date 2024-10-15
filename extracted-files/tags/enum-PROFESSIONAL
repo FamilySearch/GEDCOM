@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-PROFESSIONAL
 
-standard tag: PROFESSIONAL
+standard tag: 'PROFESSIONAL'
 
 specification:
   - Name used professionally (pen, screen, stage name).

@@ -6,7 +6,7 @@ type: calendar
 
 uri: https://gedcom.io/terms/v7/cal-FRENCH_R
 
-standard tag: FRENCH_R
+standard tag: 'FRENCH_R'
 
 specification:
   - |

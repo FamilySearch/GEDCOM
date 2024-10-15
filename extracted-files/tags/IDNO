@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/IDNO
 
-standard tag: IDNO
+standard tag: 'IDNO'
 
 specification:
   - Identification number

@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/FAX
 
-standard tag: FAX
+standard tag: 'FAX'
 
 specification:
   - Facsimile

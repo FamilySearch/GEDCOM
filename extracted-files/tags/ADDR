@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/ADDR
 
-standard tag: ADDR
+standard tag: 'ADDR'
 
 specification:
   - Address

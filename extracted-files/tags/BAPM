@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/BAPM
 
-standard tag: BAPM
+standard tag: 'BAPM'
 
 specification:
   - Baptism

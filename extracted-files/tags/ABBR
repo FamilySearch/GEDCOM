@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/ABBR
 
-standard tag: ABBR
+standard tag: 'ABBR'
 
 specification:
   - Abbreviation

@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/record-FAM
 
-standard tag: FAM
+standard tag: 'FAM'
 
 specification:
   - Family record
