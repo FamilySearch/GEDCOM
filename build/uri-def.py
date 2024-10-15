@@ -396,7 +396,7 @@ if __name__ == '__main__':
             
             if g7[tag][0] in ('structure', 'enumeration', 'calendar', 'month'):
                 ptag = re.sub(r'.*-', '', re.sub(r'-[A-Z]?[a-z].*', '', tag))
-                print('\nstandard tag: '+(repr(ptag) if ptag in ('YES','NO','TRUE','FALSE', '0', '1', '2', '3') else ptag), file=fh)
+                print('\nstandard tag: '+repr(ptag), file=fh)
             
             if len(g7[tag][1]) > 0:
                 print('\nspecification:', file=fh)
