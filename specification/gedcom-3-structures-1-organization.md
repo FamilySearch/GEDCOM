@@ -166,9 +166,12 @@ A few substructures of note:
 - `SCHMA` gives the meaning of extension tags; see [Extensions](#extensions) for more details.
 - `SOUR` describes the originating software.
     - `CORP` describes the corporation creating the software.
-    - `HEAD`.`SOUR`.`DATA` describes a larger database this data is extracted from.
+    - `HEAD`.`SOUR`.`DATA` describes a larger database, electronic data source, or digital repository this data is extracted from.
 - `LANG` and `PLAC` give a default value for the rest of the document.
 
+:::deprecation
+`HEAD`.`SOUR`.`DATA` is now deprecated and applications should use `HEAD`.`SOUR`.`NAME` instead.
+:::
 
 ### Records
 
@@ -1137,6 +1140,12 @@ A place, which can be represented in several ways:
     The specific meaning of each element is given by the `FORM` substructure,
     or in the `HEAD`.`PLAC`.`FORM` if there is no `FORM` substructure.
     If neither `FORM` exists, the meaning of the elements are not defined in this specification beyond being names of jurisdictions of some kind, ordered from smallest to largest.
+
+    <div class="note">
+    Some applications and users have defaulted to assuming a `FORM` of "City, County, State, Country",
+    and some applications even ignore any `FORM` substructures and treat payloads with a smaller number of
+    elements as if they had additional blank elements at the end.
+    </div>
 
     Elements should be left blank if they are unknown, do not apply to the location, or are too specific for the region in question.
 
