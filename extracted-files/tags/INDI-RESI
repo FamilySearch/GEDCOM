@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/INDI-RESI
 
-standard tag: RESI
+standard tag: 'RESI'
 
 specification:
   - Residence

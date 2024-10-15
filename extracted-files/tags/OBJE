@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/OBJE
 
-standard tag: OBJE
+standard tag: 'OBJE'
 
 specification:
   - Object

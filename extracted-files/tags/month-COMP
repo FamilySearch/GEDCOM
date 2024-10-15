@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-COMP
 
-standard tag: COMP
+standard tag: 'COMP'
 
 specification:
   - Jour Complémentaires

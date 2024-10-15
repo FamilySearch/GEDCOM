@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/NMR
 
-standard tag: NMR
+standard tag: 'NMR'
 
 specification:
   - Number of marriages

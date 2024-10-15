@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/NO-DATE
 
-standard tag: DATE
+standard tag: 'DATE'
 
 specification:
   - Date

@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/RESN
 
-standard tag: RESN
+standard tag: 'RESN'
 
 specification:
   - Restriction

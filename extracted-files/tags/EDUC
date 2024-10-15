@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/EDUC
 
-standard tag: EDUC
+standard tag: 'EDUC'
 
 specification:
   - Education

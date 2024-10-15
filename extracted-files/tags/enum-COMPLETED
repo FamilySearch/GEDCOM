@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-COMPLETED
 
-standard tag: COMPLETED
+standard tag: 'COMPLETED'
 
 specification:
   - "Applies to: All"

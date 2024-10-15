@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-OCT
 
-standard tag: OCT
+standard tag: 'OCT'
 
 specification:
   - October

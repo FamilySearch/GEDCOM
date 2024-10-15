@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/WWW
 
-standard tag: WWW
+standard tag: 'WWW'
 
 specification:
   - Web address

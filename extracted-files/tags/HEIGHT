@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/HEIGHT
 
-standard tag: HEIGHT
+standard tag: 'HEIGHT'
 
 specification:
   - Height in pixels

@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-TVT
 
-standard tag: TVT
+standard tag: 'TVT'
 
 specification:
   - Tevet (טֵבֵת)

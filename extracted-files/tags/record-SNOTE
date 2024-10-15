@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/record-SNOTE
 
-standard tag: SNOTE
+standard tag: 'SNOTE'
 
 specification:
   - Shared note

@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/SURN
 
-standard tag: SURN
+standard tag: 'SURN'
 
 specification:
   - Surname

@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/NPFX
 
-standard tag: NPFX
+standard tag: 'NPFX'
 
 specification:
   - Name prefix

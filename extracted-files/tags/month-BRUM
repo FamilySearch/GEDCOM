@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-BRUM
 
-standard tag: BRUM
+standard tag: 'BRUM'
 
 specification:
   - Brumaire

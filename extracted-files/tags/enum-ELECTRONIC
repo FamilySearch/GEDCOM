@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-ELECTRONIC
 
-standard tag: ELECTRONIC
+standard tag: 'ELECTRONIC'
 
 specification:
   - A digital artifact

@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-TMZ
 
-standard tag: TMZ
+standard tag: 'TMZ'
 
 specification:
   - Tammuz (תַּמּוּז)

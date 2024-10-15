@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-MAR
 
-standard tag: MAR
+standard tag: 'MAR'
 
 specification:
   - March

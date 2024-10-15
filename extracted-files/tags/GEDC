@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/GEDC
 
-standard tag: GEDC
+standard tag: 'GEDC'
 
 specification:
   - GEDCOM

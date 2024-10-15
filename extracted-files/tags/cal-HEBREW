@@ -6,7 +6,7 @@ type: calendar
 
 uri: https://gedcom.io/terms/v7/cal-HEBREW
 
-standard tag: HEBREW
+standard tag: 'HEBREW'
 
 specification:
   - |

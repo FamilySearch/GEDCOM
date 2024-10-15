@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-CSH
 
-standard tag: CSH
+standard tag: 'CSH'
 
 specification:
   - Marcheshvan (מַרְחֶשְׁוָן) or Cheshvan (חֶשְׁוָן)

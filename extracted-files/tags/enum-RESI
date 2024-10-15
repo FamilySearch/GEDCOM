@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-RESI
 
-standard tag: RESI
+standard tag: 'RESI'
 
 specification:
   - A residence attribute; either `https://gedcom.io/terms/v7/INDI-RESI` or

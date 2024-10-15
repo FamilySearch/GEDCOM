@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/ADR2
 
-standard tag: ADR2
+standard tag: 'ADR2'
 
 specification:
   - Address Line 2

@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/PHRASE
 
-standard tag: PHRASE
+standard tag: 'PHRASE'
 
 specification:
   - Phrase

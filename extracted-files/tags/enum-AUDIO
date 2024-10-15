@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-AUDIO
 
-standard tag: AUDIO
+standard tag: 'AUDIO'
 
 specification:
   - An audio recording

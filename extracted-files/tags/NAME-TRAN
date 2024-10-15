@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/NAME-TRAN
 
-standard tag: TRAN
+standard tag: 'TRAN'
 
 specification:
   - Translation
