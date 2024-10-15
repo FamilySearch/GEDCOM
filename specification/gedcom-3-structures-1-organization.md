@@ -1141,6 +1141,12 @@ A place, which can be represented in several ways:
     or in the `HEAD`.`PLAC`.`FORM` if there is no `FORM` substructure.
     If neither `FORM` exists, the meaning of the elements are not defined in this specification beyond being names of jurisdictions of some kind, ordered from smallest to largest.
 
+    <div class="note">
+    Some applications and users have defaulted to assuming a `FORM` of "City, County, State, Country",
+    and some applications even ignore any `FORM` substructures and treat payloads with a smaller number of
+    elements as if they had additional blank elements at the end.
+    </div>
+
     Elements should be left blank if they are unknown, do not apply to the location, or are too specific for the region in question.
 
     <div class="example">
