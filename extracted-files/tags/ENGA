@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/ENGA
 
-standard tag: ENGA
+standard tag: 'ENGA'
 
 specification:
   - Engagement

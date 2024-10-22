@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-FOSTER
 
-standard tag: FOSTER
+standard tag: 'FOSTER'
 
 specification:
   - The child was included in a foster or guardian family

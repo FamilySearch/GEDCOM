@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-CONFIDENTIAL
 
-standard tag: CONFIDENTIAL
+standard tag: 'CONFIDENTIAL'
 
 specification:
   - This data was marked as confidential by the user.

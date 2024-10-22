@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/SSN
 
-standard tag: SSN
+standard tag: 'SSN'
 
 specification:
   - Social security number

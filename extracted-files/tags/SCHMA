@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/SCHMA
 
-standard tag: SCHMA
+standard tag: 'SCHMA'
 
 specification:
   - Extension schema

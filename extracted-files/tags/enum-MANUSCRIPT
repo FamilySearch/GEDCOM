@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-MANUSCRIPT
 
-standard tag: MANUSCRIPT
+standard tag: 'MANUSCRIPT'
 
 specification:
   - Written pages

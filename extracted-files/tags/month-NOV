@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-NOV
 
-standard tag: NOV
+standard tag: 'NOV'
 
 specification:
   - November

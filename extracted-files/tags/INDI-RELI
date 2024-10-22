@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/INDI-RELI
 
-standard tag: RELI
+standard tag: 'RELI'
 
 specification:
   - Religion

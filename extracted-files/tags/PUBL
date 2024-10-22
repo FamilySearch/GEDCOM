@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/PUBL
 
-standard tag: PUBL
+standard tag: 'PUBL'
 
 specification:
   - Publication

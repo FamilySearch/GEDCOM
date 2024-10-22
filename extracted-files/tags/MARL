@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/MARL
 
-standard tag: MARL
+standard tag: 'MARL'
 
 specification:
   - Marriage license

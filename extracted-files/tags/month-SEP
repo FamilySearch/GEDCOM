@@ -6,7 +6,7 @@ type: month
 
 uri: https://gedcom.io/terms/v7/month-SEP
 
-standard tag: SEP
+standard tag: 'SEP'
 
 specification:
   - September

@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/WIDTH
 
-standard tag: WIDTH
+standard tag: 'WIDTH'
 
 specification:
   - Width in pixels

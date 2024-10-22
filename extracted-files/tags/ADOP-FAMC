@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/ADOP-FAMC
 
-standard tag: FAMC
+standard tag: 'FAMC'
 
 specification:
   - Family child

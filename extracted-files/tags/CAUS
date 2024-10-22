@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/CAUS
 
-standard tag: CAUS
+standard tag: 'CAUS'
 
 specification:
   - Cause

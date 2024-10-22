@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/SPFX
 
-standard tag: SPFX
+standard tag: 'SPFX'
 
 specification:
   - Surname prefix

@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/NSFX
 
-standard tag: NSFX
+standard tag: 'NSFX'
 
 specification:
   - Name suffix

@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-CHILD
 
-standard tag: CHILD
+standard tag: 'CHILD'
 
 specification:
   - "Applies to: All but `SLGC`"

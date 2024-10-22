@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/FILE
 
-standard tag: FILE
+standard tag: 'FILE'
 
 specification:
   - File reference

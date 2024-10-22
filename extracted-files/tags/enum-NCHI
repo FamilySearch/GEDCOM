@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-NCHI
 
-standard tag: NCHI
+standard tag: 'NCHI'
 
 specification:
   - A count of children; either `https://gedcom.io/terms/v7/INDI-NCHI` or

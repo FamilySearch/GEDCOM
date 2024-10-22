@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/FAMS
 
-standard tag: FAMS
+standard tag: 'FAMS'
 
 specification:
   - Family spouse

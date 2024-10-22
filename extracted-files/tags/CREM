@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/CREM
 
-standard tag: CREM
+standard tag: 'CREM'
 
 specification:
   - Cremation

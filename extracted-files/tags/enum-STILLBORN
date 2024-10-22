@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-STILLBORN
 
-standard tag: STILLBORN
+standard tag: 'STILLBORN'
 
 specification:
   - "Applies to: All"

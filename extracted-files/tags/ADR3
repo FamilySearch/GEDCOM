@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/ADR3
 
-standard tag: ADR3
+standard tag: 'ADR3'
 
 specification:
   - Address Line 3
