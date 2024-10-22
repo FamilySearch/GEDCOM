@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-DISPROVEN
 
-standard tag: DISPROVEN
+standard tag: 'DISPROVEN'
 
 specification:
   - There has been a claim by some that this child belongs to this family, but the

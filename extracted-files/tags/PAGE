@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/PAGE
 
-standard tag: PAGE
+standard tag: 'PAGE'
 
 specification:
   - Page

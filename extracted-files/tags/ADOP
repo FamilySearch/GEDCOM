@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/ADOP
 
-standard tag: ADOP
+standard tag: 'ADOP'
 
 specification:
   - Adoption

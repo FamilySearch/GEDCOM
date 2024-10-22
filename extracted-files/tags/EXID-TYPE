@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/EXID-TYPE
 
-standard tag: TYPE
+standard tag: 'TYPE'
 
 specification:
   - Type

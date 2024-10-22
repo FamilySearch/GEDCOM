@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/CALN
 
-standard tag: CALN
+standard tag: 'CALN'
 
 specification:
   - Call number

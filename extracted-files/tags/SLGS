@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/SLGS
 
-standard tag: SLGS
+standard tag: 'SLGS'
 
 specification:
   - Sealing, spouse

@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-GODP
 
-standard tag: GODP
+standard tag: 'GODP'
 
 specification:
   - Godparent or related role in other religions

@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/AGE
 
-standard tag: AGE
+standard tag: 'AGE'
 
 specification:
   - Age at event

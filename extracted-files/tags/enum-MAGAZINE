@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-MAGAZINE
 
-standard tag: MAGAZINE
+standard tag: 'MAGAZINE'
 
 specification:
   - Printed periodical

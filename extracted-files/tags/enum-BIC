@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-BIC
 
-standard tag: BIC
+standard tag: 'BIC'
 
 specification:
   - "Applies to: `SLGC`"

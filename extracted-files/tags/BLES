@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/BLES
 
-standard tag: BLES
+standard tag: 'BLES'
 
 specification:
   - Blessing
