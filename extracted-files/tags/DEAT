@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/DEAT
 
-standard tag: DEAT
+standard tag: 'DEAT'
 
 specification:
   - Death

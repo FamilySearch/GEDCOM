@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/NAME
 
-standard tag: NAME
+standard tag: 'NAME'
 
 specification:
   - Name

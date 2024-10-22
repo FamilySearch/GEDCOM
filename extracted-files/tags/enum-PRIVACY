@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-PRIVACY
 
-standard tag: PRIVACY
+standard tag: 'PRIVACY'
 
 specification:
   - This data is not to be shared outside of a trusted circle, generally because it

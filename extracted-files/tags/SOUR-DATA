@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/SOUR-DATA
 
-standard tag: DATA
+standard tag: 'DATA'
 
 specification:
   - Data

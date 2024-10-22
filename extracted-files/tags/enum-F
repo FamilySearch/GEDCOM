@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-F
 
-standard tag: F
+standard tag: 'F'
 
 specification:
   - Female

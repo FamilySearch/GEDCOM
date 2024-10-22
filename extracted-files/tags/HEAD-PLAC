@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/HEAD-PLAC
 
-standard tag: PLAC
+standard tag: 'PLAC'
 
 specification:
   - Place

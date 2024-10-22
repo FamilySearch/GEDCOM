@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/QUAY
 
-standard tag: QUAY
+standard tag: 'QUAY'
 
 specification:
   - Quality of data

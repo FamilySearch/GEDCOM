@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/CONL
 
-standard tag: CONL
+standard tag: 'CONL'
 
 specification:
   - Confirmation, Latter-Day Saint

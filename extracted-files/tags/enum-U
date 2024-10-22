@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-U
 
-standard tag: U
+standard tag: 'U'
 
 specification:
   - Cannot be determined from available sources

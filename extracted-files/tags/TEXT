@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/TEXT
 
-standard tag: TEXT
+standard tag: 'TEXT'
 
 specification:
   - Text from Source

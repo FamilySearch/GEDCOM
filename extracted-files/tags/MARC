@@ -6,7 +6,7 @@ type: structure
 
 uri: https://gedcom.io/terms/v7/MARC
 
-standard tag: MARC
+standard tag: 'MARC'
 
 specification:
   - Marriage contract

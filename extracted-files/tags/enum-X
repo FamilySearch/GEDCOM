@@ -6,7 +6,7 @@ type: enumeration
 
 uri: https://gedcom.io/terms/v7/enum-X
 
-standard tag: X
+standard tag: 'X'
 
 specification:
   - Does not fit the typical definition of only Male or only Female
