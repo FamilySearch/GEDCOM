@@ -80,7 +80,7 @@
     "contact": "GEDCOM@familysearch.org",
     "change-controller": "FindAGrave.com",
     "reference": "https://support.findagrave.com/s/article/Cemetery-Search"
-  }
+  },
   {
     "label": "BillionGraves Grave ID",
     "type": "https://www.billiongraves.com/grave/name/",
@@ -96,7 +96,7 @@
     "contact": "GEDCOM@familysearch.org",
     "change-controller": "BillionGraves.com",
     "reference": "https://billiongraves.com/search/cemetery"
-  }
+  },
   {
     "label": "WikiTree Person ID",
     "type": "https://www.wikitree.com/wiki/",
@@ -105,4 +105,12 @@
     "change-controller": "wikitree.com",
     "reference": "https://www.wikitree.com/wiki/Help:WikiTree_ID"
   },
+  {
+    "label": "GOV Historic Gazeteer ID",
+    "type": "http://gov.genealogy.net/",
+    "description": "Historic Gazeteer place ID",
+    "contact": "gov-support@genealogy.net",
+    "change-controller": "CompGen",
+    "reference": "https://wiki.genealogy.net/GOV"
+  }
 ]
