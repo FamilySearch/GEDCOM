@@ -106,9 +106,9 @@
     "reference": "https://www.wikitree.com/wiki/Help:WikiTree_ID"
   },
   {
-    "label": "GOV ID",
+    "label": "GOV Historic Gazeteer ID",
     "type": "http://gov.genealogy.net/",
-    "description": "Historical Gazeteer place ID",
+    "description": "Historic Gazeteer place ID",
     "contact": "gov-support@genealogy.net",
     "change-controller": "CompGen",
     "reference": "https://wiki.genealogy.net/GOV"
