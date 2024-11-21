@@ -9,7 +9,7 @@ Extension calendars should use the usual rules for extensions, including using `
 
 Each calendar must list its permitted epochs and their meaning.
 
-All month tags must either be standard tags defined for the month name in some standard calendar or be extension tags. Only upper case characters are allowed in month tags.
+All month tags must either be standard tags defined for the month name in some standard calendar or be extension tags.
 
 Each month defined in this section has a URI constructed by concatenating
 `g7:month-` to the standard tag;
