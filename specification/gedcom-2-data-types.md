@@ -281,7 +281,7 @@ PersonalName = nameStr
              / [nameStr] "/" [nameStr] "/" [nameStr]
 
 nameChar     = %x20-2E / %x30-10FFFF  ; any but '/' and '\t'
-nameStr      = 1*nameChar
+nameStr      = *nameChar
 ```
 
 The character U+002F (`/`, slash or solidus) has special meaning in a personal name, being used to delimit the portion of the name that most closely matches the concept of a surname, family name, or the like.
