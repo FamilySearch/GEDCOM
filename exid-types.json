@@ -1,5 +1,5 @@
 {
     "error": "This file has been removed",
     "replaced by": "https://github.com/FamilySearch/GEDCOM-registries/tree/main/uri/exid-types",
-    "rationale": "This file contained an incomplete and inconsistent subset of the YAML files in the registries. See https://github.com/FamilySearch/GEDCOM/pull/576 for more."
+    "rationale": "This file previously contained an incomplete and inconsistent subset of the YAML files in the registries. See https://github.com/FamilySearch/GEDCOM/pull/576 for more."
 }
