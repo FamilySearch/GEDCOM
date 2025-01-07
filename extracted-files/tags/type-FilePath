@@ -21,8 +21,8 @@ specification:
     
     - A URL with scheme `file` refers to either a **local file** or a **non-local
       file**, as defined by [RFC 8089]. Local file URLs must not be used in
-      [FamilySearch GEDZIP] and should be avoided in datasets that are expected
-      to be shared on the web or with unknown parties, but may be appropriate for
+      [FamilySearch GEDZIP] and should be avoided in datasets that are expected to
+      be shared on the web or with unknown parties, but may be appropriate for
       close collaboration between parties with known similar file structures.
     
     - A URI reference with all of the following:
