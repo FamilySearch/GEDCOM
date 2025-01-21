@@ -213,7 +213,7 @@ for example, by consistently displaying the `HUSB` on the same side of the `WIFE
 Family structures with more than 2 partners
 may either use several `FAM` records
 or use `ASSOCIATION_STRUCTURE`s to indicate additional partners.
-`ASSO` should not be used for relationships that can be expressed using `HUSB`, `WIFE`, and/or `CHIL` instead.
+`ASSO` should not be used for relationships that can be expressed using `HUSB`, `WIFE`, or `CHIL` instead.
 
 :::note
 The `FAM` record will be revised in a future version to more fully express the diversity of human family relationships.
