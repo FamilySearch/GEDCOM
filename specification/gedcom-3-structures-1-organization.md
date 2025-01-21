@@ -1,4 +1,4 @@
-A# Genealogical structures {#gedcom-structures}
+# Genealogical structures {#gedcom-structures}
 
 This chapter describes a set of structure types for exchanging family-based lineage-linked genealogical information.
 Lineage-linked data pertains to individuals linked in family relationships across multiple generations.
