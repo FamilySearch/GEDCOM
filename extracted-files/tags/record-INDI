@@ -28,7 +28,8 @@ specification:
     Other associations or relationships are represented by the `ASSO` (association)
     tag. The person's relation or associate is the person being pointed to. The
     association or relationship is stated by the value on the subordinate `ROLE`
-    line.
+    line. `ASSO` should not be used for relationships that can be expressed using
+    `FAMS` or `FAMC` instead.
     
     <div class="example">
     
