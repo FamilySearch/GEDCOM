@@ -1,4 +1,4 @@
-# Genealogical structures {#gedcom-structures}
+A# Genealogical structures {#gedcom-structures}
 
 This chapter describes a set of structure types for exchanging family-based lineage-linked genealogical information.
 Lineage-linked data pertains to individuals linked in family relationships across multiple generations.
@@ -213,6 +213,7 @@ for example, by consistently displaying the `HUSB` on the same side of the `WIFE
 Family structures with more than 2 partners
 may either use several `FAM` records
 or use `ASSOCIATION_STRUCTURE`s to indicate additional partners.
+`ASSO` should not be used for relationships that can be expressed using `HUSB`, `WIFE`, and/or `CHIL` instead.
 
 :::note
 The `FAM` record will be revised in a future version to more fully express the diversity of human family relationships.
@@ -279,6 +280,7 @@ Details about those links are stored as substructures of the pointers in the ind
 Other associations or relationships are represented by the `ASSO` (association) tag.
 The person's relation or associate is the person being pointed to.
 The association or relationship is stated by the value on the subordinate `ROLE` line.
+`ASSO` should not be used for relationships that can be expressed using `FAMS` or `FAMC` instead.
 
 :::example
 The following example refers to 2 individuals, `@I1@` and `@I2@`,
