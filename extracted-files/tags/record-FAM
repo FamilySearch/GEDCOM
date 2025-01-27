@@ -47,7 +47,9 @@ specification:
     `HUSB` and `WIFE` as layout hints, for example, by consistently displaying the
     `HUSB` on the same side of the `WIFE` in a tree view. Family structures with
     more than 2 partners may either use several `FAM` records or use
-    `ASSOCIATION_STRUCTURE`s to indicate additional partners.
+    `ASSOCIATION_STRUCTURE`s to indicate additional partners. `ASSO` should not be
+    used for relationships that can be expressed using `HUSB`, `WIFE`, or `CHIL`
+    instead.
     
     <div class="note">
     
