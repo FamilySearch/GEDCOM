@@ -272,6 +272,7 @@ def find_enum_by_link(txt, enums, tagsets):
             # 'g7:INDI-FACT',
             # 'g7:FAM-FACT',
         # ))         ## do not do for enumset-EVEN 
+    enum_prefix = {k[k.find('enum-')+5:] for e in enums.values() for k in e }
     for sect in re.finditer(r'# *`(g7:enumset-[^`]*)`[\s\S]*?\n#', txt):
         if '[Events]' in sect.group(0):
             key = sect.group(1).replace('`','').replace('.','-')
@@ -279,7 +280,8 @@ def find_enum_by_link(txt, enums, tagsets):
                 if 'Event' in k:
                     enums.setdefault(key, [])
                     for tag in tagsets[k]:
-                        tag = tag.replace('INDI-','enum-').replace('FAM-','enum-')
+                        if tag.startswith('INDI-') and tag[5:] in enum_prefix: tag = 'enum-'+tag[5:]
+                        if tag.startswith('FAM-') and tag[4:] in enum_prefix: tag = 'enum-'+tag[4:]
                         tag = 'g7:'+tag
                         if tag in enums[key]: continue
                         enums[key].append(tag)
@@ -289,7 +291,8 @@ def find_enum_by_link(txt, enums, tagsets):
                 if 'Attribute' in k:
                     enums.setdefault(key, [])
                     for tag in tagsets[k]:
-                        tag = tag.replace('INDI-','enum-').replace('FAM-','enum-')
+                        if tag.startswith('INDI-') and tag[5:] in enum_prefix: tag = 'enum-'+tag[5:]
+                        if tag.startswith('FAM-') and tag[4:] in enum_prefix: tag = 'enum-'+tag[4:]
                         tag = 'g7:'+tag
                         if tag in enums[key]: continue
                         enums[key].append(tag)
