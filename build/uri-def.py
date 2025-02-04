@@ -251,7 +251,9 @@ def find_descriptions(txt, g7, ssp):
         if header.startswith('Fam'): pfx = 'FAM-'
         if header.startswith('Indi'): pfx = 'INDI-'
         for tag, name, desc in re.findall(r'`([A-Z_0-9]+)` *\| *([^|\n]*?) *\| *([^|\n]*[^ |\n]) *', table.group(2)):
-            if '<br' in name: name = name[:name.find('<br')]
+            if '<br' in name:
+                tag = name[name.find('`g7:')+4:name.rfind('`')]
+                name = name[:name.find('<br')]
             if tag not in g7: tag = pfx+tag
             if tag not in g7:
                 raise Exception('Found table for '+tag+' but no section or structure')
