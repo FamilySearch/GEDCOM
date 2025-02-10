@@ -50,9 +50,9 @@ enumeration values:
   - "https://gedcom.io/terms/v7/NMR"
   - "https://gedcom.io/terms/v7/OCCU"
   - "https://gedcom.io/terms/v7/PROP"
-  - "https://gedcom.io/terms/v7/RELI"
+  - "https://gedcom.io/terms/v7/INDI-RELI"
   - "https://gedcom.io/terms/v7/SSN"
-  - "https://gedcom.io/terms/v7/TITL"
+  - "https://gedcom.io/terms/v7/INDI-TITL"
 
 contact: "https://gedcom.io/community/"
 ...
