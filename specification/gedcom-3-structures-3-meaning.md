@@ -1585,18 +1585,10 @@ If the authority maintains stable URLs for each identifier it issues,
 it is recommended that the `TYPE` payload be selected such that appending the `EXID` payload to it yields that URL.
 However, this is not required and a different URI for the set of issued identifiers may be used instead.
 
-Registered URIs are listed in [exid-types.json](https://github.com/FamilySearch/GEDCOM/blob/main/exid-types.json), where fields include:
-
-* "label": a short string suitable for display in a user interface.
-* "type": The URI representing the authority issuing the `EXID`.
-* "description": A description of the meaning of the `EXID`.
-* "contact": A contact email address for the person or organization registering the URI.
-* "change-controller": The name or contact information for the person or organization authorized to update the registration.
-* "fragment": If present, indicates a short string that can be used as a label for a fragment identifier appended to the URI.  If absent, indicates that fragment identifiers are not used with the URI.
-* "reference": A URL with more information about the meaning of the `EXID`. Such information should explain the uniqueness and expected durability of the identifier.
+Registered URIs are listed in the [exid-types registry](https://github.com/FamilySearch/GEDCOM-registries/tree/main/uri/exid-types), where fields are defined using the [YAML file format](https://gedcom.io/terms/format).
 
 Additional type URIs can be registered by filing a
-[GitHub pull request](https://github.com/FamilySearch/GEDCOM/pulls).
+[GitHub pull request](https://github.com/FamilySearch/GEDCOM-registries/pulls).
 
 #### `UID` (Unique Identifier) `g7:UID`
 
