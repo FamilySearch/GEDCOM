@@ -905,7 +905,7 @@ As of version 7.0, only 2 media types are supported by this structure:
         Other entities should be represented as their respective Unicode characters instead.
     
     Supporting more of HTML is encouraged.
-    Unsupported elements should be ignored during display.
+    Unsupported tags should be ignored during display.
 
 :::note
 Applications are welcome to support more XML entities or HTML character references in their user interface.
