@@ -278,7 +278,7 @@ See `ALIA` for more details.
 
 Individual records are linked to Family records by use of bi-directional pointers.
 Details about those links are stored as substructures of the pointers in the individual record.
-Source citations and notes related to the individual's relationship to parents should be placed
+Source citations and notes related to the start of the individual's relationship to parents should be placed
 under the individual's `BIRT`, `CHR`, or `ADOP` event, rather than directly under the `INDI` record,
 since the former permits explicitly identifying the family record whereas the latter does not.
 
