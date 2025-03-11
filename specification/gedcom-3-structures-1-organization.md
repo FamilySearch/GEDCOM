@@ -233,6 +233,8 @@ An `INDI` record should not have multiple `FAMS` substructures pointing to the s
 A `FAM` record should not have multiple `CHIL` substructures pointing to the same `INDI`; doing so implies a nonsensical birth order.
 An `INDI` record may have multiple `FAMC` substructures pointing to the same `FAM`, but doing so is not recommended.
 
+Source citations and notes related to the start of a specific child relationship should be placed
+under the child's `BIRT`, `CHR`, or `ADOP` event, rather than under the `FAM` record.
 
 #### `INDIVIDUAL_RECORD` :=
 
@@ -276,6 +278,9 @@ See `ALIA` for more details.
 
 Individual records are linked to Family records by use of bi-directional pointers.
 Details about those links are stored as substructures of the pointers in the individual record.
+Source citations and notes related to the start of the individual's relationship to parents should be placed
+under the individual's `BIRT`, `CHR`, or `ADOP` event, rather than directly under the `INDI` record,
+since the former permits explicitly identifying the family record whereas the latter does not.
 
 Other associations or relationships are represented by the `ASSO` (association) tag.
 The person's relation or associate is the person being pointed to.
@@ -928,7 +933,7 @@ Individual event structures vary as follows:
 
 - `INDI`.`EVEN` has a [Text](#text) payload; others may have a `Y` payload
 - `INDI`.`EVEN` requires `TYPE`; it's optional for others
-- `BIRT` and `CHR` may have a `FAMC` with no substructures; `ADOP` may have a `FAMC` with an optional `ADOP` substructure; others may not have a `FAMC` substructure
+- `BIRT` and `CHR` may have a `FAMC` with no substructures; `ADOP` may have a `FAMC` with an optional `ADOP` substructure; others may not have a `FAMC` substructure.  The `FAMC` substructure can itself have substructures for source citations and notes related to the child's relationship to parents, and is the recommended place to store such information.
 :::
 
 
