@@ -233,7 +233,7 @@ An `INDI` record should not have multiple `FAMS` substructures pointing to the s
 A `FAM` record should not have multiple `CHIL` substructures pointing to the same `INDI`; doing so implies a nonsensical birth order.
 An `INDI` record may have multiple `FAMC` substructures pointing to the same `FAM`, but doing so is not recommended.
 
-Source citations and notes related to a specific child relationship should be placed
+Source citations and notes related to the start of a specific child relationship should be placed
 under the child's `BIRT`, `CHR`, or `ADOP` event, rather than under the `FAM` record.
 
 #### `INDIVIDUAL_RECORD` :=
