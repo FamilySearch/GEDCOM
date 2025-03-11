@@ -2,7 +2,7 @@
 
 - Recommend that `ASSO` not be used to replicate other standard structures.
 
-- Recommend that sources and notes about the starting of parent-child relationships be put under am BIRT, ADOP, or CHR
+- Recommend that sources and notes about the starting of parent-child relationships be put under a `BIRT`, `ADOP`, or `CHR`
 
 - Clarify that `HEAD`.`SOUR`.`DATA` may be used for data sources that are not technically databases.
 
