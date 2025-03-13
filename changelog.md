@@ -1,3 +1,22 @@
+# main (as of 2025-03-11)
+
+- Recommend that `ASSO` not be used to replicate other standard structures.
+
+- Recommend that sources and notes about the starting of parent-child relationships be put under a `BIRT`, `ADOP`, or `CHR`.
+
+- Clarify that `HEAD`.`SOUR`.`DATA` may be used for data sources that are not technically databases.
+
+- Clarify that unsupported HTML tags should be ignored, not entire elements.
+
+- Note that some applications have historically ignored `PLAC`.`FORM` structures.
+
+- Remove the ambiguous "month code" term from the spec, using the defined `stdTag` term instead.
+
+- Change how `EXID`.`TYPE` values are registered from a single JSON file in the GEDCOM repository to a separate YAML file for each value in the GEDCOM-registries repository.
+
+- Update scripts that extract YAML from the spec to be more consistent in where quotes are used and to extract more information from tables into YAML files.
+
+
 # Version 7.0.15
 
 - Clarified that `FORM`.`MEDI` describe the original medium, not the derived medium, when used with derived files.
