@@ -709,8 +709,23 @@ The correct tag for the height of an individual is the `DSCR` attribute.
 
 #### `HUSB` (Husband) `g7:HUSB`
 
-A container for information relevant to the subject of the superstructure
-specific to the individual described by the associated `FAM`'s `HUSB` substructure.
+A structure for storing information related to one partner in the context of a `FAMILY_EVENT`;
+in particular,
+the partner referenced in the `g7:FAM-HUSB` substructure
+of the `g7:record-FAM` superstructure of the `FAMILY_EVENT`.
+
+:::example
+The following indicates that individual `@I1@` was 32 years old at the time of the marriage, without indicating an age for individual `@I2@`.
+
+```gedcom
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 MARR
+2 HUSB
+3 AGE 32y
+```
+:::
 
 #### `HUSB` (Husband) `g7:FAM-HUSB`
 
@@ -1636,8 +1651,23 @@ See `CROP` for more details.
 
 #### `WIFE` (Wife) `g7:WIFE`
 
-A container for information relevant to the subject of the superstructure
-specific to the individual described by the associated `FAM`'s `WIFE` substructure.
+A structure for storing information related to one partner in the context of a `FAMILY_EVENT`;
+in particular,
+the partner referenced in the `g7:FAM-WIFE` substructure
+of the `g7:record-FAM` superstructure of the `FAMILY_EVENT`.
+
+:::example
+The following indicates that individual `@I2@` was 32 years old at the time of the marriage, without indicating an age for individual `@I1@`.
+
+```gedcom
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 MARR
+2 WIFE
+3 AGE 32y
+```
+:::
 
 #### `WIFE` (Wife) `g7:FAM-WIFE`
 
