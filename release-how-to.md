@@ -22,7 +22,7 @@ These steps can only be followed by someone with commit access to both https://g
         1. run `make`
         1. run `python3 push_to_gedcomio.py ../../GEDCOM.io`
 1. In the (new-version branch of) the GEDCOM.io repository:
-    1. `git commit -p`
+    1. `git commit -p` (or `git add` all the relevant files and then `git commit`)
     1. `git push --set-upstream origin new-version`
 1. On both the GEDCOM and GEDCOM.io github web interfaces, convert the revent branch pushes into pull requests against `main`
 1. Approve and merge the pull requests in a steering committee meeting
