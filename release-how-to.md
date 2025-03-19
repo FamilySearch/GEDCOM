@@ -2,7 +2,7 @@
 
 These steps can only be followed by someone with commit access to both https://github.com/FamilySearch/GEDCOM and https://github.com/FamilySearch/GEDCOM.io
 
-1. Make a new-verison branch of the GEDCOM.io and GEDCOM repositories
+1. Make a new-version branch of the GEDCOM.io and GEDCOM repositories
     1. If needed, `git clone` the repositories locally
     1. `cd` into the root of the repo and run
         1. `git switch main`
