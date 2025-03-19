@@ -24,7 +24,7 @@ These steps can only be followed by someone with commit access to both https://g
 1. In the (new-version branch of the) GEDCOM.io repository:
     1. `git commit -p` (or `git add` all the relevant files and then `git commit`)
     1. `git push --set-upstream origin new-version`
-1. On both the GEDCOM and GEDCOM.io github web interfaces, convert the revent branch pushes into pull requests against `main`
+1. On both the GEDCOM and GEDCOM.io github web interfaces, convert the recent branch pushes into pull requests against `main`
 1. Approve and merge the pull requests in a steering committee meeting
 1. On both the GEDCOM  github web interface,
     1. View the releases
