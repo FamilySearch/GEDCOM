@@ -926,14 +926,8 @@ As of version 7.1, three media types are allowed by this structure:
     5. Replace each `&amp;` with `&`
 
 - `text/markdown` employs a plain text format for creating structured documents, and is designed
-  to be fairly understandable by users even if only displayed as plain text.
-  Applications should support at least the following:
-
-    - `**`, `*`, `__`, and `~~` for bold, italic, underlined, and strike-through text.
-    - `#` Heading element for Heading 1 (placed on its own line).
-    - `##` Heading element for Heading 2 (placed on its own line).
-    - `*` List element for Bullet List (each item in a bulleted list on its own line).
-    - `1.` List element for Numbered List (a number followed by an item, each on its own line).
+    to be fairly understandable by users even if only displayed as plain text.
+    Applications should support the elements specified by [CommonMark](https://commonmark.org).
 
     For example:
 
@@ -941,17 +935,20 @@ As of version 7.1, three media types are allowed by this structure:
 
     ````gedcom
     1 NOTE # 1940 US Census for New York, New York
-    2 MIME text/markdown
     2 CONT __Individuals located at this address__
     2 CONT * John **Doe** (age 35)
     2 CONT * Sally (age 32)
     2 CONT * Junior (age 3)
     2 CONT * Betty (age 1)
+    2 MIME text/markdown
     ````
     
     </div>
 
-    Supporting more of [Markdown](https://commonmark.org) is encouraged.
+    <div class="note">
+    Applications are welcome to support additional Markdown elements,
+    but they should ensure that content is meaningful if those extra elements are only displayed as plain text.
+    </div>
 
 :::note
 Media types are also used by external files, as described under `FORM`. External file media types are not limited to `text/plain`, `text/html`, and `text/markdown`.
