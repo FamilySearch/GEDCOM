@@ -26,7 +26,7 @@ These steps can only be followed by someone with commit access to both https://g
     1. `git push --set-upstream origin new-version`
 1. On both the GEDCOM and GEDCOM.io github web interfaces, convert the recent branch pushes into pull requests against `main`
 1. Approve and merge the pull requests in a steering committee meeting
-1. On both the GEDCOM  github web interface,
+1. On the GEDCOM github web interface,
     1. View the releases
     1. Click the "Draft a new release" button
     1. In the "Choose a tag" dropdown, create a new tag with a lower-case `v` followed by the full version number (e.g., `v7.0.16`)
