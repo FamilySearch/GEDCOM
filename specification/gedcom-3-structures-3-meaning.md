@@ -226,7 +226,7 @@ See `ADDRESS_STRUCTURE` for more details.
 
 #### `AGE` (Age at event) `g7:AGE`
 
-The age of the individual at the time an event occurred, or the age listed in the document.
+The age of the individual at the time an event occurred. It is recommended that this be an age from a cited source document.
 
 #### `AGNC` (Responsible agency) `g7:AGNC`
 
