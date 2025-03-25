@@ -17,7 +17,6 @@ These steps can only be followed by someone with commit access to both https://g
         - `specification/gedcom-0-introduction.md` (two instances, both in the YAML frontmatter)
     1. `git commit -p` (this will update the git log which is used to add the date to the rendered specification)
     1. `git push --set-upstream origin new-version`
-    1. Visit the web interface and 
     1. In the `build/` directory,
         1. run `make`
         1. run `python3 push_to_gedcomio.py ../../GEDCOM.io`
