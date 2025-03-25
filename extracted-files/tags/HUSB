@@ -10,9 +10,27 @@ standard tag: 'HUSB'
 
 specification:
   - Husband
-  - A container for information relevant to the subject of the superstructure
-    specific to the individual described by the associated `FAM`'s `HUSB`
-    substructure.
+  - |
+    A structure for storing information related to one partner in the context of a
+    `FAMILY_EVENT`; in particular, the partner referenced in the
+    `https://gedcom.io/terms/v7/FAM-HUSB` substructure of the
+    `https://gedcom.io/terms/v7/record-FAM` superstructure of the `FAMILY_EVENT`.
+    
+    <div class="example">
+    
+    The following indicates that individual `@I1@` was 32 years old at the time of
+    the marriage, without indicating an age for individual `@I2@`.
+    
+    ```gedcom
+    0 @F1@ FAM
+    1 HUSB @I1@
+    1 WIFE @I2@
+    1 MARR
+    2 HUSB
+    3 AGE 32y
+    ```
+    
+    </div>
 
 label: 'Husband'
 
