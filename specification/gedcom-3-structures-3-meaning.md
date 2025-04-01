@@ -890,7 +890,7 @@ for this asset, the `FORM`.`MEDI` is recommended to be `PHOTO` rather than `ELEC
 
 Indicates the [media type](#media-type) of the payload of the superstructure.
 
-As of version 7.1, three media types are allowed by this structure:
+As of version 7.1, three media types are supported by this structure:
 
 - `text/plain` shall be presented to the user as-is, preserving all spacing, line breaks, and so forth.
 
