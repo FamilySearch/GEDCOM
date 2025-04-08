@@ -905,7 +905,7 @@ for this asset, the `FORM`.`MEDI` is recommended to be `PHOTO` rather than `ELEC
 
 Indicates the [media type](#media-type) of the payload of the superstructure.
 
-As of version 7.0, only 2 media types are supported by this structure:
+As of version 7.0, there are two standard media types for this structure:
 
 - `text/plain` shall be presented to the user as-is, preserving all spacing, line breaks, and so forth.
 
@@ -943,7 +943,12 @@ If needed, `text/html` can be converted to `text/plain` using the following step
 2. Case-insensitively replace each `<p`...`>`, `</p`...`>`, and `<br`...`>` with a line break
 3. Remove all other `<`...`>` tags
 4. Replace each `&lt;` with `<` and `&gt;` with `>`
-4. Replace each `&amp;` with `&`
+5. Replace each `&amp;` with `&`
+
+Other `text` media types not discussed above are also permitted, though not recommended.
+If present, they are considered extensions.  Such extensions do not require an
+[extension tag](#extensions) because the definition of `g7:MIME` is sufficient
+to cover this kind of extension.
 
 #### `NAME` (Name) `g7:NAME`
 
