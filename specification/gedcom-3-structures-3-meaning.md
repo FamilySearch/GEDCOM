@@ -945,7 +945,7 @@ If needed, `text/html` can be converted to `text/plain` using the following step
 4. Replace each `&lt;` with `<` and `&gt;` with `>`
 5. Replace each `&amp;` with `&`
 
-Other media types not discussed above are also permitted, though not recommended.
+Other `text` media types not discussed above are also permitted, though not recommended.
 If present, they are considered extensions.  Such extensions do not require an
 [extension tag](#extensions) because the definition of `g7:MIME` is sufficient
 to cover this kind of extension.
