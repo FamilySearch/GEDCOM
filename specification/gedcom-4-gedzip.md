@@ -14,7 +14,9 @@ Each GEDZIP file contains the following entries:
 - An entry for each *local file* `g7:type-FilePath` payload in `gedcom.ged`, with the same zip *file name* as the payload.
     If there is a local file named `gedcom.ged`, it must be renamed to a new unused filename with the same extension prior to constructing the GEDZIP.
 
-All file names inside a GEDZIP are case-sensitive.
+All file names inside a GEDZIP are case-sensitive UTF-8. Whereas a `g7:type-FilePath` [payload](#file-path)
+must percent-escape characters in the file name that cannot appear literally in a URI reference, zip *file names*
+are not percent-escaped.
 
 Many other zip-based file formats (such as jar, epub, docx, GEDCOM-X) assign special meaning to the zip directory `META-INF` and the zip file names `MANIFEST.MF` and `META-INF/MANIFEST.MF`. These have no special meaning in GEDZIP and it is recommended that they not be used in a GEDZIP file, both to avoid confusing systems that look inside zip archives to determine their file type, and to leave open the possibility of their addition in a future version of this specification.
 
