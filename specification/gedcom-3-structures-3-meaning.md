@@ -1615,7 +1615,7 @@ Additional type URIs can be registered by filing a
 A globally-unique identifier of the superstructure,
 to be preserved across edits.
 If a globally-unique identifier for the record already exists, it should be used without modification, not even whitespace or letter case normalization.
-New globally unique identifiers should be created and formatted using the UUID
+It is recommended that new globally unique identifiers be created and formatted using the UUID
 production specified in [RFC 9562](https://www.rfc-editor.org/info/rfc9562) Section 4.
 
 This is metadata about the structure itself, not data about its subject.
