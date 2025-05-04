@@ -53,7 +53,7 @@ specification:
       3. Remove all other `<`...`>` tags
       4. Replace each `&lt;` with `<` and `&gt;` with `>`
       5. Replace each `&amp;` with `&`
-  
+    
     - `text/markdown` employs a plain text format for creating structured
       documents, and is designed to be fairly understandable by users even if only
       displayed as plain text. Applications should support the elements specified
