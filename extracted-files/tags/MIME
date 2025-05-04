@@ -41,7 +41,7 @@ specification:
       <div class="note">
         Applications are welcome to support additional HTML elements,
         but they should ensure that content is meaningful if those extra elements are ignored and only their content text is displayed.
-      </div>
+        </div>
     
       If needed, `text/html` can be converted to `text/plain` using the following
       steps:
