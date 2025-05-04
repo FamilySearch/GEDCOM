@@ -85,7 +85,7 @@ specification:
     Media types are also used by external files, as described under `FORM`.
     External file media types are not limited to `text/plain`, `text/html`, and
     `text/markdown`.
-      
+    
     </div>
     
     Other `text` media types not discussed above are also permitted, though not
