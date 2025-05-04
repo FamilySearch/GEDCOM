@@ -78,7 +78,7 @@ specification:
       <div class="note">
         Applications are welcome to support additional Markdown elements,
         but they should ensure that content is meaningful if those extra elements are only displayed as plain text.
-      </div>
+        </div>
     
     <div class="note">
       Media types are also used by external files, as described under `FORM`.
