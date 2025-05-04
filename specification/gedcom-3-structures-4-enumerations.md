@@ -56,7 +56,7 @@ these are given generic definitions with URIs constructed by concatenating
 | `AUDIO`      | An audio recording                |
 | `BOOK`       | A bound book                      |
 | `CARD`       | A card or file entry              |
-| `ELECTRONIC` | A digital artifact                |
+| `ELECTRONIC` | A digital artifact such as a computer file or a scan |
 | `FICHE`      | Microfiche                        |
 | `FILM`       | Microfilm                         |
 | `MAGAZINE`   | Printed periodical                |

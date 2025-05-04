@@ -226,7 +226,7 @@ See `ADDRESS_STRUCTURE` for more details.
 
 #### `AGE` (Age at event) `g7:AGE`
 
-The age of the individual at the time an event occurred, or the age listed in the document.
+The age of the individual at the time an event occurred. It is recommended that this be an age from a cited source document.
 
 #### `AGNC` (Responsible agency) `g7:AGNC`
 
@@ -966,7 +966,14 @@ As of version 7.1, three media types are supported by this structure:
     </div>
 
 :::note
-Media types are also used by external files, as described under `FORM`. External file media types are not limited to `text/plain`, `text/html`, and `text/markdown`.
+Other `text` media types not discussed above are also permitted, though not recommended.
+If present, they are considered extensions.  Such extensions do not require an
+[extension tag](#extensions) because the definition of `g7:MIME` is sufficient
+to cover this kind of extension.
+:::
+
+:::note
+Media types are also used by external files, as described under `FORM`. External file media types are not limited to `text` types.
 :::
 
 #### `NAME` (Name) `g7:NAME`
@@ -1634,7 +1641,8 @@ Additional type URIs can be registered by filing a
 A globally-unique identifier of the superstructure,
 to be preserved across edits.
 If a globally-unique identifier for the record already exists, it should be used without modification, not even whitespace or letter case normalization.
-New globally unique identifiers should be created and formatted as described in [RFC 4122](https://www.rfc-editor.org/info/rfc4122).
+It is recommended that new globally unique identifiers be created and formatted using the UUID
+production specified in [RFC 9562](https://www.rfc-editor.org/info/rfc9562) Section 4.
 
 This is metadata about the structure itself, not data about its subject.
 Multiple structures describing different aspects of the same subject would have different `UID` values.

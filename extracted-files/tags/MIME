@@ -87,6 +87,12 @@ specification:
     `text/markdown`.
     
     </div>
+    
+    Other `text` media types not discussed above are also permitted, though not
+    recommended. If present, they are considered extensions. Such extensions do not
+    require an [extension tag] because the definition of
+    `https://gedcom.io/terms/v7/MIME` is sufficient to cover this kind of
+    extension.
 
 label: 'Media type'
 
