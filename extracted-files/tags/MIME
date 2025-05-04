@@ -36,7 +36,7 @@ specification:
       <div class="note">
         Applications are welcome to support more XML entities or HTML character references in their user interface.
         However, exporting must only use the core XML entities, translating any other entities into their corresponding Unicode characters.
-      </div>
+        </div>
     
       <div class="note">
         Applications are welcome to support additional HTML elements,
