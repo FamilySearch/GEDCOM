@@ -1136,6 +1136,16 @@ A name given to a foundling orphan might be
 ````
 :::
 
+:::example
+A record specificying a performer's "stage name" (a type of professional name) might become
+
+````gedcom
+1 NAME Groucho /Marx/
+2 TYPE PROFESSIONAL
+3 PHRASE Stage
+````
+:::
+
 
 #### `PLAC` (Place) `g7:PLAC`
 
