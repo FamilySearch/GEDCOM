@@ -1137,7 +1137,7 @@ A name given to a foundling orphan might be
 :::
 
 :::example
-A record specificying a performer's "stage name" (a type of professional name) might become
+A record specifying a performer's "stage name" (a type of professional name) might become
 
 ````gedcom
 1 NAME Groucho /Marx/
