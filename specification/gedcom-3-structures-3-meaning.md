@@ -1162,6 +1162,16 @@ A name given to a foundling orphan might be
 ````
 :::
 
+:::example
+A record specifying a writer's "pen name" (a type of professional name) might become
+
+````gedcom
+1 NAME Mark /Twain/
+2 TYPE PROFESSIONAL
+3 PHRASE Pen
+````
+:::
+
 
 #### `PLAC` (Place) `g7:PLAC`
 
