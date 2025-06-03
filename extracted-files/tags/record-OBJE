@@ -21,6 +21,11 @@ specification:
     
     The change and creation dates should be for the `OBJE` record itself, not the
     underlying files.
+    
+    A `MULTIMEDIA_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice
+    versa. Applications must not create datasets where these mutual pointers form a
+    cycle. Applications should also ensure they can handle invalid files with such
+    cycles in a safe manner.
 
 label: 'Object'
 

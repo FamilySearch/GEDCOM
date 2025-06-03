@@ -15,6 +15,8 @@ specification:
     records, connected by `ALIA` pointers (named after "alias" in the computing
     sense, not the pseudonym sense).
     
+    An `ALIA` pointer should not point to the superstructure of the `ALIA`.
+    
     <div class="note">
     
     This specification does not define how to connect `INDI` records with `ALIA`.
