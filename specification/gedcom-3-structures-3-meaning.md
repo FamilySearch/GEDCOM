@@ -238,6 +238,8 @@ Examples are an employer of a person of an associated occupation, or a church th
 A single individual may have facts distributed across multiple individual records, connected by `ALIA` pointers
 (named after "alias" in the computing sense, not the pseudonym sense).
 
+An `ALIA` pointer should not point to the superstructure of the `ALIA`.
+
 :::note
 This specification does not define how to connect `INDI` records with `ALIA`.
 Some systems organize `ALIA` pointers to create a tree structure, with the root `INDI` record containing the composite view of all facts in the leaf `INDI` records.

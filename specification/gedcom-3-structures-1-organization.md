@@ -236,6 +236,9 @@ An `INDI` record may have multiple `FAMC` substructures pointing to the same `FA
 Source citations and notes related to the start of a specific child relationship should be placed
 under the child's `BIRT`, `CHR`, or `ADOP` event, rather than under the `FAM` record.
 
+If an `INDI` that can be reached from a `FAM` by following `CHIL` and `FAMS` pointers can also be reachable by following `HUSB`, `WIFE`, and `FAMC` pointers, then that implies that a person is their own ancestor/descendant.
+In most cases that would be an error, though it is theoretically possible that such a situation could occur with non-biological relationships (marriages, adoptions, etc.).
+
 #### `INDIVIDUAL_RECORD` :=
 
 ```gedstruct
@@ -306,6 +309,8 @@ the eulogist at a funeral can be shown by an `ASSO` pointer subordinate to the b
 and so on. A subordinate `FAMC` pointer is allowed to refer to a family where the individual
 does not appear as a child.
 
+If a `FAM` that can be reached from a `INDI` by following `FAMS` and `CHIL` pointers can also be reachable by following `FAMC`, `HUSB`, and `WIFE` pointers, then that implies that a person is their own ancestor/descendant.
+In most cases that would be an error, though it is theoretically possible that such a situation could occur with non-biological relationships (marriages, adoptions, etc.).
 
 
 #### `MULTIMEDIA_RECORD` :=
@@ -334,6 +339,7 @@ The file reference can occur more than once to group multiple files together. Gr
 The change and creation dates should be for the `OBJE` record itself,
 not the underlying files.
 
+A `MULTIMEDIA_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa. Applications must not create datasets where these mutual pointers form a cycle. Applications should also ensure they can handle invalid files with such cycles in a safe manner.
 
 
 #### `REPOSITORY_RECORD` :=
@@ -441,6 +447,8 @@ This sourcing model is known to be insufficient for some use cases and may be re
 :::
 
 A `SOURCE_RECORD` may contain a pointer to a `SHARED_NOTE_RECORD` and vice versa. Applications must not create datasets where these mutual pointers form a cycle. Applications should also ensure they can handle invalid files with such cycles in a safe manner.
+
+A `SOURCE_RECORD` may contain a pointer to a `MULTIMEDIA_RECORD` and vice versa. Applications must not create datasets where these mutual pointers form a cycle. Applications should also ensure they can handle invalid files with such cycles in a safe manner.
 
 #### `SUBMITTER_RECORD` :=
 
