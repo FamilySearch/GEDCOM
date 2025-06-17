@@ -22,8 +22,10 @@ Many other zip-based file formats (such as jar, epub, docx, GEDCOM-X) assign spe
 
 When saved as a file, a GEDZIP should use the filename extension `.gdz`.
 
-Zip archives contain the ability to encrypt their contents, with multiple encryption algorithms supported by the zip archive specification.
-Encrypted GEDZIP files are a recommended way to encrypt FamilySearch GEDCOM data in cases when such encryption is desired.
+Zip archives can encrypt their contained files' contents, with multiple encryption algorithms supported by the zip archive specification.
+Encrypted GEDZIP files are a portable way to encrypt FamilySearch GEDCOM data.
+Only contained file contents are encrypted by zip's encryption: the names and sizes of its contained files are not encrypted.
+Encrypting the entire gdz file with an external encryption scheme can encrypt file names and sizes, but requires an external method for communicating the encryption scheme chosen.
 
 :::note
 A few details about the zip archive format are useful to fully understand GEDZIP:
