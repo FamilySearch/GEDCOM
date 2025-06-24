@@ -340,7 +340,7 @@ Special = Text
 
 The file path data type describes where an digital file is located in a machine-readable way.
 Syntactically, the payload is a "valid URL string" as defined by the [WHATWG URL specification](https://url.spec.whatwg.org/).
-That is, it can be an absolute or relative URL, optionally with a fragment string, and can contain non-ASCII characters that are permitted in a valid URL string.
+That is, it can be an absolute or relative URL, optionally with a fragment string, and can contain non-ASCII characters that are permitted in a valid URL string. It can also include percent-encoded bytes.
 
 Version 7.0 only supports the following URLs:
 
@@ -350,14 +350,14 @@ Version 7.0 only supports the following URLs:
     and should be avoided in datasets that are expected to be shared on the web or with unknown parties,
     but may be appropriate for close collaboration between parties with known similar file structures.
 
-- A URI reference, as defined by [RFC 3986](https://www.rfc-editor.org/info/rfc3986), with all of the following:
+- A URL with all of the following:
     - no scheme
     - not beginning with `/` (U+002F)
     - not containing any path segments equal to `..` (U+002E U+002E)
     - not containing a reverse solidus character (U+005C `\`) or `banned` character, either directly or in escaped form
     - no query or fragment
     
-    refers to a **local file**. If the dataset is part of a [GEDZIP file](#gedzip), the URL of the local file is a zip archive filename; otherwise, the URL of a local file is resolved with *base* equal to the directory containing the dataset.  Note that a URI reference cannot contain non-ASCII characters directly but instead percent-encodes them.
+    refers to a **local file**. If the dataset is part of a [GEDZIP file](#gedzip), the URL of the local file is a zip archive filename; otherwise, the URL of a local file is resolved with *base* equal to the directory containing the dataset.
     
     It is recommended that local files use the directory prefix `media/`, but doing so is not required.
 
