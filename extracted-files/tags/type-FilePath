@@ -9,10 +9,11 @@ uri: https://gedcom.io/terms/v7/type-FilePath
 specification:
   - |
     The file path data type describes where an digital file is located in a
-    machine-readable way. Syntactically, the payload is a URI reference as defined
-    by [RFC 3986], or a valid URL string as defined by the [WHATWG URL
-    specification]. That is, it can be an absolute or relative URL, optionally
-    with a fragment string.
+    machine-readable way. Syntactically, the payload is a "valid URL string" as
+    defined by the [WHATWG URL specification]. That is, it can be an absolute or
+    relative URL, optionally with a fragment string, and can contain non-ASCII
+    characters that are permitted in a valid URL string. It can also include
+    percent-encoded bytes.
     
     Version 7.0 only supports the following URLs:
     
@@ -25,7 +26,7 @@ specification:
       be shared on the web or with unknown parties, but may be appropriate for
       close collaboration between parties with known similar file structures.
     
-    - A URI reference with all of the following:
+    - A URL with all of the following:
     
       - no scheme
       - not beginning with `/` (U+002F)
