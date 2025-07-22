@@ -1251,7 +1251,7 @@ This is metadata about the structure itself, not data about its subject.
 
 See `SOURCE_REPOSITORY_CITATION`.
 
-#### `REPO` (Repository) `g7:record-REPO`
+#### `REPO` (Repository) `g7.1:record-REPO`
 
 See `REPOSITORY_RECORD`.
 
@@ -1361,7 +1361,7 @@ See also `LDS_SPOUSE_SEALING`.
 A pointer to a note that is shared by multiple structures.
 See `NOTE_STRUCTURE` for more details.
 
-#### `SNOTE` (Shared note) `g7:record-SNOTE`
+#### `SNOTE` (Shared note) `g7.1:record-SNOTE`
 
 A note that is shared by multiple structures.
 See `SHARED_NOTE_RECORD` for more details.
@@ -1371,7 +1371,7 @@ See `SHARED_NOTE_RECORD` for more details.
 A description of the relevant part of a source to support the superstructure's data.
 See `SOURCE_CITATION` for more details.
 
-#### `SOUR` (Source) `g7:record-SOUR`
+#### `SOUR` (Source) `g7.1:record-SOUR`
 
 A description of an entire source.
 See `SOURCE_RECORD` for more details.
@@ -1410,7 +1410,7 @@ An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or co
 A contributor of information in the substructure.
 This is metadata about the structure itself, not data about its subject.
 
-#### `SUBM` (Submitter) `g7:record-SUBM`
+#### `SUBM` (Submitter) `g7.1:record-SUBM`
 
 A description of a contributor of information to the document.
 See `SUBMITTER_RECORD` for more details.
