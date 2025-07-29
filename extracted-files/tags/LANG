@@ -14,8 +14,8 @@ specification:
     The primary human language of the superstructure. The primary language in which
     the `Text`-typed payloads of the superstructure and its substructures appear.
     
-    The payload of the `LANG` structure is a language tag, as defined by [BCP 47].
-    A [registry of component subtags] is maintained publicly by the IANA.
+    The payload of the `LANG` structure is a language tag, as defined by [BCP
+    47]. A [registry of component subtags] is maintained publicly by the IANA.
     
     In the absence of a `LANG` structure, the language is assumed to be
     unspecified; that may also be recorded explicitly with language tag `und`
@@ -72,13 +72,13 @@ payload: http://www.w3.org/2001/XMLSchema#Language
 substructures: {}
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/record-SNOTE": "{0:1}"
   "https://gedcom.io/terms/v7/NAME-TRAN": "{1:1}"
   "https://gedcom.io/terms/v7/NOTE": "{0:1}"
   "https://gedcom.io/terms/v7/NOTE-TRAN": "{0:1}"
   "https://gedcom.io/terms/v7/PLAC": "{0:1}"
   "https://gedcom.io/terms/v7/PLAC-TRAN": "{1:1}"
   "https://gedcom.io/terms/v7/TEXT": "{0:1}"
-  "https://gedcom.io/terms/v7/record-SNOTE": "{0:1}"
 
 contact: "https://gedcom.io/community/"
 ...

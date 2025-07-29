@@ -132,7 +132,7 @@ https://gedcom.io/terms/v7/RELI	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/INDI-RELI	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/RESN	https://gedcom.io/terms/v7/type-List#Enum
 https://gedcom.io/terms/v7/REPO	@<https://gedcom.io/terms/v7/record-REPO>@
-https://gedcom.io/terms/v7/record-REPO	
+https://gedcom.io/terms/v7.1/record-REPO	
 https://gedcom.io/terms/v7/FAM-RESI	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/INDI-RESI	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/RETI	Y|<NULL>
@@ -143,9 +143,9 @@ https://gedcom.io/terms/v7/SEX	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7/SLGC	
 https://gedcom.io/terms/v7/SLGS	
 https://gedcom.io/terms/v7/SNOTE	@<https://gedcom.io/terms/v7/record-SNOTE>@
-https://gedcom.io/terms/v7/record-SNOTE	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7.1/record-SNOTE	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/SOUR	@<https://gedcom.io/terms/v7/record-SOUR>@
-https://gedcom.io/terms/v7/record-SOUR	
+https://gedcom.io/terms/v7.1/record-SOUR	
 https://gedcom.io/terms/v7/HEAD-SOUR	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/SPFX	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/SSN	http://www.w3.org/2001/XMLSchema#string
@@ -153,7 +153,7 @@ https://gedcom.io/terms/v7/STAE	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/ord-STAT	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7/FAMC-STAT	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7/SUBM	@<https://gedcom.io/terms/v7/record-SUBM>@
-https://gedcom.io/terms/v7/record-SUBM	
+https://gedcom.io/terms/v7.1/record-SUBM	
 https://gedcom.io/terms/v7/SURN	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/TAG	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/TEMP	http://www.w3.org/2001/XMLSchema#string

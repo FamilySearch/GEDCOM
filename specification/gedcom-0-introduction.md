@@ -147,6 +147,7 @@ is shorthand for a URI beginning with the corresponding URI prefix
 | Short Prefix | URI Prefix                          |
 |:-------------|:------------------------------------|
 | `g7`         | `https://gedcom.io/terms/v7/`       |
+| `g7.1`       | `https://gedcom.io/terms/v7.1/`     |
 | `xsd`        | `http://www.w3.org/2001/XMLSchema#` |
 | `dcat`       | `http://www.w3.org/ns/dcat#`        |
 

@@ -345,7 +345,8 @@ A `MULTIMEDIA_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa.
 #### `REPOSITORY_RECORD` :=
 
 ```gedstruct
-n @XREF:REPO@ REPO                         {1:1}  g7:record-REPO
+n @XREF:REPO@ REPO                         {1:1}  g7.1:record-REPO
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
@@ -370,7 +371,8 @@ Until such time, it is recommended that the repository record store current cont
 #### `SHARED_NOTE_RECORD` :=
 
 ```gedstruct
-n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7:record-SNOTE
+n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7.1:record-SNOTE
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
@@ -415,7 +417,8 @@ A `SHARED_NOTE_RECORD` may contain a pointer to a `SOURCE_RECORD` and vice versa
 #### `SOURCE_RECORD` :=
 
 ```gedstruct
-n @XREF:SOUR@ SOUR                         {1:1}  g7:record-SOUR
+n @XREF:SOUR@ SOUR                         {1:1}  g7.1:record-SOUR
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 DATA                                  {0:1}  g7:DATA
      +2 EVEN <List:Enum>                   {0:M}  g7:DATA-EVEN
         +3 DATE <DatePeriod>               {0:1}  g7:DATA-EVEN-DATE
@@ -453,7 +456,8 @@ A `SOURCE_RECORD` may contain a pointer to a `MULTIMEDIA_RECORD` and vice versa.
 #### `SUBMITTER_RECORD` :=
 
 ```gedstruct
-n @XREF:SUBM@ SUBM                         {1:1}  g7:record-SUBM
+n @XREF:SUBM@ SUBM                         {1:1}  g7.1:record-SUBM
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 NAME <Text>                           {1:1}  g7:NAME
   +1 <<ADDRESS_STRUCTURE>>                 {0:1}
   +1 PHON <Special>                        {0:M}  g7:PHON
