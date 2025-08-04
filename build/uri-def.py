@@ -362,10 +362,16 @@ def yaml_str_helper(pfx, md, width=79):
     return pfx + txt
 
 def expand_prefix(txt, prefixes):
+    global prerelease
     for key in sorted(prefixes.keys(), key=lambda x:-len(x)):
         k = key+':'
         if txt.startswith(k):
-            return prefixes[key] + txt[len(k):]
+            uri = prefixes[key] + txt[len(k):]
+            if 'https://gedcom.io/terms/v7.1/' in uri:
+                prerelease = True
+            return uri
+    if 'https://gedcom.io/terms/v7.1/' in txt:
+        prerelease = True
     return txt
 
 if __name__ == '__main__':
@@ -404,6 +410,7 @@ if __name__ == '__main__':
 
     for tag in g7:
         print('outputting', tag, '...', end=' ')
+        prerelease = False
         maybe = join(dirname(specs[0]),'terms',tag)
         if exists(maybe):
             copyfile(maybe, join(dest,tag))
@@ -492,6 +499,9 @@ if __name__ == '__main__':
                         print('\nvalue of:', file=fh)
                         is_used_by = True
                     print('  - "'+expand_prefix(tag2,prefixes)+'"', file=fh)
+            
+            if prerelease:
+                print('\nprerelease: true', file=fh)
 
             print('\ncontact: "https://gedcom.io/community/"', file=fh)
             fh.write('...\n')
@@ -520,4 +530,3 @@ if __name__ == '__main__':
                 print('\t'.join(row), file=f)
         print('done')
 
-quit(1) # prevent next steps in Makefile

@@ -47,5 +47,7 @@ substructures:
 
 superstructures: {}
 
+prerelease: true
+
 contact: "https://gedcom.io/community/"
 ...
