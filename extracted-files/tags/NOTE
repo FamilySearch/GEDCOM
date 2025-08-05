@@ -104,5 +104,7 @@ superstructures:
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
   "https://gedcom.io/terms/v7/record-OBJE": "{0:M}"
 
+prerelease: true
+
 contact: "https://gedcom.io/community/"
 ...

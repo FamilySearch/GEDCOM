@@ -30,5 +30,7 @@ substructures:
 superstructures:
   "https://gedcom.io/terms/v7.1/record-SOUR": "{0:M}"
 
+prerelease: true
+
 contact: "https://gedcom.io/community/"
 ...
