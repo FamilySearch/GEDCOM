@@ -35,7 +35,6 @@ def find_data_types(txt, g7):
         for dt, uri in re.findall(r'URI[^\n]*`([^\n`]*)` data type[^\n]*`([^`\n:]*:[^\n`]*)`', section.group(0)):
             dturi[dt] = uri
             if uri.startswith('g7:'):
-                if '#' in uri: uri = uri[:uri.find('#')]
                 if uri[3:] not in g7:
                     g7[uri[3:]] = ('data type', [section.group(2).strip()])
     return dturi
@@ -390,7 +389,7 @@ if __name__ == '__main__':
             copyfile(maybe, join(dest,tag))
             print('by copying', maybe, '...', end=' ')
             continue
-        with open(join(dest,tag), 'w') as fh:
+        with open(join(dest,tag.replace('#','-')), 'w') as fh:
             fh.write('%YAML 1.2\n---\n')
             print('lang: en-US', file=fh)
             print('\ntype:',g7[tag][0], file=fh)
