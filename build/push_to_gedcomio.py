@@ -3,6 +3,7 @@ from sys import argv, stderr
 from os.path import dirname, isdir, join, getmtime, basename, exists
 from os import makedirs, utime
 from shutil import copyfile
+import re
 
 def get_paths():
     """Parses command-line arguments, if present; else uses defaults"""
@@ -33,27 +34,75 @@ except Exception as ex:
     print("  USAGE:", argv[0], "[[tag/yamls/] specs/]", "local/clone/of/gedcom.io/", file=stderr)
     exit(1)
 
-for yaml in glob(join(src,'*')):
-    term = basename(yaml)
-    ofile = join(dst, term+'.md')
-    if exists(ofile) and getmtime(ofile) == getmtime(yaml):
-        continue
-    print('  updating', term)
-    with open(ofile, 'w') as o:
-        print('''---
+redirects = {} # {path: {frag: path}}
+content = {} # {path: [timestamp, file_contents]}
+template = '''---
 title: {0}
-permalink: /terms/v7/{0}.html
+permalink: {1}.html
 layout: none
 redirect-from:
-  - /terms/v7/{0}
+  - {1}
 ...
 
 ```
-'''.format(term), file=o)
-        with open(yaml) as i: o.write(i.read())
-        print('''
-```''', file=o)
-    utime(ofile, (getmtime(yaml),getmtime(yaml)))
+{2}
+```
+'''
+
+# find files and prep for most updates
+for yaml in glob(join(src,'*')):
+    term = basename(yaml)
+    with open(yaml) as i: data = i.read()
+    uri = re.search(r'^uri: ([^\n]*)$', data, re.M).group(1)
+    path = uri[uri.find('/',uri.find('//')+2):]
+    if '#' in path:
+        base,frag = path.split('#')
+        path = path.replace('#','-') # any other mangling would work; does not need to match filenames
+        redirects.setdefault(base,{})[frag] = path
+    content[path] = [getmtime(yaml), template.format(term, path, data)]
+
+
+# for files with fragment collisions, add a redirect script
+redirect_script = '''
+<script>
+const allowed_fragments = {0};
+const maybe_redirect = (event) => {{
+    const fragment = location.hash.substr(1)
+    if (fragment in allowed_fragments && location.pathname != allowed_fragments[fragment])
+        location = allowed_fragments[fragment];
+}};
+window.addEventListener('load', maybe_redirect);
+window.addEventListener('hashchange', maybe_redirect);
+</script>
+'''
+
+for path in redirects:
+    if path in content:
+        redirects[path][''] = path
+    else:
+        content[path] = [
+            min(content[dst][0] for dst in redirects[path].values()),
+            template.format('Incomplete URI', path, 'error: this URI is incomplete without a fragment identifier'),
+        ]
+    script = redirect_script.format(repr(redirects[path]))
+    content[path][1] += script
+
+
+# update the YAML files
+for (path, [ts,txt]) in content.items():
+    assert path.startswith('/terms/')
+    ofile = join(dst, path[len('/terms/'):]+'.md')
+    if exists(ofile) and getmtime(ofile) == ts:
+        continue
+    print('  updating', path)
+    with open(ofile, 'w') as o: o.write(txt)
+    utime(ofile, (ts,ts))
+
+        
+    
+
+
+# also update the specification and changelong
 
 pdf = join(doc,'gedcom.pdf'), join(dst,'../../specifications','FamilySearchGEDCOMv7.pdf')
 html = join(doc,'gedcom.html'), join(dst,'../../specifications','FamilySearchGEDCOMv7.html')
