@@ -6,6 +6,8 @@ type: data type
 
 uri: https://gedcom.io/terms/v7/type-Age
 
+abnf production: Age
+
 specification:
   - |
     Ages are represented by counts of years, months, weeks, and days.

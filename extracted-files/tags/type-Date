@@ -6,6 +6,8 @@ type: data type
 
 uri: https://gedcom.io/terms/v7/type-Date
 
+abnf production: DateValue
+
 specification:
   - |
     The date formats defined in this specification include the ability to store
