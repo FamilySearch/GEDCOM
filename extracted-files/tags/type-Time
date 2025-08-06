@@ -6,6 +6,8 @@ type: data type
 
 uri: https://gedcom.io/terms/v7/type-Time
 
+abnf production: Time
+
 specification:
   - |
     Time is represented on a 24-hour clock (for example, 23:00 rather than 11:00

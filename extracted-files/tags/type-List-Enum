@@ -6,6 +6,8 @@ type: data type
 
 uri: https://gedcom.io/terms/v7/type-List#Enum
 
+abnf production: List-Enum
+
 specification:
   - |
     A list is a meta-syntax representing a sequence of values with another data
