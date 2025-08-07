@@ -102,7 +102,7 @@ for (path, [ts,txt]) in content.items():
     
 
 
-# also update the specification and changelong
+# also update the specification and changelog
 
 pdf = join(doc,'gedcom.pdf'), join(dst,'../../specifications','FamilySearchGEDCOMv7.pdf')
 html = join(doc,'gedcom.html'), join(dst,'../../specifications','FamilySearchGEDCOMv7.html')
