@@ -1366,6 +1366,16 @@ See `NOTE_STRUCTURE` for more details.
 A note that is shared by multiple structures.
 See `SHARED_NOTE_RECORD` for more details.
 
+#### `SPLAC` (Shared place) `g7:SPLAC`
+
+A pointer to a place that is shared by multiple structures.
+See `SHARED_PLACE_STRUCTURE` for more details.
+
+#### `SPLAC` (Shared place) `g7:record-SPLAC`
+
+A place that is shared by multiple structures.
+See `SHARED_PLACE_RECORD` for more details.
+
 #### `SOUR` (Source) `g7:SOUR`
 
 A description of the relevant part of a source to support the superstructure's data.
@@ -1487,6 +1497,22 @@ Each `TRAN` substructure must have either a language tag or a media type or both
 Each `TRAN` structure must differ from its superstructure
 and from every other `TRAN` substructure of its superstructure
 in either its language tag or its media type or both.
+
+#### `TRAN` (Translation) `g7:TRAN`
+
+A type of `TRAN` substructure for generic text-valued structures.
+Each `TRAN` must have a `LANG` substructure.
+
+:::example
+The following presents the name of a nation in both German and English:
+
+```gedcom
+0 @SP1@ SPLAC Bundesrepublik Deutschland 
+1 LANG de
+1 TRAN Federal Republic of Germany
+2 LANG en
+```
+:::
 
 #### `TRAN` (Translation) `g7:NAME-TRAN`
 
@@ -1647,6 +1673,23 @@ Registered URIs are listed in the [exid-types registry](https://github.com/Famil
 
 Additional type URIs can be registered by filing a
 [GitHub pull request](https://github.com/FamilySearch/GEDCOM-registries/pulls).
+
+#### `TYPE` (Type) `g71:SPLAC-TYPE`
+
+A jurisdictional title, describing what type of jurisdiction the superstructure has.
+Because of the wide variety of jurisdictional titles in use,
+this is a free-text value and generally presented in the same language as the place's name.
+
+:::example
+The following represents that Baltimore is a city.
+
+```gedcom
+0 @SP2@ SPLAC Baltimore
+1 TYPE City
+```
+:::
+
+See also `g7:PLAC-FORM` which is the list version of `g71:SPLAC-TYPE`.
 
 #### `UID` (Unique Identifier) `g7:UID`
 
