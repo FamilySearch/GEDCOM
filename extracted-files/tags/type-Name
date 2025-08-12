@@ -6,6 +6,8 @@ type: data type
 
 uri: https://gedcom.io/terms/v7/type-Name
 
+abnf production: PersonalName
+
 specification:
   - |
     A personal name is mostly free-text. It should be the name as written in the
