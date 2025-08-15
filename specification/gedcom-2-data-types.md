@@ -167,6 +167,141 @@ The URI for the `DateExact` data type is `g7:type-Date#exact`.
 
 The URI for the `DatePeriod` data type is `g7:type-Date#period`.
 
+## Boolean
+
+A `Boolean` is a binary truth value that indicates a positive or negative condition, choice, or state.
+
+GEDCOM 8 SHALL use the values `TRUE` and `FALSE`, in all uppercase, consistent with other enumerated values in the specification.  
+These values MUST appear in uppercase and without quotation marks.
+
+```abnf
+Boolean = "TRUE" / "FALSE"
+```
+
+**Examples**:
+- `TRUE` → value or condition applies
+- `FALSE` → value or condition does not apply
+
+This data type may be used in `FLEX.CONTENTS`, or any other structure where an on/off or yes/no condition is required.
+
+**Note**: Values such as `YES`, `NO`, `1`, or `0` are NOT valid Boolean representations in GEDCOM 8.
+
+The URI for the Boolean data type is: `xsd:boolean`
+
+## Decimal
+
+A decimal is a non-empty sequence of ASCII decimal digits that may include an ASCII period (".") to indicate the decimal point. It represents a rational number in base-10 and can have any number of digits after the decimal point. Leading zeros have no semantic meaning and should be omitted unless immediately preceding the decimal point.
+
+```abnf
+Decimal = 1*DIGIT [ "." 1*DIGIT ]
+```
+The number of digits before the decimal point, plus the number of digits after the decimal point are maximal 18 digits in total.
+Negative Decimal numbers are not supported by this specification.
+
+The URI for the `Decimal` data type is `xsd:decimal`.
+
+## HexaDecimal
+
+A `HexaDecimal` is a non-empty sequence of ASCII hexadecimal digits, representing an unsigned integer in base-16.
+
+Characters MUST be chosen from `0–9` and uppercase letters `A–F`.  
+Letters **must be uppercase** in GEDCOM files to ensure consistency and compatibility across systems.
+
+Leading zeros are permitted but have no semantic meaning.  
+Negative values are not supported.
+
+This type may be used for scalable, compact identifiers where decimal values become inefficient or overly long.
+
+```abnf
+Hexadecimal = 1*( %x30-39 / %x41-46 )  ; 0–9 or A–F (uppercase only)
+```
+:::example  
+**Examples**:
+- `1`
+- `7F`
+- `00A3`
+- `00F4240` (decimal 1,000,000)
+- `2DC6C0`  (decimal 3,000,000)
+:::  
+
+The URI for the `HexaDecimal` data type is:  
+`xsd:hexBinary` (loosely aligned; GEDCOM format is numeric-only, without spacing or byte-grouping).
+
+## HexID
+
+A `HexID` is a cross-reference identifier used to uniquely identify a record within a GEDCOM file using a hexadecimal format.
+This format can be used when the quantity of records (such as STICKYs) may exceed the limitations of base-10 padded numbering.
+
+It is composed of:
+- A record-type prefix (e.g., `ST`, `I`, `R`)
+- A required separator digit `0` (zero)
+- A `Hexadecimal` number that can grow in length as needed
+
+The entire identifier is enclosed in `@` symbols, consistent with GEDCOM cross-reference ID syntax.
+
+```abnf
+HexID = "@" Prefix "0" Hexadecimal "@"
+Prefix = %x41-5A / 2(%x41-5A)  ; one or two uppercase letters A–Z
+```
+::: example   
+**Examples**:
+- `@ST00001@`
+- `@ST003E8@`
+- `@ST0F4240@`  (decimal 1,000,000)
+- `@R02DC6C0@`  (REPO example, decimal 3,000,000)  
+:::
+
+- The `Hexadecimal` portion MUST conform to the rules in the `Hexadecimal` data type definition.
+- The record-type prefix MUST consist of exactly one or two uppercase ASCII letters (A–Z).
+This includes standard GEDCOM record types (S, I, F, etc.) and new custom types such as ST for `STICKY` or `SP` for `SPLAC`.
+
+The URI for the `HexID` type is:  `g8:HexID`  
+_This format is GEDCOM-specific and has no standard XML Schema equivalent._
+
+## PercentLiteral
+
+A percent is a rational number expressed in base-10 with an optional decimal point, representing a proportion out of 100. It includes the percent symbol (`%`). Values should be between `0` and `100`, inclusive. Precision may extend to decimal places, but the total number of digits before and after the decimal point **must not exceed 6 digits**.
+
+```abnf
+Percent    = ( "0" / [1-9] 1*DIGIT ) [ "." 1*DIGIT ] "%"
+```
+- Leading zeros have no semantic meaning and should be avoided unless immediately preceding a decimal point (e.g., 0.5% is valid).
+- Values over 100% are not permitted.
+- Negative values are not permitted.
+
+Examples:
+Valid: `25%, 0.5%, 99.99%, 100%`  
+Invalid: `-5%, 105%, 001.00%, 12.0`
+
+### Genealogical use cases:
+
+- Degree of confidence in a transcription: 95%
+- Estimated certainty of match: 87.5%
+- Percentage of form completion: 100%
+
+The URI for the Percent data type is: `g8:type-PercentLiteral`
+
+## PercentRatioLiteral
+
+This data type expresses ratios or comparisons using a percentage beyond 100%. It is suitable for contexts where the value exceeds a full unit, typically for historical, economic, or biological scaling.  
+Negative values are not permitted.
+
+```abnf
+PercentRatioLiteral = 1*DIGIT [ "." 1*DIGIT ] "%"
+```
+:::example  
+Valid: `110%, 150.75%, 220.5%`  
+Invalid: `-10%, 2, 001.0%`   
+:::
+
+### Genealogical use cases:
+
+- Increase in estate value compared to previous decade: 175%
+- Year-on-year increase in property tax: 122.5%
+- Dowry size compared to average: 300%
+
+The URI for the PercentRatio data type is: `g8:type-PercentRatioLiteral`
+
 ## Time
 
 Time is represented on a 24-hour clock (for example, 23:00 rather than 11:00 PM).
@@ -370,3 +505,48 @@ Version 7.0 only supports the following URLs:
 Additional URLs may be supported in future versions of this specification.
 
 The URI for the `FilePath` data type is `g7:type-FilePath`.
+
+### TupleList Data Type
+
+The `TupleList` data type represents a structured, multi-line encoding of simple two-column tabular data.  
+It is designed for storing genetic data such as DNA marker/allele pairs in a readable and consistent format.
+
+The data type `TupleList` represents a list of structured value pairs, each encoded on a **separate GEDCOM CONT line**, in tuple format:
+
+```
+(rs123456, A)
+(rs789101, C)
+(rs999999, GG)
+```
+
+Each line must contain exactly one tuple:  
+- A **label** (typically a marker ID like `rs123456`)  
+- A **value** (typically an allele value like `A`, `T`, `GG`, etc.)  
+
+These are wrapped in parentheses `()` and separated by a **comma** `,`.  
+A single optional space **may appear after the comma**.
+
+```abnf
+TupleList   = Tuple *( Newline Tuple )
+Tuple       = "(" Label "," SP? Value ")"
+Label       = 1*VCHAR   ; Must not contain comma, newline, or parenthesis
+Value       = 1*VCHAR   ; Must not contain comma, newline, or parenthesis
+Newline     = CRLF / LF / CR
+SP          = %x20      ; ASCII space
+```
+
+All tuples must follow this structure.  
+The format does **not** allow blank lines, comments, or nested groups.
+
+The URI for this data type is:  
+`g8:type-TupleList`
+
+> $\color{Coral}\large{\textsf{✨ Forward Compatibility Note:}}$  
+> Future versions of GEDCOM may allow compact representations such as:  
+> - Semicolon-separated tuples on a single line  
+>   `[(rs123456, A); (rs789101, C)]`  
+> - Tab-delimited formats resembling CSV or raw DNA exports  
+> This v8 format ensures maximum compatibility and readability for current software, while keeping open the door for compressed imports/exports.
+
+> 📎 **See Also:** The structure and usage of this data type is demonstrated in the `ARRAY_STRUCTURE` element.
+

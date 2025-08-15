@@ -1366,6 +1366,79 @@ A family name passed on or used by members of a family.
 Information relating to a single extension tag as used in this document.
 See [Extensions](#extensions) for more details.
 
+#### `TDABOVI` (d'Aboville Number) `g8:TDABOVI`
+
+Provides a tree position number for each individual in a genealogical tree, using a modified d’Aboville system.  
+Used in combination with a `TDECUJUS`. 
+[`TDECUJUS`](#tdecujus-de-cujus-g8tdecujus)
+
+**Important:**
+
+- This structure allows temporary hierarchical numbering within one `TEMPLATE` to reflect family lineage relationships when multiple individuals appear, as annotated events, **in a complex family-centered** `TEMPLATE`-record — such as a family Bible, genealogical narrative, a Census or commemorative scroll.  
+- It is only allowed when that `TEMPLATE` contains these annotated events.
+- It is only valid also, when this `TEMPLATE` has 1 `TDECUJUS` defined.
+
+In all other `TEMPLATE`'s, `ROLE`'s show the family relations, and in those `TEMPLATE`s this numbering is not necessary.
+
+`TDABOVI` **Special Format:**  
+
+The d’Aboville-like numbering system expresses position using dot-separated integers.  
+- Each person’s number reflects their birth order among siblings.
+- Example values: 1, 1.2, 1.2.3, 2.1.2, etc.
+- The s suffix (e.g., 1s, 1.2s) may be added to indicate a spouse of the person bearing the primary number.
+- The system is **local to the `TEMPLATE`** only; numbers are not reused outside. (Thats why its called `TDABOVI` and not `DABOVI`)
+
+**Official Format Rules:**
+- **Pattern:** must match regex `^(\d+(\.\d+)*)(s?)$`
+- **Type:** Treated as `Text`, but format is controlled
+- **No leading zeros** in any segment
+- **Spouses** always marked with **`s`** directly after the person number (e.g., 1.1s)
+- **No duplicate TREEABOVI within same `TEMPLATE`**
+- **Ordering:** not required, but recommended for clarity
+
+**Examples of valid values:**  
+| Value | Meaning | Example |
+|-------|---------|---|
+| 1	     | Root person also De Cujus. | John, he is the head of this family, de "De Cujus". |
+| 1.1	   | First child | Andrew, son of John, and first child. |
+| 1.2s	 | Spouse of second child | Mary, wife of Peter (1.2), who is son and second child of John |
+| 1.2.1	 | First grandchild from second child | Helen, daughter of Peter (1.2) and Mary |
+| 1.3	   | Third child | Clara, daughter of John (1), and his third child. |
+| 1.2.2s | Spouse of second grandchild from second child | Anny, wife of William (1.2.2), son of Peter (1.2) and Mary |
+
+#### `TDECUJUS` (De Cujus) `g8:TDECUJUS`
+
+Identifies the root individual (starting point) of the d'Aboville numbering — typically the earliest ancestor recorded in the `TEMPLATE`.  
+It is used in combination with a `TDABOVI`. 
+[`TDABOVI`](#tdabovi-daboville-number-g8tdabovi)
+
+For the `TDECUJUS` the following applies:
+- It points to the `STICKY` of the root ancestor in the family unit described in 1 `TEMPLATE`.
+- Must appear only once if `TDABOVI` is used at all.
+- A `TEMPLATE` can not have multiple `TDECUJUS` values.
+
+:::example   
+```gedcom
+0 @ST0101@ STICKY
+1 TYPE PERSON, AN_BIRTH
+1 ROLE CHILD
+1 ENTRYTYPE MANUAL
+1 TDABOVI 1
+1 TEMPLATE @T0043@
+1 NAME
+2 FORM John Eldridge
+1 TDABOVI 1
+
+0 @T0043@ TEMPLATE
+1 TYPE SECONDARY, FAMILYBIBLE
+1 TITLE Eldridge Family Births, Deaths, and Notes
+1 NAME Eldridge Family Bible
+1 DATE 1870–1936
+1 PLAC Crystal Lake, Illinois
+1 TDECUJUS @ST0101@           /* John Eldridge is the De Cujus */
+```
+:::
+
 #### `TEMP` (Temple) `g7:TEMP`
 
 The name of a temple of The Church of Jesus Christ of Latter-day Saints.
