@@ -266,7 +266,7 @@ for detail: [property name, heir, date] |
 | 📜 | `INHERITANCE` | `ESTATE`          | The entire collection of assets and liabilities owned by the deceased person at the time of death. Use PHRASE for detail: [property name, heir, date] |
 | 📜 | `INHERITANCE` | `EXECUTOR`        | The person executing the will (may or may not be heir). Responsible for executing a will |
 | 📜 | `INHERITANCE` | `EXITINGH`        | Exiting heir: The person who is next in line to inherit a title or property, and whose right of inheritance is not subject to being defeated by the birth of a closer relative. 
-| 📜 | `INHERITANCE` | `GARDIAN`         | Appointed for minor heirs |
+| 📜 | `INHERITANCE` | `GUARDIAN`         | Appointed for minor heirs |
 | 📜 | `INHERITANCE` | `GRANTEE`         | One who receives a right or property |
 | 📜 | `INHERITANCE` | `GRANTOR`         | Establishes trust or grants asset One who grants a right or property|
 | 📜 | `INHERITANCE` | `HEIR`            | Designated recipient of legacy or estate. Inheritor, may have legal or familial tie |
