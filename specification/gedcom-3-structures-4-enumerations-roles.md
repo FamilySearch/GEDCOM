@@ -10,7 +10,7 @@ This table describes the high-level category of function or relationship this `S
 
 | ICO | MAINROLE     | Description                                                                |
 |-----| ------------ | ----------------------------------------------------------------------- |
-| 🗂️ | `ADMIN`      | Person acted in an administrative or bureaucratic role (e.g. official, clerk, registrar, census). |
+| 🗂️ | `ADMIN`      | Person acted in an administrative or bureaucratic role (e.g., official, clerk, registrar, census). |
 | 🧱 | `ASSET`      | Person or Asset who/that was connected to the possession, transfer, or status of a non-human entity (e.g., land, object). |
 | 👶 | `BIRTH`      | Person was born or played a key role in a birth event. (child, parent, midwife)|
 | 🏢 | `CORPORATION`| Person was involved in an institution (e.g. school, guild, company). |
