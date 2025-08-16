@@ -1386,7 +1386,7 @@ The d’Aboville-like numbering system expresses position using dot-separated in
 - Each person’s number reflects their birth order among siblings.
 - Example values: 1, 1.2, 1.2.3, 2.1.2, etc.
 - The s suffix (e.g., 1s, 1.2s) may be added to indicate a spouse of the person bearing the primary number.
-- The system is **local to the `TEMPLATE`** only; numbers are not reused outside. (Thats why its called `TDABOVI` and not `DABOVI`)
+- The system is **local to the `TEMPLATE`** only; numbers are not reused outside. (That's why it's called `TDABOVI` and not `DABOVI`)
 
 **Official Format Rules:**
 - **Pattern:** must match regex `^(\d+(\.\d+)*)(s?)$`
