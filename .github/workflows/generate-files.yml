@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Check out GEDCOM
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Get the branch name
         id: extract_branch
