@@ -13,15 +13,15 @@ This table describes the high-level category of function or relationship this `S
 | 🗂️ | `ADMIN`      | Person acted in an administrative or bureaucratic role (e.g., official, clerk, registrar, census). |
 | 🧱 | `ASSET`      | Person or Asset who/that was connected to the possession, transfer, or status of a non-human entity (e.g., land, object). |
 | 👶 | `BIRTH`      | Person was born or played a key role in a birth event. (child, parent, midwife)|
-| 🏢 | `CORPORATION`| Person was involved in an institution (e.g. school, guild, company). |
+| 🏢 | `CORPORATION`| Person was involved in an institution (e.g., school, guild, company). |
 | 🔁 | `CROSSROLE`  | Role applicable in multiple contexts (e.g., witness, guardian). |
-| ⚰️ | `DEATH`      | Person died or had a role in the context of death (e.g. deceased, undertaker, mourner). |
+| ⚰️ | `DEATH`      | Person died or had a role in the context of death (e.g., deceased, undertaker, mourner). |
 | 🧬 | `DNA`        | Roles related to genetic testing in analysis labs or research programs, genealogical matching, lab processing, and interpretation of DNA test results. Includes both professional and familial participation  — with focus on identity, inheritance, and kinship confirmation. |
-| 📚 | `EDUCATIONAL`| Person acted in an educational setting (e.g. teacher, student, examiner). |
-| 🗓️ | `EVENT`      | Person participated in a general event (e.g. spectator, officiant). |
+| 📚 | `EDUCATIONAL`| Person acted in an educational setting (e.g., teacher, student, examiner). |
+| 🗓️ | `EVENT`      | Person participated in a general event (e.g., spectator, officiant). |
 | 👨‍👩‍👧 | `FAMILY`     | Role defines kinship or household relationship. (parent, child, spouse) |
-| 🛡️ | `GROUP`      | Role in a collective or institutional context (e.g. tribe, church, farm, guild). |
-| 🪪 | `IDENTITY`   | Roles associated with formal or legal identification (e.g. renamed, declared), such as declared identity, proven relationships, or official recognitions. Includes DNA-based identity roles such as matched individual or inferred parent. |
+| 🛡️ | `GROUP`      | Role in a collective or institutional context (e.g., tribe, church, farm, guild). |
+| 🪪 | `IDENTITY`   | Roles associated with formal or legal identification (e.g., renamed, declared), such as declared identity, proven relationships, or official recognitions. Includes DNA-based identity roles such as matched individual or inferred parent. |
 | 📜 | `INHERITANCE`| Person was involved in inheritance or estate transfer. |
 | ⚖️ | `JUDICIAL`   | Role in legal or courtroom setting. (judge, magistrate, court officer, plaintiff) |
 | 🖋️ | `LEGAL`      | Role in legal matters outside court (e.g., agent, claimant, notary, lawyer). |
@@ -59,22 +59,22 @@ This table defines all standardized combinations of `MAINROLE` and `ROLE` used i
 | 🗂️ | `ADMIN`       | `TRANSCRIBER`     | Enters information  |
 | 🗂️ | `ADMIN`       | `VERIFIER`        | Verifies document authenticity  |
 | 🧱 | `ASSET`       | `ASSIGNEE`        | Assigned asset  |
-| 🧱 | `ASSET`       | `AUCTION`         | Asset offered for sale via auction (e.g. toolset or furniture in probate)  |
+| 🧱 | `ASSET`       | `AUCTION`         | Asset offered for sale via auction (e.g., toolset or furniture in probate)  |
 | 🧱 | `ASSET`       | `AWARD`           | Prize or honor, given in recognition or as a prize. Use PHRASE for detail: [medal, certificate, award name, event, date]  |
 | 🧱 | `ASSET`       | `BENEFICIARY`     | Legal or named recipient of an object, particularly in the context of a will or deed. |
 | 🧱 | `ASSET`       | `BEQUEST`         | Asset being inherited through a will or succession document   |
 | 🧱 | `ASSET`       | `CERTIFICATE`     | Asset representing the document itself.  |
-| 🧱 | `ASSET`       | `COLLATERAL`      | Asset pledged as security for a loan or legal agreement (e.g. land in a bond)  |
+| 🧱 | `ASSET`       | `COLLATERAL`      | Asset pledged as security for a loan or legal agreement (e.g., land in a bond)  |
 | 🧱 | `ASSET`       | `CREATOR`         | Original maker or fabricator of the item (e.g., artisan who crafted the medal). |
 | 🧱 | `ASSET`       | `DONOR`           | Person who gives or gifts the item voluntarily. |
-| 🧱 | `ASSET`       | `GIFT`            | Asset being donated or given or ceremonially transferred(e.g. a cow given to a daughter on marriage) |
+| 🧱 | `ASSET`       | `GIFT`            | Asset being donated or given or ceremonially transferred(e.g., a cow given to a daughter on marriage) |
 | 🧱 | `ASSET`       | `HOLDER`          | Person who was the **recipient**, **bearer**, or **user** of an item such as a passport, license, or medal. Includes **legal**, **formal**, or **official** document reception. Posession can be pemanent or temporarely. |
 | 🧱 | `ASSET`       | `ISSUER`          | Person (or organization) who created, issued, awarded, or granted the item. Often official or institutional. (e.g., organization issuing a medal, license, passport, testresult)|
-| 🧱 | `ASSET`       | `ITEM`            | Catch-all for miscellaneous movable assets (e.g. book, cart, sword) |
-| 🧱 | `ASSET`       | `LISTED`          | Mentioned in a record but not transferred, often for valuation or record (e.g. farm in a will) |
-| 🧱 | `ASSET`       | `LOT`             | Grouped or undivided set of items treated as a unit (e.g. “lot of 6 chairs”) |
+| 🧱 | `ASSET`       | `ITEM`            | Catch-all for miscellaneous movable assets (e.g., book, cart, sword) |
+| 🧱 | `ASSET`       | `LISTED`          | Mentioned in a record but not transferred, often for valuation or record (e.g., farm in a will) |
+| 🧱 | `ASSET`       | `LOT`             | Grouped or undivided set of items treated as a unit (e.g., “lot of 6 chairs”) |
 | 🧱 | `ASSET`       | `OTHER`           | Catch-all; must clarify with `PHRASE`  |
-| 🧱 | `ASSET`       | `PROPERTY`        | General asset (real estate or fixed structure) being transferred between parties (e.g. house, land parcel) |
+| 🧱 | `ASSET`       | `PROPERTY`        | General asset (real estate or fixed structure) being transferred between parties (e.g., house, land parcel) |
 | 🧱 | `ASSET`       | `RECIPIENT`       | Person receiving the asset.   |
 | 🧱 | `ASSET`       | `REPAIRER`        | Person tasked with maintaining or restoring the object. |
 | 🧱 | `ASSET`       | `STOCKRENTAL`     | Asset temporarily assigned or rented (e.g. oxen or horse or cart lent for a season) |
@@ -147,23 +147,23 @@ This table defines all standardized combinations of `MAINROLE` and `ROLE` used i
 | 🧬 | `DNA`         | `GENETICIST`  | Certified specialist who reviewed, confirmed, or interpreted the DNA results. |
 | 🧬 | `DNA`         | `KITOWNER`    | Registered owner or account holder of the DNA test kit, possibly different from the test subject. |
 | 🧬 | `DNA`         | `LABTECH`  | Laboratory or technical worker responsible for processing or validating the DNA sample. |
-| 🧬 | `DNA`         | `MATCH`       | Individual whose genetic material matched the subject’s, either fully or partially. (e.g. relative match, segment overlap) |
-| 🧬 | `DNA`         | `PARENTAL`    | Biological parent, ancestor or presumed biological contributor, confirmed through DNA evidence (e.g. paternity test). |
+| 🧬 | `DNA`         | `MATCH`       | Individual whose genetic material matched the subject’s, either fully or partially. (e.g., relative match, segment overlap) |
+| 🧬 | `DNA`         | `PARENTAL`    | Biological parent, ancestor or presumed biological contributor, confirmed through DNA evidence (e.g., paternity test). |
 | 🧬 | `DNA`         | `SITE`| Location connected to testing, analysis, or reporting of DNA.<br>Use PHRASE for detail: [lab, laboratory, testing center, facility, analysis center, clinic] |
-| 🧬 | `DNA`         | `SPONSOR`     | Person or organization that funded or facilitated the DNA test. (e.g. gift, project, third-party study) |
+| 🧬 | `DNA`         | `SPONSOR`     | Person or organization that funded or facilitated the DNA test. (e.g., gift, project, third-party study) |
 | 🧬 | `DNA`         | `SUBJECT`     | Person whose DNA was tested, submitted, or reported. May include self-testers or individuals analyzed by third parties; may also appear as "testee" or "donor". |
 | 📚 | `EDUCATIONAL` | `EXAMINER`        | Official evaluating exams (inspecting, certifying, examining)  |
 | 📚 | `EDUCATIONAL` | `SITE`| Site where instruction or academic activity took place.<br>Use PHRASE for detail: [school, university, boarding school, classroom, academy] |
 | 📚 | `EDUCATIONAL` | `STUDENT`         | Person recieving instruction. Enrolled or studying ; pupil, student, apprentice |
 | 📚 | `EDUCATIONAL` | `TEACHER`         | Delivered lessons or instruction; includes instructors, tutors |
-| 🗓️ | `EVENT`       | `OFFICIANT`       | Conducts ceremony or signs something, e.g. priest, registrar    |
+| 🗓️ | `EVENT`       | `OFFICIANT`       | Conducts ceremony or signs something, e.g., priest, registrar    |
 | 🗓️ | `EVENT`       | `ORGANIZER`       | Person coordinating or arranging the event                                      |
 | 🗓️ | `EVENT`       | `PARTICIPANT`     | General event role, not further specified           |
 | 🗓️ | `EVENT`       | `PARTYMEMBER`     | Someone who is part of a group celebrating a specific even |
 | 🗓️ | `EVENT`       | `RECORDER`        | Person who documented or recorded details of the event.     |
 | 🗓️ | `EVENT`       | `SPECTATOR`       | Passive observer                                           |
-| 🗓️ | `EVENT`       | `TARGET`          | Person affected by the event, e.g. victim or beneficiary               |
-| 🗓️ | `EVENT`       | `WITNESS`         | Person who saw the event (e.g. accident, birth, signing)             |
+| 🗓️ | `EVENT`       | `TARGET`          | Person affected by the event, e.g., victim or beneficiary               |
+| 🗓️ | `EVENT`       | `WITNESS`         | Person who saw the event (e.g., accident, birth, signing)             |
 | 👨‍👩‍👧 | `FAMILY`      | `ADOPTEE`         | The child being adopted  |
 | 👨‍👩‍👧 | `FAMILY`      | `ADOPTER`         | Legal adoptive parent  |
 | 👨‍👩‍👧 | `FAMILY`      | `AUNT`            | Aunt  |
@@ -242,13 +242,13 @@ This table defines all standardized combinations of `MAINROLE` and `ROLE` used i
 | 🛡️ | `GROUP`       | `TRANSFERRED`     | Moved from one group to another |
 | 🛡️ | `GROUP`       | `WORKER`          | General laborer or active contributor|
 | 🪪 | `IDENTITY`    | `APPLICANT`       | Person who filed or initiated an application for identity-related documents (e.g., passport, visa, name change). |
-| 🪪 | `IDENTITY`    | `ASSIGNED`        | Someone else gives the identity, e.g. "He is John Smith"        |
-| 🪪 | `IDENTITY`    | `DECLARED`        | Person says who they are, e.g. "I am John Smith"   |
+| 🪪 | `IDENTITY`    | `ASSIGNED`        | Someone else gives the identity, e.g., "He is John Smith"        |
+| 🪪 | `IDENTITY`    | `DECLARED`        | Person says who they are, e.g., "I am John Smith"   |
 | 🪪 | `IDENTITY`    | `EXAMINER`        | Person responsible for inspecting or verifying submitted identity documents or biometric records. |
 | 🪪 | `IDENTITY`    | `INTERPRETER`     | Present to assist in cases where language barriers existed during identity proceedings (common in immigration or legal name change). |
 | 🪪 | `IDENTITY`    | `NAMED`           | A name is stated without a formal declaration              |
 | 🪪 | `IDENTITY`    | `RECORDER`        | Person who entered or copied the identity data into a formal register (e.g., civil clerk, church scribe). |
-| 🪪 | `IDENTITY`    | `RENAMED`         | Explicit change of name, e.g. adoption, alias, name change    |
+| 🪪 | `IDENTITY`    | `RENAMED`         | Explicit change of name, e.g., adoption, alias, name change    |
 | 🪪 | `IDENTITY`    | `SPONSOR`         | Person vouching for or supporting the identity/residency claim of another, especially in immigration or residency permission cases. |
 | 🪪 | `IDENTITY`    | `WITNESS`         | Individual attesting to someone’s identity (e.g., in affidavit, oath, or testimony). Often required for birth, alias, or passport paperwork. |
 | 📜 | `INHERITANCE` | `ATTORNEY`        | Attorny, also called Solicitor. The legal professional who provides legal advice during will creation and ensures it meets all legal requirements. |
@@ -331,7 +331,7 @@ for detail: [property name, heir, date] |
 | 💍 | `MARRIAGE`    | `FIANCÉ(E)`       | Engaged to be married; may not result in marriage |
 | 💍 | `MARRIAGE`    | `GROOM`           | Male partner in marriage-type event   |
 | 💍 | `MARRIAGE`    | `MAIDOFHONOR`     | Witness or supporter for bride   |
-| 💍 | `MARRIAGE`    | `MARRIAGE-WITNESS`| Someone witnessing the marriage, e.g. best man       |
+| 💍 | `MARRIAGE`    | `MARRIAGE-WITNESS`| Someone witnessing the marriage, e.g., best man       |
 | 💍 | `MARRIAGE`    | `OFFICIANT`       | Person leading the ceremony                         |
 | 💍 | `MARRIAGE`    | `PARTNER`         | Unmarried long-term partner, registered or informal. Or one of the marrying persons                                          |
 | 💍 | `MARRIAGE`    | `SPOUSE`          | Married partner, legally recognized. Used where sex or role is unspecified or later in life |
@@ -341,7 +341,7 @@ for detail: [property name, heir, date] |
 | 🎞️ | `MEDIA`       | `COPYRIGHT`       | Media holding copyright status. Use PHRASE for detail: [copyright holder, jurisdiction, term] |
 | 🎞️ | `MEDIA`       | `CURATOR`         | Organized or selected items for publication/exhibit |
 | 🎞️ | `MEDIA`       | `EDITOR`          | Reviewed or prepared content for publication or release |
-| 🎞️ | `MEDIA`       | `ILLUSTRATOR`     | Visual artist or designer of the media object (e.g. sketch, diagram, enhancement) |
+| 🎞️ | `MEDIA`       | `ILLUSTRATOR`     | Visual artist or designer of the media object (e.g., sketch, diagram, enhancement) |
 | 🎞️ | `MEDIA`       | `INTERVIEWEE`     | Provided personal answers or narrative used in the media content |
 | 🎞️ | `MEDIA`       | `MENTIONED`       | Referenced inside the media                          |
 | 🎞️ | `MEDIA`       | `PHOTOGRAPHER`    | Took or captured the photo or visual image |
@@ -363,7 +363,7 @@ for detail: [property name, heir, date] |
 | 🪖 | `MILITARY`    | `CASUALTY`       | Person who is wounded, missing, killed  |
 | 🪖 | `MILITARY`    | `COMMANDER`      | Leader (Officer) of group or unit; may be temporary |
 | 🪖 | `MILITARY`    | `CONSCRIPT`      | Drafted into service; may include limited service duration |
-| 🪖 | `MILITARY`    | `ENLISTED`       | Non-officer member of military (e.g. private, corporal) Signed up for military service |
+| 🪖 | `MILITARY`    | `ENLISTED`       | Non-officer member of military (e.g., private, corporal) Signed up for military service |
 | 🪖 | `MILITARY`    | `OFFICER`        | Held formal military role; rank may be known |
 | 🪖 | `MILITARY`    | `RECIPIENT`      | Person awarded a medal, rank insignia, commendation, or military honor. |
 | 🪖 | `MILITARY`    | `RECRUITOR`      | Recruits others |
@@ -392,7 +392,7 @@ for detail: [property name, heir, date] |
 | 🏘️ | `PROPERTY`    | `OWNER`          | Person or group who owns the property (Landowner or leaseholder) (legal or practical owner) |
 | 🏘️ | `PROPERTY`    | `OCCUPANT`       | Current inhabitant of a property  |
 | 🏘️ | `PROPERTY`    | `ORIGIN`         | Location where an event or journey begins. Use PHRASE for detail: [event, location, date] |
-| 🏘️ | `PROPERTY`    | `RECORDED-BY`    | Someone listing or describing the property/asset (e.g. inventoried it)        |
+| 🏘️ | `PROPERTY`    | `RECORDED-BY`    | Someone listing or describing the property/asset (e.g., inventoried it)        |
 | 🏘️ | `PROPERTY`    | `RESIDENT`       | Lives on the property (house, farm, etc.)           |
 | 🏘️ | `PROPERTY`    | `SCENE`          | Location where a notable event occurred. Use PHRASE for detail: [event type, location, date] |
 | 🏘️ | `PROPERTY`    | `SELLER`         | Sold the property. (Seller in a transaction) Party selling or transferring ownership |
@@ -418,7 +418,7 @@ for detail: [property name, heir, date] |
 | ✝️ | `RELIGIOUS`   | `MONK`           | Monastic religious figure. <br>Use PHRASE for detail: [abbey, cloister, vows, friar, monastic] |
 | ✝️ | `RELIGIOUS`   | `NOVICE`         | Person in early stage of religious life, not yet fully vowed or ordained. <br>Use PHRASE for detail: [initiate, training, probation, monastery] |
 | ✝️ | `RELIGIOUS`   | `NUN`            | Female monastic. <br>Use PHRASE for detail: [convent, sister, habit, cloister, vows] |
-| ✝️ | `RELIGIOUS`   | `OFFICIANT`      | Performed a religious function (e.g. marriage, baptism). <br>Use PHRASE for detail: [marriage, baptism, religious duty, clergy] |
+| ✝️ | `RELIGIOUS`   | `OFFICIANT`      | Performed a religious function (e.g., marriage, baptism). <br>Use PHRASE for detail: [marriage, baptism, religious duty, clergy] |
 | ✝️ | `RELIGIOUS`   | `ORDAINER`       | Someone who has the right to ordain deacons and others. <br>Use PHRASE for detail: [ordination, bishop, authority, consecrate] |
 | ✝️ | `RELIGIOUS`   | `PASTOR`         | Pastor or church leader. <br>Use PHRASE for detail: [preacher, leader, service, congregation] |
 | ✝️ | `RELIGIOUS`   | `PRIEST`         | Religious officiant or cleric. <br>Use PHRASE for detail: [mass, church, clergy, ordination] |
@@ -434,11 +434,11 @@ for detail: [property name, heir, date] |
 | 🌐 | `SOCIAL`      | `DEDICATOR`     | Person who organized or dedicated the memorial    |
 | 🌐 | `SOCIAL`      | `ENSLAVER`      | Person who held others in involuntary servitude or bondage. |
 | 🌐 | `SOCIAL`      | `GUEST`         | Attended or featured at the event |
-| 🌐 | `SOCIAL`      | `HONOREE`       | [The person being commemorated (e.g. on a gravestone or memorial)]  [Person being honored in a tribute event]|
+| 🌐 | `SOCIAL`      | `HONOREE`       | [The person being commemorated (e.g., on a gravestone or memorial)]  [Person being honored in a tribute event]|
 | 🌐 | `SOCIAL`      | `HOST`          | Gave the party, reception, or event |
-| 🌐 | `SOCIAL`      | `INSCRIBED`     | Person named in writing, e.g. on a war memorial      |
+| 🌐 | `SOCIAL`      | `INSCRIBED`     | Person named in writing, e.g., on a war memorial      |
 | 🌐 | `SOCIAL`      | `MENTOR`        | Guided or advised another; includes apprenticeships |
-| 🌐 | `SOCIAL`      | `PARTICIPANT`   | Present in public or semi-public event marking something, e.g. parade, unveiling |
+| 🌐 | `SOCIAL`      | `PARTICIPANT`   | Present in public or semi-public event marking something, e.g., parade, unveiling |
 | 🌐 | `SOCIAL`      | `REPRESENTATIVE`| Portrayed or represented another person, usually in a theatrical or ceremonial setting. |
 | 🌐 | `SOCIAL`      | `SITE`| Setting of public or private gatherings and social events.<br>Use PHRASE for detail: [ballroom, village square, party tent, pub, dining hall, cinema] |
 | 🌐 | `SOCIAL`      | `SLAVE`         | Person held in bondage or forced labor; property of another. |
