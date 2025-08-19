@@ -834,12 +834,6 @@ The payload of the `LANG` structure is a language tag, as defined by [BCP 47](ht
 #### `LATI` (Latitude) `g7:LATI`
 
 A latitudinal coordinate.
-The payload is either `N` (for a coordinate north of the equator) or `S` (for a coordinate south of the equator) followed by a decimal number of degrees.
-Minutes and seconds are not used and should be converted to fractional degrees prior to encoding.
-
-:::example
-18 degrees, 9 minutes, and 3.4 seconds North would be formatted as `N18.150944`.
-:::
 
 #### `LEFT` (Left crop width) `g7:LEFT`
 
@@ -849,12 +843,6 @@ See `CROP` for more details.
 #### `LONG` (Longitude) `g7:LONG`
 
 A longitudinal coordinate.
-The payload is either `E` (for a coordinate east of the prime meridian) or `W` (for a coordinate west of the prime meridian) followed by a decimal number of degrees.
-Minutes and seconds are not used and should be converted to fractional degrees prior to encoding.
-
-:::example
-168 degrees, 9 minutes, and 3.4 seconds East would be formatted as `E168.150944`.
-:::
 
 #### `MAP` (Map) `g7:MAP`
 
