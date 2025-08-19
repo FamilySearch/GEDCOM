@@ -378,9 +378,10 @@ The URI data type is used to provide agent-controlled durable identifiers for te
 URIs are not generally intended to be user-facing nor for storing URIs that are found in historical documents;
 rather, they are used as machine-readable identifiers with formally-defined meaning.
 
-The payload is an "absolute-URL string" as defined by the [WHATWG URL specification](https://url.spec.whatwg.org/).
-It will always contain a colon
-and may include percent-encoded bytes.
+The payload is a "URL string" as defined by the [WHATWG URL specification](https://url.spec.whatwg.org/).
+It permits both relative and absolute URIs, with or without percent encoding.
+Relative URIs should be avoided in datasets that are expected to be shared on the web or with unknown parties,
+but may be appropriate for close collaboration between parties with a shared base URI.
 
 The URI for the `URI` data type is `xsd:anyURI`.
 
