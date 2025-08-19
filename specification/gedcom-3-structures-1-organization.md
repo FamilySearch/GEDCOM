@@ -133,7 +133,7 @@ n HEAD                                     {1:1}  g7:HEAD
   +1 GEDC                                  {1:1}  g7:GEDC
      +2 VERS <Special>                     {1:1}  g7:GEDC-VERS
   +1 SCHMA                                 {0:1}  g7:SCHMA
-     +2 TAG <Special>                      {0:M}  g7:TAG
+     +2 TAG <URI>                          {0:M}  g7:TAG
   +1 SOUR <Special>                        {0:1}  g7:HEAD-SOUR
      +2 VERS <Special>                     {0:1}  g7:VERS
      +2 NAME <Text>                        {0:1}  g7:NAME
@@ -726,7 +726,7 @@ n REFN <Special>                           {1:1}  g7:REFN
 n UID <Special>                            {1:1}  g7:UID
 |
 n EXID <Special>                           {1:1}  g7:EXID
-  +1 TYPE <Special>                        {0:1}  g7:EXID-TYPE
+  +1 TYPE <URI>                            {0:1}  g7:EXID-TYPE
 ]
 ```
 
@@ -1134,10 +1134,10 @@ n PLAC <List:Text>                         {1:1}  g7:PLAC
   +1 TRAN <List:Text>                      {0:M}  g7:PLAC-TRAN
      +2 LANG <Language>                    {1:1}  g7:LANG
   +1 MAP                                   {0:1}  g7:MAP
-     +2 LATI <Special>                     {1:1}  g7:LATI
-     +2 LONG <Special>                     {1:1}  g7:LONG
+     +2 LATI <Latitude>                    {1:1}  g7:LATI
+     +2 LONG <Lognitude>                   {1:1}  g7:LONG
   +1 EXID <Special>                        {0:M}  g7:EXID
-     +2 TYPE <Special>                     {0:1}  g7:EXID-TYPE
+     +2 TYPE <URI>                         {0:1}  g7:EXID-TYPE
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
