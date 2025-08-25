@@ -370,3 +370,60 @@ Version 7.0 only supports the following URLs:
 Additional URLs may be supported in future versions of this specification.
 
 The URI for the `FilePath` data type is `g7:type-FilePath`.
+
+
+## URI
+
+The URI data type is used to provide agent-controlled durable identifiers for technically-precise content.
+URIs are not generally intended to be user-facing nor for storing URIs that are found in historical documents;
+rather, they are used as machine-readable identifiers with formally-defined meaning.
+
+The payload is a "URL string" as defined by the [WHATWG URL specification](https://url.spec.whatwg.org/).
+It permits both relative and absolute URIs, with or without percent encoding.
+Relative URIs should be avoided in datasets that are expected to be shared on the web or with unknown parties,
+but may be appropriate for close collaboration between parties with a shared base URI.
+
+The URI for the `URI` data type is `xsd:anyURI`.
+
+
+## Latitude
+
+A latitudinal coordinate.
+The payload is either `N` (for a coordinate north of the equator) or `S` (for a coordinate south of the equator) followed by a decimal number of degrees.
+Minutes and seconds are not used and should be converted to fractional degrees prior to encoding.
+The number of degrees is limited by definition to be between 0 (the equator) and 90 (the north or south pole).
+
+```abnf
+Latitude = ("N" / "S") upto90 [ "." 1*digit]
+upto90   = "90" / [upto8] digit
+upto8    = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7" / "8"
+```
+
+:::example
+18 degrees, 9 minutes, and 3.4 seconds North would be formatted as `N18.150944`.
+:::
+
+
+The URI for the `Latitude` data type is `g7:type-Latitude`.
+
+
+## Longitude
+
+A longitudinal coordinate.
+The payload is either `E` (for a coordinate east of the prime meridian) or `W` (for a coordinate west of the prime meridian) followed by a decimal number of degrees.
+Minutes and seconds are not used and should be converted to fractional degrees prior to encoding.
+The number of degrees is limited by definition to be between 0 (the prime meridian) and 180 (the 180th meridian).
+
+```abnf
+Longitude = ("N" / "S") upto180 [ "." 1*digit]
+upto180  = "180" / "1" upto7 digit / [["0"] digit] digit
+upto7    = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7"
+```
+
+:::example
+168 degrees, 9 minutes, and 3.4 seconds East would be formatted as `E168.150944`.
+:::
+
+The URI for the `Longitude` data type is `g7:type-Longitude`.
+
+
