@@ -133,7 +133,7 @@ n HEAD                                     {1:1}  g7:HEAD
   +1 GEDC                                  {1:1}  g7:GEDC
      +2 VERS <Special>                     {1:1}  g7:GEDC-VERS
   +1 SCHMA                                 {0:1}  g7:SCHMA
-     +2 TAG <URI>                          {0:M}  g7:TAG
+     +2 TAG <TagDef>                       {0:M}  g7:TAG
   +1 SOUR <Special>                        {0:1}  g7:HEAD-SOUR
      +2 VERS <Special>                     {0:1}  g7:VERS
      +2 NAME <Text>                        {0:1}  g7:NAME

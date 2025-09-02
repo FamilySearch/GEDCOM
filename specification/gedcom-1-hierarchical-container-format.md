@@ -434,7 +434,7 @@ It should appear within the document before any extension tags.
 The schema's substructures are tag definitions.
 
 A tag definition is a structure with tag `TAG`.
-Its payload is an extension tag, a space, and a URI
+Its payload is an [Tag Definition], which includes both an extension tag and a URI,
 and defines that extension tag to be an abbreviation for that URI within the current document.
 
 :::example

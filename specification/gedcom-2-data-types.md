@@ -378,12 +378,30 @@ The URI data type is used to provide agent-controlled durable identifiers for te
 URIs are not generally intended to be user-facing nor for storing URIs that are found in historical documents;
 rather, they are used as machine-readable identifiers with formally-defined meaning.
 
-The payload is a "URL string" as defined by the [WHATWG URL specification](https://url.spec.whatwg.org/).
-It permits both relative and absolute URIs, with or without percent encoding.
+The payload is a "URI Reference" as defined in [RFC 3986 section 4.1](https://www.rfc-editor.org/rfc/rfc3986#section-4.1) with ABNF production `URI-reference`.
+The URI Reference is a more restrictive syntax than the URL Strings permitted by the [File Path] data type,
+faciltiating easier automated equality tests between URIs.
+
 Relative URIs should be avoided in datasets that are expected to be shared on the web or with unknown parties,
 but may be appropriate for close collaboration between parties with a shared base URI.
 
 The URI for the `URI` data type is `xsd:anyURI`.
+
+
+## Tag Definition
+
+A tag definition consists of an extension tag, a space, and a URI.
+It defines that the extension tag is used to refer to the concept identified by that URI.
+See [Extension Tags] for more details.
+
+The URIs in Tag Definitions have the same requirements and recommendations as those defined by the [URI] data type.
+
+
+```abnf
+TagDef = extTag D URI-reference
+```
+
+The URI for the `TagDef` data type is `g7:type-TagDef`.
 
 
 ## Latitude
