@@ -1135,7 +1135,7 @@ n PLAC <List:Text>                         {1:1}  g7:PLAC
      +2 LANG <Language>                    {1:1}  g7:LANG
   +1 MAP                                   {0:1}  g7:MAP
      +2 LATI <Latitude>                    {1:1}  g7:LATI
-     +2 LONG <Lognitude>                   {1:1}  g7:LONG
+     +2 LONG <Longitude>                   {1:1}  g7:LONG
   +1 EXID <Special>                        {0:M}  g7:EXID
      +2 TYPE <URI>                         {0:1}  g7:EXID-TYPE
   +1 <<NOTE_STRUCTURE>>                    {0:M}
