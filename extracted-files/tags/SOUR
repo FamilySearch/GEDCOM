@@ -48,6 +48,7 @@ substructures:
   "https://gedcom.io/terms/v7/SOUR-EVEN": "{0:1}"
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/record-SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/ADOP": "{0:M}"
   "https://gedcom.io/terms/v7/ANUL": "{0:M}"
   "https://gedcom.io/terms/v7/ASSO": "{0:M}"
@@ -112,7 +113,8 @@ superstructures:
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
   "https://gedcom.io/terms/v7/record-OBJE": "{0:M}"
-  "https://gedcom.io/terms/v7/record-SNOTE": "{0:M}"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

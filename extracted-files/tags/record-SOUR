@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/record-SOUR
+uri: https://gedcom.io/terms/v7.1/record-SOUR
 
 standard tag: 'SOUR'
 
@@ -50,12 +50,15 @@ substructures:
   "https://gedcom.io/terms/v7/PUBL": "{0:1}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"
   "https://gedcom.io/terms/v7/REPO": "{0:M}"
+  "https://gedcom.io/terms/v7/RESN": "{0:1}"
   "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/TEXT": "{0:1}"
   "https://gedcom.io/terms/v7/TITL": "{0:1}"
   "https://gedcom.io/terms/v7/UID": "{0:M}"
 
 superstructures: {}
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

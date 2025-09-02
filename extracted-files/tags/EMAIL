@@ -32,6 +32,8 @@ payload: http://www.w3.org/2001/XMLSchema#string
 substructures: {}
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/record-REPO": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-SUBM": "{0:M}"
   "https://gedcom.io/terms/v7/ADOP": "{0:M}"
   "https://gedcom.io/terms/v7/ANUL": "{0:M}"
   "https://gedcom.io/terms/v7/BAPM": "{0:M}"
@@ -84,8 +86,8 @@ superstructures:
   "https://gedcom.io/terms/v7/RETI": "{0:M}"
   "https://gedcom.io/terms/v7/SSN": "{0:M}"
   "https://gedcom.io/terms/v7/WILL": "{0:M}"
-  "https://gedcom.io/terms/v7/record-REPO": "{0:M}"
-  "https://gedcom.io/terms/v7/record-SUBM": "{0:M}"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

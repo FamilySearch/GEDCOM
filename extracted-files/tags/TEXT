@@ -25,8 +25,10 @@ substructures:
   "https://gedcom.io/terms/v7/MIME": "{0:1}"
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/record-SOUR": "{0:1}"
   "https://gedcom.io/terms/v7/SOUR-DATA": "{0:M}"
-  "https://gedcom.io/terms/v7/record-SOUR": "{0:1}"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

@@ -34,9 +34,11 @@ def find_data_types(txt, g7):
     for section in re.finditer(r'^#+ *([^\n]*)\n+((?:[^\n]|\n+[^\n#])*[^\n]*URI for[^\n]*data types? is(?:[^\n]|\n+[^\n#])*)', txt, re.M):
         for dt, uri in re.findall(r'URI[^\n]*`([^\n`]*)` data type[^\n]*`([^`\n:]*:[^\n`]*)`', section.group(0)):
             dturi[dt] = uri
-            if uri.startswith('g7:'):
-                if uri[3:] not in g7:
-                    g7[uri[3:]] = ('data type', [section.group(2).strip()])
+            if uri.startswith('g7:') or uri.startswith('g7.1:'):
+                slug = uri[uri.find(':')+1:]
+                if '#' in uri: uri = uri[:uri.find('#')]
+                if slug not in g7:
+                    g7[slug] = ('data type', [section.group(2).strip()])
     return dturi
     
 def find_cat_tables(txt, g7, tagsets):
@@ -108,18 +110,19 @@ def find_cat_tables(txt, g7, tagsets):
                 raise Exception("unexpected enumeration URI prefix "+repr(pfx))
             if pfx not in cats:
                 cats[pfx] = meaning
-                if pfx.startswith('g7:'):
-                    if pfx[3:] in g7:
-                        raise Exception(pfx+' defined as an enumeration and a '+g7[pfx[3:]][0])
+                if pfx.startswith('g7:') or pfx.startswith('g7.1:'):
+                    slug = pfx[pfx.find(':')+1:]
+                    if slug in g7:
+                        raise Exception(pfx+' defined as an enumeration and a '+g7[slug][0])
                     if label:
-                        g7[pfx[3:]] = (yamltype, meaning, None, label)
+                        g7[slug] = (yamltype, meaning, None, label)
                     else:
-                        g7[pfx[3:]] = (yamltype, meaning)
+                        g7[slug] = (yamltype, meaning)
     return enums, calendars
 
 def find_calendars(txt, g7):
     """Looks for sections defining a `g7:cal-` URI"""
-    for bit in re.finditer(r'#+ `[^`]*`[^\n]*\n+((?:\n+(?!#)|[^\n])*is `g7:(cal-[^`]*)`(?:\n+(?!#)|[^\n#])*)', txt):
+    for bit in re.finditer(r'#+ `[^`]*`[^\n]*\n+((?:\n+(?!#)|[^\n])*is `g7(?:\.1)?:(cal-[^`]*)`(?:\n+(?!#)|[^\n#])*)', txt):
         m = re.search('The epoch markers? ([`_A-Z0-9, and]+) (is|are) permitted', bit.group(1))
         marker = [] if not m else re.findall(r'[A-Z0-9_]+', m[1])
         m = re.match(r'^The ([A-Z][A-Za-z]* )+calendar', bit.group(1))
@@ -223,24 +226,27 @@ def find_descriptions(txt, g7, ssp):
     for name,uri,desc in re.findall(r'#+ `[^`]*`[^\n]*\(([^)]*)\)[^\n]*`([^:`\n]*:[^`\n]*)`[^\n]*\n+((?:\n+(?!#)|[^\n])*)', txt):
         if uri not in ssp:
             raise Exception('Found section for '+uri+' but no gedstruct')
-        if uri.startswith('g7:'):
-            g7.setdefault(uri[3:],('structure',[],ssp[uri],name.strip()))[1].extend((
+        if uri.startswith('g7:') or uri.startswith('g7.1:'):
+            slug = uri[uri.find(':')+1:]
+            g7.setdefault(slug,('structure',[],ssp[uri],name.strip()))[1].extend((
                 name.strip(),
                 desc.strip()
             ))
             for other in re.findall(r'[Aa] type of `(\S*)`', desc):
                 m = re.search('^#+ +`'+other+r'`[^\n`]*\n((?:[^\n]+|\n+(?!#))*)', txt, re.M)
                 if m:
-                    g7[uri[3:]][1].append(m.group(1).strip())
+                    g7[uri[uri.find(':')+1:]][1].append(m.group(1).strip())
     
     # error check that gedstruct and sections align
     for uri in ssp:
         if uri.startswith('g7:') and uri[3:] not in g7:
             raise Exception('Found gedstruct for '+uri+' but no section')
+        if uri.startswith('g7.1:') and uri[5:] not in g7:
+            raise Exception('Found gedstruct for '+uri+' but no section')
 
     # gedstruct sections
     for uri, desc in re.findall(r'#+ *`[^`]*` *:=[^\n]*\n+`+[^\n]*\n+n [^\n]*\} *(\S+:\S+) *(?:\n [^\n]*)*\n`+[^\n]*\n+((?:[^\n]|\n(?!#))*)', txt):
-        g7[uri[3:]][1].append(desc.strip())
+        g7[uri[uri.find(':')+1:]][1].append(desc.strip())
     
     tagsets = {}
     # tag tables
@@ -251,7 +257,11 @@ def find_descriptions(txt, g7, ssp):
         if header.startswith('Indi'): pfx = 'INDI-'
         for tag, name, desc in re.findall(r'`([A-Z_0-9]+)` *\| *([^|\n]*?) *\| *([^|\n]*[^ |\n]) *', table.group(2)):
             if '<br' in name:
-                tag = name[name.find('`g7:')+4:name.rfind('`')]
+                if '`g7:' in name:
+                    tag = name[name.find('`g7:')+4:name.rfind('`')]
+                elif '`g7.1' in name:
+                    tag = name[name.find('`g7.1')+6:name.rfind('`')]
+                else: assert False, "name without URI: "+repr(name)
                 name = name[:name.find('<br')]
             if tag not in g7: tag = pfx+tag
             if tag not in g7:
@@ -272,7 +282,7 @@ def find_enum_by_link(txt, enums, tagsets):
             # 'g7:FAM-FACT',
         # ))         ## do not do for enumset-EVEN 
     enum_prefix = {k[k.find('enum-')+5:] for e in enums.values() for k in e }
-    for sect in re.finditer(r'# *`(g7:enumset-[^`]*)`[\s\S]*?\n#', txt):
+    for sect in re.finditer(r'# *`(g7(?:\.1)?:enumset-[^`]*)`[\s\S]*?\n#', txt):
         if '[Events]' in sect.group(0):
             key = sect.group(1).replace('`','').replace('.','-')
             for k in tagsets:
@@ -281,7 +291,7 @@ def find_enum_by_link(txt, enums, tagsets):
                     for tag in tagsets[k]:
                         if tag.startswith('INDI-') and tag[5:] in enum_prefix: tag = 'enum-'+tag[5:]
                         if tag.startswith('FAM-') and tag[4:] in enum_prefix: tag = 'enum-'+tag[4:]
-                        tag = 'g7:'+tag
+                        tag = addpfx(tag)
                         if tag in enums[key]: continue
                         enums[key].append(tag)
         if '[Attributes]' in sect.group(0):
@@ -292,17 +302,17 @@ def find_enum_by_link(txt, enums, tagsets):
                     for tag in tagsets[k]:
                         if tag.startswith('INDI-') and tag[5:] in enum_prefix: tag = 'enum-'+tag[5:]
                         if tag.startswith('FAM-') and tag[4:] in enum_prefix: tag = 'enum-'+tag[4:]
-                        tag = 'g7:'+tag
+                        tag = addpfx(tag)
                         if tag in enums[key]: continue
                         enums[key].append(tag)
                     # enums.setdefault(key, []).extend(_ for _ in ['g7:'+_2.replace('INDI-','enum-').replace('FAM-','enum-') for _2 in tagsets[k]] if _ not in enums.get(key,[]))
 
 def find_enumsets(txt):
     res = {}
-    for sect in re.finditer(r'# *[^\n]*?`(g7:[^`]*)`([\s\S]*?)\n#', txt):
-        if 'from set `g7:enumset-' in sect.group(2):
+    for sect in re.finditer(r'# *[^\n]*?`(g7(?:\.1)?:[^`]*)`([\s\S]*?)\n#', txt):
+        if re.search(f'from set `g7(?:\.1)?:enumset-', sect.group(2)):
             key = sect.group(1)
-            val = re.search(r'from set `(g7:enumset-[^`]*)`', sect.group(2)).group(1)
+            val = re.search(r'from set `(g7(?:\.1)?:enumset-[^`]*)`', sect.group(2)).group(1)
             res[key] = val
     return res
 
@@ -352,10 +362,16 @@ def yaml_str_helper(pfx, md, width=79):
     return pfx + txt
 
 def expand_prefix(txt, prefixes):
+    global prerelease
     for key in sorted(prefixes.keys(), key=lambda x:-len(x)):
         k = key+':'
         if txt.startswith(k):
-            return prefixes[key] + txt[len(k):]
+            uri = prefixes[key] + txt[len(k):]
+            if 'https://gedcom.io/terms/v7.1/' in uri:
+                prerelease = True
+            return uri
+    if 'https://gedcom.io/terms/v7.1/' in txt:
+        prerelease = True
     return txt
 
 if __name__ == '__main__':
@@ -365,6 +381,16 @@ if __name__ == '__main__':
     txt = get_text(specs)
     
     prefixes = get_prefixes(txt)
+    prefix_of = {} # generally {tag: 'g7'} or {"record-REPO":"g7.1"} but sometimes {"month-":"g7"} for a set of values
+    for [pfx,slug] in re.findall('('+'|'.join(prefixes)+r'):([^\s`<>]+)', txt):
+        assert prefix_of.get(slug,pfx) == pfx, f"Multiple prefixes for {slug}: {prefix_of[slug]} and {pfx}"
+        prefix_of[slug] = pfx
+    def addpfx(tag):
+        if tag in prefix_of: return prefix_of[tag]+':'+tag
+        if '-' in tag:
+            lead = tag[:tag.find('-')+1]
+            if lead in prefix_of: return prefix_of[lead]+':'+tag
+        assert False, 'no prefix for '+tag+' in '+str(prefix_of)
     dtypes = find_data_types(txt, g7)
     rules = parse_rules(txt)
     ssp = parse_gedstruct(txt, rules, dtypes)
@@ -372,7 +398,7 @@ if __name__ == '__main__':
     enums, calendars = find_cat_tables(txt, g7, tagsets)
     find_enum_by_link(txt, enums, tagsets)
     for k in enums:
-        g7[k[3:]] =  ('enumeration set',[]) 
+        g7[k[k.find(':')+1:]] =  ('enumeration set',[]) 
     enumsets = find_enumsets(txt)
     find_calendars(txt, g7)
     dtypes_inv = {expand_prefix(v,prefixes):k for k,v in dtypes.items()}
@@ -385,6 +411,7 @@ if __name__ == '__main__':
 
     for tag in g7:
         print('outputting', tag, '...', end=' ')
+        prerelease = False
         maybe = join(dirname(specs[0]),'terms',tag)
         if exists(maybe):
             copyfile(maybe, join(dest,tag))
@@ -395,7 +422,7 @@ if __name__ == '__main__':
             print('lang: en-US', file=fh)
             print('\ntype:',g7[tag][0], file=fh)
             
-            uri = expand_prefix('g7:'+tag,prefixes)
+            uri = expand_prefix(addpfx(tag),prefixes)
             print('\nuri:', uri, file=fh)
             
             if g7[tag][0] in ('structure', 'enumeration', 'calendar', 'month'):
@@ -424,7 +451,7 @@ if __name__ == '__main__':
                     print('\npayload:', payload, file=fh)
                 payload_lookup.append([uri, payload if payload != 'null' else ''])
                 if d['pay'] and 'Enum' in d['pay']:
-                    setname = expand_prefix(enumsets['g7:'+tag],prefixes)
+                    setname = expand_prefix(enumsets[addpfx(tag)],prefixes)
                     print('\nenumeration set: "'+setname+'"', file=fh)
                     enum_lookup.append([uri,setname])
                     # print('\nenumeration values:', file=fh)
@@ -450,7 +477,7 @@ if __name__ == '__main__':
                     struct_lookup.append(['',ptag,uri])
             elif g7[tag][0] == 'calendar':
                 print('\nmonths:', file=fh)
-                for k in calendars['g7:'+tag]:
+                for k in calendars[addpfx(tag)]:
                     print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
                 if len(g7[tag][2]) == 0:
                     print('\nepochs: []', file=fh)
@@ -460,11 +487,11 @@ if __name__ == '__main__':
                         print('  -', epoch, file=fh)
             elif g7[tag][0] == 'month':
                 print('\ncalendars:', file=fh)
-                for k in calendars['g7:'+tag]:
+                for k in calendars[addpfx(tag)]:
                     print('  - "'+expand_prefix(k, prefixes)+'"', file=fh)
             elif g7[tag][0] == 'enumeration set':
                 print('\nenumeration values:', file=fh)
-                for k in enums['g7:'+tag]:
+                for k in enums[addpfx(tag)]:
                     valname = expand_prefix(k, prefixes)
                     print('  - "'+valname+'"', file=fh)
                     enumset_lookup.append([uri, valname])
@@ -472,11 +499,14 @@ if __name__ == '__main__':
             # handle use in enumerations (which can include any tag type)
             is_used_by = False
             for tag2 in sorted(enums):
-                if ('g7:'+tag) in enums[tag2]:
+                if (addpfx(tag)) in enums[tag2]:
                     if not is_used_by:
                         print('\nvalue of:', file=fh)
                         is_used_by = True
                     print('  - "'+expand_prefix(tag2,prefixes)+'"', file=fh)
+            
+            if prerelease:
+                print('\nprerelease: true', file=fh)
 
             print('\ncontact: "https://gedcom.io/community/"', file=fh)
             fh.write('...\n')
@@ -504,3 +534,4 @@ if __name__ == '__main__':
             for row in data:
                 print('\t'.join(row), file=f)
         print('done')
+

@@ -55,6 +55,8 @@ substructures:
   "https://gedcom.io/terms/v7/STAE": "{0:1}"
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/record-REPO": "{0:1}"
+  "https://gedcom.io/terms/v7.1/record-SUBM": "{0:1}"
   "https://gedcom.io/terms/v7/ADOP": "{0:1}"
   "https://gedcom.io/terms/v7/ANUL": "{0:1}"
   "https://gedcom.io/terms/v7/BAPM": "{0:1}"
@@ -107,8 +109,8 @@ superstructures:
   "https://gedcom.io/terms/v7/RETI": "{0:1}"
   "https://gedcom.io/terms/v7/SSN": "{0:1}"
   "https://gedcom.io/terms/v7/WILL": "{0:1}"
-  "https://gedcom.io/terms/v7/record-REPO": "{0:1}"
-  "https://gedcom.io/terms/v7/record-SUBM": "{0:1}"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

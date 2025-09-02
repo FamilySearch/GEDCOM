@@ -28,13 +28,15 @@ substructures:
   "https://gedcom.io/terms/v7/TYPE": "{0:1}"
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/record-REPO": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-SUBM": "{0:M}"
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
   "https://gedcom.io/terms/v7/record-OBJE": "{0:M}"
-  "https://gedcom.io/terms/v7/record-REPO": "{0:M}"
-  "https://gedcom.io/terms/v7/record-SNOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/record-SOUR": "{0:M}"
-  "https://gedcom.io/terms/v7/record-SUBM": "{0:M}"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

@@ -28,7 +28,9 @@ substructures:
   "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/record-SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-SOUR": "{0:M}"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

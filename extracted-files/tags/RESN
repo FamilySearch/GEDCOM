@@ -33,6 +33,10 @@ enumeration set: "https://gedcom.io/terms/v7/enumset-RESN"
 substructures: {}
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/record-REPO": "{0:1}"
+  "https://gedcom.io/terms/v7.1/record-SNOTE": "{0:1}"
+  "https://gedcom.io/terms/v7.1/record-SOUR": "{0:1}"
+  "https://gedcom.io/terms/v7.1/record-SUBM": "{0:1}"
   "https://gedcom.io/terms/v7/ADOP": "{0:1}"
   "https://gedcom.io/terms/v7/ANUL": "{0:1}"
   "https://gedcom.io/terms/v7/BAPM": "{0:1}"
@@ -87,6 +91,8 @@ superstructures:
   "https://gedcom.io/terms/v7/record-FAM": "{0:1}"
   "https://gedcom.io/terms/v7/record-INDI": "{0:1}"
   "https://gedcom.io/terms/v7/record-OBJE": "{0:1}"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...
