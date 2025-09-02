@@ -1,0 +1,37 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: data type
+
+uri: https://gedcom.io/terms/v7/type-Longitude
+
+abnf production: Longitude
+
+specification:
+  - |
+    A longitudinal coordinate. The payload is either `E` (for a coordinate east of
+    the prime meridian) or `W` (for a coordinate west of the prime meridian)
+    followed by a decimal number of degrees. Minutes and seconds are not used and
+    should be converted to fractional degrees prior to encoding. The number of
+    degrees is limited by definition to be between 0 (the prime meridian) and 180
+    (the 180th meridian).
+    
+    ```abnf
+    Longitude = ("N" / "S") upto180 [ "." 1*digit]
+    upto180  = "180" / "1" upto7 digit / [["0"] digit] digit
+    upto7    = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7"
+    ```
+    
+    <div class="example">
+    
+    168 degrees, 9 minutes, and 3.4 seconds East would be formatted as
+    `E168.150944`.
+    
+    </div>
+    
+    The URI for the `Longitude` data type is
+    `https://gedcom.io/terms/v7/type-Longitude`.
+
+contact: "https://gedcom.io/community/"
+...

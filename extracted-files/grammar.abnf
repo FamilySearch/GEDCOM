@@ -141,6 +141,25 @@ MediaType = type "/" subtype parameters
 Special = Text
 
 
+; ------------- Tag Definition -------------
+
+TagDef = extTag D URI-reference
+
+
+; ------------- Latitude -------------
+
+Latitude = ("N" / "S") upto90 [ "." 1*digit]
+upto90   = "90" / [upto8] digit
+upto8    = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7" / "8"
+
+
+; ------------- Longitude -------------
+
+Longitude = ("N" / "S") upto180 [ "." 1*digit]
+upto180  = "180" / "1" upto7 digit / [["0"] digit] digit
+upto7    = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7"
+
+
 ; ABNF derived from RFC 5646 section 2.1
 Language-Tag  = langtag             ; normal language tags
                / privateuse          ; private use tag
