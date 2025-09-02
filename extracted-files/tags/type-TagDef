@@ -1,0 +1,27 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: data type
+
+uri: https://gedcom.io/terms/v7/type-TagDef
+
+abnf production: TagDef
+
+specification:
+  - |
+    A tag definition consists of an extension tag, a space, and a URI. It defines
+    that the extension tag is used to refer to the concept identified by that URI.
+    See [Extension Tags] for more details.
+    
+    The URIs in Tag Definitions have the same requirements and recommendations as
+    those defined by the [URI] data type.
+    
+    ```abnf
+    TagDef = extTag D URI-reference
+    ```
+    
+    The URI for the `TagDef` data type is `https://gedcom.io/terms/v7/type-TagDef`.
+
+contact: "https://gedcom.io/community/"
+...
