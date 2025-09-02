@@ -6,6 +6,8 @@ type: data type
 
 uri: https://gedcom.io/terms/v7/type-Enum
 
+abnf production: Enum
+
 specification:
   - |
     An enumeration is a selection from a set of options. They are represented as a

@@ -401,6 +401,7 @@ if __name__ == '__main__':
         g7[k[k.find(':')+1:]] =  ('enumeration set',[]) 
     enumsets = find_enumsets(txt)
     find_calendars(txt, g7)
+    dtypes_inv = {expand_prefix(v,prefixes):k for k,v in dtypes.items()}
 
     struct_lookup = []
     enum_lookup = []
@@ -416,18 +417,22 @@ if __name__ == '__main__':
             copyfile(maybe, join(dest,tag))
             print('by copying', maybe, '...', end=' ')
             continue
-        with open(join(dest,tag), 'w') as fh:
+        with open(join(dest,tag.replace('#','-')), 'w') as fh:
             fh.write('%YAML 1.2\n---\n')
             print('lang: en-US', file=fh)
             print('\ntype:',g7[tag][0], file=fh)
             
-            # error: type-DATE# type-List#
             uri = expand_prefix(addpfx(tag),prefixes)
             print('\nuri:', uri, file=fh)
             
             if g7[tag][0] in ('structure', 'enumeration', 'calendar', 'month'):
                 ptag = re.sub(r'.*-', '', re.sub(r'-[A-Z]?[a-z].*', '', tag))
                 print('\nstandard tag: '+repr(ptag), file=fh)
+            
+            if g7[tag][0] == 'data type':
+                production = dtypes_inv[uri].replace(':','-')
+                if any('```abnf' in spec and re.search('^'+production+' *= ', spec, re.M) for spec in g7[tag][1]):
+                    print('\nabnf production:',production, file=fh)
             
             if len(g7[tag][1]) > 0:
                 print('\nspecification:', file=fh)

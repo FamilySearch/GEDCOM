@@ -370,3 +370,78 @@ Version 7.0 only supports the following URLs:
 Additional URLs may be supported in future versions of this specification.
 
 The URI for the `FilePath` data type is `g7:type-FilePath`.
+
+
+## URI
+
+The URI data type is used to provide agent-controlled durable identifiers for technically-precise content.
+URIs are not generally intended to be user-facing nor for storing URIs that are found in historical documents;
+rather, they are used as machine-readable identifiers with formally-defined meaning.
+
+The payload is a "URI Reference" as defined in [RFC 3986 section 4.1](https://www.rfc-editor.org/rfc/rfc3986#section-4.1) with ABNF production `URI-reference`.
+The URI Reference is a more restrictive syntax than the URL Strings permitted by the [File Path] data type,
+faciltiating easier automated equality tests between URIs.
+
+Relative URIs should be avoided in datasets that are expected to be shared on the web or with unknown parties,
+but may be appropriate for close collaboration between parties with a shared base URI.
+
+The URI for the `URI` data type is `xsd:anyURI`.
+
+
+## Tag Definition
+
+A tag definition consists of an extension tag, a space, and a URI.
+It defines that the extension tag is used to refer to the concept identified by that URI.
+See [Extension Tags] for more details.
+
+The URIs in Tag Definitions have the same requirements and recommendations as those defined by the [URI] data type.
+
+
+```abnf
+TagDef = extTag D URI-reference
+```
+
+The URI for the `TagDef` data type is `g7:type-TagDef`.
+
+
+## Latitude
+
+A latitudinal coordinate.
+The payload is either `N` (for a coordinate north of the equator) or `S` (for a coordinate south of the equator) followed by a decimal number of degrees.
+Minutes and seconds are not used and should be converted to fractional degrees prior to encoding.
+The number of degrees is limited by definition to be between 0 (the equator) and 90 (the north or south pole).
+
+```abnf
+Latitude = ("N" / "S") upto90 [ "." 1*digit]
+upto90   = "90" / [upto8] digit
+upto8    = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7" / "8"
+```
+
+:::example
+18 degrees, 9 minutes, and 3.4 seconds North would be formatted as `N18.150944`.
+:::
+
+
+The URI for the `Latitude` data type is `g7:type-Latitude`.
+
+
+## Longitude
+
+A longitudinal coordinate.
+The payload is either `E` (for a coordinate east of the prime meridian) or `W` (for a coordinate west of the prime meridian) followed by a decimal number of degrees.
+Minutes and seconds are not used and should be converted to fractional degrees prior to encoding.
+The number of degrees is limited by definition to be between 0 (the prime meridian) and 180 (the 180th meridian).
+
+```abnf
+Longitude = ("N" / "S") upto180 [ "." 1*digit]
+upto180  = "180" / "1" upto7 digit / [["0"] digit] digit
+upto7    = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7"
+```
+
+:::example
+168 degrees, 9 minutes, and 3.4 seconds East would be formatted as `E168.150944`.
+:::
+
+The URI for the `Longitude` data type is `g7:type-Longitude`.
+
+

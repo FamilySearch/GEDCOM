@@ -4,9 +4,9 @@ lang: en-US
 
 type: data type
 
-uri: https://gedcom.io/terms/v7/type-Date
+uri: https://gedcom.io/terms/v7/type-Date#period
 
-abnf production: DateValue
+abnf production: DatePeriod
 
 specification:
   - |

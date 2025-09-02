@@ -1,0 +1,37 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: data type
+
+uri: https://gedcom.io/terms/v7/type-Latitude
+
+abnf production: Latitude
+
+specification:
+  - |
+    A latitudinal coordinate. The payload is either `N` (for a coordinate north of
+    the equator) or `S` (for a coordinate south of the equator) followed by a
+    decimal number of degrees. Minutes and seconds are not used and should be
+    converted to fractional degrees prior to encoding. The number of degrees is
+    limited by definition to be between 0 (the equator) and 90 (the north or south
+    pole).
+    
+    ```abnf
+    Latitude = ("N" / "S") upto90 [ "." 1*digit]
+    upto90   = "90" / [upto8] digit
+    upto8    = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7" / "8"
+    ```
+    
+    <div class="example">
+    
+    18 degrees, 9 minutes, and 3.4 seconds North would be formatted as
+    `N18.150944`.
+    
+    </div>
+    
+    The URI for the `Latitude` data type is
+    `https://gedcom.io/terms/v7/type-Latitude`.
+
+contact: "https://gedcom.io/community/"
+...

@@ -4,7 +4,9 @@ lang: en-US
 
 type: data type
 
-uri: https://gedcom.io/terms/v7/type-List
+uri: https://gedcom.io/terms/v7/type-List#Text
+
+abnf production: List-Text
 
 specification:
   - |
