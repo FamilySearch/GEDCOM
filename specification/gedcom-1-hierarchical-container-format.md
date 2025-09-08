@@ -319,7 +319,7 @@ Extensions cannot change existing meanings, cardinalities, or calendars.
 A **tagged extension structure** is a structure whose tag matches production `extTag`. Tagged extension structures may appear as records or substructures of any other structure. Their meaning is defined by their tag, as is discussed more fully in the section [Extension Tags].
 
 Any substructure of a tagged extension structure that uses a tag matching `stdTag` is an **extension-defined substructure**.
-Substructures of an extension-defined substructure that uses a tag matching `stdTag` are also extension-defined substructures, but this specification deprecates using a `stdTag` with a definition that does not match any standard type with that tag.
+Substructures of an extension-defined substructure that uses a tag matching `stdTag` are also extension-defined substructures.
 The meaning and use of each extension-defined substructure is defined by the tagged extension structure it occurs within, not by its tag alone nor by this specification.
 
 :::example
@@ -343,7 +343,9 @@ deprecated.
 - Even though both `DATE`s appear to have `g7:type-DATE` payloads, we can't know that is the intended data type without consulting the defining specifications of `_LOC` and `_POP`, respectively. The first might be a `g7:type-DATE#period` and the second a `g7:type-DATE#exact`, for example.
 :::
 
-If an extension-defined substructure has a tag that is also used by one or more standard structures, its meaning and payload type should match at least one of those standard structure types.
+Extension-defined substructures should match the structure type, payload, and substructure collection of at least one
+standard type with the same tag, though it can add more substructures to the substructure collection.
+This specification deprecates using a `stdTag` with a definition that does not match any standard type with that tag.
 
 :::example
 An extension-defined substructure with tag "`DATE`" should provide a date or date period relevant to its superstructure, as do all `DATE`-tagged structures in this specification. Extensions should not use "`DATE`" to tag a structure describing anything else (even something that might reasonably be abbreviated "date", such as someone an individual dated).
