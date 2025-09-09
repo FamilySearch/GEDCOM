@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7.1/record-REPO
+uri: https://gedcom.io/terms/v7/record-REPO
 
 standard tag: 'REPO'
 
@@ -40,14 +40,11 @@ substructures:
   "https://gedcom.io/terms/v7/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7/PHON": "{0:M}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"
-  "https://gedcom.io/terms/v7/RESN": "{0:1}"
   "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/UID": "{0:M}"
   "https://gedcom.io/terms/v7/WWW": "{0:M}"
 
 superstructures: {}
-
-prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

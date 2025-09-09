@@ -29,8 +29,6 @@ substructures:
   "https://gedcom.io/terms/v7/TITL": "{0:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7.1/record-SOUR": "{0:M}"
-  "https://gedcom.io/terms/v7.1/record-SUBM": "{0:M}"
   "https://gedcom.io/terms/v7/ADOP": "{0:M}"
   "https://gedcom.io/terms/v7/ANUL": "{0:M}"
   "https://gedcom.io/terms/v7/BAPM": "{0:M}"
@@ -85,8 +83,8 @@ superstructures:
   "https://gedcom.io/terms/v7/WILL": "{0:M}"
   "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
   "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
-
-prerelease: true
+  "https://gedcom.io/terms/v7/record-SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7/record-SUBM": "{0:M}"
 
 contact: "https://gedcom.io/community/"
 ...

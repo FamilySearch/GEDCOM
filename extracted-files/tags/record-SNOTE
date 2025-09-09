@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7.1/record-SNOTE
+uri: https://gedcom.io/terms/v7/record-SNOTE
 
 standard tag: 'SNOTE'
 
@@ -68,13 +68,10 @@ substructures:
   "https://gedcom.io/terms/v7/MIME": "{0:1}"
   "https://gedcom.io/terms/v7/NOTE-TRAN": "{0:M}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"
-  "https://gedcom.io/terms/v7/RESN": "{0:1}"
   "https://gedcom.io/terms/v7/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/UID": "{0:M}"
 
 superstructures: {}
-
-prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...
