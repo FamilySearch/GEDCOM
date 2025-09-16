@@ -307,7 +307,7 @@ def find_enumsets(txt):
     return res
 
 def tidy_markdown(md, indent, width=79):
-    """
+    r"""
     The markdown files in the specification directory use the following Markdown dialect:
     
     Part of GFM:
@@ -341,7 +341,7 @@ def tidy_markdown(md, indent, width=79):
     import mdformat
     out = mdformat.text(md, extensions={"gfm"}, options={"number":True, "wrap":width})
     
-    return out.rstrip().replace('\n','\n'+' '*indent).replace('\[','[').replace('\]',']')
+    return out.rstrip().replace('\n','\n'+' '*indent).replace(r'\[','[').replace(r'\]',']')
 
 def yaml_str_helper(pfx, md, width=79):
     txt = tidy_markdown(md, len(pfx), width)
