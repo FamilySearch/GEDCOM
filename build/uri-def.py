@@ -417,7 +417,8 @@ if __name__ == '__main__':
             copyfile(maybe, join(dest,tag))
             print('by copying', maybe, '...', end=' ')
             continue
-        with open(join(dest,tag.replace('#','-')), 'w') as fh:
+        thispath = join(dest,tag.replace('#','-'))
+        with open(thispath, 'w') as fh:
             fh.write('%YAML 1.2\n---\n')
             print('lang: en-US', file=fh)
             print('\ntype:',g7[tag][0], file=fh)
@@ -507,6 +508,12 @@ if __name__ == '__main__':
             
             if prerelease:
                 print('\nprerelease: true', file=fh)
+            
+            # manually check for v7.1 subsuming v7.0
+            if '/v7.1/' in uri:
+                res = run(['git','show','main:'+thispath], capture_output=True)
+                if not res.returncode:
+                    print('\nsubsumes:', uri.replace('/v7.1/','/v7/'), file=fh)
 
             print('\ncontact: "https://gedcom.io/community/"', file=fh)
             fh.write('...\n')
