@@ -20,5 +20,7 @@ enumeration values:
   - "https://gedcom.io/terms/v7/enum-SUBMITTED"
   - "https://gedcom.io/terms/v7/enum-UNCLEARED"
 
+standard: true
+
 contact: "https://gedcom.io/community/"
 ...

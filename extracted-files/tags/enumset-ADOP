@@ -11,5 +11,7 @@ enumeration values:
   - "https://gedcom.io/terms/v7/enum-ADOP-WIFE"
   - "https://gedcom.io/terms/v7/enum-BOTH"
 
+standard: true
+
 contact: "https://gedcom.io/community/"
 ...
