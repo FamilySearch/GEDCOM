@@ -496,6 +496,7 @@ if __name__ == '__main__':
                     valname = expand_prefix(k, prefixes)
                     print('  - "'+valname+'"', file=fh)
                     enumset_lookup.append([uri, valname])
+                print('\nstandard: true', file=fh)
             
             # handle use in enumerations (which can include any tag type)
             is_used_by = False
