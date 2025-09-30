@@ -39,5 +39,7 @@ enumeration values:
   - "https://gedcom.io/terms/v7/MARR"
   - "https://gedcom.io/terms/v7/MARS"
 
+standard: true
+
 contact: "https://gedcom.io/community/"
 ...
