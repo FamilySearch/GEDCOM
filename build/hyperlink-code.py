@@ -44,7 +44,6 @@ def anchorify(m):
     return full
 
 doc = re.sub(r'<code>(g7:[^<]*)</code></h', r'<code class="uri">\1</code></h', doc)
-doc = re.sub(r'<code>(g7.1:[^<]*)</code></h', r'<code class="uri">\1</code></h', doc)
 
 chunks = re.split(r'(<pre[^>]*ged(?:struct|com)[^>]*>.*?</pre>)', doc, flags=re.DOTALL)
 

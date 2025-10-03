@@ -21,7 +21,7 @@ An event structure asserts the event did occur if any of the following are true:
     </div>
     
     <div class="note">
-
+    
     Version 5.4 (1995) introduced the "event did occur" meaning of event.`DATE`, so it is now well-established in applications and files.
     However, it is common for users to enter a date range with no end without intending to indicate that the event occurred.
     For example, pre 7.0 files sometimes used
@@ -41,7 +41,7 @@ An event structure asserts the event did occur if any of the following are true:
     without intending to imply that `NATU` ever did actually occur.
     Because this is a "sometimes used" rather than a "formally means" situation,
     it is likely that data using 5.x "after meaning not before" *de facto* pattern will be transferred as-is into 7.0 and persist in files for the foreseeable future.
-
+    
     </div>
 
 - There is a `PLAC` substructure
@@ -902,7 +902,7 @@ for this asset, the `FORM`.`MEDI` is recommended to be `PHOTO` rather than `ELEC
 
 Indicates the [media type](#media-type) of the payload of the superstructure.
 
-As of version 7.1, three media types are supported by this structure:
+As of version 7.0, there are two standard media types for this structure:
 
 - `text/plain` shall be presented to the user as-is, preserving all spacing, line breaks, and so forth.
 
@@ -919,59 +919,33 @@ As of version 7.1, three media types are supported by this structure:
     Supporting more of HTML is encouraged.
     Unsupported tags should be ignored during display.
 
-    <div class="note">
-    Applications are welcome to support more XML entities or HTML character references in their user interface.
-    However, exporting must only use the core XML entities, translating any other entities into their corresponding Unicode characters.
-    </div>
-
-    <div class="note">
-    Applications are welcome to support additional HTML elements,
-    but they should ensure that content is meaningful if those extra elements are ignored and only their content text is displayed.
-    </div>
-
-    If needed, `text/html` can be converted to `text/plain` using the following steps:
-
-    1. Replace any sequence of 1 or more spaces, tabs, and line breaks with a single space
-    2. Case-insensitively replace each `<p`...`>`, `</p`...`>`, and `<br`...`>` with a line break
-    3. Remove all other `<`...`>` tags
-    4. Replace each `&lt;` with `<` and `&gt;` with `>`
-    5. Replace each `&amp;` with `&`
-
-- `text/markdown` employs a plain text format for creating structured documents, and is designed
-    to be fairly understandable by users even if only displayed as plain text.
-    Applications should support the elements specified by [CommonMark](https://commonmark.org).
-
-    For example:
-
-    <div class="example">
-
-    ````gedcom
-    1 NOTE # 1940 US Census for New York, New York
-    2 CONT __Individuals located at this address__
-    2 CONT * John **Doe** (age 35)
-    2 CONT * Sally (age 32)
-    2 CONT * Junior (age 3)
-    2 CONT * Betty (age 1)
-    2 MIME text/markdown
-    ````
-    
-    </div>
-
-    <div class="note">
-    Applications are welcome to support additional Markdown elements,
-    but they should ensure that content is meaningful if those extra elements are only displayed as plain text.
-    </div>
+:::note
+Applications are welcome to support more XML entities or HTML character references in their user interface.
+However, exporting must only use the core XML entities, translating any other entities into their corresponding Unicode characters.
+:::
 
 :::note
+Applications are welcome to support additional HTML elements,
+but they should ensure that content is meaningful if those extra elements are ignored and only their content text is displayed.
+:::
+
+
+:::note
+Media types are also used by external files, as described under `FORM`. External file media types are not limited to `text/plain` and `text/html`.
+:::
+
+If needed, `text/html` can be converted to `text/plain` using the following steps:
+
+1. Replace any sequence of 1 or more spaces, tabs, and line breaks with a single space
+2. Case-insensitively replace each `<p`...`>`, `</p`...`>`, and `<br`...`>` with a line break
+3. Remove all other `<`...`>` tags
+4. Replace each `&lt;` with `<` and `&gt;` with `>`
+5. Replace each `&amp;` with `&`
+
 Other `text` media types not discussed above are also permitted, though not recommended.
 If present, they are considered extensions.  Such extensions do not require an
 [extension tag](#extensions) because the definition of `g7:MIME` is sufficient
 to cover this kind of extension.
-:::
-
-:::note
-Media types are also used by external files, as described under `FORM`. External file media types are not limited to `text` types.
-:::
 
 #### `NAME` (Name) `g7:NAME`
 
@@ -1246,7 +1220,7 @@ This is metadata about the structure itself, not data about its subject.
 
 See `SOURCE_REPOSITORY_CITATION`.
 
-#### `REPO` (Repository) `g7.1:record-REPO`
+#### `REPO` (Repository) `g7:record-REPO`
 
 See `REPOSITORY_RECORD`.
 
@@ -1356,7 +1330,7 @@ See also `LDS_SPOUSE_SEALING`.
 A pointer to a note that is shared by multiple structures.
 See `NOTE_STRUCTURE` for more details.
 
-#### `SNOTE` (Shared note) `g7.1:record-SNOTE`
+#### `SNOTE` (Shared note) `g7:record-SNOTE`
 
 A note that is shared by multiple structures.
 See `SHARED_NOTE_RECORD` for more details.
@@ -1366,7 +1340,7 @@ See `SHARED_NOTE_RECORD` for more details.
 A description of the relevant part of a source to support the superstructure's data.
 See `SOURCE_CITATION` for more details.
 
-#### `SOUR` (Source) `g7.1:record-SOUR`
+#### `SOUR` (Source) `g7:record-SOUR`
 
 A description of an entire source.
 See `SOURCE_RECORD` for more details.
@@ -1405,7 +1379,7 @@ An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or co
 A contributor of information in the substructure.
 This is metadata about the structure itself, not data about its subject.
 
-#### `SUBM` (Submitter) `g7.1:record-SUBM`
+#### `SUBM` (Submitter) `g7:record-SUBM`
 
 A description of a contributor of information to the document.
 See `SUBMITTER_RECORD` for more details.
