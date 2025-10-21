@@ -11,5 +11,7 @@ enumeration values:
   - "https://gedcom.io/terms/v7/enum-DISPROVEN"
   - "https://gedcom.io/terms/v7/enum-PROVEN"
 
+standard: true
+
 contact: "https://gedcom.io/community/"
 ...

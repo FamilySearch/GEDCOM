@@ -76,7 +76,5 @@ superstructures: {}
 
 prerelease: true
 
-subsumes: https://gedcom.io/terms/v7/record-SNOTE
-
 contact: "https://gedcom.io/community/"
 ...

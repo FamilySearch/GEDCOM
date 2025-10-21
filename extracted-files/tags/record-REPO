@@ -49,7 +49,5 @@ superstructures: {}
 
 prerelease: true
 
-subsumes: https://gedcom.io/terms/v7/record-REPO
-
 contact: "https://gedcom.io/community/"
 ...
