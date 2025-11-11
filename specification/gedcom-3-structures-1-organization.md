@@ -856,6 +856,8 @@ n BASM [Y|<NULL>]                          {1:1}  g7:BASM
 |
 n BIRT [Y|<NULL>]                          {1:1}  g7:BIRT
   +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 KIND <Enum>                           {0:M}  g7.1:BIRT-KIND
+     +2 PHRASE                             {0:1}  g7:PHRASE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
   +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |

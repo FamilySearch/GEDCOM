@@ -15,6 +15,15 @@ Each set of enumeration values has its own URI.
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
+### `g7:enumset-BIRT-KIND`
+
+| Value       | Meaning |
+| :---------- | :------ |
+| `BORN_DEAD` | Birth of a dead child; died before birth concluded (and possibly before it began), and was not thereafter revived. |
+
+Note: there is no `OTHER` for this enumset, because `OTHER`.`PHRASE human-language text` would be redundant with `TYPE human-language text`.
+
+
 ### `g7:enumset-EVEN`
 
 An event-type tag name, but not the generic `EVEN` tag.
