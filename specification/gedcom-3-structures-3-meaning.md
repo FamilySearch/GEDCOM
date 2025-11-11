@@ -305,7 +305,7 @@ An enumerated value from set `g7:enumset-BIRT-KIND` indicating the type of birth
 There is some conceptual overlap between `BIRT`.`TYPE` and `BIRT`.`KIND`:
 
 - `BIRT`.`TYPE` is preferred for general-purpose human-readable information elaborating on the birth type.
-- `BIRT`.`KIND` is preferred for information that informs some programatic behaviors, such as creating a list of persons who were ever live (`BORN_DEAD`).
+- `BIRT`.`KIND` is preferred for information that informs some programmatic behaviors, such as creating a list of persons who were ever live (`BORN_DEAD`).
 
 
 
