@@ -1625,10 +1625,6 @@ Other descriptor values might include, for example,
 See also `FACT` and `EVEN` for additional examples.
 :::
 
-#### `TYPE` (Type) `g7:NAME-TYPE`
-
-An enumerated value from set `g7:enumset-NAME-TYPE` indicating the type of the name.
-
 #### `TYPE` (Type) `g7:EXID-TYPE`
 
 The authority issuing the `EXID`, represented as a URI.
@@ -1642,6 +1638,14 @@ Registered URIs are listed in the [exid-types registry](https://github.com/Famil
 
 Additional type URIs can be registered by filing a
 [GitHub pull request](https://github.com/FamilySearch/GEDCOM-registries/pulls).
+
+#### `TYPE` (Type) `g7:NAME-TYPE`
+
+An enumerated value from set `g7:enumset-NAME-TYPE` indicating the type of the name.
+
+#### `TYPE` (Type) `g7:NOTE-TYPE`
+
+An enumerated value from set `g7:enumset-NOTE-TYPE` indicating the type of the note.
 
 #### `UID` (Unique Identifier) `g7:UID`
 
