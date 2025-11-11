@@ -155,7 +155,7 @@ n HEAD                                     {1:1}  g7:HEAD
   +1 LANG <Language>                       {0:1}  g7:HEAD-LANG
   +1 PLAC                                  {0:1}  g7:HEAD-PLAC
      +2 FORM <List:Text>                   {1:1}  g7:HEAD-PLAC-FORM
-  +1 <<NOTE_STRUCTURE>>                    {0:1}
+  +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
 The header pseudo-structure provides metadata about the entire dataset.
@@ -378,6 +378,7 @@ n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7.1:record-SNOTE
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
+  +1 TYPE <Enum>                           {0:1}  g7.1:NOTE-TYPE
   +1 <<SOURCE_CITATION>>                   {0:M}
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<CHANGE_DATE>>                       {0:1}
@@ -1055,6 +1056,7 @@ n NOTE <Text>                              {1:1}  g7:NOTE
   +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
+  +1 TYPE <Enum>                           {0:1}  g7.1:NOTE-TYPE
   +1 <<SOURCE_CITATION>>                   {0:M}
 |
 n SNOTE @<XREF:SNOTE>@                     {1:1}  g7:SNOTE
