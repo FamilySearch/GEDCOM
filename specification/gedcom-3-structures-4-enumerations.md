@@ -21,8 +21,6 @@ Each set of enumeration values has its own URI.
 | :---------- | :------ |
 | `BORN_DEAD` | Birth of a dead child; died before birth concluded (and possibly before it began), and was not thereafter revived. |
 
-Note: there is no `OTHER` for this enumset, because `OTHER`.`PHRASE human-language text` would be redundant with `TYPE human-language text`.
-
 
 ### `g7:enumset-EVEN`
 
