@@ -298,9 +298,9 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `KIND` (Birth Kind) `g7:BIRT-KIND`
+#### `KIND` (Birth Kind) `g7.1:BIRT-KIND`
 
-An enumerated value from set `g7:enumset-BIRT-KIND` indicating the type of birth.
+An enumerated value from set `g7.1:enumset-BIRT-KIND` indicating the type of birth.
 
 There is some conceptual overlap between `BIRT`.`TYPE` and `BIRT`.`KIND`:
 
@@ -762,7 +762,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `INDI` (Individual) `g7:record-INDI`
+#### `INDI` (Individual) `g7.1:record-INDI`
 
 See `INDIVIDUAL_RECORD`.
 

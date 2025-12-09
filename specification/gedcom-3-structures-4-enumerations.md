@@ -15,7 +15,7 @@ Each set of enumeration values has its own URI.
 | `WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC`.<br/>The URI of this value is `g7:enum-ADOP-WIFE` |
 | `BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
-### `g7:enumset-BIRT-KIND`
+### `g7.1:enumset-BIRT-KIND`
 
 | Value       | Meaning |
 | :---------- | :------ |
