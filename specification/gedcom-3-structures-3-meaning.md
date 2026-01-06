@@ -298,6 +298,17 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
+#### `KIND` (Birth Kind) `g7.1:BIRT-KIND`
+
+An enumerated value from set `g7.1:enumset-BIRT-KIND` indicating the type of birth.
+
+There is some conceptual overlap between `BIRT`.`TYPE` and `BIRT`.`KIND`:
+
+- `BIRT`.`TYPE` is preferred for general-purpose human-readable information elaborating on the birth type.
+- `BIRT`.`KIND` is preferred for information that informs some programmatic behaviors
+    (such as creating a list of persons who were ever alive)
+    or to support automated translation into multiple languages.
+
 #### `BLES` (Blessing) `g7:BLES`
 
 An [Individual Event](#individual-events).
@@ -751,7 +762,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `INDI` (Individual) `g7:record-INDI`
+#### `INDI` (Individual) `g7.1:record-INDI`
 
 See `INDIVIDUAL_RECORD`.
 
