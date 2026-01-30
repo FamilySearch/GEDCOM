@@ -47,9 +47,10 @@ substructures:
 
 superstructures: {}
 
-prerelease: true
+subsumes:
+  - "https://gedcom.io/terms/v7/record-REPO"
 
-subsumes: https://gedcom.io/terms/v7/record-REPO
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

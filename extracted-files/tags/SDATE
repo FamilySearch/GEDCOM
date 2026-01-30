@@ -27,6 +27,14 @@ specification:
     effects on sorting. Including a month and day is encouraged to help different
     applications sort dates the same way, as the relative ordering of dates with
     different levels of precision is not well defined.
+  - |
+    Substructures that may be shared by most individual and family events and
+    attributes.
+    
+    Note that many of these substructures are limited to 1 per event. Conflicting
+    event information should be represented by placing them in separate event
+    structures (with appropriate source citations) rather than by placing them
+    under the same enclosing event.
 
 label: 'Sort date'
 

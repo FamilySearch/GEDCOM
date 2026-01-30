@@ -6,6 +6,12 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-ROLE
 
+specification:
+  - These should be interpreted in the context of the recorded event and its
+    primary participants. For example, if you cite a child’s birth record as the
+    source of the mother’s name, the value for this field is “`MOTH`.” If you
+    describe the groom of a marriage, the role is “`HUSB`.”
+
 enumeration values:
   - "https://gedcom.io/terms/v7/enum-CHIL"
   - "https://gedcom.io/terms/v7/enum-CLERGY"
@@ -17,11 +23,13 @@ enumeration values:
   - "https://gedcom.io/terms/v7/enum-MULTIPLE"
   - "https://gedcom.io/terms/v7/enum-NGHBR"
   - "https://gedcom.io/terms/v7/enum-OFFICIATOR"
+  - "https://gedcom.io/terms/v7/enum-OTHER"
   - "https://gedcom.io/terms/v7/enum-PARENT"
   - "https://gedcom.io/terms/v7/enum-SPOU"
   - "https://gedcom.io/terms/v7/enum-WIFE"
   - "https://gedcom.io/terms/v7/enum-WITN"
-  - "https://gedcom.io/terms/v7/enum-OTHER"
+
+standard: true
 
 contact: "https://gedcom.io/community/"
 ...

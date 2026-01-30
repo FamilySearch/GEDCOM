@@ -11,8 +11,20 @@ standard tag: 'NCHI'
 specification:
   - Number of children
   - A [Family Attribute]. See also `FAMILY_ATTRIBUTE_STRUCTURE`.
-  - number of children
+  - |
+    Family attributes; see [Family Attributes] for descriptions of each family
+    attribute type.
+    
+    <div class="note">
+    
+    Family attribute structures vary as follows:
+    
+    - `FAM`.`NCHI` has an [Integer] payload; others have [Text] payloads
+    - `FAM`.`FACT` requires `TYPE`; it's optional for others
+    
+    </div>
   - The number of children that belong to this family.
+  - number of children
 
 label: 'Number of children'
 

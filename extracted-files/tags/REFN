@@ -19,6 +19,24 @@ specification:
     This is metadata about the structure itself, not data about its subject.
     Multiple structures describing different aspects of the same subject must not
     have the same `REFN` value.
+  - |
+    <div class="deprecation">
+    
+    Having an `EXID` without an `EXID`.`TYPE` substructure is deprecated. The
+    meaning of an `EXID` depends on its `EXID`.`TYPE`. The cardinality of
+    `EXID`.`TYPE` will be changed to `{1:1}` in version 8.0.
+    
+    </div>
+    
+    Each of these provides an identifier for a structure or its subject, and each
+    is different in purpose:
+    
+    - `REFN` is a user-generated identifier for a structure.
+    
+    - `UID` is a globally-unique identifier for a structure.
+    
+    - `EXID` is an identifier maintained by an external authority that applies to
+      the subject of the structure.
 
 label: 'Reference'
 

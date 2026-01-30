@@ -15,8 +15,20 @@ specification:
     
     See `https://gedcom.io/terms/v7/INDI-RESI` for comments on the use of payload
     strings in `RESI` structures.
-  - residence
+  - |
+    Family attributes; see [Family Attributes] for descriptions of each family
+    attribute type.
+    
+    <div class="note">
+    
+    Family attribute structures vary as follows:
+    
+    - `FAM`.`NCHI` has an [Integer] payload; others have [Text] payloads
+    - `FAM`.`FACT` requires `TYPE`; it's optional for others
+    
+    </div>
   - An address or place of residence where a family resided.
+  - residence
 
 label: 'Residence'
 

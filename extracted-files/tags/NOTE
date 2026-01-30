@@ -17,6 +17,19 @@ specification:
     When a substructure of `HEAD`, it should describe the contents of the document
     in terms of "ancestors or descendants of" so that the person receiving the data
     knows what genealogical information the document contains.
+  - |
+    A catch-all location for information that does not fully fit within other
+    structures. It may include research notes, additional context, alternative
+    interpretations, reasoning, and so forth.
+    
+    Each `NOTE`.`TRAN` must have either a `MIME` or `LANG` substructure, and may
+    have both.
+    
+    See `SHARED_NOTE_RECORD` for advice on choosing between `NOTE` and `SNOTE`.
+    
+    A `NOTE_STRUCTURE` can contain a `SOURCE_CITATION`, which in turn can contain a
+    `NOTE_STRUCTURE`, allowing potentially unbounded nesting of structures. Because
+    each dataset is finite, this nesting is also guaranteed to be finite.
 
 label: 'Note'
 

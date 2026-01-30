@@ -36,7 +36,7 @@ specification:
 
 label: 'Source'
 
-payload: "@<https://gedcom.io/terms/v7/record-SOUR>@"
+payload: "@<https://gedcom.io/terms/v7.1/record-SOUR>@"
 
 substructures:
   "https://gedcom.io/terms/v7/NOTE": "{0:M}"

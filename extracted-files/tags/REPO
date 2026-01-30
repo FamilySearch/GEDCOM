@@ -20,7 +20,7 @@ specification:
 
 label: 'Repository'
 
-payload: "@<https://gedcom.io/terms/v7/record-REPO>@"
+payload: "@<https://gedcom.io/terms/v7.1/record-REPO>@"
 
 substructures:
   "https://gedcom.io/terms/v7/CALN": "{0:M}"
