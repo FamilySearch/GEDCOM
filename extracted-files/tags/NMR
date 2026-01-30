@@ -11,9 +11,22 @@ standard tag: 'NMR'
 specification:
   - Number of marriages
   - An [Individual Attribute]. See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
-  - number of marriages
+  - |
+    Individual attributes; see [Individual Attributes] for descriptions of each
+    individual attribute type..
+    
+    <div class="note">
+    
+    Individual attribute structures vary as follows:
+    
+    - `INDI`.`NCHI` and `NMR` have [Integer] payloads; `IDNO` and `SSN` have
+      [Special] payloads; others have [Text] payloads
+    - `INDI`.`FACT` and `IDNO` require `TYPE`; it's optional for others
+    
+    </div>
   - The number of times this person has participated in a family as a spouse or
     parent.
+  - number of marriages
 
 label: 'Number of marriages'
 

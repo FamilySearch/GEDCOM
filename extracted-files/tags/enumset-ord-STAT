@@ -6,19 +6,44 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-ord-STAT
 
+specification:
+  - |
+    These values were formerly used by The Church of Jesus Christ of Latter-day
+    Saints for coordinating between temples and members. They are no longer used in
+    that way, meaning their interpretation is subject to individual user
+    interpretation
+    
+    The definition of some of these values combined with the official policies of
+    the church mean that some values only make sense under a subset of [ordinance
+    structures]. These contexts are identified in the "applies to" column below,
+    and it is recommended that applications follow those guidelines. These
+    recommendations were not present when these enumeration values were first
+    introduced in version 5.3 so uses that do not conform to the "applies to"
+    guidelines may be encountered; if so, they should be treated by applications
+    like any other user-specified but semantically-strange data.
+    
+    The definition of some of these values combined with the official policies of
+    the church and the move of the church away from using GEDCOM for handling
+    ordinance requests make them redundant and/or no longer relevant. If so, that
+    is indicated in the "status" column below. Like the "applies to" column, the
+    "status" column is a recommendation, not a requirement, and applications should
+    be prepared to encounter non-current values.
+
 enumeration values:
   - "https://gedcom.io/terms/v7/enum-BIC"
   - "https://gedcom.io/terms/v7/enum-CANCELED"
   - "https://gedcom.io/terms/v7/enum-CHILD"
   - "https://gedcom.io/terms/v7/enum-COMPLETED"
-  - "https://gedcom.io/terms/v7/enum-EXCLUDED"
   - "https://gedcom.io/terms/v7/enum-DNS"
   - "https://gedcom.io/terms/v7/enum-DNS_CAN"
+  - "https://gedcom.io/terms/v7/enum-EXCLUDED"
   - "https://gedcom.io/terms/v7/enum-INFANT"
   - "https://gedcom.io/terms/v7/enum-PRE_1970"
   - "https://gedcom.io/terms/v7/enum-STILLBORN"
   - "https://gedcom.io/terms/v7/enum-SUBMITTED"
   - "https://gedcom.io/terms/v7/enum-UNCLEARED"
+
+standard: true
 
 contact: "https://gedcom.io/community/"
 ...

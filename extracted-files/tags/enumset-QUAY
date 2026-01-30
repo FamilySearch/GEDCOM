@@ -6,11 +6,25 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-QUAY
 
+specification:
+  - |
+    Although the values look like integers, they do not have numeric meaning.
+    
+    <div class="note">
+    
+    The structures for representing the strength of and confidence in various
+    claims are known to be inadequate and are likely to change in a future version
+    of this specification.
+    
+    </div>
+
 enumeration values:
   - "https://gedcom.io/terms/v7/enum-0"
   - "https://gedcom.io/terms/v7/enum-1"
   - "https://gedcom.io/terms/v7/enum-2"
   - "https://gedcom.io/terms/v7/enum-3"
+
+standard: true
 
 contact: "https://gedcom.io/community/"
 ...

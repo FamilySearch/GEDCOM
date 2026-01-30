@@ -11,8 +11,31 @@ standard tag: 'ORDN'
 specification:
   - Ordination
   - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
-  - ordination
+  - |
+    Individual events; see [Individual Events] for descriptions of each individual
+    event type.
+    
+    An event structure may be used to discuss an event even if the event is not
+    known to have occurred. See [Events] for a discussion of how `DATE`, `PLAC`,
+    and the optional `Y` payload indicate whether the structure is asserting the
+    event occurred. See the `NON_EVENT_STRUCTURE` for how to state an event did not
+    occur.
+    
+    <div class="note">
+    
+    Individual event structures vary as follows:
+    
+    - `INDI`.`EVEN` has a [Text] payload; others may have a `Y` payload
+    - `INDI`.`EVEN` requires `TYPE`; it's optional for others
+    - `BIRT` and `CHR` may have a `FAMC` with no substructures; `ADOP` may have a
+      `FAMC` with an optional `ADOP` substructure; others may not have a `FAMC`
+      substructure. The `FAMC` substructure can itself have substructures for
+      source citations and notes related to the child's relationship to parents,
+      and is the recommended place to store such information.
+    
+    </div>
   - Receiving authority to act in religious matters.
+  - ordination
 
 label: 'Ordination'
 

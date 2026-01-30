@@ -16,21 +16,21 @@ specification:
     (1 Tishrei 1) primarily overlapped with Gregorian 7 September 3761 BCE and
     Julian 7 October 3761 BCE (starting at sunset on the 6th day of those months).
     
-    | `stdTag` | Name                                                                  |
-    | :------- | :-------------------------------------------------------------------- |
-    | `TSH`    | Tishrei (תִּשְׁרֵי)                                                        |
-    | `CSH`    | Marcheshvan (מַרְחֶשְׁוָן) or Cheshvan (חֶשְׁוָן)                               |
-    | `KSL`    | Kislev (כִּסְלֵו)                                                         |
-    | `TVT`    | Tevet (טֵבֵת)                                                           |
-    | `SHV`    | Shevat (שְׁבָט)                                                          |
-    | `ADR`    | Adar I, Adar Rishon, First Adar, or Adar Aleph (אדר א׳)               |
-    | `ADS`    | Adar (אֲדָר); or Adar II, Adar Sheni, Second Adar, or Adar Bet (אדר ב׳) |
-    | `NSN`    | Nisan (נִיסָן)                                                          |
-    | `IYR`    | Iyar (אִייָר)                                                           |
-    | `SVN`    | Sivan (סִיוָן)                                                          |
-    | `TMZ`    | Tammuz (תַּמּוּז)                                                         |
-    | `AAV`    | Av (אָב)                                                               |
-    | `ELL`    | Elul (אֱלוּל)                                                           |
+    | `stdTag` | URI                                    | Name                                                                  |
+    | :------- | :------------------------------------- | :-------------------------------------------------------------------- |
+    | `TSH`    | `https://gedcom.io/terms/v7/month-TSH` | Tishrei (תִּשְׁרֵי)                                                        |
+    | `CSH`    | `https://gedcom.io/terms/v7/month-CSH` | Marcheshvan (מַרְחֶשְׁוָן) or Cheshvan (חֶשְׁוָן)                               |
+    | `KSL`    | `https://gedcom.io/terms/v7/month-KSL` | Kislev (כִּסְלֵו)                                                         |
+    | `TVT`    | `https://gedcom.io/terms/v7/month-TVT` | Tevet (טֵבֵת)                                                           |
+    | `SHV`    | `https://gedcom.io/terms/v7/month-SHV` | Shevat (שְׁבָט)                                                          |
+    | `ADR`    | `https://gedcom.io/terms/v7/month-ADR` | Adar I, Adar Rishon, First Adar, or Adar Aleph (אדר א׳)               |
+    | `ADS`    | `https://gedcom.io/terms/v7/month-ADS` | Adar (אֲדָר); or Adar II, Adar Sheni, Second Adar, or Adar Bet (אדר ב׳) |
+    | `NSN`    | `https://gedcom.io/terms/v7/month-NSN` | Nisan (נִיסָן)                                                          |
+    | `IYR`    | `https://gedcom.io/terms/v7/month-IYR` | Iyar (אִייָר)                                                           |
+    | `SVN`    | `https://gedcom.io/terms/v7/month-SVN` | Sivan (סִיוָן)                                                          |
+    | `TMZ`    | `https://gedcom.io/terms/v7/month-TMZ` | Tammuz (תַּמּוּז)                                                         |
+    | `AAV`    | `https://gedcom.io/terms/v7/month-AAV` | Av (אָב)                                                               |
+    | `ELL`    | `https://gedcom.io/terms/v7/month-ELL` | Elul (אֱלוּל)                                                           |
     
     To keep the lunar-based months synchronized with the solar-based years, some
     years have Adar I and others do not, instead proceeding from Shevat directly to

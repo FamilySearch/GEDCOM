@@ -24,6 +24,24 @@ specification:
     
     `EXID` identifiers are expected to be unique. Once assigned, an `EXID`
     identifier should never be re-used for any other purpose.
+  - |
+    <div class="deprecation">
+    
+    Having an `EXID` without an `EXID`.`TYPE` substructure is deprecated. The
+    meaning of an `EXID` depends on its `EXID`.`TYPE`. The cardinality of
+    `EXID`.`TYPE` will be changed to `{1:1}` in version 8.0.
+    
+    </div>
+    
+    Each of these provides an identifier for a structure or its subject, and each
+    is different in purpose:
+    
+    - `REFN` is a user-generated identifier for a structure.
+    
+    - `UID` is a globally-unique identifier for a structure.
+    
+    - `EXID` is an identifier maintained by an external authority that applies to
+      the subject of the structure.
 
 label: 'External Identifier'
 

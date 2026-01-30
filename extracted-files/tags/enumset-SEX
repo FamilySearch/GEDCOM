@@ -6,11 +6,19 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-SEX
 
+specification:
+  - This can describe an individual’s reproductive or sexual anatomy at birth.
+    Related concepts of gender identity or sexual preference are not currently
+    given their own tag. Cultural or personal gender preference may be indicated
+    using the `FACT` tag.
+
 enumeration values:
-  - "https://gedcom.io/terms/v7/enum-M"
   - "https://gedcom.io/terms/v7/enum-F"
-  - "https://gedcom.io/terms/v7/enum-X"
+  - "https://gedcom.io/terms/v7/enum-M"
   - "https://gedcom.io/terms/v7/enum-U"
+  - "https://gedcom.io/terms/v7/enum-X"
+
+standard: true
 
 contact: "https://gedcom.io/community/"
 ...

@@ -12,6 +12,7 @@ specification:
   - Age at event
   - The age of the individual at the time an event occurred. It is recommended that
     this be an age from a cited source document.
+  - Substructures shared by most individual events and attributes.
 
 label: 'Age at event'
 

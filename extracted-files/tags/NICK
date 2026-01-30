@@ -26,6 +26,30 @@ specification:
     without contradicting some existing data.
     
     </div>
+  - |
+    Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more details.
+    
+    <div class="example">
+    
+    "Lt. Cmndr. Joseph Allen jr.” might be presented as
+    
+    ```gedcom
+    1 NAME Lt. Cmndr. Joseph /Allen/ jr.
+    2 NPFX Lt. Cmndr.
+    2 GIVN Joseph
+    2 SURN Allen
+    2 NSFX jr.
+    ```
+    
+    </div>
+    
+    This specification does not define how the meaning of multiple parts with the
+    same tag differs from the meaning of a single part with a concatenated larger
+    payload. However, some applications allow the user to chose whether to combine
+    or split name parts, meaning the tag quantity should be treated as expressing
+    at least a user preference. Even when multiple `SURN` tags are used, the
+    `PersonalName` data type identifies a single surname substring between its
+    slashes.
 
 label: 'Nickname'
 

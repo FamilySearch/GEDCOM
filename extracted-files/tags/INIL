@@ -14,10 +14,13 @@ specification:
     Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part
     of 5.4 through 5.5.1. FamilySearch GEDCOM 7.0 reintroduced it with the name
     `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
-  - initiatory
+  - Ordinances performed by members of The Church of Jesus Christ of Latter-day
+    Saints; see [Latter-day Saint Ordinances] for descriptions of each ordinance
+    type.
   - A religious event where an initiatory ordinance for an individual was performed
     by priesthood authority in a temple of The Church of Jesus Christ of Latter-day
     Saints.
+  - initiatory
 
 label: 'Initiatory, Latter-Day Saint'
 

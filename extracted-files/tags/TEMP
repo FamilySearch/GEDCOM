@@ -14,6 +14,9 @@ specification:
     Previous versions recommended using a set of abbreviations for temple names,
     but the list of abbreviations is no longer published by the Church and using
     abbreviations is no longer recommended.
+  - Dates for these ordinances should be in the default (`GREGORIAN`) calendar and
+    be 1830 or later. These ordinances can be performed posthumously by proxy, and
+    the date may reflect that posthumous date.
 
 label: 'Temple'
 

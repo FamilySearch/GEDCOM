@@ -23,6 +23,14 @@ specification:
     must abide by some constraints: see [Removing data] for more details.
     
     This is metadata about the structure itself, not data about its subject.
+  - |
+    Substructures that may be shared by most individual and family events and
+    attributes.
+    
+    Note that many of these substructures are limited to 1 per event. Conflicting
+    event information should be represented by placing them in separate event
+    structures (with appropriate source citations) rather than by placing them
+    under the same enclosing event.
 
 label: 'Restriction'
 

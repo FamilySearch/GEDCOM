@@ -12,8 +12,10 @@ enumeration values:
   - "https://gedcom.io/terms/v7/enum-IMMIGRANT"
   - "https://gedcom.io/terms/v7/enum-MAIDEN"
   - "https://gedcom.io/terms/v7/enum-MARRIED"
-  - "https://gedcom.io/terms/v7/enum-PROFESSIONAL"
   - "https://gedcom.io/terms/v7/enum-OTHER"
+  - "https://gedcom.io/terms/v7/enum-PROFESSIONAL"
+
+standard: true
 
 contact: "https://gedcom.io/community/"
 ...

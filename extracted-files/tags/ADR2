@@ -22,7 +22,7 @@ specification:
     
     </div>
 
-label: 'Address Line 2'
+label: '(deprecated) Address Line 2'
 
 payload: http://www.w3.org/2001/XMLSchema#string
 

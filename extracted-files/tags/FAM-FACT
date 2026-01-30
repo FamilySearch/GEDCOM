@@ -11,6 +11,18 @@ standard tag: 'FACT'
 specification:
   - Fact
   - See `https://gedcom.io/terms/v7/INDI-FACT`.
+  - |
+    Family attributes; see [Family Attributes] for descriptions of each family
+    attribute type.
+    
+    <div class="note">
+    
+    Family attribute structures vary as follows:
+    
+    - `FAM`.`NCHI` has an [Integer] payload; others have [Text] payloads
+    - `FAM`.`FACT` requires `TYPE`; it's optional for others
+    
+    </div>
 
 label: 'Fact'
 

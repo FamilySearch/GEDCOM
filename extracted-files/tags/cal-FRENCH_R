@@ -17,21 +17,21 @@ specification:
     
     Permitted months are
     
-    | `stdTag` | Name                 |
-    | :------- | :------------------- |
-    | `VEND`   | Vendémiaire          |
-    | `BRUM`   | Brumaire             |
-    | `FRIM`   | Frimaire             |
-    | `NIVO`   | Nivôse               |
-    | `PLUV`   | Pluviôse             |
-    | `VENT`   | Ventôse              |
-    | `GERM`   | Germinal             |
-    | `FLOR`   | Floréal              |
-    | `PRAI`   | Prairial             |
-    | `MESS`   | Messidor             |
-    | `THER`   | Thermidor            |
-    | `FRUC`   | Fructidor            |
-    | `COMP`   | Jour Complémentaires |
+    | `stdTag` | URI                                     | Name                 |
+    | :------- | :-------------------------------------- | :------------------- |
+    | `VEND`   | `https://gedcom.io/terms/v7/month-VEND` | Vendémiaire          |
+    | `BRUM`   | `https://gedcom.io/terms/v7/month-BRUM` | Brumaire             |
+    | `FRIM`   | `https://gedcom.io/terms/v7/month-FRIM` | Frimaire             |
+    | `NIVO`   | `https://gedcom.io/terms/v7/month-NIVO` | Nivôse               |
+    | `PLUV`   | `https://gedcom.io/terms/v7/month-PLUV` | Pluviôse             |
+    | `VENT`   | `https://gedcom.io/terms/v7/month-VENT` | Ventôse              |
+    | `GERM`   | `https://gedcom.io/terms/v7/month-GERM` | Germinal             |
+    | `FLOR`   | `https://gedcom.io/terms/v7/month-FLOR` | Floréal              |
+    | `PRAI`   | `https://gedcom.io/terms/v7/month-PRAI` | Prairial             |
+    | `MESS`   | `https://gedcom.io/terms/v7/month-MESS` | Messidor             |
+    | `THER`   | `https://gedcom.io/terms/v7/month-THER` | Thermidor            |
+    | `FRUC`   | `https://gedcom.io/terms/v7/month-FRUC` | Fructidor            |
+    | `COMP`   | `https://gedcom.io/terms/v7/month-COMP` | Jour Complémentaires |
     
     No epoch marker is permitted in this calendar.
     

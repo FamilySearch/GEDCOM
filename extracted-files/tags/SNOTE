@@ -12,10 +12,23 @@ specification:
   - Shared note
   - A pointer to a note that is shared by multiple structures. See `NOTE_STRUCTURE`
     for more details.
+  - |
+    A catch-all location for information that does not fully fit within other
+    structures. It may include research notes, additional context, alternative
+    interpretations, reasoning, and so forth.
+    
+    Each `NOTE`.`TRAN` must have either a `MIME` or `LANG` substructure, and may
+    have both.
+    
+    See `SHARED_NOTE_RECORD` for advice on choosing between `NOTE` and `SNOTE`.
+    
+    A `NOTE_STRUCTURE` can contain a `SOURCE_CITATION`, which in turn can contain a
+    `NOTE_STRUCTURE`, allowing potentially unbounded nesting of structures. Because
+    each dataset is finite, this nesting is also guaranteed to be finite.
 
 label: 'Shared note'
 
-payload: "@<https://gedcom.io/terms/v7/record-SNOTE>@"
+payload: "@<https://gedcom.io/terms/v7.1/record-SNOTE>@"
 
 substructures: {}
 

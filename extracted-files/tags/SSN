@@ -11,9 +11,22 @@ standard tag: 'SSN'
 specification:
   - Social security number
   - An [Individual Attribute]. See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
-  - social security number
+  - |
+    Individual attributes; see [Individual Attributes] for descriptions of each
+    individual attribute type..
+    
+    <div class="note">
+    
+    Individual attribute structures vary as follows:
+    
+    - `INDI`.`NCHI` and `NMR` have [Integer] payloads; `IDNO` and `SSN` have
+      [Special] payloads; others have [Text] payloads
+    - `INDI`.`FACT` and `IDNO` require `TYPE`; it's optional for others
+    
+    </div>
   - A number assigned by the United States Social Security Administration, used for
     tax identification purposes. It is a type of `IDNO`.
+  - social security number
 
 label: 'Social security number'
 

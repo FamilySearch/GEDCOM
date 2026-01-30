@@ -6,9 +6,17 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-EVEN
 
+specification:
+  - |
+    An event-type tag name, but not the generic `EVEN` tag. See [Events].
+    
+    Most values in this enumeration set use the same tag and URI as the
+    corresponding event, except for tags used with different URIs for `FAM` vs
+    `INDI`:
+
 enumeration values:
-  - "https://gedcom.io/terms/v7/enum-CENS"
   - "https://gedcom.io/terms/v7/ADOP"
+  - "https://gedcom.io/terms/v7/ANUL"
   - "https://gedcom.io/terms/v7/BAPM"
   - "https://gedcom.io/terms/v7/BARM"
   - "https://gedcom.io/terms/v7/BASM"
@@ -20,24 +28,26 @@ enumeration values:
   - "https://gedcom.io/terms/v7/CONF"
   - "https://gedcom.io/terms/v7/CREM"
   - "https://gedcom.io/terms/v7/DEAT"
+  - "https://gedcom.io/terms/v7/DIV"
+  - "https://gedcom.io/terms/v7/DIVF"
   - "https://gedcom.io/terms/v7/EMIG"
+  - "https://gedcom.io/terms/v7/ENGA"
   - "https://gedcom.io/terms/v7/FCOM"
   - "https://gedcom.io/terms/v7/GRAD"
   - "https://gedcom.io/terms/v7/IMMI"
-  - "https://gedcom.io/terms/v7/NATU"
-  - "https://gedcom.io/terms/v7/ORDN"
-  - "https://gedcom.io/terms/v7/PROB"
-  - "https://gedcom.io/terms/v7/RETI"
-  - "https://gedcom.io/terms/v7/WILL"
-  - "https://gedcom.io/terms/v7/ANUL"
-  - "https://gedcom.io/terms/v7/DIV"
-  - "https://gedcom.io/terms/v7/DIVF"
-  - "https://gedcom.io/terms/v7/ENGA"
   - "https://gedcom.io/terms/v7/MARB"
   - "https://gedcom.io/terms/v7/MARC"
   - "https://gedcom.io/terms/v7/MARL"
   - "https://gedcom.io/terms/v7/MARR"
   - "https://gedcom.io/terms/v7/MARS"
+  - "https://gedcom.io/terms/v7/NATU"
+  - "https://gedcom.io/terms/v7/ORDN"
+  - "https://gedcom.io/terms/v7/PROB"
+  - "https://gedcom.io/terms/v7/RETI"
+  - "https://gedcom.io/terms/v7/WILL"
+  - "https://gedcom.io/terms/v7/enum-CENS"
+
+standard: true
 
 contact: "https://gedcom.io/community/"
 ...

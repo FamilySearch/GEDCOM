@@ -16,20 +16,20 @@ specification:
     
     Permitted months are
     
-    | `stdTag` | Name      |
-    | :------- | :-------- |
-    | `JAN`    | January   |
-    | `FEB`    | February  |
-    | `MAR`    | March     |
-    | `APR`    | April     |
-    | `MAY`    | May       |
-    | `JUN`    | June      |
-    | `JUL`    | July      |
-    | `AUG`    | August    |
-    | `SEP`    | September |
-    | `OCT`    | October   |
-    | `NOV`    | November  |
-    | `DEC`    | December  |
+    | `stdTag` | URI                                    | Name      |
+    | :------- | :------------------------------------- | :-------- |
+    | `JAN`    | `https://gedcom.io/terms/v7/month-JAN` | January   |
+    | `FEB`    | `https://gedcom.io/terms/v7/month-FEB` | February  |
+    | `MAR`    | `https://gedcom.io/terms/v7/month-MAR` | March     |
+    | `APR`    | `https://gedcom.io/terms/v7/month-APR` | April     |
+    | `MAY`    | `https://gedcom.io/terms/v7/month-MAY` | May       |
+    | `JUN`    | `https://gedcom.io/terms/v7/month-JUN` | June      |
+    | `JUL`    | `https://gedcom.io/terms/v7/month-JUL` | July      |
+    | `AUG`    | `https://gedcom.io/terms/v7/month-AUG` | August    |
+    | `SEP`    | `https://gedcom.io/terms/v7/month-SEP` | September |
+    | `OCT`    | `https://gedcom.io/terms/v7/month-OCT` | October   |
+    | `NOV`    | `https://gedcom.io/terms/v7/month-NOV` | November  |
+    | `DEC`    | `https://gedcom.io/terms/v7/month-DEC` | December  |
     
     The epoch marker `BCE` is permitted in this calendar; year *y* BCE indicates a
     year *y* years before year 1. Thus, there is no year 0; year 1 BCE was followed
@@ -54,7 +54,7 @@ months:
   - "https://gedcom.io/terms/v7/month-DEC"
 
 epochs:
-  - BCE
+  - "BCE"
 
 contact: "https://gedcom.io/community/"
 ...
