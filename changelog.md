@@ -1,6 +1,6 @@
 # Version 7.0.17
 
-- Add URI, Latitude, and Longitude data types.
+- Add URI, Latitude, Longitude, and Tag definition data types.
     
     Previously the formats permitted for these were specified in plain text with the corresponding structure types.
     Those definitions have been moved to the data types section to better match how other data types are defined in the specification.
