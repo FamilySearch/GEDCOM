@@ -1,3 +1,46 @@
+# Version 7.0.17
+
+- Add URI, Latitude, Longitude, and Tag definition data types.
+    
+    Previously the formats permitted for these were specified in plain text with the corresponding structure types.
+    Those definitions have been moved to the data types section to better match how other data types are defined in the specification.
+
+- Clarify the deprecation of older extensions that use non-underscore tags.
+
+    These violated the standard in both 7.0 and 5.5.1, but exist in the wild and there was unclear text "deprecating" them when they were never supported to begin with. That has been changed to be more clear about when it is an extension-defined substructure and when it violates the specification.
+
+- Clarify how file paths encode non-ASCII characters.
+
+- Clarify rules for pointer-based cycles:
+    
+    - A cycle asserting someone is their own ancestor (such as being both the `CHIL` and `FAMS` of the same person) is unlikely to be correct, but is permitted by GEDCOM.
+    
+    - A self-referential `ALIA` is (`INDI`.`AILA` pointing to the `INDI`) is meaningless and prohibited.
+    
+    - A `SOUR`-`OBJE` cycle (the source of an image is the image itself) is meaningless and prohibited.
+
+- Clarify that extension media types for notes (such as `text/markdown` that several applications are known to employ) do not require extension tags, being covered by the existing standard.
+
+- Clarify the wording of the `ELECTRONIC` enumerated value.
+
+- Clarify the wording of the `AGE` structure generally and `HUSB`.`AGE` and `WIFE`.`AGE` in particular.
+
+- Add example of `PHRASE` used with a non-`OTHER` enumeration value.
+
+- Update UUID defintion from RFC 4122 to RFC 9562
+
+- Remove redundant and confusing references to RFC 3986, which were subsumed by existing references to WHATWG URL.
+
+- Note that `FILE` payloads and GEDZIP file paths follow distinct standards, with the former using percent-escaping but the latter not.
+
+- Note that GEDZIP inherits from zip the ability to have multiple levels of compression, with some suggestions on performance implications of the chosen compression level.
+
+- Note that GEDZIP inherits from zip the ability to encrypt file contents, but not file names or sizes.
+
+- Note how `ALIA` is known to be used by existing applications and users.
+
+- Various typo corrections.
+
 # Version 7.0.16
 
 - Recommend that `ASSO` not be used to replicate other standard structures.
