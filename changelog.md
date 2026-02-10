@@ -7,7 +7,7 @@
 
 - Clarify the deprecation of older extensions that use non-underscore tags.
 
-    These violated the standard in both 7.0 and 5.5.1, but exist in the wild and there was unclear text "deprecating" them when they were never supported to being with. That has been changed to be more clear about when it is an extension-defined substructure and when it violated the specification.
+    These violated the standard in both 7.0 and 5.5.1, but exist in the wild and there was unclear text "deprecating" them when they were never supported to begin with. That has been changed to be more clear about when it is an extension-defined substructure and when it violated the specification.
 
 - Clarify how file paths encode non-ASCII characters.
 
