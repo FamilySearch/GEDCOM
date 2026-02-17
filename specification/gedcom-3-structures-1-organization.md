@@ -1100,7 +1100,7 @@ Leonardo da Vinci might have a name structure like this:
 There are other ways this could be encoded; how many parts and forms to add is up to the user.
 :::
 
-The decision of whether two name forms count as a variants of a single name or as distinct names varies by culture and individual.
+The decision of whether two name forms count as variants of a single name or as distinct names varies by culture and individual.
 
 It is common for much of each name form to be identified in a name part,
 but there many be components of a name with no identified name part
