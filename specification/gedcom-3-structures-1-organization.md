@@ -1097,7 +1097,7 @@ Leonardo da Vinci might have a name structure like this:
 3 TYPE LOCATION
 ```
 
-There are other ways this could be encoded; the how many parts and forms to add is up to the user.
+There are other ways this could be encoded; how many parts and forms to add is up to the user.
 :::
 
 The decision of whether two name forms count as a variants of a single name or as distinct names varies by culture and individual.
