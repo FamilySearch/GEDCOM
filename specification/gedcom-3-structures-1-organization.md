@@ -1102,7 +1102,7 @@ There are other ways this could be encoded; the how many parts and forms to add 
 
 The decision of whether two name forms count as a variants of a single name or as distinct names varies by culture and individual.
 
-It is common for much of each name form to be identified in an name part,
+It is common for much of each name form to be identified in a name part,
 but there many be components of a name with no identified name part
 and name parts that do not appear in any name form.
 
