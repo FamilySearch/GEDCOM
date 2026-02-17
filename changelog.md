@@ -1,3 +1,7 @@
+# Version 7.0.18
+
+- Fixed typo in the ABNF for the Longitude data type introduced in 7.0.17. Because ABNF is machine-readable, this typo caused some applications using 7.0.17 to fail to parse valid data. 7.0.17 should not be used by applications utilizing the ABNF in the specification in their tooling.
+
 # Version 7.0.17
 
 - Add URI, Latitude, Longitude, and Tag definition data types.
