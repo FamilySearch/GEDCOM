@@ -295,7 +295,7 @@ The researcher-preferred name form is indicated by its being the first `FORM` of
 | `NPFX` | Text that appears on a name line before the given and surname parts of a name. Implies that the person attaches this part to their name, but does not consider it part of the name itself. |
 | `NSFX` | Text which appears on a name line after or behind the given and surname parts of a name. Implies that the person attaches this part to their name, but does not consider it part of the name itself. |
 | `PARTICLE` | A name part that connects or modifies other name parts but is not itself considered a name, like "of" or "son of". | 
-| `PATERNAL` | A name inherited from the individuals' father's family. Implies `SURN`. |
+| `PATERNAL` | A name inherited from the individual's father's family. Implies `SURN`. |
 | `PATRONYMIC` | A name of the individual's father, possibly with a patronymic modifier like prefix "bar" or "di ser" or suffix "sen" or "dotter". |
 | `PRIMARY` | The name of most prominent in importance among the names of that type. Requires `GIVN`, `SURN`, `NPFX`, or `NSFX`. |
 | `PROFESSIONAL` | Name used professionally (pen, screen, stage name). |
