@@ -280,7 +280,7 @@ The researcher-preferred name form is indicated by its being the first `FORM` of
 | `ESTATE` | House name, farm name, or name after moving into or marrying into a house/farm. Implies `LOCATION`. Incompatible with `SURN`. | |
 | `FORMAL` | A name only used official, formal settings. |
 | `GENERAL` | A name used in a wide variety of settings, both formal and informal. |
-| `GENERATIONAL` | A name part shared by particular generation of a family (i.e. siblings or first cousins, but not their parents or children). Implies a cultural pattern of sharing this part, not just a particular family's aesthetic naming patterns. |
+| `GENERATIONAL` | A name part shared by particular generation of a family (i.e., siblings or first cousins, but not their parents or children). Implies a cultural pattern of sharing this part, not just a particular family's aesthetic naming patterns. |
 | `GIVN` | A name given to an individual by someone's choice, rather than dictated by the rules of the culture, often to be used to identify that individual that individual and differentiate them from other members of the same family or community. Incompatible with `SURN`. |
 | `HONORIFIC` | A word or phrase attached to a name in formal or polite context to indicate station, such as "Miss", "Doctor", "さん", "様", "mademoiselle", and so on. |
 | `IMMIGRANT` | Name assumed at the time of immigration. |
