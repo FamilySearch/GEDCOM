@@ -230,14 +230,83 @@ and applications should be prepared to encounter non-current values.
 | `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 | `UNCLEARED` | All | Data for clearing the ordinance request was insufficient. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 
-### `g7:enumset-NAME-TYPE`
+### `g8:enumset-NAME-TYPE`
 
 | Value | Meaning                       |
 | ----- | :---------------------------- |
+| `ADOPTED` | Given as part of being adopted into a family. |
 | `AKA` | Also known as, alias, etc. |
 | `BIRTH` | Name given at or near birth. |
+| `DIVORCED` | Name used after a divorce. |
+| `FORMAL` | A name only used official, formal settings. |
+| `GENERAL` | A name used in a wide variety of settings, both formal and informal. |
+| `NICK` | A descriptive or familiar name that is used instead of, or in addition to, one’s official or legal name. Some cultures use this for any name that is not used in legal documents, others only for names that would be inappropriate in formal settings. |
 | `IMMIGRANT` | Name assumed at the time of immigration. |
+| `INFORMAL` | A name only used in casual, intimate, or informal settings. |
+| `LEGAL` | A name used for legal and official documents, but not in daily use. |
 | `MAIDEN` | Maiden name, name before first marriage. |
 | `MARRIED` | Married name, assumed as part of marriage. |
 | `PROFESSIONAL` | Name used professionally (pen, screen, stage name). |
-| `OTHER` | A value not listed here; should have a `PHRASE` substructure |
+| `RELIGIOUS` | Religious name, name adopted when joining a religious order. |
+| `VARIANT` | Different spelling for a name, also spellings based on other languages such as Latin, French. |
+| `OTHER` | A value not listed here; should have a `PHRASE` substructure. |
+
+Five of these types deserve additional comparison:
+
+- A `LEGAL` name would be used on a contract but not in formal or informal settings
+- A `FORMAL` would be used in formal settings but not informal ones; it is generally also used on contracts unless a different `LEGAL` name is present.
+- A `GENERAL` name is used in both formal and informal settings, and on contracts unless a different `LEGAL` name is present.
+- An `INFORMAL` name is used in informal settings but not in formal ones.
+- A `NICK` is in some way unofficial, though exactly how varies by culture and individual, and may have any of the other types listed here.
+
+### `g8:enumset-NAME-FORM-TYPE`
+
+| Value | Meaning                       |
+| ----- | :---------------------------- |
+| `FULL` | How a name is displayed when written out in full. Incompatible with `SHORT`. |
+| `SHORT` | An abbreviated version of a name. Incompatible with `SHORT`. |
+| `INFERRED` | A form not found in a source, but inferred from what was in the source and the local naming patterns. |
+| `OTHER` | A value not listed here; should have a `PHRASE` substructure. |
+
+It is expected that many name forms will have no `TYPE`.
+The researcher-preferred name form is indicated by its being the first `FORM` of the `NAME`, not by any `TYPE` value.
+
+### `g8:enumset-NAME-PART-TYPE`
+
+| Value | Meaning                       |
+| ----- | :---------------------------- |
+| `ADOPTED` | Given as part of being adopted into a family. |
+| `DIVORCED` | Name used after a divorce. |
+| `ESTATE` | House name, farm name, or name after moving into or marrying into a house/farm. Implies `LOCATION`. Incompatible with `SURN`. | |
+| `FORMAL` | A name only used official, formal settings. |
+| `GENERAL` | A name used in a wide variety of settings, both formal and informal. |
+| `GENERATIONAL` | A name part shared by particular generation of a family (i.e., siblings or first cousins, but not their parents or children). Implies a cultural pattern of sharing this part, not just a particular family's aesthetic naming patterns. |
+| `GIVN` | A name given to an individual by someone's choice, rather than dictated by the rules of the culture, often to be used to identify that individual that individual and differentiate them from other members of the same family or community. Incompatible with `SURN`. |
+| `HONORIFIC` | A word or phrase attached to a name in formal or polite context to indicate station, such as "Miss", "Doctor", "さん", "様", "mademoiselle", and so on. |
+| `IMMIGRANT` | Name assumed at the time of immigration. |
+| `INFORMAL` | A name only used in casual, intimate, or informal settings. |
+| `LEGAL` | A name used for legal and official documents, but not in daily use. |
+| `LOCATION` | A name indicating a location of note, such as a city associated with the person. Often includes "of" or "from" type particles. Incompatible with `SURN`. |
+| `MAIDEN` | Maiden name, name before first marriage. |
+| `MARRIED` | Married name, assumed as part of marriage. |
+| `MATERNAL` | A name inherited from the individuals' mother's family. Implies `SURN`. |
+| `MATRONYMIC` | A name of the individual's mother, possibly with a matronymic modifier. |
+| `NICK` | A descriptive or familiar name that is used instead of, or in addition to, one’s official or legal name. Some cultures use this for any name that is not used in legal documents, others only for names that would be inappropriate in formal settings. |
+| `NPFX` | Text that appears on a name line before the given and surname parts of a name. Implies that the person attaches this part to their name, but does not consider it part of the name itself. |
+| `NSFX` | Text which appears on a name line after or behind the given and surname parts of a name. Implies that the person attaches this part to their name, but does not consider it part of the name itself. |
+| `PARTICLE` | A name part that connects or modifies other name parts but is not itself considered a name, like "of" or "son of". | 
+| `PATERNAL` | A name inherited from the individual's father's family. Implies `SURN`. |
+| `PATRONYMIC` | A name of the individual's father, possibly with a patronymic modifier like prefix "bar" or "di ser" or suffix "sen" or "dotter". |
+| `PRIMARY` | The name of most prominent in importance among the names of that type. Requires `GIVN`, `SURN`, `NPFX`, or `NSFX`. |
+| `PROFESSIONAL` | Name used professionally (pen, screen, stage name). |
+| `RANK` | A designation of rank or position, for example in a military ("private first class"), nobility ("viscount de Spoelberch"), or  educational ("Ph.D.") system. |
+| `RELIGIOUS` | Religious name, name adopted when joining a religious order. |
+| `ROEPNAAM` | A name provided at birth for use in all situations except legal documents. Implies `GIVN` and `BIRTH`. The tag of this value comes from Dutch instead of English because no suitable English word was found; the value does not imply Dutch culture or ancestry. |
+| `RUFNAME` | A given name underlined or otherwise indicated on documents as one not to be omitted when only one given name is used. Implies `GIVN` and `PRIMARY`. The tag of this value comes from German instead of English because no suitable English word was found; the value does not imply German culture or ancestry. |
+| `SPFX` | A name piece used as a non-indexing pre-part of a surname. Should be displayed as part of surname, but ignored when sorting by surname. |
+| `SURN` | A family name passed on or used by members of a family. Because `SURN` was part of GEDCOM before most other non-`GIVN` name part types, some existing data labels name parts as `SURN` that are more correctly labeled as `LOCATION` or `PATRONYMIC`; that use of `SURN` is not recommended for new data. Incompatible with `GIVN`. |
+| `UNIFIED` | Unified spelling for a name part. Usually, though not always, paired with `VARIANT` and `SURN`. |
+| `VARIANT` | Different spelling for a name, such as an alternative spelling or gendered form; generally used for variants that are not part the name's written forms but may be useful for indexing or searching. |
+| `OTHER` | A value not listed here; should have a `PHRASE` substructure. |
+
+See also `g8:enumset-NAME-TYPE` for comparisons of some of these values.

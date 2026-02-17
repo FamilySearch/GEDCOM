@@ -1048,64 +1048,91 @@ See `SHARED_NOTE_RECORD` for advice on choosing between `NOTE` and `SNOTE`.
 
 A `NOTE_STRUCTURE` can contain a `SOURCE_CITATION`, which in turn can contain a `NOTE_STRUCTURE`, allowing potentially unbounded nesting of structures. Because each dataset is finite, this nesting is also guaranteed to be finite.
 
-
-
-#### `PERSONAL_NAME_PIECES` :=
-
-```gedstruct
-n NPFX <Text>                              {0:M}  g7:NPFX
-n GIVN <Text>                              {0:M}  g7:GIVN
-n NICK <Text>                              {0:M}  g7:NICK
-n SPFX <Text>                              {0:M}  g7:SPFX
-n SURN <Text>                              {0:M}  g7:SURN
-n NSFX <Text>                              {0:M}  g7:NSFX
-```
-
-Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more details.
-
-:::example
-"Lt. Cmndr. Joseph Allen jr.” might be presented as
-
-```gedcom
-1 NAME Lt. Cmndr. Joseph /Allen/ jr.
-2 NPFX Lt. Cmndr.
-2 GIVN Joseph
-2 SURN Allen
-2 NSFX jr.
-```
-:::
-
-This specification does not define how the meaning of multiple parts with the same tag differs from the meaning of a single part with a concatenated larger payload.
-However, some applications allow the user to chose whether to combine or split name parts, meaning the tag quantity should be treated as expressing at least a user preference.
-Even when multiple `SURN` tags are used, the `PersonalName` data type identifies a single surname substring between its slashes.
-
 #### `PERSONAL_NAME_STRUCTURE` :=
 
 ```gedstruct
-n NAME <PersonalName>                      {1:1}  g7:INDI-NAME
-  +1 TYPE <Enum>                           {0:1}  g7:NAME-TYPE
+n NAME                                     {1:1}  g8:INDI-NAME
+  +1 TYPE <List:Enum>                      {0:1}  g8:NAME-TYPE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
-  +1 <<PERSONAL_NAME_PIECES>>              {0:1}
-  +1 TRAN <PersonalName>                   {0:M}  g7:NAME-TRAN
-     +2 LANG <Language>                    {1:1}  g7:LANG
-     +2 <<PERSONAL_NAME_PIECES>>           {0:1}
+  +1 PART <Text>                           {0:M}  g8:NAME-PART
+     +2 TYPE <List:Enum>                   {1:1}  g8:NAME-PART-TYPE
+     +2 LANG <Language>                    {0:1}  g7:LANG
+     +2 TRAN <Text>                        {0:M}  g8:TRAN
+        +3 LANG <Language>                 {1:1}  g7:LANG
+     +2 DATE <DateValue>                   {0:M}  g7:DATE
+     +2 <<SOURCE_CITATION>>                {0:M}
+  +1 FORM <Text>                           {1:M}  g8:NAME-FORM
+     +2 TYPE <List:Enum>                   {0:1}  g8:NAME-FORM-TYPE
+     +2 LANG <Language>                    {0:1}  g7:LANG
+     +2 TRAN <Text>                        {0:M}  g8:TRAN
+        +3 LANG <Language>                 {1:1}  g7:LANG
+     +2 DATE <DateValue>                   {0:M}  g7:DATE
+     +2 <<SOURCE_CITATION>>                {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
-  +1 <<SOURCE_CITATION>>                   {0:M}
 ```
 
-Names of individuals are represented in the manner the name is normally spoken, with the family name, surname, or nearest cultural parallel thereunto separated by slashes (U+002F `/`). Based on the dynamic nature or unknown compositions of naming conventions, it is difficult to provide a more detailed name piece structure to handle every case. The `PERSONAL_NAME_PIECES` are provided optionally for systems that cannot operate effectively with less structured information. The Personal Name payload shall be seen as the primary name representation, with name pieces as optional auxiliary information; in particular it is recommended that all name parts in `PERSONAL_NAME_PIECES` appear within the `PersonalName` payload in some form, possibly adjusted for gender-specific suffixes or the like.
-It is permitted for the payload to contain information not present in any name piece substructure.
+A name identifying an individual, which may have multiple forms and be composed of multiple parts.
+Both name forms and name parts are called "names" in some situations, but may be distinguished as follows:
 
-The name may be translated or transliterated into different languages or scripts using the `TRAN` substructure.
-It is recommended, but not required, that if the name pieces are used, the same pieces are used in each translation and transliteration.
+- A `g8:NAME-FORM` stores a string used to identify the individual by name; for example "`John Farmer`".
+- A `g8:NAME-PART` stores a distinct component of a name; for example, "`John`".
+- A `g8:INDI-NAME` stores all the variants and parts of an individual's name that are considered part of a single name.
 
-A `TYPE` is used to specify the particular variation that this name is.
-For example; it could indicate that this name is a name taken at immigration or that it could be an ‘also known as’ name.
-See `g7:enumset-NAME-TYPE` for more details.
+:::example
+Leonardo da Vinci might have a name structure like this:
 
-:::note
-Alternative approaches to representing names are being considered for future versions of this specification.
+```gedcom
+1 NAME
+2 FORM Leonardo da Vinci
+2 FORM Leonardo di ser Piero da Vinci
+2 PART Leonardo
+3 TYPE GIVN
+2 PART di ser Piero
+3 TYPE PATRONYMIC
+2 PART da Vinci
+3 TYPE LOCATION
+2 PART da
+3 TYPE PARTICLE
+2 PART Vinci
+3 TYPE LOCATION
+```
+
+There are other ways this could be encoded; how many parts and forms to add is up to the user.
 :::
+
+The decision of whether two name forms count as variants of a single name or as distinct names varies by culture and individual.
+
+It is common for much of each name form to be identified in a name part,
+but there many be components of a name with no identified name part
+and name parts that do not appear in any name form.
+
+:::example
+The Polish family name `Kowalski` has a feminine variant `Kowalska` and plural variant `Kowalscy`.
+Including all three variants as name parts even though only one appears in any name form may facilitate searching and indexing in some applications.
+
+```gedcom
+1 NAME
+2 FORM Alfred Jan Maksymillian Kowalski
+2 PART Kowalski
+3 TYPE SURN
+2 PART Kowalska
+3 TYPE SURN, HIDDEN
+2 PART Kowalscy
+3 TYPE SURN, HIDDEN
+```
+:::
+
+As with other structures, the first `NAME` in and `INDI` provides the most-preferred name
+and its first `FORM` structure provides the most-preferred form of that name.
+It is recommended that the first form of the first name be used to label individuals in a user interface or report when a single name string is desired.
+
+The order of name parts is not significant; name parts may be reorganized within a name without any change in meaning.
+
+The name may be translated or transliterated into different languages or scripts using the `TRAN` substructures.
+
+A `TYPE` is used to specify the particular variation that this name, name part, or name form is.
+For example; it could indicate that this name is a name taken at immigration or that it could be an ‘also known as’ name.
+See `g8:enumset-NAME-TYPE`, `g8:enumset-NAME-PART-TYPE`, and `g8:enumset-NAME-FORM-TYPE` for more details.
 
 #### `PLACE_STRUCTURE` :=
 
