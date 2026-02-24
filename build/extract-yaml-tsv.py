@@ -342,7 +342,7 @@ def all_uri_section_text(txt:str, pfx:dict[str,str], data:dict[str,Concept]) -> 
 
   types:dict[str,str] = {} # {"<List:Enum>": "g7:type-List#Enum"}
   enum_has:dict[str,list[str]] = {} # {"event": ["g7:enumset-EVENATTR", "g7:enumset-EVEN"]}
-  aux:dict[str,str] = {}  # {"TRAN": text of the section about all TRAN-taged structures}
+  aux:dict[str,str] = {}  # {"TRAN": text of the section about all TRAN-tagged structures}
   
   # Loop through each markdown section
   bits = re.split(r'\s*^#+ *([^\n{]*)[^\n]*\s*', txt, flags=re.M)
