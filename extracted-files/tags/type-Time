@@ -35,5 +35,7 @@ specification:
     
     The URI for the `Time` data type is `https://gedcom.io/terms/v7/type-Time`.
 
+label: 'Time'
+
 contact: "https://gedcom.io/community/"
 ...

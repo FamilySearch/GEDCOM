@@ -12,6 +12,9 @@ specification:
   - Status
   - An enumerated value from set `https://gedcom.io/terms/v7/enumset-ord-STAT`
     assessing of the state or condition of an ordinance.
+  - Dates for these ordinances should be in the default (`GREGORIAN`) calendar and
+    be 1830 or later. These ordinances can be performed posthumously by proxy, and
+    the date may reflect that posthumous date.
 
 label: 'Status'
 

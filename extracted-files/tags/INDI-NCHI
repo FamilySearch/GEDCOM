@@ -11,9 +11,22 @@ standard tag: 'NCHI'
 specification:
   - Number of children
   - An [Individual Attribute]. See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
-  - number of children
+  - |
+    Individual attributes; see [Individual Attributes] for descriptions of each
+    individual attribute type..
+    
+    <div class="note">
+    
+    Individual attribute structures vary as follows:
+    
+    - `INDI`.`NCHI` and `NMR` have [Integer] payloads; `IDNO` and `SSN` have
+      [Special] payloads; others have [Text] payloads
+    - `INDI`.`FACT` and `IDNO` require `TYPE`; it's optional for others
+    
+    </div>
   - The number of children that this person is known to be the parent of (all
     marriages).
+  - number of children
 
 label: 'Number of children'
 

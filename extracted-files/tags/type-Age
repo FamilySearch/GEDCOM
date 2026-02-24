@@ -73,5 +73,7 @@ specification:
     
     The URI for the `Age` data type is `https://gedcom.io/terms/v7/type-Age`.
 
+label: 'Age'
+
 contact: "https://gedcom.io/community/"
 ...

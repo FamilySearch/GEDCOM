@@ -1,13 +1,13 @@
-https://gedcom.io/terms/v7/FAMC-ADOP	https://gedcom.io/terms/v7/enumset-ADOP
 https://gedcom.io/terms/v7/DATA-EVEN	https://gedcom.io/terms/v7/enumset-EVENATTR
-https://gedcom.io/terms/v7/SOUR-EVEN	https://gedcom.io/terms/v7/enumset-EVENATTR
+https://gedcom.io/terms/v7/FAMC-ADOP	https://gedcom.io/terms/v7/enumset-ADOP
+https://gedcom.io/terms/v7/FAMC-STAT	https://gedcom.io/terms/v7/enumset-FAMC-STAT
 https://gedcom.io/terms/v7/MEDI	https://gedcom.io/terms/v7/enumset-MEDI
+https://gedcom.io/terms/v7/NAME-TYPE	https://gedcom.io/terms/v7/enumset-NAME-TYPE
 https://gedcom.io/terms/v7/NO	https://gedcom.io/terms/v7/enumset-EVEN
 https://gedcom.io/terms/v7/PEDI	https://gedcom.io/terms/v7/enumset-PEDI
 https://gedcom.io/terms/v7/QUAY	https://gedcom.io/terms/v7/enumset-QUAY
 https://gedcom.io/terms/v7/RESN	https://gedcom.io/terms/v7/enumset-RESN
 https://gedcom.io/terms/v7/ROLE	https://gedcom.io/terms/v7/enumset-ROLE
 https://gedcom.io/terms/v7/SEX	https://gedcom.io/terms/v7/enumset-SEX
+https://gedcom.io/terms/v7/SOUR-EVEN	https://gedcom.io/terms/v7/enumset-EVENATTR
 https://gedcom.io/terms/v7/ord-STAT	https://gedcom.io/terms/v7/enumset-ord-STAT
-https://gedcom.io/terms/v7/FAMC-STAT	https://gedcom.io/terms/v7/enumset-FAMC-STAT
-https://gedcom.io/terms/v7/NAME-TYPE	https://gedcom.io/terms/v7/enumset-NAME-TYPE

@@ -33,5 +33,7 @@ specification:
     The URI for the `Longitude` data type is
     `https://gedcom.io/terms/v7/type-Longitude`.
 
+label: 'Longitude'
+
 contact: "https://gedcom.io/community/"
 ...

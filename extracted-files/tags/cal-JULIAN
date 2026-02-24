@@ -42,7 +42,7 @@ months:
   - "https://gedcom.io/terms/v7/month-DEC"
 
 epochs:
-  - BCE
+  - "BCE"
 
 contact: "https://gedcom.io/community/"
 ...

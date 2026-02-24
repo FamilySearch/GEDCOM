@@ -29,6 +29,19 @@ specification:
     ```
     
     </div>
+  - |
+    Individual attributes; see [Individual Attributes] for descriptions of each
+    individual attribute type..
+    
+    <div class="note">
+    
+    Individual attribute structures vary as follows:
+    
+    - `INDI`.`NCHI` and `NMR` have [Integer] payloads; `IDNO` and `SSN` have
+      [Special] payloads; others have [Text] payloads
+    - `INDI`.`FACT` and `IDNO` require `TYPE`; it's optional for others
+    
+    </div>
 
 label: 'Fact'
 
