@@ -227,7 +227,7 @@ class StructSet:
     populates this StructSet with all of those structures.
     
     Populates only data available from gedstruct: tag, sub- and super-structure, abbreviated uri,
-    and the payload type strings in gedstruct (e.g. <List:Enum> not that URI of that).
+    and the payload type strings in gedstruct (e.g., <List:Enum> not that URI of that).
     """
     
     def mix_card(c1,c2):
