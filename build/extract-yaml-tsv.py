@@ -102,7 +102,7 @@ class Concept:
     self.deprecated = False
     
   def set(self, name:str, value:str):
-    """A helper to verify that information that has only one value is givne consistently across all instances."""
+    """A helper to verify that information that has only one value is given consistently across all instances."""
     assert name in self.__dict__, "Can only set known attributes"
     if self.__dict__[name] is None: self.__dict__[name] = value
     else: assert self.__dict__[name] == value, f"Only one value allowed for {name!r} of {self.uri}; was {self.__dict__[name]!r}, now {value!r}"
