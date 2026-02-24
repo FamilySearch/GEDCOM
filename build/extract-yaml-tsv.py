@@ -331,7 +331,7 @@ def all_uri_section_text(txt:str, pfx:dict[str,str], data:dict[str,Concept]) -> 
   Adds them to the provided dict
   and returns 
   - a dict from datatype names (like List:Enum) to their URIs
-  - a dict from table lables "event" and "attribute" to enumeration set URIs (like g7:enumset-EVENATTR) that include them
+  - a dict from table labels "event" and "attribute" to enumeration set URIs (like g7:enumset-EVENATTR) that include them
   """
   
   def do_pfx(uri:str) -> str:
