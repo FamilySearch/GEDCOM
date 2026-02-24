@@ -250,6 +250,7 @@ class StructSet:
       for m2 in re.finditer(r'^[0n] (?:@XREF:(\S+)@ )?(\S+)[^{}]*({.:.})(?: *(\S+))?', m[3], flags=re.M):
         becomes[m[1]][do_pfx(m2[4]) or m2[2]] = mix_card(base_card, m2[3])
         if m2[1]: xrefs[m2[1]] = do_pfx(m2[4])
+
     # resolve chains like EVENT_DETAIL -> <<PLACE_STRUCTURE>>
     for iterations in range(2): # longest chain is Dataset → <<RECORD>> → <<FAMILY_RECORD>>, 2 steps
       for key in becomes:
