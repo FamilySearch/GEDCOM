@@ -562,7 +562,7 @@ if __name__ == '__main__':
     with open(pathof[uri], 'w') as dst:
       print(data[uri], file=dst)
 
-  # 12.b: superstructure substructure cadinality
+  # 12.b: superstructure substructure cardinality
   with open(Path(args.dest, "cardinalities.tsv"), 'w') as dst:
     for uri,s in sorted(data.items()):
       if isinstance(s, StructData):
