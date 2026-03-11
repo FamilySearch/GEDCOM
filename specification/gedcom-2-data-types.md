@@ -433,7 +433,7 @@ Minutes and seconds are not used and should be converted to fractional degrees p
 The number of degrees is limited by definition to be between 0 (the prime meridian) and 180 (the 180th meridian).
 
 ```abnf
-Longitude = ("N" / "S") upto180 [ "." 1*digit]
+Longitude = ("E" / "W") upto180 [ "." 1*digit]
 upto180  = "180" / "1" upto7 digit / [["0"] digit] digit
 upto7    = "0" / "1" / "2" / "3" / "4" / "5" / "6" / "7"
 ```
