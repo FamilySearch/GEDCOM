@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/record-OBJE
+uri: https://gedcom.io/terms/v7.1/record-OBJE
 
 standard tag: 'OBJE'
 
@@ -32,18 +32,23 @@ label: 'Object'
 payload: null
 
 substructures:
-  "https://gedcom.io/terms/v7/CHAN": "{0:1}"
-  "https://gedcom.io/terms/v7/CREA": "{0:1}"
+  "https://gedcom.io/terms/v7.1/CHAN": "{0:1}"
+  "https://gedcom.io/terms/v7.1/CREA": "{0:1}"
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/FILE": "{1:M}"
-  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"
   "https://gedcom.io/terms/v7/RESN": "{0:1}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/UID": "{0:M}"
 
 superstructures: {}
+
+subsumes:
+  - "https://gedcom.io/terms/v7/record-OBJE"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

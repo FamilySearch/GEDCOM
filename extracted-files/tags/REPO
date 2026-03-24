@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/REPO
+uri: https://gedcom.io/terms/v7.1/REPO
 
 standard tag: 'REPO'
 
@@ -23,12 +23,15 @@ label: 'Repository'
 payload: "@<https://gedcom.io/terms/v7.1/record-REPO>@"
 
 substructures:
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/CALN": "{0:M}"
-  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
 
 superstructures:
   "https://gedcom.io/terms/v7.1/record-SOUR": "{0:M}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/REPO"
 
 prerelease: true
 

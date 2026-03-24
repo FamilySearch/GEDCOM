@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/NO-DATE
+uri: https://gedcom.io/terms/v7.1/NO-DATE
 
 standard tag: 'DATE'
 
@@ -21,7 +21,12 @@ substructures:
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/NO": "{0:1}"
+  "https://gedcom.io/terms/v7.1/NO": "{0:1}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/NO-DATE"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

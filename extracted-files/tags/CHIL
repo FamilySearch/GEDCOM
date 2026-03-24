@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/CHIL
+uri: https://gedcom.io/terms/v7.1/CHIL
 
 standard tag: 'CHIL'
 
@@ -15,13 +15,18 @@ specification:
 
 label: 'Child'
 
-payload: "@<https://gedcom.io/terms/v7/record-INDI>@"
+payload: "@<https://gedcom.io/terms/v7.1/record-INDI>@"
 
 substructures:
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-FAM": "{0:M}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/CHIL"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

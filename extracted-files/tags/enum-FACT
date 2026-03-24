@@ -9,11 +9,13 @@ uri: https://gedcom.io/terms/v7/enum-FACT
 standard tag: 'FACT'
 
 specification:
-  - A generic attribute; either `https://gedcom.io/terms/v7/INDI-FACT` or
+  - A generic attribute; either `https://gedcom.io/terms/v7.1/INDI-FACT` or
     `https://gedcom.io/terms/v7/FAM-FACT`
 
 value of:
-  - "https://gedcom.io/terms/v7/enumset-EVENATTR"
+  - "https://gedcom.io/terms/v7.1/enumset-EVENATTR"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

@@ -4,13 +4,13 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/SOUR-DATA
+uri: https://gedcom.io/terms/v7.1/SOUR-DATA
 
 standard tag: 'DATA'
 
 specification:
   - Data
-  - See `https://gedcom.io/terms/v7/DATA`.
+  - See `https://gedcom.io/terms/v7.1/DATA`.
 
 label: 'Data'
 
@@ -21,7 +21,12 @@ substructures:
   "https://gedcom.io/terms/v7/TEXT": "{0:M}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/SOUR": "{0:1}"
+  "https://gedcom.io/terms/v7.1/SOUR": "{0:1}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/SOUR-DATA"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

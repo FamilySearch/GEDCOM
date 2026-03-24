@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/FAM-RESI
+uri: https://gedcom.io/terms/v7.1/FAM-RESI
 
 standard tag: 'RESI'
 
@@ -25,7 +25,7 @@ specification:
   - |
     A [Family Attribute]. See also `FAMILY_ATTRIBUTE_STRUCTURE`.
     
-    See `https://gedcom.io/terms/v7/INDI-RESI` for comments on the use of payload
+    See `https://gedcom.io/terms/v7.1/INDI-RESI` for comments on the use of payload
     strings in `RESI` structures.
   - An address or place of residence where a family resided.
   - residence
@@ -35,30 +35,35 @@ label: 'Residence'
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:
+  "https://gedcom.io/terms/v7.1/ASSO": "{0:M}"
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/OBJE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/PLAC": "{0:1}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/ADDR": "{0:1}"
   "https://gedcom.io/terms/v7/AGNC": "{0:1}"
-  "https://gedcom.io/terms/v7/ASSO": "{0:M}"
   "https://gedcom.io/terms/v7/CAUS": "{0:1}"
   "https://gedcom.io/terms/v7/DATE": "{0:1}"
   "https://gedcom.io/terms/v7/EMAIL": "{0:M}"
   "https://gedcom.io/terms/v7/FAX": "{0:M}"
   "https://gedcom.io/terms/v7/HUSB": "{0:1}"
-  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/OBJE": "{0:M}"
   "https://gedcom.io/terms/v7/PHON": "{0:M}"
-  "https://gedcom.io/terms/v7/PLAC": "{0:1}"
   "https://gedcom.io/terms/v7/RELI": "{0:1}"
   "https://gedcom.io/terms/v7/RESN": "{0:1}"
   "https://gedcom.io/terms/v7/SDATE": "{0:1}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/TYPE": "{0:1}"
   "https://gedcom.io/terms/v7/UID": "{0:M}"
   "https://gedcom.io/terms/v7/WIFE": "{0:1}"
   "https://gedcom.io/terms/v7/WWW": "{0:M}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-FAM": "{0:M}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/FAM-RESI"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

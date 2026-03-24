@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/ADOP-FAMC
+uri: https://gedcom.io/terms/v7.1/ADOP-FAMC
 
 standard tag: 'FAMC'
 
@@ -15,19 +15,24 @@ specification:
     
     Adoption by an individual, rather than a couple, may be represented either by
     pointing to a `FAM` where that individual is a `HUSB` or `WIFE` and using a
-    `https://gedcom.io/terms/v7/FAMC-ADOP` substructure to indicate which 1
+    `https://gedcom.io/terms/v7.1/FAMC-ADOP` substructure to indicate which 1
     performed the adoption; or by using a `FAM` where the adopting individual is
     the only `HUSB`/`WIFE`.
 
 label: 'Family child'
 
-payload: "@<https://gedcom.io/terms/v7/record-FAM>@"
+payload: "@<https://gedcom.io/terms/v7.1/record-FAM>@"
 
 substructures:
-  "https://gedcom.io/terms/v7/FAMC-ADOP": "{0:1}"
+  "https://gedcom.io/terms/v7.1/FAMC-ADOP": "{0:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/ADOP": "{0:1}"
+  "https://gedcom.io/terms/v7.1/ADOP": "{0:1}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/ADOP-FAMC"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

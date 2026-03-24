@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/NO
+uri: https://gedcom.io/terms/v7.1/NO
 
 standard tag: 'NO'
 
@@ -36,7 +36,7 @@ specification:
     </div>
   - Did not happen
   - |
-    An enumerated value from set `https://gedcom.io/terms/v7/enumset-EVEN`
+    An enumerated value from set `https://gedcom.io/terms/v7.1/enumset-EVEN`
     identifying an event type which did not occur to the superstructure's subject.
     A specific payload `NO XYZ` should only appear where `XYZ` would be legal.
     
@@ -46,17 +46,22 @@ label: 'Did not happen'
 
 payload: https://gedcom.io/terms/v7/type-Enum
 
-enumeration set: "https://gedcom.io/terms/v7/enumset-EVEN"
+enumeration set: "https://gedcom.io/terms/v7.1/enumset-EVEN"
 
 substructures:
-  "https://gedcom.io/terms/v7/NO-DATE": "{0:1}"
-  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7.1/NO-DATE": "{0:1}"
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
-  "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-FAM": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-INDI": "{0:M}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/NO"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

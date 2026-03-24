@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/DESI
+uri: https://gedcom.io/terms/v7.1/DESI
 
 standard tag: 'DESI'
 
@@ -20,7 +20,10 @@ payload: "@<https://gedcom.io/terms/v7.1/record-SUBM>@"
 substructures: {}
 
 superstructures:
-  "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-INDI": "{0:M}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/DESI"
 
 prerelease: true
 

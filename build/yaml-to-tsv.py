@@ -102,17 +102,3 @@ for uri,obj in data.items():
 with open(Path(args.dest, "substructures.tsv"), 'w') as dst:
   for row in sorted(rows):
     print('\t'.join(row), file=dst)
-
-quit(0)
-
-
-
-
-# 12.f: superstructure tag substructure
-with open(Path(args.dest, "substructures.tsv"), 'w') as dst:
-  for uri,s in sorted(data.items()):
-    if isinstance(s, StructData):
-      for sup,card in sorted(s.sup.items()):
-        print(f'{sup}\t{s.tag}\t{uri}', file=dst)
-      if len(s.sup) == 0:
-        print(f'\t{s.tag}\t{uri}', file=dst)

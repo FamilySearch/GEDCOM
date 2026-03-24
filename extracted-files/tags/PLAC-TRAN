@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/PLAC-TRAN
+uri: https://gedcom.io/terms/v7.1/PLAC-TRAN
 
 standard tag: 'TRAN'
 
@@ -57,7 +57,12 @@ substructures:
   "https://gedcom.io/terms/v7/LANG": "{1:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/PLAC": "{0:M}"
+  "https://gedcom.io/terms/v7.1/PLAC": "{0:M}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/PLAC-TRAN"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

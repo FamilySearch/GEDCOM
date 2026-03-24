@@ -546,16 +546,32 @@ if __name__ == '__main__':
   for uri in tuple(data):
     if not uri.startswith('https://gedcom.io'): del data[uri]
   pathof = {uri: str(args.dest)+'/tags'+uri[uri.rfind('/'):].replace('#','-') for uri in data}
+  
+  # step 11: verify that URI version >= version of payload, enumset, and all substructures
+  for uri, thing in data.items():
+    if not uri.startswith('https://gedcom.io/terms/'): continue
+    v = uri.split('/')[4]
+    if isinstance(thing, StructData):
+      if thing.enumset:
+        assert thing.enumset.split('/')[4] <= v, f"Enumset {thing.enumset} incompatible with structure {uri}"
+      if thing.pay and thing.pay.startswith('@<https://gedcom.io/terms/'):
+        assert thing.pay.split('/')[4] <= v, f"Payload {thing.pay} incompatible with structure {uri}"
+      for sub in thing.sub:
+        assert sub.split('/')[4] <= v, f"Substructure {sub} incompatible with structure {uri}"
+    if thing.type == 'enumeration set':
+      for sub in thing.enumeration_values:
+        assert sub.split('/')[4] <= v, f"Enumeration value {sub} incompatible with enumset {uri}"
+    
 
-  # step 11: add subsumes for any URI that also exists in earlier minor version
+  # step 12: add subsumes for any URI that also exists in earlier minor version
   from subprocess import run
   for uri in data:
     if '/v7.1/' in uri:
-      res = run(['git','show','main:'+pathof[uri]], capture_output=True) # HACK, fix me
+      res = run(['git','show','main:'+pathof[uri]], capture_output=True)
       if not res.returncode:
         data[uri].subsumes.append(uri.replace('/v7.1/', '/v7/'))
 
-  # step 12: write all the YAML files
+  # step 13: write all the YAML files
   for uri in data:
     with open(pathof[uri], 'w') as dst:
       print(data[uri], file=dst)

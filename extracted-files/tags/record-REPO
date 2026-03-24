@@ -30,18 +30,18 @@ label: 'Repository'
 payload: null
 
 substructures:
+  "https://gedcom.io/terms/v7.1/CHAN": "{0:1}"
+  "https://gedcom.io/terms/v7.1/CREA": "{0:1}"
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/ADDR": "{0:1}"
-  "https://gedcom.io/terms/v7/CHAN": "{0:1}"
-  "https://gedcom.io/terms/v7/CREA": "{0:1}"
   "https://gedcom.io/terms/v7/EMAIL": "{0:M}"
   "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/FAX": "{0:M}"
   "https://gedcom.io/terms/v7/NAME": "{1:1}"
-  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7/PHON": "{0:M}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"
   "https://gedcom.io/terms/v7/RESN": "{0:1}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/UID": "{0:M}"
   "https://gedcom.io/terms/v7/WWW": "{0:M}"
 

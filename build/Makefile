@@ -12,7 +12,7 @@ PDARGS := --syntax-definition=gedcom.xml --syntax-definition=gedstruct.xml --syn
 
 .phony: all clean distclean
 
-all:	$(PDF_FILE) $(PDF_FILE) $(TAGDEFS) $(GRAMMARS)
+all:	$(TAGDEFS) $(GRAMMARS) $(PDF_FILE) $(HTML_FILE)
 
 $(PDF_FILE): $(HTML_FILE)
 	python3 -mweasyprint $(HTML_FILE) $(PDF_FILE)
