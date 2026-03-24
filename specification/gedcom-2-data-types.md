@@ -380,7 +380,7 @@ rather, they are used as machine-readable identifiers with formally-defined mean
 
 The payload is a "URI Reference" as defined in [RFC 3986 section 4.1](https://www.rfc-editor.org/rfc/rfc3986#section-4.1) with ABNF production `URI-reference`.
 The URI Reference is a more restrictive syntax than the URL Strings permitted by the [File Path] data type,
-faciltiating easier automated equality tests between URIs.
+facilitating easier automated equality tests between URIs.
 
 Relative URIs should be avoided in datasets that are expected to be shared on the web or with unknown parties,
 but may be appropriate for close collaboration between parties with a shared base URI.
