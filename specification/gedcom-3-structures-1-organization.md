@@ -242,7 +242,7 @@ In most cases that would be an error, though it is theoretically possible that s
 #### `INDIVIDUAL_RECORD` :=
 
 ```gedstruct
-n @XREF:INDI@ INDI                         {1:1}  g7:record-INDI
+n @XREF:INDI@ INDI                         {1:1}  g7.1:record-INDI
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 <<PERSONAL_NAME_STRUCTURE>>           {0:M}
   +1 SEX <Enum>                            {0:1}  g7:SEX
@@ -854,8 +854,9 @@ n BASM [Y|<NULL>]                          {1:1}  g7:BASM
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
 |
-n BIRT [Y|<NULL>]                          {1:1}  g7:BIRT
+n BIRT [Y|<NULL>]                          {1:1}  g7.1:BIRT
   +1 TYPE <Text>                           {0:1}  g7:TYPE
+  +1 KIND <Enum>                           {0:M}  g7.1:BIRT-KIND
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
   +1 FAMC @<XREF:FAM>@                     {0:1}  g7:FAMC
 |
