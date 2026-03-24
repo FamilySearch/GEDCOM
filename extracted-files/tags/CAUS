@@ -9,10 +9,6 @@ uri: https://gedcom.io/terms/v7/CAUS
 standard tag: 'CAUS'
 
 specification:
-  - Cause
-  - The reasons which precipitated an event. It is often used subordinate to a
-    death event to show cause of death, such as might be listed on a death
-    certificate.
   - |
     Substructures that may be shared by most individual and family events and
     attributes.
@@ -21,6 +17,10 @@ specification:
     event information should be represented by placing them in separate event
     structures (with appropriate source citations) rather than by placing them
     under the same enclosing event.
+  - Cause
+  - The reasons which precipitated an event. It is often used subordinate to a
+    death event to show cause of death, such as might be listed on a death
+    certificate.
 
 label: 'Cause'
 

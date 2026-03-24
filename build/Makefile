@@ -20,9 +20,10 @@ $(PDF_FILE): $(HTML_FILE)
 $(HTML_FILE): hyperlink-code.py GEDCOM-tmp.html
 	python3 hyperlink-code.py GEDCOM-tmp.html $(HTML_FILE)
 
-$(TAGDEFS): $(MD_FILES) $(TERMS_FILES) $(EXTDIR)grammar.gedstruct extract-yaml-tsv.py
-	python3 extract-yaml-tsv.py --spec=$(SPECDIR) --dest=$(EXTDIR)
+$(TAGDEFS): $(MD_FILES) $(TERMS_FILES) $(EXTDIR)grammar.gedstruct extract-yaml.py
+	python3 extract-yaml.py --spec=$(SPECDIR) --dest=$(EXTDIR)
 	rsync -au $(TERMS_FILES) $(EXTDIR)tags
+	python3 yaml-to-tsv.py --dest=$(EXTDIR) $(TAGDEFS)
 	touch $(TAGDEFS)
 
 $(EXTDIR)grammar.abnf: $(MD_FILES) extract-grammars.py

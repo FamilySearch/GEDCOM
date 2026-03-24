@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7/GIVN
 standard tag: 'GIVN'
 
 specification:
-  - Given name
-  - A given or earned name used for official identification of a person.
   - |
     Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more details.
     
@@ -35,6 +33,8 @@ specification:
     at least a user preference. Even when multiple `SURN` tags are used, the
     `PersonalName` data type identifies a single surname substring between its
     slashes.
+  - Given name
+  - A given or earned name used for official identification of a person.
 
 label: 'Given name'
 

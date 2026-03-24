@@ -9,9 +9,6 @@ uri: https://gedcom.io/terms/v7.1/record-SNOTE
 standard tag: 'SNOTE'
 
 specification:
-  - Shared note
-  - A note that is shared by multiple structures. See `SHARED_NOTE_RECORD` for more
-    details.
   - |
     A catch-all location for information that does not fully fit within other
     structures. It may include research notes, additional context, alternative
@@ -55,6 +52,9 @@ specification:
     versa. Applications must not create datasets where these mutual pointers form a
     cycle. Applications should also ensure they can handle invalid files with such
     cycles in a safe manner.
+  - Shared note
+  - A note that is shared by multiple structures. See `SHARED_NOTE_RECORD` for more
+    details.
 
 label: 'Shared note'
 

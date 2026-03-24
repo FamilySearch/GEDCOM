@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7/DEAT
 standard tag: 'DEAT'
 
 specification:
-  - Death
-  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - |
     Individual events; see [Individual Events] for descriptions of each individual
     event type.
@@ -34,6 +32,8 @@ specification:
       and is the recommended place to store such information.
     
     </div>
+  - Death
+  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - Mortal life terminates.
   - death
 

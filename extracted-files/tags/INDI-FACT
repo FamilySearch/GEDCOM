@@ -9,6 +9,19 @@ uri: https://gedcom.io/terms/v7/INDI-FACT
 standard tag: 'FACT'
 
 specification:
+  - |
+    Individual attributes; see [Individual Attributes] for descriptions of each
+    individual attribute type..
+    
+    <div class="note">
+    
+    Individual attribute structures vary as follows:
+    
+    - `INDI`.`NCHI` and `NMR` have [Integer] payloads; `IDNO` and `SSN` have
+      [Special] payloads; others have [Text] payloads
+    - `INDI`.`FACT` and `IDNO` require `TYPE`; it's optional for others
+    
+    </div>
   - Fact
   - |
     A noteworthy attribute or fact concerning an individual or family. If a
@@ -27,19 +40,6 @@ specification:
     1 FACT Woodworking
     2 TYPE Skills
     ```
-    
-    </div>
-  - |
-    Individual attributes; see [Individual Attributes] for descriptions of each
-    individual attribute type..
-    
-    <div class="note">
-    
-    Individual attribute structures vary as follows:
-    
-    - `INDI`.`NCHI` and `NMR` have [Integer] payloads; `IDNO` and `SSN` have
-      [Special] payloads; others have [Text] payloads
-    - `INDI`.`FACT` and `IDNO` require `TYPE`; it's optional for others
     
     </div>
 

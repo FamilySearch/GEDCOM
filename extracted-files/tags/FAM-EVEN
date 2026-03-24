@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7/FAM-EVEN
 standard tag: 'EVEN'
 
 specification:
-  - Event
-  - See `https://gedcom.io/terms/v7/INDI-EVEN`.
   - |
     Family events; see [Family Events] for descriptions of each family event type.
     
@@ -28,6 +26,8 @@ specification:
     - `FAM`.`EVEN` requires `TYPE`; it's optional for others
     
     </div>
+  - Event
+  - See `https://gedcom.io/terms/v7/INDI-EVEN`.
 
 label: 'Event'
 

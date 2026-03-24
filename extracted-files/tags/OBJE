@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7/OBJE
 standard tag: 'OBJE'
 
 specification:
-  - Object
-  - See `MULTIMEDIA_LINK`.
   - |
     Links the superstructure to the `MULTIMEDIA_RECORD` with the given pointer.
     
@@ -19,6 +17,8 @@ specification:
     
     The optional `TITL` substructure supersedes any `OBJE.FILE.TITL` substructures
     included in the `MULTIMEDIA_RECORD`.
+  - Object
+  - See `MULTIMEDIA_LINK`.
 
 label: 'Object'
 

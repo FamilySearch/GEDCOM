@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7/BARM
 standard tag: 'BARM'
 
 specification:
-  - Bar Mitzvah
-  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - |
     Individual events; see [Individual Events] for descriptions of each individual
     event type.
@@ -34,6 +32,8 @@ specification:
       and is the recommended place to store such information.
     
     </div>
+  - Bar Mitzvah
+  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - The ceremonial event held when a Jewish boy reaches age 13.
 
 label: 'Bar Mitzvah'

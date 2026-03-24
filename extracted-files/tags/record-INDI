@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7/record-INDI
 standard tag: 'INDI'
 
 specification:
-  - Individual
-  - See `INDIVIDUAL_RECORD`.
   - |
     The individual record is a compilation of facts or hypothesized facts about an
     individual. These facts may come from multiple sources. Source citations and
@@ -63,6 +61,8 @@ specification:
     most cases that would be an error, though it is theoretically possible that
     such a situation could occur with non-biological relationships (marriages,
     adoptions, etc.).
+  - Individual
+  - See `INDIVIDUAL_RECORD`.
 
 label: 'Individual'
 

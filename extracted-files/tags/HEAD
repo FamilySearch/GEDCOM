@@ -9,9 +9,6 @@ uri: https://gedcom.io/terms/v7/HEAD
 standard tag: 'HEAD'
 
 specification:
-  - Header
-  - A pseudo-structure for storing metadata about the document. See [The Header
-    and Trailer] for more details.
   - |
     The header pseudo-structure provides metadata about the entire dataset. A few
     substructures of note:
@@ -32,6 +29,9 @@ specification:
     `HEAD`.`SOUR`.`NAME` instead.
     
     </div>
+  - Header
+  - A pseudo-structure for storing metadata about the document. See [The Header
+    and Trailer] for more details.
 
 label: 'Header'
 

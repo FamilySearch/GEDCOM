@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7/ANUL
 standard tag: 'ANUL'
 
 specification:
-  - Annulment
-  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - |
     Family events; see [Family Events] for descriptions of each family event type.
     
@@ -28,6 +26,8 @@ specification:
     - `FAM`.`EVEN` requires `TYPE`; it's optional for others
     
     </div>
+  - Annulment
+  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - Declaring a marriage void from the beginning (never existed).
   - annulment
 

@@ -9,6 +9,7 @@ uri: https://gedcom.io/terms/v7/HUSB
 standard tag: 'HUSB'
 
 specification:
+  - Substructures shared by most family events and attributes.
   - Husband
   - |
     A structure for storing information related to one partner in the context of a
@@ -31,7 +32,6 @@ specification:
     ```
     
     </div>
-  - Substructures shared by most family events and attributes.
 
 label: 'Husband'
 

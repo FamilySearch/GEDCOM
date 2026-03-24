@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7/OCCU
 standard tag: 'OCCU'
 
 specification:
-  - Occupation
-  - An [Individual Attribute]. See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
   - |
     Individual attributes; see [Individual Attributes] for descriptions of each
     individual attribute type..
@@ -24,6 +22,8 @@ specification:
     - `INDI`.`FACT` and `IDNO` require `TYPE`; it's optional for others
     
     </div>
+  - Occupation
+  - An [Individual Attribute]. See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
   - The type of work or profession of an individual.
   - occupation
 

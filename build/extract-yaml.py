@@ -26,6 +26,7 @@ def tidy_markdown(md, indent, width=79):
     
     pip install mdformat-gfm
     """
+    global pfx
     for k,v in pfx.items():
       md = re.sub(rf'\b{k}', v, md)
     
@@ -37,8 +38,6 @@ def tidy_markdown(md, indent, width=79):
     
     import mdformat
     out = mdformat.text(md, extensions={"gfm"}, options={"number":True, "wrap":width})
-    
-    out.count('[')
     
     return out.rstrip().replace('\n','\n'+' '*indent).replace(r'\[','[').replace(r'\]',']')
 
@@ -238,7 +237,7 @@ class StructSet:
       """Expands URI prefixes"""
       if not uri: return uri
       for short,long in pfx.items():
-        if uri.startswith(short): return uri.replace(short, long, count=1)
+        if uri.startswith(short): return uri.replace(short, long, 1)
       return uri
 
     # find top-level rules
@@ -338,7 +337,7 @@ def all_uri_section_text(txt:str, pfx:dict[str,str], data:dict[str,Concept]) -> 
   def do_pfx(uri:str) -> str:
     """Expands URI prefixes"""
     for short,long in pfx.items():
-      if uri.startswith(short): return uri.replace(short, long, count=1)
+      if uri.startswith(short): return uri.replace(short, long, 1)
     return uri
 
   types:dict[str,str] = {} # {"<List:Enum>": "g7:type-List#Enum"}
@@ -447,7 +446,7 @@ if __name__ == '__main__':
   def do_pfx(uri:str) -> str:
     """Expands URI prefixes"""
     for short,long in pfx.items():
-      if uri.startswith(short): return uri.replace(short, long, count=1)
+      if uri.startswith(short): return uri.replace(short, long, 1)
     return uri
   
   # step 4: parse everything we can from the gedstruct blocks
@@ -460,7 +459,7 @@ if __name__ == '__main__':
   # step 5: parse the big blocks of text and non-structure URI definitions from the spec
   types, enum_has = all_uri_section_text(src_markdown, pfx, data)
   
-  # step 6: beause we did 4 before 5 (which made both steps easier), we need to change payload types to URIs
+  # step 6: because we did 4 before 5 (which made both steps easier), we need to change payload types to URIs
   for s in data.values():
     if isinstance(s, StructData):
       if s.pay in types:
@@ -556,45 +555,8 @@ if __name__ == '__main__':
       if not res.returncode:
         data[uri].subsumes.append(uri.replace('/v7.1/', '/v7/'))
 
-  # step 12: write all the various files
-
-  # 12.a: YAML files
+  # step 12: write all the YAML files
   for uri in data:
     with open(pathof[uri], 'w') as dst:
       print(data[uri], file=dst)
 
-  # 12.b: superstructure substructure cardinality
-  with open(Path(args.dest, "cardinalities.tsv"), 'w') as dst:
-    for uri,s in sorted(data.items()):
-      if isinstance(s, StructData):
-        for sup,card in sorted(s.sup.items()):
-          print(f'{sup}\t{uri}\t{card}', file=dst)
-
-  # 12.c: enumeration_set enumeration_value
-  with open(Path(args.dest, "enumerationsets.tsv"), 'w') as dst:
-    for uri,s in sorted(data.items()):
-      if s.type == 'enumeration set':
-        for u in sorted(s.enumeration_values):
-          print(f'{uri}\t{u}', file=dst)
-
-  # 12.d: structure enumeration_set
-  with open(Path(args.dest, "enumerations.tsv"), 'w') as dst:
-    for uri,s in sorted(data.items()):
-      if isinstance(s, StructData):
-        if s.enumset:
-          print(f'{uri}\t{s.enumset}', file=dst)
-
-  # 12.e: structure payload
-  with open(Path(args.dest, "payloads.tsv"), 'w') as dst:
-    for uri,s in sorted(data.items()):
-      if isinstance(s, StructData):
-        print(f'{uri}\t{s.pay or ''}', file=dst)
-
-  # 12.f: superstructure tag substructure
-  with open(Path(args.dest, "substructures.tsv"), 'w') as dst:
-    for uri,s in sorted(data.items()):
-      if isinstance(s, StructData):
-        for sup,card in sorted(s.sup.items()):
-          print(f'{sup}\t{s.tag}\t{uri}', file=dst)
-        if len(s.sup) == 0:
-          print(f'\t{s.tag}\t{uri}', file=dst)

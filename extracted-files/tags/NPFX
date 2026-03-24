@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7/NPFX
 standard tag: 'NPFX'
 
 specification:
-  - Name prefix
-  - Text that appears on a name line before the given and surname parts of a name.
   - |
     Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more details.
     
@@ -35,6 +33,8 @@ specification:
     at least a user preference. Even when multiple `SURN` tags are used, the
     `PersonalName` data type identifies a single surname substring between its
     slashes.
+  - Name prefix
+  - Text that appears on a name line before the given and surname parts of a name.
 
 label: 'Name prefix'
 

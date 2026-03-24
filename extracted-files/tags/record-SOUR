@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/record-SOUR
 standard tag: 'SOUR'
 
 specification:
-  - Source
-  - A description of an entire source. See `SOURCE_RECORD` for more details.
   - |
     A source record describes an entire source. A source may also point to `REPO`s
     to describe repositories or archives where the source document may be found.
@@ -33,6 +31,8 @@ specification:
     versa. Applications must not create datasets where these mutual pointers form a
     cycle. Applications should also ensure they can handle invalid files with such
     cycles in a safe manner.
+  - Source
+  - A description of an entire source. See `SOURCE_RECORD` for more details.
 
 label: 'Source'
 
