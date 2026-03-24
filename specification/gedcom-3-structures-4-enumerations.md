@@ -190,7 +190,7 @@ The structures for representing the strength of and confidence in various claims
 ### `g7:enumset-ord-STAT`
 
 These values were formerly used by The Church of Jesus Christ of Latter-day Saints for coordinating between temples and members.
-They are no longer used in that way, meaning their interpretation is subject to individual user interpretation
+They are no longer used in that way, meaning their interpretation is subject to individual user interpretation.
 
 The definition of some of these values combined with the official policies of the church
 mean that some values only make sense under a subset of [ordinance structures](#latter-day-saint-ordinances).

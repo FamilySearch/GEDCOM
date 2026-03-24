@@ -321,7 +321,7 @@ def all_tables(txt:str) -> dict[str,list[dict[str,str]]]:
       entry = {k:v for k,v in zip(rowh,cells)}
       for k in (k for k in rowh if '<br' in k): # handle br in header and cell
         v = entry.pop(k)
-        entry.update({k_:v_ for k_,v_ in zip(re.split(r'<br/?>', k), re.split(r'<br/?>', v))})
+        entry.update({k_:v_ for k_,v_ in zip(re.split(r'\s*<br/?>\s*', k), re.split(r'\s*<br/?>\s*', v))})
       ans.setdefault(sect,[]).append(entry)
   return ans
 
