@@ -10,7 +10,7 @@ standard tag: 'CENS'
 
 specification:
   - Census
-  - An [Family Event].
+  - A [Family Event].
   - census
   - Periodic count of the population for a designated locality, such as a national
     or state census.
