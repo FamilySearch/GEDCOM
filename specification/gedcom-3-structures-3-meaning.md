@@ -273,9 +273,9 @@ See `ASSOCIATION_STRUCTURE` for more details.
 
 The person, agency, or entity who created the record. For a published work, this could be the author, compiler, transcriber, abstractor, or editor. For an unpublished source, this may be an individual, a government agency, church organization, or private organization.
 
-#### `BAPL` (Baptism, Latter-Day Saint) `g7:BAPL`
+#### `BAPL` (Baptism, Latter-day Saint) `g7:BAPL`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
 #### `BAPM` (Baptism) `g7:BAPM`
@@ -328,7 +328,7 @@ It is often used subordinate to a death event to show cause of death, such as mi
 
 #### `CENS` (Census)  `g7:FAM-CENS`
 
-An [Family Event](#family-events).
+A [Family Event](#family-events).
 
 #### `CENS` (Census)  `g7:INDI-CENS`
 
@@ -365,9 +365,9 @@ See `ADDRESS_STRUCTURE` for more details.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `CONL` (Confirmation, Latter-Day Saint) `g7:CONL`
+#### `CONL` (Confirmation, Latter-day Saint) `g7:CONL`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
 #### `CONT` (Continued) `g7:CONT`
@@ -523,9 +523,9 @@ The version 5.5.1 specification contained a typo where this tag was sometimes wr
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `ENDL` (Endowment, Latter-Day Saint) `g7:ENDL`
+#### `ENDL` (Endowment, Latter-day Saint) `g7:ENDL`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
 #### `ENGA` (Engagement) `g7:ENGA`
@@ -755,9 +755,9 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 See `INDIVIDUAL_RECORD`.
 
-#### `INIL` (Initiatory, Latter-Day Saint) `g7:INIL`
+#### `INIL` (Initiatory, Latter-day Saint) `g7:INIL`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.  Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part of 5.4 through 5.5.1.
 FamilySearch GEDCOM 7.0 reintroduced it with the name `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
 
@@ -1317,12 +1317,12 @@ An enumerated value from set `g7:enumset-SEX` that indicates the sex of the indi
 
 #### `SLGC` (Sealing, child) `g7:SLGC`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
 #### `SLGS` (Sealing, spouse) `g7:SLGS`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_SPOUSE_SEALING`.
 
 #### `SNOTE` (Shared note) `g7:SNOTE`
@@ -1368,11 +1368,11 @@ See `ADDRESS_STRUCTURE` for more details.
 
 #### `STAT` (Status) `g7:ord-STAT`
 
-An enumerated value from set `g7:enumset-ord-STAT` assessing of the state or condition of an ordinance.
+An enumerated value from set `g7:enumset-ord-STAT` assessing the state or condition of an ordinance.
 
 #### `STAT` (Status) `g7:FAMC-STAT`
 
-An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or condition of a researcher's belief in a family connection.
+An enumerated value from set `g7:enumset-FAMC-STAT` assessing the state or condition of a researcher's belief in a family connection.
 
 #### `SUBM` (Submitter) `g7:SUBM`
 

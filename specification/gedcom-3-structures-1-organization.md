@@ -808,12 +808,12 @@ n FACT <Text>                              {1:1}  g7:INDI-FACT
 ]
 ````
 
-Individual attributes; see [Individual Attributes](#individual-attributes) for descriptions of each individual attribute type..
+Individual attributes; see [Individual Attributes](#individual-attributes) for descriptions of each individual attribute type.
 
 :::note
 Individual attribute structures vary as follows:
 
-- `INDI`.`NCHI` and `NMR` have [Integer](#text) payloads; `IDNO` and `SSN` have [Special](#special) payloads; others have [Text](#text) payloads
+- `INDI`.`NCHI` and `NMR` have [Integer](#integer) payloads; `IDNO` and `SSN` have [Special](#special) payloads; others have [Text](#text) payloads
 - `INDI`.`FACT` and `IDNO` require `TYPE`; it's optional for others
 :::
 

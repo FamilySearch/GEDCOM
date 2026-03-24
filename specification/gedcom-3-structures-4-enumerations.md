@@ -118,7 +118,7 @@ The structures for representing the strength of and confidence in various claims
 | `LOCKED` | Some systems may ignore changes to this data. |
 | `PRIVACY` | This data is not to be shared outside of a trusted circle, generally because it contains information about living individuals. This definition is known to admit multiple interpretations, so use of the `PRIVACY` restriction notice is not recommended. |
 
-It is recommended that applications allow users to chose how `CONFIDENTIAL` and/or `PRIVACY` data is handled
+It is recommended that applications allow users to choose how `CONFIDENTIAL` and/or `PRIVACY` data is handled
 when interfacing with other users or applications,
 for example by allowing them to exclude such data when exporting.
 
@@ -198,7 +198,7 @@ The structures for representing the strength of and confidence in various claims
 ### `g7:enumset-ord-STAT`
 
 These values were formerly used by The Church of Jesus Christ of Latter-day Saints for coordinating between temples and members.
-They are no longer used in that way, meaning their interpretation is subject to individual user interpretation
+They are no longer used in that way, meaning their interpretation is subject to individual user interpretation.
 
 The definition of some of these values combined with the official policies of the church
 mean that some values only make sense under a subset of [ordinance structures](#latter-day-saint-ordinances).
@@ -224,7 +224,7 @@ and applications should be prepared to encounter non-current values.
 | `EXCLUDED` | All | Patron excluded this ordinance from being cleared in this submission. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
 | `DNS` | `SLGC`, `SLGS` | This ordinance is not authorized. | Current |
 | `DNS_CAN` | `SLGS` | This ordinance is not authorized, and the previous ordinance is cancelled. | Current |
-| `INFANT` | All but `SLGC` | Died before less than 1 year old, baptism or endowment not required. | Deprecated. Use `CHILD` instead. |
+| `INFANT` | All but `SLGC` | Died before 1 year old, baptism or endowment not required. | Deprecated. Use `CHILD` instead. |
 | `PRE_1970` | All | Ordinance was likely completed because an ordinance for this person was converted from temple records of work completed before 1970. | Deprecated.  Use `DATE BEF 1970` instead. |
 | `STILLBORN` | All | Born dead, so no ordinances are required. | Current |
 | `SUBMITTED` | All | Ordinance was previously submitted. | Deprecated. This status was defined for use with TempleReady which is no longer in use. |
