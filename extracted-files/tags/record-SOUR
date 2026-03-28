@@ -60,7 +60,5 @@ superstructures: {}
 
 prerelease: true
 
-subsumes: https://gedcom.io/terms/v7/record-SOUR
-
 contact: "https://gedcom.io/community/"
 ...
