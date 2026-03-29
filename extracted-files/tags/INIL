@@ -9,8 +9,8 @@ uri: https://gedcom.io/terms/v7/INIL
 standard tag: 'INIL'
 
 specification:
-  - Initiatory, Latter-Day Saint
-  - A [Latter-Day Saint Ordinance]. See also `LDS_INDIVIDUAL_ORDINANCE`.
+  - Initiatory, Latter-day Saint
+  - A [Latter-day Saint Ordinance]. See also `LDS_INDIVIDUAL_ORDINANCE`.
     Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part
     of 5.4 through 5.5.1. FamilySearch GEDCOM 7.0 reintroduced it with the name
     `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
@@ -19,7 +19,7 @@ specification:
     by priesthood authority in a temple of The Church of Jesus Christ of Latter-day
     Saints.
 
-label: 'Initiatory, Latter-Day Saint'
+label: 'Initiatory, Latter-day Saint'
 
 payload: null
 

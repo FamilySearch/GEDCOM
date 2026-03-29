@@ -10,7 +10,7 @@ standard tag: 'INFANT'
 
 specification:
   - "Applies to: All but `SLGC`"
-  - Died before less than 1 year old, baptism or endowment not required.
+  - Died before 1 year old, baptism or endowment not required.
   - "Status: Deprecated. Use `CHILD` instead."
 
 value of:
