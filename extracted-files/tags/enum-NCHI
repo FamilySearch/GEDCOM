@@ -4,13 +4,16 @@ lang: en-US
 
 type: enumeration
 
-uri: https://gedcom.io/terms/v7/enum-NCHI
+uri: https://gedcom.io/terms/v7.1/enum-NCHI
 
 standard tag: 'NCHI'
 
 specification:
   - A count of children; either `https://gedcom.io/terms/v7.1/INDI-NCHI` or
-    `https://gedcom.io/terms/v7/FAM-NCHI`
+    `https://gedcom.io/terms/v7.1/FAM-NCHI`
+
+subsumes:
+  - "https://gedcom.io/terms/v7/enum-NCHI"
 
 value of:
   - "https://gedcom.io/terms/v7.1/enumset-EVENATTR"

@@ -9,10 +9,10 @@ uri: https://gedcom.io/terms/v7/AGE
 standard tag: 'AGE'
 
 specification:
-  - Substructures shared by most individual events and attributes.
   - Age at event
   - The age of the individual at the time an event occurred. It is recommended that
     this be an age from a cited source document.
+  - Substructures shared by most individual events and attributes.
 
 label: 'Age at event'
 

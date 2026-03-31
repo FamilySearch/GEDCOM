@@ -9,6 +9,28 @@ uri: https://gedcom.io/terms/v7.1/record-FAM
 standard tag: 'FAM'
 
 specification:
+  - Family record
+  - |
+    See `FAMILY_RECORD`
+    
+    <div class="note">
+    
+    The common case is that each couple has one `FAM` record, but that is not
+    always the case.
+    
+    A couple that separates and then gets together again can be represented either
+    as a single `FAM` with multiple events (`MARR`, `DIV`, etc.) or as a separate
+    `FAM` for each time together. Some user interfaces may display these two in
+    different ways and the two admit different semantics in sourcing. A single
+    `FAM` with two `MARR` with distinct dates might also represent uncertainty
+    about dates and a pair of `FAM` with same spouses might also be the result of
+    merging multiple files.
+    
+    Implementers should support both representations, and should choose between
+    them based on user input or other context beyond that provided in the datasets
+    themselves.
+    
+    </div>
   - |
     The `FAM` record was originally structured to represent families where a male
     `HUSB` (husband or father) and female `WIFE` (wife or mother) produce `CHIL`
@@ -64,28 +86,6 @@ specification:
     most cases that would be an error, though it is theoretically possible that
     such a situation could occur with non-biological relationships (marriages,
     adoptions, etc.).
-  - Family record
-  - |
-    See `FAMILY_RECORD`
-    
-    <div class="note">
-    
-    The common case is that each couple has one `FAM` record, but that is not
-    always the case.
-    
-    A couple that separates and then gets together again can be represented either
-    as a single `FAM` with multiple events (`MARR`, `DIV`, etc.) or as a separate
-    `FAM` for each time together. Some user interfaces may display these two in
-    different ways and the two admit different semantics in sourcing. A single
-    `FAM` with two `MARR` with distinct dates might also represent uncertainty
-    about dates and a pair of `FAM` with same spouses might also be the result of
-    merging multiple files.
-    
-    Implementers should support both representations, and should choose between
-    them based on user input or other context beyond that provided in the datasets
-    themselves.
-    
-    </div>
 
 label: 'Family record'
 

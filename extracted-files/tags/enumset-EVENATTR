@@ -56,11 +56,11 @@ enumeration values:
   - "https://gedcom.io/terms/v7.1/RETI"
   - "https://gedcom.io/terms/v7.1/SSN"
   - "https://gedcom.io/terms/v7.1/WILL"
-  - "https://gedcom.io/terms/v7/enum-CENS"
-  - "https://gedcom.io/terms/v7/enum-EVEN"
-  - "https://gedcom.io/terms/v7/enum-FACT"
-  - "https://gedcom.io/terms/v7/enum-NCHI"
-  - "https://gedcom.io/terms/v7/enum-RESI"
+  - "https://gedcom.io/terms/v7.1/enum-CENS"
+  - "https://gedcom.io/terms/v7.1/enum-EVEN"
+  - "https://gedcom.io/terms/v7.1/enum-FACT"
+  - "https://gedcom.io/terms/v7.1/enum-NCHI"
+  - "https://gedcom.io/terms/v7.1/enum-RESI"
 
 standard: true
 

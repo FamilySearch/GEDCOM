@@ -115,6 +115,7 @@ https://gedcom.io/terms/v7.1/BASM	https://gedcom.io/terms/v7/TYPE	{0:1}
 https://gedcom.io/terms/v7.1/BASM	https://gedcom.io/terms/v7/UID	{0:M}
 https://gedcom.io/terms/v7.1/BASM	https://gedcom.io/terms/v7/WWW	{0:M}
 https://gedcom.io/terms/v7.1/BIRT	https://gedcom.io/terms/v7.1/ASSO	{0:M}
+https://gedcom.io/terms/v7.1/BIRT	https://gedcom.io/terms/v7.1/BIRT-KIND	{0:M}
 https://gedcom.io/terms/v7.1/BIRT	https://gedcom.io/terms/v7.1/FAMC	{0:1}
 https://gedcom.io/terms/v7.1/BIRT	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/BIRT	https://gedcom.io/terms/v7.1/OBJE	{0:M}

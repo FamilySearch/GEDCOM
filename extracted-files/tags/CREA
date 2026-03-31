@@ -9,12 +9,12 @@ uri: https://gedcom.io/terms/v7.1/CREA
 standard tag: 'CREA'
 
 specification:
-  - The date of the initial creation of the superstructure. Because this refers to
-    the initial creation, it should not be modified after the structure is created.
   - Creation
   - The initial creation of the superstructure. This is metadata about the
     structure itself, not data about its subject. See `CREATION_DATE` for more
     details.
+  - The date of the initial creation of the superstructure. Because this refers to
+    the initial creation, it should not be modified after the structure is created.
 
 label: 'Creation'
 

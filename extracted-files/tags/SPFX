@@ -9,6 +9,8 @@ uri: https://gedcom.io/terms/v7/SPFX
 standard tag: 'SPFX'
 
 specification:
+  - Surname prefix
+  - A name piece used as a non-indexing pre-part of a surname.
   - |
     Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more details.
     
@@ -33,8 +35,6 @@ specification:
     at least a user preference. Even when multiple `SURN` tags are used, the
     `PersonalName` data type identifies a single surname substring between its
     slashes.
-  - Surname prefix
-  - A name piece used as a non-indexing pre-part of a surname.
 
 label: 'Surname prefix'
 

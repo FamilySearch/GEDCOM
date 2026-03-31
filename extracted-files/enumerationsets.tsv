@@ -1,3 +1,5 @@
+https://gedcom.io/terms/v7.1/enumset-BIRT-KIND	https://gedcom.io/terms/v7.1/enumset-BORN_DEAD
+https://gedcom.io/terms/v7.1/enumset-BIRT-KIND	https://gedcom.io/terms/v7.1/enumset-BORN_LIVE
 https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/ADOP
 https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/ANUL
 https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/BAPM
@@ -28,7 +30,7 @@ https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/ORDN
 https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/PROB
 https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/RETI
 https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/WILL
-https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7/enum-CENS
+https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/enum-CENS
 https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/ADOP
 https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/ANUL
 https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/BAPM
@@ -70,11 +72,11 @@ https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/PROP
 https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/RETI
 https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/SSN
 https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/WILL
-https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7/enum-CENS
-https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7/enum-EVEN
-https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7/enum-FACT
-https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7/enum-NCHI
-https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7/enum-RESI
+https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/enum-CENS
+https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/enum-EVEN
+https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/enum-FACT
+https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/enum-NCHI
+https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/enum-RESI
 https://gedcom.io/terms/v7/enumset-ADOP	https://gedcom.io/terms/v7/enum-ADOP-HUSB
 https://gedcom.io/terms/v7/enumset-ADOP	https://gedcom.io/terms/v7/enum-ADOP-WIFE
 https://gedcom.io/terms/v7/enumset-ADOP	https://gedcom.io/terms/v7/enum-BOTH

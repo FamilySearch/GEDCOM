@@ -11,6 +11,13 @@ Each set of enumeration values has its own URI.
 | `WIFE` | `g7:enum-ADOP-WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC` |
 | `BOTH` | `g7:enum-BOTH` | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
+### `g7.1:enumset-BIRT-KIND`
+
+| Value       | URI | Meaning |
+| :---------- | :---| :------ |
+| `BORN_DEAD` | `g7.1:enumset-BORN_DEAD` | Birth of a dead child; died before birth concluded (and possibly before it began), and was not thereafter revived. |
+| `BORN_LIVE` | `g7.1:enumset-BORN_LIVE` | Child was alive after birth. This is often seen as the default meaning of `BIRT`, but in some cases it might be ambiguous and adding `KIND BORN_LIVE` could be beneficial. |
+
 ### `g7.1:enumset-EVEN`
 
 An event-type tag name, but not the generic `EVEN` tag.
@@ -21,7 +28,7 @@ except for tags used with different URIs for `FAM` vs `INDI`:
 
 | Value  | URI            | Meaning                                                |
 | :----- | :------------- | :----------------------------------------------------- |
-| `CENS` | `g7:enum-CENS` | A census event; either `g7.1:INDI-CENS` or `g7:FAM-CENS` |
+| `CENS` | `g7.1:enum-CENS` | A census event; either `g7.1:INDI-CENS` or `g7.1:FAM-CENS` |
 
 
 ### `g7.1:enumset-EVENATTR`
@@ -34,11 +41,11 @@ except for tags used with different URIs for `FAM` vs `INDI`:
 
 | Value  | URI            | Meaning                                                |
 | :----- | :------------- | :----------------------------------------------------- |
-| `CENS` | `g7:enum-CENS` | A census event; either `g7.1:INDI-CENS` or `g7:FAM-CENS` |
-| `NCHI` | `g7:enum-NCHI` | A count of children; either `g7.1:INDI-NCHI` or `g7:FAM-NCHI` |
-| `RESI` | `g7:enum-RESI` | A residence attribute; either `g7.1:INDI-RESI` or `g7:FAM-RESI` |
-| `FACT` | `g7:enum-FACT` | A generic attribute; either `g7.1:INDI-FACT` or `g7:FAM-FACT` |
-| `EVEN` | `g7:enum-EVEN` | A generic event; either `g7.1:INDI-EVEN` or `g7:FAM-EVEN` |
+| `CENS` | `g7.1:enum-CENS` | A census event; either `g7.1:INDI-CENS` or `g7.1:FAM-CENS` |
+| `NCHI` | `g7.1:enum-NCHI` | A count of children; either `g7.1:INDI-NCHI` or `g7.1:FAM-NCHI` |
+| `RESI` | `g7.1:enum-RESI` | A residence attribute; either `g7.1:INDI-RESI` or `g7.1:FAM-RESI` |
+| `FACT` | `g7.1:enum-FACT` | A generic attribute; either `g7.1:INDI-FACT` or `g7.1:FAM-FACT` |
+| `EVEN` | `g7.1:enum-EVEN` | A generic event; either `g7.1:INDI-EVEN` or `g7.1:FAM-EVEN` |
 
 
 ### `g7:enumset-MEDI`

@@ -1,0 +1,39 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7.1/BIRT-KIND
+
+standard tag: 'KIND'
+
+specification:
+  - Birth Kind
+  - |
+    An enumerated value from set `https://gedcom.io/terms/v7.1/enumset-BIRT-KIND`
+    indicating the type of birth.
+    
+    There is some conceptual overlap between `BIRT`.`TYPE` and `BIRT`.`KIND`:
+    
+    - `BIRT`.`TYPE` is preferred for general-purpose human-readable information
+      elaborating on the birth type.
+    - `BIRT`.`KIND` is preferred for information that informs some programmatic
+      behaviors (such as creating a list of persons who were ever alive) or to
+      support automated translation into multiple languages.
+
+label: 'Birth Kind'
+
+payload: https://gedcom.io/terms/v7/type-Enum
+
+enumeration set: "https://gedcom.io/terms/v7.1/enumset-BIRT-KIND"
+
+substructures: {}
+
+superstructures:
+  "https://gedcom.io/terms/v7.1/BIRT": "{0:M}"
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...

@@ -9,6 +9,8 @@ uri: https://gedcom.io/terms/v7.1/MARR
 standard tag: 'MARR'
 
 specification:
+  - Marriage
+  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - |
     Family events; see [Family Events] for descriptions of each family event type.
     
@@ -26,8 +28,6 @@ specification:
     - `FAM`.`EVEN` requires `TYPE`; it's optional for others
     
     </div>
-  - Marriage
-  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - A legal, common-law, or customary event such as a wedding or marriage ceremony
     that joins 2 partners to create or extend a family unit.
   - marriage

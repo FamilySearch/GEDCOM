@@ -765,6 +765,17 @@ A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.  Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part of 5.4 through 5.5.1.
 FamilySearch GEDCOM 7.0 reintroduced it with the name `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
 
+#### `KIND` (Birth Kind) `g7.1:BIRT-KIND`
+
+An enumerated value from set `g7.1:enumset-BIRT-KIND` indicating the type of birth.
+
+There is some conceptual overlap between `BIRT`.`TYPE` and `BIRT`.`KIND`:
+
+- `BIRT`.`TYPE` is preferred for general-purpose human-readable information elaborating on the birth type.
+- `BIRT`.`KIND` is preferred for information that informs some programmatic behaviors
+    (such as creating a list of persons who were ever alive)
+    or to support automated translation into multiple languages.
+
 #### `LANG` (Language) `g7:LANG`
 
 The primary human language of the superstructure.

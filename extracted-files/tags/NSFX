@@ -9,6 +9,9 @@ uri: https://gedcom.io/terms/v7/NSFX
 standard tag: 'NSFX'
 
 specification:
+  - Name suffix
+  - Text which appears on a name line after or behind the given and surname parts
+    of a name.
   - |
     Optional isolated name parts; see `PERSONAL_NAME_STRUCTURE` for more details.
     
@@ -33,9 +36,6 @@ specification:
     at least a user preference. Even when multiple `SURN` tags are used, the
     `PersonalName` data type identifies a single surname substring between its
     slashes.
-  - Name suffix
-  - Text which appears on a name line after or behind the given and surname parts
-    of a name.
 
 label: 'Name suffix'
 

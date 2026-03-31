@@ -9,6 +9,8 @@ uri: https://gedcom.io/terms/v7.1/BASM
 standard tag: 'BASM'
 
 specification:
+  - Bas Mitzvah
+  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - |
     Individual events; see [Individual Events] for descriptions of each individual
     event type.
@@ -32,8 +34,6 @@ specification:
       and is the recommended place to store such information.
     
     </div>
-  - Bas Mitzvah
-  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat
     Mitzvah."
 

@@ -9,6 +9,8 @@ uri: https://gedcom.io/terms/v7.1/INDI-NAME
 standard tag: 'NAME'
 
 specification:
+  - Name
+  - A `PERSONAL_NAME_STRUCTURE` with parts, translations, sources, and so forth.
   - |
     Names of individuals are represented in the manner the name is normally spoken,
     with the family name, surname, or nearest cultural parallel thereunto separated
@@ -39,8 +41,6 @@ specification:
     versions of this specification.
     
     </div>
-  - Name
-  - A `PERSONAL_NAME_STRUCTURE` with parts, translations, sources, and so forth.
 
 label: 'Name'
 

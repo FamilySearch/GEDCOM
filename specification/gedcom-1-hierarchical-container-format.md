@@ -176,9 +176,9 @@ The tag `ADOP` is used in this document to represent two structure types.
 Which one is meant can be identified by the superstructure type as follows:
 
 | Superstructure type | Structure type identified by tag `ADOP` |
-|------------------|------------------|
-| `g7:record-INDI` | `g7:ADOP`        |
-| `g7:ADOP-FAMC`   | `g7:FAMC-ADOP`   |
+|---------------------|-----------------------------------------|
+| `g7.1:record-INDI`  | `g7:ADOP`                               |
+| `g7:ADOP-FAMC`      | `g7:FAMC-ADOP`                          |
 
 An [extension-defined substructure](#extensions) could also be used to place either of these structure types in extension superstructures.
 

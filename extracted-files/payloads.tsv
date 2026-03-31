@@ -9,6 +9,7 @@ https://gedcom.io/terms/v7.1/BAPM	Y|<NULL>
 https://gedcom.io/terms/v7.1/BARM	Y|<NULL>
 https://gedcom.io/terms/v7.1/BASM	Y|<NULL>
 https://gedcom.io/terms/v7.1/BIRT	Y|<NULL>
+https://gedcom.io/terms/v7.1/BIRT-KIND	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7.1/BLES	Y|<NULL>
 https://gedcom.io/terms/v7.1/BURI	Y|<NULL>
 https://gedcom.io/terms/v7.1/CAST	http://www.w3.org/2001/XMLSchema#string
