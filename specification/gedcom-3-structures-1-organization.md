@@ -1020,7 +1020,7 @@ The optional `TITL` substructure supersedes any `OBJE.FILE.TITL` substructures i
 
 ```gedstruct
 n NO <Enum>                                {1:1}  g7.1:NO
-  +1 DATE <DatePeriod>                     {0:1}  g7.1:NO-DATE
+  +1 DATE <DatePeriod>                     {0:1}  g7:NO-DATE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}

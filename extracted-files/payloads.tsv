@@ -67,7 +67,6 @@ https://gedcom.io/terms/v7.1/NATI	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/NATU	Y|<NULL>
 https://gedcom.io/terms/v7.1/NMR	http://www.w3.org/2001/XMLSchema#nonNegativeInteger
 https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7/type-Enum
-https://gedcom.io/terms/v7.1/NO-DATE	https://gedcom.io/terms/v7/type-Date#period
 https://gedcom.io/terms/v7.1/NOTE	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/NOTE-TRAN	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/OBJE	@<https://gedcom.io/terms/v7.1/record-OBJE>@
@@ -144,6 +143,7 @@ https://gedcom.io/terms/v7/NAME	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/type-Name
 https://gedcom.io/terms/v7/NAME-TYPE	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7/NICK	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7/NO-DATE	https://gedcom.io/terms/v7/type-Date#period
 https://gedcom.io/terms/v7/NPFX	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/NSFX	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/PAGE	http://www.w3.org/2001/XMLSchema#string

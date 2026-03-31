@@ -49,10 +49,10 @@ payload: https://gedcom.io/terms/v7/type-Enum
 enumeration set: "https://gedcom.io/terms/v7.1/enumset-EVEN"
 
 substructures:
-  "https://gedcom.io/terms/v7.1/NO-DATE": "{0:1}"
   "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7/NO-DATE": "{0:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7.1/record-FAM": "{0:M}"

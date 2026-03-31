@@ -468,7 +468,7 @@ The payload is a `DateExact`.
 
 The `DateExact` that this document was created.
 
-#### `DATE` (Date) `g7.1:NO-DATE`
+#### `DATE` (Date) `g7:NO-DATE`
 
 The `DatePeriod` during which the event did not occur or the attribute did not apply.
 

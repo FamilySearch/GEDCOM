@@ -984,11 +984,10 @@ https://gedcom.io/terms/v7.1/NMR	SOUR	https://gedcom.io/terms/v7.1/SOUR
 https://gedcom.io/terms/v7.1/NMR	TYPE	https://gedcom.io/terms/v7/TYPE
 https://gedcom.io/terms/v7.1/NMR	UID	https://gedcom.io/terms/v7/UID
 https://gedcom.io/terms/v7.1/NMR	WWW	https://gedcom.io/terms/v7/WWW
-https://gedcom.io/terms/v7.1/NO	DATE	https://gedcom.io/terms/v7.1/NO-DATE
+https://gedcom.io/terms/v7.1/NO	DATE	https://gedcom.io/terms/v7/NO-DATE
 https://gedcom.io/terms/v7.1/NO	NOTE	https://gedcom.io/terms/v7.1/NOTE
 https://gedcom.io/terms/v7.1/NO	SNOTE	https://gedcom.io/terms/v7.1/SNOTE
 https://gedcom.io/terms/v7.1/NO	SOUR	https://gedcom.io/terms/v7.1/SOUR
-https://gedcom.io/terms/v7.1/NO-DATE	PHRASE	https://gedcom.io/terms/v7/PHRASE
 https://gedcom.io/terms/v7.1/NOTE	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7.1/NOTE	MIME	https://gedcom.io/terms/v7/MIME
 https://gedcom.io/terms/v7.1/NOTE	SOUR	https://gedcom.io/terms/v7.1/SOUR
@@ -1381,6 +1380,7 @@ https://gedcom.io/terms/v7/NAME-TRAN	NSFX	https://gedcom.io/terms/v7/NSFX
 https://gedcom.io/terms/v7/NAME-TRAN	SPFX	https://gedcom.io/terms/v7/SPFX
 https://gedcom.io/terms/v7/NAME-TRAN	SURN	https://gedcom.io/terms/v7/SURN
 https://gedcom.io/terms/v7/NAME-TYPE	PHRASE	https://gedcom.io/terms/v7/PHRASE
+https://gedcom.io/terms/v7/NO-DATE	PHRASE	https://gedcom.io/terms/v7/PHRASE
 https://gedcom.io/terms/v7/PEDI	PHRASE	https://gedcom.io/terms/v7/PHRASE
 https://gedcom.io/terms/v7/REFN	TYPE	https://gedcom.io/terms/v7/TYPE
 https://gedcom.io/terms/v7/ROLE	PHRASE	https://gedcom.io/terms/v7/PHRASE
