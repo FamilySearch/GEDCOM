@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/BAPM
 standard tag: 'BAPM'
 
 specification:
-  - Baptism
-  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - |
     Individual events; see [Individual Events] for descriptions of each individual
     event type.
@@ -34,6 +32,8 @@ specification:
       and is the recommended place to store such information.
     
     </div>
+  - Baptism
+  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - Baptism, performed in infancy or later. (See also [`BAPL`] and `CHR`.)
   - baptism
 

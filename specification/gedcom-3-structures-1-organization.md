@@ -54,7 +54,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
     and the `CREATION_DATE` rule begins
 
     ````gedstruct
-    n CREA                                     {1:1}  g7.1:CREA
+    n CREA                                     {1:1}  g7:CREA
     ````
     
     Thus, a `FAM` record has an optional singular `CREA` substructure
@@ -253,7 +253,7 @@ n @XREF:INDI@ INDI                         {1:1}  g7.1:record-INDI
   +1 FAMC @<XREF:FAM>@                     {0:M}  g7.1:INDI-FAMC
      +2 PEDI <Enum>                        {0:1}  g7:PEDI
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
-     +2 STAT <Enum>                        {0:1}  g7.1:FAMC-STAT
+     +2 STAT <Enum>                        {0:1}  g7:FAMC-STAT
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
      +2 <<NOTE_STRUCTURE>>                 {0:M}
   +1 FAMS @<XREF:FAM>@                     {0:M}  g7.1:FAMS
@@ -375,7 +375,7 @@ n @XREF:SNOTE@ SNOTE <Text>                {1:1}  g7.1:record-SNOTE
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
-  +1 TRAN <Text>                           {0:M}  g7.1:NOTE-TRAN
+  +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
   +1 <<SOURCE_CITATION>>                   {0:M}
@@ -421,7 +421,7 @@ n @XREF:SOUR@ SOUR                         {1:1}  g7.1:record-SOUR
   +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 DATA                                  {0:1}  g7.1:DATA
      +2 EVEN <List:Enum>                   {0:M}  g7.1:DATA-EVEN
-        +3 DATE <DatePeriod>               {0:1}  g7.1:DATA-EVEN-DATE
+        +3 DATE <DatePeriod>               {0:1}  g7:DATA-EVEN-DATE
            +4 PHRASE <Text>                {0:1}  g7:PHRASE
         +3 <<PLACE_STRUCTURE>>             {0:1}
      +2 AGNC <Text>                        {0:1}  g7:AGNC
@@ -560,7 +560,7 @@ The `NOTE` substructure may describe previous changes as well as the most recent
 #### `CREATION_DATE` :=
 
 ```gedstruct
-n CREA                                     {1:1}  g7.1:CREA
+n CREA                                     {1:1}  g7:CREA
   +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
      +2 TIME <Time>                        {0:1}  g7:TIME
 ```
@@ -839,7 +839,7 @@ n ADOP [Y|<NULL>]                          {1:1}  g7.1:ADOP
   +1 TYPE <Text>                           {0:1}  g7:TYPE
   +1 <<INDIVIDUAL_EVENT_DETAIL>>           {0:1}
   +1 FAMC @<XREF:FAM>@                     {0:1}  g7.1:ADOP-FAMC
-     +2 ADOP <Enum>                        {0:1}  g7.1:FAMC-ADOP
+     +2 ADOP <Enum>                        {0:1}  g7:FAMC-ADOP
         +3 PHRASE <Text>                   {0:1}  g7:PHRASE
 |
 n BAPM [Y|<NULL>]                          {1:1}  g7.1:BAPM
@@ -1053,7 +1053,7 @@ means "no marriage had occurred as of March 24^th^, 1880"
 n NOTE <Text>                              {1:1}  g7.1:NOTE
   +1 MIME <MediaType>                      {0:1}  g7:MIME
   +1 LANG <Language>                       {0:1}  g7:LANG
-  +1 TRAN <Text>                           {0:M}  g7.1:NOTE-TRAN
+  +1 TRAN <Text>                           {0:M}  g7:NOTE-TRAN
      +2 MIME <MediaType>                   {0:1}  g7:MIME
      +2 LANG <Language>                    {0:1}  g7:LANG
   +1 <<SOURCE_CITATION>>                   {0:M}
@@ -1134,9 +1134,9 @@ Alternative approaches to representing names are being considered for future ver
 
 ```gedstruct
 n PLAC <List:Text>                         {1:1}  g7.1:PLAC
-  +1 FORM <List:Text>                      {0:1}  g7.1:PLAC-FORM
+  +1 FORM <List:Text>                      {0:1}  g7:PLAC-FORM
   +1 LANG <Language>                       {0:1}  g7:LANG
-  +1 TRAN <List:Text>                      {0:M}  g7.1:PLAC-TRAN
+  +1 TRAN <List:Text>                      {0:M}  g7:PLAC-TRAN
      +2 LANG <Language>                    {1:1}  g7:LANG
   +1 MAP                                   {0:1}  g7:MAP
      +2 LATI <Latitude>                    {1:1}  g7:LATI
@@ -1197,7 +1197,7 @@ This specification does not support places where a region name contains a comma.
 ```gedstruct
 n SOUR @<XREF:SOUR>@                       {1:1}  g7.1:SOUR
   +1 PAGE <Text>                           {0:1}  g7:PAGE
-  +1 DATA                                  {0:1}  g7.1:SOUR-DATA
+  +1 DATA                                  {0:1}  g7:SOUR-DATA
      +2 <<DATE_VALUE>>                     {0:1}
      +2 TEXT <Text>                        {0:M}  g7:TEXT
         +3 MIME <MediaType>                {0:1}  g7:MIME

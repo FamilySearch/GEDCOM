@@ -19,11 +19,9 @@ https://gedcom.io/terms/v7.1/CHR	Y|<NULL>
 https://gedcom.io/terms/v7.1/CHRA	Y|<NULL>
 https://gedcom.io/terms/v7.1/CONF	Y|<NULL>
 https://gedcom.io/terms/v7.1/CONL	
-https://gedcom.io/terms/v7.1/CREA	
 https://gedcom.io/terms/v7.1/CREM	Y|<NULL>
 https://gedcom.io/terms/v7.1/DATA	
 https://gedcom.io/terms/v7.1/DATA-EVEN	https://gedcom.io/terms/v7/type-List#Enum
-https://gedcom.io/terms/v7.1/DATA-EVEN-DATE	https://gedcom.io/terms/v7/type-Date#period
 https://gedcom.io/terms/v7.1/DEAT	Y|<NULL>
 https://gedcom.io/terms/v7.1/DESI	@<https://gedcom.io/terms/v7.1/record-SUBM>@
 https://gedcom.io/terms/v7.1/DIV	Y|<NULL>
@@ -41,8 +39,6 @@ https://gedcom.io/terms/v7.1/FAM-NCHI	http://www.w3.org/2001/XMLSchema#nonNegati
 https://gedcom.io/terms/v7.1/FAM-RESI	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/FAM-WIFE	@<https://gedcom.io/terms/v7.1/record-INDI>@
 https://gedcom.io/terms/v7.1/FAMC	@<https://gedcom.io/terms/v7.1/record-FAM>@
-https://gedcom.io/terms/v7.1/FAMC-ADOP	https://gedcom.io/terms/v7/type-Enum
-https://gedcom.io/terms/v7.1/FAMC-STAT	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7.1/FAMS	@<https://gedcom.io/terms/v7.1/record-FAM>@
 https://gedcom.io/terms/v7.1/FCOM	Y|<NULL>
 https://gedcom.io/terms/v7.1/GRAD	Y|<NULL>
@@ -69,13 +65,10 @@ https://gedcom.io/terms/v7.1/NATU	Y|<NULL>
 https://gedcom.io/terms/v7.1/NMR	http://www.w3.org/2001/XMLSchema#nonNegativeInteger
 https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7.1/NOTE	http://www.w3.org/2001/XMLSchema#string
-https://gedcom.io/terms/v7.1/NOTE-TRAN	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/OBJE	@<https://gedcom.io/terms/v7.1/record-OBJE>@
 https://gedcom.io/terms/v7.1/OCCU	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/ORDN	Y|<NULL>
 https://gedcom.io/terms/v7.1/PLAC	https://gedcom.io/terms/v7/type-List#Text
-https://gedcom.io/terms/v7.1/PLAC-FORM	https://gedcom.io/terms/v7/type-List#Text
-https://gedcom.io/terms/v7.1/PLAC-TRAN	https://gedcom.io/terms/v7/type-List#Text
 https://gedcom.io/terms/v7.1/PROB	Y|<NULL>
 https://gedcom.io/terms/v7.1/PROP	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/REPO	@<https://gedcom.io/terms/v7.1/record-REPO>@
@@ -84,7 +77,6 @@ https://gedcom.io/terms/v7.1/SLGC
 https://gedcom.io/terms/v7.1/SLGS	
 https://gedcom.io/terms/v7.1/SNOTE	@<https://gedcom.io/terms/v7.1/record-SNOTE>@
 https://gedcom.io/terms/v7.1/SOUR	@<https://gedcom.io/terms/v7.1/record-SOUR>@
-https://gedcom.io/terms/v7.1/SOUR-DATA	
 https://gedcom.io/terms/v7.1/SOUR-EVEN	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7.1/SSN	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/SUBM	@<https://gedcom.io/terms/v7.1/record-SUBM>@
@@ -110,14 +102,18 @@ https://gedcom.io/terms/v7/CITY	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/CONT	
 https://gedcom.io/terms/v7/COPR	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/CORP	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7/CREA	
 https://gedcom.io/terms/v7/CROP	
 https://gedcom.io/terms/v7/CTRY	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7/DATA-EVEN-DATE	https://gedcom.io/terms/v7/type-Date#period
 https://gedcom.io/terms/v7/DATE	https://gedcom.io/terms/v7/type-Date
 https://gedcom.io/terms/v7/DATE-exact	https://gedcom.io/terms/v7/type-Date#exact
 https://gedcom.io/terms/v7/DEST	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/EMAIL	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/EXID	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/EXID-TYPE	http://www.w3.org/2001/XMLSchema#anyURI
+https://gedcom.io/terms/v7/FAMC-ADOP	https://gedcom.io/terms/v7/type-Enum
+https://gedcom.io/terms/v7/FAMC-STAT	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7/FAX	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/FILE	https://gedcom.io/terms/v7/type-FilePath
 https://gedcom.io/terms/v7/FILE-TRAN	https://gedcom.io/terms/v7/type-FilePath
@@ -145,12 +141,15 @@ https://gedcom.io/terms/v7/NAME-TRAN	https://gedcom.io/terms/v7/type-Name
 https://gedcom.io/terms/v7/NAME-TYPE	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7/NICK	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/NO-DATE	https://gedcom.io/terms/v7/type-Date#period
+https://gedcom.io/terms/v7/NOTE-TRAN	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/NPFX	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/NSFX	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/PAGE	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/PEDI	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7/PHON	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/PHRASE	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7/PLAC-FORM	https://gedcom.io/terms/v7/type-List#Text
+https://gedcom.io/terms/v7/PLAC-TRAN	https://gedcom.io/terms/v7/type-List#Text
 https://gedcom.io/terms/v7/POST	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/PUBL	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/QUAY	https://gedcom.io/terms/v7/type-Enum
@@ -161,6 +160,7 @@ https://gedcom.io/terms/v7/ROLE	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7/SCHMA	
 https://gedcom.io/terms/v7/SDATE	https://gedcom.io/terms/v7/type-Date
 https://gedcom.io/terms/v7/SEX	https://gedcom.io/terms/v7/type-Enum
+https://gedcom.io/terms/v7/SOUR-DATA	
 https://gedcom.io/terms/v7/SPFX	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/STAE	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7/SUBM-LANG	http://www.w3.org/2001/XMLSchema#Language

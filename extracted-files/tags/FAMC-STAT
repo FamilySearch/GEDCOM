@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7.1/FAMC-STAT
+uri: https://gedcom.io/terms/v7/FAMC-STAT
 
 standard tag: 'STAT'
 
@@ -25,9 +25,6 @@ substructures:
 
 superstructures:
   "https://gedcom.io/terms/v7.1/INDI-FAMC": "{0:1}"
-
-subsumes:
-  - "https://gedcom.io/terms/v7/FAMC-STAT"
 
 prerelease: true
 

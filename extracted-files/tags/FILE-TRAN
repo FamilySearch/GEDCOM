@@ -12,7 +12,7 @@ specification:
   - Translation
   - |
     A type of `TRAN` for external media files. Each
-    `https://gedcom.io/terms/v7.1/NOTE-TRAN` must have a `FORM` substructure. See
+    `https://gedcom.io/terms/v7/NOTE-TRAN` must have a `FORM` substructure. See
     also `FILE` and the [File Path datatype].
     
     <div class="example">
@@ -65,8 +65,6 @@ substructures:
 
 superstructures:
   "https://gedcom.io/terms/v7/FILE": "{0:M}"
-
-prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

@@ -9,6 +9,17 @@ uri: https://gedcom.io/terms/v7/DATE
 standard tag: 'DATE'
 
 specification:
+  - |
+    A date, optionally with a time and/or a phrase. If there is a `TIME`, it
+    asserts that the event happened at a specific time on a single day. `TIME`
+    should not be used with `DatePeriod` but may be used with other date types.
+    
+    <div class="note">
+    
+    There is currently no provision for approximate times or time phrases. Time
+    phrases are expected to be added in version 7.1.
+    
+    </div>
   - Date
   - |
     The principal date of the subject of the superstructure. The payload is a
@@ -22,23 +33,12 @@ specification:
     the attributes applicability, but other date forms assume that the attribute
     may have also applied on other dates too.
     
-    When the superstructure is a `https://gedcom.io/terms/v7.1/SOUR-DATA`, the
+    When the superstructure is a `https://gedcom.io/terms/v7/SOUR-DATA`, the
     principal date indicates when the data was entered into the source; or, for a
     source like a website that changes over time, a date on which the source
     contained the data.
     
     See `DATE_VALUE` for more details.
-  - |
-    A date, optionally with a time and/or a phrase. If there is a `TIME`, it
-    asserts that the event happened at a specific time on a single day. `TIME`
-    should not be used with `DatePeriod` but may be used with other date types.
-    
-    <div class="note">
-    
-    There is currently no provision for approximate times or time phrases. Time
-    phrases are expected to be added in version 7.1.
-    
-    </div>
 
 label: 'Date'
 
@@ -104,9 +104,9 @@ superstructures:
   "https://gedcom.io/terms/v7.1/RETI": "{0:1}"
   "https://gedcom.io/terms/v7.1/SLGC": "{0:1}"
   "https://gedcom.io/terms/v7.1/SLGS": "{0:1}"
-  "https://gedcom.io/terms/v7.1/SOUR-DATA": "{0:1}"
   "https://gedcom.io/terms/v7.1/SSN": "{0:1}"
   "https://gedcom.io/terms/v7.1/WILL": "{0:1}"
+  "https://gedcom.io/terms/v7/SOUR-DATA": "{0:1}"
 
 prerelease: true
 

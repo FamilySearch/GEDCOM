@@ -11,17 +11,17 @@ standard tag: 'FAMC'
 specification:
   - Family child
   - The family in which an individual appears as a child. It is also used with a
-    `https://gedcom.io/terms/v7.1/FAMC-STAT` substructure to show individuals who
-    are not children of the family. See `FAMILY_RECORD` for more details.
+    `https://gedcom.io/terms/v7/FAMC-STAT` substructure to show individuals who are
+    not children of the family. See `FAMILY_RECORD` for more details.
 
 label: 'Family child'
 
 payload: "@<https://gedcom.io/terms/v7.1/record-FAM>@"
 
 substructures:
-  "https://gedcom.io/terms/v7.1/FAMC-STAT": "{0:1}"
   "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7/FAMC-STAT": "{0:1}"
   "https://gedcom.io/terms/v7/PEDI": "{0:1}"
 
 superstructures:

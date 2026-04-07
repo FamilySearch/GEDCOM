@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7.1/SOUR-DATA
+uri: https://gedcom.io/terms/v7/SOUR-DATA
 
 standard tag: 'DATA'
 
@@ -22,9 +22,6 @@ substructures:
 
 superstructures:
   "https://gedcom.io/terms/v7.1/SOUR": "{0:1}"
-
-subsumes:
-  - "https://gedcom.io/terms/v7/SOUR-DATA"
 
 prerelease: true
 

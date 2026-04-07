@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/record-INDI
 standard tag: 'INDI'
 
 specification:
-  - Individual
-  - See `INDIVIDUAL_RECORD`.
   - |
     The individual record is a compilation of facts or hypothesized facts about an
     individual. These facts may come from multiple sources. Source citations and
@@ -63,6 +61,8 @@ specification:
     most cases that would be an error, though it is theoretically possible that
     such a situation could occur with non-biological relationships (marriages,
     adoptions, etc.).
+  - Individual
+  - See `INDIVIDUAL_RECORD`.
 
 label: 'Individual'
 
@@ -86,7 +86,6 @@ substructures:
   "https://gedcom.io/terms/v7.1/CHRA": "{0:M}"
   "https://gedcom.io/terms/v7.1/CONF": "{0:M}"
   "https://gedcom.io/terms/v7.1/CONL": "{0:M}"
-  "https://gedcom.io/terms/v7.1/CREA": "{0:1}"
   "https://gedcom.io/terms/v7.1/CREM": "{0:M}"
   "https://gedcom.io/terms/v7.1/DEAT": "{0:M}"
   "https://gedcom.io/terms/v7.1/DESI": "{0:M}"
@@ -126,6 +125,7 @@ substructures:
   "https://gedcom.io/terms/v7.1/SSN": "{0:M}"
   "https://gedcom.io/terms/v7.1/SUBM": "{0:M}"
   "https://gedcom.io/terms/v7.1/WILL": "{0:M}"
+  "https://gedcom.io/terms/v7/CREA": "{0:1}"
   "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"
   "https://gedcom.io/terms/v7/RESN": "{0:1}"

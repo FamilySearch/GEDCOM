@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/FAM-CENS
 standard tag: 'CENS'
 
 specification:
-  - Census
-  - An [Family Event].
   - |
     Family events; see [Family Events] for descriptions of each family event type.
     
@@ -28,6 +26,8 @@ specification:
     - `FAM`.`EVEN` requires `TYPE`; it's optional for others
     
     </div>
+  - Census
+  - An [Family Event].
   - Periodic count of the population for a designated locality, such as a national
     or state census.
   - census

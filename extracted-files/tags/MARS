@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/MARS
 standard tag: 'MARS'
 
 specification:
-  - Marriage settlement
-  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - |
     Family events; see [Family Events] for descriptions of each family event type.
     
@@ -28,6 +26,8 @@ specification:
     - `FAM`.`EVEN` requires `TYPE`; it's optional for others
     
     </div>
+  - Marriage settlement
+  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - Creating an agreement between 2 people contemplating marriage, at which time
     they agree to release or modify property rights that would otherwise arise from
     the marriage.

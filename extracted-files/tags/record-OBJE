@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/record-OBJE
 standard tag: 'OBJE'
 
 specification:
-  - Object
-  - See `MULTIMEDIA_RECORD`.
   - |
     The multimedia record refers to 1 or more external digital files, and may
     provide some additional information about the files and the media they encode.
@@ -26,6 +24,8 @@ specification:
     versa. Applications must not create datasets where these mutual pointers form a
     cycle. Applications should also ensure they can handle invalid files with such
     cycles in a safe manner.
+  - Object
+  - See `MULTIMEDIA_RECORD`.
 
 label: 'Object'
 
@@ -33,10 +33,10 @@ payload: null
 
 substructures:
   "https://gedcom.io/terms/v7.1/CHAN": "{0:1}"
-  "https://gedcom.io/terms/v7.1/CREA": "{0:1}"
   "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7/CREA": "{0:1}"
   "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/FILE": "{1:M}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"

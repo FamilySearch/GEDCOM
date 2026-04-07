@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/CREM
 standard tag: 'CREM'
 
 specification:
-  - Cremation
-  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - |
     Individual events; see [Individual Events] for descriptions of each individual
     event type.
@@ -34,6 +32,8 @@ specification:
       and is the recommended place to store such information.
     
     </div>
+  - Cremation
+  - An [Individual Event]. See also `INDIVIDUAL_EVENT_STRUCTURE`.
   - The act of reducing a dead body to ashes by fire.
   - cremation
 

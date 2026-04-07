@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/record-REPO
 standard tag: 'REPO'
 
 specification:
-  - Repository
-  - See `REPOSITORY_RECORD`.
   - |
     The repository record provides information about an institution or person that
     has a collection of sources. Informal repositories include the owner of an
@@ -24,6 +22,8 @@ specification:
     expected they will be added in a later version. Until such time, it is
     recommended that the repository record store current contact information, if
     known.
+  - Repository
+  - See `REPOSITORY_RECORD`.
 
 label: 'Repository'
 
@@ -31,10 +31,10 @@ payload: null
 
 substructures:
   "https://gedcom.io/terms/v7.1/CHAN": "{0:1}"
-  "https://gedcom.io/terms/v7.1/CREA": "{0:1}"
   "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/ADDR": "{0:1}"
+  "https://gedcom.io/terms/v7/CREA": "{0:1}"
   "https://gedcom.io/terms/v7/EMAIL": "{0:M}"
   "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/FAX": "{0:M}"

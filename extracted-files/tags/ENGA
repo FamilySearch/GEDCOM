@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/ENGA
 standard tag: 'ENGA'
 
 specification:
-  - Engagement
-  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - |
     Family events; see [Family Events] for descriptions of each family event type.
     
@@ -28,6 +26,8 @@ specification:
     - `FAM`.`EVEN` requires `TYPE`; it's optional for others
     
     </div>
+  - Engagement
+  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - Recording or announcing an agreement between 2 people to become married.
   - engagement
 

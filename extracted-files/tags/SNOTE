@@ -9,9 +9,6 @@ uri: https://gedcom.io/terms/v7.1/SNOTE
 standard tag: 'SNOTE'
 
 specification:
-  - Shared note
-  - A pointer to a note that is shared by multiple structures. See `NOTE_STRUCTURE`
-    for more details.
   - |
     A catch-all location for information that does not fully fit within other
     structures. It may include research notes, additional context, alternative
@@ -25,6 +22,9 @@ specification:
     A `NOTE_STRUCTURE` can contain a `SOURCE_CITATION`, which in turn can contain a
     `NOTE_STRUCTURE`, allowing potentially unbounded nesting of structures. Because
     each dataset is finite, this nesting is also guaranteed to be finite.
+  - Shared note
+  - A pointer to a note that is shared by multiple structures. See `NOTE_STRUCTURE`
+    for more details.
 
 label: 'Shared note'
 

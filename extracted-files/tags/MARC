@@ -9,8 +9,6 @@ uri: https://gedcom.io/terms/v7.1/MARC
 standard tag: 'MARC'
 
 specification:
-  - Marriage contract
-  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - |
     Family events; see [Family Events] for descriptions of each family event type.
     
@@ -28,6 +26,8 @@ specification:
     - `FAM`.`EVEN` requires `TYPE`; it's optional for others
     
     </div>
+  - Marriage contract
+  - A [Family Event]. See also `FAMILY_EVENT_STRUCTURE`.
   - Recording a formal agreement of marriage, including the prenuptial agreement in
     which marriage partners reach agreement about the property rights of 1 or both,
     securing property to their children.

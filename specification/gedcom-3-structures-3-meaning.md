@@ -190,7 +190,7 @@ See `ADDRESS_STRUCTURE` for more details.
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `ADOP` (Adoption) `g7.1:FAMC-ADOP`
+#### `ADOP` (Adoption) `g7:FAMC-ADOP`
 
 An enumerated value from set `g7:enumset-ADOP` indicating which parent(s) in the family adopted this individual.
 
@@ -384,7 +384,7 @@ A copyright statement, as appropriate for the copyright laws applicable to this 
 
 The name of the business, corporation, or person that produced or commissioned the product.
 
-#### `CREA` (Creation) `g7.1:CREA`
+#### `CREA` (Creation) `g7:CREA`
 
 The initial creation of the superstructure.
 This is metadata about the structure itself, not data about its subject.
@@ -431,7 +431,7 @@ A structure with no payload used to distinguish a description of something from 
 For example, `SOUR` and its other substructures describe a source itself,
 while `SOUR`.`DATA` describes the content of the source.
 
-#### `DATA` (Data) `g7.1:SOUR-DATA`
+#### `DATA` (Data) `g7:SOUR-DATA`
 
 See `g7.1:DATA`.
 
@@ -455,7 +455,7 @@ When the superstructure is an event, the principal date indicates when the event
 When the superstructure is an attribute, the principal date indicates when the attribute was observed, asserted, or applied.
 A date period might put bounds on the attributes applicability, but other date forms assume that the attribute may have also applied on other dates too.
 
-When the superstructure is a `g7.1:SOUR-DATA`, the principal date indicates when the data was entered into the source; or, for a source like a website that changes over time, a date on which the source contained the data.
+When the superstructure is a `g7:SOUR-DATA`, the principal date indicates when the data was entered into the source; or, for a source like a website that changes over time, a date on which the source contained the data.
 
 See `DATE_VALUE` for more details.
 
@@ -472,7 +472,7 @@ The `DateExact` that this document was created.
 
 The `DatePeriod` during which the event did not occur or the attribute did not apply.
 
-#### `DATE` (Date) `g7.1:DATA-EVEN-DATE`
+#### `DATE` (Date) `g7:DATA-EVEN-DATE`
 
 The `DatePeriod` covered by the entire source; the period during which this source recorded events.
 
@@ -627,7 +627,7 @@ If the attribute being defined was 1 of the person's skills, such as woodworking
 #### `FAMC` (Family child) `g7.1:INDI-FAMC`
 
 The family in which an individual appears as a child.
-It is also used with a `g7.1:FAMC-STAT` substructure to show individuals who are not children of the family.
+It is also used with a `g7:FAMC-STAT` substructure to show individuals who are not children of the family.
 See `FAMILY_RECORD` for more details.
 
 #### `FAMC` (Family child) `g7.1:FAMC`
@@ -638,7 +638,7 @@ The family with which this individual event is associated.
 
 The individual or couple that adopted this individual.
 
-Adoption by an individual, rather than a couple, may be represented either by pointing to a `FAM` where that individual is a `HUSB` or `WIFE` and using a `g7.1:FAMC-ADOP` substructure to indicate which 1 performed the adoption; or by using a `FAM` where the adopting individual is the only `HUSB`/`WIFE`.
+Adoption by an individual, rather than a couple, may be represented either by pointing to a `FAM` where that individual is a `HUSB` or `WIFE` and using a `g7:FAMC-ADOP` substructure to indicate which 1 performed the adoption; or by using a `FAM` where the adopting individual is the only `HUSB`/`WIFE`.
 
 #### `FAMS` (Family spouse) `g7.1:FAMS`
 
@@ -664,7 +664,7 @@ See the [File Path datatype](#file-path) for more details.
 
 The [media type](#media-type) of the file referenced by the superstructure.
 
-#### `FORM` (Format) `g7.1:PLAC-FORM`
+#### `FORM` (Format) `g7:PLAC-FORM`
 
 A comma-separated list of jurisdictional titles,
 which has the same number of elements and in the same order as the `PLAC` structure.
@@ -1411,7 +1411,7 @@ See `ADDRESS_STRUCTURE` for more details.
 
 An enumerated value from set `g7:enumset-ord-STAT` assessing of the state or condition of an ordinance.
 
-#### `STAT` (Status) `g7.1:FAMC-STAT`
+#### `STAT` (Status) `g7:FAMC-STAT`
 
 An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or condition of a researcher's belief in a family connection.
 
@@ -1518,7 +1518,7 @@ The following presents a name in Mandarin, transliterated using Pinyin
 ```
 :::
 
-#### `TRAN` (Translation) `g7.1:PLAC-TRAN`
+#### `TRAN` (Translation) `g7:PLAC-TRAN`
 
 A type of `TRAN` substructure specific to places.
 Each `PLAC`.`TRAN` must have a `LANG` substructure.
@@ -1542,11 +1542,11 @@ and English translation
 :::
 
 
-#### `TRAN` (Translation) `g7.1:NOTE-TRAN`
+#### `TRAN` (Translation) `g7:NOTE-TRAN`
 
 A type of `TRAN` for unstructured human-readable text,
 such as is found in `NOTE` and `SNOTE` payloads.
-Each `g7.1:NOTE-TRAN` must have either a `LANG` substructure or a `MIME` substructure or both.
+Each `g7:NOTE-TRAN` must have either a `LANG` substructure or a `MIME` substructure or both.
 If either is missing, it is assumed to have the same value as the superstructure.
 See also `NOTE` and `SNOTE`.
 
@@ -1574,7 +1574,7 @@ if the resulting text is different from the text created by the HTML-to-text con
 #### `TRAN` (Translation) `g7:FILE-TRAN`
 
 A type of `TRAN` for external media files.
-Each `g7.1:NOTE-TRAN` must have a `FORM` substructure.
+Each `g7:NOTE-TRAN` must have a `FORM` substructure.
 See also `FILE` and the [File Path datatype](#file-path).
 
 :::example
