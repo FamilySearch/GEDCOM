@@ -107,14 +107,15 @@ payload: http://www.w3.org/2001/XMLSchema#string
 substructures: {}
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/ALIA": "{0:1}"
+  "https://gedcom.io/terms/v7.1/ASSO": "{0:1}"
+  "https://gedcom.io/terms/v7.1/CHIL": "{0:1}"
+  "https://gedcom.io/terms/v7.1/FAM-HUSB": "{0:1}"
+  "https://gedcom.io/terms/v7.1/FAM-WIFE": "{0:1}"
+  "https://gedcom.io/terms/v7.1/SOUR-EVEN": "{0:1}"
   "https://gedcom.io/terms/v7/AGE": "{0:1}"
-  "https://gedcom.io/terms/v7/ALIA": "{0:1}"
-  "https://gedcom.io/terms/v7/ASSO": "{0:1}"
-  "https://gedcom.io/terms/v7/CHIL": "{0:1}"
   "https://gedcom.io/terms/v7/DATA-EVEN-DATE": "{0:1}"
   "https://gedcom.io/terms/v7/DATE": "{0:1}"
-  "https://gedcom.io/terms/v7/FAM-HUSB": "{0:1}"
-  "https://gedcom.io/terms/v7/FAM-WIFE": "{0:1}"
   "https://gedcom.io/terms/v7/FAMC-ADOP": "{0:1}"
   "https://gedcom.io/terms/v7/FAMC-STAT": "{0:1}"
   "https://gedcom.io/terms/v7/MEDI": "{0:1}"
@@ -123,7 +124,8 @@ superstructures:
   "https://gedcom.io/terms/v7/PEDI": "{0:1}"
   "https://gedcom.io/terms/v7/ROLE": "{0:1}"
   "https://gedcom.io/terms/v7/SDATE": "{0:1}"
-  "https://gedcom.io/terms/v7/SOUR-EVEN": "{0:1}"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

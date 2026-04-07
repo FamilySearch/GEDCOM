@@ -4,13 +4,11 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/INDI-NAME
+uri: https://gedcom.io/terms/v7.1/INDI-NAME
 
 standard tag: 'NAME'
 
 specification:
-  - Name
-  - A `PERSONAL_NAME_STRUCTURE` with parts, translations, sources, and so forth.
   - |
     Names of individuals are represented in the manner the name is normally spoken,
     with the family name, surname, or nearest cultural parallel thereunto separated
@@ -41,26 +39,33 @@ specification:
     versions of this specification.
     
     </div>
+  - Name
+  - A `PERSONAL_NAME_STRUCTURE` with parts, translations, sources, and so forth.
 
 label: 'Name'
 
 payload: https://gedcom.io/terms/v7/type-Name
 
 substructures:
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/GIVN": "{0:M}"
   "https://gedcom.io/terms/v7/NAME-TRAN": "{0:M}"
   "https://gedcom.io/terms/v7/NAME-TYPE": "{0:1}"
   "https://gedcom.io/terms/v7/NICK": "{0:M}"
-  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7/NPFX": "{0:M}"
   "https://gedcom.io/terms/v7/NSFX": "{0:M}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/SPFX": "{0:M}"
   "https://gedcom.io/terms/v7/SURN": "{0:M}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-INDI": "{0:M}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/INDI-NAME"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

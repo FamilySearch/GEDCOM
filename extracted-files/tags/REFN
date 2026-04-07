@@ -9,6 +9,24 @@ uri: https://gedcom.io/terms/v7/REFN
 standard tag: 'REFN'
 
 specification:
+  - |
+    <div class="deprecation">
+    
+    Having an `EXID` without an `EXID`.`TYPE` substructure is deprecated. The
+    meaning of an `EXID` depends on its `EXID`.`TYPE`. The cardinality of
+    `EXID`.`TYPE` will be changed to `{1:1}` in version 8.0.
+    
+    </div>
+    
+    Each of these provides an identifier for a structure or its subject, and each
+    is different in purpose:
+    
+    - `REFN` is a user-generated identifier for a structure.
+    
+    - `UID` is a globally-unique identifier for a structure.
+    
+    - `EXID` is an identifier maintained by an external authority that applies to
+      the subject of the structure.
   - Reference
   - |
     A user-defined number or text that the submitter uses to identify the
@@ -28,13 +46,13 @@ substructures:
   "https://gedcom.io/terms/v7/TYPE": "{0:1}"
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/record-FAM": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-INDI": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-OBJE": "{0:M}"
   "https://gedcom.io/terms/v7.1/record-REPO": "{0:M}"
   "https://gedcom.io/terms/v7.1/record-SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/record-SOUR": "{0:M}"
   "https://gedcom.io/terms/v7.1/record-SUBM": "{0:M}"
-  "https://gedcom.io/terms/v7/record-FAM": "{0:M}"
-  "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
-  "https://gedcom.io/terms/v7/record-OBJE": "{0:M}"
 
 prerelease: true
 

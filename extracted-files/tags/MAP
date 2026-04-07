@@ -28,7 +28,9 @@ substructures:
   "https://gedcom.io/terms/v7/LONG": "{1:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/PLAC": "{0:1}"
+  "https://gedcom.io/terms/v7.1/PLAC": "{0:1}"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

@@ -4,14 +4,11 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/HEAD
+uri: https://gedcom.io/terms/v7.1/HEAD
 
 standard tag: 'HEAD'
 
 specification:
-  - Header
-  - A pseudo-structure for storing metadata about the document. See [The Header
-    and Trailer] for more details.
   - |
     The header pseudo-structure provides metadata about the entire dataset. A few
     substructures of note:
@@ -32,12 +29,18 @@ specification:
     `HEAD`.`SOUR`.`NAME` instead.
     
     </div>
+  - Header
+  - A pseudo-structure for storing metadata about the document. See [The Header
+    and Trailer] for more details.
 
 label: 'Header'
 
 payload: null
 
 substructures:
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:1}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:1}"
+  "https://gedcom.io/terms/v7.1/SUBM": "{0:1}"
   "https://gedcom.io/terms/v7/COPR": "{0:1}"
   "https://gedcom.io/terms/v7/DEST": "{0:1}"
   "https://gedcom.io/terms/v7/GEDC": "{1:1}"
@@ -45,12 +48,14 @@ substructures:
   "https://gedcom.io/terms/v7/HEAD-LANG": "{0:1}"
   "https://gedcom.io/terms/v7/HEAD-PLAC": "{0:1}"
   "https://gedcom.io/terms/v7/HEAD-SOUR": "{0:1}"
-  "https://gedcom.io/terms/v7/NOTE": "{0:1}"
   "https://gedcom.io/terms/v7/SCHMA": "{0:1}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:1}"
-  "https://gedcom.io/terms/v7/SUBM": "{0:1}"
 
 superstructures: {}
+
+subsumes:
+  - "https://gedcom.io/terms/v7/HEAD"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/INDI-FAMC
+uri: https://gedcom.io/terms/v7.1/INDI-FAMC
 
 standard tag: 'FAMC'
 
@@ -16,16 +16,21 @@ specification:
 
 label: 'Family child'
 
-payload: "@<https://gedcom.io/terms/v7/record-FAM>@"
+payload: "@<https://gedcom.io/terms/v7.1/record-FAM>@"
 
 substructures:
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7/FAMC-STAT": "{0:1}"
-  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7/PEDI": "{0:1}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-INDI": "{0:M}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/INDI-FAMC"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

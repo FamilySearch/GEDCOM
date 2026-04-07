@@ -73,28 +73,28 @@ An assertion that an event did not occur should be encoded using the `NO` struct
 
 Tag | Name<br/>URI | Description
 --- | ---- | -----------
-`ADOP` | adoption<br/>`g7:ADOP` | Creation of a legally approved child-parent relationship that does not exist biologically.
-`BAPM` | baptism<br/>`g7:BAPM` | Baptism, performed in infancy or later. (See also [`BAPL`](#latter-day-saint-ordinances) and `CHR`.)
-`BARM` | Bar Mitzvah<br/>`g7:BARM` | The ceremonial event held when a Jewish boy reaches age 13.
-`BASM` | Bas Mitzvah<br/>`g7:BASM` | The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat Mitzvah."
-`BIRT` | birth<br/>`g7:BIRT` | Entering into life.
-`BLES` | blessing<br/>`g7:BLES` | Bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.
-`BURI` | depositing remains<br/>`g7:BURI` | Depositing the mortal remains of a deceased person.
-`CENS` | census<br/>`g7:INDI-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
-`CHR` | christening<br/>`g7:CHR` | Baptism or naming events for a child.
-`CHRA` | adult christening<br/>`g7:CHRA` | Baptism or naming events for an adult person.
-`CONF` | confirmation<br/>`g7:CONF` | Conferring full church membership.
-`CREM` | cremation<br/>`g7:CREM` | The act of reducing a dead body to ashes by fire.
-`DEAT` | death<br/>`g7:DEAT` | Mortal life terminates.
-`EMIG` | emigration<br/>`g7:EMIG` | Leaving one's homeland with the intent of residing elsewhere.
-`FCOM` | first communion<br/>`g7:FCOM` | The first act of sharing in the Lord's supper as part of church worship.
-`GRAD` | graduation<br/>`g7:GRAD` | Awarding educational diplomas or degrees to individuals.
-`IMMI` | immigration<br/>`g7:IMMI` | Entering into a new locality with the intent of residing there.
-`NATU` | naturalization<br/>`g7:NATU` | Obtaining citizenship.
-`ORDN` | ordination<br/>`g7:ORDN` | Receiving authority to act in religious matters.
-`PROB` | probate<br/>`g7:PROB` | Judicial determination of the validity of a will. It may indicate several related court activities over several dates.
-`RETI` | retirement<br/>`g7:RETI` | Exiting an occupational relationship with an employer after a qualifying time period.
-`WILL` | will<br/>`g7:WILL` | A legal document treated as an event, by which a person disposes of his or her estate. It takes effect after death. The event date is the date the will was signed while the person was alive. (See also `PROB`)
+`ADOP` | adoption<br/>`g7.1:ADOP` | Creation of a legally approved child-parent relationship that does not exist biologically.
+`BAPM` | baptism<br/>`g7.1:BAPM` | Baptism, performed in infancy or later. (See also [`BAPL`](#latter-day-saint-ordinances) and `CHR`.)
+`BARM` | Bar Mitzvah<br/>`g7.1:BARM` | The ceremonial event held when a Jewish boy reaches age 13.
+`BASM` | Bas Mitzvah<br/>`g7.1:BASM` | The ceremonial event held when a Jewish girl reaches age 13, also known as "Bat Mitzvah."
+`BIRT` | birth<br/>`g7.1:BIRT` | Entering into life.
+`BLES` | blessing<br/>`g7.1:BLES` | Bestowing divine care or intercession. Sometimes given in connection with a naming ceremony.
+`BURI` | depositing remains<br/>`g7.1:BURI` | Depositing the mortal remains of a deceased person.
+`CENS` | census<br/>`g7.1:INDI-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
+`CHR` | christening<br/>`g7.1:CHR` | Baptism or naming events for a child.
+`CHRA` | adult christening<br/>`g7.1:CHRA` | Baptism or naming events for an adult person.
+`CONF` | confirmation<br/>`g7.1:CONF` | Conferring full church membership.
+`CREM` | cremation<br/>`g7.1:CREM` | The act of reducing a dead body to ashes by fire.
+`DEAT` | death<br/>`g7.1:DEAT` | Mortal life terminates.
+`EMIG` | emigration<br/>`g7.1:EMIG` | Leaving one's homeland with the intent of residing elsewhere.
+`FCOM` | first communion<br/>`g7.1:FCOM` | The first act of sharing in the Lord's supper as part of church worship.
+`GRAD` | graduation<br/>`g7.1:GRAD` | Awarding educational diplomas or degrees to individuals.
+`IMMI` | immigration<br/>`g7.1:IMMI` | Entering into a new locality with the intent of residing there.
+`NATU` | naturalization<br/>`g7.1:NATU` | Obtaining citizenship.
+`ORDN` | ordination<br/>`g7.1:ORDN` | Receiving authority to act in religious matters.
+`PROB` | probate<br/>`g7.1:PROB` | Judicial determination of the validity of a will. It may indicate several related court activities over several dates.
+`RETI` | retirement<br/>`g7.1:RETI` | Exiting an occupational relationship with an employer after a qualifying time period.
+`WILL` | will<br/>`g7.1:WILL` | A legal document treated as an event, by which a person disposes of his or her estate. It takes effect after death. The event date is the date the will was signed while the person was alive. (See also `PROB`)
 
 In addition, `INDI`.`EVEN` is a structure for a generic individual event. It must have a `TYPE` substructure to define what kind of event is being provided.
 
@@ -102,16 +102,16 @@ In addition, `INDI`.`EVEN` is a structure for a generic individual event. It mus
 
 Tag | Name<br/>URI | Description
 --- | ---- | -----------
-`ANUL` | annulment<br/>`g7:ANUL` | Declaring a marriage void from the beginning (never existed).
-`CENS` | census<br/>`g7:FAM-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
-`DIV` | divorce<br/>`g7:DIV` | Dissolving a marriage through civil action.
-`DIVF` | divorce filed<br/>`g7:DIVF` | Filing for a divorce by a spouse.
-`ENGA` | engagement<br/>`g7:ENGA` | Recording or announcing an agreement between 2 people to become married.
-`MARB` | marriage bann<br/>`g7:MARB` | Official public notice given that 2 people intend to marry.
-`MARC` | marriage contract<br/>`g7:MARC` | Recording a formal agreement of marriage, including the prenuptial agreement in which marriage partners reach agreement about the property rights of 1 or both, securing property to their children.
-`MARL` | marriage license<br/>`g7:MARL` | Obtaining a legal license to marry.
-`MARR` | marriage<br/>`g7:MARR` | A legal, common-law, or customary event such as a wedding or marriage ceremony that joins 2 partners to create or extend a family unit.
-`MARS` | marriage settlement<br/>`g7:MARS` | Creating an agreement between 2 people contemplating marriage, at which time they agree to release or modify property rights that would otherwise arise from the marriage.
+`ANUL` | annulment<br/>`g7.1:ANUL` | Declaring a marriage void from the beginning (never existed).
+`CENS` | census<br/>`g7.1:FAM-CENS` | Periodic count of the population for a designated locality, such as a national or state census.
+`DIV` | divorce<br/>`g7.1:DIV` | Dissolving a marriage through civil action.
+`DIVF` | divorce filed<br/>`g7.1:DIVF` | Filing for a divorce by a spouse.
+`ENGA` | engagement<br/>`g7.1:ENGA` | Recording or announcing an agreement between 2 people to become married.
+`MARB` | marriage bann<br/>`g7.1:MARB` | Official public notice given that 2 people intend to marry.
+`MARC` | marriage contract<br/>`g7.1:MARC` | Recording a formal agreement of marriage, including the prenuptial agreement in which marriage partners reach agreement about the property rights of 1 or both, securing property to their children.
+`MARL` | marriage license<br/>`g7.1:MARL` | Obtaining a legal license to marry.
+`MARR` | marriage<br/>`g7.1:MARR` | A legal, common-law, or customary event such as a wedding or marriage ceremony that joins 2 partners to create or extend a family unit.
+`MARS` | marriage settlement<br/>`g7.1:MARS` | Creating an agreement between 2 people contemplating marriage, at which time they agree to release or modify property rights that would otherwise arise from the marriage.
 
 In addition, `FAM`.`EVEN` is a structure for a generic family event. It must have a `TYPE` substructure to define what kind of event is being provided.
 
@@ -124,19 +124,19 @@ Unlike events, the presence of an attribute is sufficient to assert the attribut
 
 Tag | Name<br/>URI | Description
 --- | ---- | -----------
-`CAST` | caste<br/>`g7:CAST` | The name of an individual's rank or status in society which is sometimes based on racial or religious differences, or differences in wealth, inherited rank, profession, or occupation.
-`DSCR` | physical description<br/>`g7:DSCR` | The physical characteristics of a person.
-`EDUC` | education<br/>`g7:EDUC` | Indicator of a level of education attained.
-`IDNO` | identifying number<br/>`g7:IDNO` | A number or other string assigned to identify a person within some significant external system. It must have a `TYPE` substructure to define what kind of identification number is being provided.
-`NATI` | nationality<br/>`g7:NATI` | An individual's national heritage or origin, or other folk, house, kindred, lineage, or tribal interest.
-`NCHI` | number of children<br/>`g7:INDI-NCHI` | The number of children that this person is known to be the parent of (all marriages).
-`NMR` | number of marriages<br/>`g7:NMR` | The number of times this person has participated in a family as a spouse or parent.
-`OCCU` | occupation<br/>`g7:OCCU` | The type of work or profession of an individual.
-`PROP` | property<br/>`g7:PROP` | Pertaining to possessions such as real estate or other property of interest.
-`RELI` | religion<br/>`g7:INDI-RELI` | A religious denomination to which a person is affiliated or for which a record applies.
-`RESI` | residence<br/>`g7:INDI-RESI` | An address or place of residence where an individual resided.
-`SSN` | social security number<br/>`g7:SSN` | A number assigned by the United States Social Security Administration, used for tax identification purposes. It is a type of `IDNO`.
-`TITL` | title<br/>`g7:INDI-TITL` | A formal designation used by an individual in connection with positions of royalty or other social status, such as Grand Duke.
+`CAST` | caste<br/>`g7.1:CAST` | The name of an individual's rank or status in society which is sometimes based on racial or religious differences, or differences in wealth, inherited rank, profession, or occupation.
+`DSCR` | physical description<br/>`g7.1:DSCR` | The physical characteristics of a person.
+`EDUC` | education<br/>`g7.1:EDUC` | Indicator of a level of education attained.
+`IDNO` | identifying number<br/>`g7.1:IDNO` | A number or other string assigned to identify a person within some significant external system. It must have a `TYPE` substructure to define what kind of identification number is being provided.
+`NATI` | nationality<br/>`g7.1:NATI` | An individual's national heritage or origin, or other folk, house, kindred, lineage, or tribal interest.
+`NCHI` | number of children<br/>`g7.1:INDI-NCHI` | The number of children that this person is known to be the parent of (all marriages).
+`NMR` | number of marriages<br/>`g7.1:NMR` | The number of times this person has participated in a family as a spouse or parent.
+`OCCU` | occupation<br/>`g7.1:OCCU` | The type of work or profession of an individual.
+`PROP` | property<br/>`g7.1:PROP` | Pertaining to possessions such as real estate or other property of interest.
+`RELI` | religion<br/>`g7.1:INDI-RELI` | A religious denomination to which a person is affiliated or for which a record applies.
+`RESI` | residence<br/>`g7.1:INDI-RESI` | An address or place of residence where an individual resided.
+`SSN` | social security number<br/>`g7.1:SSN` | A number assigned by the United States Social Security Administration, used for tax identification purposes. It is a type of `IDNO`.
+`TITL` | title<br/>`g7.1:INDI-TITL` | A formal designation used by an individual in connection with positions of royalty or other social status, such as Grand Duke.
 
 In addition, `INDI`.`FACT` is a structure for a generic individual attribute. It must have a `TYPE` substructure to define what kind of attribute is being provided.
 
@@ -144,8 +144,8 @@ In addition, `INDI`.`FACT` is a structure for a generic individual attribute. It
 
 Tag | Name<br/>URI | Description
 ----|--------------|-----------------
-`NCHI` | number of children<br/>`g7:FAM-NCHI` | The number of children that belong to this family.
-`RESI` | residence<br/>`g7:FAM-RESI` | An address or place of residence where a family resided.
+`NCHI` | number of children<br/>`g7.1:FAM-NCHI` | The number of children that belong to this family.
+`RESI` | residence<br/>`g7.1:FAM-RESI` | An address or place of residence where a family resided.
 
 In addition, `FAM`.`FACT` is a structure for a generic family attribute. It must have a `TYPE` substructure to define what kind of attribute is being provided.
 
@@ -162,12 +162,12 @@ This is no longer the case, but when it was the case the following principles he
 
 Tag | Name<br/>URI | Description
 ----|------|-----------------
-`BAPL` | baptism<br/>`g7:BAPL` | The event of baptism performed at age 8 or later by priesthood authority of The Church of Jesus Christ of Latter-day Saints. (See also [`BAPM`](#individual-events))
-`CONL` | confirmation<br/>`g7:CONL` | The religious event by which a person receives membership in The Church of Jesus Christ of Latter-day Saints. (See also [`CONF`](#individual-events))
-`INIL` | initiatory<br/>`g7:INIL` | A religious event where an initiatory ordinance for an individual was performed by priesthood authority in a temple of The Church of Jesus Christ of Latter-day Saints.
-`ENDL` | endowment<br/>`g7:ENDL` | A religious event where an endowment ordinance for an individual was performed by priesthood authority in a temple of The Church of Jesus Christ of Latter-day Saints.
-`SLGC` | sealing child<br/>`g7:SLGC` | A religious event pertaining to the sealing of a child to his or her parents in a temple ceremony of The Church of Jesus Christ of Latter-day Saints.
-`SLGS` | sealing spouse<br/>`g7:SLGS` | A religious event pertaining to the sealing of a husband and wife in a temple ceremony of The Church of Jesus Christ of Latter-day Saints. (See also [`MARR`](#family-events))
+`BAPL` | baptism<br/>`g7.1:BAPL` | The event of baptism performed at age 8 or later by priesthood authority of The Church of Jesus Christ of Latter-day Saints. (See also [`BAPM`](#individual-events))
+`CONL` | confirmation<br/>`g7.1:CONL` | The religious event by which a person receives membership in The Church of Jesus Christ of Latter-day Saints. (See also [`CONF`](#individual-events))
+`INIL` | initiatory<br/>`g7.1:INIL` | A religious event where an initiatory ordinance for an individual was performed by priesthood authority in a temple of The Church of Jesus Christ of Latter-day Saints.
+`ENDL` | endowment<br/>`g7.1:ENDL` | A religious event where an endowment ordinance for an individual was performed by priesthood authority in a temple of The Church of Jesus Christ of Latter-day Saints.
+`SLGC` | sealing child<br/>`g7.1:SLGC` | A religious event pertaining to the sealing of a child to his or her parents in a temple ceremony of The Church of Jesus Christ of Latter-day Saints.
+`SLGS` | sealing spouse<br/>`g7.1:SLGS` | A religious event pertaining to the sealing of a husband and wife in a temple ceremony of The Church of Jesus Christ of Latter-day Saints. (See also [`MARR`](#family-events))
 
 
 
@@ -185,7 +185,7 @@ A short name of a title, description, or name used for sorting, filing, and retr
 The location of, or most relevant to, the subject of the superstructure.
 See `ADDRESS_STRUCTURE` for more details.
 
-#### `ADOP` (Adoption) `g7:ADOP`
+#### `ADOP` (Adoption) `g7.1:ADOP`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -233,7 +233,7 @@ The age of the individual at the time an event occurred. It is recommended that 
 The organization, institution, corporation, person, or other entity that has responsibility for the associated context.
 Examples are an employer of a person of an associated occupation, or a church that administered rites or events, or an organization responsible for creating or archiving records.
 
-#### `ALIA` (Alias) `g7:ALIA`
+#### `ALIA` (Alias) `g7.1:ALIA`
 
 A single individual may have facts distributed across multiple individual records, connected by `ALIA` pointers
 (named after "alias" in the computing sense, not the pseudonym sense).
@@ -254,17 +254,17 @@ Applications should avoid assuming a particular usage was intended without user 
 A future version of this specification may adjust the definition of `ALIA`.
 :::
 
-#### `ANCI` (Ancestor interest) `g7:ANCI`
+#### `ANCI` (Ancestor interest) `g7.1:ANCI`
 
 Indicates an interest in additional research for ancestors of this individual.
 (See also `DESI`).
 
-#### `ANUL` (Annulment) `g7:ANUL`
+#### `ANUL` (Annulment) `g7.1:ANUL`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
 
-#### `ASSO` (Associates) `g7:ASSO`
+#### `ASSO` (Associates) `g7.1:ASSO`
 
 A pointer to an associated individual.
 See `ASSOCIATION_STRUCTURE` for more details.
@@ -273,48 +273,37 @@ See `ASSOCIATION_STRUCTURE` for more details.
 
 The person, agency, or entity who created the record. For a published work, this could be the author, compiler, transcriber, abstractor, or editor. For an unpublished source, this may be an individual, a government agency, church organization, or private organization.
 
-#### `BAPL` (Baptism, Latter-Day Saint) `g7:BAPL`
+#### `BAPL` (Baptism, Latter-Day Saint) `g7.1:BAPL`
 
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
-#### `BAPM` (Baptism) `g7:BAPM`
+#### `BAPM` (Baptism) `g7.1:BAPM`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `BARM` (Bar Mitzvah) `g7:BARM`
+#### `BARM` (Bar Mitzvah) `g7.1:BARM`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `BASM` (Bas Mitzvah) `g7:BASM`
+#### `BASM` (Bas Mitzvah) `g7.1:BASM`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `BIRT` (Birth) `g7:BIRT`
+#### `BIRT` (Birth) `g7.1:BIRT`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `KIND` (Birth Kind) `g7.1:BIRT-KIND`
-
-An enumerated value from set `g7.1:enumset-BIRT-KIND` indicating the type of birth.
-
-There is some conceptual overlap between `BIRT`.`TYPE` and `BIRT`.`KIND`:
-
-- `BIRT`.`TYPE` is preferred for general-purpose human-readable information elaborating on the birth type.
-- `BIRT`.`KIND` is preferred for information that informs some programmatic behaviors
-    (such as creating a list of persons who were ever alive)
-    or to support automated translation into multiple languages.
-
-#### `BLES` (Blessing) `g7:BLES`
+#### `BLES` (Blessing) `g7.1:BLES`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `BURI` (Depositing remains) `g7:BURI`
+#### `BURI` (Depositing remains) `g7.1:BURI`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -327,7 +316,7 @@ In the absence of a clarifying `TYPE` substructure it is likely, but not guarant
 An identification or reference description used to file and retrieve items from the holdings of a repository.
 Despite the word "number" in the name, may contain any character, not just digits.
 
-#### `CAST` (Caste)  `g7:CAST`
+#### `CAST` (Caste)  `g7.1:CAST`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -337,31 +326,31 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 The reasons which precipitated an event.
 It is often used subordinate to a death event to show cause of death, such as might be listed on a death certificate.
 
-#### `CENS` (Census)  `g7:FAM-CENS`
+#### `CENS` (Census)  `g7.1:FAM-CENS`
 
 An [Family Event](#family-events).
 
-#### `CENS` (Census)  `g7:INDI-CENS`
+#### `CENS` (Census)  `g7.1:INDI-CENS`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `CHAN` (Change) `g7:CHAN`
+#### `CHAN` (Change) `g7.1:CHAN`
 
 The most recent change to the superstructure.
 This is metadata about the structure itself, not data about its subject.
 See `CHANGE_DATE` for more details.
 
-#### `CHIL` (Child) `g7:CHIL`
+#### `CHIL` (Child) `g7.1:CHIL`
 
 The child in a family, whether biological, adopted, foster, sealed, or other relationship.
 
-#### `CHRA` (Christening, adult)  `g7:CHRA`
+#### `CHRA` (Christening, adult)  `g7.1:CHRA`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `CHR` (Christening)  `g7:CHR`
+#### `CHR` (Christening)  `g7.1:CHR`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -371,12 +360,12 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 The name of the city used in the address.
 See `ADDRESS_STRUCTURE` for more details.
 
-#### `CONF` (Confirmation)  `g7:CONF`
+#### `CONF` (Confirmation)  `g7.1:CONF`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `CONL` (Confirmation, Latter-Day Saint) `g7:CONL`
+#### `CONL` (Confirmation, Latter-Day Saint) `g7.1:CONL`
 
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
@@ -401,7 +390,7 @@ The initial creation of the superstructure.
 This is metadata about the structure itself, not data about its subject.
 See `CREATION_DATE` for more details.
 
-#### `CREM` (Cremation)  `g7:CREM`
+#### `CREM` (Cremation)  `g7.1:CREM`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -436,7 +425,7 @@ The following are errors:
 The name of the country that pertains to the associated address.
 See `ADDRESS_STRUCTURE` for more details.
 
-#### `DATA` (Data) `g7:DATA`
+#### `DATA` (Data) `g7.1:DATA`
 
 A structure with no payload used to distinguish a description of something from metadata about it.
 For example, `SOUR` and its other substructures describe a source itself,
@@ -444,13 +433,17 @@ while `SOUR`.`DATA` describes the content of the source.
 
 #### `DATA` (Data) `g7:SOUR-DATA`
 
-See `g7:DATA`.
+See `g7.1:DATA`.
 
 #### `DATA` (Data) `g7:HEAD-SOUR-DATA`
 
 The database, electronic data source, or digital repository from which this dataset was exported.
 The payload is the name of the database, electronic data source, or digital repository,
 with substructures providing additional details about it (not about the export).
+
+:::deprecation
+`HEAD`.`SOUR`.`DATA` should not be added to new files; see `HEADER` for more details.
+:::
 
 #### `DATE` (Date) `g7:DATE`
 
@@ -483,12 +476,12 @@ The `DatePeriod` during which the event did not occur or the attribute did not a
 
 The `DatePeriod` covered by the entire source; the period during which this source recorded events.
 
-#### `DEAT` (Death) `g7:DEAT`
+#### `DEAT` (Death) `g7.1:DEAT`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `DESI` (Descendant Interest) `g7:DESI`
+#### `DESI` (Descendant Interest) `g7.1:DESI`
 
 Indicates an interest in research to identify additional descendants of this individual.
 See also `ANCI`.
@@ -498,22 +491,22 @@ See also `ANCI`.
 An identifier for the system expected to receive this document.
 See `HEAD`.`SOUR` for guidance on choosing identifiers.
 
-#### `DIVF` (Divorce filing) `g7:DIVF`
+#### `DIVF` (Divorce filing) `g7.1:DIVF`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
 
-#### `DIV` (Divorce) `g7:DIV`
+#### `DIV` (Divorce) `g7.1:DIV`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
 
-#### `DSCR` (Description) `g7:DSCR`
+#### `DSCR` (Description) `g7.1:DSCR`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `EDUC` (Education) `g7:EDUC`
+#### `EDUC` (Education) `g7.1:EDUC`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -529,26 +522,26 @@ If an invalid email address is present upon import, it should be preserved as-is
 The version 5.5.1 specification contained a typo where this tag was sometimes written `EMAI` and sometimes written `EMAIL`. `EMAIL` should be used in version 7.0 and later.
 :::
 
-#### `EMIG` (Emigration) `g7:EMIG`
+#### `EMIG` (Emigration) `g7.1:EMIG`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `ENDL` (Endowment, Latter-Day Saint) `g7:ENDL`
+#### `ENDL` (Endowment, Latter-Day Saint) `g7.1:ENDL`
 
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
-#### `ENGA` (Engagement) `g7:ENGA`
+#### `ENGA` (Engagement) `g7.1:ENGA`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
 
-#### `EVEN` (Event) `g7:FAM-EVEN`
+#### `EVEN` (Event) `g7.1:FAM-EVEN`
 
-See `g7:INDI-EVEN`.
+See `g7.1:INDI-EVEN`.
 
-#### `EVEN` (Event) `g7:INDI-EVEN`
+#### `EVEN` (Event) `g7.1:INDI-EVEN`
 
 An event: a noteworthy happening related to an individual or family.
 If a specific event type exists, it should be used instead of a generic `EVEN` structure.
@@ -569,15 +562,15 @@ A person that signed a lease for land dated October 2, 1837 and a lease for mini
 ```
 :::
 
-#### `EVEN` (Event) `g7:DATA-EVEN`
+#### `EVEN` (Event) `g7.1:DATA-EVEN`
 
-A list of enumerated values from set `g7:enumset-EVENATTR` indicating the types of events that were recorded in a particular source.
+A list of enumerated values from set `g7.1:enumset-EVENATTR` indicating the types of events that were recorded in a particular source.
 Each event type is separated by a comma and space.
 For example, a parish register of births, deaths, and marriages would be `BIRT, DEAT, MARR`.
 
-#### `EVEN` (Event) `g7:SOUR-EVEN`
+#### `EVEN` (Event) `g7.1:SOUR-EVEN`
 
-An enumerated value from set `g7:enumset-EVENATTR` indicating the type of event or attribute which was responsible for the source entry being recorded.
+An enumerated value from set `g7.1:enumset-EVENATTR` indicating the type of event or attribute which was responsible for the source entry being recorded.
 For example, if the entry was created to record a birth of a child, then the type would be `BIRT` regardless of the assertions made from that record, such as the mother's name or mother's birth date.
 
 #### `EXID` (External Identifier) `g7:EXID`
@@ -590,7 +583,7 @@ Depending on the maintaining authority, an `EXID` may be a unique identifier for
 
 `EXID` identifiers are expected to be unique. Once assigned, an `EXID` identifier should never be re-used for any other purpose.
 
-#### `FAM` (Family record) `g7:record-FAM`
+#### `FAM` (Family record) `g7.1:record-FAM`
 
 See `FAMILY_RECORD`
 
@@ -610,11 +603,11 @@ Implementers should support both representations,
 and should choose between them based on user input or other context beyond that provided in the datasets themselves.
 :::
 
-#### `FACT` (Fact) `g7:FAM-FACT`
+#### `FACT` (Fact) `g7.1:FAM-FACT`
 
-See `g7:INDI-FACT`.
+See `g7.1:INDI-FACT`.
 
-#### `FACT` (Fact) `g7:INDI-FACT`
+#### `FACT` (Fact) `g7.1:INDI-FACT`
 
 A noteworthy attribute or fact concerning an individual or family.
 If a specific attribute type exists, it should be used instead of a generic `FACT` structure.
@@ -631,23 +624,23 @@ If the attribute being defined was 1 of the person's skills, such as woodworking
 ```
 :::
 
-#### `FAMC` (Family child) `g7:INDI-FAMC`
+#### `FAMC` (Family child) `g7.1:INDI-FAMC`
 
 The family in which an individual appears as a child.
 It is also used with a `g7:FAMC-STAT` substructure to show individuals who are not children of the family.
 See `FAMILY_RECORD` for more details.
 
-#### `FAMC` (Family child) `g7:FAMC`
+#### `FAMC` (Family child) `g7.1:FAMC`
 
 The family with which this individual event is associated.
 
-#### `FAMC` (Family child) `g7:ADOP-FAMC`
+#### `FAMC` (Family child) `g7.1:ADOP-FAMC`
 
 The individual or couple that adopted this individual.
 
 Adoption by an individual, rather than a couple, may be represented either by pointing to a `FAM` where that individual is a `HUSB` or `WIFE` and using a `g7:FAMC-ADOP` substructure to indicate which 1 performed the adoption; or by using a `FAM` where the adopting individual is the only `HUSB`/`WIFE`.
 
-#### `FAMS` (Family spouse) `g7:FAMS`
+#### `FAMS` (Family spouse) `g7.1:FAMS`
 
 The family in which an individual appears as a partner.
 See `FAMILY_RECORD` for more details.
@@ -657,7 +650,7 @@ See `FAMILY_RECORD` for more details.
 A fax telephone number appropriate for sending data facsimiles.
 See `PHON` for additional comments on telephone numbers.
 
-#### `FCOM` (First communion) `g7:FCOM`
+#### `FCOM` (First communion) `g7.1:FCOM`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -700,12 +693,12 @@ It is recommended that applications write `GEDC` with its required substructure 
 
 A given or earned name used for official identification of a person.
 
-#### `GRAD` (Graduation) `g7:GRAD`
+#### `GRAD` (Graduation) `g7.1:GRAD`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `HEAD` (Header) `g7:HEAD`
+#### `HEAD` (Header) `g7.1:HEAD`
 
 A pseudo-structure for storing metadata about the document.
 See [The Header and Trailer](#the-header) for more details.
@@ -731,8 +724,8 @@ The correct tag for the height of an individual is the `DSCR` attribute.
 
 A structure for storing information related to one partner in the context of a `FAMILY_EVENT`;
 in particular,
-the partner referenced in the `g7:FAM-HUSB` substructure
-of the `g7:record-FAM` superstructure of the `FAMILY_EVENT`.
+the partner referenced in the `g7.1:FAM-HUSB` substructure
+of the `g7.1:record-FAM` superstructure of the `FAMILY_EVENT`.
 
 :::example
 The following indicates that individual `@I1@` was 32 years old at the time of the marriage, without indicating an age for individual `@I2@`.
@@ -747,17 +740,17 @@ The following indicates that individual `@I1@` was 32 years old at the time of t
 ```
 :::
 
-#### `HUSB` (Husband) `g7:FAM-HUSB`
+#### `HUSB` (Husband) `g7.1:FAM-HUSB`
 
 This is a partner in a `FAM` record.
 See `FAMILY_RECORD` for more details.
 
-#### `IDNO` (Identification number) `g7:IDNO`
+#### `IDNO` (Identification number) `g7.1:IDNO`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `IMMI` (Immigration) `g7:IMMI`
+#### `IMMI` (Immigration) `g7.1:IMMI`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -766,11 +759,22 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 See `INDIVIDUAL_RECORD`.
 
-#### `INIL` (Initiatory, Latter-Day Saint) `g7:INIL`
+#### `INIL` (Initiatory, Latter-Day Saint) `g7.1:INIL`
 
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.  Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part of 5.4 through 5.5.1.
 FamilySearch GEDCOM 7.0 reintroduced it with the name `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
+
+#### `KIND` (Birth Kind) `g7.1:BIRT-KIND`
+
+An enumerated value from set `g7.1:enumset-BIRT-KIND` indicating the type of birth.
+
+There is some conceptual overlap between `BIRT`.`TYPE` and `BIRT`.`KIND`:
+
+- `BIRT`.`TYPE` is preferred for general-purpose human-readable information elaborating on the birth type.
+- `BIRT`.`KIND` is preferred for information that informs some programmatic behaviors
+    (such as creating a list of persons who were ever alive)
+    or to support automated translation into multiple languages.
 
 #### `LANG` (Language) `g7:LANG`
 
@@ -866,27 +870,27 @@ neither a notion of accuracy
 nor a notion of region size
 (for example, the `MAP` for a place "Belarus" may be anywhere within that nation's 200,000 square kilometer area).
 
-#### `MARB` (Marriage banns) `g7:MARB`
+#### `MARB` (Marriage banns) `g7.1:MARB`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
 
-#### `MARC` (Marriage contract) `g7:MARC`
+#### `MARC` (Marriage contract) `g7.1:MARC`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
 
-#### `MARL` (Marriage license) `g7:MARL`
+#### `MARL` (Marriage license) `g7.1:MARL`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
 
-#### `MARR` (Marriage) `g7:MARR`
+#### `MARR` (Marriage) `g7.1:MARR`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
 
-#### `MARS` (Marriage settlement) `g7:MARS`
+#### `MARS` (Marriage settlement) `g7.1:MARS`
 
 A [Family Event](#family-events).
 See also `FAMILY_EVENT_STRUCTURE`.
@@ -988,26 +992,26 @@ Media types are also used by external files, as described under `FORM`. External
 
 The name of the superstructure's subject, represented as a simple string.
 
-#### `NAME` (Name) `g7:INDI-NAME`
+#### `NAME` (Name) `g7.1:INDI-NAME`
 
 A `PERSONAL_NAME_STRUCTURE` with parts, translations, sources, and so forth.
 
-#### `NATI` (Nationality) `g7:NATI`
+#### `NATI` (Nationality) `g7.1:NATI`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `NATU` (Naturalization) `g7:NATU`
+#### `NATU` (Naturalization) `g7.1:NATU`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `NCHI` (Number of children) `g7:FAM-NCHI`
+#### `NCHI` (Number of children) `g7.1:FAM-NCHI`
 
 A [Family Attribute](#family-attributes).
 See also `FAMILY_ATTRIBUTE_STRUCTURE`.
 
-#### `NCHI` (Number of children) `g7:INDI-NCHI`
+#### `NCHI` (Number of children) `g7.1:INDI-NCHI`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -1024,19 +1028,19 @@ Some use it for any variant of a name that is not the one used on legal document
 Because all of these uses, and likely others as well, are common in existing data, no further clarification of the meaning of the `NICK` structure is possible without contradicting some existing data.
 :::
 
-#### `NMR` (Number of marriages) `g7:NMR`
+#### `NMR` (Number of marriages) `g7.1:NMR`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `NO` (Did not happen) `g7:NO`
+#### `NO` (Did not happen) `g7.1:NO`
 
-An enumerated value from set `g7:enumset-EVEN` identifying an event type which did not occur to the superstructure's subject.
+An enumerated value from set `g7.1:enumset-EVEN` identifying an event type which did not occur to the superstructure's subject.
 A specific payload `NO XYZ` should only appear where `XYZ` would be legal.
 
 See `NON_EVENT_STRUCTURE` for more details.
 
-#### `NOTE` (Note) `g7:NOTE`
+#### `NOTE` (Note) `g7.1:NOTE`
 
 A `NOTE_STRUCTURE`, containing additional information provided by the submitter for understanding the enclosing data.
 
@@ -1050,20 +1054,20 @@ Text that appears on a name line before the given and surname parts of a name.
 
 Text which appears on a name line after or behind the given and surname parts of a name.
 
-#### `OBJE` (Object) `g7:OBJE`
+#### `OBJE` (Object) `g7.1:OBJE`
 
 See `MULTIMEDIA_LINK`.
 
-#### `OBJE` (Object) `g7:record-OBJE`
+#### `OBJE` (Object) `g7.1:record-OBJE`
 
 See `MULTIMEDIA_RECORD`.
 
-#### `OCCU` (Occupation) `g7:OCCU`
+#### `OCCU` (Occupation) `g7.1:OCCU`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
-#### `ORDN` (Ordination) `g7:ORDN`
+#### `ORDN` (Ordination) `g7.1:ORDN`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -1181,7 +1185,7 @@ A record specifying a writer's "pen name" (a type of professional name) might be
 :::
 
 
-#### `PLAC` (Place) `g7:PLAC`
+#### `PLAC` (Place) `g7.1:PLAC`
 
 The principal place in which the superstructure's subject occurred,
 represented as a [List] of jurisdictional entities in a sequence from the lowest to the highest jurisdiction,
@@ -1204,12 +1208,12 @@ This is a placeholder for providing a default `PLAC`.`FORM`, and must not have a
 A code used by a postal service to identify an area to facilitate mail handling.
 See `ADDRESS_STRUCTURE` for more details.
 
-#### `PROB` (Probate) `g7:PROB`
+#### `PROB` (Probate) `g7.1:PROB`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
-#### `PROP` (Property) `g7:PROP`
+#### `PROP` (Property) `g7.1:PROP`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -1238,7 +1242,7 @@ Multiple structures describing different aspects of the same subject must not ha
 
 A religious denomination associated with the event or attribute described by the superstructure.
 
-#### `RELI` (Religion) `g7:INDI-RELI`
+#### `RELI` (Religion) `g7.1:INDI-RELI`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -1253,7 +1257,7 @@ Such removal must abide by some constraints: see [Removing data](#removing-data)
 
 This is metadata about the structure itself, not data about its subject.
 
-#### `REPO` (Repository) `g7:REPO`
+#### `REPO` (Repository) `g7.1:REPO`
 
 See `SOURCE_REPOSITORY_CITATION`.
 
@@ -1261,15 +1265,15 @@ See `SOURCE_REPOSITORY_CITATION`.
 
 See `REPOSITORY_RECORD`.
 
-#### `RESI` (Residence) `g7:FAM-RESI`
+#### `RESI` (Residence) `g7.1:FAM-RESI`
 
 A [Family Attribute](#family-attributes).
 See also `FAMILY_ATTRIBUTE_STRUCTURE`.
 
-See `g7:INDI-RESI` for comments on the use of payload strings in `RESI` structures.
+See `g7.1:INDI-RESI` for comments on the use of payload strings in `RESI` structures.
 
 
-#### `RESI` (Residence) `g7:INDI-RESI`
+#### `RESI` (Residence) `g7.1:INDI-RESI`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -1292,7 +1296,7 @@ The following two examples show situations where a `RESI` payload may be appropr
 :::
 
 
-#### `RETI` (Retirement) `g7:RETI`
+#### `RETI` (Retirement) `g7.1:RETI`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
@@ -1352,17 +1356,17 @@ relative ordering of dates with different levels of precision is not well define
 
 An enumerated value from set `g7:enumset-SEX` that indicates the sex of the individual at birth.
 
-#### `SLGC` (Sealing, child) `g7:SLGC`
+#### `SLGC` (Sealing, child) `g7.1:SLGC`
 
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
-#### `SLGS` (Sealing, spouse) `g7:SLGS`
+#### `SLGS` (Sealing, spouse) `g7.1:SLGS`
 
 A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_SPOUSE_SEALING`.
 
-#### `SNOTE` (Shared note) `g7:SNOTE`
+#### `SNOTE` (Shared note) `g7.1:SNOTE`
 
 A pointer to a note that is shared by multiple structures.
 See `NOTE_STRUCTURE` for more details.
@@ -1372,7 +1376,7 @@ See `NOTE_STRUCTURE` for more details.
 A note that is shared by multiple structures.
 See `SHARED_NOTE_RECORD` for more details.
 
-#### `SOUR` (Source) `g7:SOUR`
+#### `SOUR` (Source) `g7.1:SOUR`
 
 A description of the relevant part of a source to support the superstructure's data.
 See `SOURCE_CITATION` for more details.
@@ -1393,7 +1397,7 @@ Otherwise, a URI owned by the product should be used instead.
 
 A name piece used as a non-indexing pre-part of a surname.
 
-#### `SSN` (Social security number) `g7:SSN`
+#### `SSN` (Social security number) `g7.1:SSN`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -1411,7 +1415,7 @@ An enumerated value from set `g7:enumset-ord-STAT` assessing of the state or con
 
 An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or condition of a researcher's belief in a family connection.
 
-#### `SUBM` (Submitter) `g7:SUBM`
+#### `SUBM` (Submitter) `g7.1:SUBM`
 
 A contributor of information in the substructure.
 This is metadata about the structure itself, not data about its subject.
@@ -1467,7 +1471,7 @@ For an unpublished work, including most digital files, titles should be descript
 Some sources may have a citation text that cannot readily be represented using the `SOURCE_RECORD` substructures `AUTH`, `PUBL`, `REPO`, and so on.
 In such cases, the entire citation text may be presented as the payload of the `SOUR`.`TITL`.
 
-#### `TITL` (Title) `g7:INDI-TITL`
+#### `TITL` (Title) `g7.1:INDI-TITL`
 
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
@@ -1703,8 +1707,8 @@ See `CROP` for more details.
 
 A structure for storing information related to one partner in the context of a `FAMILY_EVENT`;
 in particular,
-the partner referenced in the `g7:FAM-WIFE` substructure
-of the `g7:record-FAM` superstructure of the `FAMILY_EVENT`.
+the partner referenced in the `g7.1:FAM-WIFE` substructure
+of the `g7.1:record-FAM` superstructure of the `FAMILY_EVENT`.
 
 :::example
 The following indicates that individual `@I2@` was 32 years old at the time of the marriage, without indicating an age for individual `@I1@`.
@@ -1719,12 +1723,12 @@ The following indicates that individual `@I2@` was 32 years old at the time of t
 ```
 :::
 
-#### `WIFE` (Wife) `g7:FAM-WIFE`
+#### `WIFE` (Wife) `g7.1:FAM-WIFE`
 
 A partner in a `FAM` record.
 See `FAMILY_RECORD` for more details.
 
-#### `WILL` (Will) `g7:WILL`
+#### `WILL` (Will) `g7.1:WILL`
 
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.

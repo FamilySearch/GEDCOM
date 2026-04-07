@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/ADOP-FAMC
+uri: https://gedcom.io/terms/v7.1/ADOP-FAMC
 
 standard tag: 'FAMC'
 
@@ -21,13 +21,18 @@ specification:
 
 label: 'Family child'
 
-payload: "@<https://gedcom.io/terms/v7/record-FAM>@"
+payload: "@<https://gedcom.io/terms/v7.1/record-FAM>@"
 
 substructures:
   "https://gedcom.io/terms/v7/FAMC-ADOP": "{0:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/ADOP": "{0:1}"
+  "https://gedcom.io/terms/v7.1/ADOP": "{0:1}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/ADOP-FAMC"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

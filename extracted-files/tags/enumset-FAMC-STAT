@@ -6,10 +6,28 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-FAMC-STAT
 
+specification:
+  - |
+    When these enumeration values were introduced in version 5.5.1 it was assumed,
+    but never specified, that "proven" referred to [the definition provided by the
+    Board for Certification of Genealogists]. Because that meaning was not
+    specified and other definitions of "proven" exist, existing files might use
+    these values in other ways.
+    
+    <div class="note">
+    
+    The structures for representing the strength of and confidence in various
+    claims are known to be inadequate and are likely to change in a future version
+    of this specification.
+    
+    </div>
+
 enumeration values:
   - "https://gedcom.io/terms/v7/enum-CHALLENGED"
   - "https://gedcom.io/terms/v7/enum-DISPROVEN"
   - "https://gedcom.io/terms/v7/enum-PROVEN"
+
+standard: true
 
 contact: "https://gedcom.io/community/"
 ...

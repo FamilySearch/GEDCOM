@@ -1,0 +1,18 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration set
+
+uri: https://gedcom.io/terms/v7.1/enumset-BIRT-KIND
+
+enumeration values:
+  - "https://gedcom.io/terms/v7.1/enumset-BORN_DEAD"
+  - "https://gedcom.io/terms/v7.1/enumset-BORN_LIVE"
+
+standard: true
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...
