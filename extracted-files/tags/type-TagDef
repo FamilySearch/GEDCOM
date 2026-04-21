@@ -23,5 +23,7 @@ specification:
     
     The URI for the `TagDef` data type is `https://gedcom.io/terms/v7/type-TagDef`.
 
+label: 'Tag Definition'
+
 contact: "https://gedcom.io/community/"
 ...

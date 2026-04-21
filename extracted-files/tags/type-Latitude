@@ -33,5 +33,7 @@ specification:
     The URI for the `Latitude` data type is
     `https://gedcom.io/terms/v7/type-Latitude`.
 
+label: 'Latitude'
+
 contact: "https://gedcom.io/community/"
 ...

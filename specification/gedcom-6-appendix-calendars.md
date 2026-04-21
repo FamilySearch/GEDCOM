@@ -11,10 +11,6 @@ Each calendar must list its permitted epochs and their meaning.
 
 All month tags must either be standard tags defined for the month name in some standard calendar or be extension tags.
 
-Each month defined in this section has a URI constructed by concatenating
-`g7:month-` to the standard tag;
-for example, the month of Elul has the standard tag `ELL` and the URI `http://gedcom.io/terms/v7/month-ELL`.
-
 Months with extension tags are permitted in standard calendars only when they are
 documented extension tags with standard URIs defined by the calendar. This is intended
 for future compatibility, to accommodate cases where an extension calendar later becomes
@@ -27,20 +23,20 @@ The Gregorian calendar is the now-ubiquitous calendar introduced by Pope Gregory
 
 Permitted months are
 
-|`stdTag`|Name       |
-|:-------|:----------|
-| `JAN`  | January   |
-| `FEB`  | February  |
-| `MAR`  | March     |
-| `APR`  | April     |
-| `MAY`  | May       |
-| `JUN`  | June      |
-| `JUL`  | July      |
-| `AUG`  | August    |
-| `SEP`  | September |
-| `OCT`  | October   |
-| `NOV`  | November  |
-| `DEC`  | December  |
+|`stdTag`| URI            | Name      |
+|:-------|:---------------|:----------|
+| `JAN`  | `g7:month-JAN` | January   |
+| `FEB`  | `g7:month-FEB` | February  |
+| `MAR`  | `g7:month-MAR` | March     |
+| `APR`  | `g7:month-APR` | April     |
+| `MAY`  | `g7:month-MAY` | May       |
+| `JUN`  | `g7:month-JUN` | June      |
+| `JUL`  | `g7:month-JUL` | July      |
+| `AUG`  | `g7:month-AUG` | August    |
+| `SEP`  | `g7:month-SEP` | September |
+| `OCT`  | `g7:month-OCT` | October   |
+| `NOV`  | `g7:month-NOV` | November  |
+| `DEC`  | `g7:month-DEC` | December  |
 
 The epoch marker `BCE` is permitted in this calendar;
 year *y* BCE indicates a year *y* years before year 1.
@@ -66,21 +62,21 @@ The French Republican calendar or French Revolutionary calendar are the names gi
 
 Permitted months are
 
-|`stdTag`|Name                |
-|:-------|:-------------------|
-|`VEND`  |Vendémiaire         |
-|`BRUM`  |Brumaire            |
-|`FRIM`  |Frimaire            |
-|`NIVO`  |Nivôse              |
-|`PLUV`  |Pluviôse            |
-|`VENT`  |Ventôse             |
-|`GERM`  |Germinal            |
-|`FLOR`  |Floréal             |
-|`PRAI`  |Prairial            |
-|`MESS`  |Messidor            |
-|`THER`  |Thermidor           |
-|`FRUC`  |Fructidor           |
-|`COMP`  |Jour Complémentaires|
+|`stdTag`| URI             | Name               |
+|:-------|:----------------|:-------------------|
+|`VEND`  | `g7:month-VEND` |Vendémiaire         |
+|`BRUM`  | `g7:month-BRUM` |Brumaire            |
+|`FRIM`  | `g7:month-FRIM` |Frimaire            |
+|`NIVO`  | `g7:month-NIVO` |Nivôse              |
+|`PLUV`  | `g7:month-PLUV` |Pluviôse            |
+|`VENT`  | `g7:month-VENT` |Ventôse             |
+|`GERM`  | `g7:month-GERM` |Germinal            |
+|`FLOR`  | `g7:month-FLOR` |Floréal             |
+|`PRAI`  | `g7:month-PRAI` |Prairial            |
+|`MESS`  | `g7:month-MESS` |Messidor            |
+|`THER`  | `g7:month-THER` |Thermidor           |
+|`FRUC`  | `g7:month-FRUC` |Fructidor           |
+|`COMP`  | `g7:month-COMP` |Jour Complémentaires|
 
 No epoch marker is permitted in this calendar.
 
@@ -90,21 +86,21 @@ The URI for this calendar is `g7:cal-FRENCH_R`
 
 The Hebrew calendar is the name given to the calendar used by Jewish peoples around the world which developed into its current form in the early ninth century. It traditionally marks new days at sunset, not midnight. Its first day (1 Tishrei 1) primarily overlapped with Gregorian 7 September 3761 BCE and Julian 7 October 3761 BCE (starting at sunset on the 6th day of those months).
 
-|`stdTag`| Name                                                   |
-|:-------|:-------------------------------------------------------|
-|`TSH`   | Tishrei (תִּשְׁרֵי) |
-|`CSH`   | Marcheshvan (מַרְחֶשְׁוָן) or Cheshvan (חֶשְׁוָן) |
-|`KSL`   | Kislev (כִּסְלֵו) |
-|`TVT`   | Tevet (טֵבֵת) |
-|`SHV`   | Shevat (שְׁבָט) |
-|`ADR`   | Adar I, Adar Rishon, First Adar, or Adar Aleph (אדר א׳) |
-|`ADS`   | Adar (אֲדָר); or Adar II, Adar Sheni, Second Adar, or Adar Bet (אדר ב׳) |
-|`NSN`   | Nisan (נִיסָן) |
-|`IYR`   | Iyar (אִייָר) |
-|`SVN`   | Sivan (סִיוָן) |
-|`TMZ`   | Tammuz (תַּמּוּז) |
-|`AAV`   | Av (אָב) |
-|`ELL`   | Elul (אֱלוּל) |
+|`stdTag`| URI             |Name                                                   |
+|:-------|:----------------|:------------------------------------------------------|
+|`TSH`   | `g7:month-TSH` | Tishrei (תִּשְׁרֵי) |
+|`CSH`   | `g7:month-CSH` | Marcheshvan (מַרְחֶשְׁוָן) or Cheshvan (חֶשְׁוָן) |
+|`KSL`   | `g7:month-KSL` | Kislev (כִּסְלֵו) |
+|`TVT`   | `g7:month-TVT` | Tevet (טֵבֵת) |
+|`SHV`   | `g7:month-SHV` | Shevat (שְׁבָט) |
+|`ADR`   | `g7:month-ADR` | Adar I, Adar Rishon, First Adar, or Adar Aleph (אדר א׳) |
+|`ADS`   | `g7:month-ADS` | Adar (אֲדָר); or Adar II, Adar Sheni, Second Adar, or Adar Bet (אדר ב׳) |
+|`NSN`   | `g7:month-NSN` | Nisan (נִיסָן) |
+|`IYR`   | `g7:month-IYR` | Iyar (אִייָר) |
+|`SVN`   | `g7:month-SVN` | Sivan (סִיוָן) |
+|`TMZ`   | `g7:month-TMZ` | Tammuz (תַּמּוּז) |
+|`AAV`   | `g7:month-AAV` | Av (אָב) |
+|`ELL`   | `g7:month-ELL` | Elul (אֱלוּל) |
 
 To keep the lunar-based months synchronized with the solar-based years, some years have Adar I and others do not, instead proceeding from Shevat directly to Adar II. However, in common (non-leap) years, it is common to simply write "Adar" not "Adar II", which users not aware of the distinction might incorrectly encode as `ADR` instead of `ADS`. It is recommended that systems knowing which years had Adar I and which did not replace `ADR` in common years with `ADS`.
 

@@ -1,0 +1,21 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration
+
+uri: https://gedcom.io/terms/v7.1/enumset-BORN_DEAD
+
+standard tag: 'BORN_DEAD'
+
+specification:
+  - Birth of a dead child; died before birth concluded (and possibly before it
+    began), and was not thereafter revived.
+
+value of:
+  - "https://gedcom.io/terms/v7.1/enumset-BIRT-KIND"
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...

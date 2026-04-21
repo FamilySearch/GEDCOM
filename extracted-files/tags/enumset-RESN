@@ -6,10 +6,46 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-RESN
 
+specification:
+  - |
+    It is recommended that applications allow users to chose how `CONFIDENTIAL`
+    and/or `PRIVACY` data is handled when interfacing with other users or
+    applications, for example by allowing them to exclude such data when exporting.
+    
+    When a [List] of `RESN` enumeration values are present, all apply.
+    
+    <div class="example">
+    
+    The line `1 RESN CONFIDENTIAL, LOCKED` means the superstructure's data is both
+    considered confidential *and* read-only.
+    
+    </div>
+    
+    Since `RESN` was introduced in version 5.5 the intent of the `PRIVACY` value
+    has been interpreted differently by different applications. Known
+    interpretations include
+    
+    - Some assign `PRIVACY` by algorithm or policy, unlike the user-assigned
+      `CONFIDENTIAL`
+    - Some use `PRIVACY` to mark records that have already had private data removed
+    - Some use the English definitions of "privacy" and "confidential" to inform
+      different restrictions for each
+    
+    There may also be applications using `PRIVACY` with interpretations not listed
+    above.
+    
+    Because these different interpretations became widespread before they were
+    identified, determining which one is meant generally requires knowledge of
+    which application applied the `PRIVACY` restriction notice. It is anticipated
+    that a future version will deprecate the `PRIVACY` option and introduce new
+    values for each of its current use cases.
+
 enumeration values:
   - "https://gedcom.io/terms/v7/enum-CONFIDENTIAL"
   - "https://gedcom.io/terms/v7/enum-LOCKED"
   - "https://gedcom.io/terms/v7/enum-PRIVACY"
+
+standard: true
 
 contact: "https://gedcom.io/community/"
 ...

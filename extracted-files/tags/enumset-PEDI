@@ -6,12 +6,43 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-PEDI
 
+specification:
+  - |
+    <div class="note">
+    
+    It is known that some users have interpreted `BIRTH` to mean "genetic parent"
+    and others to mean "social parent at time of birth". Definitions differ in many
+    circumstances (infidelity, surrogacy, sperm donation, and so on). Hence,
+    applications should refrain from asserting it has either meaning in imported
+    data.
+    
+    </div>
+    
+    <div class="note">
+    
+    The structures for foster children in particular, and family relationships in
+    general, are known to have undesirable limitations and are likely to change in
+    a future version of this specification.
+    
+    </div>
+    
+    <div class="note">
+    
+    `SEALING` implies that a `SLGC` event was performed, and it is recommended that
+    this enumeration value only be used when the `SLGC` event is present in the
+    GEDCOM file. `ADOPTED`, on the other hand, only implies a social relationship
+    which may or may not have any associated `ADOP` event.
+    
+    </div>
+
 enumeration values:
   - "https://gedcom.io/terms/v7/enum-ADOPTED"
   - "https://gedcom.io/terms/v7/enum-BIRTH"
   - "https://gedcom.io/terms/v7/enum-FOSTER"
-  - "https://gedcom.io/terms/v7/enum-SEALING"
   - "https://gedcom.io/terms/v7/enum-OTHER"
+  - "https://gedcom.io/terms/v7/enum-SEALING"
+
+standard: true
 
 contact: "https://gedcom.io/community/"
 ...

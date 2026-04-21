@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/FAMS
+uri: https://gedcom.io/terms/v7.1/FAMS
 
 standard tag: 'FAMS'
 
@@ -15,14 +15,19 @@ specification:
 
 label: 'Family spouse'
 
-payload: "@<https://gedcom.io/terms/v7/record-FAM>@"
+payload: "@<https://gedcom.io/terms/v7.1/record-FAM>@"
 
 substructures:
-  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/record-INDI": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-INDI": "{0:M}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/FAMS"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

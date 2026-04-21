@@ -4,33 +4,11 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/record-FAM
+uri: https://gedcom.io/terms/v7.1/record-FAM
 
 standard tag: 'FAM'
 
 specification:
-  - Family record
-  - |
-    See `FAMILY_RECORD`
-    
-    <div class="note">
-    
-    The common case is that each couple has one `FAM` record, but that is not
-    always the case.
-    
-    A couple that separates and then gets together again can be represented either
-    as a single `FAM` with multiple events (`MARR`, `DIV`, etc.) or as a separate
-    `FAM` for each time together. Some user interfaces may display these two in
-    different ways and the two admit different semantics in sourcing. A single
-    `FAM` with two `MARR` with distinct dates might also represent uncertainty
-    about dates and a pair of `FAM` with same spouses might also be the result of
-    merging multiple files.
-    
-    Implementers should support both representations, and should choose between
-    them based on user input or other context beyond that provided in the datasets
-    themselves.
-    
-    </div>
   - |
     The `FAM` record was originally structured to represent families where a male
     `HUSB` (husband or father) and female `WIFE` (wife or mother) produce `CHIL`
@@ -86,45 +64,72 @@ specification:
     most cases that would be an error, though it is theoretically possible that
     such a situation could occur with non-biological relationships (marriages,
     adoptions, etc.).
+  - Family record
+  - |
+    See `FAMILY_RECORD`
+    
+    <div class="note">
+    
+    The common case is that each couple has one `FAM` record, but that is not
+    always the case.
+    
+    A couple that separates and then gets together again can be represented either
+    as a single `FAM` with multiple events (`MARR`, `DIV`, etc.) or as a separate
+    `FAM` for each time together. Some user interfaces may display these two in
+    different ways and the two admit different semantics in sourcing. A single
+    `FAM` with two `MARR` with distinct dates might also represent uncertainty
+    about dates and a pair of `FAM` with same spouses might also be the result of
+    merging multiple files.
+    
+    Implementers should support both representations, and should choose between
+    them based on user input or other context beyond that provided in the datasets
+    themselves.
+    
+    </div>
 
 label: 'Family record'
 
 payload: null
 
 substructures:
-  "https://gedcom.io/terms/v7/ANUL": "{0:M}"
-  "https://gedcom.io/terms/v7/ASSO": "{0:M}"
-  "https://gedcom.io/terms/v7/CHAN": "{0:1}"
-  "https://gedcom.io/terms/v7/CHIL": "{0:M}"
+  "https://gedcom.io/terms/v7.1/ANUL": "{0:M}"
+  "https://gedcom.io/terms/v7.1/ASSO": "{0:M}"
+  "https://gedcom.io/terms/v7.1/CHAN": "{0:1}"
+  "https://gedcom.io/terms/v7.1/CHIL": "{0:M}"
+  "https://gedcom.io/terms/v7.1/DIV": "{0:M}"
+  "https://gedcom.io/terms/v7.1/DIVF": "{0:M}"
+  "https://gedcom.io/terms/v7.1/ENGA": "{0:M}"
+  "https://gedcom.io/terms/v7.1/FAM-CENS": "{0:M}"
+  "https://gedcom.io/terms/v7.1/FAM-EVEN": "{0:M}"
+  "https://gedcom.io/terms/v7.1/FAM-FACT": "{0:M}"
+  "https://gedcom.io/terms/v7.1/FAM-HUSB": "{0:1}"
+  "https://gedcom.io/terms/v7.1/FAM-NCHI": "{0:M}"
+  "https://gedcom.io/terms/v7.1/FAM-RESI": "{0:M}"
+  "https://gedcom.io/terms/v7.1/FAM-WIFE": "{0:1}"
+  "https://gedcom.io/terms/v7.1/MARB": "{0:M}"
+  "https://gedcom.io/terms/v7.1/MARC": "{0:M}"
+  "https://gedcom.io/terms/v7.1/MARL": "{0:M}"
+  "https://gedcom.io/terms/v7.1/MARR": "{0:M}"
+  "https://gedcom.io/terms/v7.1/MARS": "{0:M}"
+  "https://gedcom.io/terms/v7.1/NO": "{0:M}"
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/OBJE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SLGS": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SUBM": "{0:M}"
   "https://gedcom.io/terms/v7/CREA": "{0:1}"
-  "https://gedcom.io/terms/v7/DIV": "{0:M}"
-  "https://gedcom.io/terms/v7/DIVF": "{0:M}"
-  "https://gedcom.io/terms/v7/ENGA": "{0:M}"
   "https://gedcom.io/terms/v7/EXID": "{0:M}"
-  "https://gedcom.io/terms/v7/FAM-CENS": "{0:M}"
-  "https://gedcom.io/terms/v7/FAM-EVEN": "{0:M}"
-  "https://gedcom.io/terms/v7/FAM-FACT": "{0:M}"
-  "https://gedcom.io/terms/v7/FAM-HUSB": "{0:1}"
-  "https://gedcom.io/terms/v7/FAM-NCHI": "{0:M}"
-  "https://gedcom.io/terms/v7/FAM-RESI": "{0:M}"
-  "https://gedcom.io/terms/v7/FAM-WIFE": "{0:1}"
-  "https://gedcom.io/terms/v7/MARB": "{0:M}"
-  "https://gedcom.io/terms/v7/MARC": "{0:M}"
-  "https://gedcom.io/terms/v7/MARL": "{0:M}"
-  "https://gedcom.io/terms/v7/MARR": "{0:M}"
-  "https://gedcom.io/terms/v7/MARS": "{0:M}"
-  "https://gedcom.io/terms/v7/NO": "{0:M}"
-  "https://gedcom.io/terms/v7/NOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/OBJE": "{0:M}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"
   "https://gedcom.io/terms/v7/RESN": "{0:1}"
-  "https://gedcom.io/terms/v7/SLGS": "{0:M}"
-  "https://gedcom.io/terms/v7/SNOTE": "{0:M}"
-  "https://gedcom.io/terms/v7/SOUR": "{0:M}"
-  "https://gedcom.io/terms/v7/SUBM": "{0:M}"
   "https://gedcom.io/terms/v7/UID": "{0:M}"
 
 superstructures: {}
+
+subsumes:
+  - "https://gedcom.io/terms/v7/record-FAM"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

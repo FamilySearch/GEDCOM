@@ -1,0 +1,22 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration
+
+uri: https://gedcom.io/terms/v7.1/enumset-BORN_LIVE
+
+standard tag: 'BORN_LIVE'
+
+specification:
+  - Child was alive after birth. This is often seen as the default meaning of
+    `BIRT`, but in some cases it might be ambiguous and adding `KIND BORN_LIVE`
+    could be beneficial.
+
+value of:
+  - "https://gedcom.io/terms/v7.1/enumset-BIRT-KIND"
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...
