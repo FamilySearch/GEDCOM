@@ -71,6 +71,10 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
         - `@<XREF:`tag`>@` means a pointer to a structure with this cross-reference template; `@VOID@` is also permitted.
         - `<`data type`>` means a non-pointer payload, as described in [Data types](#datatypes). If the data type allows the empty string, the payload may be omitted.
         - `[`text`|<NULL>]` means the payload is optional but if present must be the given text.
+     
+        <div class="note">
+        The `[`text`|<NULL>]` payload descriptor is only used in this version of the specification for `[Y|<NULL>]` in event structures, as explained in [Events](#events).
+        </div>
         
         If there is a payload descriptor, a payload that matches the payload is required of the described structure unless the descriptor says the payload is optional.
 
