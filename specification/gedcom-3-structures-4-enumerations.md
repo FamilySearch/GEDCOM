@@ -70,15 +70,15 @@ except for tags used with different URIs for `FAM` vs `INDI`:
 
 ### `g7.1:enumset-NOTE-KIND`
 
-| Value         | Meaning                           |
-| :------------ | :-------------------------------- |
-| `DATA`        | Historical data that is not present in other structures |
-| `RESEARCH`    | Notes about research performed |
-| `REASONING`   | Descriptions of why the data is (or is not) believed to be accurate |
-| `SCOPE`       | A description of what data is or should be included in the given dataset (if `HEAD`.`NOTE`), persona (if `INDI`.`NOTE`) or the like |
-| `STORY`       | Text presenting a story about or history of the subject the note is attached to |
-| `TODO`        | Notes about things the researcher wishes or hopes to do in the future |
-| `OTHER` | A value not listed here; should have a `PHRASE` substructure |
+| Value         | URI                  | Meaning                           |
+| :------------ | :------------------- | :-------------------------------- |
+| `DATA`        | `g7.1:enum-DATA`     | Historical data that is not present in other structures |
+| `RESEARCH`    | `g7.1:enum-RESEARCH` | Notes about research performed |
+| `REASONING`   | `g7.1:enum-REASONING`| Descriptions of why the data is (or is not) believed to be accurate |
+| `SCOPE`       | `g7.1:enum-SCOPE`    | A description of what data is or should be included in the given dataset (if `HEAD`.`NOTE`), persona (if `INDI`.`NOTE`) or the like |
+| `STORY`       | `g7.1:enum-STORY`    | Text presenting a story about or history of the subject the note is attached to |
+| `TODO`        | `g7.1:enum-TODO`     | Notes about things the researcher wishes or hopes to do in the future |
+| `OTHER`       | `g7:enum-OTHER`      | A value not listed here; should have a `PHRASE` substructure |
 
 
 ### `g7:enumset-PEDI`
