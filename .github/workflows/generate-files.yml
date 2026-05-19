@@ -42,7 +42,8 @@ jobs:
         run: |
           export MD_FILES=$(ls ${{ env.SPECDIR }}gedcom*.md | sort)
           python3 extract-grammars.py ${MD_FILES} ${{ env.EXTDIR }}
-          python3 uri-def.py ${MD_FILES} ${{ env.EXTDIR }}tags
+          python3 extract-yaml.py --spec=${{ env.SPECDIR }} --dest=${{env.EXTDIR }}
+          python3 yaml-to-tsv.py --dest=${{ env.EXTDIR }} ${{ env.EXTDIR }}tags
           ls -l ${{env.EXTDIR}}
 
       - name: Set git config
