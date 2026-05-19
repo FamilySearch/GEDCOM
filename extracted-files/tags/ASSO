@@ -9,9 +9,6 @@ uri: https://gedcom.io/terms/v7/ASSO
 standard tag: 'ASSO'
 
 specification:
-  - Associates
-  - A pointer to an associated individual. See `ASSOCIATION_STRUCTURE` for more
-    details.
   - |
     An individual associated with the subject of the superstructure. The nature of
     the association is indicated in the `ROLE` substructure.
@@ -37,6 +34,9 @@ specification:
     ```
     
     </div>
+  - Associates
+  - A pointer to an associated individual. See `ASSOCIATION_STRUCTURE` for more
+    details.
 
 label: 'Associates'
 
