@@ -776,6 +776,13 @@ There is some conceptual overlap between `BIRT`.`TYPE` and `BIRT`.`KIND`:
     (such as creating a list of persons who were ever alive)
     or to support automated translation into multiple languages.
 
+#### `KIND` (Type) `g7.1:NOTE-KIND`
+
+An enumerated value from set `g7.1:enumset-NOTE-KIND` indicating the type of the note.
+
+When there are multiple `g7.1:NOTE-KIND` substructures to a note, all apply equally to the note;
+there is no notion of a preferred or primary note type.
+
 #### `LANG` (Language) `g7:LANG`
 
 The primary human language of the superstructure.
@@ -1657,10 +1664,6 @@ Additional type URIs can be registered by filing a
 #### `TYPE` (Type) `g7:NAME-TYPE`
 
 An enumerated value from set `g7:enumset-NAME-TYPE` indicating the type of the name.
-
-#### `TYPE` (Type) `g7:NOTE-TYPE`
-
-An enumerated value from set `g7:enumset-NOTE-TYPE` indicating the type of the note.
 
 #### `UID` (Unique Identifier) `g7:UID`
 

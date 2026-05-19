@@ -68,18 +68,15 @@ except for tags used with different URIs for `FAM` vs `INDI`:
 | `OTHER`     | `g7:enum-OTHER`     | A value not listed here; should have a `PHRASE` substructure |
 
 
-### `g7:enumset-NOTE-TYPE`
+### `g7.1:enumset-NOTE-KIND`
 
 | Value         | Meaning                           |
 | :------------ | :-------------------------------- |
-| `ATTRIBUTION` | Acknowledgements, authorship, contributors, intellectual property notes, and that like that do not fit into a SUBM or SOUR structure |
-| `CONTEXT`     | Information not directly about the note's subject, but potentially relevant to understanding its historical context |
 | `DATA`        | Historical data that is not present in other structures |
 | `RESEARCH`    | Notes about research performed |
 | `REASONING`   | Descriptions of why the data is (or is not) believed to be accurate |
-| `SCOPE`       | A description of what data is or should be included in the given dataset (if HEAD.NOTE), persona (if INDI.NOTE) or the like |
-| `STORY`       | Text presenting a story about or history of the subject of the note's superstructure |
-| `SUMMARY`     | 
+| `SCOPE`       | A description of what data is or should be included in the given dataset (if `HEAD`.`NOTE`), persona (if `INDI`.`NOTE`) or the like |
+| `STORY`       | Text presenting a story about or history of the subject the note is attached to |
 | `TODO`        | Notes about things the researcher wishes or hopes to do in the future |
 | `OTHER` | A value not listed here; should have a `PHRASE` substructure |
 
