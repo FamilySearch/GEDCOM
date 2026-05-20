@@ -392,7 +392,7 @@ def all_uri_section_text(txt:str, pfx:dict[str,str], data:dict[str,Concept]) -> 
         if not uri.startswith('https://gedcom.io'): continue # not ours to define
         if uri not in data: data[uri] = Concept('data type', uri)
         data[uri].set('label', header)
-        if re.search(f'^{typename.replace(':','-')} +=', section, flags=re.M):
+        if re.search(f"^{typename.replace(':','-')} +=", section, flags=re.M):
           data[uri].set('abnf_production', typename.replace(':','-'))
         data[uri].spec.append(section)
 
