@@ -436,7 +436,7 @@ if __name__ == '__main__':
   
   # step 1: read the files
   src_gedstruct = open(Path(args.dest, 'grammar.gedstruct')).read()
-  src_markdown = '\n\n'.join(open(s).read().replace('\xA0',' ') for s in args.spec.glob('gedcom*.md'))
+  src_markdown = '\n\n'.join(open(s).read().replace('\xA0',' ') for s in sorted(args.spec.glob('gedcom*.md')))
   
   # step 2: find all tables and convert them to {section header: [{column header: column value}]}
   tables = all_tables(src_markdown)
