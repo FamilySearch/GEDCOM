@@ -40,7 +40,7 @@ for uri,obj in data.items():
       rows[(sup, uri)] = card
     for sub,card in obj['substructures'].items():
       if rows.get((uri, sub),card) != card:
-        raise Error(f"{uri} and {sub} disagree about their mutual cardinality")
+        raise Exception(f"{uri} and {sub} disagree about their mutual cardinality")
       rows[(uri, sub)] = card
 with open(Path(args.dest, "cardinalities.tsv"), 'w') as dst:
   for row in sorted([k+(v,) for k,v in rows.items()]):
@@ -52,7 +52,7 @@ for uri,obj in data.items():
   if obj['type'] == 'enumeration set':
     for u in obj['enumeration values']:
       rows.add((uri,u))
-  if 'vaue of' in obj:
+  if 'value of' in obj:
     for u in obj['value of']:
       rows.add((u,uri))
 with open(Path(args.dest, "enumerationsets.tsv"), 'w') as dst:
