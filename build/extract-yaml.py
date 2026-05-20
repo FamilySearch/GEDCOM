@@ -157,12 +157,12 @@ class Concept:
       if val is None: ans.append(key+': null')
       elif val == [] or isinstance(val, bool): ans.append(key+': '+str(val).lower())
       elif isinstance(val, str):
-        assert '"' not in val and '\n' not in val, f"Simplified serialization failed for {uri}'s {key}"
+        assert '"' not in val and '\n' not in val, f"Simplified serialization failed for {self.uri}'s {key}"
         ans.append(key+': "'+val+'"')
       else:
         entry = key+':'
         for v in (sorted(val) if key != 'months' else val):
-          assert '"' not in v and '\n' not in v, f"Simplified serialization failed for {uri}'s {key}"
+          assert '"' not in v and '\n' not in v, f"Simplified serialization failed for {self.uri}'s {key}"
           entry += '\n  - "'+v+'"'
         ans.append(entry)
 
