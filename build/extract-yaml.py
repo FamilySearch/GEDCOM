@@ -157,12 +157,12 @@ class Concept:
       if val is None: ans.append(key+': null')
       elif val == [] or isinstance(val, bool): ans.append(key+': '+str(val).lower())
       elif isinstance(val, str):
-        assert '"' not in val and '\n' not in val, f"Simplified serialization failed for {uri}'s {key}"
+        assert '"' not in val and '\n' not in val, f"Simplified serialization failed for {self.uri}'s {key}"
         ans.append(key+': "'+val+'"')
       else:
         entry = key+':'
         for v in (sorted(val) if key != 'months' else val):
-          assert '"' not in v and '\n' not in v, f"Simplified serialization failed for {uri}'s {key}"
+          assert '"' not in v and '\n' not in v, f"Simplified serialization failed for {self.uri}'s {key}"
           entry += '\n  - "'+v+'"'
         ans.append(entry)
 
@@ -392,7 +392,7 @@ def all_uri_section_text(txt:str, pfx:dict[str,str], data:dict[str,Concept]) -> 
         if not uri.startswith('https://gedcom.io'): continue # not ours to define
         if uri not in data: data[uri] = Concept('data type', uri)
         data[uri].set('label', header)
-        if re.search(f'^{typename.replace(':','-')} +=', section, flags=re.M):
+        if re.search(f"^{typename.replace(':','-')} +=", section, flags=re.M):
           data[uri].set('abnf_production', typename.replace(':','-'))
         data[uri].spec.append(section)
 
@@ -436,7 +436,7 @@ if __name__ == '__main__':
   
   # step 1: read the files
   src_gedstruct = open(Path(args.dest, 'grammar.gedstruct')).read()
-  src_markdown = '\n\n'.join(open(s).read().replace('\xA0',' ') for s in args.spec.glob('gedcom*.md'))
+  src_markdown = '\n\n'.join(open(s).read().replace('\xA0',' ') for s in sorted(args.spec.glob('gedcom*.md')))
   
   # step 2: find all tables and convert them to {section header: [{column header: column value}]}
   tables = all_tables(src_markdown)
