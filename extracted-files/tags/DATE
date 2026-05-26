@@ -9,6 +9,17 @@ uri: https://gedcom.io/terms/v7/DATE
 standard tag: 'DATE'
 
 specification:
+  - |
+    A date, optionally with a time and/or a phrase. If there is a `TIME`, it
+    asserts that the event happened at a specific time on a single day. `TIME`
+    should not be used with `DatePeriod` but may be used with other date types.
+    
+    <div class="note">
+    
+    There is currently no provision for approximate times or time phrases. Time
+    phrases are expected to be added in version 7.1.
+    
+    </div>
   - Date
   - |
     The principal date of the subject of the superstructure. The payload is a
@@ -28,17 +39,6 @@ specification:
     contained the data.
     
     See `DATE_VALUE` for more details.
-  - |
-    A date, optionally with a time and/or a phrase. If there is a `TIME`, it
-    asserts that the event happened at a specific time on a single day. `TIME`
-    should not be used with `DatePeriod` but may be used with other date types.
-    
-    <div class="note">
-    
-    There is currently no provision for approximate times or time phrases. Time
-    phrases are expected to be added in version 7.1.
-    
-    </div>
 
 label: 'Date'
 

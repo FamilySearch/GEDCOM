@@ -9,9 +9,6 @@ uri: https://gedcom.io/terms/v7/ADDR
 standard tag: 'ADDR'
 
 specification:
-  - Address
-  - The location of, or most relevant to, the subject of the superstructure. See
-    `ADDRESS_STRUCTURE` for more details.
   - |
     A specific building, plot, or location. The payload is the full formatted
     address as it would appear on a mailing label, including appropriate line
@@ -40,6 +37,9 @@ specification:
     files.
     
     </div>
+  - Address
+  - The location of, or most relevant to, the subject of the superstructure. See
+    `ADDRESS_STRUCTURE` for more details.
 
 label: 'Address'
 

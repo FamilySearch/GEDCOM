@@ -9,7 +9,8 @@ uri: https://gedcom.io/terms/v7/enum-BIRTH
 standard tag: 'BIRTH'
 
 specification:
-  - Associated with birth, such as a birth name or birth parents.
+  - Family structure at time of birth
+  - Name given at or near birth.
 
 value of:
   - "https://gedcom.io/terms/v7/enumset-NAME-TYPE"
