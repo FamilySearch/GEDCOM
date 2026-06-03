@@ -1,3 +1,4 @@
+structure	set
 https://gedcom.io/terms/v7/DATA-EVEN	https://gedcom.io/terms/v7/enumset-EVENATTR
 https://gedcom.io/terms/v7/FAMC-ADOP	https://gedcom.io/terms/v7/enumset-ADOP
 https://gedcom.io/terms/v7/FAMC-STAT	https://gedcom.io/terms/v7/enumset-FAMC-STAT
