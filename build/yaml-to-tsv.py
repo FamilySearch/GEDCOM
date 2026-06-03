@@ -89,6 +89,8 @@ for uri,obj in data.items():
         rows.add((sup, obj['standard tag'], uri))
       for tag in obj.get('extension tags',[]):
         rows.add((sup, tag, uri))
+      for tag in obj.get('nonconformant tags',[]):
+        rows.add((sup, tag, uri))
     if len(obj['superstructures']) == 0:
       if 'standard tag' in obj:
         rows.add(('', obj['standard tag'], uri))
