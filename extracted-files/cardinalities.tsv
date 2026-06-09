@@ -1,3 +1,4 @@
+superstructure	structure	cardinality
 https://gedcom.io/terms/v7/ADDR	https://gedcom.io/terms/v7/ADR1	{0:1}
 https://gedcom.io/terms/v7/ADDR	https://gedcom.io/terms/v7/ADR2	{0:1}
 https://gedcom.io/terms/v7/ADDR	https://gedcom.io/terms/v7/ADR3	{0:1}
