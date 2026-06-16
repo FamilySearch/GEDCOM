@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout GEDCOM
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Validate YAML
         run: yamllint .

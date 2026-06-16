@@ -481,6 +481,10 @@ The `DatePeriod` covered by the entire source; the period during which this sour
 An [Individual Event](#individual-events).
 See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
+#### `DESC` (Description) `g7.1:HEAD-DESC`
+
+A description of the entire dataset.
+
 #### `DESI` (Descendant Interest) `g7.1:DESI`
 
 Indicates an interest in research to identify additional descendants of this individual.
@@ -1478,6 +1482,10 @@ For an unpublished work, including most digital files, titles should be descript
 Some sources may have a citation text that cannot readily be represented using the `SOURCE_RECORD` substructures `AUTH`, `PUBL`, `REPO`, and so on.
 In such cases, the entire citation text may be presented as the payload of the `SOUR`.`TITL`.
 
+#### `TITL` (Title) `g7.1:HEAD-TITL`
+
+A descriptive title for the entire dataset.
+
 #### `TITL` (Title) `g7.1:INDI-TITL`
 
 An [Individual Attribute](#individual-attributes).
@@ -1606,6 +1614,12 @@ not to translation to a different human language.
 Files that differ in the human language of their content
 should each be given their own `FILE` structure.
 
+#### `TRAN` (Translation) `g7.1:TEXT-TRAN`
+
+A type of `TRAN` for unstructured human-readable text without a media type,
+such as is found in `HEAD`.`DESC` and `HEAD`.`TITL` payloads.
+Each `g7:NOTE-TRAN` must have a `LANG` substructure.
+A superstructure of a `g7:TEXT-TRAN` should also have a `LANG` substructure.
 
 #### `TRLR` (Trailer) `g7:TRLR`
 
