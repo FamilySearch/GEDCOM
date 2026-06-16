@@ -1012,7 +1012,7 @@ The optional `CROP` substructure indicates that a subregion of an image represen
 
 The optional `TITL` substructure supersedes any `OBJE.FILE.TITL` substructures included in the `MULTIMEDIA_RECORD`.
 
-A `MULTIMEDIA_LINK` in a `MULTIMEDIA_RECORD` should not point to the `MULTIEDIA_RECORD` itself.  Applications should
+A `MULTIMEDIA_LINK` in a `MULTIMEDIA_RECORD` should not point to the `MULTIMEDIA_RECORD` itself.  Applications should
 also ensure they can handle invalid files with such cycles in a safe manner.
 
 #### `NON_EVENT_STRUCTURE` :=
