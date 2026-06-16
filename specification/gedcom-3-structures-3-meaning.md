@@ -780,6 +780,13 @@ There is some conceptual overlap between `BIRT`.`TYPE` and `BIRT`.`KIND`:
     (such as creating a list of persons who were ever alive)
     or to support automated translation into multiple languages.
 
+#### `KIND` (Type) `g7.1:NOTE-KIND`
+
+An enumerated value from set `g7.1:enumset-NOTE-KIND` indicating the type of the note.
+
+When there are multiple `g7.1:NOTE-KIND` substructures to a note, all apply equally to the note;
+there is no notion of a preferred or primary note type.
+
 #### `LANG` (Language) `g7:LANG`
 
 The primary human language of the superstructure.
@@ -1654,10 +1661,6 @@ Other descriptor values might include, for example,
 See also `FACT` and `EVEN` for additional examples.
 :::
 
-#### `TYPE` (Type) `g7:NAME-TYPE`
-
-An enumerated value from set `g7:enumset-NAME-TYPE` indicating the type of the name.
-
 #### `TYPE` (Type) `g7:EXID-TYPE`
 
 The authority issuing the `EXID`, represented as a URI.
@@ -1671,6 +1674,10 @@ Registered URIs are listed in the [exid-types registry](https://github.com/Famil
 
 Additional type URIs can be registered by filing a
 [GitHub pull request](https://github.com/FamilySearch/GEDCOM-registries/pulls).
+
+#### `TYPE` (Type) `g7:NAME-TYPE`
+
+An enumerated value from set `g7:enumset-NAME-TYPE` indicating the type of the name.
 
 #### `UID` (Unique Identifier) `g7:UID`
 
