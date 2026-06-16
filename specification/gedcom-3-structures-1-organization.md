@@ -157,11 +157,11 @@ n HEAD                                     {1:1}  g7.1:HEAD
      +2 FORM <List:Text>                   {1:1}  g7:HEAD-PLAC-FORM
   +1 TITL <Text>                           {0:1}  g7.1:HEAD-TITL
      +2 LANG <Language>                    {0:1}  g7:LANG
-     +2 TRAN <Text>                        {0:1}  g7.1:TEXT-TRAN
+     +2 TRAN <Text>                        {0:M}  g7.1:TEXT-TRAN
         +3 LANG <Language>                 {1:1}  g7:LANG
   +1 DESC <Text>                           {0:1}  g7.1:HEAD-DESC
      +2 LANG <Language>                    {0:1}  g7:LANG
-     +2 TRAN <Text>                        {0:1}  g7.1:TEXT-TRAN
+     +2 TRAN <Text>                        {0:M}  g7.1:TEXT-TRAN
         +3 LANG <Language>                 {1:1}  g7:LANG
   +1 <<NOTE_STRUCTURE>>                    {0:1}
 ```
