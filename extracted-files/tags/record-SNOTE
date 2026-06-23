@@ -62,6 +62,7 @@ payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:
   "https://gedcom.io/terms/v7.1/CHAN": "{0:1}"
+  "https://gedcom.io/terms/v7.1/NOTE-KIND": "{0:M}"
   "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/CREA": "{0:1}"
   "https://gedcom.io/terms/v7/EXID": "{0:M}"
@@ -73,9 +74,6 @@ substructures:
   "https://gedcom.io/terms/v7/UID": "{0:M}"
 
 superstructures: {}
-
-subsumes:
-  - "https://gedcom.io/terms/v7/record-SNOTE"
 
 prerelease: true
 

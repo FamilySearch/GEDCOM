@@ -1,0 +1,37 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7.1/NOTE-KIND
+
+standard tag: 'KIND'
+
+specification:
+  - Type
+  - |
+    An enumerated value from set `https://gedcom.io/terms/v7.1/enumset-NOTE-KIND`
+    indicating the type of the note.
+    
+    When there are multiple `https://gedcom.io/terms/v7.1/NOTE-KIND` substructures
+    to a note, all apply equally to the note; there is no notion of a preferred or
+    primary note type.
+
+label: 'Type'
+
+payload: https://gedcom.io/terms/v7/type-Enum
+
+enumeration set: "https://gedcom.io/terms/v7.1/enumset-NOTE-KIND"
+
+substructures:
+  "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
+
+superstructures:
+  "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/record-SNOTE": "{0:M}"
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...

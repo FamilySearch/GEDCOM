@@ -67,7 +67,7 @@ superstructures:
   "https://gedcom.io/terms/v7.1/FAMS": "{0:M}"
   "https://gedcom.io/terms/v7.1/FCOM": "{0:M}"
   "https://gedcom.io/terms/v7.1/GRAD": "{0:M}"
-  "https://gedcom.io/terms/v7.1/HEAD": "{0:1}"
+  "https://gedcom.io/terms/v7.1/HEAD": "{0:M}"
   "https://gedcom.io/terms/v7.1/IDNO": "{0:M}"
   "https://gedcom.io/terms/v7.1/IMMI": "{0:M}"
   "https://gedcom.io/terms/v7.1/INDI-CENS": "{0:M}"
@@ -107,9 +107,6 @@ superstructures:
   "https://gedcom.io/terms/v7.1/record-REPO": "{0:M}"
   "https://gedcom.io/terms/v7.1/record-SOUR": "{0:M}"
   "https://gedcom.io/terms/v7.1/record-SUBM": "{0:M}"
-
-subsumes:
-  - "https://gedcom.io/terms/v7/SNOTE"
 
 prerelease: true
 
