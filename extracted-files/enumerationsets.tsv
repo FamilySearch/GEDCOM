@@ -77,6 +77,13 @@ https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/enum-
 https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/enum-FACT
 https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/enum-NCHI
 https://gedcom.io/terms/v7.1/enumset-EVENATTR	https://gedcom.io/terms/v7.1/enum-RESI
+https://gedcom.io/terms/v7.1/enumset-NOTE-KIND	https://gedcom.io/terms/v7.1/enum-DATA
+https://gedcom.io/terms/v7.1/enumset-NOTE-KIND	https://gedcom.io/terms/v7.1/enum-REASONING
+https://gedcom.io/terms/v7.1/enumset-NOTE-KIND	https://gedcom.io/terms/v7.1/enum-RESEARCH
+https://gedcom.io/terms/v7.1/enumset-NOTE-KIND	https://gedcom.io/terms/v7.1/enum-SCOPE
+https://gedcom.io/terms/v7.1/enumset-NOTE-KIND	https://gedcom.io/terms/v7.1/enum-STORY
+https://gedcom.io/terms/v7.1/enumset-NOTE-KIND	https://gedcom.io/terms/v7.1/enum-TODO
+https://gedcom.io/terms/v7.1/enumset-NOTE-KIND	https://gedcom.io/terms/v7/enum-OTHER
 https://gedcom.io/terms/v7/enumset-ADOP	https://gedcom.io/terms/v7/enum-ADOP-HUSB
 https://gedcom.io/terms/v7/enumset-ADOP	https://gedcom.io/terms/v7/enum-ADOP-WIFE
 https://gedcom.io/terms/v7/enumset-ADOP	https://gedcom.io/terms/v7/enum-BOTH

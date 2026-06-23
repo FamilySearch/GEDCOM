@@ -1,0 +1,51 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7.1/TEXT-TRAN
+
+standard tag: 'TRAN'
+
+specification:
+  - Translation
+  - A type of `TRAN` for unstructured human-readable text without a media type,
+    such as is found in `HEAD`.`DESC` and `HEAD`.`TITL` payloads. Each
+    `https://gedcom.io/terms/v7/NOTE-TRAN` must have a `LANG` substructure. A
+    superstructure of a `https://gedcom.io/terms/v7/TEXT-TRAN` should also have a
+    `LANG` substructure.
+  - |
+    A representation of the superstructure's data in a different format.
+    
+    In some situations it is desirable to provide the same semantic content in
+    multiple formats. Where this is desirable, a `TRAN` substructure is used, where
+    the specific format is given in its language tag substructure, media type
+    substructure, or both.
+    
+    Different `TRAN` structures are used in different contexts to fully capture the
+    structure of the information being presented in multiple formats. In all cases,
+    a `TRAN` structure's payload and substructures should provide only information
+    also contained in the `TRAN` structures' superstructure, but provide it in a
+    new language, script, or media type.
+    
+    Each `TRAN` substructure must have either a language tag or a media type or
+    both. Each `TRAN` structure must differ from its superstructure and from every
+    other `TRAN` substructure of its superstructure in either its language tag or
+    its media type or both.
+
+label: 'Translation'
+
+payload: http://www.w3.org/2001/XMLSchema#string
+
+substructures:
+  "https://gedcom.io/terms/v7/LANG": "{1:1}"
+
+superstructures:
+  "https://gedcom.io/terms/v7.1/HEAD-DESC": "{0:M}"
+  "https://gedcom.io/terms/v7.1/HEAD-TITL": "{0:M}"
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...

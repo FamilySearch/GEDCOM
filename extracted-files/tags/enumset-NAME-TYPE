@@ -6,6 +6,56 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-NAME-TYPE
 
+specification:
+  - |
+    ______________________________________________________________________
+    
+    title: The FamilySearch GEDCOM Specification subtitle: 7.0.16 email:
+    GEDCOM@FamilySearch.org copyright: | \<div class="{style="page-break-after:">
+    always;page-break-before: always;"} Copyright 1984–2025 Intellectual Reserve,
+    Inc. All rights reserved. A service provided by The Church of Jesus Christ of
+    Latter-day Saints.
+    
+    ```
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+    > <http://www.apache.org/licenses/LICENSE-2.0>
+    
+    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+    
+     
+    
+    In accordance with the Apache 2.0 license that governs this work, any other work that is based on or derived from this work must include a readable copy of the following NOTICE. For more information, please refer to the full copy of the Apache 2.0 license.
+    
+    > NOTICE:
+    > 
+    > This work comprises, is based on, or is derived from the FAMILYSEARCH GEDCOM™ Specification, © 1984-2025 Intellectual Reserve, Inc. All rights reserved.
+    >
+    > "FAMILYSEARCH GEDCOM™" and "FAMILYSEARCH®" are trademarks of Intellectual Reserve, Inc. and may not be used except as allowed by the Apache 2.0 license that governs this work or as expressly authorized in writing and in advance by Intellectual Reserve, Inc.
+    ```
+    
+    </div>
+    
+    author:
+    
+    - | Prepared by the
+    
+      <div class="{style="font-size:130%"}">
+    
+      Family History Department<br/> The Church of Jesus Christ of Latter-day
+      Saints
+    
+    </div>
+    address: |
+        **Family History Department**<br/>
+        15 East South Temple Street<br/>
+        Salt Lake City, UT 84150 USA
+    toc-title: Contents
+    lang: en
+    ...
+
 enumeration values:
   - "https://gedcom.io/terms/v7/enum-AKA"
   - "https://gedcom.io/terms/v7/enum-BIRTH"

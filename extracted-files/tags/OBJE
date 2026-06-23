@@ -86,9 +86,6 @@ superstructures:
   "https://gedcom.io/terms/v7.1/record-SOUR": "{0:M}"
   "https://gedcom.io/terms/v7.1/record-SUBM": "{0:M}"
 
-subsumes:
-  - "https://gedcom.io/terms/v7/OBJE"
-
 prerelease: true
 
 contact: "https://gedcom.io/community/"

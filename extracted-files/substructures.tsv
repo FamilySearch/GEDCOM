@@ -605,6 +605,7 @@ https://gedcom.io/terms/v7.1/GRAD	UID	https://gedcom.io/terms/v7/UID
 https://gedcom.io/terms/v7.1/GRAD	WWW	https://gedcom.io/terms/v7/WWW
 https://gedcom.io/terms/v7.1/HEAD	COPR	https://gedcom.io/terms/v7/COPR
 https://gedcom.io/terms/v7.1/HEAD	DATE	https://gedcom.io/terms/v7/HEAD-DATE
+https://gedcom.io/terms/v7.1/HEAD	DESC	https://gedcom.io/terms/v7.1/HEAD-DESC
 https://gedcom.io/terms/v7.1/HEAD	DEST	https://gedcom.io/terms/v7/DEST
 https://gedcom.io/terms/v7.1/HEAD	GEDC	https://gedcom.io/terms/v7/GEDC
 https://gedcom.io/terms/v7.1/HEAD	LANG	https://gedcom.io/terms/v7/HEAD-LANG
@@ -614,6 +615,11 @@ https://gedcom.io/terms/v7.1/HEAD	SCHMA	https://gedcom.io/terms/v7/SCHMA
 https://gedcom.io/terms/v7.1/HEAD	SNOTE	https://gedcom.io/terms/v7.1/SNOTE
 https://gedcom.io/terms/v7.1/HEAD	SOUR	https://gedcom.io/terms/v7/HEAD-SOUR
 https://gedcom.io/terms/v7.1/HEAD	SUBM	https://gedcom.io/terms/v7.1/SUBM
+https://gedcom.io/terms/v7.1/HEAD	TITL	https://gedcom.io/terms/v7.1/HEAD-TITL
+https://gedcom.io/terms/v7.1/HEAD-DESC	LANG	https://gedcom.io/terms/v7/LANG
+https://gedcom.io/terms/v7.1/HEAD-DESC	TRAN	https://gedcom.io/terms/v7.1/TEXT-TRAN
+https://gedcom.io/terms/v7.1/HEAD-TITL	LANG	https://gedcom.io/terms/v7/LANG
+https://gedcom.io/terms/v7.1/HEAD-TITL	TRAN	https://gedcom.io/terms/v7.1/TEXT-TRAN
 https://gedcom.io/terms/v7.1/IDNO	ADDR	https://gedcom.io/terms/v7/ADDR
 https://gedcom.io/terms/v7.1/IDNO	AGE	https://gedcom.io/terms/v7/AGE
 https://gedcom.io/terms/v7.1/IDNO	AGNC	https://gedcom.io/terms/v7/AGNC
@@ -985,10 +991,12 @@ https://gedcom.io/terms/v7.1/NO	DATE	https://gedcom.io/terms/v7/NO-DATE
 https://gedcom.io/terms/v7.1/NO	NOTE	https://gedcom.io/terms/v7.1/NOTE
 https://gedcom.io/terms/v7.1/NO	SNOTE	https://gedcom.io/terms/v7.1/SNOTE
 https://gedcom.io/terms/v7.1/NO	SOUR	https://gedcom.io/terms/v7.1/SOUR
+https://gedcom.io/terms/v7.1/NOTE	KIND	https://gedcom.io/terms/v7.1/NOTE-KIND
 https://gedcom.io/terms/v7.1/NOTE	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7.1/NOTE	MIME	https://gedcom.io/terms/v7/MIME
 https://gedcom.io/terms/v7.1/NOTE	SOUR	https://gedcom.io/terms/v7.1/SOUR
 https://gedcom.io/terms/v7.1/NOTE	TRAN	https://gedcom.io/terms/v7/NOTE-TRAN
+https://gedcom.io/terms/v7.1/NOTE-KIND	PHRASE	https://gedcom.io/terms/v7/PHRASE
 https://gedcom.io/terms/v7.1/OBJE	CROP	https://gedcom.io/terms/v7/CROP
 https://gedcom.io/terms/v7.1/OBJE	TITL	https://gedcom.io/terms/v7/TITL
 https://gedcom.io/terms/v7.1/OCCU	ADDR	https://gedcom.io/terms/v7/ADDR
@@ -1145,6 +1153,7 @@ https://gedcom.io/terms/v7.1/SSN	SOUR	https://gedcom.io/terms/v7.1/SOUR
 https://gedcom.io/terms/v7.1/SSN	TYPE	https://gedcom.io/terms/v7/TYPE
 https://gedcom.io/terms/v7.1/SSN	UID	https://gedcom.io/terms/v7/UID
 https://gedcom.io/terms/v7.1/SSN	WWW	https://gedcom.io/terms/v7/WWW
+https://gedcom.io/terms/v7.1/TEXT-TRAN	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7.1/WILL	ADDR	https://gedcom.io/terms/v7/ADDR
 https://gedcom.io/terms/v7.1/WILL	AGE	https://gedcom.io/terms/v7/AGE
 https://gedcom.io/terms/v7.1/WILL	AGNC	https://gedcom.io/terms/v7/AGNC
@@ -1285,6 +1294,7 @@ https://gedcom.io/terms/v7.1/record-REPO	WWW	https://gedcom.io/terms/v7/WWW
 https://gedcom.io/terms/v7.1/record-SNOTE	CHAN	https://gedcom.io/terms/v7.1/CHAN
 https://gedcom.io/terms/v7.1/record-SNOTE	CREA	https://gedcom.io/terms/v7/CREA
 https://gedcom.io/terms/v7.1/record-SNOTE	EXID	https://gedcom.io/terms/v7/EXID
+https://gedcom.io/terms/v7.1/record-SNOTE	KIND	https://gedcom.io/terms/v7.1/NOTE-KIND
 https://gedcom.io/terms/v7.1/record-SNOTE	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7.1/record-SNOTE	MIME	https://gedcom.io/terms/v7/MIME
 https://gedcom.io/terms/v7.1/record-SNOTE	REFN	https://gedcom.io/terms/v7/REFN

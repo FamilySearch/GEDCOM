@@ -1,0 +1,29 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: structure
+
+uri: https://gedcom.io/terms/v7.1/HEAD-DESC
+
+standard tag: 'DESC'
+
+specification:
+  - Description
+  - A description of the entire dataset.
+
+label: 'Description'
+
+payload: http://www.w3.org/2001/XMLSchema#string
+
+substructures:
+  "https://gedcom.io/terms/v7.1/TEXT-TRAN": "{0:M}"
+  "https://gedcom.io/terms/v7/LANG": "{0:1}"
+
+superstructures:
+  "https://gedcom.io/terms/v7.1/HEAD": "{0:1}"
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...
