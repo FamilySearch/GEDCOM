@@ -563,13 +563,18 @@ if __name__ == '__main__':
         assert sub.split('/')[4] <= v, f"Enumeration value {sub} incompatible with enumset {uri}"
     
 
-  # step 12: add subsumes for any URI that also exists in earlier minor version
+  # step 12: add subsumes for any URI that also exists in earlier minor version or in subsumes.tsv
   from subprocess import run
   for uri in data:
     if '/v7.1/' in uri:
       res = run(['git','show','main:'+pathof[uri]], capture_output=True)
       if not res.returncode:
         data[uri].subsumes.append(uri.replace('/v7.1/', '/v7/'))
+  with open(Path(args.spec, 'subsumes.tsv'),'r') as subs_csv:
+    subs_csv_header = next(subs_csv)
+    for line in subs_csv:
+      old,new = line.strip('\n\r').split('\t')
+      if new in data: data[new].subsumes.append(old)
 
   # step 13: write all the YAML files
   for uri in data:
