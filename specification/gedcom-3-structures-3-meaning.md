@@ -656,6 +656,16 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 A reference to an external file.
 See the [File Path datatype](#file-path) for more details.
 
+External files may contain embedded metadata,
+which may be of value to family history work.
+Applications should not to remove or edit metadata except as requested by the user.
+Applications are encouraged to show the metadata in referenced external files to the user
+and provide ways of integrating that metadata into appropriate structures with user guidance.
+
+:::note
+Information about embedded metadata of interest to family history can be found at <https://www.familysearch.org/innovate/photo-metadata>.
+:::
+
 #### `FORM` (Format) `g7:FORM`
 
 The [media type](#media-type) of the file referenced by the superstructure.
