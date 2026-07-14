@@ -130,6 +130,20 @@ The grammar above allows for `date`s to be preceded by various words. The meanin
 |`CAL` *x* |*x* is calculated from other data.          |
 |`EST` *x* |Exact date unknown, but near *x*; and *x* is calculated from other data.|
 
+:::note
+`AFT` and `BEF` were introduced in 5.0 without definition,
+defined with the single words "after" and "before" in 5.3,
+and defined as "event happened before/after the given date" in 5.4 through 5.5.1.
+Those definitions suggest that `AFT 1850` would mean "1 JAN 1851 or later,"
+while under the 7.0 definition `AFT 1850` means "1 JAN 1850 or later."
+
+Given a source dated 1850 that asserts something had happened in the past
+(which could mean earlier that same year or in an earlier year),
+some users encode that as `BEF 1850` and others as `BEF 1851`.
+Both user entries are consistent with the source under the 7.0 definition,
+while only the second is consistent with the source under the 5.x definition.
+:::
+
 Known calendars and tips for handling dual dating and extension calendars are given in [Appendix A: Calendars and Dates](#A-calendars).
 
 `DateValue` and `DatePeriod` payloads may also be the empty string if no suitable form is known but a substructure (such as a `PHRASE` or `TIME`) is desired.
