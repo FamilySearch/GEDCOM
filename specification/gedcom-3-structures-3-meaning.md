@@ -658,7 +658,7 @@ See the [File Path datatype](#file-path) for more details.
 
 External files may contain embedded metadata,
 which may be of value to family history work.
-Applications should not to remove or edit metadata except as requested by the user.
+Applications should not remove or edit metadata except as requested by the user.
 Applications are encouraged to show the metadata in referenced external files to the user
 and provide ways of integrating that metadata into appropriate structures with user guidance.
 
