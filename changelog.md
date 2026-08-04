@@ -1,3 +1,15 @@
+# v7.1 branch
+
+- New structures:
+    - `HEAD`.`TITL` for adding a title to an entire dataset
+    - `HEAD`.`DESC` for adding a description of an entire dataset
+    - Add `RESN` to `SOUR`, `REPO`, `SUBM`, and `SNOTE` records
+    - Add `KIND` with enumerated payload to `NOTE` and `SNOTE` for indicating the kind of information contained in the note
+    - Add `KIND` with enumerated payload to `BIRT` events for indicating the kind of birth
+- Deprecation:
+    - `HEAD`.`SOUR`.`DATA` is deprecated
+
+
 # Version 7.0.16
 
 - Recommend that `ASSO` not be used to replicate other standard structures.
