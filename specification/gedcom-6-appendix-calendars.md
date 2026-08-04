@@ -62,7 +62,7 @@ The French Republican calendar or French Revolutionary calendar are the names gi
 
 Permitted months are
 
-|`stdTag`| URI             | Name               |
+|`stdTag`| URI             |Name                |
 |:-------|:----------------|:-------------------|
 |`VEND`  | `g7:month-VEND` |Vendémiaire         |
 |`BRUM`  | `g7:month-BRUM` |Brumaire            |
@@ -86,8 +86,8 @@ The URI for this calendar is `g7:cal-FRENCH_R`
 
 The Hebrew calendar is the name given to the calendar used by Jewish peoples around the world which developed into its current form in the early ninth century. It traditionally marks new days at sunset, not midnight. Its first day (1 Tishrei 1) primarily overlapped with Gregorian 7 September 3761 BCE and Julian 7 October 3761 BCE (starting at sunset on the 6th day of those months).
 
-|`stdTag`| URI             |Name                                                   |
-|:-------|:----------------|:------------------------------------------------------|
+|`stdTag`| URI            | Name                                                   |
+|:-------|:---------------|:-------------------------------------------------------|
 |`TSH`   | `g7:month-TSH` | Tishrei (תִּשְׁרֵי) |
 |`CSH`   | `g7:month-CSH` | Marcheshvan (מַרְחֶשְׁוָן) or Cheshvan (חֶשְׁוָן) |
 |`KSL`   | `g7:month-KSL` | Kislev (כִּסְלֵו) |
