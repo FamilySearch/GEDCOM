@@ -494,6 +494,7 @@ Various ambiguities were identified in version 5.5.1: some due to poor wording, 
 
 - Name pieces are not comma separated.
 
+- The use of "after" and "before" in defining date ranges was ambiguous, with users in some regions interpreting "after 1800" to mean after the *end* of 1800 and others to mean after the *beginning* of 1800, often with each believing their interpretation is the obvious linguistic meaning and not thinking it is ambiguous. To help resolve this, 7.0 now uses "no earlier than" and "no later than" instead, which seems to be consistently interpreted by people from many regions and is inclusive of both previous meanings.
 
 ## Specification refactoring
 
