@@ -1,3 +1,11 @@
+# `main` branch
+
+- Clarify that an `OBJE`.`SOUR`.`OBJE` should not point to its own containing record. #765
+
+- Note that `BEF` and `AFT` are used differently by different researchers. #775
+
+- Various copy edits. #752, #739
+
 # Version 7.0.18
 
 - Fixed typo in the ABNF for the Longitude data type introduced in 7.0.17. Because ABNF is machine-readable, this typo caused some applications using 7.0.17 to fail to parse valid data. 7.0.17 should not be used by applications utilizing the ABNF in the specification in their tooling.
@@ -486,6 +494,7 @@ Various ambiguities were identified in version 5.5.1: some due to poor wording, 
 
 - Name pieces are not comma separated.
 
+- The use of "after" and "before" in defining date ranges was ambiguous, with users in some regions interpreting "after 1800" to mean after the *end* of 1800 and others to mean after the *beginning* of 1800, often with each believing their interpretation is the obvious linguistic meaning and not thinking it is ambiguous. To help resolve this, 7.0 now uses "no earlier than" and "no later than" instead, which seems to be consistently interpreted by people from many regions and is inclusive of both previous meanings.
 
 ## Specification refactoring
 
