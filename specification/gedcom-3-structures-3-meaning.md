@@ -441,6 +441,10 @@ The database, electronic data source, or digital repository from which this data
 The payload is the name of the database, electronic data source, or digital repository,
 with substructures providing additional details about it (not about the export).
 
+:::deprecation
+`HEAD`.`SOUR`.`DATA` should not be added to new files; see `HEADER` for more details.
+:::
+
 #### `DATE` (Date) `g7:DATE`
 
 The principal date of the subject of the superstructure.
