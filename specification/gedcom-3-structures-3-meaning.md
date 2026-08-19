@@ -668,7 +668,7 @@ and provide ways of integrating that metadata into appropriate structures with u
 
 :::note
 Conversion between file metadata and GEDCOM structures generally requires user input, as the mapping is often content-dependent.
-For example, the if `image.jpg` has a `dc:title` field and is used in the following way
+For example, if `image.jpg` has a `dc:title` field and is used in the following way
 
 ```gedcom
 0 @I1@ INDI
