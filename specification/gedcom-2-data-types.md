@@ -110,7 +110,9 @@ In addition to the constraints above:
     All known calendars restrict `day` to be between 1 and a month-specific maximum.
     The largest known maximum is 36, and most months in most calendars have a lower maximum.
 - No calendar names, months, or epochs match `dateRestrict`.
-- Extension calendars (those with `extTag` for their `calendar`) must use `extTag`, not `stdTag`, for months.
+- Extension calendars (those with `extTag` for their `calendar`) must use `stdTag` for months
+  only when those months are already defined in a standard calendar.  Extension calendars must
+  use `extTag` for any other months defined.
 
 It is recommended that calendars avoid using a single tag to refer to both a month and an epoch.
 
