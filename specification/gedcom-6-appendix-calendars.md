@@ -60,10 +60,17 @@ The URI for this calendar is `g7:cal-JULIAN`
 ### `SWEDISH`
 
 The Swedish calendar was introduced by the Government of Sweden in 1700 and used until 1712.
-Based on the Julian calendar, the Swedish calendar omitted leap day in 1700 and added a second leap day as 30 February 1712.
-Any date using the Swedish calendar before 1700 or after 1712 is the same date in the Julian calendar and is stored as `JULIAN` instead of `SWEDISH`.
+It is the same as the Julian calendar except it omitted leap day in 1700 and added a second leap day as 30 February 1712;
+between those dates the Swedish calendar was 1 day ahead of the Julian calendar.
 
-This calendar uses the same months as the Julian and Gregorian calendars, differing only in the structure of the month of February which can have 28, 29, or 30 days.
+:::note
+While the Swedish calendar was only official in use from 1700 to 1712,
+some sources might reference it outside of those dates
+as a synonym for the Julian calendar.
+Such dates should be represented using `JULIAN`, not `SWEDISH`.
+:::
+
+This calendar uses the same months as the Julian and Gregorian calendars, differing only in the number of days in February:
 
 | Year | Days in Feb | Note                                                 |
 |------|-------------|------------------------------------------------------|
