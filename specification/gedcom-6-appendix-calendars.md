@@ -59,18 +59,20 @@ The URI for this calendar is `g7:cal-JULIAN`
 
 ### `SWEDISH`
 
-The Swedish calendar was introduced by the Government of Sweden on 1700 as part of a plan to switch from the Julian calendar to the Gregorian calendar. It was intended to omit all 11 Julian leap days in the period 1700 to 1740 so that the Swedish calendar gradually aligned with the Gregorian calendar, which at the time, was 11 days ahead of the Julian calendar. Accordingly, the Julian leap day in 1700 was omitted leaving the calendar one day ahead of the Julian calendar. Julian leap days in 1704 and 1708 were not omitted. In 1712, the Swedish calendar was abandoned. The omitted leap day was reinstated as 30 Feb in 1712, realigning with the Julian calendar thereafter.
+The Swedish calendar was introduced by the Government of Sweden in 1700 and used until 1712.
+Based on the Julian calendar, the Swedish calendar omitted leap day in 1700 and added a second leap day as 30 February 1712.
+Any date using the Swedish calendar before 1700 or after 1712 is the same date in the Julian calendar and is stored as `JULIAN` instead of `SWEDISH`.
 
-This calendar uses the same months as the Gregorian calendar, differing only in the structure of the month of February which can have 28, 29, or 30 days.
+This calendar uses the same months as the Julian and Gregorian calendars, differing only in the structure of the month of February which can have 28, 29, or 30 days.
 
-| Year | Days in Feb | Note                                                   |
-|------|-------------|--------------------------------------------------------|
-| 1700 | 28          | Leap day omitted in 1700                               |
-| 1704 | 29          |                                                        |
-| 1708 | 29          |                                                        |
-| 1712 | 30          | The leap day omitted from 1700 is reinserted as 30 Feb |
+| Year | Days in Feb | Note                                                 |
+|------|-------------|------------------------------------------------------|
+| 1700 | 28          | Leap day omitted in 1700                             |
+| 1704 | 29          |                                                      |
+| 1708 | 29          |                                                      |
+| 1712 | 30          | The leap day omitted from 1700  reinserted as 30 Feb |
 
-This calendar was in use from Swedish day 1 Mar 1700 to 30 Feb 1712. Thus, no epoch marker is permitted in this calendar.
+This calendar was in use from 1700 to 1712. Thus, no epoch marker is permitted in this calendar.
 
 The URI for this calendar is `g7.1:cal-SWEDISH`
 
