@@ -1,0 +1,23 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration set
+
+uri: https://gedcom.io/terms/v7.1/enumset-NOTE-KIND
+
+enumeration values:
+  - "https://gedcom.io/terms/v7.1/enum-DATA"
+  - "https://gedcom.io/terms/v7.1/enum-REASONING"
+  - "https://gedcom.io/terms/v7.1/enum-RESEARCH"
+  - "https://gedcom.io/terms/v7.1/enum-SCOPE"
+  - "https://gedcom.io/terms/v7.1/enum-STORY"
+  - "https://gedcom.io/terms/v7.1/enum-TODO"
+  - "https://gedcom.io/terms/v7/enum-OTHER"
+
+standard: true
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...

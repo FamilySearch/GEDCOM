@@ -36,6 +36,7 @@ label: 'Note'
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:
+  "https://gedcom.io/terms/v7.1/NOTE-KIND": "{0:M}"
   "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/LANG": "{0:1}"
   "https://gedcom.io/terms/v7/MIME": "{0:1}"
@@ -76,7 +77,7 @@ superstructures:
   "https://gedcom.io/terms/v7.1/FAMS": "{0:M}"
   "https://gedcom.io/terms/v7.1/FCOM": "{0:M}"
   "https://gedcom.io/terms/v7.1/GRAD": "{0:M}"
-  "https://gedcom.io/terms/v7.1/HEAD": "{0:1}"
+  "https://gedcom.io/terms/v7.1/HEAD": "{0:M}"
   "https://gedcom.io/terms/v7.1/IDNO": "{0:M}"
   "https://gedcom.io/terms/v7.1/IMMI": "{0:M}"
   "https://gedcom.io/terms/v7.1/INDI-CENS": "{0:M}"

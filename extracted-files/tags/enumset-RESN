@@ -8,7 +8,7 @@ uri: https://gedcom.io/terms/v7/enumset-RESN
 
 specification:
   - |
-    It is recommended that applications allow users to chose how `CONFIDENTIAL`
+    It is recommended that applications allow users to choose how `CONFIDENTIAL`
     and/or `PRIVACY` data is handled when interfacing with other users or
     applications, for example by allowing them to exclude such data when exporting.
     

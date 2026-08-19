@@ -17,6 +17,10 @@ specification:
     
     The optional `TITL` substructure supersedes any `OBJE.FILE.TITL` substructures
     included in the `MULTIMEDIA_RECORD`.
+    
+    A `MULTIMEDIA_LINK` in a `MULTIMEDIA_RECORD` should not point to the
+    `MULTIMEDIA_RECORD` itself. Applications should also ensure they can handle
+    invalid files with such cycles in a safe manner.
   - Object
   - See `MULTIMEDIA_LINK`.
 

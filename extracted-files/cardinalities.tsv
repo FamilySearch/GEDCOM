@@ -1,3 +1,4 @@
+superstructure	structure	cardinality
 https://gedcom.io/terms/v7.1/ADOP	https://gedcom.io/terms/v7.1/ADOP-FAMC	{0:1}
 https://gedcom.io/terms/v7.1/ADOP	https://gedcom.io/terms/v7.1/ASSO	{0:M}
 https://gedcom.io/terms/v7.1/ADOP	https://gedcom.io/terms/v7.1/NOTE	{0:M}
@@ -593,8 +594,10 @@ https://gedcom.io/terms/v7.1/GRAD	https://gedcom.io/terms/v7/SDATE	{0:1}
 https://gedcom.io/terms/v7.1/GRAD	https://gedcom.io/terms/v7/TYPE	{0:1}
 https://gedcom.io/terms/v7.1/GRAD	https://gedcom.io/terms/v7/UID	{0:M}
 https://gedcom.io/terms/v7.1/GRAD	https://gedcom.io/terms/v7/WWW	{0:M}
-https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/NOTE	{0:1}
-https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/SNOTE	{0:1}
+https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/HEAD-DESC	{0:1}
+https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/HEAD-TITL	{0:1}
+https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/NOTE	{0:M}
+https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/SNOTE	{0:M}
 https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/SUBM	{0:1}
 https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7/COPR	{0:1}
 https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7/DEST	{0:1}
@@ -604,6 +607,10 @@ https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7/HEAD-LANG	{0:1}
 https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7/HEAD-PLAC	{0:1}
 https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7/HEAD-SOUR	{0:1}
 https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7/SCHMA	{0:1}
+https://gedcom.io/terms/v7.1/HEAD-DESC	https://gedcom.io/terms/v7.1/TEXT-TRAN	{0:M}
+https://gedcom.io/terms/v7.1/HEAD-DESC	https://gedcom.io/terms/v7/LANG	{0:1}
+https://gedcom.io/terms/v7.1/HEAD-TITL	https://gedcom.io/terms/v7.1/TEXT-TRAN	{0:M}
+https://gedcom.io/terms/v7.1/HEAD-TITL	https://gedcom.io/terms/v7/LANG	{0:1}
 https://gedcom.io/terms/v7.1/IDNO	https://gedcom.io/terms/v7.1/ASSO	{0:M}
 https://gedcom.io/terms/v7.1/IDNO	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/IDNO	https://gedcom.io/terms/v7.1/OBJE	{0:M}
@@ -975,10 +982,12 @@ https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7.1/SNOTE	{0:M}
 https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7.1/SOUR	{0:M}
 https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7/NO-DATE	{0:1}
+https://gedcom.io/terms/v7.1/NOTE	https://gedcom.io/terms/v7.1/NOTE-KIND	{0:M}
 https://gedcom.io/terms/v7.1/NOTE	https://gedcom.io/terms/v7.1/SOUR	{0:M}
 https://gedcom.io/terms/v7.1/NOTE	https://gedcom.io/terms/v7/LANG	{0:1}
 https://gedcom.io/terms/v7.1/NOTE	https://gedcom.io/terms/v7/MIME	{0:1}
 https://gedcom.io/terms/v7.1/NOTE	https://gedcom.io/terms/v7/NOTE-TRAN	{0:M}
+https://gedcom.io/terms/v7.1/NOTE-KIND	https://gedcom.io/terms/v7/PHRASE	{0:1}
 https://gedcom.io/terms/v7.1/OBJE	https://gedcom.io/terms/v7/CROP	{0:1}
 https://gedcom.io/terms/v7.1/OBJE	https://gedcom.io/terms/v7/TITL	{0:1}
 https://gedcom.io/terms/v7.1/OCCU	https://gedcom.io/terms/v7.1/ASSO	{0:M}
@@ -1135,6 +1144,7 @@ https://gedcom.io/terms/v7.1/SSN	https://gedcom.io/terms/v7/SDATE	{0:1}
 https://gedcom.io/terms/v7.1/SSN	https://gedcom.io/terms/v7/TYPE	{0:1}
 https://gedcom.io/terms/v7.1/SSN	https://gedcom.io/terms/v7/UID	{0:M}
 https://gedcom.io/terms/v7.1/SSN	https://gedcom.io/terms/v7/WWW	{0:M}
+https://gedcom.io/terms/v7.1/TEXT-TRAN	https://gedcom.io/terms/v7/LANG	{1:1}
 https://gedcom.io/terms/v7.1/WILL	https://gedcom.io/terms/v7.1/ASSO	{0:M}
 https://gedcom.io/terms/v7.1/WILL	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/WILL	https://gedcom.io/terms/v7.1/OBJE	{0:M}
@@ -1273,6 +1283,7 @@ https://gedcom.io/terms/v7.1/record-REPO	https://gedcom.io/terms/v7/RESN	{0:1}
 https://gedcom.io/terms/v7.1/record-REPO	https://gedcom.io/terms/v7/UID	{0:M}
 https://gedcom.io/terms/v7.1/record-REPO	https://gedcom.io/terms/v7/WWW	{0:M}
 https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7.1/CHAN	{0:1}
+https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7.1/NOTE-KIND	{0:M}
 https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7.1/SOUR	{0:M}
 https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7/CREA	{0:1}
 https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7/EXID	{0:M}

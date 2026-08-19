@@ -1,0 +1,21 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration
+
+uri: https://gedcom.io/terms/v7.1/enum-SCOPE
+
+standard tag: 'SCOPE'
+
+specification:
+  - A description of what data is or should be included in the given dataset (if
+    `HEAD`.`NOTE`), persona (if `INDI`.`NOTE`) or the like
+
+value of:
+  - "https://gedcom.io/terms/v7.1/enumset-NOTE-KIND"
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...

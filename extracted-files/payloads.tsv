@@ -1,3 +1,4 @@
+structure	payload
 https://gedcom.io/terms/v7.1/ADOP	Y|<NULL>
 https://gedcom.io/terms/v7.1/ADOP-FAMC	@<https://gedcom.io/terms/v7.1/record-FAM>@
 https://gedcom.io/terms/v7.1/ALIA	@<https://gedcom.io/terms/v7.1/record-INDI>@
@@ -43,6 +44,8 @@ https://gedcom.io/terms/v7.1/FAMS	@<https://gedcom.io/terms/v7.1/record-FAM>@
 https://gedcom.io/terms/v7.1/FCOM	Y|<NULL>
 https://gedcom.io/terms/v7.1/GRAD	Y|<NULL>
 https://gedcom.io/terms/v7.1/HEAD	
+https://gedcom.io/terms/v7.1/HEAD-DESC	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7.1/HEAD-TITL	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/IDNO	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/IMMI	Y|<NULL>
 https://gedcom.io/terms/v7.1/INDI-CENS	Y|<NULL>
@@ -65,6 +68,7 @@ https://gedcom.io/terms/v7.1/NATU	Y|<NULL>
 https://gedcom.io/terms/v7.1/NMR	http://www.w3.org/2001/XMLSchema#nonNegativeInteger
 https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7.1/NOTE	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7.1/NOTE-KIND	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7.1/OBJE	@<https://gedcom.io/terms/v7.1/record-OBJE>@
 https://gedcom.io/terms/v7.1/OCCU	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/ORDN	Y|<NULL>
@@ -80,6 +84,7 @@ https://gedcom.io/terms/v7.1/SOUR	@<https://gedcom.io/terms/v7.1/record-SOUR>@
 https://gedcom.io/terms/v7.1/SOUR-EVEN	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7.1/SSN	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/SUBM	@<https://gedcom.io/terms/v7.1/record-SUBM>@
+https://gedcom.io/terms/v7.1/TEXT-TRAN	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/WILL	Y|<NULL>
 https://gedcom.io/terms/v7.1/record-FAM	
 https://gedcom.io/terms/v7.1/record-INDI	

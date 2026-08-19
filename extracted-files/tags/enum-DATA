@@ -1,0 +1,20 @@
+%YAML 1.2
+---
+lang: en-US
+
+type: enumeration
+
+uri: https://gedcom.io/terms/v7.1/enum-DATA
+
+standard tag: 'DATA'
+
+specification:
+  - Historical data that is not present in other structures
+
+value of:
+  - "https://gedcom.io/terms/v7.1/enumset-NOTE-KIND"
+
+prerelease: true
+
+contact: "https://gedcom.io/community/"
+...

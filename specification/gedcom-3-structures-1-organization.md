@@ -70,7 +70,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
         
         - `@<XREF:`tag`>@` means a pointer to a structure with this cross-reference template; `@VOID@` is also permitted.
         - `<`data type`>` means a non-pointer payload, as described in [Data types](#datatypes). If the data type allows the empty string, the payload may be omitted.
-        - `[`text`|<NULL>]` means the payload is optional but if present must be the given text.
+       - `[`text`|<NULL>]` means the payload is optional but if present must be the given text. The `[`text`|<NULL>]` payload descriptor is only used in this version of the specification for `[Y|<NULL>]` in event structures, as explained in [Events](#events).
         
         If there is a payload descriptor, a payload that matches the payload is required of the described structure unless the descriptor says the payload is optional.
 
@@ -239,7 +239,7 @@ the `INDI` record must use a `FAMC` to point to the `FAM` record.
 An `INDI` record should not have multiple `FAMS` substructures pointing to the same `FAM`.
 
 A `FAM` record should not have multiple `CHIL` substructures pointing to the same `INDI`; doing so implies a nonsensical birth order.
-An `INDI` record may have multiple `FAMC` substructures pointing to the same `FAM`, but doing so is not recommended.
+An `INDI` record may have multiple `FAMC` substructures pointing to the same `FAM`, for example to indicate a child that was both fostered and adopted by the same family.
 
 Source citations and notes related to the start of a specific child relationship should be placed
 under the child's `BIRT`, `CHR`, or `ADOP` event, rather than under the `FAM` record.
@@ -822,12 +822,12 @@ n FACT <Text>                              {1:1}  g7.1:INDI-FACT
 ]
 ````
 
-Individual attributes; see [Individual Attributes](#individual-attributes) for descriptions of each individual attribute type..
+Individual attributes; see [Individual Attributes](#individual-attributes) for descriptions of each individual attribute type.
 
 :::note
 Individual attribute structures vary as follows:
 
-- `INDI`.`NCHI` and `NMR` have [Integer](#text) payloads; `IDNO` and `SSN` have [Special](#special) payloads; others have [Text](#text) payloads
+- `INDI`.`NCHI` and `NMR` have [Integer](#integer) payloads; `IDNO` and `SSN` have [Special](#special) payloads; others have [Text](#text) payloads
 - `INDI`.`FACT` and `IDNO` require `TYPE`; it's optional for others
 :::
 
@@ -1026,6 +1026,9 @@ Links the superstructure to the `MULTIMEDIA_RECORD` with the given pointer.
 The optional `CROP` substructure indicates that a subregion of an image represents or applies to the superstructure.
 
 The optional `TITL` substructure supersedes any `OBJE.FILE.TITL` substructures included in the `MULTIMEDIA_RECORD`.
+
+A `MULTIMEDIA_LINK` in a `MULTIMEDIA_RECORD` should not point to the `MULTIMEDIA_RECORD` itself.  Applications should
+also ensure they can handle invalid files with such cycles in a safe manner.
 
 #### `NON_EVENT_STRUCTURE` :=
 

@@ -275,7 +275,7 @@ The person, agency, or entity who created the record. For a published work, this
 
 #### `BAPL` (Baptism, Latter-Day Saint) `g7.1:BAPL`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
 #### `BAPM` (Baptism) `g7.1:BAPM`
@@ -328,7 +328,7 @@ It is often used subordinate to a death event to show cause of death, such as mi
 
 #### `CENS` (Census)  `g7.1:FAM-CENS`
 
-An [Family Event](#family-events).
+A [Family Event](#family-events).
 
 #### `CENS` (Census)  `g7.1:INDI-CENS`
 
@@ -367,7 +367,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 #### `CONL` (Confirmation, Latter-Day Saint) `g7.1:CONL`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
 #### `CONT` (Continued) `g7:CONT`
@@ -533,7 +533,7 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 
 #### `ENDL` (Endowment, Latter-Day Saint) `g7.1:ENDL`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
 #### `ENGA` (Engagement) `g7.1:ENGA`
@@ -664,6 +664,32 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 A reference to an external file.
 See the [File Path datatype](#file-path) for more details.
 
+External files may contain embedded metadata,
+which may be of value to family history work.
+Applications should not remove or edit metadata except as requested by the user.
+Applications are encouraged to show the metadata in referenced external files to the user
+and provide ways of integrating that metadata into appropriate structures with user guidance.
+
+:::note
+Conversion between file metadata and GEDCOM structures generally requires user input, as the mapping is often content-dependent.
+For example, if `image.jpg` has a `dc:title` field and is used in the following way
+
+```gedcom
+0 @I1@ INDI
+1 SOUR @S1@
+0 @S1@ SOUR
+1 OBJE @O1@
+0 @O1@ OBJE
+1 FILE image.jpg
+```
+
+that field might belong in a `NAME` of `@I1@`, or a `TITL` in `@S1@`, or a `NOTE` in `@O1@`, or possible other locations depending on what the field contains.
+:::
+
+:::note
+Information about embedded metadata of interest to family history can be found at <https://www.familysearch.org/innovate/photo-metadata>.
+:::
+
 #### `FORM` (Format) `g7:FORM`
 
 The [media type](#media-type) of the file referenced by the superstructure.
@@ -765,7 +791,7 @@ See `INDIVIDUAL_RECORD`.
 
 #### `INIL` (Initiatory, Latter-Day Saint) `g7.1:INIL`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.  Previously, GEDCOM versions 3.0 through 5.3 called this `WAC`; it was not part of 5.4 through 5.5.1.
 FamilySearch GEDCOM 7.0 reintroduced it with the name `INIL` for consistency with `BAPL`, `CONL`, and `ENDL`.
 
@@ -989,15 +1015,13 @@ As of version 7.1, three media types are supported by this structure:
     </div>
 
 :::note
+Media types are also used by external files, as described under `FORM`. External file media types are not limited to `text` types.
+:::
+
 Other `text` media types not discussed above are also permitted, though not recommended.
 If present, they are considered extensions.  Such extensions do not require an
 [extension tag](#extensions) because the definition of `g7:MIME` is sufficient
 to cover this kind of extension.
-:::
-
-:::note
-Media types are also used by external files, as described under `FORM`. External file media types are not limited to `text` types.
-:::
 
 #### `NAME` (Name) `g7:NAME`
 
@@ -1369,12 +1393,12 @@ An enumerated value from set `g7:enumset-SEX` that indicates the sex of the indi
 
 #### `SLGC` (Sealing, child) `g7.1:SLGC`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_INDIVIDUAL_ORDINANCE`.
 
 #### `SLGS` (Sealing, spouse) `g7.1:SLGS`
 
-A [Latter-Day Saint Ordinance](#latter-day-saint-ordinances).
+A [Latter-day Saint Ordinance](#latter-day-saint-ordinances).
 See also `LDS_SPOUSE_SEALING`.
 
 #### `SNOTE` (Shared note) `g7.1:SNOTE`
@@ -1420,11 +1444,11 @@ See `ADDRESS_STRUCTURE` for more details.
 
 #### `STAT` (Status) `g7:ord-STAT`
 
-An enumerated value from set `g7:enumset-ord-STAT` assessing of the state or condition of an ordinance.
+An enumerated value from set `g7:enumset-ord-STAT` assessing the state or condition of an ordinance.
 
 #### `STAT` (Status) `g7:FAMC-STAT`
 
-An enumerated value from set `g7:enumset-FAMC-STAT` assessing of the state or condition of a researcher's belief in a family connection.
+An enumerated value from set `g7:enumset-FAMC-STAT` assessing the state or condition of a researcher's belief in a family connection.
 
 #### `SUBM` (Submitter) `g7.1:SUBM`
 

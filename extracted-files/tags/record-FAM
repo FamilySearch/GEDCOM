@@ -51,8 +51,8 @@ specification:
     
     A `FAM` record should not have multiple `CHIL` substructures pointing to the
     same `INDI`; doing so implies a nonsensical birth order. An `INDI` record may
-    have multiple `FAMC` substructures pointing to the same `FAM`, but doing so is
-    not recommended.
+    have multiple `FAMC` substructures pointing to the same `FAM`, for example to
+    indicate a child that was both fostered and adopted by the same family.
     
     Source citations and notes related to the start of a specific child
     relationship should be placed under the child's `BIRT`, `CHR`, or `ADOP` event,
