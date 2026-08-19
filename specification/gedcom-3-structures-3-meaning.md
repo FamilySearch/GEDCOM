@@ -660,6 +660,32 @@ See also `INDIVIDUAL_EVENT_STRUCTURE`.
 A reference to an external file.
 See the [File Path datatype](#file-path) for more details.
 
+External files may contain embedded metadata,
+which may be of value to family history work.
+Applications should not remove or edit metadata except as requested by the user.
+Applications are encouraged to show the metadata in referenced external files to the user
+and provide ways of integrating that metadata into appropriate structures with user guidance.
+
+:::note
+Conversion between file metadata and GEDCOM structures generally requires user input, as the mapping is often content-dependent.
+For example, if `image.jpg` has a `dc:title` field and is used in the following way
+
+```gedcom
+0 @I1@ INDI
+1 SOUR @S1@
+0 @S1@ SOUR
+1 OBJE @O1@
+0 @O1@ OBJE
+1 FILE image.jpg
+```
+
+that field might belong in a `NAME` of `@I1@`, or a `TITL` in `@S1@`, or a `NOTE` in `@O1@`, or possible other locations depending on what the field contains.
+:::
+
+:::note
+Information about embedded metadata of interest to family history can be found at <https://www.familysearch.org/innovate/photo-metadata>.
+:::
+
 #### `FORM` (Format) `g7:FORM`
 
 The [media type](#media-type) of the file referenced by the superstructure.
