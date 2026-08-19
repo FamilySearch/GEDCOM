@@ -37,7 +37,8 @@ make
 If the build completes but the `extracted-files/tags/` directory is empty, run the URI extraction manually:
 ```bash
 cd build
-python3 uri-def.py ../specification/gedcom*.md ../extracted-files/tags
+python3 extract-yaml.py --spec=../specification/ --dest=../extracted-files/
+python3 yaml-to-tsv.py --dest=../extracted-files/ ../extracted-files/tags
 ```
 
 This command generates:
@@ -94,7 +95,8 @@ mkdir -p ../extracted-files/tags
 make
 
 # If tags directory is empty, run URI extraction manually
-python3 uri-def.py ../specification/gedcom*.md ../extracted-files/tags
+python3 extract-yaml.py --spec=../specification/ --dest=../extracted-files/
+python3 yaml-to-tsv.py --dest=../extracted-files/ ../extracted-files/tags
 
 # Verify generated files exist
 ls -la ../specification/gedcom.html ../specification/gedcom.pdf
@@ -117,7 +119,7 @@ The repository has automated workflows that run on pushes and pull requests:
 - Creates PRs with updated extracted files if changes detected
 - Uses commands:
   - `python3 extract-grammars.py ../specification/gedcom*.md ../extracted-files/`
-  - `python3 uri-def.py ../specification/gedcom*.md ../extracted-files/tags`
+  - `python3 extract-yaml.py --spec=../specification/ --dest=../extracted-files/`
 
 ## Repository Structure
 
@@ -144,7 +146,8 @@ The repository has automated workflows that run on pushes and pull requests:
 - `hyperlink.py` - Adds hyperlinks to markdown 
 - `hyperlink-code.py` - Adds hyperlinks to code blocks in HTML
 - `extract-grammars.py` - Extracts ABNF and structure grammars
-- `uri-def.py` - Extracts tag definitions and generates YAML files
+- `extract-yaml.py` - Extracts tag definitions and generates YAML files
+- `yaml-to-tsv.py` - Extracts TSV files from YAML files
 - `push_to_gedcomio.py` - Uploads to gedcom.io (requires special access)
 
 ## Common Development Tasks

@@ -40,9 +40,10 @@ for uri,obj in data.items():
       rows[(sup, uri)] = card
     for sub,card in obj['substructures'].items():
       if rows.get((uri, sub),card) != card:
-        raise Error(f"{uri} and {sub} disagree about their mutual cardinality")
+        raise Exception(f"{uri} and {sub} disagree about their mutual cardinality")
       rows[(uri, sub)] = card
 with open(Path(args.dest, "cardinalities.tsv"), 'w') as dst:
+  print('superstructure\tstructure\tcardinality', file=dst)
   for row in sorted([k+(v,) for k,v in rows.items()]):
     print('\t'.join(row), file=dst)
 
@@ -52,10 +53,11 @@ for uri,obj in data.items():
   if obj['type'] == 'enumeration set':
     for u in obj['enumeration values']:
       rows.add((uri,u))
-  if 'vaue of' in obj:
+  if 'value of' in obj:
     for u in obj['value of']:
       rows.add((u,uri))
 with open(Path(args.dest, "enumerationsets.tsv"), 'w') as dst:
+  print('set\tvalue', file=dst)
   for row in sorted(rows):
     print('\t'.join(row), file=dst)
 
@@ -66,6 +68,7 @@ for uri,obj in data.items():
   if obj['type'] == 'structure' and 'enumeration set' in obj:
     rows.add((uri, obj['enumeration set']))
 with open(Path(args.dest, "enumerations.tsv"), 'w') as dst:
+  print('structure\tset', file=dst)
   for row in sorted(rows):
     print('\t'.join(row), file=dst)
 
@@ -76,6 +79,7 @@ for uri,obj in data.items():
   if obj['type'] == 'structure':
     rows.add((uri, obj['payload'] or ''))
 with open(Path(args.dest, "payloads.tsv"), 'w') as dst:
+  print('structure\tpayload', file=dst)
   for row in sorted(rows):
     print('\t'.join(row), file=dst)
 
@@ -89,6 +93,8 @@ for uri,obj in data.items():
         rows.add((sup, obj['standard tag'], uri))
       for tag in obj.get('extension tags',[]):
         rows.add((sup, tag, uri))
+      for tag in obj.get('nonconformant tags',[]):
+        rows.add((sup, tag, uri))
     if len(obj['superstructures']) == 0:
       if 'standard tag' in obj:
         rows.add(('', obj['standard tag'], uri))
@@ -100,5 +106,6 @@ for uri,obj in data.items():
       for tag in data[sub].get('extension tags',[]):
         rows.add((uri, tag, sub))
 with open(Path(args.dest, "substructures.tsv"), 'w') as dst:
+  print('superstructure\ttag\tstructure', file=dst)
   for row in sorted(rows):
     print('\t'.join(row), file=dst)

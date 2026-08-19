@@ -20,10 +20,6 @@ def slugify(bit):
         si = bit.rfind('`g7:')+4
         ei = bit.find('`', si)
         slug = bit[si:ei].replace('#','-')
-    elif '`g7.1:' in bit:
-        si = bit.rfind('`g7.1:')+6
-        ei = bit.find('`', si)
-        slug = bit[si:ei].replace('#','-')
     elif '`' in bit:
         bit = re.search('`[A-Z0-9_`.]+`', bit)
         slug = bit.group(0).replace('`','').replace('.','-')
@@ -91,7 +87,7 @@ def linkable(line, num, istable=False):
             slug = table_tags[m.group(1)]
             return linkify(m.group(0), slug)
         return m.group(0)
-    uried = re.sub(r'(?<![\[.`])`g7(?:\.1)?:[-A-Z0-9a-z`._#]+`', repl, line)
+    uried = re.sub(r'(?<![\[.`])`g7:[-A-Z0-9a-z`._#]+`', repl, line)
     if istable: return uried
     tagged = re.sub(r'(?<![\[.`])`[A-Z0-9`._#]+`', repl, uried)
     abnfed = re.sub(r'(?<![\[.`])`([A-Za-z0-9]+)`', abnf, tagged)
