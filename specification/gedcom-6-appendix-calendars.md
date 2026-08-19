@@ -2,7 +2,7 @@
 
 ## Known Calendars
 
-This specification defines 4 calendars: `GREGORIAN`, `JULIAN`, `FRENCH_R`, and `HEBREW`.
+This specification defines 5 calendars: `GREGORIAN`, `JULIAN`, `SWEDISH`, `FRENCH_R`, and `HEBREW`.
 Previous versions also provided for, but did not define the meaning of, `ROMAN` and `UNKNOWN` calendars.
 
 Extension calendars should use the usual rules for extensions, including using `_` as the leading character of the calendar name.
@@ -55,6 +55,34 @@ year *y* BCE indicates a year *y* years before year 1.
 Thus, there is no year 0; year 1 BCE was followed by year 1.
 
 The URI for this calendar is `g7:cal-JULIAN`
+
+
+### `SWEDISH`
+
+The Swedish calendar was introduced by the Government of Sweden in 1700 and used until 1712.
+It is the same as the Julian calendar except it omitted leap day in 1700 and added a second leap day as 30 February 1712;
+between those dates the Swedish calendar was 1 day ahead of the Julian calendar.
+
+:::note
+While the Swedish calendar was only official in use from 1700 to 1712,
+some sources might reference it outside of those dates
+as a synonym for the Julian calendar.
+Such dates should be represented using `JULIAN`, not `SWEDISH`.
+:::
+
+This calendar uses the same months as the Julian and Gregorian calendars, differing only in the number of days in February:
+
+| Year | Days in Feb | Note                                                 |
+|------|-------------|------------------------------------------------------|
+| 1700 | 28          | Leap day omitted in 1700                             |
+| 1704 | 29          |                                                      |
+| 1708 | 29          |                                                      |
+| 1712 | 30          | The leap day omitted from 1700  reinserted as 30 Feb |
+
+This calendar was in use from 1700 to 1712. Thus, no epoch marker is permitted in this calendar.
+
+The URI for this calendar is `g7.1:cal-SWEDISH`
+
 
 ### `FRENCH_R`
 
