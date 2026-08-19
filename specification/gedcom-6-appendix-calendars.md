@@ -2,7 +2,7 @@
 
 ## Known Calendars
 
-This specification defines 4 calendars: `GREGORIAN`, `JULIAN`, `FRENCH_R`, and `HEBREW`.
+This specification defines 5 calendars: `GREGORIAN`, `JULIAN`, `SWEDISH`, `FRENCH_R`, and `HEBREW`.
 Previous versions also provided for, but did not define the meaning of, `ROMAN` and `UNKNOWN` calendars.
 
 Extension calendars should use the usual rules for extensions, including using `_` as the leading character of the calendar name.
@@ -55,6 +55,25 @@ year *y* BCE indicates a year *y* years before year 1.
 Thus, there is no year 0; year 1 BCE was followed by year 1.
 
 The URI for this calendar is `g7:cal-JULIAN`
+
+
+### `SWEDISH`
+
+The Swedish calendar was introduced by the Government of Sweden on 1700 as part of a plan to switch from the Julian calendar to the Gregorian calendar. It was intended to omit all 11 Julian leap days in the period 1700 to 1740 so that the Swedish calendar gradually aligned with the Gregorian calendar, which at the time, was 11 days ahead of the Julian calendar. Accordingly, the Julian leap day in 1700 was omitted leaving the calendar one day ahead of the Julian calendar. Julian leap days in 1704 and 1708 were not omitted. In 1712, the Swedish calendar was abandoned. The omitted leap day was reinstated as 30 Feb in 1712, realigning with the Julian calendar thereafter.
+
+This calendar uses the same months as the Gregorian calendar, differing only in the structure of the month of February which can have 28, 29, or 30 days.
+
+| Year | Days in Feb | Note                                                   |
+|------|-------------|--------------------------------------------------------|
+| 1700 | 28          | Leap day omitted in 1700                               |
+| 1704 | 29          |                                                        |
+| 1708 | 29          |                                                        |
+| 1712 | 30          | The leap day omitted from 1700 is reinserted as 30 Feb |
+
+This calendar was in use from Swedish day 1 Mar 1700 to 30 Feb 1712. Thus, no epoch marker is permitted in this calendar.
+
+The URI for this calendar is `g7.1:cal-SWEDISH`
+
 
 ### `FRENCH_R`
 
