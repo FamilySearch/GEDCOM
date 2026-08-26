@@ -72,12 +72,12 @@ Such dates should be represented using `JULIAN`, not `SWEDISH`.
 
 This calendar uses the same months as the Julian and Gregorian calendars, differing only in the number of days in February:
 
-| Year | Days in Feb | Note                                                 |
-|------|-------------|------------------------------------------------------|
-| 1700 | 28          | Leap day omitted in 1700                             |
-| 1704 | 29          |                                                      |
-| 1708 | 29          |                                                      |
-| 1712 | 30          | The leap day omitted from 1700  reinserted as 30 Feb |
+| Year | Days in Feb | Note                                                |
+|------|-------------|-----------------------------------------------------|
+| 1700 | 28          | Leap day omitted in 1700                            |
+| 1704 | 29          |                                                     |
+| 1708 | 29          |                                                     |
+| 1712 | 30          | The leap day omitted from 1700 reinserted as 30 Feb |
 
 This calendar was in use from 1700 to 1712. Thus, no epoch marker is permitted in this calendar.
 
