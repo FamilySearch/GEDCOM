@@ -59,7 +59,7 @@ The URI for this calendar is `g7:cal-JULIAN`
 
 ### `SWEDISH`
 
-The Swedish calendar was introduced by the Government of Sweden in 1700 and used until 1712.
+The Swedish calendar was introduced by the government of Sweden in 1700 and used until 1712.
 It is the same as the Julian calendar except it omitted leap day in 1700 and added a second leap day as 30 February 1712;
 between those dates the Swedish calendar was 1 day ahead of the Julian calendar.
 
