@@ -49,9 +49,6 @@ enumeration values:
 
 standard: true
 
-subsumes:
-  - "https://gedcom.io/terms/v7/enumset-EVEN"
-
 prerelease: true
 
 contact: "https://gedcom.io/community/"

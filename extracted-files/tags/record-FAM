@@ -126,9 +126,6 @@ substructures:
 
 superstructures: {}
 
-subsumes:
-  - "https://gedcom.io/terms/v7/record-FAM"
-
 prerelease: true
 
 contact: "https://gedcom.io/community/"
