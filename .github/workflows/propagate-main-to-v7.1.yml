@@ -69,7 +69,10 @@ jobs:
           git restore --source=origin/v7.1 --staged --worktree extracted-files/
           git add .
 
-          if git diff --cached --quiet && [ ! -f .git/MERGE_HEAD ]; then
+          if git diff --cached --quiet; then
+            if [ -f .git/MERGE_HEAD ]; then
+              git merge --abort
+            fi
             echo "changes_to_commit=false" >> "${GITHUB_OUTPUT}"
             exit 0
           fi
