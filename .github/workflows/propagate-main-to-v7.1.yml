@@ -69,7 +69,8 @@ jobs:
           git restore --source=origin/v7.1 --staged --worktree extracted-files/
           git add .
 
-          if git diff --quiet origin/v7.1 -- . ':!extracted-files'; then
+          merged_tree="$(git write-tree)"
+          if git diff --quiet origin/v7.1 "${merged_tree}" -- . ':!extracted-files'; then
             if [ -f .git/MERGE_HEAD ]; then
               git merge --abort
             fi
