@@ -57,8 +57,10 @@ jobs:
           merge_conflicts=false
           conflict_files=""
           if ! git merge --no-ff --no-commit origin/main; then
-            merge_conflicts=true
-            conflict_files="$(git diff --name-only --diff-filter=U | tr '\n' ' ' | sed 's/[[:space:]]*$//')"
+            conflict_files="$(git diff --name-only --diff-filter=U -- . ':!extracted-files' | tr '\n' ' ' | sed 's/[[:space:]]*$//')"
+            if [ -n "${conflict_files}" ]; then
+              merge_conflicts=true
+            fi
             git merge --abort
             git merge --no-ff --no-commit -X ours origin/main
           fi
@@ -67,7 +69,7 @@ jobs:
           git restore --source=origin/v7.1 --staged --worktree extracted-files/
           git add .
 
-          if git diff --cached --quiet; then
+          if git diff --cached --quiet && [ ! -f .git/MERGE_HEAD ]; then
             echo "changes_to_commit=false" >> "${GITHUB_OUTPUT}"
             exit 0
           fi
