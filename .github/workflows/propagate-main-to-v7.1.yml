@@ -103,7 +103,8 @@ jobs:
           else
             gh pr edit "${pr_number}" --title "${pr_title}" --body "${pr_body}" --repo ${{ github.repository }}
             if [ "${{ steps.merge.outputs.merge_conflicts }}" = "true" ]; then
-              gh pr ready "${pr_number}" --undo --repo ${{ github.repository }} || true
+              pr_id="$(gh pr view "${pr_number}" --json id --jq '.id' --repo ${{ github.repository }})"
+              gh api graphql -f query='mutation($id:ID!){convertPullRequestToDraft(input:{pullRequestId:$id}){pullRequest{id}}}' -f id="${pr_id}" >/dev/null || true
             else
               gh pr ready "${pr_number}" --repo ${{ github.repository }} || true
             fi
