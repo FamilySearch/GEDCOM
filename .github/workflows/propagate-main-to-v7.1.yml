@@ -102,6 +102,8 @@ jobs:
             gh pr edit "${pr_number}" --title "${pr_title}" --body "${pr_body}" --repo ${{ github.repository }}
             if [ "${{ steps.merge.outputs.merge_conflicts }}" = "true" ]; then
               gh pr ready "${pr_number}" --undo --repo ${{ github.repository }} || true
+            else
+              gh pr ready "${pr_number}" --repo ${{ github.repository }} || true
             fi
           fi
         env:
