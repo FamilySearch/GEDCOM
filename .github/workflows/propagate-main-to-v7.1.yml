@@ -73,6 +73,10 @@ jobs:
             if [ -f .git/MERGE_HEAD ]; then
               git merge --abort
             fi
+            stale_pr_number="$(gh pr list --head merge-main-into-v7.1 --base v7.1 --state open --json number --jq '.[0].number // empty')"
+            if [ -n "${stale_pr_number}" ]; then
+              gh pr close "${stale_pr_number}" --repo ${{ github.repository }} --comment "Closing because `main` and `v7.1` no longer differ outside `extracted-files/`."
+            fi
             echo "changes_to_commit=false" >> "${GITHUB_OUTPUT}"
             exit 0
           fi
