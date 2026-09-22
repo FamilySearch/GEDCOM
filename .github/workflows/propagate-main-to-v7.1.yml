@@ -69,7 +69,11 @@ jobs:
           git restore --source=origin/v7.1 --staged --worktree extracted-files/
           git add .
 
-          merged_commit="$(printf "temporary merge check\n" | git commit-tree "$(git write-tree)" -p "$(git rev-parse HEAD)")"
+          if [ -f .git/MERGE_HEAD ]; then
+            merged_commit="$(printf "temporary merge check\n" | git commit-tree "$(git write-tree)" -p "$(git rev-parse HEAD)" -p "$(cat .git/MERGE_HEAD)")"
+          else
+            merged_commit="$(printf "temporary merge check\n" | git commit-tree "$(git write-tree)" -p "$(git rev-parse HEAD)")"
+          fi
           if git diff --quiet origin/v7.1 "${merged_commit}" -- . ':!extracted-files'; then
             if [ -f .git/MERGE_HEAD ]; then
               git merge --abort
