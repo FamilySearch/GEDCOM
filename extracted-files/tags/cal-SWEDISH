@@ -17,7 +17,7 @@ specification:
     
     <div class="note">
     
-    While the Swedish calendar was only official in use from 1700 to 1712, some
+    While the Swedish calendar was only officially in use from 1700 to 1712, some
     sources might reference it outside of those dates as a synonym for the Julian
     calendar. Such dates should be represented using `JULIAN`, not `SWEDISH`.
     

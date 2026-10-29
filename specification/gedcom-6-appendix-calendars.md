@@ -64,7 +64,7 @@ It is the same as the Julian calendar except it omitted leap day in 1700 and add
 between those dates the Swedish calendar was 1 day ahead of the Julian calendar.
 
 :::note
-While the Swedish calendar was only official in use from 1700 to 1712,
+While the Swedish calendar was only officially in use from 1700 to 1712,
 some sources might reference it outside of those dates
 as a synonym for the Julian calendar.
 Such dates should be represented using `JULIAN`, not `SWEDISH`.
