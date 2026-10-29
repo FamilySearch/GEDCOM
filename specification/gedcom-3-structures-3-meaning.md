@@ -514,6 +514,9 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
 A descriptive title for the superstructure, or for the entire dataset if a substructure of `g7.1:HEAD`.
 
+This is a researcher-created title.
+For historical titles of people and publications, see `TITL`.
+
 #### `EDUC` (Education) `g7.1:EDUC`
 
 An [Individual Attribute](#individual-attributes).
