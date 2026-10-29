@@ -510,6 +510,10 @@ See also `FAMILY_EVENT_STRUCTURE`.
 An [Individual Attribute](#individual-attributes).
 See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 
+#### `DTITL` (Descriptive Title) `g7.1:DTITL`
+
+A descriptive title for the superstructure, or for the entire dataset if a substructure of `g7.1:HEAD`.
+
 #### `EDUC` (Education) `g7.1:EDUC`
 
 An [Individual Attribute](#individual-attributes).
@@ -1505,10 +1509,6 @@ For an unpublished work, including most digital files, titles should be descript
 
 Some sources may have a citation text that cannot readily be represented using the `SOURCE_RECORD` substructures `AUTH`, `PUBL`, `REPO`, and so on.
 In such cases, the entire citation text may be presented as the payload of the `SOUR`.`TITL`.
-
-#### `TITL` (Title) `g7.1:HEAD-TITL`
-
-A descriptive title for the entire dataset.
 
 #### `TITL` (Title) `g7.1:INDI-TITL`
 

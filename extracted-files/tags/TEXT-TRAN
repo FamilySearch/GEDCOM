@@ -42,8 +42,8 @@ substructures:
   "https://gedcom.io/terms/v7/LANG": "{1:1}"
 
 superstructures:
+  "https://gedcom.io/terms/v7.1/DTITL": "{0:M}"
   "https://gedcom.io/terms/v7.1/HEAD-DESC": "{0:M}"
-  "https://gedcom.io/terms/v7.1/HEAD-TITL": "{0:M}"
 
 prerelease: true
 

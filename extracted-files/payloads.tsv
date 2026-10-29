@@ -28,6 +28,7 @@ https://gedcom.io/terms/v7.1/DESI	@<https://gedcom.io/terms/v7.1/record-SUBM>@
 https://gedcom.io/terms/v7.1/DIV	Y|<NULL>
 https://gedcom.io/terms/v7.1/DIVF	Y|<NULL>
 https://gedcom.io/terms/v7.1/DSCR	http://www.w3.org/2001/XMLSchema#string
+https://gedcom.io/terms/v7.1/DTITL	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/EDUC	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/EMIG	Y|<NULL>
 https://gedcom.io/terms/v7.1/ENDL	

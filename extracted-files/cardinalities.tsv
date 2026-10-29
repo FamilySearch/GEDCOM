@@ -377,6 +377,8 @@ https://gedcom.io/terms/v7.1/DSCR	https://gedcom.io/terms/v7/SDATE	{0:1}
 https://gedcom.io/terms/v7.1/DSCR	https://gedcom.io/terms/v7/TYPE	{0:1}
 https://gedcom.io/terms/v7.1/DSCR	https://gedcom.io/terms/v7/UID	{0:M}
 https://gedcom.io/terms/v7.1/DSCR	https://gedcom.io/terms/v7/WWW	{0:M}
+https://gedcom.io/terms/v7.1/DTITL	https://gedcom.io/terms/v7.1/TEXT-TRAN	{0:M}
+https://gedcom.io/terms/v7.1/DTITL	https://gedcom.io/terms/v7/LANG	{0:1}
 https://gedcom.io/terms/v7.1/EDUC	https://gedcom.io/terms/v7.1/ASSO	{0:M}
 https://gedcom.io/terms/v7.1/EDUC	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/EDUC	https://gedcom.io/terms/v7.1/OBJE	{0:M}
@@ -594,6 +596,7 @@ https://gedcom.io/terms/v7.1/GRAD	https://gedcom.io/terms/v7/SDATE	{0:1}
 https://gedcom.io/terms/v7.1/GRAD	https://gedcom.io/terms/v7/TYPE	{0:1}
 https://gedcom.io/terms/v7.1/GRAD	https://gedcom.io/terms/v7/UID	{0:M}
 https://gedcom.io/terms/v7.1/GRAD	https://gedcom.io/terms/v7/WWW	{0:M}
+https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/DTITL	{0:1}
 https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/HEAD-DESC	{0:1}
 https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/HEAD-TITL	{0:1}
 https://gedcom.io/terms/v7.1/HEAD	https://gedcom.io/terms/v7.1/NOTE	{0:M}
@@ -982,6 +985,7 @@ https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7.1/SNOTE	{0:M}
 https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7.1/SOUR	{0:M}
 https://gedcom.io/terms/v7.1/NO	https://gedcom.io/terms/v7/NO-DATE	{0:1}
+https://gedcom.io/terms/v7.1/NOTE	https://gedcom.io/terms/v7.1/DTITL	{0:1}
 https://gedcom.io/terms/v7.1/NOTE	https://gedcom.io/terms/v7.1/NOTE-KIND	{0:M}
 https://gedcom.io/terms/v7.1/NOTE	https://gedcom.io/terms/v7.1/SOUR	{0:M}
 https://gedcom.io/terms/v7.1/NOTE	https://gedcom.io/terms/v7/LANG	{0:1}
@@ -1283,6 +1287,7 @@ https://gedcom.io/terms/v7.1/record-REPO	https://gedcom.io/terms/v7/RESN	{0:1}
 https://gedcom.io/terms/v7.1/record-REPO	https://gedcom.io/terms/v7/UID	{0:M}
 https://gedcom.io/terms/v7.1/record-REPO	https://gedcom.io/terms/v7/WWW	{0:M}
 https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7.1/CHAN	{0:1}
+https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7.1/DTITL	{0:1}
 https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7.1/NOTE-KIND	{0:M}
 https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7.1/SOUR	{0:M}
 https://gedcom.io/terms/v7.1/record-SNOTE	https://gedcom.io/terms/v7/CREA	{0:1}
