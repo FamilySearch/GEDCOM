@@ -46,6 +46,7 @@ https://gedcom.io/terms/v7.1/ANUL	https://gedcom.io/terms/v7/WWW	{0:M}
 https://gedcom.io/terms/v7.1/ASSO	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/ASSO	https://gedcom.io/terms/v7.1/SNOTE	{0:M}
 https://gedcom.io/terms/v7.1/ASSO	https://gedcom.io/terms/v7.1/SOUR	{0:M}
+https://gedcom.io/terms/v7.1/ASSO	https://gedcom.io/terms/v7/DATE	{0:1}
 https://gedcom.io/terms/v7.1/ASSO	https://gedcom.io/terms/v7/PHRASE	{0:1}
 https://gedcom.io/terms/v7.1/ASSO	https://gedcom.io/terms/v7/ROLE	{1:1}
 https://gedcom.io/terms/v7.1/BAPL	https://gedcom.io/terms/v7.1/NOTE	{0:M}
