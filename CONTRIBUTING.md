@@ -16,7 +16,7 @@ We always open our responses with some version of "discussed in steering committ
 to distinguish responses from the entire group
 from responses from just one of its individual members.
 
-If you'd like to join the GEDCOM Steering Committee,
+If you'd like to be considered for a position on the GEDCOM Steering Committee,
 please email GEDCOM@FamilySearch.org.
 
 # Kinds of contributions
