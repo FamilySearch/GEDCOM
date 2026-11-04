@@ -619,11 +619,8 @@ https://gedcom.io/terms/v7.1/HEAD	SCHMA	https://gedcom.io/terms/v7/SCHMA
 https://gedcom.io/terms/v7.1/HEAD	SNOTE	https://gedcom.io/terms/v7.1/SNOTE
 https://gedcom.io/terms/v7.1/HEAD	SOUR	https://gedcom.io/terms/v7/HEAD-SOUR
 https://gedcom.io/terms/v7.1/HEAD	SUBM	https://gedcom.io/terms/v7.1/SUBM
-https://gedcom.io/terms/v7.1/HEAD	TITL	https://gedcom.io/terms/v7.1/HEAD-TITL
 https://gedcom.io/terms/v7.1/HEAD-DESC	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7.1/HEAD-DESC	TRAN	https://gedcom.io/terms/v7.1/TEXT-TRAN
-https://gedcom.io/terms/v7.1/HEAD-TITL	LANG	https://gedcom.io/terms/v7/LANG
-https://gedcom.io/terms/v7.1/HEAD-TITL	TRAN	https://gedcom.io/terms/v7.1/TEXT-TRAN
 https://gedcom.io/terms/v7.1/IDNO	ADDR	https://gedcom.io/terms/v7/ADDR
 https://gedcom.io/terms/v7.1/IDNO	AGE	https://gedcom.io/terms/v7/AGE
 https://gedcom.io/terms/v7.1/IDNO	AGNC	https://gedcom.io/terms/v7/AGNC

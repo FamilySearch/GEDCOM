@@ -46,7 +46,6 @@ https://gedcom.io/terms/v7.1/FCOM	Y|<NULL>
 https://gedcom.io/terms/v7.1/GRAD	Y|<NULL>
 https://gedcom.io/terms/v7.1/HEAD	
 https://gedcom.io/terms/v7.1/HEAD-DESC	http://www.w3.org/2001/XMLSchema#string
-https://gedcom.io/terms/v7.1/HEAD-TITL	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/IDNO	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/IMMI	Y|<NULL>
 https://gedcom.io/terms/v7.1/INDI-CENS	Y|<NULL>
