@@ -50,7 +50,7 @@ Let us know as a [show-and-tell-type discussion](https://github.com/FamilySearch
 Do you know of something a tool does that GEDCOM doesn't yet handle?
 That's also very useful, as use is one of our criteria for inclusion in a future version of the specification!
 You might search the [issues](https://github.com/FamilySearch/GEDCOM/issues) to see if there's a relevant conversation to add to,
-or you can put this in a  [discussion](https://github.com/FamilySearch/GEDCOM/discussion).
+or you can put this in a  [discussion](https://github.com/FamilySearch/GEDCOM/discussions).
 
 If a tool includes the new feature as an extension tag in GEDCOM export,
 registering an extension for that in the [GEDCOM-registries repository](https://github.com/FamilySearch/GEDCOM-registries/blob/main/tips.md) is welcome.
