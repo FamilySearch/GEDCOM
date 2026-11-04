@@ -9,7 +9,7 @@ to review recent action on this and our other two github repositories
 as well as to discuss future directions for the GEDCOM specification.
 Our goal is to read, discuss, and respond to every discussion, issue, and pull request,
 but there are weeks when we have enough going on that we miss something;
-if too many such weeks occur back-to-back we sometimes loose track of what we've not responded to.
+if too many such weeks occur back-to-back we sometimes lose track of what we've not responded to.
 If your post hasn't been responded to by the steering committee after several weeks, posting a follow-up on the same thread can bring it back to our attention.
 
 We always open our responses with some version of "discussed in steering committee"
