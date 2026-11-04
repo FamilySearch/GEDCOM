@@ -537,10 +537,12 @@ if __name__ == '__main__':
           thing.enumeration_values.remove(u)
           data[u].value_of.remove(uri)
   
-  # step 9: hard-coded special case: JULIAN and GREGORIAN share months
+  # step 9: hard-coded special case: JULIAN, SWEDISH, and GREGORIAN share months
   for month in data['https://gedcom.io/terms/v7/cal-GREGORIAN'].months:
     data['https://gedcom.io/terms/v7/cal-JULIAN'].months.append(month)
     data[month].calendars.append('https://gedcom.io/terms/v7/cal-JULIAN')
+    data['https://gedcom.io/terms/v7.1/cal-SWEDISH'].months.append(month)
+    data[month].calendars.append('https://gedcom.io/terms/v7.1/cal-SWEDISH')
 
   # step 10: compute file paths and handle URIs with hashtags
   for uri in tuple(data):

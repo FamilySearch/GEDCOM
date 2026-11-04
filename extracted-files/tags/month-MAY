@@ -14,8 +14,11 @@ specification:
 label: 'May'
 
 calendars:
+  - "https://gedcom.io/terms/v7.1/cal-SWEDISH"
   - "https://gedcom.io/terms/v7/cal-GREGORIAN"
   - "https://gedcom.io/terms/v7/cal-JULIAN"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...
