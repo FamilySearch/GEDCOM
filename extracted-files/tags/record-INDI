@@ -134,9 +134,6 @@ substructures:
 
 superstructures: {}
 
-subsumes:
-  - "https://gedcom.io/terms/v7/record-INDI"
-
 prerelease: true
 
 contact: "https://gedcom.io/community/"
