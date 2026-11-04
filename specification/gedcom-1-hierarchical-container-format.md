@@ -369,7 +369,7 @@ Suppose `_DATE` is defined to mean a `g7:DATE` (using a [documented extension ta
 
 - `_DATE` is a relocated standard structure with type `g7:DATE`, with the usual payload type and meaning of a `g7:DATE`.
 - `PHRASE` is the structure type expected with that tag as a substructure of `g7:DATE`: namely, `g7:PHRASE`.
-- `_DATE` can not be used as a substructure of `BIRT` because `BIRT` has a documented `g7:DATE` substructure with tag `DATE`.
+- `_DATE` can not be used as a substructure of `BIRT` because `BIRT` has a documented `g7.1:DATE` substructure with tag `DATE`.
 - `BIRT` can not be used as a substructure of `_DATE` or `_DATE`.`PHRASE` because neither structure type has a documented substructure with tag `BIRT`.
 :::
 

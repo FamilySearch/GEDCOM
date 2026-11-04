@@ -54,7 +54,7 @@ The intent of this metasyntax is to resemble the line encoding of allowable stru
     and the `CREATION_DATE` rule begins
 
     ````gedstruct
-    n CREA                                     {1:1}  g7:CREA
+    n CREA                                     {1:1}  g7.1:CREA
     ````
     
     Thus, a `FAM` record has an optional singular `CREA` substructure
@@ -134,7 +134,7 @@ n HEAD                                     {1:1}  g7.1:HEAD
      +2 VERS <Special>                     {1:1}  g7:GEDC-VERS
   +1 SCHMA                                 {0:1}  g7:SCHMA
      +2 TAG <TagDef>                       {0:M}  g7:TAG
-  +1 SOUR <Special>                        {0:1}  g7:HEAD-SOUR
+  +1 SOUR <Special>                        {0:1}  g7.1:HEAD-SOUR
      +2 VERS <Special>                     {0:1}  g7:VERS
      +2 NAME <Text>                        {0:1}  g7:NAME
      +2 CORP <Text>                        {0:1}  g7:CORP
@@ -143,13 +143,13 @@ n HEAD                                     {1:1}  g7.1:HEAD
         +3 EMAIL <Special>                 {0:M}  g7:EMAIL
         +3 FAX <Special>                   {0:M}  g7:FAX
         +3 WWW <Special>                   {0:M}  g7:WWW
-     +2 DATA <Text>                        {0:1}  g7:HEAD-SOUR-DATA
-        +3 DATE <DateExact>                {0:1}  g7:DATE-exact
-           +4 TIME <Time>                  {0:1}  g7:TIME
+     +2 DATA <Text>                        {0:1}  g7.1:HEAD-SOUR-DATA
+        +3 DATE <DateExact>                {0:1}  g7.1:DATE-exact
+           +4 TIME <Time>                  {0:1}  g7.1:TIME-exact
         +3 COPR <Text>                     {0:1}  g7:COPR
   +1 DEST <Special>                        {0:1}  g7:DEST
-  +1 DATE <DateExact>                      {0:1}  g7:HEAD-DATE
-     +2 TIME <Time>                        {0:1}  g7:TIME
+  +1 DATE <DateExact>                      {0:1}  g7.1:HEAD-DATE
+     +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
   +1 SUBM @<XREF:SUBM>@                    {0:1}  g7.1:SUBM
   +1 COPR <Text>                           {0:1}  g7:COPR
   +1 LANG <Language>                       {0:1}  g7:HEAD-LANG
@@ -562,8 +562,8 @@ and that individual `@I2@` was the clergy officiating at their baptism.
 
 ```gedstruct
 n CHAN                                     {1:1}  g7.1:CHAN
-  +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME
+  +1 DATE <DateExact>                      {1:1}  g7.1:DATE-exact
+     +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
@@ -574,9 +574,9 @@ The `NOTE` substructure may describe previous changes as well as the most recent
 #### `CREATION_DATE` :=
 
 ```gedstruct
-n CREA                                     {1:1}  g7:CREA
-  +1 DATE <DateExact>                      {1:1}  g7:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7:TIME
+n CREA                                     {1:1}  g7.1:CREA
+  +1 DATE <DateExact>                      {1:1}  g7.1:DATE-exact
+     +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
 ```
 
 The date of the initial creation of the superstructure.
@@ -585,8 +585,9 @@ Because this refers to the initial creation, it should not be modified after the
 #### `DATE_VALUE` :=
 
 ```gedstruct
-n DATE <DateValue>                         {1:1}  g7:DATE
-  +1 TIME <Time>                           {0:1}  g7:TIME
+n DATE <DateValue>                         {1:1}  g7.1:DATE
+  +1 TIME <Time>                           {0:1}  g7.1:TIME
+     +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 ```
 
@@ -594,10 +595,21 @@ A date, optionally with a time and/or a phrase.
 If there is a `TIME`, it asserts that the event happened at a specific time on a single day.
 `TIME` should not be used with `DatePeriod` but may be used with other date types.
 
-:::note
-There is currently no provision for approximate times or time phrases.
-Time phrases are expected to be added in version 7.1.
+A `TIME`.`PHRASE` gives the time in words when the 24-hour format cannot express it,
+such as "early in the morning". A `TIME` with a `PHRASE` should still carry the closest 24-hour time the phrase supports.
+
+:::example
+A birth recorded as "early in the morning" of 12 September 1888 might be
+
+```gedcom
+1 BIRT
+2 DATE 12 SEP 1888
+3 TIME 05:00
+4 PHRASE early in the morning
+```
 :::
+
+There is no provision for approximate times.
 
 #### `EVENT_DETAIL` :=
 
@@ -613,8 +625,9 @@ n AGNC <Text>                              {0:1}  g7:AGNC
 n RELI <Text>                              {0:1}  g7:RELI
 n CAUS <Text>                              {0:1}  g7:CAUS
 n RESN <List:Enum>                         {0:1}  g7:RESN
-n SDATE <DateValue>                        {0:1}  g7:SDATE
-  +1 TIME <Time>                           {0:1}  g7:TIME
+n SDATE <DateValue>                        {0:1}  g7.1:SDATE
+  +1 TIME <Time>                           {0:1}  g7.1:TIME
+     +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 n <<ASSOCIATION_STRUCTURE>>                {0:M}
 n <<NOTE_STRUCTURE>>                       {0:M}
@@ -995,9 +1008,9 @@ Ordinances performed by members of The Church of Jesus Christ of Latter-day Sain
 n <<DATE_VALUE>>                         {0:1}
 n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
-n STAT <Enum>                            {0:1}  g7:ord-STAT
-  +1 DATE <DateExact>                    {1:1}  g7:DATE-exact
-     +2 TIME <Time>                      {0:1}  g7:TIME
+n STAT <Enum>                            {0:1}  g7.1:ord-STAT
+  +1 DATE <DateExact>                    {1:1}  g7.1:DATE-exact
+     +2 TIME <Time>                      {0:1}  g7.1:TIME-exact
 n <<NOTE_STRUCTURE>>                     {0:M}
 n <<SOURCE_CITATION>>                    {0:M}
 ```
@@ -1220,7 +1233,7 @@ This specification does not support places where a region name contains a comma.
 ```gedstruct
 n SOUR @<XREF:SOUR>@                       {1:1}  g7.1:SOUR
   +1 PAGE <Text>                           {0:1}  g7:PAGE
-  +1 DATA                                  {0:1}  g7:SOUR-DATA
+  +1 DATA                                  {0:1}  g7.1:SOUR-DATA
      +2 <<DATE_VALUE>>                     {0:1}
      +2 TEXT <Text>                        {0:M}  g7:TEXT
         +3 MIME <MediaType>                {0:1}  g7:MIME
