@@ -4,7 +4,7 @@ We welcome all forms of contribution!
 
 The "we" here is the GEDCOM Steering Committee,
 a group of volunteers who meet online weekly
-to review recent action on this and our other two github repositories
+to review recent action on this and our other two GitHub repositories
 ([GEDCOM.io](https://github.com/FamilySearch/GEDCOM.io) and [GEDCOM-registries](https://github.com/FamilySearch/GEDCOM-registries))
 as well as to discuss future directions for the GEDCOM specification.
 Our goal is to read, discuss, and respond to every discussion, issue, and pull request,
