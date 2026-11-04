@@ -27,7 +27,7 @@ If you're not sure where your contribution goes, the [discussions](https://githu
 
 ## Questions about use
 
-These are most helpful if provided as a [Q&A-type discussion](https://github.com/FamilySearch/GEDCOM/discussion).
+These are most helpful if provided as a [Q&A-type discussion](https://github.com/FamilySearch/GEDCOM/discussions).
 And these are helpful! We want the specification to be clear,
 so anything you find unclear is a potential space for improving the specification.
 
