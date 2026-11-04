@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/HEAD-SOUR
+uri: https://gedcom.io/terms/v7.1/HEAD-SOUR
 
 standard tag: 'SOUR'
 
@@ -20,13 +20,16 @@ label: 'Source'
 payload: http://www.w3.org/2001/XMLSchema#string
 
 substructures:
+  "https://gedcom.io/terms/v7.1/HEAD-SOUR-DATA": "{0:1}"
   "https://gedcom.io/terms/v7/CORP": "{0:1}"
-  "https://gedcom.io/terms/v7/HEAD-SOUR-DATA": "{0:1}"
   "https://gedcom.io/terms/v7/NAME": "{0:1}"
   "https://gedcom.io/terms/v7/VERS": "{0:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7.1/HEAD": "{0:1}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/HEAD-SOUR"
 
 prerelease: true
 

@@ -4,25 +4,31 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/TIME
+uri: https://gedcom.io/terms/v7.1/TIME
 
 standard tag: 'TIME'
 
 specification:
   - Time
-  - A `Time` value in a 24-hour clock format.
+  - A `Time` value in a 24-hour clock format, under a `DATE` or `SDATE` whose
+    payload is a `DateValue`. Its optional `PHRASE` gives the time in words when
+    the 24-hour format cannot express it. See `DATE_VALUE` for more details.
 
 label: 'Time'
 
 payload: https://gedcom.io/terms/v7/type-Time
 
-substructures: {}
+substructures:
+  "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
 
 superstructures:
-  "https://gedcom.io/terms/v7/DATE": "{0:1}"
-  "https://gedcom.io/terms/v7/DATE-exact": "{0:1}"
-  "https://gedcom.io/terms/v7/HEAD-DATE": "{0:1}"
-  "https://gedcom.io/terms/v7/SDATE": "{0:1}"
+  "https://gedcom.io/terms/v7.1/DATE": "{0:1}"
+  "https://gedcom.io/terms/v7.1/SDATE": "{0:1}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/TIME"
+
+prerelease: true
 
 contact: "https://gedcom.io/community/"
 ...

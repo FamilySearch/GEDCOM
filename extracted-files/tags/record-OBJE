@@ -33,10 +33,10 @@ payload: null
 
 substructures:
   "https://gedcom.io/terms/v7.1/CHAN": "{0:1}"
+  "https://gedcom.io/terms/v7.1/CREA": "{0:1}"
   "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
-  "https://gedcom.io/terms/v7/CREA": "{0:1}"
   "https://gedcom.io/terms/v7/EXID": "{0:M}"
   "https://gedcom.io/terms/v7/FILE": "{1:M}"
   "https://gedcom.io/terms/v7/REFN": "{0:M}"
