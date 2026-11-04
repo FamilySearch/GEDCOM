@@ -29,6 +29,10 @@ jobs:
       - name: Check out GEDCOM
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
+      - name: Fetch main, which the build reads to mark 7.1 terms that subsume 7.0 ones
+        if: github.ref_name != 'main'
+        run: git fetch --depth=1 origin main:main
+
       - name: Get the branch name
         id: extract_branch
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
