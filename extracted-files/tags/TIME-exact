@@ -11,7 +11,7 @@ standard tag: 'TIME'
 specification:
   - Time
   - A `Time` value in a 24-hour clock format, under a `DateExact` date that records
-    a timestamp, such as `CHAN`.`DATE`.`TIME`. Unlike a
+    a timestamp, such as the `TIME` of `CHAN`.`DATE`. Unlike a
     `https://gedcom.io/terms/v7.1/TIME`, no `PHRASE` is permitted under a
     `https://gedcom.io/terms/v7.1/TIME-exact`.
 
