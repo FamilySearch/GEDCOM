@@ -55,7 +55,7 @@ or you can put this in a  [discussion](https://github.com/FamilySearch/GEDCOM/di
 If a tool includes the new feature as an extension tag in GEDCOM export,
 registering an extension for that in the [GEDCOM-registries repository](https://github.com/FamilySearch/GEDCOM-registries/blob/main/tips.md) is welcome.
 This can be done by the tool author, but doesn't need to be:
-community-filed extension registry entries welcome.
+community-filed extension registry entries are welcome.
 
 ## Feature request
 
