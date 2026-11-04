@@ -1489,7 +1489,7 @@ This should be, from the evidence point of view, "what the original record keepe
 
 #### `TIME` (Time) `g7.1:TIME-exact`
 
-A `Time` value in a 24-hour clock format, under a `DateExact` date that records a timestamp, such as `CHAN`.`DATE`.`TIME`.
+A `Time` value in a 24-hour clock format, under a `DateExact` date that records a timestamp, such as the `TIME` of `CHAN`.`DATE`.
 Unlike a `g7.1:TIME`, no `PHRASE` is permitted under a `g7.1:TIME-exact`.
 
 #### `TIME` (Time) `g7.1:TIME`
