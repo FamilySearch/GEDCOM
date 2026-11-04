@@ -1,8 +1,9 @@
 # v7.1 branch
 
 - New structures:
-    - `HEAD`.`TITL` for adding a title to an entire dataset
     - `HEAD`.`DESC` for adding a description of an entire dataset
+    - `HEAD`.`DTITL` for adding a title to an entire dataset
+    - `NOTE`.`DTITL` and `SNOTE`.`DTITL` for adding a title to a note
     - Add `RESN` to `SOUR`, `REPO`, `SUBM`, and `SNOTE` records
     - Add `KIND` with enumerated payload to `NOTE` and `SNOTE` for indicating the kind of information contained in the note
     - Add `KIND` with enumerated payload to `BIRT` events for indicating the kind of birth
