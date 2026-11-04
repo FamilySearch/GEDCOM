@@ -532,6 +532,7 @@ n ASSO @<XREF:INDI>@                       {1:1}  g7.1:ASSO
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
   +1 ROLE <Enum>                           {1:1}  g7:ROLE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
+  +1 <<DATE_VALUE>>                        {0:1}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
 ```
@@ -540,6 +541,10 @@ An individual associated with the subject of the superstructure.
 The nature of the association is indicated in the `ROLE` substructure.
 
 A `voidPtr` and `PHRASE` can be used to describe associations to people not referenced by any `INDI` record.
+
+The optional `DATE` gives when the association held.
+It may be a single date, a period, a range, or an approximate date,
+such as `FROM 1930 TO 1932` for a doctoral advisor or `ABT 1880` for an association known only roughly.
 
 :::example
 The following indicates that "Mr Stockdale" was the individual's teacher
@@ -555,6 +560,19 @@ and that individual `@I2@` was the clergy officiating at their baptism.
 2 DATE 1930
 2 ASSO @I2@
 3 ROLE CLERGY
+```
+:::
+
+:::example
+The following indicates that Albert Einstein, who has no `INDI` record in this dataset, was the individual's doctoral advisor from 1930 to 1932.
+
+```gedcom
+0 @I1@ INDI
+1 ASSO @VOID@
+2 PHRASE Albert Einstein
+2 ROLE OTHER
+3 PHRASE Doctoral advisor
+2 DATE FROM 1930 TO 1932
 ```
 :::
 
