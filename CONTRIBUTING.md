@@ -23,7 +23,7 @@ please email GEDCOM@FamilySearch.org.
 
 We list several common forms of contribution below,
 but don't worry too much about it: if you put something in the wrong place, we will move it for you.
-If you're not sure where your contribution goes, the [discussions](https://github.com/FamilySearch/GEDCOM/discussions) is always a good option.
+If you're not sure where your contribution goes, the [discussions](https://github.com/FamilySearch/GEDCOM/discussions) page is always a good option.
 
 ## Questions about use
 
