@@ -86,7 +86,7 @@ while the conversation on the pull request focuses on how a specific candidate a
 ## Changes to the specification
 
 These are most helpful if provided as a [pull request](https://github.com/FamilySearch/GEDCOM/pulls).
-Pull requests are harder to author that the other options here,
+Pull requests are harder to author than the other options here,
 so you're also welcome to put them in an [issue](https://github.com/FamilySearch/GEDCOM/issues).
 
 Changes should generally be preceded by an [issue](https://github.com/FamilySearch/GEDCOM/issues) describing the purpose and rationale of the change,
