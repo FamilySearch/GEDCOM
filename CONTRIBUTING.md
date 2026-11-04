@@ -45,7 +45,7 @@ or both.
 ## Report of new tool or feature
 
 Do you know of a tool that uses GEDCOM or will help others use GEDCOM?
-Let us know as a [show-and-tell-type discussion](https://github.com/FamilySearch/GEDCOM/discussion).
+Let us know as a [show-and-tell-type discussion](https://github.com/FamilySearch/GEDCOM/discussions).
 
 Do you know of something a tool does that GEDCOM doesn't yet handle?
 That's also very useful, as use is one of our criteria for inclusion in a future version of the specification!
