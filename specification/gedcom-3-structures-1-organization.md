@@ -542,10 +542,6 @@ The nature of the association is indicated in the `ROLE` substructure.
 
 A `voidPtr` and `PHRASE` can be used to describe associations to people not referenced by any `INDI` record.
 
-The optional `DATE` gives when the association held.
-It may be a single date, a period, a range, or an approximate date,
-such as `FROM 1930 TO 1932` for a doctoral advisor or `ABT 1880` for an association known only roughly.
-
 :::example
 The following indicates that "Mr Stockdale" was the individual's teacher
 and that individual `@I2@` was the clergy officiating at their baptism.
