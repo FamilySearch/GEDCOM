@@ -197,6 +197,7 @@ n @XREF:FAM@ FAM                           {1:1}  g7.1:record-FAM
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 CHIL @<XREF:INDI>@                    {0:M}  g7.1:CHIL
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
+     +2 <<SOURCE_CITATION>>                {0:M}
   +1 <<ASSOCIATION_STRUCTURE>>             {0:M}
   +1 SUBM @<XREF:SUBM>@                    {0:M}  g7.1:SUBM
   +1 <<LDS_SPOUSE_SEALING>>                {0:M}
@@ -230,6 +231,9 @@ The `FAM` record will be revised in a future version to more fully express the d
 The order of the `CHIL` (children) pointers within a `FAM` (family) structure should be chronological by birth;
 this is an exception to the usual "most preferred value first" rule.
 A `CHIL` with a `voidPtr` indicates a placeholder for an unknown child in this birth order.
+
+A `SOURCE_CITATION` under a `CHIL` cites a source for the parent-child relationship and for the child order that the `CHIL` expresses.
+A `CHIL` with a `voidPtr` may have a `SOURCE_CITATION` when a source addresses an *n*th child that does not yet have an `INDI` record.
 
 If a `FAM` record uses `HUSB` or `WIFE` to point to an `INDI` record,
 the `INDI` record must use `FAMS` to point to the `FAM` record.
