@@ -1,5 +1,7 @@
 # `main` branch
 
+- Say that relaxing a cardinality, such as making a required structure optional or a singular structure plural, can be a minor change. #474
+
 - Clarify that an `OBJE`.`SOUR`.`OBJE` should not point to its own containing record. #765
 
 - Note that `BEF` and `AFT` are used differently by different researchers. #775
