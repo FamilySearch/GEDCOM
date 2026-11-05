@@ -11,6 +11,20 @@ Each set of enumeration values has its own URI.
 | `WIFE` | `g7:enum-ADOP-WIFE` | Adopted by the `WIFE` of the `FAM` pointed to by `FAMC` |
 | `BOTH` | `g7:enum-BOTH`      | Adopted by both `HUSB` and `WIFE` of the `FAM` pointed to by `FAMC` |
 
+This set has no `OTHER` value, but the `PHRASE` substructure of `g7:FAMC-ADOP` may still be used
+to record the wording of the source beside the enumerated value.
+
+:::example
+An adoption record that names the adopters as "Mr. and Mrs. Bruce Smith" might be
+
+```gedcom
+1 ADOP
+2 FAMC @F1@
+3 ADOP BOTH
+4 PHRASE Mr. and Mrs. Bruce Smith
+```
+:::
+
 ### `g7:enumset-EVEN`
 
 An event-type tag name, but not the generic `EVEN` tag.
