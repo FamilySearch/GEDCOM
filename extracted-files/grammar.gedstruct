@@ -224,6 +224,7 @@ n ASSO @<XREF:INDI>@                       {1:1}  g7.1:ASSO
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
   +1 ROLE <Enum>                           {1:1}  g7:ROLE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
+  +1 <<DATE_VALUE>>                        {0:1}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
 

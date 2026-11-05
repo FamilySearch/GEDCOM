@@ -7,6 +7,7 @@
     - Add `RESN` to `SOUR`, `REPO`, `SUBM`, and `SNOTE` records
     - Add `KIND` with enumerated payload to `NOTE` and `SNOTE` for indicating the kind of information contained in the note
     - Add `KIND` with enumerated payload to `BIRT` events for indicating the kind of birth
+    - Add `DATE` to `ASSO` for indicating when an association held
 - Deprecation:
     - `HEAD`.`SOUR`.`DATA` is deprecated
 

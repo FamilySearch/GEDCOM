@@ -532,6 +532,7 @@ n ASSO @<XREF:INDI>@                       {1:1}  g7.1:ASSO
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
   +1 ROLE <Enum>                           {1:1}  g7:ROLE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
+  +1 <<DATE_VALUE>>                        {0:1}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
 ```
@@ -555,6 +556,19 @@ and that individual `@I2@` was the clergy officiating at their baptism.
 2 DATE 1930
 2 ASSO @I2@
 3 ROLE CLERGY
+```
+:::
+
+:::example
+The following indicates that Albert Einstein, who has no `INDI` record in this dataset, was the individual's doctoral advisor from 1930 to 1932.
+
+```gedcom
+0 @I1@ INDI
+1 ASSO @VOID@
+2 PHRASE Albert Einstein
+2 ROLE OTHER
+3 PHRASE Doctoral advisor
+2 DATE FROM 1930 TO 1932
 ```
 :::
 
