@@ -211,6 +211,7 @@ https://gedcom.io/terms/v7.1/CHAN	DATE	https://gedcom.io/terms/v7/DATE-exact
 https://gedcom.io/terms/v7.1/CHAN	NOTE	https://gedcom.io/terms/v7.1/NOTE
 https://gedcom.io/terms/v7.1/CHAN	SNOTE	https://gedcom.io/terms/v7.1/SNOTE
 https://gedcom.io/terms/v7.1/CHIL	PHRASE	https://gedcom.io/terms/v7/PHRASE
+https://gedcom.io/terms/v7.1/CHIL	SOUR	https://gedcom.io/terms/v7.1/SOUR
 https://gedcom.io/terms/v7.1/CHR	ADDR	https://gedcom.io/terms/v7/ADDR
 https://gedcom.io/terms/v7.1/CHR	AGE	https://gedcom.io/terms/v7/AGE
 https://gedcom.io/terms/v7.1/CHR	AGNC	https://gedcom.io/terms/v7/AGNC

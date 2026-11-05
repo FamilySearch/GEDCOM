@@ -41,6 +41,11 @@ specification:
     preferred value first" rule. A `CHIL` with a `voidPtr` indicates a placeholder
     for an unknown child in this birth order.
     
+    A `SOURCE_CITATION` under a `CHIL` cites a source for the parent-child
+    relationship and for the child order that the `CHIL` expresses. A `CHIL` with a
+    `voidPtr` may have a `SOURCE_CITATION` when a source addresses an *n*th child
+    that does not yet have an `INDI` record.
+    
     If a `FAM` record uses `HUSB` or `WIFE` to point to an `INDI` record, the
     `INDI` record must use `FAMS` to point to the `FAM` record. If a `FAM` record
     uses `CHIL` to point to an `INDI` record, the `INDI` record must use a `FAMC`

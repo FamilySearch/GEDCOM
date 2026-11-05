@@ -72,6 +72,7 @@ n @XREF:FAM@ FAM                           {1:1}  g7.1:record-FAM
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 CHIL @<XREF:INDI>@                    {0:M}  g7.1:CHIL
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
+     +2 <<SOURCE_CITATION>>                {0:M}
   +1 <<ASSOCIATION_STRUCTURE>>             {0:M}
   +1 SUBM @<XREF:SUBM>@                    {0:M}  g7.1:SUBM
   +1 <<LDS_SPOUSE_SEALING>>                {0:M}
