@@ -49,7 +49,7 @@ jobs:
         if: steps.diff.outputs.status == 'changes'
         id: merge
         env:
-          GH_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           # Checkout v7.1 and create merge branch
           git checkout -B merge-main-into-v7.1 origin/v7.1
@@ -122,4 +122,4 @@ jobs:
             fi
           fi
         env:
-          GH_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
