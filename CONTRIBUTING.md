@@ -153,7 +153,7 @@ For every pull request that changes the specification, the following apply:
 - **For an addition, the description quotes the three tests.** Quote the part of the issue (or its discussion) that shows the change is valuable, absent from the specification today, and used, or why use isn't needed.
 - **Say a thing once.** Where the specification already says something in general (what `DATE` means, for example), a structure that uses it doesn't repeat it. Add text only for what is specific to that structure. When unsure, include it and say so in the description: reviewers would rather delete a sentence than ask for one.
 - **Generated files are rebuilt.** Run the build in [`build/`](https://github.com/FamilySearch/GEDCOM/blob/main/build/README.md) so that `extracted-files/` matches the specification text. The build adds and updates files but never deletes them, so delete the file of any term you removed or renamed.
-- **The changelog says what changed.** Add a line to `changelog.md`.
+- **The changelog is written at release.** Leave `changelog.md` alone; it's updated when a release is prepared. If your change renames or removes something, say so in the description.
 
 ## The gedcom.io website
 
