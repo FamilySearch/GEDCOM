@@ -1,7 +1,5 @@
 # `main` branch
 
-- Clarify, with an example, the use of `PHRASE` under `ADOP`.`FAMC`.`ADOP`, whose enumeration set has no `OTHER` value. #755
-
 - Clarify that an `OBJE`.`SOUR`.`OBJE` should not point to its own containing record. #765
 
 - Note that `BEF` and `AFT` are used differently by different researchers. #775
