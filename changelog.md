@@ -7,8 +7,6 @@
     - Add `RESN` to `SOUR`, `REPO`, `SUBM`, and `SNOTE` records
     - Add `KIND` with enumerated payload to `NOTE` and `SNOTE` for indicating the kind of information contained in the note
     - Add `KIND` with enumerated payload to `BIRT` events for indicating the kind of birth
-    - Add `PHRASE` to the `TIME` of a `DateValue` date, for times the 24-hour format cannot express
-    - Add `g7.1:TIME-exact`, without `PHRASE`, for the `TIME` of `DateExact` timestamps: `CHAN`.`DATE`, `CREA`.`DATE`, `HEAD`.`DATE`, `HEAD`.`SOUR`.`DATA`.`DATE` and the ordinance `STAT`.`DATE`
 - Deprecation:
     - `HEAD`.`SOUR`.`DATA` is deprecated
 
