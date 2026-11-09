@@ -13,7 +13,7 @@ specification:
   - A `Time` value in a 24-hour clock format, under a `DateExact` date that records
     a timestamp, such as the `TIME` of `CHAN`.`DATE`. Unlike a
     `https://gedcom.io/terms/v7.1/TIME`, no `PHRASE` is permitted under a
-    `https://gedcom.io/terms/v7.1/TIME-exact`.
+    `https://gedcom.io/terms/v7.1/TIME-exact`, and its payload is never empty.
 
 label: 'Time'
 

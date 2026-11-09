@@ -1490,12 +1490,13 @@ This should be, from the evidence point of view, "what the original record keepe
 #### `TIME` (Time) `g7.1:TIME-exact`
 
 A `Time` value in a 24-hour clock format, under a `DateExact` date that records a timestamp, such as the `TIME` of `CHAN`.`DATE`.
-Unlike a `g7.1:TIME`, no `PHRASE` is permitted under a `g7.1:TIME-exact`.
+Unlike a `g7.1:TIME`, no `PHRASE` is permitted under a `g7.1:TIME-exact`, and its payload is never empty.
 
 #### `TIME` (Time) `g7.1:TIME`
 
-A `Time` value in a 24-hour clock format, under a `DATE` or `SDATE` whose payload is a `DateValue`.
-Its optional `PHRASE` gives the time in words when the 24-hour format cannot express it.
+A `TimeValue` in a 24-hour clock format, under a `DATE` or `SDATE` whose payload is a `DateValue`.
+Its optional `PHRASE` gives the time in words when the 24-hour format cannot express it;
+if no clock time is known, the payload may be empty.
 See `DATE_VALUE` for more details.
 
 #### `TITL` (Title) `g7:TITL`

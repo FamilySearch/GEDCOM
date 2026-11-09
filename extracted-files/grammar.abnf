@@ -86,7 +86,8 @@ epoch   = %s"BCE" / extTag ; constrained by calendar
 
 ; ------------- Time -------------
 
-Time     =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
+Time      =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
+TimeValue = [ Time ]
 
 hour     = DIGIT / ("0" / "1") DIGIT / "2" ("0" / "1" / "2" / "3")
 minute   = ("0" / "1" / "2" / "3" / "4" / "5") DIGIT

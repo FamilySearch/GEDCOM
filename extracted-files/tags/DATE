@@ -15,8 +15,8 @@ specification:
     should not be used with `DatePeriod` but may be used with other date types.
     
     A `TIME`.`PHRASE` gives the time in words when the 24-hour format cannot
-    express it, such as "early in the morning". A `TIME` with a `PHRASE` should
-    still carry the closest 24-hour time the phrase supports.
+    express it, such as "early in the morning". If no clock time is known, the
+    `TIME` payload may be empty and the `PHRASE` alone gives the time.
     
     <div class="example">
     
@@ -25,13 +25,14 @@ specification:
     ```gedcom
     1 BIRT
     2 DATE 12 SEP 1888
-    3 TIME 05:00
+    3 TIME
     4 PHRASE early in the morning
     ```
     
     </div>
     
-    There is no provision for approximate times.
+    There is no provision for approximate times in the 24-hour format; a `PHRASE`
+    can describe one.
   - Date
   - |
     The principal date of the subject of the superstructure. The payload is a

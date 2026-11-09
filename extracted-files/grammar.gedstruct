@@ -243,7 +243,7 @@ n CREA                                     {1:1}  g7.1:CREA
 
 DATE_VALUE :=
 n DATE <DateValue>                         {1:1}  g7.1:DATE
-  +1 TIME <Time>                           {0:1}  g7.1:TIME
+  +1 TIME <TimeValue>                      {0:1}  g7.1:TIME
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 
@@ -261,7 +261,7 @@ n RELI <Text>                              {0:1}  g7:RELI
 n CAUS <Text>                              {0:1}  g7:CAUS
 n RESN <List:Enum>                         {0:1}  g7:RESN
 n SDATE <DateValue>                        {0:1}  g7.1:SDATE
-  +1 TIME <Time>                           {0:1}  g7.1:TIME
+  +1 TIME <TimeValue>                      {0:1}  g7.1:TIME
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 n <<ASSOCIATION_STRUCTURE>>                {0:M}

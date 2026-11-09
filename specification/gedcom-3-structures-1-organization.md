@@ -586,7 +586,7 @@ Because this refers to the initial creation, it should not be modified after the
 
 ```gedstruct
 n DATE <DateValue>                         {1:1}  g7.1:DATE
-  +1 TIME <Time>                           {0:1}  g7.1:TIME
+  +1 TIME <TimeValue>                      {0:1}  g7.1:TIME
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 ```
@@ -596,7 +596,7 @@ If there is a `TIME`, it asserts that the event happened at a specific time on a
 `TIME` should not be used with `DatePeriod` but may be used with other date types.
 
 A `TIME`.`PHRASE` gives the time in words when the 24-hour format cannot express it,
-such as "early in the morning". A `TIME` with a `PHRASE` should still carry the closest 24-hour time the phrase supports.
+such as "early in the morning". If no clock time is known, the `TIME` payload may be empty and the `PHRASE` alone gives the time.
 
 :::example
 A birth recorded as "early in the morning" of 12 September 1888 might be
@@ -604,12 +604,12 @@ A birth recorded as "early in the morning" of 12 September 1888 might be
 ```gedcom
 1 BIRT
 2 DATE 12 SEP 1888
-3 TIME 05:00
+3 TIME
 4 PHRASE early in the morning
 ```
 :::
 
-There is no provision for approximate times.
+There is no provision for approximate times in the 24-hour format; a `PHRASE` can describe one.
 
 #### `EVENT_DETAIL` :=
 
@@ -626,7 +626,7 @@ n RELI <Text>                              {0:1}  g7:RELI
 n CAUS <Text>                              {0:1}  g7:CAUS
 n RESN <List:Enum>                         {0:1}  g7:RESN
 n SDATE <DateValue>                        {0:1}  g7.1:SDATE
-  +1 TIME <Time>                           {0:1}  g7.1:TIME
+  +1 TIME <TimeValue>                      {0:1}  g7.1:TIME
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
 n <<ASSOCIATION_STRUCTURE>>                {0:M}
