@@ -7,7 +7,7 @@
     - Add `RESN` to `SOUR`, `REPO`, `SUBM`, and `SNOTE` records
     - Add `KIND` with enumerated payload to `NOTE` and `SNOTE` for indicating the kind of information contained in the note
     - Add `KIND` with enumerated payload to `BIRT` events for indicating the kind of birth
-    - Add `SOUR` to `FAM`.`CHIL` for citing a source for a parent-child relationship and child order
+    - Add `SOUR` to `FAM`.`CHIL` for citing a source for a child being in a family and for the child's place in the birth order
 - Deprecation:
     - `HEAD`.`SOUR`.`DATA` is deprecated
 
