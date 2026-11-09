@@ -1,6 +1,6 @@
 set	value
-https://gedcom.io/terms/v7.1/enumset-BIRT-KIND	https://gedcom.io/terms/v7.1/enumset-BORN_DEAD
-https://gedcom.io/terms/v7.1/enumset-BIRT-KIND	https://gedcom.io/terms/v7.1/enumset-BORN_LIVE
+https://gedcom.io/terms/v7.1/enumset-BIRT-KIND	https://gedcom.io/terms/v7.1/enum-BORN_DEAD
+https://gedcom.io/terms/v7.1/enumset-BIRT-KIND	https://gedcom.io/terms/v7.1/enum-BORN_LIVE
 https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/ADOP
 https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/ANUL
 https://gedcom.io/terms/v7.1/enumset-EVEN	https://gedcom.io/terms/v7.1/BAPM

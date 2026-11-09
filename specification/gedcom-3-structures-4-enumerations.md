@@ -15,8 +15,8 @@ Each set of enumeration values has its own URI.
 
 | Value       | URI | Meaning |
 | :---------- | :---| :------ |
-| `BORN_DEAD` | `g7.1:enumset-BORN_DEAD` | Birth of a dead child; died before birth concluded (and possibly before it began), and was not thereafter revived. |
-| `BORN_LIVE` | `g7.1:enumset-BORN_LIVE` | Child was alive after birth. This is often seen as the default meaning of `BIRT`, but in some cases it might be ambiguous and adding `KIND BORN_LIVE` could be beneficial. |
+| `BORN_DEAD` | `g7.1:enum-BORN_DEAD` | Birth of a dead child; died before birth concluded (and possibly before it began), and was not thereafter revived. |
+| `BORN_LIVE` | `g7.1:enum-BORN_LIVE` | Child was alive after birth. This is often seen as the default meaning of `BIRT`, but in some cases it might be ambiguous and adding `KIND BORN_LIVE` could be beneficial. |
 
 ### `g7.1:enumset-EVEN`
 
