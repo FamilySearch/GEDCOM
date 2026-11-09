@@ -9,6 +9,7 @@
     - Add `KIND` with enumerated payload to `BIRT` events for indicating the kind of birth
 - Deprecation:
     - `HEAD`.`SOUR`.`DATA` is deprecated
+- State that a structure type whose allowed substructures change gets a new URI, and so does every structure type that may contain it. #364
 
 # `main` branch
 
