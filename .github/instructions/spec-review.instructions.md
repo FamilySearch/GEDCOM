@@ -12,23 +12,26 @@ The steering committee decides whether a change is valuable, absent and used. Yo
 - **The branch.** `main` takes fixes and clarifications. Additions go to `v7.1`. Anything that would make a valid 7.0 file invalid, or change what it means, needs a major version: say so plainly.
 - **The changelog.** A change to the data needs a line in `changelog.md`. If a term is renamed or removed, check that the changelog doesn't still list the old one.
 - **Generated files.** The files in `extracted-files/` must match the specification text. Check that the PR changes them only as rebuilding would.
+- **What it fixes.** If the PR says it fixes an issue, check that it covers everything the issue asks. If it covers only part, it should say so and name what's left.
 
 ## A renamed or removed term
 
 - **Leftover files.** The build adds term files to `extracted-files/tags` and never deletes them. A rename must delete the old term's file in the same PR, or validators built from the tables keep accepting the old term.
 - **Everywhere else.** Look for the old tag in the specification text, its examples and the changelog.
-- **Test files.** The test files are in the GEDCOM.io repository (`testfiles/gedcom70`, `testfiles/gedcom71`). Ask whether any of them uses the old term, and whether a GEDCOM.io PR goes with this one. A GEDZIP (`.gdz`) copy of a test file needs the same change.
+- **Test files.** The test files are in the GEDCOM.io repository (`testfiles/gedcom70`, `testfiles/gedcom71`). Ask whether any of them uses the old term, and whether a GEDCOM.io PR goes with this one. A GEDZIP (`.gdz`) copy of a test file needs the same change, and so does the unzipped copy of the archive beside it.
 
 ## A new structure, value or calendar
 
 - **The URI rule.** A 7.0 structure that gains a substructure in 7.1 gets a new `g7.1:` URI, and so does every structure that holds it. An enumeration set that gains a `g7.1:` value becomes a `g7.1:` set.
 - **An example.** Ask for a small GEDCOM file that uses the change, and say where the maximal test file should use it.
 - **Is there already a way?** If the specification already has a structure that records this, name it.
+- **Is there already a pattern?** If the specification already meets the same need somewhere else, ask whether this change follows it. For example, an empty `DateValue` with a `PHRASE` is the pattern for a value only words can give.
 
 ## Wording
 
 - Keep the definition. Where programs use something differently, a note that describes the difference is usually the fix.
 - Match the style of the surrounding text, and change the specification, never generated files by hand.
+- Use the specification's own words for its concepts. Wording carried over from GEDCOM X or another model can carry that model's meaning: a `CHIL` places a child in a family rather than in a single parent-child relationship, and the specification calls the order of `CHIL` the birth order. Quote any phrase the specification doesn't already use, and ask whether it means what the specification means.
 
 ## How this file grows
 
