@@ -10,14 +10,14 @@ The steering committee decides whether a change is valuable, absent and used. Yo
 
 - **Which kind is it?** A typo, a clarification, an addition, or a change of meaning. Say which you think it is.
 - **The branch.** `main` takes fixes and clarifications. Additions go to `v7.1`. Anything that would make a valid 7.0 file invalid, or change what it means, needs a major version: say so plainly.
-- **The changelog.** A change to the data needs a line in `changelog.md`. If a term is renamed or removed, check that the changelog doesn't still list the old one.
+- **The changelog.** Pull requests leave `changelog.md` alone: it's written when a release is prepared. If the PR edits it, ask for that to be taken out. If a term is renamed or removed, the description should say so, so the release's changelog can.
 - **Generated files.** The files in `extracted-files/` must match the specification text. Check that the PR changes them only as rebuilding would.
 - **What it fixes.** If the PR says it fixes an issue, check that it covers everything the issue asks. If it covers only part, it should say so and name what's left.
 
 ## A renamed or removed term
 
 - **Leftover files.** The build adds term files to `extracted-files/tags` and never deletes them. A rename must delete the old term's file in the same PR, or validators built from the tables keep accepting the old term.
-- **Everywhere else.** Look for the old tag in the specification text, its examples and the changelog.
+- **Everywhere else.** Look for the old tag in the specification text and its examples.
 - **Test files.** The test files are in the GEDCOM.io repository (`testfiles/gedcom70`, `testfiles/gedcom71`). Ask whether any of them uses the old term, and whether a GEDCOM.io PR goes with this one. A GEDZIP (`.gdz`) copy of a test file needs the same change, and so does the unzipped copy of the archive beside it.
 
 ## A new structure, value or calendar
