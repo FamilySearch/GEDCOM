@@ -384,7 +384,7 @@ A copyright statement, as appropriate for the copyright laws applicable to this 
 
 The name of the business, corporation, or person that produced or commissioned the product.
 
-#### `CREA` (Creation) `g7:CREA`
+#### `CREA` (Creation) `g7.1:CREA`
 
 The initial creation of the superstructure.
 This is metadata about the structure itself, not data about its subject.
@@ -431,11 +431,11 @@ A structure with no payload used to distinguish a description of something from 
 For example, `SOUR` and its other substructures describe a source itself,
 while `SOUR`.`DATA` describes the content of the source.
 
-#### `DATA` (Data) `g7:SOUR-DATA`
+#### `DATA` (Data) `g7.1:SOUR-DATA`
 
 See `g7.1:DATA`.
 
-#### `DATA` (Data) `g7:HEAD-SOUR-DATA`
+#### `DATA` (Data) `g7.1:HEAD-SOUR-DATA`
 
 The database, electronic data source, or digital repository from which this dataset was exported.
 The payload is the name of the database, electronic data source, or digital repository,
@@ -445,7 +445,7 @@ with substructures providing additional details about it (not about the export).
 `HEAD`.`SOUR`.`DATA` should not be added to new files; see `HEADER` for more details.
 :::
 
-#### `DATE` (Date) `g7:DATE`
+#### `DATE` (Date) `g7.1:DATE`
 
 The principal date of the subject of the superstructure.
 The payload is a `DateValue`.
@@ -455,16 +455,16 @@ When the superstructure is an event, the principal date indicates when the event
 When the superstructure is an attribute, the principal date indicates when the attribute was observed, asserted, or applied.
 A date period might put bounds on the attributes applicability, but other date forms assume that the attribute may have also applied on other dates too.
 
-When the superstructure is a `g7:SOUR-DATA`, the principal date indicates when the data was entered into the source; or, for a source like a website that changes over time, a date on which the source contained the data.
+When the superstructure is a `g7.1:SOUR-DATA`, the principal date indicates when the data was entered into the source; or, for a source like a website that changes over time, a date on which the source contained the data.
 
 See `DATE_VALUE` for more details.
 
-#### `DATE` (Date) `g7:DATE-exact`
+#### `DATE` (Date) `g7.1:DATE-exact`
 
 The principal date of the subject of the superstructure.
 The payload is a `DateExact`.
 
-#### `DATE` (Date) `g7:HEAD-DATE`
+#### `DATE` (Date) `g7.1:HEAD-DATE`
 
 The `DateExact` that this document was created.
 
@@ -1378,7 +1378,7 @@ The following indicates that a person's best friend was a witness at their bapti
 A container for storing meta-information about the extension tags used in this document.
 See [Extensions](#extensions) for more details.
 
-#### `SDATE` (Sort date) `g7:SDATE`
+#### `SDATE` (Sort date) `g7.1:SDATE`
 
 A date to be used as a sorting hint.
 It is intended for use when the actual date is unknown, but the display order may be dependent on date.
@@ -1428,7 +1428,7 @@ See `SOURCE_CITATION` for more details.
 A description of an entire source.
 See `SOURCE_RECORD` for more details.
 
-#### `SOUR` (Source) `g7:HEAD-SOUR`
+#### `SOUR` (Source) `g7.1:HEAD-SOUR`
 
 An identifier for the product producing this dataset.
 A registration process for these identifiers existed for a time, but no longer does.
@@ -1449,7 +1449,7 @@ See also `INDIVIDUAL_ATTRIBUTE_STRUCTURE`.
 A geographical division of a larger jurisdictional area, such as a state within the United States of America.
 See `ADDRESS_STRUCTURE` for more details.
 
-#### `STAT` (Status) `g7:ord-STAT`
+#### `STAT` (Status) `g7.1:ord-STAT`
 
 An enumerated value from set `g7:enumset-ord-STAT` assessing the state or condition of an ordinance.
 
@@ -1487,9 +1487,17 @@ A verbatim copy of any description contained within the source.
 This indicates notes or text that are actually contained in the source document, not the submitter's opinion about the source.
 This should be, from the evidence point of view, "what the original record keeper said" as opposed to the researcher's interpretation.
 
-#### `TIME` (Time) `g7:TIME`
+#### `TIME` (Time) `g7.1:TIME-exact`
 
-A `Time` value in a 24-hour clock format.
+A `Time` value in a 24-hour clock format, under a `DateExact` date that records a timestamp, such as the `TIME` of `CHAN`.`DATE`.
+Unlike a `g7.1:TIME`, no `PHRASE` is permitted under a `g7.1:TIME-exact`, and its payload is never empty.
+
+#### `TIME` (Time) `g7.1:TIME`
+
+A `TimeValue` in a 24-hour clock format, under a `DATE` or `SDATE` whose payload is a `DateValue`.
+Its optional `PHRASE` gives the time in words when the 24-hour format cannot express it;
+if no clock time is known, the payload may be empty.
+See `DATE_VALUE` for more details.
 
 #### `TITL` (Title) `g7:TITL`
 

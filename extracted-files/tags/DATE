@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/DATE
+uri: https://gedcom.io/terms/v7.1/DATE
 
 standard tag: 'DATE'
 
@@ -14,12 +14,25 @@ specification:
     asserts that the event happened at a specific time on a single day. `TIME`
     should not be used with `DatePeriod` but may be used with other date types.
     
-    <div class="note">
+    A `TIME`.`PHRASE` gives the time in words when the 24-hour format cannot
+    express it, such as "early in the morning". If no clock time is known, the
+    `TIME` payload may be empty and the `PHRASE` alone gives the time.
     
-    There is currently no provision for approximate times or time phrases. Time
-    phrases are expected to be added in version 7.1.
+    <div class="example">
+    
+    A birth recorded as "early in the morning" of 12 September 1888 might be
+    
+    ```gedcom
+    1 BIRT
+    2 DATE 12 SEP 1888
+    3 TIME
+    4 PHRASE early in the morning
+    ```
     
     </div>
+    
+    There is no provision for approximate times in the 24-hour format; a `PHRASE`
+    can describe one.
   - Date
   - |
     The principal date of the subject of the superstructure. The payload is a
@@ -33,7 +46,7 @@ specification:
     the attributes applicability, but other date forms assume that the attribute
     may have also applied on other dates too.
     
-    When the superstructure is a `https://gedcom.io/terms/v7/SOUR-DATA`, the
+    When the superstructure is a `https://gedcom.io/terms/v7.1/SOUR-DATA`, the
     principal date indicates when the data was entered into the source; or, for a
     source like a website that changes over time, a date on which the source
     contained the data.
@@ -45,8 +58,8 @@ label: 'Date'
 payload: https://gedcom.io/terms/v7/type-Date
 
 substructures:
+  "https://gedcom.io/terms/v7.1/TIME": "{0:1}"
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
-  "https://gedcom.io/terms/v7/TIME": "{0:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7.1/ADOP": "{0:1}"
@@ -104,9 +117,12 @@ superstructures:
   "https://gedcom.io/terms/v7.1/RETI": "{0:1}"
   "https://gedcom.io/terms/v7.1/SLGC": "{0:1}"
   "https://gedcom.io/terms/v7.1/SLGS": "{0:1}"
+  "https://gedcom.io/terms/v7.1/SOUR-DATA": "{0:1}"
   "https://gedcom.io/terms/v7.1/SSN": "{0:1}"
   "https://gedcom.io/terms/v7.1/WILL": "{0:1}"
-  "https://gedcom.io/terms/v7/SOUR-DATA": "{0:1}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/DATE"
 
 prerelease: true
 
