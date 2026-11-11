@@ -6,6 +6,26 @@ type: enumeration set
 
 uri: https://gedcom.io/terms/v7/enumset-ADOP
 
+specification:
+  - |
+    This set has no `OTHER` value, but the `PHRASE` substructure of
+    `https://gedcom.io/terms/v7/FAMC-ADOP` may still be used to record the wording
+    of the source beside the enumerated value.
+    
+    <div class="example">
+    
+    An adoption record that names the adopters as "Mr. and Mrs. Bruce Smith" might
+    be
+    
+    ```gedcom
+    1 ADOP
+    2 FAMC @F1@
+    3 ADOP BOTH
+    4 PHRASE Mr. and Mrs. Bruce Smith
+    ```
+    
+    </div>
+
 enumeration values:
   - "https://gedcom.io/terms/v7/enum-ADOP-HUSB"
   - "https://gedcom.io/terms/v7/enum-ADOP-WIFE"
