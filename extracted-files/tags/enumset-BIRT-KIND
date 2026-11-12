@@ -7,8 +7,8 @@ type: enumeration set
 uri: https://gedcom.io/terms/v7.1/enumset-BIRT-KIND
 
 enumeration values:
-  - "https://gedcom.io/terms/v7.1/enumset-BORN_DEAD"
-  - "https://gedcom.io/terms/v7.1/enumset-BORN_LIVE"
+  - "https://gedcom.io/terms/v7.1/enum-BORN_DEAD"
+  - "https://gedcom.io/terms/v7.1/enum-BORN_LIVE"
 
 standard: true
 
