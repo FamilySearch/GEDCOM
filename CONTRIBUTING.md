@@ -139,6 +139,7 @@ so you're also welcome to put them in an [issue](https://github.com/FamilySearch
 
 For all but the simplest changes, first open an [issue](https://github.com/FamilySearch/GEDCOM/issues/new) describing the purpose and rationale of the change,
 so that the committee and the community can give feedback before the work is done.
+
 The [README](https://github.com/FamilySearch/GEDCOM#branches) describes the branches:
 `main` holds the current release, and `v7.1` the draft of the next minor version.
 The committee usually reviews corrections to the current release first, then additions for the next minor version, then anything later.
