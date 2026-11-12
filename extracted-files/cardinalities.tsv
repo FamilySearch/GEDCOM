@@ -200,6 +200,7 @@ https://gedcom.io/terms/v7.1/CAST	https://gedcom.io/terms/v7/WWW	{0:M}
 https://gedcom.io/terms/v7.1/CHAN	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/CHAN	https://gedcom.io/terms/v7.1/SNOTE	{0:M}
 https://gedcom.io/terms/v7.1/CHAN	https://gedcom.io/terms/v7/DATE-exact	{1:1}
+https://gedcom.io/terms/v7.1/CHIL	https://gedcom.io/terms/v7.1/SOUR	{0:M}
 https://gedcom.io/terms/v7.1/CHIL	https://gedcom.io/terms/v7/PHRASE	{0:1}
 https://gedcom.io/terms/v7.1/CHR	https://gedcom.io/terms/v7.1/ASSO	{0:M}
 https://gedcom.io/terms/v7.1/CHR	https://gedcom.io/terms/v7.1/FAMC	{0:1}
