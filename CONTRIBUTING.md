@@ -50,7 +50,6 @@ If one already covers your point, please add to that conversation rather than st
 Search with the specification's own terms (a tag such as `ASSO`, or a structure name) as well as in plain words,
 since an earlier post may describe the same thing in different words.
 
-This applies to everything posted in our repositories, whether you write it yourself or an AI tool drafts it for you.
 
 ## Questions about use
 
