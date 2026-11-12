@@ -17,7 +17,7 @@ to distinguish responses from the entire group
 from responses from just one of its individual members.
 
 Anyone may open issues, discussions and pull requests.
-FamilySearch appoints the members of the steering committee.
+FamilySearch approves the members of the steering committee.
 If you'd like to be considered for a position on the GEDCOM Steering Committee,
 please email GEDCOM@FamilySearch.org.
 
