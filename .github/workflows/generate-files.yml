@@ -35,7 +35,7 @@ jobs:
 
       - name: Get the branch name
         id: extract_branch
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        run: echo "branch=${GITHUB_REF#refs/heads/}" >> "$GITHUB_OUTPUT"
 
       - name: Install mdformat-gfm
         run: pip install mdformat-gfm
@@ -61,7 +61,7 @@ jobs:
       - name: Check for diffs
         id: diff
         run: |
-          git diff --quiet origin/${{steps.extract_branch.outputs.branch}} extracted-files || echo "::set-output name=status::changes"
+          git diff --quiet origin/${{steps.extract_branch.outputs.branch}} extracted-files || echo "status=changes" >> "$GITHUB_OUTPUT"
         shell: bash
 
       - name: Create Pull Request
