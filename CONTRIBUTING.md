@@ -59,7 +59,7 @@ so anything you find unclear is a potential space for improving the specificatio
 
 Sometimes we decide the best solution is to add the answer to the [Technical FAQs](https://gedcom.io/techfaqs/),
 which will result in a [change on the GEDCOM.io repository](https://github.com/FamilySearch/GEDCOM.io/pulls).
-That said, for consistency we try to keep the discussion in the GEDCOM repository, not there.
+That said, for consistency and to make it easier to search for discussions, the Q&A discussion is still housed in the GEDCOM repository even if the resulting change happens in the GEDCOM.io repository.
 
 ## Errors in the specification
 
