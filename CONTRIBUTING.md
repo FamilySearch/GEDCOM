@@ -94,7 +94,8 @@ community-filed extension registry entries are welcome.
 ### Requesting a feature
 
 If you wish that GEDCOM supported something it does not support,
-report that in an [issue](https://github.com/FamilySearch/GEDCOM/issues/new).
+add to an existing issue describing it
+or report it in a [new issue](https://github.com/FamilySearch/GEDCOM/issues/new).
 In writing your issue, you might consider including answers to the following,
 which follow the three criteria (valuable, absent, used) that the [README](https://github.com/FamilySearch/GEDCOM#branches) gives for adding to a minor version:
 
