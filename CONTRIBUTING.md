@@ -143,13 +143,14 @@ so that the committee and the community can give feedback before the work is don
 The [README](https://github.com/FamilySearch/GEDCOM#branches) describes the branches:
 `main` holds the current release, and `v7.1` the draft of the next minor version.
 The committee usually reviews corrections to the current release first, then additions for the next minor version, then anything later.
+Each pull request should apply to the branch that matches the kind of change as described in [A Guide to Version Numbers](https://gedcom.io/specifications/FamilySearchGEDCOMv7.html#a-guide-to-version-numbers) and outlined here:
+
+- A pull request against `main` clarifies or corrects the text and makes no additions.
+- A pull request against `v7.1` may add, but every file that was valid stays valid. For example, it may add new structure types, allow current structures in new contexts, add enumerated values or calendars, or relax a cardinality such as `{0:1}` to `{0:M}`.
+- There is currently no branch for breaking changes. Propose one in an issue instead.
 
 For every pull request that changes the specification, the following guidelines apply:
 
-- **The branch matches the kind of change** ([A Guide to Version Numbers](https://gedcom.io/specifications/FamilySearchGEDCOMv7.html#a-guide-to-version-numbers)):
-  - A pull request against `main` clarifies or corrects the text and makes no additions.
-  - A pull request against `v7.1` may add, but every file that was valid stays valid. For example, it may add new structure types, allow current structures in new contexts, add enumerated values or calendars, or relax a cardinality such as `{0:1}` to `{0:M}`.
-  - There is currently no branch for breaking changes. Propose one in an issue instead.
 - **Test files come with any change to what a file can contain.** Any test file that uses something you changed is updated, and a new structure comes with a small example file. The test files are in the [GEDCOM.io repository](https://github.com/FamilySearch/GEDCOM.io/tree/main/testfiles), so this means a matching pull request there, linked from yours. A change to wording alone, such as a typo fix, needs none.
 - **For an addition, the description quotes the three tests.** Quote the part of the issue (or its discussion) that shows the change is valuable, absent from the specification today, and used, or why use isn't needed.
 - **Say a thing once.** Where the specification already says something in general (what `DATE` means, for example), a structure that uses it doesn't repeat it. Add text only for what is specific to that structure. When unsure, include it and say so in the description: reviewers would rather delete a sentence than ask for one.
