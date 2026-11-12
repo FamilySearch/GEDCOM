@@ -71,7 +71,7 @@ Say where the specification has it (a section or a structure), what is wrong or 
 ### Did you write a fix?
 
 Submit it as a [pull request](https://github.com/FamilySearch/GEDCOM/pulls).
-Its description should link the issue it addresses (for example, `Fixes #123`), so a reader can click through to it, and summarize the change. The problem itself is in the issue, so it needn't be restated.
+Its description should link the issue it addresses (for example, `Fixes #123`), so a reader can click through to it, and summarize the change. The problem itself is described in the issue, so it needn't be restated in the pull request.
 Simple typo fixes can be accepted without a corresponding issue.
 [Contributing changes to the specification](#contributing-changes-to-the-specification) lists what every pull request is expected to include.
 
