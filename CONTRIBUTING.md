@@ -144,7 +144,7 @@ The [README](https://github.com/FamilySearch/GEDCOM#branches) describes the bran
 `main` holds the current release, and `v7.1` the draft of the next minor version.
 The committee usually reviews corrections to the current release first, then additions for the next minor version, then anything later.
 
-For every pull request that changes the specification, the following apply:
+For every pull request that changes the specification, the following guidelines apply:
 
 - **The branch matches the kind of change** ([A Guide to Version Numbers](https://gedcom.io/specifications/FamilySearchGEDCOMv7.html#a-guide-to-version-numbers)):
   - A pull request against `main` clarifies or corrects the text and makes no additions.
