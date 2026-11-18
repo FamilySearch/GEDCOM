@@ -312,6 +312,13 @@ does not appear as a child.
 If a `FAM` that can be reached from a `INDI` by following `FAMS` and `CHIL` pointers can also be reachable by following `FAMC`, `HUSB`, and `WIFE` pointers, then that implies that a person is their own ancestor/descendant.
 In most cases that would be an error, though it is theoretically possible that such a situation could occur with non-biological relationships (marriages, adoptions, etc.).
 
+Many applications identify a "root" or "primary" individual for display and report purposes,
+such as the starting individual of a pedigree chart.
+This specification does not define a structure for this;
+such applications typically use the first `INDI` record in the dataset that meets their needs,
+by analogy with the rule that the first of several substructures of one type is the most preferred.
+Applications are encouraged to consider this when choosing the order of records in a dataset they create.
+
 
 #### `MULTIMEDIA_RECORD` :=
 
