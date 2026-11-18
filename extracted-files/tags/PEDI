@@ -4,15 +4,36 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/PEDI
+uri: https://gedcom.io/terms/v7.1/PEDI
 
 standard tag: 'PEDI'
 
 specification:
   - Pedigree
-  - An enumerated value from set `https://gedcom.io/terms/v7/enumset-PEDI`
+  - |
+    An enumerated value from set `https://gedcom.io/terms/v7/enumset-PEDI`
     indicating the type of child-to-family relationship represented by the
     superstructure.
+    
+    A `DATE` substructure gives when that type of relationship applied, such as the
+    period a child was fostered in the family.
+    
+    <div class="example">
+    
+    The following indicates that a child was fostered in one family from 1921 to
+    1923 and in another from 1924 to 1926.
+    
+    ```gedcom
+    0 @I1@ INDI
+    1 FAMC @F1@
+    2 PEDI FOSTER
+    3 DATE FROM 1921 TO 1923
+    1 FAMC @F2@
+    2 PEDI FOSTER
+    3 DATE FROM 1924 TO 1926
+    ```
+    
+    </div>
 
 label: 'Pedigree'
 
@@ -21,10 +42,14 @@ payload: https://gedcom.io/terms/v7/type-Enum
 enumeration set: "https://gedcom.io/terms/v7/enumset-PEDI"
 
 substructures:
+  "https://gedcom.io/terms/v7/DATE": "{0:1}"
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7.1/INDI-FAMC": "{0:1}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/PEDI"
 
 prerelease: true
 
