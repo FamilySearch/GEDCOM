@@ -248,6 +248,8 @@ Others distribute events and attributes between `INDI` records mutually linked b
 `ALIA` is known to be used for different purposes by different users.
 Some users use `ALIA` for uncertain connections, tentatively linking records prior to confirming identities and merging them into a single record;
 other users create one `INDI` for each single-source view of an individual, linked together with `ALIA` and never merged into a single record;
+other users put information they want restricted in a separate `INDI` with a record-level `RESN`, linked with `ALIA` to the `INDI` holding the rest,
+so that any of an individual's information can be restricted, including information under structures that cannot have a `RESN` of their own;
 other uses of `ALIA` may also exist.
 Applications should avoid assuming a particular usage was intended without user confirmation.
 
@@ -1245,6 +1247,10 @@ such that certain `RESN` structure payload entries result in the `RESN` structur
 Such removal must abide by some constraints: see [Removing data](#removing-data) for more details.
 
 This is metadata about the structure itself, not data about its subject.
+
+Not every structure can have a `RESN`.
+An individual's information under a structure that cannot have one can be restricted by placing it in a separate `INDI` record with a `RESN`,
+linked with `ALIA` to the individual's other `INDI` record; see `ALIA`.
 
 #### `REPO` (Repository) `g7:REPO`
 

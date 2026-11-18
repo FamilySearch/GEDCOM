@@ -31,6 +31,11 @@ specification:
     must abide by some constraints: see [Removing data] for more details.
     
     This is metadata about the structure itself, not data about its subject.
+    
+    Not every structure can have a `RESN`. An individual's information under a
+    structure that cannot have one can be restricted by placing it in a separate
+    `INDI` record with a `RESN`, linked with `ALIA` to the individual's other
+    `INDI` record; see `ALIA`.
 
 label: 'Restriction'
 

@@ -29,9 +29,13 @@ specification:
     users use `ALIA` for uncertain connections, tentatively linking records prior
     to confirming identities and merging them into a single record; other users
     create one `INDI` for each single-source view of an individual, linked together
-    with `ALIA` and never merged into a single record; other uses of `ALIA` may
-    also exist. Applications should avoid assuming a particular usage was intended
-    without user confirmation.
+    with `ALIA` and never merged into a single record; other users put information
+    they want restricted in a separate `INDI` with a record-level `RESN`, linked
+    with `ALIA` to the `INDI` holding the rest, so that any of an individual's
+    information can be restricted, including information under structures that
+    cannot have a `RESN` of their own; other uses of `ALIA` may also exist.
+    Applications should avoid assuming a particular usage was intended without user
+    confirmation.
     
     A future version of this specification may adjust the definition of `ALIA`.
     
