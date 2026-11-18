@@ -145,11 +145,11 @@ n HEAD                                     {1:1}  g7.1:HEAD
         +3 WWW <Special>                   {0:M}  g7:WWW
      +2 DATA <Text>                        {0:1}  g7.1:HEAD-SOUR-DATA
         +3 DATE <DateExact>                {0:1}  g7.1:DATE-exact
-           +4 TIME <Time>                  {0:1}  g7.1:TIME-exact
+           +4 TIME <TimeExact>             {0:1}  g7.1:TIME-exact
         +3 COPR <Text>                     {0:1}  g7:COPR
   +1 DEST <Special>                        {0:1}  g7:DEST
   +1 DATE <DateExact>                      {0:1}  g7.1:HEAD-DATE
-     +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
+     +2 TIME <TimeExact>                   {0:1}  g7.1:TIME-exact
   +1 SUBM @<XREF:SUBM>@                    {0:1}  g7.1:SUBM
   +1 COPR <Text>                           {0:1}  g7:COPR
   +1 LANG <Language>                       {0:1}  g7:HEAD-LANG
@@ -563,7 +563,7 @@ and that individual `@I2@` was the clergy officiating at their baptism.
 ```gedstruct
 n CHAN                                     {1:1}  g7.1:CHAN
   +1 DATE <DateExact>                      {1:1}  g7.1:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
+     +2 TIME <TimeExact>                   {0:1}  g7.1:TIME-exact
   +1 <<NOTE_STRUCTURE>>                    {0:M}
 ```
 
@@ -576,7 +576,7 @@ The `NOTE` substructure may describe previous changes as well as the most recent
 ```gedstruct
 n CREA                                     {1:1}  g7.1:CREA
   +1 DATE <DateExact>                      {1:1}  g7.1:DATE-exact
-     +2 TIME <Time>                        {0:1}  g7.1:TIME-exact
+     +2 TIME <TimeExact>                   {0:1}  g7.1:TIME-exact
 ```
 
 The date of the initial creation of the superstructure.
@@ -1010,7 +1010,7 @@ n TEMP <Text>                            {0:1}  g7:TEMP
 n <<PLACE_STRUCTURE>>                    {0:1}
 n STAT <Enum>                            {0:1}  g7.1:ord-STAT
   +1 DATE <DateExact>                    {1:1}  g7.1:DATE-exact
-     +2 TIME <Time>                      {0:1}  g7.1:TIME-exact
+     +2 TIME <TimeExact>                 {0:1}  g7.1:TIME-exact
 n <<NOTE_STRUCTURE>>                     {0:M}
 n <<SOURCE_CITATION>>                    {0:M}
 ```

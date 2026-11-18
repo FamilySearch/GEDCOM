@@ -188,8 +188,8 @@ UTC is indicated by including a `Z` (U+005A) after the time value; event-local t
 When a time is used together with a `DateExact`, it is recommended that UTC time be used rather than event-local time.
 
 ```abnf
-Time      =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
-TimeValue = [ Time ]
+TimeExact =  hour ":" minute [":" second ["." fraction]] [%s"Z"]
+TimeValue = [ TimeExact ]
 
 hour     = DIGIT / ("0" / "1") DIGIT / "2" ("0" / "1" / "2" / "3")
 minute   = ("0" / "1" / "2" / "3" / "4" / "5") DIGIT
@@ -202,9 +202,9 @@ The above grammar prohibits end-of-day instant `24:00:00` and leap-seconds. It a
 :::
 
 `TimeValue` payloads may also be the empty string if no clock time is known but a `PHRASE` substructure is desired.
-`TimeValue` is used for the time of a `DateValue`; the time of a `DateExact` uses `Time`.
+`TimeValue` is used for the time of a `DateValue`; the time of a `DateExact` uses `TimeExact`.
 
-The URI for the `Time` data type is `g7:type-Time`.
+The URI for the `TimeExact` data type is `g7:type-Time`; version 7.0 called this data type `Time`.
 
 The URI for the `TimeValue` data type is `g7.1:type-Time#value`.
 
