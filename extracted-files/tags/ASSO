@@ -34,6 +34,22 @@ specification:
     ```
     
     </div>
+    
+    <div class="example">
+    
+    The following indicates that Albert Einstein, who has no `INDI` record in this
+    dataset, was the individual's doctoral advisor from 1930 to 1932.
+    
+    ```gedcom
+    0 @I1@ INDI
+    1 ASSO @VOID@
+    2 PHRASE Albert Einstein
+    2 ROLE OTHER
+    3 PHRASE Doctoral advisor
+    2 DATE FROM 1930 TO 1932
+    ```
+    
+    </div>
   - Associates
   - A pointer to an associated individual. See `ASSOCIATION_STRUCTURE` for more
     details.
@@ -46,6 +62,7 @@ substructures:
   "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
+  "https://gedcom.io/terms/v7/DATE": "{0:1}"
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
   "https://gedcom.io/terms/v7/ROLE": "{1:1}"
 
