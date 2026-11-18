@@ -130,6 +130,8 @@ A new *major* version may make arbitrary changes to the specification. Distinct 
 
 A new *minor* version will preserve the validity of data from all previous minor versions. It may make additional data valid, for example by adding new structure types, allowing current structures in new contexts, or adding new enumerated values or calendars. A minor release will not change the semantic meaning of data from previous minor releases, so for example a 7.0 document is also a valid 7.1 document and represents the same information in both.
 
+When a minor version changes which substructures a structure type may have, that structure type gets a new URI in the new version. Because a structure type with a new URI is a new substructure type, every structure type that may contain it gets a new URI as well.
+
 A new *patch* version is a clarified or improved specification for the same data and introduces no changes in the data itself. Any software that correctly implements *X*.*Y*.*Z* also correctly implements *X*.*Y*.*W*. If there is an ambiguity or contradiction in the specification, it will be resolved in a patch version unless it is known that implementations interpreted the spec differently and that clarifying the intended meaning would cause incompatibilities between those implementations.
 
 It is recommended that implementations accept all data at their own or a lesser minor version, regardless of the patch version.

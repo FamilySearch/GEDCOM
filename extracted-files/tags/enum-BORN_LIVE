@@ -4,7 +4,7 @@ lang: en-US
 
 type: enumeration
 
-uri: https://gedcom.io/terms/v7.1/enumset-BORN_LIVE
+uri: https://gedcom.io/terms/v7.1/enum-BORN_LIVE
 
 standard tag: 'BORN_LIVE'
 

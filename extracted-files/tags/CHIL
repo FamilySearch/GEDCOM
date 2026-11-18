@@ -18,6 +18,7 @@ label: 'Child'
 payload: "@<https://gedcom.io/terms/v7.1/record-INDI>@"
 
 substructures:
+  "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
   "https://gedcom.io/terms/v7/PHRASE": "{0:1}"
 
 superstructures:

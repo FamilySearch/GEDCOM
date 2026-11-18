@@ -72,6 +72,7 @@ n @XREF:FAM@ FAM                           {1:1}  g7.1:record-FAM
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 CHIL @<XREF:INDI>@                    {0:M}  g7.1:CHIL
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
+     +2 <<SOURCE_CITATION>>                {0:M}
   +1 <<ASSOCIATION_STRUCTURE>>             {0:M}
   +1 SUBM @<XREF:SUBM>@                    {0:M}  g7.1:SUBM
   +1 <<LDS_SPOUSE_SEALING>>                {0:M}
@@ -224,6 +225,7 @@ n ASSO @<XREF:INDI>@                       {1:1}  g7.1:ASSO
   +1 PHRASE <Text>                         {0:1}  g7:PHRASE
   +1 ROLE <Enum>                           {1:1}  g7:ROLE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
+  +1 <<DATE_VALUE>>                        {0:1}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<SOURCE_CITATION>>                   {0:M}
 
@@ -610,6 +612,7 @@ n NSFX <Text>                              {0:M}  g7:NSFX
 
 PERSONAL_NAME_STRUCTURE :=
 n NAME <PersonalName>                      {1:1}  g7.1:INDI-NAME
+  +1 RESN <List:Enum>                      {0:1}  g7:RESN
   +1 TYPE <Enum>                           {0:1}  g7:NAME-TYPE
      +2 PHRASE <Text>                      {0:1}  g7:PHRASE
   +1 <<PERSONAL_NAME_PIECES>>              {0:1}
