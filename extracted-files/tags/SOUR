@@ -42,10 +42,10 @@ substructures:
   "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/OBJE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
+  "https://gedcom.io/terms/v7.1/SOUR-DATA": "{0:1}"
   "https://gedcom.io/terms/v7.1/SOUR-EVEN": "{0:1}"
   "https://gedcom.io/terms/v7/PAGE": "{0:1}"
   "https://gedcom.io/terms/v7/QUAY": "{0:1}"
-  "https://gedcom.io/terms/v7/SOUR-DATA": "{0:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7.1/ADOP": "{0:M}"

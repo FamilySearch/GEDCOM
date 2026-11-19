@@ -39,17 +39,17 @@ payload: null
 
 substructures:
   "https://gedcom.io/terms/v7.1/DTITL": "{0:1}"
+  "https://gedcom.io/terms/v7.1/HEAD-DATE": "{0:1}"
   "https://gedcom.io/terms/v7.1/HEAD-DESC": "{0:1}"
+  "https://gedcom.io/terms/v7.1/HEAD-SOUR": "{0:1}"
   "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SUBM": "{0:1}"
   "https://gedcom.io/terms/v7/COPR": "{0:1}"
   "https://gedcom.io/terms/v7/DEST": "{0:1}"
   "https://gedcom.io/terms/v7/GEDC": "{1:1}"
-  "https://gedcom.io/terms/v7/HEAD-DATE": "{0:1}"
   "https://gedcom.io/terms/v7/HEAD-LANG": "{0:1}"
   "https://gedcom.io/terms/v7/HEAD-PLAC": "{0:1}"
-  "https://gedcom.io/terms/v7/HEAD-SOUR": "{0:1}"
   "https://gedcom.io/terms/v7/SCHMA": "{0:1}"
 
 superstructures: {}

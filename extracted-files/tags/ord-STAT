@@ -4,7 +4,7 @@ lang: en-US
 
 type: structure
 
-uri: https://gedcom.io/terms/v7/ord-STAT
+uri: https://gedcom.io/terms/v7.1/ord-STAT
 
 standard tag: 'STAT'
 
@@ -23,7 +23,7 @@ payload: https://gedcom.io/terms/v7/type-Enum
 enumeration set: "https://gedcom.io/terms/v7/enumset-ord-STAT"
 
 substructures:
-  "https://gedcom.io/terms/v7/DATE-exact": "{1:1}"
+  "https://gedcom.io/terms/v7.1/DATE-exact": "{1:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7.1/BAPL": "{0:1}"
@@ -32,6 +32,9 @@ superstructures:
   "https://gedcom.io/terms/v7.1/INIL": "{0:1}"
   "https://gedcom.io/terms/v7.1/SLGC": "{0:1}"
   "https://gedcom.io/terms/v7.1/SLGS": "{0:1}"
+
+subsumes:
+  - "https://gedcom.io/terms/v7/ord-STAT"
 
 prerelease: true
 

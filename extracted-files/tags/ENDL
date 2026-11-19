@@ -24,13 +24,13 @@ label: 'Endowment, Latter-Day Saint'
 payload: null
 
 substructures:
+  "https://gedcom.io/terms/v7.1/DATE": "{0:1}"
   "https://gedcom.io/terms/v7.1/NOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/PLAC": "{0:1}"
   "https://gedcom.io/terms/v7.1/SNOTE": "{0:M}"
   "https://gedcom.io/terms/v7.1/SOUR": "{0:M}"
-  "https://gedcom.io/terms/v7/DATE": "{0:1}"
+  "https://gedcom.io/terms/v7.1/ord-STAT": "{0:1}"
   "https://gedcom.io/terms/v7/TEMP": "{0:1}"
-  "https://gedcom.io/terms/v7/ord-STAT": "{0:1}"
 
 superstructures:
   "https://gedcom.io/terms/v7.1/record-INDI": "{0:M}"
