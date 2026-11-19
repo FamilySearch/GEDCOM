@@ -264,6 +264,9 @@ to simplify implementation of algorithms that depend on the `INDI` representing 
 Applications using `g7.1:ALIA` to represent a person with multiple `INDI` records
 should select or generate a representative `INDI` for the `SUBM`.`ALIA`.
 
+An application that identifies a "root" or "primary" individual for display or report purposes
+may use the `INDI` linked by the `HEAD`.`SUBM`'s `ALIA`, when there is one, in preference to the order of records.
+
 #### `ANCI` (Ancestor interest) `g7.1:ANCI`
 
 Indicates an interest in additional research for ancestors of this individual.
