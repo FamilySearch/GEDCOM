@@ -735,7 +735,7 @@ https://gedcom.io/terms/v7.1/INDI-FACT	TYPE	https://gedcom.io/terms/v7/TYPE
 https://gedcom.io/terms/v7.1/INDI-FACT	UID	https://gedcom.io/terms/v7/UID
 https://gedcom.io/terms/v7.1/INDI-FACT	WWW	https://gedcom.io/terms/v7/WWW
 https://gedcom.io/terms/v7.1/INDI-FAMC	NOTE	https://gedcom.io/terms/v7.1/NOTE
-https://gedcom.io/terms/v7.1/INDI-FAMC	PEDI	https://gedcom.io/terms/v7/PEDI
+https://gedcom.io/terms/v7.1/INDI-FAMC	PEDI	https://gedcom.io/terms/v7.1/PEDI
 https://gedcom.io/terms/v7.1/INDI-FAMC	SNOTE	https://gedcom.io/terms/v7.1/SNOTE
 https://gedcom.io/terms/v7.1/INDI-FAMC	STAT	https://gedcom.io/terms/v7/FAMC-STAT
 https://gedcom.io/terms/v7.1/INDI-NAME	GIVN	https://gedcom.io/terms/v7/GIVN
@@ -1055,6 +1055,8 @@ https://gedcom.io/terms/v7.1/ORDN	SOUR	https://gedcom.io/terms/v7.1/SOUR
 https://gedcom.io/terms/v7.1/ORDN	TYPE	https://gedcom.io/terms/v7/TYPE
 https://gedcom.io/terms/v7.1/ORDN	UID	https://gedcom.io/terms/v7/UID
 https://gedcom.io/terms/v7.1/ORDN	WWW	https://gedcom.io/terms/v7/WWW
+https://gedcom.io/terms/v7.1/PEDI	DATE	https://gedcom.io/terms/v7/DATE
+https://gedcom.io/terms/v7.1/PEDI	PHRASE	https://gedcom.io/terms/v7/PHRASE
 https://gedcom.io/terms/v7.1/PLAC	EXID	https://gedcom.io/terms/v7/EXID
 https://gedcom.io/terms/v7.1/PLAC	FORM	https://gedcom.io/terms/v7/PLAC-FORM
 https://gedcom.io/terms/v7.1/PLAC	LANG	https://gedcom.io/terms/v7/LANG
@@ -1401,7 +1403,6 @@ https://gedcom.io/terms/v7/NAME-TYPE	PHRASE	https://gedcom.io/terms/v7/PHRASE
 https://gedcom.io/terms/v7/NO-DATE	PHRASE	https://gedcom.io/terms/v7/PHRASE
 https://gedcom.io/terms/v7/NOTE-TRAN	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7/NOTE-TRAN	MIME	https://gedcom.io/terms/v7/MIME
-https://gedcom.io/terms/v7/PEDI	PHRASE	https://gedcom.io/terms/v7/PHRASE
 https://gedcom.io/terms/v7/PLAC-TRAN	LANG	https://gedcom.io/terms/v7/LANG
 https://gedcom.io/terms/v7/REFN	TYPE	https://gedcom.io/terms/v7/TYPE
 https://gedcom.io/terms/v7/ROLE	PHRASE	https://gedcom.io/terms/v7/PHRASE

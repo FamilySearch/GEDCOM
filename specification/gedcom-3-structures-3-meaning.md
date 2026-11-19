@@ -1139,9 +1139,26 @@ and the `PAGE` may describe the entire source.
 ```
 :::
 
-#### `PEDI` (Pedigree) `g7:PEDI`
+#### `PEDI` (Pedigree) `g7.1:PEDI`
 
 An enumerated value from set `g7:enumset-PEDI` indicating the type of child-to-family relationship represented by the superstructure.
+
+A `DATE` substructure gives when that type of relationship applied,
+such as the period a child was fostered in the family.
+
+:::example
+The following indicates that a child was fostered in one family from 1921 to 1923 and in another from 1924 to 1926.
+
+```gedcom
+0 @I1@ INDI
+1 FAMC @F1@
+2 PEDI FOSTER
+3 DATE FROM 1921 TO 1923
+1 FAMC @F2@
+2 PEDI FOSTER
+3 DATE FROM 1924 TO 1926
+```
+:::
 
 #### `PHON` (Phone) `g7:PHON`
 

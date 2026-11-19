@@ -113,6 +113,7 @@ superstructures:
   "https://gedcom.io/terms/v7.1/NMR": "{0:1}"
   "https://gedcom.io/terms/v7.1/OCCU": "{0:1}"
   "https://gedcom.io/terms/v7.1/ORDN": "{0:1}"
+  "https://gedcom.io/terms/v7.1/PEDI": "{0:1}"
   "https://gedcom.io/terms/v7.1/PROB": "{0:1}"
   "https://gedcom.io/terms/v7.1/PROP": "{0:1}"
   "https://gedcom.io/terms/v7.1/RETI": "{0:1}"

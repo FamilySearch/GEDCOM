@@ -725,9 +725,9 @@ https://gedcom.io/terms/v7.1/INDI-FACT	https://gedcom.io/terms/v7/TYPE	{1:1}
 https://gedcom.io/terms/v7.1/INDI-FACT	https://gedcom.io/terms/v7/UID	{0:M}
 https://gedcom.io/terms/v7.1/INDI-FACT	https://gedcom.io/terms/v7/WWW	{0:M}
 https://gedcom.io/terms/v7.1/INDI-FAMC	https://gedcom.io/terms/v7.1/NOTE	{0:M}
+https://gedcom.io/terms/v7.1/INDI-FAMC	https://gedcom.io/terms/v7.1/PEDI	{0:1}
 https://gedcom.io/terms/v7.1/INDI-FAMC	https://gedcom.io/terms/v7.1/SNOTE	{0:M}
 https://gedcom.io/terms/v7.1/INDI-FAMC	https://gedcom.io/terms/v7/FAMC-STAT	{0:1}
-https://gedcom.io/terms/v7.1/INDI-FAMC	https://gedcom.io/terms/v7/PEDI	{0:1}
 https://gedcom.io/terms/v7.1/INDI-NAME	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/INDI-NAME	https://gedcom.io/terms/v7.1/SNOTE	{0:M}
 https://gedcom.io/terms/v7.1/INDI-NAME	https://gedcom.io/terms/v7.1/SOUR	{0:M}
@@ -1045,6 +1045,8 @@ https://gedcom.io/terms/v7.1/ORDN	https://gedcom.io/terms/v7/RESN	{0:1}
 https://gedcom.io/terms/v7.1/ORDN	https://gedcom.io/terms/v7/TYPE	{0:1}
 https://gedcom.io/terms/v7.1/ORDN	https://gedcom.io/terms/v7/UID	{0:M}
 https://gedcom.io/terms/v7.1/ORDN	https://gedcom.io/terms/v7/WWW	{0:M}
+https://gedcom.io/terms/v7.1/PEDI	https://gedcom.io/terms/v7/DATE	{0:1}
+https://gedcom.io/terms/v7.1/PEDI	https://gedcom.io/terms/v7/PHRASE	{0:1}
 https://gedcom.io/terms/v7.1/PLAC	https://gedcom.io/terms/v7.1/NOTE	{0:M}
 https://gedcom.io/terms/v7.1/PLAC	https://gedcom.io/terms/v7.1/SNOTE	{0:M}
 https://gedcom.io/terms/v7.1/PLAC	https://gedcom.io/terms/v7/EXID	{0:M}
@@ -1391,7 +1393,6 @@ https://gedcom.io/terms/v7/NAME-TYPE	https://gedcom.io/terms/v7/PHRASE	{0:1}
 https://gedcom.io/terms/v7/NO-DATE	https://gedcom.io/terms/v7/PHRASE	{0:1}
 https://gedcom.io/terms/v7/NOTE-TRAN	https://gedcom.io/terms/v7/LANG	{0:1}
 https://gedcom.io/terms/v7/NOTE-TRAN	https://gedcom.io/terms/v7/MIME	{0:1}
-https://gedcom.io/terms/v7/PEDI	https://gedcom.io/terms/v7/PHRASE	{0:1}
 https://gedcom.io/terms/v7/PLAC-TRAN	https://gedcom.io/terms/v7/LANG	{1:1}
 https://gedcom.io/terms/v7/REFN	https://gedcom.io/terms/v7/TYPE	{0:1}
 https://gedcom.io/terms/v7/ROLE	https://gedcom.io/terms/v7/PHRASE	{0:1}
