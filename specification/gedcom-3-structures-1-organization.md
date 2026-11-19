@@ -628,8 +628,6 @@ A birth recorded as "early in the morning" of 12 September 1888 might be
 ```
 :::
 
-There is no provision for approximate times in the 24-hour format; a `PHRASE` can describe one.
-
 #### `EVENT_DETAIL` :=
 
 ```gedstruct
