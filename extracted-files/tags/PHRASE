@@ -113,6 +113,7 @@ superstructures:
   "https://gedcom.io/terms/v7.1/FAM-HUSB": "{0:1}"
   "https://gedcom.io/terms/v7.1/FAM-WIFE": "{0:1}"
   "https://gedcom.io/terms/v7.1/NOTE-KIND": "{0:1}"
+  "https://gedcom.io/terms/v7.1/PEDI": "{0:1}"
   "https://gedcom.io/terms/v7.1/SOUR-EVEN": "{0:1}"
   "https://gedcom.io/terms/v7/AGE": "{0:1}"
   "https://gedcom.io/terms/v7/DATA-EVEN-DATE": "{0:1}"
@@ -122,7 +123,6 @@ superstructures:
   "https://gedcom.io/terms/v7/MEDI": "{0:1}"
   "https://gedcom.io/terms/v7/NAME-TYPE": "{0:1}"
   "https://gedcom.io/terms/v7/NO-DATE": "{0:1}"
-  "https://gedcom.io/terms/v7/PEDI": "{0:1}"
   "https://gedcom.io/terms/v7/ROLE": "{0:1}"
   "https://gedcom.io/terms/v7/SDATE": "{0:1}"
 
