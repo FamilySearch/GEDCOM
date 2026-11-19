@@ -485,6 +485,7 @@ n @XREF:SUBM@ SUBM                         {1:1}  g7.1:record-SUBM
   +1 WWW <Special>                         {0:M}  g7:WWW
   +1 <<MULTIMEDIA_LINK>>                   {0:M}
   +1 LANG <Language>                       {0:M}  g7:SUBM-LANG
+  +1 ALIA @<XREF:INDI>@                    {0:1}  g7.1:SUBM-ALIA
   +1 <<IDENTIFIER_STRUCTURE>>              {0:M}
   +1 <<NOTE_STRUCTURE>>                    {0:M}
   +1 <<CHANGE_DATE>>                       {0:1}

@@ -1344,6 +1344,7 @@ https://gedcom.io/terms/v7.1/record-SOUR	TEXT	https://gedcom.io/terms/v7/TEXT
 https://gedcom.io/terms/v7.1/record-SOUR	TITL	https://gedcom.io/terms/v7/TITL
 https://gedcom.io/terms/v7.1/record-SOUR	UID	https://gedcom.io/terms/v7/UID
 https://gedcom.io/terms/v7.1/record-SUBM	ADDR	https://gedcom.io/terms/v7/ADDR
+https://gedcom.io/terms/v7.1/record-SUBM	ALIA	https://gedcom.io/terms/v7.1/SUBM-ALIA
 https://gedcom.io/terms/v7.1/record-SUBM	CHAN	https://gedcom.io/terms/v7.1/CHAN
 https://gedcom.io/terms/v7.1/record-SUBM	CREA	https://gedcom.io/terms/v7.1/CREA
 https://gedcom.io/terms/v7.1/record-SUBM	EMAIL	https://gedcom.io/terms/v7/EMAIL
