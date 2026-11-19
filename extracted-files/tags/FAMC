@@ -23,6 +23,9 @@ superstructures:
   "https://gedcom.io/terms/v7.1/CHR": "{0:1}"
   "https://gedcom.io/terms/v7.1/SLGC": "{1:1}"
 
+subsumes:
+  - "https://gedcom.io/terms/v7/FAMC"
+
 prerelease: true
 
 contact: "https://gedcom.io/community/"

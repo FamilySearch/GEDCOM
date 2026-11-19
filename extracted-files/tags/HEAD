@@ -54,6 +54,9 @@ substructures:
 
 superstructures: {}
 
+subsumes:
+  - "https://gedcom.io/terms/v7/HEAD"
+
 prerelease: true
 
 contact: "https://gedcom.io/community/"

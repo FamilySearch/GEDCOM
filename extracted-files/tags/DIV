@@ -61,6 +61,9 @@ substructures:
 superstructures:
   "https://gedcom.io/terms/v7.1/record-FAM": "{0:M}"
 
+subsumes:
+  - "https://gedcom.io/terms/v7/DIV"
+
 value of:
   - "https://gedcom.io/terms/v7.1/enumset-EVEN"
   - "https://gedcom.io/terms/v7.1/enumset-EVENATTR"
