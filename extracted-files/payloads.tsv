@@ -93,6 +93,7 @@ https://gedcom.io/terms/v7.1/SOUR-DATA
 https://gedcom.io/terms/v7.1/SOUR-EVEN	https://gedcom.io/terms/v7/type-Enum
 https://gedcom.io/terms/v7.1/SSN	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/SUBM	@<https://gedcom.io/terms/v7.1/record-SUBM>@
+https://gedcom.io/terms/v7.1/SUBM-ALIA	@<https://gedcom.io/terms/v7.1/record-INDI>@
 https://gedcom.io/terms/v7.1/TEXT-TRAN	http://www.w3.org/2001/XMLSchema#string
 https://gedcom.io/terms/v7.1/TIME	https://gedcom.io/terms/v7.1/type-Time#value
 https://gedcom.io/terms/v7.1/TIME-exact	https://gedcom.io/terms/v7/type-Time
