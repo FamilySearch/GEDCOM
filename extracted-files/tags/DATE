@@ -30,9 +30,6 @@ specification:
     ```
     
     </div>
-    
-    There is no provision for approximate times in the 24-hour format; a `PHRASE`
-    can describe one.
   - Date
   - |
     The principal date of the subject of the superstructure. The payload is a
@@ -122,9 +119,6 @@ superstructures:
   "https://gedcom.io/terms/v7.1/SOUR-DATA": "{0:1}"
   "https://gedcom.io/terms/v7.1/SSN": "{0:1}"
   "https://gedcom.io/terms/v7.1/WILL": "{0:1}"
-
-subsumes:
-  - "https://gedcom.io/terms/v7/DATE"
 
 prerelease: true
 
